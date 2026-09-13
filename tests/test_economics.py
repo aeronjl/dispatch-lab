@@ -192,3 +192,41 @@ def test_export_contains_actual_assumptions_and_costs(physical, tmp_path, monkey
 def test_invalid_cost_assumptions_are_rejected(kwargs):
     with pytest.raises(ValueError):
         Costs(**kwargs)
+
+
+def test_cost_playhead_reconciles_at_end_and_starts_empty(physical):
+    from economics import cost_timeline
+
+    costs = Costs(start_equivalent_hours=12, battery_cycles=200)
+    timeline = cost_timeline(physical, costs)
+    final = evaluate(physical, costs)
+    for name, frames in timeline["controllers"].items():
+        assert len(frames) == 73
+        assert frames[0]["allocated_cost_eur"] == 0
+        assert frames[0]["period_eur_per_kg"] is None
+        for key, value in final["controllers"][name].items():
+            assert frames[-1][key] == pytest.approx(value)
+        for hour, frame in enumerate(frames):
+            assert frame["hydrogen_kg"] == pytest.approx(
+                sum(r["h2_kg"] for r in physical["records"][name][:hour])
+            )
+            assert frame["allocated_cost_eur"] == pytest.approx(sum(frame["buckets_eur"].values()))
+
+
+def test_cost_playhead_does_not_reveal_future_faults_or_production(physical):
+    from economics import cost_timeline
+
+    source = copy.deepcopy(physical)
+    source["scenario"].update(
+        fault_start_hour=34, fault_duration_hours=8, fault_capacity_fraction=0.5
+    )
+    timeline = cost_timeline(source, Costs())
+    for name, frames in timeline["controllers"].items():
+        assert frames[34]["buckets_eur"]["Fault budget"] == 0
+        assert frames[35]["buckets_eur"]["Fault budget"] == 800
+        assert frames[-1]["buckets_eur"]["Fault budget"] == 800
+        assert frames[34]["hydrogen_kg"] == pytest.approx(
+            sum(r["h2_kg"] for r in source["records"][name][:34])
+        )
+    # The explanatory layer cannot mutate the schedules it describes.
+    assert source["records"] == physical["records"]

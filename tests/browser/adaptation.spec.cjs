@@ -1,0 +1,23 @@
+const {test,expect}=require('@playwright/test');
+test('performance adaptation is explicit, source-defined and invalidates an earlier preview',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');await page.locator('.m-plant').waitFor();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();
+ await page.locator('[data-do=studies]').click();await page.locator('[data-u=open]').click();
+ await page.locator('[data-u=parameter]').waitFor();
+ await page.locator('[data-u=search]').fill('weather.loss_fraction');
+ await expect(page.locator('[data-u=visibility]')).toHaveValue('hidden');
+ await page.locator('[data-u=values]').fill('0.35');await page.locator('[data-u=add]').click();
+ await page.locator('[data-u=worlds]').fill('1');await page.locator('[data-u=seeds]').fill('7');
+ await page.locator('[data-u=adaptation]').selectOption('adaptive');
+ const sent=[];page.on('request',r=>{if(r.url().endsWith('/dispatch/studies')&&r.method()==='POST')sent.push(r.postDataJSON());});
+ await page.locator('[data-u=preview]').click();await expect(page.locator('[data-u=start]')).toBeEnabled();
+ const preview=sent.find(r=>r.operation==='uncertainty-preview');
+ expect(preview.uncertainty.adaptation).toEqual({version:'observed-performance/1',mode:'adaptive',gain:.35,minimum_samples:2,minimum_solar_kw:30,solar_support:[.1,2]});
+ await page.locator('[data-u=adaptation]').selectOption('fixed');await expect(page.locator('[data-u=start]')).toBeDisabled();
+ await page.screenshot({path:'build/observed-performance/controls-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.locator('[data-u=adaptation]').scrollIntoViewIfNeeded();
+ await page.screenshot({path:'build/observed-performance/controls-mobile.png'});
+ expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();
+ expect(errors).toEqual([]);
+});

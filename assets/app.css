@@ -1,0 +1,76 @@
+body,.gradio-container {background:#202020 !important; color:#dfc9a9 !important;}
+.gradio-container {max-width:1640px !important; padding:clamp(14px,2vw,28px) clamp(14px,2.5vw,38px) !important; font-family:'Departure Mono',monospace !important; color-scheme:dark;}
+.gradio-container * {scrollbar-color:#806039 #202020;}
+.gradio-container input,.gradio-container button,.gradio-container textarea,.gradio-container select {font-family:'Departure Mono',monospace !important;}
+footer {display:none !important;}
+#settings {background:#202020; border:1px solid #685032; border-top:2px solid #ffa32d; padding:18px 16px; border-radius:0; gap:15px;}
+#settings .block {border:0; box-shadow:none; background:transparent;}
+#settings h3 {font-size:16.5px; font-weight:400; color:#ffa32d; margin:0 0 9px; line-height:1.6;}
+#settings .prose p {font-size:11px; line-height:1.7; color:#b5a184;}
+#settings label,#settings .label {font-size:11px;}
+#run {min-height:44px; background:#ffa32d; color:#202020; border:1px solid #ffa32d; border-radius:0; font-size:11px; letter-spacing:1px;}
+#run:hover {background:#ffbf65;}
+#results {gap:14px;}
+#results .block,.gradio-container .tabitem,.gradio-container .tabs {border-radius:0 !important;}
+#timeseries {border:1px solid #685032; background:#202020; border-radius:0;}
+#run-note {font-size:11px; padding:0 4px; color:#b5a184;}
+#run-note p {font-size:11px; line-height:1.7;}
+.tabitem {padding:18px 0 !important;}
+.gradio-container .tab-nav {border-bottom:1px solid #685032 !important; gap:12px;}
+.gradio-container .tab-nav button {font-size:11px !important; text-transform:uppercase; letter-spacing:.8px; border-radius:0 !important; padding:10px 8px !important; color:#b5a184 !important;}
+.gradio-container .tab-nav button.selected {color:#ffa32d !important; border-bottom:2px solid #ffa32d !important; background:transparent !important;}
+.gradio-container .prose {color:#dfc9a9;} .gradio-container .prose h1,.gradio-container .prose h2,.gradio-container .prose h3 {color:#ffa32d; font-weight:400;}
+.gradio-container .prose a {color:#ffa32d;} .gradio-container .prose p,.gradio-container .prose li {font-size:13px; line-height:1.8;}
+.gradio-container .prose code {background:#30291f; color:#ffbf65;}
+.gradio-container button:focus-visible,.gradio-container input:focus-visible {outline:2px solid #ffcf88; outline-offset:3px;}
+.gradio-container .form {border-radius:0 !important;}
+@media(max-width:900px) {.gradio-container {padding:20px !important;} #settings {padding:14px;}}
+@media(max-width:700px) {.gradio-container {padding:14px !important;} #results {min-width:0 !important;} #settings {min-width:0 !important;} .gradio-container .tab-nav {gap:0;}}
+/* Let the instrument desk use the viewport instead of Gradio's inner page cap. */
+.gradio-container .main {max-width:none !important; padding:0 !important;}
+.gradio-container .form {background:transparent !important;}
+#settings [data-testid=block-info],#settings input,#settings .label {font-size:11px !important;}
+#settings input[type=range]::-webkit-slider-thumb {border-radius:0; background:#ffa32d; box-shadow:none; border:0; width:10px; height:18px;}
+#settings input[type=range]::-moz-range-thumb {border-radius:0; background:#ffa32d; box-shadow:none; border:0; width:10px; height:18px;}
+#playback {padding:0 !important; border:0 !important;}
+@media(min-width:901px) {#settings {flex-grow:0 !important; flex-basis:280px;}}
+@media(max-width:900px) {#results,#settings {flex-basis:100% !important; min-width:0 !important;} #results {order:-1;}}
+
+#playback .html-container {padding:0 !important;}
+/* Separate simulation and configuration workspaces. */
+.gradio-container {max-width:none !important; padding:16px clamp(10px,1.6vw,24px) !important;}
+#workspace-tabs>.tabitem {padding:12px 0 0 !important;}
+#workspace-tabs {gap:0;}
+#settings {width:100%; max-width:1320px; margin:0 auto; border:0; padding:20px 4px; flex-grow:1 !important; flex-basis:auto !important; gap:20px;}
+#settings .setup-card {border:1px solid #59472f; border-top:2px solid #806039; padding:18px; gap:14px;}
+#settings .setup-card h4 {margin:0; color:#ffa32d; font-size:16.5px; font-weight:400;}
+#settings .setup-card .block {overflow:visible;}
+#settings .prose h2 {font-size:28px;}
+#settings h3 {font-size:16.5px; margin:12px 0 0;}
+#settings .prose p {font-size:12px;}
+#settings .accordion {border-top:1px solid #59472f;}
+#run {align-self:center;}
+#draft-notice {padding:8px 12px; border-left:2px solid #ffa32d; background:#30291f;}
+#draft-notice p {font-size:11px;}
+#physical-report,#cost-report {margin-top:10px; border:1px solid #59472f;}
+#physical-report>.label-wrap,#cost-report>.label-wrap {padding:14px;}
+#cost-report,#physical-report {scroll-margin-top:18px;}
+@media(max-width:700px) {.gradio-container {padding:10px !important;}#settings {padding:10px 0;}#settings .setup-card {min-width:0 !important; flex-basis:100% !important;}.gradio-container .tab-nav button {letter-spacing:0;}}
+
+#workspace-tabs>.tab-wrapper button {font-size:11px !important; padding:10px 12px !important; text-transform:uppercase; letter-spacing:.4px;}
+#workspace-tabs>.tab-wrapper .tab-container {gap:0;}
+/* Clip horizontal overflow without creating a scroll container for the transport dock. */
+.gradio-container {overflow:clip !important;}
+.methane-report {overflow-x:auto !important; max-width:100%;}
+.methane-report table {white-space:nowrap;}
+
+/* The methane canvas owns the viewport. Setup and analysis scroll independently. */
+body:has(#methane-playback){height:100dvh;overflow:hidden}
+.gradio-container:has(#methane-playback){height:100dvh!important;padding:0!important;max-width:none!important}
+#workspace-tabs:has(#methane-playback)>.tab-wrapper{display:none!important}
+#workspace-tabs:has(#methane-playback)>.tabitem{padding:0!important;border:0!important}
+#methane-playback,#methane-playback .html-container{padding:0!important;border:0!important;margin:0!important}
+#workspace-tabs:has(#methane-playback)>.m-screen{height:100dvh;overflow:auto!important;overscroll-behavior:contain;padding:24px clamp(18px,4vw,64px) 60px!important;border:0!important;background:#202020}
+#workspace-tabs .m-screen-toolbar{position:sticky;top:0;z-index:4;background:#202020;padding:16px 0;border-bottom:1px solid #58452e;align-items:center;flex-wrap:nowrap}
+#workspace-tabs .m-screen-toolbar button{flex:0 0 auto;width:auto;min-width:135px}
+#workspace-tabs .m-screen-toolbar .prose h2{font-size:17px;margin:0;text-align:right}

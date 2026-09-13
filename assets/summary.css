@@ -1,0 +1,25 @@
+* {box-sizing:border-box;}
+.eyebrow {font:11px 'Departure Mono',monospace; letter-spacing:2px; color:#ffa32d;}
+.topline {display:flex; justify-content:space-between; gap:12px; align-items:center;}
+.badge {border:1px solid #685032; color:#b5a184; padding:7px 10px; font:11px 'Departure Mono',monospace; white-space:nowrap;}
+h1 {font:44px/1.2 'Departure Mono',monospace; letter-spacing:2px; color:#ffa32d; margin:20px 0 10px;}
+h1 span {color:#776040;}
+.intro {font:13px/1.7 'Departure Mono',monospace; color:#b5a184; max-width:900px; margin:0 0 22px;}
+.header-rule {display:flex; gap:16px; align-items:center; color:#b5a184; font:11px 'Departure Mono',monospace; margin-bottom:24px;}
+.header-rule::before {content:''; width:40px; height:7px; background:#ffa32d;} .header-rule::after {content:''; flex:1; height:7px; background:repeating-linear-gradient(90deg,#685032 0,#685032 1px,transparent 1px,transparent 9px);}
+.cards {display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:6px;}
+.card {padding:17px; border:1px solid #685032; background:#202020; border-radius:0;}
+.label {font:11px 'Departure Mono',monospace; letter-spacing:.5px; color:#b5a184; text-transform:uppercase;}
+.value {font:22px 'Departure Mono',monospace; color:#ffa32d; margin:12px 0 9px;}
+.value span {font-size:11px;} .compare {font:11px/1.6 'Departure Mono',monospace; color:#ddd1bc;}
+.insight {border-left:2px solid #ffa32d; padding:12px 16px; background:#29251f; color:#dfc9a9; font:13px/1.7 'Departure Mono',monospace;}
+.insight b {font-weight:400; color:#ffa32d;}
+.legend {display:flex; gap:18px; font:11px 'Departure Mono',monospace; color:#b5a184; padding:8px 0;}
+.legend span {display:flex; align-items:center; gap:6px;} .dot {height:6px; width:6px; display:inline-block;}
+@media(max-width:1100px) {.cards {grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px) {h1 {font-size:33px;} .badge {display:none;} .eyebrow {font-size:11px; letter-spacing:1px;} .card {padding:12px;} .value {font-size:22px;} .intro {font-size:11px;}}
+.lab-masthead {display:flex; align-items:center; gap:24px; min-height:34px; color:#b5a184; font:11px 'Departure Mono',monospace;}
+.lab-masthead h1 {font:22px/1.4 'Departure Mono',monospace; letter-spacing:1px; color:#ffa32d; margin:0;}
+.lab-masthead h1 span {color:#806039;}
+.lab-badge {margin-left:auto; color:#b5a184; font-size:10px;}
+@media(max-width:700px) {.lab-masthead>span:not(.lab-badge) {display:none;}.lab-masthead {gap:10px;}.lab-masthead h1 {font-size:16.5px;}.lab-badge {font-size:9px;}}

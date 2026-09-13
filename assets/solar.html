@@ -1,0 +1,42 @@
+<section class="s-workspace" hidden aria-label="Solar array workspace">
+ <header class="s-header"><div><button data-s="back" class="s-back">← PLANT OVERVIEW</button><span class="s-breadcrumb">PLANT 01 / PV-01 / ARRAY SYSTEM</span><h2>SOLAR ARRAY<span class="s-live">●</span></h2><p>Follow the light. Inspect a section. Shape the supply.</p></div><div class="s-header-right"><span data-s="time"></span><span class="s-status" data-s="status" role="status">RECORDED DESIGN</span></div></header>
+ <div class="s-summary"><div><span>ARRAY NAMEPLATE</span><strong data-s="capacity">1,000 kW</strong></div><div><span>AVAILABLE DC / THIS HOUR</span><strong data-s="output">—</strong></div><div><span>MODULE TEMPERATURE / SELECTED</span><strong data-s="temperature">—</strong></div><div><span>REPLAY ENERGY / CHANGE</span><strong data-s="delta">—</strong></div></div>
+ <div class="s-layout">
+  <div class="s-visual">
+   <div class="s-drawing-head"><span>01 / FIELD → MPPT CHANNELS → DC OUTPUT</span><span>SELECT A SECTION ↓</span></div>
+   <div class="s-scroll" tabindex="0" role="region" aria-label="Detailed solar circuit; scroll horizontally on narrow screens"><svg class="s-circuit" viewBox="0 0 1000 570" role="group" aria-label="Three solar sections feeding independent MPPT channels and one DC converter">
+    <defs><pattern id="s-grid" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#806039" opacity=".3"/></pattern></defs>
+    <rect width="1000" height="570" fill="url(#s-grid)"/><path class="s-brackets" d="M1 20V1H20 M980 1H999V20 M1 550V569H20 M980 569H999V550"/>
+    <g class="s-sky"><path class="s-sun-track" d="M85 90Q460 -50 825 90"/><text x="35" y="50">INCIDENT LIGHT</text><text x="35" y="70" data-s="irradiance">0 W/m²</text><g data-s="sun" transform="translate(475 32)"><circle class="s-sun-core" r="12"/><g class="s-sun-rays"><path d="M0-18V-25 M0 18V25 M18 0H25 M-18 0H-25 M13-13L18-18 M-13 13L-18 18 M13 13L18 18 M-13-13L-18-18"/></g></g><text x="965" y="50" text-anchor="end" data-s="ambient">AMBIENT 20 °C</text><text x="965" y="70" text-anchor="end">SCHEMATIC FIELD / HOURLY MODEL</text></g>
+    <g data-s="banks"></g>
+    <g class="s-output-bus"><path class="s-track" d="M157 445H761V480H795"/><path class="s-current" data-s="bus-flow" d="M157 445H761V480H795"/><text x="35" y="492">COMBINED ARRAY</text><text x="35" y="516" class="s-value" data-s="available">0 kW</text><text x="330" y="492">CONVERSION / CLIPPING</text><text x="330" y="516" class="s-value" data-s="losses">0 / 0 kW</text><g class="s-converter"><path class="s-case" d="M795 452H883V509H795Z M795 452L807 444H895L883 452 M883 452L895 444V501L883 509"/><path d="M811 466H830 M811 474H830 M849 486H870 M849 494H870 M839 463V497 M804 508V518H818 M862 508V518H878"/><text x="839" y="435" text-anchor="middle">DC / DC</text></g><path class="s-track" d="M895 480H973"/><path class="s-current" data-s="output-flow" d="M895 480H973"/><path d="M966 475L973 480L966 485"/><text x="966" y="538" text-anchor="end" data-s="dc-output">TO PLANT BUS / 0 kW</text></g>
+   </svg></div>
+   <div class="s-section-picker" aria-label="Choose solar section"><button data-bank="0" aria-pressed="true">01 / ARRAY A</button><button data-bank="1" aria-pressed="false">02 / ARRAY B</button><button data-bank="2" aria-pressed="false">03 / ARRAY C</button></div>
+   <details class="s-replay"><summary>GENERATION PROFILE / SAVED WEATHER REPLAY</summary><div class="s-profile-head"><span>GENERATION OVER THE SAVED WEATHER REPLAY</span><span><i class="s-key-base"></i> RUN <i class="s-key-draft"></i> DESIGN</span></div>
+   <svg class="s-profile" viewBox="0 0 1000 95" role="img" aria-label="Recorded and preview solar generation across the saved run"><path class="s-profile-base" data-s="profile-base"/><path class="s-profile-draft" data-s="profile-draft"/><path class="s-profile-cursor" data-s="profile-cursor"/></svg>
+   <div class="s-profile-foot"><span data-s="energy"></span><span>ILLUSTRATIVE MODEL / SAME SAVED WEATHER</span></div></details>
+  </div>
+  <aside class="s-controls" aria-label="Solar section design"><div class="s-control-title"><div><span data-s="asset">PV-01</span><h3 data-s="bank-title">ARRAY A</h3></div><label class="s-online"><input type="checkbox" data-setting="online" checked/> CONNECTED</label></div>
+   <nav class="s-tabs" aria-label="Solar parameter groups"><button data-s-tab="geometry" aria-pressed="true">GEOMETRY</button><button data-s-tab="condition">CONDITION</button><button data-s-tab="conversion">CONVERSION</button></nav>
+   <div data-s-panel="geometry">
+    <label class="s-control">SECTION CAPACITY <output data-read="capacity_kw"></output><input type="range" min="0" max="1500" step="0.1" data-setting="capacity_kw" aria-label="Section capacity"/><small>More capacity adds rows to the schematic.</small></label>
+    <label class="s-control">PANEL TILT <output data-read="tilt"></output><input type="range" min="0" max="90" step="1" data-setting="tilt" aria-label="Panel tilt"/><small>0° flat · 90° vertical</small></label>
+    <label class="s-control">ORIENTATION <output data-read="azimuth"></output><input type="range" min="-180" max="180" step="5" data-setting="azimuth" aria-label="Panel orientation"/><small>−90° east · 0° south · +90° west</small></label>
+   </div>
+   <div data-s-panel="condition" hidden>
+    <label class="s-control">SECTION SHADING <output data-read="shade"></output><input type="range" min="0" max="0.9" step="0.01" data-setting="shade" aria-label="Section shading"/><small>Uniform lost irradiance; no cell mismatch model.</small></label>
+    <label class="s-control">SOILING <output data-read="soiling"></output><input type="range" min="0" max="0.3" step="0.01" data-setting="soiling" aria-label="Panel soiling"/><small>Surface deposits reduce incoming light.</small></label>
+    <p class="s-help">Disconnect this section to open its isolator and remove its contribution.</p>
+   </div>
+   <div data-s-panel="conversion" hidden>
+    <label class="s-control">SHARED CONVERTER LIMIT <output data-read="converter_kw"></output><input type="range" min="0" max="3000" step="10" data-setting="converter_kw" aria-label="Converter capacity"/><small>Output above this limit is clipped.</small></label>
+    <label class="s-control">CONVERSION EFFICIENCY <output data-read="efficiency"></output><input type="range" min="0.9" max="1" step="0.005" data-setting="efficiency" aria-label="Conversion efficiency"/></label>
+    <label class="s-control">NOMINAL OPERATING TEMPERATURE <output data-read="noct_c"></output><input type="range" min="25" max="65" step="1" data-setting="noct_c" aria-label="Nominal operating temperature"/><small>Shared thermal assumption for all sections.</small></label>
+   </div>
+   <div class="s-budget"><span>SELECTED SECTION / POWER ACCOUNTING</span><dl data-s="budget"></dl></div>
+   <details class="s-assumptions"><summary>RECORDED PLANT DECISION & COST</summary><p data-s="decision"></p><p class="m-cost" data-s="allocation"></p></details>
+   <details class="s-assumptions"><summary>MODEL AND EVIDENCE</summary><nav class="d-inspector-links"><button data-explore="solar">Explore component</button><button data-model-topic="solar">How it is modelled</button><button data-model-topic="solar" data-model-context="This run">Trace calculation</button></nav><p data-s="evidence"></p><details><summary>TRACE RECORDED GENERATION</summary><pre data-s="lineage"></pre></details><a href="/gradio_api/file=docs/components.md" target="_blank" rel="noopener">COMPONENT REFERENCE ↗</a><p data-s="assumptions"></p><p>Design previews replay saved weather. They are not decision-time forecasts. New plant runs preserve the original forecast availability boundaries.</p><p>Existing solar capital scales with capacity. Added converters and mounting changes have no separate price premium in this illustrative model.</p></details>
+  </aside>
+ </div>
+ <div class="s-actions" role="region" aria-label="Solar design actions"><div><strong data-s="change-label">EXPLORING THE RECORDED DESIGN</strong><span data-s="change-help">Select an array section to inspect its configuration.</span></div><div><button data-s="restore">RESTORE RUN DESIGN</button><button class="s-apply" data-s="apply" disabled>RUN PLANT WITH DESIGN →</button></div></div>
+</section>

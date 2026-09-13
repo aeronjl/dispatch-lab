@@ -1,0 +1,611 @@
+{
+  "schema_version": "dispatch-lab/study-protocol/2",
+  "resolver": "matched-field-workflow/1",
+  "study_id": "field-interface",
+  "revision": 2,
+  "title": "What does a prepared inspection interface enable?",
+  "question": "For the same contact-reader rover, process fault and human fallback, how does an accessible test port compare with an enclosed contact?",
+  "rationale": "Known contact compatibility is a design input, not a diagnosis. The enclosed contact fails the installed payload interface contract, so the local policy selects a qualified human procedure. The prepared port permits the same rover to acquire bounded signal/reference evidence. A declared €1,500 incremental port fitout is allocated to rover access; it does not buy robotic module replacement.",
+  "baseline_arm": "enclosed",
+  "policies": {
+    "Greedy": {
+      "objective": "greedy",
+      "terminal_battery_value_kg_per_kwh": 0.0,
+      "version": "dispatch-lab/policy/1"
+    }
+  },
+  "arms": [
+    {
+      "id": "enclosed",
+      "label": "Enclosed contact",
+      "controller": "Greedy",
+      "patch": {
+        "service_system.inspection_interface": "enclosed-contact"
+      }
+    },
+    {
+      "id": "prepared",
+      "label": "Prepared contact test port",
+      "controller": "Greedy",
+      "patch": {
+        "service_system.inspection_interface": "accessible-port",
+        "service_economics.assets.rover.access_eur": 1500
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "normal",
+      "label": "No process fault",
+      "patch": {}
+    },
+    {
+      "id": "trip",
+      "label": "Latched trip",
+      "patch": {
+        "scenario.capacity_fraction": 0.5,
+        "faults.capacity_cause": "resettable-trip"
+      }
+    },
+    {
+      "id": "damage",
+      "label": "Persistent damage",
+      "patch": {
+        "scenario.capacity_fraction": 0.5,
+        "faults.capacity_cause": "equipment-damage"
+      }
+    },
+    {
+      "id": "reader-drift",
+      "label": "Trip with mobile reader drift",
+      "patch": {
+        "scenario.capacity_fraction": 0.5,
+        "faults.capacity_cause": "resettable-trip",
+        "faults.mobile_reader_drift_vph": 0.7
+      }
+    }
+  ],
+  "reference_config": {
+    "rng_policy": "named-channels/1",
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.0,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.3,
+      "heat_loss_kw_per_k": 0.08,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1,
+      "cleaner_eur": 15000,
+      "rover_eur": 80000,
+      "dock_eur": 5000,
+      "field_asset_years": 8,
+      "field_replaceable_share": 0.2,
+      "cleaner_wear_eur_per_hour": 0.5,
+      "rover_wear_eur_per_hour": 2,
+      "field_maintenance_eur_per_year": 3000,
+      "cleaning_kit_eur": 5,
+      "human_service_eur_per_hour": 80,
+      "fixed_reader_eur": 3000,
+      "reset_eur": 1500,
+      "calibration_kit_eur": 100
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0.02,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1
+    },
+    "scenario": {
+      "hours": 72,
+      "horizon_hours": 24,
+      "seed": 7,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 10,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 1,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.5
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0.14,
+      "noct_c": 45,
+      "temperature_coefficient": -0.004,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null,
+    "models": {
+      "battery": "affine/1",
+      "electrolyser": "specific-energy/1",
+      "hydrogen": "balance/1",
+      "co2": "balance/1",
+      "reactor": "analytic/1"
+    },
+    "faults": {
+      "lifecycle": "persistent",
+      "capacity_cause": "equipment-damage",
+      "inspection_fault_start_hour": 0.0,
+      "contact_stuck": "none",
+      "fixed_reader_offset_v": 0.0,
+      "fixed_reader_drift_vph": 0.0,
+      "fixed_reader_dropout": false,
+      "mobile_reader_offset_v": 0.0,
+      "mobile_reader_drift_vph": 0.0,
+      "mobile_reader_dropout": false,
+      "service_fault_start_hour": 0,
+      "cleaner_service_fault": "none",
+      "rover_service_fault": "none",
+      "dock_service_fault": "none",
+      "portable_service_fault": "none"
+    },
+    "field_operations": {
+      "enabled": true,
+      "cleaner_enabled": false,
+      "rover_enabled": true,
+      "reset_enabled": true,
+      "human_fallback": true,
+      "route_open": true,
+      "dock_available": true,
+      "initial_soiling_fraction": 0.05,
+      "soiling_per_day": 0.005,
+      "cleaning_threshold": 0.04,
+      "cleaning_removal_fraction": 0.9,
+      "cleaner_battery_kwh": 2,
+      "rover_battery_kwh": 2,
+      "mission_power_kw": 0.2,
+      "return_reserve_kwh": 0.2,
+      "dock_kw": 1,
+      "charging_efficiency": 0.9,
+      "cleaning_hours": 2,
+      "inspection_hours": 1,
+      "human_lead_hours": 8,
+      "human_work_hours": 2,
+      "service_kits": 2,
+      "cleaning_kits": 12,
+      "mission_failure_probability": 0.05,
+      "repair_success_probability": 0.95
+    },
+    "service_system": {
+      "implementation": "plant-service-contracts/1",
+      "inspector": "mobile",
+      "travel_hours": 0.5,
+      "verification_hours": 0.25,
+      "reset_hours": 0.25,
+      "reader_kw": 0.2,
+      "reset_kw": 0.1,
+      "contact_unreadable_probability": 0.05,
+      "contact_error_probability": 0.02,
+      "contact_max_age_hours": 8,
+      "communications_available": true,
+      "crew_available": true,
+      "calibration_reference_available": true,
+      "calibration_kits": 2,
+      "cleaning_model": "section-optical/1",
+      "area_m2_per_kw": 5,
+      "cleaning_area_m2ph": 1000,
+      "initial_adhered_fraction": 0.01,
+      "initial_damage_fraction": 0,
+      "brush_life_m2": 50000,
+      "brush_initial_condition": 1,
+      "row_accessible": true,
+      "environment_source": "assumed",
+      "assumed_wind_mps": 3,
+      "assumed_rain_mmph": 0,
+      "cleaning_wind_limit_mps": 8,
+      "cleaning_rain_limit_mmph": 0.1,
+      "work_failure_fraction": 0.5,
+      "support_model": "logistics/1",
+      "crew_shift_start_hour": 0,
+      "crew_shift_duration_hours": 12,
+      "crew_period_hours": 24,
+      "crew_travel_hours": 1,
+      "crew_response_lead_hours": 2,
+      "crew_hours_per_period": 12,
+      "remote_hours_per_period": 1,
+      "retrieval_work_hours": 0.5,
+      "robot_test_hours": 0.25,
+      "robot_test_kw": 0.2,
+      "robot_test_success_probability": 1,
+      "support_delivery_hours": 0.5,
+      "store_capacity_kits": 24,
+      "supplier_kits": 24,
+      "delivery_batch_kits": 4,
+      "brush_spares": 2,
+      "brush_change_hours": 0.5,
+      "retrieval_enabled": true,
+      "replenishment_enabled": true,
+      "brush_replacement_enabled": true,
+      "portable_cleaner": "none",
+      "portable_area_m2ph": 1000,
+      "portable_setup_hours": 0.5,
+      "portable_power_kw": 0.5,
+      "portable_loose_removal": 0.9,
+      "portable_adhered_removal": 0.7,
+      "portable_adhered_threshold": 0.05,
+      "portable_water_l_per_m2": 0.5,
+      "portable_rinse_l": 10,
+      "portable_water_capacity_l": 1000,
+      "portable_water_initial_l": 1000,
+      "portable_upstream_water_l": 5000,
+      "portable_water_delivery_l": 1000,
+      "portable_min_ambient_c": 5,
+      "inspection_model": "referenced-contact/1",
+      "inspection_noise_v": 0.1,
+      "inspection_delay_hours": 0.0,
+      "inspection_zero_limit_v": 2.0,
+      "inspection_span_tolerance_fraction": 0.1,
+      "inspection_low_v": 6.0,
+      "inspection_high_v": 18.0,
+      "inspection_wait_hours": 8.0,
+      "visit_bundling_enabled": true,
+      "visit_max_jobs": 4,
+      "crew_transfer_hours": 0.25,
+      "equipment_recovery_enabled": true,
+      "remote_assistance_enabled": true,
+      "remote_wait_hours": 2,
+      "remote_release_hours": 0.25,
+      "remote_shift_start_hour": 0,
+      "remote_shift_duration_hours": 12,
+      "hardware_replacement_hours": 1,
+      "hardware_spares": 2,
+      "maintenance_enabled": false,
+      "maintenance_target": "resident",
+      "maintenance_first_due_hour": 720.0,
+      "maintenance_interval_hours": 720.0,
+      "maintenance_work_hours": 1.0,
+      "maintenance_kits": 2,
+      "dock_standby_kw": 0.0,
+      "cleaning_policy": "off",
+      "cleaning_first_due_hour": 0.0,
+      "cleaning_period_hours": 168.0,
+      "inspection_interface": "accessible-port",
+      "outcome_randomness": "legacy-reason/1"
+    },
+    "service_economics": {
+      "schema_version": "dispatch-lab/service-economics/1",
+      "basis": "Illustrative EUR assumptions; procurement at upstream release, with no refund for rejected deliveries. No actual vendor invoices.",
+      "source": "assumption:field-service-prices/2",
+      "initial_asset_purchase": false,
+      "initial_stock_purchase": false,
+      "assets": {
+        "cleaner": {
+          "provision": "owned",
+          "capital_eur": 15000,
+          "life_years": 8,
+          "replaceable_capital_eur": 3000.0,
+          "wear_eur_per_hour": 0.5,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 2000,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "rover": {
+          "provision": "owned",
+          "capital_eur": 80000,
+          "life_years": 8,
+          "replaceable_capital_eur": 16000.0,
+          "wear_eur_per_hour": 2,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 0,
+          "payload_eur": 2000,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "dock": {
+          "provision": "owned",
+          "capital_eur": 5000,
+          "life_years": 8,
+          "replaceable_capital_eur": 1000,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 2000,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 3000,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "fixed_reader": {
+          "provision": "owned",
+          "capital_eur": 3000,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "reset": {
+          "provision": "owned",
+          "capital_eur": 1500,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "portable": {
+          "provision": "contracted",
+          "capital_eur": 0,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 10
+        }
+      },
+      "materials": {
+        "cleaning": {
+          "eur_per_unit": 5,
+          "unit": "kit",
+          "pool": null
+        },
+        "module": {
+          "eur_per_unit": 500,
+          "unit": "kit",
+          "pool": null
+        },
+        "calibration": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": null
+        },
+        "water": {
+          "eur_per_unit": 0.003,
+          "unit": "L",
+          "pool": null
+        },
+        "brush": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": "cleaner"
+        },
+        "maintenance": {
+          "eur_per_unit": 50,
+          "unit": "kit",
+          "pool": null
+        },
+        "hardware:cleaner": {
+          "eur_per_unit": 800,
+          "unit": "module",
+          "pool": "cleaner"
+        },
+        "hardware:rover": {
+          "eur_per_unit": 2500,
+          "unit": "module",
+          "pool": "rover"
+        },
+        "hardware:dock": {
+          "eur_per_unit": 1000,
+          "unit": "module",
+          "pool": "dock"
+        },
+        "hardware:portable": {
+          "eur_per_unit": 250,
+          "unit": "module",
+          "pool": "portable"
+        }
+      },
+      "rates": {
+        "crew_eur_per_hour": 80,
+        "remote_eur_per_hour": 60,
+        "callout_eur": 300,
+        "vehicle_eur_per_travel_hour": 20
+      }
+    }
+  },
+  "tiers": {
+    "smoke": {
+      "hours": 18,
+      "horizon_hours": 6,
+      "solver_seconds": 0.05,
+      "seeds": [
+        7
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        }
+      ],
+      "purpose": "Exercise multi-arm execution, cancellation, preservation and reporting; too short for recovery-value conclusions."
+    },
+    "reference": {
+      "hours": 72,
+      "horizon_hours": 24,
+      "solver_seconds": 0.5,
+      "seeds": [
+        7,
+        19,
+        31
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        }
+      ],
+      "purpose": "Three-day matched descriptive reference; includes startup and ending resources. No annual inference."
+    },
+    "sensitivity": {
+      "hours": 120,
+      "horizon_hours": 24,
+      "solver_seconds": 0.5,
+      "seeds": [
+        7,
+        19,
+        31
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        },
+        {
+          "id": "long-response",
+          "label": "Long crew response",
+          "patch": {
+            "service_system.crew_response_lead_hours": 18
+          }
+        },
+        {
+          "id": "small-plant",
+          "label": "Half solar and electrolyser",
+          "scale": {
+            "plant.electrolyser_kw": 0.5
+          },
+          "solar_design": {
+            "capacity_factor": 0.5
+          }
+        }
+      ],
+      "purpose": "Five-day follow-through, crew response and plant-capacity sensitivity. Model and prices remain declared assumptions."
+    }
+  },
+  "comparison": "Each arm minus Enclosed contact, matched by condition, plant variant, seed and saved weather. Only complete matched traces enter numerical differences. Missing applicable values stay undefined with per-metric pair counts. Failed/incomplete attempts remain visible.",
+  "policy_tuning": "The contact policy and all physical fault streams are shared. No time is spent retrying a known incompatible reading. Only returned eligible evidence can select a reset; human module intervention and operating acceptance remain separate procedures.",
+  "resolution": {
+    "plant_basis": "Reference or active-run plant, production costs, sensors, process implementation choices and solar design. The protocol supplies service hardware, logistics, service prices and challenge settings; every replacement of an active-run value is recorded.",
+    "variants": "Apply declared numerical scales, then replacements, then the condition; explicit tier hours, horizon, solver budget and seed apply last. No implicit capacity scaling of hardware or inventory. Named solar capacity factors also scale every section and converter of an explicit active design; converter fractions change only the converter. All resolved values are retained.",
+    "arms": "Separate runs with one frozen controller policy each. Arm patches may change service machinery, thresholds and prices, but not shared plant/weather/fault inputs or the common environmental-loss model.",
+    "weather": "Saved synthetic reference and forecasts. Each matched group must have identical weather bytes. Wind and rain for work eligibility are explicitly assumed, not site observations.",
+    "faults": "Matched named exogenous streams. Persistent faults start at hour 10 when enabled by the condition; only a compatible successful intervention changes them. Configuration of fault cause, sensor damage and recovery outcome remains outside controller observations.",
+    "randomness": "Named sensor channels and exogenous seed are matched. Mission outcomes use their existing named draws; different missions/exposure can produce different outcomes. This is not a guarantee of identical observations across trajectories.",
+    "costs": "Frozen illustrative prices. Separate allocated period cost, action-dependent cost and modelled expenditure. Applicable unknown prices stay undefined. Routine work and standby are explicit when enabled; no unmodelled reliability benefit is credited.",
+    "terminal": "Retain complete startup and end-of-period plant energy, gases, temperature, robot charge, finite supplies and outstanding/awaiting-verification work. No inventory sale proceeds; extended sensitivity horizons test boundary dependence."
+  },
+  "metric_definitions": {
+    "methane_kg": "Sum of applied methane; hydrogen inventory is separate.",
+    "total_eur": "Allocated plant and service period cost; undefined if an applicable price is missing.",
+    "service_expenditure_eur": "Modelled service billings and procurement events; not total plant cash flow or invoices.",
+    "human_work": "Site visits, actual committed crew hours and remote hours are separate.",
+    "recovery": "Physical fault-active hours are retrospective truth; observation-based diagnosis and completed-unverified work remain distinct.",
+    "terminal": "Completed-unverified restoration counts reset/replacement/calibration work requiring acceptance, not completed cleaning or supplies. All other backlog and ending stores remain available.",
+    "cleaning": "Area treated, completed full passes and water are recorded separately. Partial work changes the surface and consumes resources but does not reset a periodic full-pass clock.",
+    "information": "Usable contact hours count decision intervals containing eligible referenced evidence. First usable hour is from run origin; no reading is not zero latency. Physical fault-active duration remains retrospective.",
+    "support": "Unserved dock control electricity and completed routine procedures are actual interval totals. Procedure completion is not a reliability certificate."
+  },
+  "checks": [
+    "Independent physical, service-resource and three-view economic audit for every complete arm",
+    "Identical matched weather hashes and exogenous input signatures",
+    "Preserved protocol, original prices, source, attempts and numerical rerun differences",
+    "Explicit incomplete data, solver limitations, unsupported prices and unfinished work"
+  ],
+  "limits": [
+    "All mechanical, sensor, procedure and price inputs are illustrative assumptions, not calibrated vendor specifications or field observations.",
+    "Three fixed seeds give descriptive paired means and ranges, not population confidence intervals.",
+    "This is hourly scheduling with fractional service phases and ideal access interlocks, not a collision or pressure-system safety model.",
+    "Local rules do not optimize service timing jointly with process operation. Failed, blocked, incomplete and unverified cases remain part of the evidence.",
+    "Short synthetic periods do not establish annual economics or failure prevention. Usage/environment-dependent degradation remains a separate hypothesis and model.",
+    "A contact reader supplies bounded electrical evidence. The rover does not replace a process module; qualified human work performs that procedure.",
+    "This is an inspection-interface design study only. Prepared replaceable modules and maintenance manipulators still require their own tool, reach, staged isolation/replacement and acceptance models in stage 5."
+  ],
+  "review": {
+    "status": "authored",
+    "scope": "Prospective protocol using current bounded service models. Report interpretation requires actual executed cases; no result is asserted by this specification. Revision 2 explicitly freezes legacy-reason/1 service outcome matching. Switching to target-action-request/1 requires a declared basis change shared across every arm; earlier editions and protocol files retain their original source and outcomes."
+  },
+  "report_metrics": [
+    "contact_first_usable_hour",
+    "contact_usable_decision_hours",
+    "fault_active_hours",
+    "site_visits",
+    "crew_hours",
+    "service_allocated_eur"
+  ]
+}

@@ -1,0 +1,134 @@
+<div class="plant-scene" data-role="plant-scene" data-playing="false">
+  <div class="scene-heading"><span class="muted">SELECT A COMPONENT TO EXPLORE ITS TRADE-OFFS</span><span class="scene-key">━ ELECTRICITY <span>┄ HYDROGEN</span></span></div>
+  <label class="component-picker">INSPECT <select data-role="component-picker" aria-label="Jump to plant component"><option value="">SELECT EQUIPMENT</option><option value="solar">SOLAR ARRAY</option><option value="battery">BATTERY</option><option value="stack">ELECTROLYSER</option><option value="hydrogen">HYDROGEN</option><option value="curtailment">UNUSED SOLAR</option><option value="shared">SHARED PLANT</option></select></label>
+  <div class="scene-scroll" tabindex="0" role="region" aria-label="Connected plant diagram. Scroll horizontally on small screens.">
+    <svg class="plant-drawing" viewBox="0 0 1040 470" role="group" aria-label="Interactive plant: select equipment for operation, costs and trade-offs" data-role="plant-drawing">
+      <defs>
+        <pattern id="plant-dot-grid" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#685032" opacity=".4"/></pattern>
+      </defs>
+      <rect width="1040" height="470" fill="url(#plant-dot-grid)"/>
+      <path class="scene-brackets" d="M1 20V1H20 M1020 1H1039V20 M1 450V469H20 M1020 469H1039V450"/>
+
+      <!-- Static tracks keep the topology legible when equipment is idle. -->
+      <g class="circuit" data-flow="source" data-active="false">
+        <path class="flow-track" d="M206 151H240"/><path class="flow-motion" d="M206 151H240"/>
+      </g>
+      <g class="circuit" data-flow="solar" data-active="false">
+        <path class="flow-track" d="M240 151H372"/><path class="flow-motion" d="M240 151H372"/>
+        <path class="flow-arrow" d="M321 147L328 151L321 155"/>
+      </g>
+      <g class="circuit" data-flow="load" data-active="false">
+        <path class="flow-track" d="M428 151H562"/><path class="flow-motion" d="M428 151H562"/>
+        <path class="flow-arrow" d="M521 147L528 151L521 155"/>
+      </g>
+      <g class="circuit gas-circuit" data-flow="hydrogen" data-active="false">
+        <path class="flow-track" d="M755 130H858"/><path class="flow-motion" d="M755 130H858"/>
+        <path class="flow-arrow" d="M822 126L829 130L822 134"/>
+      </g>
+      <g class="circuit" data-flow="battery" data-active="false" data-direction="charge">
+        <path class="flow-track" d="M400 184V314"/><path class="flow-motion" d="M400 184V314"/>
+        <path class="flow-arrow arrow-charge" d="M396 270L400 277L404 270"/>
+        <path class="flow-arrow arrow-discharge" d="M396 270L400 263L404 270"/>
+      </g>
+      <g class="circuit spill-circuit" data-flow="curtailment" data-active="false">
+        <path class="flow-track" d="M240 151V356H207"/><path class="flow-motion" d="M240 151V356H207"/>
+        <path class="flow-arrow" d="M236 277L240 284L244 277"/>
+      </g>
+      <rect x="237" y="148" width="6" height="6" class="terminal"/>
+      <g class="wire-label"><rect x="261" y="115" width="99" height="21"/><text x="310" y="130" text-anchor="middle"><tspan data-scene-field="solar-flow">0</tspan> kW</text></g>
+      <g class="wire-label"><rect x="444" y="115" width="99" height="21"/><text x="493" y="130" text-anchor="middle"><tspan data-scene-field="load-flow">0</tspan> kW</text></g>
+      <g class="wire-label"><rect x="748" y="91" width="112" height="21"/><text x="804" y="106" text-anchor="middle"><tspan data-scene-field="h2-flow">0.0</tspan> kg/h</text></g>
+      <g class="wire-label"><rect x="414" y="223" width="148" height="48"/><text x="425" y="240" data-scene-field="battery-direction">BATTERY IDLE</text><text x="425" y="259"><tspan data-scene-field="battery-flow">0</tspan> kW</text></g>
+
+      <g class="plant-component solar-component" data-part="solar" data-inspect="solar" role="button" tabindex="0" aria-label="Inspect Solar array" aria-expanded="false" aria-controls="component-inspector" transform="translate(26 30)">
+        <rect class="selection-box" x="-9" y="-9" width="195" height="269"/>
+        <text class="component-title" x="0" y="13">01 / SOLAR ARRAY</text>
+        <g class="sun" transform="translate(45 53)">
+          <circle r="13" class="sun-core"/>
+          <g class="sun-rays"><path d="M0-20V-29 M0 20V29 M20 0H29 M-20 0H-29 M14-14L21-21 M-14 14L-21 21 M14 14L21 21 M-14-14L-21-21"/></g>
+        </g>
+        <path class="solar-light" d="M70 74L97 103 M101 67L126 95 M128 64L151 90"/>
+        <g class="solar-panel">
+          <path class="panel-surface" d="M37 87H181L147 151H3Z"/>
+          <path d="M37 87H181L147 151H3Z M3 151V157H147L181 93V87 M147 151V157 M28 108H170 M16 129H158 M73 87L39 151 M109 87L75 151 M145 87L111 151"/>
+          <path d="M38 157V171H22 M124 157V171H140 M55 157L38 171 M106 157L124 171"/>
+          <path d="M164 121H180"/>
+        </g>
+        <text class="component-value" x="2" y="207"><tspan data-scene-field="solar-power">0</tspan><tspan class="unit"> kW</tspan></text>
+        <text class="component-caption" x="2" y="228" data-scene-field="solar-caption">AWAITING FIRST STEP</text>
+        <text class="cost-annotation" x="2" y="253" data-cost-field="solar"></text>
+      </g>
+
+      <g class="bus-component" transform="translate(372 118)">
+        <text class="component-title" x="28" y="-15" text-anchor="middle">DC BUS</text>
+        <rect width="56" height="66" class="equipment-case"/>
+        <path d="M14 16H42 M14 23H42 M14 43H42 M14 50H42"/>
+        <path class="bus-power" d="M30 27L23 36H30L26 42L35 33H28Z"/>
+        <rect x="-3" y="30" width="6" height="6" class="terminal"/><rect x="53" y="30" width="6" height="6" class="terminal"/><rect x="25" y="63" width="6" height="6" class="terminal"/>
+      </g>
+
+      <g class="plant-component stack-component" data-part="stack" data-inspect="stack" role="button" tabindex="0" aria-label="Inspect Electrolyser" aria-expanded="false" aria-controls="component-inspector" transform="translate(562 30)">
+        <rect class="selection-box" x="-9" y="-9" width="207" height="280"/>
+        <text class="component-title" x="0" y="13">03 / ELECTROLYSER</text>
+        <g class="stack-reticle"><circle cx="96" cy="109" r="82"/><path d="M96 19V32 M96 186V199 M6 109H19 M172 109H185"/></g>
+        <path class="stack-base" d="M8 164H158L187 148H37Z M8 164V172H158L187 156V148 M158 164V172"/>
+        <path d="M0 121H29 M162 100H193 M25 69H153 M25 143H153"/>
+        <g data-role="stack-plates"></g>
+        <path d="M19 78V140 M172 61V125 M19 78L32 66 M19 140L32 128 M32 66V128 M160 66L172 61"/>
+        <rect x="40" y="163" width="91" height="17" class="stack-status-plate"/>
+        <text x="85" y="175" text-anchor="middle" class="stack-status" data-scene-field="stack-state">STANDBY</text>
+        <text class="component-value" x="0" y="207"><tspan data-scene-field="stack-load">0</tspan><tspan class="unit"> % LOAD</tspan></text>
+        <text class="component-caption" x="0" y="228"><tspan data-scene-field="productive-power">0</tspan> kW PRODUCTIVE</text>
+        <text class="component-caption fault-label" x="0" y="249" data-scene-field="stack-capacity">450 kW AVAILABLE</text>
+        <text class="cost-annotation" x="0" y="270" data-cost-field="stack"></text>
+        <text class="cost-annotation" x="0" y="290" data-cost-field="fault"></text>
+      </g>
+
+      <g class="plant-component hydrogen-component" data-part="hydrogen" data-inspect="hydrogen" role="button" tabindex="0" aria-label="Inspect Hydrogen output" aria-expanded="false" aria-controls="component-inspector" transform="translate(858 30)">
+        <rect class="selection-box" x="-9" y="-9" width="171" height="269"/>
+        <text class="component-title" x="0" y="13">04 / HYDROGEN</text>
+        <path d="M0 100H26 M26 91V109 M32 91V109 M32 100H46"/>
+        <circle class="product-orbit" cx="87" cy="100" r="44"/>
+        <g class="molecule"><circle cx="75" cy="100" r="15"/><circle cx="101" cy="100" r="15"/><text x="75" y="104" text-anchor="middle">H</text><text x="101" y="104" text-anchor="middle">H</text></g>
+        <g class="hydrogen-particles"><rect x="130" y="76" width="4" height="4"/><rect x="139" y="98" width="4" height="4"/><rect x="126" y="122" width="4" height="4"/></g>
+        <text class="component-value" x="0" y="207"><tspan data-scene-field="hydrogen-total">0.0</tspan><tspan class="unit"> kg</tspan></text>
+        <text class="component-caption" x="0" y="228">PRODUCED SO FAR</text>
+        <text class="cost-annotation" x="0" y="253" data-cost-field="hydrogen"></text>
+      </g>
+
+      <g class="plant-component battery-component" data-part="battery" data-inspect="battery" role="button" tabindex="0" aria-label="Inspect Battery storage" aria-expanded="false" aria-controls="component-inspector" transform="translate(317 314)">
+        <rect class="selection-box" x="-9" y="-9" width="403" height="147"/>
+        <path d="M83 0V13 M62 13H104"/>
+        <path class="equipment-case" d="M26 22H124V118H26Z M26 22L40 13H138L124 22 M124 22L138 13V109L124 118"/>
+        <g data-role="battery-cells"></g>
+        <path d="M34 118V127H51 M99 118V127H116"/>
+        <path d="M129 32L133 30 M129 41L133 39 M129 50L133 48 M129 59L133 57 M129 68L133 66 M129 77L133 75 M129 86L133 84 M129 95L133 93"/>
+        <text class="component-title" x="161" y="30">02 / BATTERY</text>
+        <text class="component-value" x="161" y="65"><tspan data-scene-field="battery-soc">0</tspan><tspan class="unit"> %</tspan></text>
+        <text class="component-caption" x="161" y="89" data-scene-field="battery-energy">0 / 800 kWh</text>
+        <text class="component-caption" x="161" y="112" data-scene-field="battery-loss">LOSSES 0.0 kWh / STEP</text>
+        <text class="cost-annotation" x="161" y="137" data-cost-field="battery"></text>
+      </g>
+
+      <g class="plant-component curtail-component" data-part="curtailment" data-inspect="curtailment" role="button" tabindex="0" aria-label="Inspect Unused solar" aria-expanded="false" aria-controls="component-inspector" transform="translate(26 309)">
+        <rect class="selection-box" x="-9" y="-9" width="193" height="150"/>
+        <text class="component-title" x="0" y="13">UNUSED SOLAR</text>
+        <path d="M181 47H125 M125 32V62 M115 36V58 M105 41V53"/>
+        <g class="spill-rays"><path d="M90 33L80 23 M87 47H72 M90 61L80 71"/></g>
+        <text class="component-value" x="0" y="100"><tspan data-scene-field="curtailed-power">0</tspan><tspan class="unit"> kW</tspan></text>
+        <text class="component-caption" x="0" y="122">NOT HARVESTED</text>
+        <text class="cost-annotation" x="0" y="145">€0 EXTRA CHARGE</text>
+      </g>
+
+      <g class="scene-notes" transform="translate(740 346)" data-inspect="shared" role="button" tabindex="0" aria-label="Inspect shared plant costs" aria-expanded="false" aria-controls="component-inspector">
+        <rect class="selection-box" x="-9" y="-20" width="285" height="132"/>
+        <text x="0" y="0">05 / SHARED INFRASTRUCTURE</text>
+        <text class="cost-annotation" x="0" y="25" data-cost-field="shared"></text>
+        <text x="0" y="48">SITE · INSTALLATION · OPERATION</text>
+        <text x="0" y="95" data-scene-field="motion-state">MOTION PAUSED / HOUR 000</text>
+      </g>
+    </svg>
+  </div>
+  <div class="scene-pan-hint">SCROLL SIDEWAYS TO FOLLOW THE CONNECTIONS →</div>
+  <div class="scene-story"><span class="story-indicator"></span><p data-role="plant-story">Step through the run to follow the energy.</p></div>
+</div>

@@ -11,11 +11,20 @@ from pathlib import Path
 import gradio as gr
 import plotly.graph_objects as go
 
-from economics import CATEGORIES, Costs, battery_study, evaluate, physical_id, sensitivities
+from economics import (
+    CATEGORIES,
+    Costs,
+    battery_study,
+    cost_timeline,
+    evaluate,
+    physical_id,
+    sensitivities,
+)
+from ui_theme import AMBER, BACKGROUND, COMPARISON, FONT, GRID, INK
 
 ROOT = Path(__file__).resolve().parent
-TEAL, ORANGE = "#087f73", "#cb713c"
-COLORS = ["#b2c7a7", "#4a9294", "#236451", "#bbad91", "#d09c61", "#e7cba1", "#b35e45"]
+TEAL, ORANGE = AMBER, COMPARISON
+COLORS = ["#ffa32d", "#dfc9a9", "#c87c30", "#9d8666", "#e4b76b", "#80613c", "#f7d6a0"]
 # name, label, UI multiplier (fractions shown as percentages), minimum, step
 GROUPS = {
     "Equipment & installation": [
@@ -126,14 +135,14 @@ def styled(fig, height=350):
     fig.update_layout(
         height=height,
         margin={"l": 20, "r": 20, "t": 30, "b": 45},
-        paper_bgcolor="white",
-        plot_bgcolor="white",
-        font={"family": "system-ui, sans-serif", "color": "#233a35", "size": 12},
+        paper_bgcolor=BACKGROUND,
+        plot_bgcolor=BACKGROUND,
+        font={"family": FONT, "color": INK, "size": 11},
         legend={"orientation": "h", "y": -0.25, "x": 0},
         hoverlabel={"namelength": -1},
     )
-    fig.update_xaxes(gridcolor="#e8eae4", zerolinecolor="#c5d1c8")
-    fig.update_yaxes(gridcolor="#e8eae4", zerolinecolor="#c5d1c8")
+    fig.update_xaxes(gridcolor=GRID, zerolinecolor="#685032")
+    fig.update_yaxes(gridcolor=GRID, zerolinecolor="#685032")
     return fig
 
 
@@ -354,7 +363,12 @@ def calculate(physical, *values):
         f"Largest sensitivity in the specified stress ranges: **{largest}**. "
         "All prices and lifetimes are illustrative. This is not annual LCOH or a profit forecast."
     )
-    payload = {"physical": physical, "economics": costed, "sensitivity": sensitivity}
+    payload = {
+        "physical": physical,
+        "economics": costed,
+        "sensitivity": sensitivity,
+        "timeline": cost_timeline(physical, costs),
+    }
     return (
         cards(costed),
         breakdown(costed),
@@ -432,39 +446,67 @@ def validate_study(study, physical, *values):
     )
 
 
-def build_cost_panel(physical_state, initial, html_css):
+# Keep API field order stable while grouping the visible inputs by physical component.
+COST_SECTIONS = {
+    "solar": ["solar_eur_per_kw", "solar_years"],
+    "battery": [
+        "battery_eur_per_kwh",
+        "battery_power_eur_per_kw",
+        "battery_calendar_years",
+        "battery_cycles",
+    ],
+    "stack": [
+        "electrolyser_eur_per_kw",
+        "stack_share",
+        "stack_calendar_years",
+        "stack_operating_hours",
+        "start_equivalent_hours",
+        "repair_eur_per_incident",
+        "visit_eur_per_incident",
+    ],
+    "shared": [
+        "installation_fraction",
+        "site_setup_eur",
+        "other_equipment_years",
+        "fixed_opex_eur_per_year",
+    ],
+    "hydrogen": ["water_litres_per_kg", "water_eur_per_m3", "consumables_eur_per_kg"],
+}
+
+
+def create_cost_inputs():
+    defaults = asdict(Costs())
+    return [
+        gr.Number(
+            defaults[key] * multiplier,
+            label=label,
+            minimum=minimum,
+            step=1 if minimum > 0 else step,
+            min_width=155,
+            maximum=100 if key == "stack_share" else None,
+            render=False,
+        )
+        for key, label, multiplier, minimum, step in FIELDS
+    ]
+
+
+def render_cost_inputs(widgets, section):
+    by_key = {field[0]: widget for field, widget in zip(FIELDS, widgets, strict=True)}
+    for key in COST_SECTIONS[section]:
+        by_key[key].render()
+
+
+def build_cost_panel(physical_state, initial, html_css, widgets, playback):
     defaults = asdict(Costs())
     values = [defaults[f[0]] * f[2] for f in FIELDS]
     initial_view = calculate(initial, *values)
     gr.Markdown(
-        "### Where does the cost come from?\n"
-        "Follow the purchase bill, operating budget and equipment use. "
-        "**Figures are for the completed run; all cost defaults are illustrative EUR assumptions.**"
+        "### Cost analysis · completed run\n"
+        "The component inspector follows the playhead. These reports cover the **whole run**. "
+        "Edit prices and lifetimes in **Experiment setup**, alongside each component."
     )
     summary = gr.HTML(initial_view[0], css_template=html_css)
     status = gr.Markdown(initial_view[9], elem_id="cost-status")
-    with gr.Accordion("Edit cost assumptions · illustrative inputs", open=False):
-        gr.Markdown(
-            "Changes recalculate costs immediately, using the last completed physical run. "
-            "They do not alter dispatch. Site/installation are separate from hardware."
-        )
-        widgets = []
-        for title, group in GROUPS.items():
-            gr.Markdown(f"**{title}**")
-            for i in range(0, len(group), 3):
-                with gr.Row():
-                    for key, label, multiplier, minimum, step in group[i : i + 3]:
-                        widgets.append(
-                            gr.Number(
-                                defaults[key] * multiplier,
-                                label=label,
-                                minimum=minimum,
-                                step=1 if minimum > 0 else step,
-                                min_width=155,
-                                maximum=100 if key == "stack_share" else None,
-                            )
-                        )
-        reset = gr.Button("Reset illustrative cost assumptions", size="sm")
     with gr.Tabs():
         with gr.Tab("Breakdown"):
             bar = gr.Plot(initial_view[1], show_label=False)
@@ -579,7 +621,6 @@ def build_cost_panel(physical_state, initial, html_css):
         api_name="costs",
         show_progress="minimal",
     )
-    reset.click(lambda: values, outputs=widgets, queue=False, api_name=False)
     gr.on(
         triggers=[physical_state.change] + [w.change for w in widgets],
         fn=lambda: (
@@ -604,6 +645,14 @@ def build_cost_panel(physical_state, initial, html_css):
         validate_study,
         inputs=[sizing_state, physical_state, *widgets],
         outputs=[sizing_note, size_download],
+        queue=False,
+        api_name=False,
+    )
+
+    cost_state.change(
+        lambda payload: gr.HTML(economics=payload["timeline"]),
+        inputs=cost_state,
+        outputs=playback,
         queue=False,
         api_name=False,
     )

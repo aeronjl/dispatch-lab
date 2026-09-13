@@ -1,0 +1,165 @@
+<section class="methane-console" tabindex="0" aria-label="Methane plant simulation">
+ <!-- SOLAR WORKSPACE -->
+<!-- MODEL WORKSPACE -->
+<!-- TAXONOMY WORKSPACE -->
+<!-- STUDIES WORKSPACE -->
+ <button class="m-menu-toggle" data-do="menu" aria-label="Simulation menu" aria-expanded="false" title="Simulation menu">☰</button>
+ <div class="m-plant-wrap" tabindex="0" role="region" aria-label="Connected plant diagram. Scroll horizontally on small screens."><svg class="m-plant plant-drawing" viewBox="0 0 1280 550" role="group" aria-label="Connected solar, battery, electrolyser, hydrogen, CO2 and methane plant">
+ <defs><pattern id="m-grid" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#685032" opacity=".4"/></pattern><clipPath id="m-h2-clip"><path d="M26 65C26 45 126 45 126 65V153C126 175 26 175 26 153Z"/></clipPath><clipPath id="m-co2-clip"><path d="M0 34C0 14 80 14 80 34V113C80 133 0 133 0 113Z"/></clipPath></defs>
+ <rect width="1280" height="550" fill="url(#m-grid)"/>
+ <path class="scene-brackets" d="M1 20V1H20 M1260 1H1279V20 M1 530V549H20 M1260 549H1279V530"/>
+ <!-- Retained original isometric equipment; added vessels use the same instrument linework. -->
+<g class="circuit " data-flow="source" data-active="false"><path class="flow-track" d="M210 166H244"/><path class="flow-motion" d="M210 166H244"/></g>
+<g class="circuit " data-flow="solar" data-active="false"><path class="flow-track" d="M244 166H288"/><path class="flow-motion" d="M244 166H288"/></g>
+<g class="circuit " data-flow="load" data-active="false"><path class="flow-track" d="M344 166H428"/><path class="flow-motion" d="M344 166H428"/></g>
+<g class="circuit gas-circuit" data-flow="electrolyser" data-active="false"><path class="flow-track" d="M621 145H700"/><path class="flow-motion" d="M621 145H700"/></g>
+<g class="circuit gas-circuit" data-flow="hydrogen" data-active="false"><path class="flow-track" d="M853 145H938"/><path class="flow-motion" d="M853 145H938"/></g>
+<g class="circuit gas-circuit" data-flow="reactor" data-active="false"><path class="flow-track" d="M1118 145H1140"/><path class="flow-motion" d="M1118 145H1140"/></g>
+<g class="circuit " data-flow="battery" data-active="false"><path class="flow-track" d="M316 199V364"/><path class="flow-motion" d="M316 199V364"/></g>
+<g class="circuit spill-circuit" data-flow="curtailment" data-active="false"><path class="flow-track" d="M244 166V407H211"/><path class="flow-motion" d="M244 166V407H211"/></g>
+<g class="circuit " data-flow="auxiliary" data-active="false"><path class="flow-track" d="M316 335H903V177H958"/><path class="flow-motion" d="M316 335H903V177H958"/></g>
+<g class="circuit gas-circuit" data-flow="co2" data-active="false"><path class="flow-track" d="M830 365V345H925V225H982"/><path class="flow-motion" d="M830 365V345H925V225H982"/></g>
+<rect x="241" y="163" width="6" height="6" class="terminal"/><rect x="313" y="332" width="6" height="6" class="terminal"/>
+ <g class="wire-label"><text x="386" y="146" text-anchor="middle" data-svg="load-flow">0 kW</text><text x="660" y="122" text-anchor="middle" data-svg="h2-flow">0 kg/h</text><text x="895" y="122" text-anchor="middle">H₂ FEED</text><text x="337" y="287" data-svg="battery-direction">BATTERY IDLE</text><text x="337" y="307" data-svg="battery-flow">0 kW</text><text x="659" y="326">HEAT / AUXILIARIES</text><text x="942" y="346">CO₂ FEED ↑</text></g>
+<g class="plant-component solar-component m-component" role="button" tabindex="0" aria-label="Inspect Solar array" transform="translate(30 45)" data-component="solar">
+        <rect class="selection-box" x="-9" y="-9" width="195" height="269" />
+        <text class="component-title" x="0" y="13">01 / SOLAR ARRAY</text>
+        <g class="sun" transform="translate(45 53)">
+          <circle r="13" class="sun-core" />
+          <g class="sun-rays"><path d="M0-20V-29 M0 20V29 M20 0H29 M-20 0H-29 M14-14L21-21 M-14 14L-21 21 M14 14L21 21 M-14-14L-21-21" /></g>
+        </g>
+        <path class="solar-light" d="M70 74L97 103 M101 67L126 95 M128 64L151 90" />
+        <g class="solar-panel">
+          <path class="panel-surface" d="M37 87H181L147 151H3Z" />
+          <path d="M37 87H181L147 151H3Z M3 151V157H147L181 93V87 M147 151V157 M28 108H170 M16 129H158 M73 87L39 151 M109 87L75 151 M145 87L111 151" />
+          <path d="M38 157V171H22 M124 157V171H140 M55 157L38 171 M106 157L124 171" />
+          <path d="M164 121H180" />
+        </g>
+        <text class="component-value" x="2" y="207"><tspan data-svg="solar">0</tspan><tspan class="unit"> kW</tspan></text>
+        <text class="component-caption" x="2" y="228" data-svg="solar-caption">AWAITING FIRST STEP</text>
+        <text class="cost-annotation m-cost" x="2" y="253" data-svg-cost="solar" />
+      </g>
+
+      <g class="bus-component" transform="translate(288 133)">
+        <text class="component-title" x="28" y="-15" text-anchor="middle">DC BUS</text>
+        <rect width="56" height="66" class="equipment-case" />
+        <path d="M14 16H42 M14 23H42 M14 43H42 M14 50H42" />
+        <path class="bus-power" d="M30 27L23 36H30L26 42L35 33H28Z" />
+        <rect x="-3" y="30" width="6" height="6" class="terminal" /><rect x="53" y="30" width="6" height="6" class="terminal" /><rect x="25" y="63" width="6" height="6" class="terminal" />
+      </g>
+
+      <g class="plant-component stack-component m-component" role="button" tabindex="0" aria-label="Inspect Electrolyser" transform="translate(428 45)" data-component="electrolyser">
+        <rect class="selection-box" x="-9" y="-9" width="207" height="280" />
+        <text class="component-title" x="0" y="13">03 / ELECTROLYSER</text>
+        <g class="stack-reticle"><circle cx="96" cy="109" r="82" /><path d="M96 19V32 M96 186V199 M6 109H19 M172 109H185" /></g>
+        <path class="stack-base" d="M8 164H158L187 148H37Z M8 164V172H158L187 156V148 M158 164V172" />
+        <path d="M0 121H29 M162 100H193 M25 69H153 M25 143H153" />
+        <g data-role="stack-plates"><g class="stack-plate" style="--plate-index:0"><path class="plate-front" d="M31 76H42V149H31Z" /><path class="plate-side" d="M42 76L54 65V138L42 149Z M31 76L43 65H54L42 76Z" /><rect class="plate-energy" x="34" y="84" width="5" height="56" /><path d="M34 81H39 M34 144H39" /></g><g class="stack-plate" style="--plate-index:1"><path class="plate-front" d="M49 76H60V149H49Z" /><path class="plate-side" d="M60 76L72 65V138L60 149Z M49 76L61 65H72L60 76Z" /><rect class="plate-energy" x="52" y="84" width="5" height="56" /><path d="M52 81H57 M52 144H57" /></g><g class="stack-plate" style="--plate-index:2"><path class="plate-front" d="M67 76H78V149H67Z" /><path class="plate-side" d="M78 76L90 65V138L78 149Z M67 76L79 65H90L78 76Z" /><rect class="plate-energy" x="70" y="84" width="5" height="56" /><path d="M70 81H75 M70 144H75" /></g><g class="stack-plate" style="--plate-index:3"><path class="plate-front" d="M85 76H96V149H85Z" /><path class="plate-side" d="M96 76L108 65V138L96 149Z M85 76L97 65H108L96 76Z" /><rect class="plate-energy" x="88" y="84" width="5" height="56" /><path d="M88 81H93 M88 144H93" /></g><g class="stack-plate" style="--plate-index:4"><path class="plate-front" d="M103 76H114V149H103Z" /><path class="plate-side" d="M114 76L126 65V138L114 149Z M103 76L115 65H126L114 76Z" /><rect class="plate-energy" x="106" y="84" width="5" height="56" /><path d="M106 81H111 M106 144H111" /></g><g class="stack-plate" style="--plate-index:5"><path class="plate-front" d="M121 76H132V149H121Z" /><path class="plate-side" d="M132 76L144 65V138L132 149Z M121 76L133 65H144L132 76Z" /><rect class="plate-energy" x="124" y="84" width="5" height="56" /><path d="M124 81H129 M124 144H129" /></g><g class="stack-plate" style="--plate-index:6"><path class="plate-front" d="M139 76H150V149H139Z" /><path class="plate-side" d="M150 76L162 65V138L150 149Z M139 76L151 65H162L150 76Z" /><rect class="plate-energy" x="142" y="84" width="5" height="56" /><path d="M142 81H147 M142 144H147" /></g></g>
+        <path d="M19 78V140 M172 61V125 M19 78L32 66 M19 140L32 128 M32 66V128 M160 66L172 61" />
+        <rect x="40" y="163" width="91" height="17" class="stack-status-plate" />
+        <text x="85" y="175" text-anchor="middle" class="stack-status" data-svg="stack-state">STANDBY</text>
+        <text class="component-value" x="0" y="207"><tspan data-svg="stack-load">0</tspan><tspan class="unit"> % LOAD</tspan></text>
+        <text class="component-caption" x="0" y="228"><tspan data-svg="electrolyser">0</tspan> kW PRODUCTIVE</text>
+        <text class="component-caption fault-label" x="0" y="249" data-svg="stack-capacity">450 kW AVAILABLE</text>
+        <text class="cost-annotation m-cost" x="0" y="270" data-svg-cost="electrolyser" />
+        </g>
+
+      <g class="plant-component m-component hydrogen-component vessel-component" data-component="hydrogen" role="button" tabindex="0" aria-label="Inspect hydrogen buffer" transform="translate(700 45)">
+ <rect class="selection-box" x="-9" y="-9" width="179" height="278"/>
+ <text class="component-title" x="0" y="13">04 / H₂ BUFFER</text>
+ <path class="equipment-case" d="M26 65C26 45 126 45 126 65V153C126 175 26 175 26 153Z"/>
+ <rect class="vessel-fill" data-fill="hydrogen" x="26" y="170" width="100" height="0" clip-path="url(#m-h2-clip)"/>
+ <ellipse cx="76" cy="65" rx="50" ry="14"/><path d="M26 151C26 171 126 171 126 151 M26 73C26 93 126 93 126 73 M26 144C26 164 126 164 126 144"/>
+ <path d="M0 100H26 M9 94V106 M15 94V106 M126 100H153 M137 94V106 M143 94V106 M67 49V36H85V49 M62 36H90 M76 36V27 M67 27H85 M37 164V179H53V170 M100 170V179H116V164"/>
+ <path class="vessel-gauge" d="M140 65H151 M146 65V161 M140 161H151 M146 81H151 M146 97H151 M146 113H151 M146 129H151 M146 145H151"/>
+ <path class="vessel-level" data-level="hydrogen" d="M136 161H155"/>
+ <g class="molecule"><circle cx="63" cy="116" r="15"/><circle cx="89" cy="116" r="15"/><text x="63" y="120" text-anchor="middle">H</text><text x="89" y="120" text-anchor="middle">H</text></g>
+ <text class="component-value" x="0" y="207" data-svg="hydrogen">0 kg</text><text class="component-caption" x="0" y="228" data-svg="h2-headroom">OF 60 kg / STORED</text><text class="cost-annotation m-cost" x="0" y="253" data-svg-cost="hydrogen"></text>
+ </g>
+ <g class="plant-component m-component reactor-component" data-component="reactor" role="button" tabindex="0" aria-label="Inspect methanator" transform="translate(938 45)">
+ <rect class="selection-box" x="-9" y="-9" width="194" height="291"/>
+ <text class="component-title" x="0" y="13">06 / METHANATOR</text>
+ <g class="stack-reticle"><circle cx="66" cy="110" r="75"/><path d="M66 27V36 M66 184V193"/></g>
+ <path class="equipment-case" d="M20 66C20 38 112 38 112 66V155C112 181 20 181 20 155Z"/>
+ <path class="m-heat" d="M29 70C29 53 103 53 103 70V150C103 169 29 169 29 150Z"/>
+ <ellipse cx="66" cy="66" rx="46" ry="16"/><path d="M20 73C20 95 112 95 112 73 M20 145C20 170 112 170 112 145 M20 153C20 178 112 178 112 153"/>
+ <path d="M0 100H20 M6 94V106 M13 94V106 M112 100H180 M118 94V106 M125 94V106 M34 167V180H50V173 M86 173V180H102V167 M44 180V174"/>
+ <g class="reactor-bed"><path d="M41 89H91V143H41Z M41 102H91 M41 116H91 M41 130H91 M51 89V143 M66 89V143 M81 89V143"/></g>
+ <path class="heater-coil" d="M20 132H29L35 126L29 117L35 108L29 99V87"/>
+ <path d="M112 127H150V141 M150 169V183H101 M129 141H171V169H129Z M132 138L139 132H177V162L171 169 M171 141L177 132"/>
+ <circle cx="150" cy="155" r="11"/><g class="m-fan"><path d="M150 145V165 M140 155H160 M143 148L157 162 M157 148L143 162"/></g>
+ <text class="component-caption" x="135" y="198">COOLING</text>
+ <text class="component-value" x="0" y="222" data-svg="reactor">20 °C</text><text class="component-caption" x="0" y="244" data-svg="thermal">HEAT 0 kW</text><text class="cost-annotation m-cost" x="0" y="267" data-svg-cost="reactor"></text>
+ </g>
+ <g class="plant-component hydrogen-component methane-product" transform="translate(1140 45)">
+ <text class="component-title" x="0" y="13">07 / METHANE</text><path d="M0 100H17 M5 94V106 M11 94V106"/>
+ <circle class="product-orbit" cx="63" cy="100" r="44"/>
+ <g class="molecule"><path d="M63 88V77 M63 112V123 M51 100H40 M75 100H86"/><circle cx="63" cy="100" r="12"/><circle cx="63" cy="69" r="8"/><circle cx="63" cy="131" r="8"/><circle cx="32" cy="100" r="8"/><circle cx="94" cy="100" r="8"/><text x="63" y="104" text-anchor="middle">C</text><text x="63" y="73" text-anchor="middle">H</text><text x="63" y="135" text-anchor="middle">H</text><text x="32" y="104" text-anchor="middle">H</text><text x="94" y="104" text-anchor="middle">H</text></g>
+ <g class="hydrogen-particles"><rect x="113" y="76" width="3" height="3"/><rect x="117" y="98" width="3" height="3"/><rect x="111" y="122" width="3" height="3"/></g>
+ <text class="component-value" x="0" y="207" data-svg="methane">0 kg/h</text><text class="component-caption" x="0" y="228">PRODUCT OUT</text>
+ </g>
+<g class="plant-component battery-component m-component" role="button" tabindex="0" aria-label="Inspect Battery storage" transform="translate(233 364)" data-component="battery">
+        <rect class="selection-box" x="-9" y="-9" width="403" height="147" />
+        <path d="M83 0V13 M62 13H104" />
+        <path class="equipment-case" d="M26 22H124V118H26Z M26 22L40 13H138L124 22 M124 22L138 13V109L124 118" />
+        <g data-role="battery-cells"><g><rect class="battery-module" x="36" y="31" width="76" height="20" /><rect class="battery-fill" data-cell="0" x="39" y="34" width="0" height="14" /><path d="M115 37H118V45H115" /></g><g><rect class="battery-module" x="36" y="58" width="76" height="20" /><rect class="battery-fill" data-cell="1" x="39" y="61" width="0" height="14" /><path d="M115 64H118V72H115" /></g><g><rect class="battery-module" x="36" y="85" width="76" height="20" /><rect class="battery-fill" data-cell="2" x="39" y="88" width="0" height="14" /><path d="M115 91H118V99H115" /></g></g>
+        <path d="M34 118V127H51 M99 118V127H116" />
+        <path d="M129 32L133 30 M129 41L133 39 M129 50L133 48 M129 59L133 57 M129 68L133 66 M129 77L133 75 M129 86L133 84 M129 95L133 93" />
+        <text class="component-title" x="161" y="30">02 / BATTERY</text>
+        <text class="component-value" x="161" y="65"><tspan data-svg="battery-soc">0</tspan><tspan class="unit"> %</tspan></text>
+        <text class="component-caption" x="161" y="89" data-svg="battery">0 / 800 kWh</text>
+        <text class="component-caption" x="161" y="112" data-svg="battery-loss">LOSSES 0.0 kWh / STEP</text>
+        <text class="cost-annotation m-cost" x="161" y="137" data-svg-cost="battery" />
+      </g>
+
+      <g class="plant-component curtail-component" transform="translate(30 360)">
+        <rect class="selection-box" x="-9" y="-9" width="193" height="150" />
+        <text class="component-title" x="0" y="13">UNUSED SOLAR</text>
+        <path d="M181 47H125 M125 32V62 M115 36V58 M105 41V53" />
+        <g class="spill-rays"><path d="M90 33L80 23 M87 47H72 M90 61L80 71" /></g>
+        <text class="component-value" x="0" y="100"><tspan data-svg="curtail">0</tspan><tspan class="unit"> kW</tspan></text>
+        <text class="component-caption" x="0" y="122">NOT HARVESTED</text>
+        <text class="cost-annotation m-cost" x="0" y="145">€0 EXTRA CHARGE</text>
+      </g>
+
+      <g class="plant-component m-component vessel-component" data-component="co2" role="button" tabindex="0" aria-label="Inspect CO2 buffer" transform="translate(790 365)">
+ <rect class="selection-box" x="-12" y="-9" width="389" height="151"/>
+ <path class="equipment-case" d="M0 34C0 14 80 14 80 34V113C80 133 0 133 0 113Z"/>
+ <rect class="vessel-fill" data-fill="co2" x="0" y="130" width="80" height="0" clip-path="url(#m-co2-clip)"/>
+ <ellipse cx="40" cy="34" rx="40" ry="12"/><path d="M0 41C0 61 80 61 80 41 M0 105C0 125 80 125 80 105 M0 113C0 133 80 133 80 113 M31 21V10H49V21 M27 10H53 M40 0V10 M12 123V137H25V128 M55 128V137H68V123"/>
+ <path class="vessel-gauge" d="M90 34H101 M96 34V121 M90 121H101 M96 51H101 M96 69H101 M96 87H101 M96 105H101"/><path class="vessel-level" data-level="co2" d="M86 121H105"/>
+ <text x="40" y="87" text-anchor="middle">CO₂</text>
+ <text class="component-title" x="127" y="30">05 / CO₂ SUPPLY</text><text class="component-value" x="127" y="65" data-svg="co2">500 kg</text><text class="component-caption" x="127" y="89" data-svg="co2-capacity">OF 1,000 kg / STORED</text><text class="component-caption" x="127" y="112" data-svg="co2-delivery">DELIVERY 0 kg / STEP</text><text class="cost-annotation m-cost" x="127" y="137" data-svg-cost="co2"></text>
+ </g>
+ <text x="30" y="535" class="cost-annotation m-cost" data-svg-cost="site"></text><text x="1250" y="535" text-anchor="end" class="component-caption">HOURLY STATE / SELECT TO INSPECT</text>
+ </svg></div>
+ <aside class="m-utility" hidden role="dialog" aria-label="Simulation menu">
+  <div class="m-panel-head"><h2>Simulation</h2><button data-do="dismiss" aria-label="Close simulation menu" title="Close">×</button></div>
+  <nav class="m-utility-tabs" aria-label="Simulation information"><button data-panel="run" aria-pressed="true">Run</button><button data-panel="events" aria-pressed="false">Events</button><button data-panel="compare" aria-pressed="false">Compare</button><button data-panel="services" aria-pressed="false">Site services</button><button data-panel="truth" aria-pressed="false">Truth</button></nav>
+  <div class="m-utility-body">
+   <section data-utility-section="run">
+    <div class="m-mobile-select" aria-label="Select equipment"></div>
+    <div class="m-run-context"><time data-m="time"></time><p data-m="source" class="m-muted"></p></div>
+    <label class="m-policy">Controller<select data-m="controller" aria-label="Controller"></select></label>
+    <div class="m-score"><div><span>Methane produced</span><strong data-m="methane"></strong></div><div><span>Reactor</span><strong data-m="mode"></strong></div><div><span>Estimated capacity</span><strong data-m="capacity"></strong></div><div class="m-cost"><span>Allocated cost</span><strong data-m="cost"></strong></div><div class="m-cost"><span>Per kg CH₄</span><strong data-m="unit"></strong></div></div>
+    <button data-do="costs" aria-pressed="true">COSTS ON</button>
+    <p class="m-menu-help">Select equipment to inspect it.<br>━ Electricity · ┄ Material flow</p>
+    <p class="m-menu-help">Space to play · ← → to step<br>R to reset · H to hide controls · Esc to close</p>
+   </section>
+   <section data-utility-section="events" hidden><div class="m-event-head"><span data-m="diagnosis"></span></div><div class="m-events" aria-label="Simulation events"></div><button data-do="guide">GUIDED WALKTHROUGH →</button></section>
+   <section data-utility-section="compare" class="m-comparison" hidden><p>Through the selected hour</p><div data-m="comparison"></div></section>
+   <section data-utility-section="services" class="m-services" hidden><div data-service-alternatives><button data-sa="open" hidden aria-expanded="false">Compare a service alternative</button><section data-sa="workspace" hidden aria-label="Service decision comparison"></section></div><div data-m="services"></div></section>
+   <section data-utility-section="truth" class="m-truth" hidden><p>Retrospective analysis. These injected conditions were withheld from the controller.</p><pre data-m="truth"></pre></section>
+  </div>
+  <nav class="m-utility-links" aria-label="Workspaces"><button data-do="setup">Experiment setup ↗</button><button data-do="analysis">Analysis & archives ↗</button><button data-model-topic="battery">Model ↗</button><button data-explore="site">Explore plant ↗</button><button data-do="studies">Studies ↗</button><button data-do="study-origin" class="st-run-origin" hidden>Return to study ↗</button><button data-do="hide-ui">Hide controls</button></nav>
+ </aside>
+ <aside class="m-inspector" hidden role="dialog" aria-label="Component inspector"><div class="m-inspector-head"><div><span class="m-eyebrow" data-m="asset"></span><h3 data-m="selected"></h3></div><button data-do="close" aria-label="Close component inspector" title="Close">×</button></div><nav class="m-inspector-tabs" aria-label="Inspector sections"></nav><div class="m-inspector-content" aria-live="polite"></div></aside>
+ <div class="m-dock">
+  <div class="m-timeline" hidden>
+   <div class="m-timeline-head"><span data-m="interval">INITIAL STATE</span><button data-do="reset" aria-label="Reset playback" title="Reset">↺</button></div>
+   <input type="range" data-m="scrubber" min="0" max="72" step="1" value="0" aria-label="Simulation hour"/>
+   <label>Speed <select data-m="speed" aria-label="Playback speed"><option>0.25</option><option>0.5</option><option selected>1</option><option>2</option><option>4</option><option>8</option></select> ×</label><span class="m-clock-note">1× = 1 hour / second</span>
+  </div>
+  <div class="m-transport"><button data-do="back" aria-label="Step back" title="Step back">|‹</button><button data-do="play" class="m-play" aria-label="Play simulation" title="Play / pause">▶</button><button data-do="next" aria-label="Step forward" title="Step forward">›|</button><button data-do="timeline" aria-label="Playback details" aria-expanded="false" title="Timeline & speed">⋯</button></div>
+ </div>
+</section>

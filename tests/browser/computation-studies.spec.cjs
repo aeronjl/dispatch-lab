@@ -1,0 +1,13 @@
+const {test,expect}=require('@playwright/test');
+async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toBeVisible();}
+
+test('computation preview exposes separate budgets and distinguishes repetitions from seeds',async({page})=>{
+ await open(page);await page.locator('[data-st=new]').click();await page.locator('[data-st=protocol-choice]').selectOption('field-computation');await expect(page.locator('[data-st=start]')).toBeEnabled();await expect(page.locator('.st-preview')).toContainText('repetitions per unchanged seed');await expect(page.locator('.st-preview')).toContainText('not new environmental samples');await expect(page.locator('.st-preview')).toContainText('Process / s');await expect(page.locator('.st-preview')).toContainText('Investigation / s');await page.keyboard.press('Escape');await page.keyboard.press('Escape');await expect(page.locator('[data-do=studies]')).toBeFocused();
+});
+
+test('recorded computation qualification links to its cases and remains usable on narrow screens',async({page})=>{
+ test.skip(!process.env.DISPATCH_COMPUTATION_STUDIES,'Requires a separate, actually executed short computation fixture.');
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));await open(page);await expect(page.locator('.st-article h1')).toContainText('computation budget');await expect(page.locator('.st-article')).toContainText('4/4 complete cases');await expect(page.locator('.st-article')).toContainText('Computation qualification');await expect(page.locator('.st-article')).toContainText('does not prove optimality or determinism');
+ const table=page.getByRole('heading',{name:'Computation qualification',exact:true}).locator('xpath=following-sibling::div[1]');await expect(table).toContainText('2/2');await table.locator('button[data-case]').first().click();await expect(page.locator('.st-panel-body')).toContainText('Recorded decisions');await page.locator('[data-trace=methane_kg]').click();await expect(page.locator('.st-panel-body')).toContainText('Identity and assumptions');await page.keyboard.press('Escape');
+ await page.locator('.st-workspace').screenshot({path:'build/services/computation/checks/workspace.png'});await page.setViewportSize({width:390,height:844});expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();await page.locator('.st-workspace').screenshot({path:'build/services/computation/checks/workspace-narrow.png'});await page.keyboard.press('Escape');await expect(page.locator('[data-do=studies]')).toBeFocused();expect(errors).toEqual([]);
+});

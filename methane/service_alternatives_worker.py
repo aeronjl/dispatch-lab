@@ -1,0 +1,39 @@
+"""Isolated original-information comparison; receives no completed source run."""
+
+import json
+import os
+import sys
+from pathlib import Path
+
+
+def main():
+    root = Path(sys.argv[1])
+    try:
+        os.nice(5)
+    except (AttributeError, OSError):
+        pass
+
+    def progress(message):
+        (root / "progress.txt").write_text(message)
+
+    progress("Loading recorded service planning information")
+    from methane.services.alternatives import compare
+
+    try:
+        inputs = json.loads((root / "input.json").read_text())
+        if inputs["alternative"].get("kind") == "investigation":
+            from methane.services.investigation_alternatives import compare as investigation
+
+            result = investigation(inputs["packet"], inputs["alternative"], progress=progress)
+        else:
+            result = compare(inputs["packet"], inputs["alternative"], progress=progress)
+    except (ValueError, KeyError, TypeError) as exc:
+        result = dict(status="incomplete", error=str(exc))
+    # Pollers only read a complete file, including while the worker exits.
+    pending = root / "result.pending"
+    pending.write_text(json.dumps(result, allow_nan=False))
+    pending.replace(root / "result.json")
+
+
+if __name__ == "__main__":
+    main()

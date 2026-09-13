@@ -1,0 +1,1904 @@
+{
+  "config": {
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.0,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.3,
+      "heat_loss_kw_per_k": 0.08,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0.02,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1
+    },
+    "scenario": {
+      "hours": 24,
+      "horizon_hours": 6,
+      "seed": 7,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 34,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 1,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.5
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0.14,
+      "noct_c": 45,
+      "temperature_coefficient": -0.004,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null
+  },
+  "rows": [
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 13.239879958252589,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 13.239879958252589,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 0.0,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 13.056565062053291,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 12.45672280493228,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 0.05499446885978886,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 12.821268215435138,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 12.051330831757138,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 0.07058905398544622,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 12.641047692682454,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 12.051330831757138,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 0.05406615682580535,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 12.597902459926022,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 12.45672280493228,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 0.01294356982692985,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 12.748171199691827,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 13.239879958252589,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": -0.04508062192974161,
+      "forced_trip": false,
+      "mode": "off"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 8.810201793363161,
+        "discharge_kw": 0.0,
+        "heater_kw": 60.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 8.358091293818315,
+        "h2_kg": 0.0,
+        "co2_kg": 500.0,
+        "temperature_c": 188.67625892475235,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 68.81020179336316,
+      "ambient_c": 14.347431425947676,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 7.221573682481841,
+      "forced_trip": false,
+      "mode": "warming"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 233.22676850843374,
+        "charge_kw": 0.0,
+        "discharge_kw": 7.9291816140268345,
+        "heater_kw": 36.50563009245626,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 1.0658141036401503e-14,
+        "h2_kg": 4.24048670015334,
+        "co2_kg": 500.0,
+        "temperature_c": 255.0,
+        "electrolyser_on": true,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 301.80321698686316,
+      "ambient_c": 15.703899405809462,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 16.608507769881957,
+      "forced_trip": false,
+      "mode": "warming"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 390.4252450794439,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 9.999999999999998
+      },
+      "state": {
+        "battery_kwh": 1.0658141036401503e-14,
+        "h2_kg": 6.339127519779596,
+        "co2_kg": 472.5,
+        "temperature_c": 283.15642388700576,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 3
+      },
+      "pv_kw": 402.42524507944387,
+      "ambient_c": 17.21684284667969,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.499999999999996,
+      "reaction_heat_kwh": 28.64583333333333,
+      "heat_loss_kwh": 20.19890616723159,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 434.217679993805,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.000000000000002
+      },
+      "state": {
+        "battery_kwh": 1.0658141036401503e-14,
+        "h2_kg": 9.233994428757867,
+        "co2_kg": 445.0,
+        "temperature_c": 305.0888566414694,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 2
+      },
+      "pv_kw": 446.217679993805,
+      "ambient_c": 18.78315715332031,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.500000000000004,
+      "reaction_heat_kwh": 28.64583333333334,
+      "heat_loss_kwh": 22.06610350699424,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 143.49956276893985,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 9.999999999999998
+      },
+      "state": {
+        "battery_kwh": 136.13563847644457,
+        "h2_kg": 12.415812610576047,
+        "co2_kg": 417.5,
+        "temperature_c": 322.2416656025549,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 1
+      },
+      "pv_kw": 605.4995627689399,
+      "ambient_c": 20.296100594190538,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.499999999999996,
+      "reaction_heat_kwh": 28.64583333333333,
+      "heat_loss_kwh": 23.49999064500767,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 225.54325756025037,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 350.1047599117594,
+        "h2_kg": 15.597630792394227,
+        "co2_kg": 390.0,
+        "temperature_c": 335.6969987824068,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 687.5432575602504,
+      "ambient_c": 21.652568574052324,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 24.60923337937776,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 220.422198770509,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 559.2156184049118,
+        "h2_kg": 18.779448974212407,
+        "co2_kg": 362.5,
+        "temperature_c": 346.26206617938357,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 682.422198770509,
+      "ambient_c": 22.760120041747413,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 25.476313114240302,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 47.66046875912275,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 604.4303090939499,
+        "h2_kg": 21.961267156030587,
+        "co2_kg": 335.0,
+        "temperature_c": 354.5374655916598,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 509.66046875912275,
+      "ambient_c": 23.54327719506772,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 26.16321350965046,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 5.539824986277608,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 609.6858485325544,
+        "h2_kg": 25.143085337848767,
+        "co2_kg": 307.5,
+        "temperature_c": 360.970719285583,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 467.5398249862776,
+      "ambient_c": 23.948669168242862,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 26.715857225156352,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 429.6149639371436,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 609.6858485325544,
+        "h2_kg": 27.954266500342285,
+        "co2_kg": 280.0,
+        "temperature_c": 365.8981305976479,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 441.6149639371436,
+      "ambient_c": 23.948669168242862,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 27.167609939713863,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 450.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 262.2888669307663,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 333.2091070638747,
+        "h2_kg": 31.136084682160465,
+        "co2_kg": 252.5,
+        "temperature_c": 369.57728378356217,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 199.71113306923374,
+      "ambient_c": 23.54327719506772,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 27.54208737755904,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 372.2704254719232,
+        "charge_kw": 0.0,
+        "discharge_kw": 316.1099146298234,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 10.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 372.2119365736392,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "pv_kw": 68.16051084209984,
+      "ambient_c": 22.760120041747413,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 22.5,
+      "reaction_heat_kwh": 28.645833333333336,
+      "heat_loss_kwh": 27.855437496310213,
+      "forced_trip": false,
+      "mode": "running"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 290.1559228041373,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 21.652568574052324,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 24.61680413085057,
+      "forced_trip": false,
+      "mode": "cooling"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 226.98938581083456,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 20.29610059419054,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 18.949961097990812,
+      "forced_trip": false,
+      "mode": "cooling"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 178.25420790614032,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 18.78315715332031,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 14.620553371408278,
+      "forced_trip": false,
+      "mode": "cooling"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 140.5599242812937,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 17.21684284667969,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 11.308285087453983,
+      "forced_trip": false,
+      "mode": "cooling"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 111.33466707350435,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 15.703899405809462,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 8.767577162336805,
+      "forced_trip": false,
+      "mode": "cooling"
+    },
+    {
+      "applied": {
+        "electrolyser_kw": 0.0,
+        "charge_kw": 0.0,
+        "discharge_kw": 0.0,
+        "heater_kw": 0.0,
+        "cooling_kw": 0.0,
+        "methane_kg": 0.0
+      },
+      "state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 32.90463787255907,
+        "co2_kg": 225.0,
+        "temperature_c": 88.63270366806138,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "pv_kw": 0,
+      "ambient_c": 14.347431425947676,
+      "co2_delivered_kg": 0.0,
+      "water_produced_kg": 0.0,
+      "reaction_heat_kwh": 0.0,
+      "heat_loss_kwh": 6.81058902163289,
+      "forced_trip": false,
+      "mode": "cooling"
+    }
+  ],
+  "solar": [
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 13.239879958252589,
+      "sun_elevation_deg": -16.05774820067538
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 12.45672280493228,
+      "sun_elevation_deg": -13.957027070421729
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 12.051330831757138,
+      "sun_elevation_deg": -9.738856897991782
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.051330831757138,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 12.051330831757138,
+      "sun_elevation_deg": -3.7501898605648885
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 12.45672280493228,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 12.45672280493228,
+      "sun_elevation_deg": 3.611428938839091
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 13.239879958252589,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 13.239879958252589,
+      "sun_elevation_deg": 11.963018071151039
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 77.46124814026972,
+          "temperature_c": 16.768095430331105,
+          "gross_kw": 25.82041604675657,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": -0.8502048033841874,
+          "electrical_loss_kw": 3.7338869190197066,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.93673393112105
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 77.46124814026972,
+          "temperature_c": 16.768095430331105,
+          "gross_kw": 25.82041604675657,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": -0.8502048033841874,
+          "electrical_loss_kw": 3.7338869190197066,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.93673393112105
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 77.46124814026972,
+          "temperature_c": 16.768095430331105,
+          "gross_kw": 25.82041604675657,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": -0.8502048033841874,
+          "electrical_loss_kw": 3.7338869190197066,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.93673393112105
+        }
+      ],
+      "available_kw": 68.81020179336315,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 68.81020179336315,
+      "reference_irradiance_wm2": 77.46124814026972,
+      "ambient_c": 14.347431425947676,
+      "sun_elevation_deg": 20.95486997000788
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 353.4046904321025,
+          "temperature_c": 26.747795981812665,
+          "gross_kw": 117.80156347736748,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.8235723971879594,
+          "electrical_loss_kw": 16.376918751225134,
+          "offline_loss_kw": 0.0,
+          "available_kw": 100.60107232895439
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 353.4046904321025,
+          "temperature_c": 26.747795981812665,
+          "gross_kw": 117.80156347736748,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.8235723971879594,
+          "electrical_loss_kw": 16.376918751225134,
+          "offline_loss_kw": 0.0,
+          "available_kw": 100.60107232895439
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 353.4046904321025,
+          "temperature_c": 26.747795981812665,
+          "gross_kw": 117.80156347736748,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.8235723971879594,
+          "electrical_loss_kw": 16.376918751225134,
+          "offline_loss_kw": 0.0,
+          "available_kw": 100.60107232895439
+        }
+      ],
+      "available_kw": 301.80321698686316,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 301.80321698686316,
+      "reference_irradiance_wm2": 353.4046904321025,
+      "ambient_c": 15.703899405809462,
+      "sun_elevation_deg": 30.251720628514622
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 481.9680492710718,
+          "temperature_c": 32.27834438640068,
+          "gross_kw": 160.65601642369057,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 4.67723926111546,
+          "electrical_loss_kw": 21.83702880276053,
+          "offline_loss_kw": 0.0,
+          "available_kw": 134.14174835981459
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 481.9680492710718,
+          "temperature_c": 32.27834438640068,
+          "gross_kw": 160.65601642369057,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 4.67723926111546,
+          "electrical_loss_kw": 21.83702880276053,
+          "offline_loss_kw": 0.0,
+          "available_kw": 134.14174835981459
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 481.9680492710718,
+          "temperature_c": 32.27834438640068,
+          "gross_kw": 160.65601642369057,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 4.67723926111546,
+          "electrical_loss_kw": 21.83702880276053,
+          "offline_loss_kw": 0.0,
+          "available_kw": 134.14174835981459
+        }
+      ],
+      "available_kw": 402.42524507944376,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 402.42524507944376,
+      "reference_irradiance_wm2": 481.9680492710718,
+      "ambient_c": 17.21684284667969,
+      "sun_elevation_deg": 39.48094172780912
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 542.112612325873,
+          "temperature_c": 35.72417628850384,
+          "gross_kw": 180.7042041086243,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 7.75161496373866,
+          "electrical_loss_kw": 24.21336248028399,
+          "offline_loss_kw": 0.0,
+          "available_kw": 148.73922666460166
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 542.112612325873,
+          "temperature_c": 35.72417628850384,
+          "gross_kw": 180.7042041086243,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 7.75161496373866,
+          "electrical_loss_kw": 24.21336248028399,
+          "offline_loss_kw": 0.0,
+          "available_kw": 148.73922666460166
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 542.112612325873,
+          "temperature_c": 35.72417628850384,
+          "gross_kw": 180.7042041086243,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 7.75161496373866,
+          "electrical_loss_kw": 24.21336248028399,
+          "offline_loss_kw": 0.0,
+          "available_kw": 148.73922666460166
+        }
+      ],
+      "available_kw": 446.21767999380495,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 446.21767999380495,
+      "reference_irradiance_wm2": 542.112612325873,
+      "ambient_c": 18.78315715332031,
+      "sun_elevation_deg": 48.13335811384112
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 762.3770198383739,
+          "temperature_c": 44.12038246413972,
+          "gross_kw": 254.12567327945797,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 19.435920268240977,
+          "electrical_loss_kw": 32.856565421570394,
+          "offline_loss_kw": 0.0,
+          "available_kw": 201.8331875896466
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 762.3770198383739,
+          "temperature_c": 44.12038246413972,
+          "gross_kw": 254.12567327945797,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 19.435920268240977,
+          "electrical_loss_kw": 32.856565421570394,
+          "offline_loss_kw": 0.0,
+          "available_kw": 201.8331875896466
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 762.3770198383739,
+          "temperature_c": 44.12038246413972,
+          "gross_kw": 254.12567327945797,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 19.435920268240977,
+          "electrical_loss_kw": 32.856565421570394,
+          "offline_loss_kw": 0.0,
+          "available_kw": 201.8331875896466
+        }
+      ],
+      "available_kw": 605.4995627689398,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 605.4995627689398,
+      "reference_irradiance_wm2": 762.3770198383739,
+      "ambient_c": 20.296100594190538,
+      "sun_elevation_deg": 55.387873580065005
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 885.6591970994882,
+          "temperature_c": 49.32941848341133,
+          "gross_kw": 295.21973236649603,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 28.730097653220696,
+          "electrical_loss_kw": 37.30854885985855,
+          "offline_loss_kw": 0.0,
+          "available_kw": 229.1810858534168
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 885.6591970994882,
+          "temperature_c": 49.32941848341133,
+          "gross_kw": 295.21973236649603,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 28.730097653220696,
+          "electrical_loss_kw": 37.30854885985855,
+          "offline_loss_kw": 0.0,
+          "available_kw": 229.1810858534168
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 885.6591970994882,
+          "temperature_c": 49.32941848341133,
+          "gross_kw": 295.21973236649603,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 28.730097653220696,
+          "electrical_loss_kw": 37.30854885985855,
+          "offline_loss_kw": 0.0,
+          "available_kw": 229.1810858534168
+        }
+      ],
+      "available_kw": 687.5432575602504,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 687.5432575602504,
+      "reference_irradiance_wm2": 885.6591970994882,
+      "ambient_c": 21.652568574052324,
+      "sun_elevation_deg": 59.932094579545264
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 883.0812657399158,
+          "temperature_c": 50.35640959611978,
+          "gross_kw": 294.36042191330523,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 29.85569370768161,
+          "electrical_loss_kw": 37.0306619487873,
+          "offline_loss_kw": 0.0,
+          "available_kw": 227.47406625683632
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 883.0812657399158,
+          "temperature_c": 50.35640959611978,
+          "gross_kw": 294.36042191330523,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 29.85569370768161,
+          "electrical_loss_kw": 37.0306619487873,
+          "offline_loss_kw": 0.0,
+          "available_kw": 227.47406625683632
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 883.0812657399158,
+          "temperature_c": 50.35640959611978,
+          "gross_kw": 294.36042191330523,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 29.85569370768161,
+          "electrical_loss_kw": 37.0306619487873,
+          "offline_loss_kw": 0.0,
+          "available_kw": 227.47406625683632
+        }
+      ],
+      "available_kw": 682.422198770509,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 682.422198770509,
+      "reference_irradiance_wm2": 883.0812657399158,
+      "ambient_c": 22.760120041747413,
+      "sun_elevation_deg": 60.349331116138245
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 640.1173329753092,
+          "temperature_c": 43.54694385054613,
+          "gross_kw": 213.37244432510303,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 15.829626976605851,
+          "electrical_loss_kw": 27.655994428789597,
+          "offline_loss_kw": 0.0,
+          "available_kw": 169.88682291970758
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 640.1173329753092,
+          "temperature_c": 43.54694385054613,
+          "gross_kw": 213.37244432510303,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 15.829626976605851,
+          "electrical_loss_kw": 27.655994428789597,
+          "offline_loss_kw": 0.0,
+          "available_kw": 169.88682291970758
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 640.1173329753092,
+          "temperature_c": 43.54694385054613,
+          "gross_kw": 213.37244432510303,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 15.829626976605851,
+          "electrical_loss_kw": 27.655994428789597,
+          "offline_loss_kw": 0.0,
+          "available_kw": 169.88682291970758
+        }
+      ],
+      "available_kw": 509.66046875912275,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 509.66046875912275,
+      "reference_irradiance_wm2": 640.1173329753092,
+      "ambient_c": 23.54327719506772,
+      "sun_elevation_deg": 56.47509154236732
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 583.798481254207,
+          "temperature_c": 42.192371707436834,
+          "gross_kw": 194.59949375140232,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 13.382507322612554,
+          "electrical_loss_kw": 25.370378100030564,
+          "offline_loss_kw": 0.0,
+          "available_kw": 155.8466083287592
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 583.798481254207,
+          "temperature_c": 42.192371707436834,
+          "gross_kw": 194.59949375140232,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 13.382507322612554,
+          "electrical_loss_kw": 25.370378100030564,
+          "offline_loss_kw": 0.0,
+          "available_kw": 155.8466083287592
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 583.798481254207,
+          "temperature_c": 42.192371707436834,
+          "gross_kw": 194.59949375140232,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 13.382507322612554,
+          "electrical_loss_kw": 25.370378100030564,
+          "offline_loss_kw": 0.0,
+          "available_kw": 155.8466083287592
+        }
+      ],
+      "available_kw": 467.5398249862776,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 467.5398249862776,
+      "reference_irradiance_wm2": 583.798481254207,
+      "ambient_c": 23.948669168242862,
+      "sun_elevation_deg": 49.60629720509522
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 548.852561295959,
+          "temperature_c": 41.100311708741586,
+          "gross_kw": 182.9508537653197,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 11.782263092008208,
+          "electrical_loss_kw": 23.963602694263614,
+          "offline_loss_kw": 0.0,
+          "available_kw": 147.20498797904787
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 548.852561295959,
+          "temperature_c": 41.100311708741586,
+          "gross_kw": 182.9508537653197,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 11.782263092008208,
+          "electrical_loss_kw": 23.963602694263614,
+          "offline_loss_kw": 0.0,
+          "available_kw": 147.20498797904787
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 548.852561295959,
+          "temperature_c": 41.100311708741586,
+          "gross_kw": 182.9508537653197,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 11.782263092008208,
+          "electrical_loss_kw": 23.963602694263614,
+          "offline_loss_kw": 0.0,
+          "available_kw": 147.20498797904787
+        }
+      ],
+      "available_kw": 441.6149639371436,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 441.6149639371436,
+      "reference_irradiance_wm2": 548.852561295959,
+      "ambient_c": 23.948669168242862,
+      "sun_elevation_deg": 41.13672666072688
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 237.91118146376178,
+          "temperature_c": 30.978001615810275,
+          "gross_kw": 79.30372715458725,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 1.896311236279601,
+          "electrical_loss_kw": 10.837038228563074,
+          "offline_loss_kw": 0.0,
+          "available_kw": 66.57037768974457
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 237.91118146376178,
+          "temperature_c": 30.978001615810275,
+          "gross_kw": 79.30372715458725,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 1.896311236279601,
+          "electrical_loss_kw": 10.837038228563074,
+          "offline_loss_kw": 0.0,
+          "available_kw": 66.57037768974457
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 237.91118146376178,
+          "temperature_c": 30.978001615810275,
+          "gross_kw": 79.30372715458725,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 1.896311236279601,
+          "electrical_loss_kw": 10.837038228563074,
+          "offline_loss_kw": 0.0,
+          "available_kw": 66.57037768974457
+        }
+      ],
+      "available_kw": 199.7111330692337,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 199.7111330692337,
+      "reference_irradiance_wm2": 237.91118146376178,
+      "ambient_c": 23.54327719506772,
+      "sun_elevation_deg": 31.969119145287298
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 79.33233070243773,
+          "temperature_c": 25.239255376198592,
+          "gross_kw": 26.444110234145906,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.025307582169229903,
+          "electrical_loss_kw": 3.6986323712767337,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.720170280699943
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 79.33233070243773,
+          "temperature_c": 25.239255376198592,
+          "gross_kw": 26.444110234145906,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.025307582169229903,
+          "electrical_loss_kw": 3.6986323712767337,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.720170280699943
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 79.33233070243773,
+          "temperature_c": 25.239255376198592,
+          "gross_kw": 26.444110234145906,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.025307582169229903,
+          "electrical_loss_kw": 3.6986323712767337,
+          "offline_loss_kw": 0.0,
+          "available_kw": 22.720170280699943
+        }
+      ],
+      "available_kw": 68.16051084209982,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 68.16051084209982,
+      "reference_irradiance_wm2": 79.33233070243773,
+      "ambient_c": 22.760120041747413,
+      "sun_elevation_deg": 22.654382263127
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 21.652568574052324,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 21.652568574052324,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 21.652568574052324,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 21.652568574052324,
+      "sun_elevation_deg": 13.580966802511584
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 20.29610059419054,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 20.29610059419054,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 20.29610059419054,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 20.29610059419054,
+      "sun_elevation_deg": 5.086050393535787
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 18.78315715332031,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 18.78315715332031,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 18.78315715332031,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 18.78315715332031,
+      "sun_elevation_deg": -2.485686726927184
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 17.21684284667969,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 17.21684284667969,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 17.21684284667969,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 17.21684284667969,
+      "sun_elevation_deg": -8.757254614245504
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 15.703899405809462,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 15.703899405809462,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 15.703899405809462,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 15.703899405809462,
+      "sun_elevation_deg": -13.330306039453923
+    },
+    {
+      "sections": [
+        {
+          "id": "PV-01",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 14.347431425947676,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-02",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 14.347431425947676,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        },
+        {
+          "id": "PV-03",
+          "irradiance_wm2": 0.0,
+          "temperature_c": 14.347431425947676,
+          "gross_kw": 0.0,
+          "shade_loss_kw": 0.0,
+          "soiling_loss_kw": 0.0,
+          "temperature_loss_kw": 0.0,
+          "electrical_loss_kw": 0.0,
+          "offline_loss_kw": 0.0,
+          "available_kw": 0.0
+        }
+      ],
+      "available_kw": 0.0,
+      "conversion_loss_kw": 0.0,
+      "clipped_kw": 0,
+      "scenario_adjustment_kw": 0.0,
+      "output_kw": 0.0,
+      "reference_irradiance_wm2": 0,
+      "ambient_c": 14.347431425947676,
+      "sun_elevation_deg": -15.841701184997103
+    }
+  ]
+}

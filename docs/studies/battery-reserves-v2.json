@@ -1,0 +1,237 @@
+{
+  "schema_version": "dispatch-lab/study-protocol/1",
+  "study_id": "battery-reserves",
+  "revision": 2,
+  "baseline_controller": "MPC · methane",
+  "candidate_controller": "MPC · battery reserve",
+  "title": "What is tomorrow’s battery energy worth?",
+  "question": "Does a linear value for battery energy at the planning horizon improve sustained methane production under forecast error, and does the effect change with battery capacity?",
+  "rationale": "Compare two otherwise identical methane planners. One credits ending battery energy at 0.01 kg CH4-equivalent per kWh; the other assigns no terminal value. This deliberately simple continuation assumption tests an interpretable reserve mechanism. It is not a stochastic controller or a verified shutdown/restart reserve.",
+  "primary_metric": "methane_kg",
+  "primary_unit": "kg CH4",
+  "secondary_metrics": [
+    "forced_downtime_hours",
+    "reactor_starts",
+    "curtailed_kwh",
+    "ending.battery_kwh",
+    "ending.h2_kg",
+    "ending.co2_kg",
+    "ending.temperature_c",
+    "total_eur",
+    "assumed_contribution_eur",
+    "limited_solves",
+    "fallbacks"
+  ],
+  "comparison": "Reserve minus baseline, paired within each fully resolved case. Report arithmetic means, ranges and counts. Three seeds are descriptive evidence, not a population confidence claim.",
+  "metric_definitions": {
+    "methane_kg": "Sum of applied methane_kg over all executed intervals; no terminal credit added.",
+    "forced_downtime_hours": "Count of intervals flagged forced_trip; not all time without production.",
+    "terminal_battery_kwh": "Battery inventory after the final executed interval; kWh, not revenue.",
+    "total_eur": "Allocated period cost from the recorded cost model, including fixed allocation.",
+    "assumed_contribution_eur": "Assumed methane value minus variable inputs and wear proxies; original decision prices."
+  },
+  "policies": {
+    "MPC · methane": {
+      "objective": "methane",
+      "terminal_battery_value_kg_per_kwh": 0.0,
+      "version": "dispatch-lab/policy/1"
+    },
+    "MPC · battery reserve": {
+      "objective": "methane",
+      "terminal_battery_value_kg_per_kwh": 0.01,
+      "version": "dispatch-lab/policy/1"
+    }
+  },
+  "policy_tuning": "Frozen coefficients and equal planning budgets. No tuning on these evaluation cases and no training in this protocol.",
+  "reference_config": {
+    "rng_policy": "named-channels/1",
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.0,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.3,
+      "heat_loss_kw_per_k": 0.08,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0.02,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1
+    },
+    "scenario": {
+      "hours": 72,
+      "horizon_hours": 24,
+      "seed": 7,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 34,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 1,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.5
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0.14,
+      "noct_c": 45,
+      "temperature_coefficient": -0.004,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null,
+    "models": {
+      "battery": "affine/1",
+      "electrolyser": "specific-energy/1",
+      "hydrogen": "balance/1",
+      "co2": "balance/1",
+      "reactor": "analytic/1"
+    }
+  },
+  "conditions": [
+    {
+      "id": "normal",
+      "label": "Normal forecast",
+      "forecast_bias": 0.0
+    },
+    {
+      "id": "overestimate",
+      "label": "Forecast overestimate",
+      "forecast_bias": 0.35
+    }
+  ],
+  "tiers": {
+    "smoke": {
+      "hours": 24,
+      "seeds": [
+        42
+      ],
+      "battery_factors": [
+        1,
+        2
+      ],
+      "solver_seconds": 0.1,
+      "purpose": "Exercise the research workflow; too short and small for the reference finding."
+    },
+    "reference": {
+      "hours": 72,
+      "seeds": [
+        7,
+        19,
+        42
+      ],
+      "battery_factors": [
+        1,
+        2
+      ],
+      "solver_seconds": 0.5,
+      "purpose": "Fixed reference comparison over three days, six weather/seed pairs per capacity."
+    },
+    "sensitivity": {
+      "hours": 72,
+      "seeds": [
+        7,
+        19,
+        42
+      ],
+      "battery_factors": [
+        0.5,
+        1,
+        2
+      ],
+      "solver_seconds": 0.5,
+      "purpose": "Extend the capacity range; retain the same controls and comparison."
+    }
+  },
+  "resolution": {
+    "plant_basis": "Reference fixture or the active run’s complete plant, cost, sensor and implementation configuration.",
+    "battery_capacity": "Multiply the basis capacity by each declared factor.",
+    "battery_power": "Hold the basis absolute charge/discharge power fixed; adjust C-rate when capacity changes.",
+    "initial_energy": "Hold the basis initial SOC fraction fixed; record resolved starting kWh.",
+    "feedstock_and_temperature": "Use resolved basis inventories and deliveries. Reactor initially follows the first ambient value; both subsystems are off.",
+    "weather": "Versioned synthetic generation, start 2026-07-10, frozen snapshots. Same exogenous weather for a given seed/condition across controllers and battery variants.",
+    "faults": "No equipment or sensor faults in this study; capacity=1, flow bias=0, delivery delay=0.",
+    "horizon": "24 hours, extending beyond the scoring window where saved forecast inputs permit.",
+    "warmup": "No excluded warm-up. Startup costs and empty reference inventories count in the stated window.",
+    "terminal": "Report all ending inventories and temperature. Terminal planning credit is neither methane output nor sale proceeds.",
+    "randomness": "Named sensor channels with identical standardized draws by seed/channel/hour; observations can differ with the policy’s physical trajectory."
+  },
+  "checks": [
+    "Complete interval coverage for both controllers",
+    "Independent physical and economic reference audit",
+    "Identical weather and original decision assumptions within each comparison",
+    "Explicit solver termination, fallback and incomplete attempts"
+  ],
+  "limits": [
+    "Illustrative hourly plant with ideal battery, CO2 and temperature observations.",
+    "No gas quality, pressure dynamics, essential protection loads or calibrated recovery/repair model.",
+    "A changed plant is a new application of the protocol; older results remain scoped to their recorded configurations.",
+    "Time-limited solver and hardware effects can change numerical reruns.",
+    "An observed reserve/output association does not identify a unique causal mechanism; event links show recorded evidence."
+  ],
+  "review": {
+    "status": "authored",
+    "scope": "Protocol and interpretation rules specified before the first study execution."
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schema_version": "dispatch-lab/site-taxonomy/1",
+  "domains": {
+    "electrical": "Electrical energy",
+    "process": "Chemical production and material handling",
+    "utilities": "Process utilities",
+    "instrumentation": "Instrumentation, actuation and protection",
+    "field": "Field-work machines",
+    "support": "Service infrastructure and logistics",
+    "resources": "Inventories, flows and reservable resources",
+    "people": "People and external services",
+    "environment": "Site and environment",
+    "autonomy": "Autonomy and information",
+    "economics": "Economics, objectives and obligations",
+    "evidence": "Simulation, experiments and evidence"
+  },
+  "kinds": [
+    "actor",
+    "asset",
+    "capability",
+    "concept",
+    "configuration",
+    "event",
+    "evidence",
+    "family",
+    "interface",
+    "model",
+    "observation",
+    "place",
+    "policy",
+    "resource",
+    "route",
+    "site",
+    "state",
+    "system",
+    "task",
+    "tool"
+  ],
+  "relationships": [
+    "accounted_by",
+    "compatible_with",
+    "configures",
+    "connects",
+    "contains",
+    "depends_on",
+    "documents",
+    "feeds",
+    "has_interface",
+    "implements",
+    "located_at",
+    "member_of",
+    "observes",
+    "offers",
+    "powers",
+    "records",
+    "requires",
+    "services"
+  ],
+  "depths": [
+    "accounting",
+    "concept",
+    "declared",
+    "implemented",
+    "unavailable"
+  ],
+  "core": {
+    "solar": [
+      "Solar array",
+      "electrical"
+    ],
+    "battery": [
+      "Battery",
+      "electrical"
+    ],
+    "electrolyser": [
+      "Electrolyser",
+      "process"
+    ],
+    "hydrogen": [
+      "Hydrogen buffer",
+      "process"
+    ],
+    "co2": [
+      "CO₂ supply and buffer",
+      "process"
+    ],
+    "reactor": [
+      "Methanator",
+      "process"
+    ]
+  },
+  "systems": {
+    "bus": [
+      "Electrical bus",
+      "electrical",
+      "Hourly shared electricity balance"
+    ],
+    "water": [
+      "Process water",
+      "utilities",
+      "Consumption and production accounting; no recycling credit"
+    ],
+    "thermal": [
+      "Reactor heating and cooling",
+      "utilities",
+      "Lumped hourly heat balance and cooling electricity"
+    ],
+    "product": [
+      "Methane output",
+      "process",
+      "Produced mass; no gas certification or customer acceptance"
+    ],
+    "sensors": [
+      "Plant sensors",
+      "instrumentation",
+      "Seeded observation channels, separate from simulator truth"
+    ],
+    "diagnosis": [
+      "State estimation and diagnosis",
+      "autonomy",
+      "Bounded residual diagnosis and recovery probes"
+    ],
+    "controllers": [
+      "Dispatch controllers",
+      "autonomy",
+      "Recorded policies, forecasts, objectives and feasible fallback"
+    ],
+    "weather": [
+      "Weather and forecasts",
+      "environment",
+      "Saved forecasts and reference weather with availability boundaries"
+    ],
+    "services": [
+      "Field service system",
+      "support",
+      "Configured service hardware and resources; capabilities depend on interfaces"
+    ],
+    "economics": [
+      "Cost accounting and decision economics",
+      "economics",
+      "Separate period allocation, action costs and expenditure"
+    ],
+    "experiments": [
+      "Experiments and reproduction",
+      "evidence",
+      "Matched cases, recorded runs, model identities and scoped checks"
+    ]
+  },
+  "concepts": {
+    "electrical": [
+      "Electrical distribution and protection",
+      "Critical power and UPS"
+    ],
+    "process": [
+      "Compression and pressure regulation",
+      "Pipes, valves and pumps",
+      "Gas purification and quality certification",
+      "Product storage and delivery",
+      "Direct-air capture"
+    ],
+    "utilities": [
+      "Water treatment and recirculation",
+      "Service gases",
+      "Ventilation",
+      "Waste and discharge handling"
+    ],
+    "instrumentation": [
+      "Independent safety system",
+      "Gas leak and fire protection",
+      "Sampling and laboratory analysis"
+    ],
+    "support": [
+      "Workshop and tools store",
+      "Fleet retrieval and transport",
+      "Communications infrastructure",
+      "Site computing",
+      "Replenishment logistics"
+    ],
+    "people": [
+      "Remote operator",
+      "Qualified service contractor",
+      "Feedstock supplier",
+      "Site owner and operator",
+      "Product recipient"
+    ],
+    "environment": [
+      "Site layout and access design",
+      "Hazard and exclusion zones",
+      "Planning and weather restrictions"
+    ],
+    "autonomy": [
+      "Learned policy training",
+      "Predictive maintenance and remaining useful life"
+    ],
+    "economics": [
+      "Contractual service levels",
+      "Product acceptance obligations",
+      "Ownership and settlement"
+    ]
+  },
+  "family_review_hash": "80bf9becfe87f358a1d3194b473a2b9274fea2c3afd9b0c9d80ba935e82a67ae"
+}

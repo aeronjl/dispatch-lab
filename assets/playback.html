@@ -1,0 +1,51 @@
+<section class="console" aria-label="Simulation playback" tabindex="0">
+  <div class="operation-bar">
+    <div class="operation-time"><span class="status" data-field="play-status" role="status">PAUSED</span><strong data-field="sim-time">D01 / 00:00</strong><span class="muted" data-field="hour-count">HOUR 000 / 072</span><span hidden data-field="interval"></span></div>
+    <div class="view-controls"><div class="controller-select" role="group" aria-label="Telemetry controller"><button type="button" data-controller="Forecast MPC" aria-pressed="true">FORECAST MPC</button><button type="button" data-controller="Greedy" aria-pressed="false">GREEDY</button></div><button type="button" class="cost-toggle" data-action="costs" aria-pressed="true">▣ COSTS ON</button></div>
+  </div>
+  <div class="cost-strip"><span>ALLOCATED <span data-cost-field="period">THROUGH HOUR 000</span></span><strong data-cost-field="total">€0.00</strong><strong data-cost-field="unit">— / NO H₂ YET</strong><span class="muted">ILLUSTRATIVE EUR · SELECT EQUIPMENT FOR DETAIL</span></div>
+  <!-- PLANT SCENE -->
+  <aside class="inspection-drawer" data-role="inspector" id="component-inspector" aria-label="Component inspector" hidden>
+    <div class="inspector-top"><div><span data-inspector="tag"></span><h2 data-inspector="title"></h2></div><button type="button" data-action="close-inspector" aria-label="Close component inspector">× CLOSE</button></div>
+    <div class="inspector-body"><div class="inspector-facts" data-inspector="facts"></div><div class="inspector-explanation"><p class="inspector-compare" data-inspector="compare"></p><p data-inspector="insight"></p><p class="muted" data-inspector="wear"></p><div class="inspector-actions"><button type="button" data-action="configure">EDIT IN EXPERIMENT SETUP ↗</button><button type="button" data-action="study" hidden>COMPARE BATTERY SIZES ↗</button></div></div></div>
+  </aside>
+  <div class="playback-dock">
+  <div class="transport" role="group" aria-label="Playback controls">
+    <button type="button" data-action="reset" title="Reset to hour zero (R)">↺ RESET</button>
+    <button type="button" data-action="back" aria-label="Step back one hour" title="Step back one hour">|‹</button>
+    <button type="button" data-action="play" class="play-button" aria-label="Play simulation">▶ PLAY</button>
+    <button type="button" data-action="next" aria-label="Step forward one hour" title="Step forward one hour">›|</button>
+    <div class="speed-control"><span class="muted" id="speed-label">SPEED</span><div role="group" aria-labelledby="speed-label">
+      <button type="button" data-speed="0.25" aria-pressed="false">0.25×</button>
+      <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
+      <button type="button" data-speed="1" aria-pressed="true">1×</button>
+      <button type="button" data-speed="2" aria-pressed="false">2×</button>
+      <button type="button" data-speed="4" aria-pressed="false">4×</button>
+      <button type="button" data-speed="8" aria-pressed="false">8×</button>
+    </div></div>
+  </div>
+  <div class="timeline"><input type="range" min="0" max="72" step="1" value="0" aria-label="Simulation hour" data-role="scrubber"><div class="timeline-labels" data-role="day-labels"></div></div>
+  <div class="playback-note"><span data-field="speed-note">1× = 1 simulated hour / second</span><span>HOURLY REPLAY · <span data-field="weather"></span></span></div>
+  </div>
+  <details class="telemetry-details" data-role="live-analysis"><summary>LIVE COMPARISON · CONTROLLER TRACES & NUMERIC TELEMETRY</summary>
+  <details class="telemetry-details"><summary>NUMERIC TELEMETRY + STATE</summary>
+  <div class="instruments">
+    <div class="rail">
+      <fieldset><legend>SOLAR ARRAY</legend><div class="readout"><span data-field="solar">0</span><small>kW</small></div><div class="meter"><i data-meter="solar"></i></div><div class="rail-detail"><span>NAMEPLATE</span><span data-field="solar-cap"></span></div></fieldset>
+      <fieldset><legend>DC BUS</legend><div class="rail-detail"><span>TO LOAD</span><span><b data-field="demand">0</b> kW</span></div><div class="rail-detail"><span>CHARGE</span><span><b data-field="charge">0</b> kW</span></div><div class="rail-detail"><span>DISCHARGE</span><span><b data-field="discharge">0</b> kW</span></div><div class="rail-detail"><span>CURTAILED</span><span><b data-field="curtailed">0</b> kW</span></div></fieldset>
+      <div class="rail-foot"><span class="square"></span><span data-field="solar-status">NIGHT / NO SOLAR</span></div>
+    </div>
+    <div class="rail">
+      <fieldset><legend>BATTERY / SOC</legend><div class="readout"><span data-field="soc">0</span><small>%</small></div><div class="meter"><i data-meter="battery"></i></div><div class="rail-detail"><span data-field="stored">0 / 800 kWh</span><span data-field="battery-status">IDLE</span></div></fieldset>
+      <fieldset><legend>HYDROGEN / H₂</legend><div class="readout"><span data-field="h2">0.0</span><small>kg</small></div><div class="rail-detail"><span>THIS HOUR</span><span><b data-field="h2-rate">0.0</b> kg</span></div><div class="rail-detail"><span>STARTS</span><span data-field="starts">00</span></div></fieldset>
+      <div class="rail-foot" data-field="fault-status">CAPACITY / NOMINAL</div>
+    </div>
+  </div>
+  </details>
+  <div class="telemetry-footer"><span>READOUTS: <span data-field="readout-period">INITIAL STATE</span></span><span data-field="solver">CONTROLLER READY</span></div>
+  <div class="trace-heading"><span class="section-label">02 / CONTROLLER TRACES</span><span class="trace-legend"><span>━ MPC</span><span class="greedy">┄ GREEDY</span></span></div>
+  <svg class="live-traces" viewBox="0 0 900 275" role="img" aria-label="Hourly demand, battery inventory and cumulative hydrogen through the selected hour" data-role="traces"></svg>
+  <div class="comparison" data-role="comparison"></div>
+  </details>
+  <div class="console-footer"><span>SPACE PLAY / PAUSE · ← → STEP · R RESET</span><span>SEEDED SIMULATION / NO LIVE FEED</span></div>
+</section>

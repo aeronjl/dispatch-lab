@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  },
+  "name": "dispatch-lab-browser-checks",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "playwright test"
+  }
+}

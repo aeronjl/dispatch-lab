@@ -1,0 +1,77 @@
+.plant-scene {margin-top:18px; --flow-time:2s;}
+.scene-heading {display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px;}
+.scene-key {display:flex; gap:16px; color:var(--muted);} .scene-key span {color:#ddd1bc;}
+.scene-scroll {overflow-x:auto; overscroll-behavior-x:contain; scrollbar-color:#806039 #202020; scrollbar-width:thin;}
+.scene-scroll:focus-visible {outline:1px solid var(--amber); outline-offset:4px;}
+.plant-drawing {display:block; width:100%; min-width:1040px; height:auto; font:11px 'Departure Mono',monospace; color:var(--amber);}
+.plant-drawing path,.plant-drawing circle,.plant-drawing rect {vector-effect:non-scaling-stroke;}
+.plant-drawing text {fill:currentColor; font-family:'Departure Mono',monospace; font-weight:400;}
+.plant-drawing .component-title {font-size:11px; letter-spacing:1px;}
+.plant-drawing .component-value {font-size:22px;} .plant-drawing .unit {font-size:11px;}
+.plant-drawing .component-caption,.scene-notes {color:var(--muted); font-size:11px;}
+.scene-brackets {fill:none; stroke:#806039;}
+.plant-component path,.plant-component circle,.bus-component path {fill:none; stroke:currentColor; stroke-width:1.2;}
+.plant-drawing .equipment-case {fill:#202020; stroke:var(--amber);}
+.plant-drawing .terminal {fill:var(--amber);}
+.plant-drawing .wire-label rect {fill:#202020;}
+.plant-drawing .wire-label text {font-size:11px; fill:var(--muted);}
+.circuit {--flow-strength:1.5; --flow-time:2s; --flow-direction:normal;}
+.circuit .flow-track {stroke:#5f4b32; stroke-width:1.2; fill:none;}
+.circuit .flow-motion {stroke:var(--amber); stroke-width:var(--flow-strength); fill:none; stroke-dasharray:4 18; opacity:0; animation:current-flow var(--flow-time) linear infinite; animation-direction:var(--flow-direction);}
+.circuit .flow-arrow {fill:none; stroke:#806039; stroke-width:1.3;}
+.circuit[data-active=true] .flow-motion {opacity:1;}
+.circuit[data-active=true] .flow-track {stroke:#9b6c32;}
+.circuit[data-active=true] .flow-arrow {stroke:var(--amber);}
+.gas-circuit .flow-track {stroke-dasharray:4 6;}
+.gas-circuit .flow-motion {stroke:#ddd1bc; stroke-dasharray:2 20; stroke-linecap:round;}
+.circuit[data-direction=discharge] {--flow-direction:reverse;}
+.circuit[data-direction=discharge] .arrow-charge,.circuit[data-direction=charge] .arrow-discharge {display:none;}
+.solar-component {--solar-level:0;}
+.plant-drawing .sun-core {fill:var(--amber); stroke:var(--amber); opacity:calc(.12 + .88 * var(--solar-level));}
+.sun-rays {opacity:calc(.2 + .8 * var(--solar-level)); transform-origin:0 0; animation:sun-turn 24s linear infinite;}
+.plant-drawing .solar-light {stroke-dasharray:5 7; opacity:var(--solar-level); animation:light-travel 2s linear infinite;}
+.plant-drawing .panel-surface {fill:var(--amber); fill-opacity:calc(.025 + .3 * var(--solar-level));}
+.solar-panel {opacity:calc(.4 + .6 * var(--solar-level));}
+.stack-reticle {opacity:.25;} .stack-reticle circle {stroke-dasharray:2 6;}
+.plant-drawing .stack-base {fill:#28241d;}
+.stack-plate .plate-front {fill:#202020;} .stack-plate .plate-side {fill:#30271c;}
+.stack-plate .plate-energy {fill:var(--amber); stroke:none; opacity:0;}
+.stack-component[data-active=true] .plate-energy {opacity:var(--plate-level); animation:cell-current var(--reaction-time,1.5s) ease-in-out infinite alternate; animation-delay:calc(var(--plate-index) * -.18s);}
+.stack-component[data-fault=true] .fault-label {fill:var(--amber);}
+.stack-component[data-fault=true] .stack-reticle {opacity:.6;}
+.stack-status-plate {fill:#4c3c27;} .stack-component[data-active=true] .stack-status-plate {fill:var(--amber);}
+.plant-drawing .stack-status {fill:#202020; font-size:11px;}
+.battery-module {fill:#29251f; stroke:#806039;}
+.battery-fill {fill:var(--amber);}
+.battery-component[data-absent=true] {opacity:.4;}
+.hydrogen-component {--gas-time:2s;}
+.plant-drawing .product-orbit {stroke-dasharray:2 6; opacity:.35;}
+.molecule {opacity:.35; transform-box:fill-box; transform-origin:center;}
+.hydrogen-component[data-active=true] .molecule {opacity:1; animation:molecule-breathe var(--gas-time) ease-in-out infinite alternate;}
+.hydrogen-particles {opacity:0;} .hydrogen-particles rect {fill:#ddd1bc;}
+.hydrogen-component[data-active=true] .hydrogen-particles {opacity:1;}
+.hydrogen-particles rect {animation:gas-release var(--gas-time) linear infinite;}
+.hydrogen-particles rect:nth-child(2) {animation-delay:-.7s;} .hydrogen-particles rect:nth-child(3) {animation-delay:-1.3s;}
+.curtail-component .spill-rays {opacity:.2;} .curtail-component[data-active=true] .spill-rays {opacity:1;}
+.scene-story {display:flex; gap:12px; align-items:flex-start; background:#29251f; border-left:2px solid var(--amber); padding:13px 15px; margin-top:16px;}
+.scene-story p {margin:0; color:#dfc9a9; font-size:11px; line-height:1.8;}
+.story-indicator {width:6px; height:6px; flex-shrink:0; background:var(--amber); margin-top:7px;}
+.scene-pan-hint {display:none; margin-top:10px; color:var(--muted); font-size:11px;}
+.plant-scene[data-playing=false] *,.plant-scene[data-playing=false] .flow-motion {animation-play-state:paused !important;}
+.plant-scene [data-active=false] .flow-motion,.plant-scene [data-active=false] .sun-rays,.plant-scene [data-active=false] .solar-light,.plant-scene [data-active=false] .hydrogen-particles rect {animation-play-state:paused;}
+@media(max-width:900px) {.scene-pan-hint {display:block;} .scene-heading {flex-wrap:wrap;} .plant-drawing {min-width:1040px;}}
+@media(prefers-reduced-motion:reduce) {.plant-scene * {animation:none !important;} .circuit[data-active=true] .flow-motion {stroke-dasharray:3 9;} .hydrogen-particles rect {opacity:.7;}}
+.plant-scene {margin-top:12px;}
+.scene-heading {margin-bottom:8px; font-size:10px;}
+.plant-drawing {height:clamp(340px, calc(100dvh - 550px), 650px); min-width:1040px;}
+.scene-story {padding:10px 14px; margin-top:10px;}
+.plant-drawing .selection-box {fill:transparent; stroke:transparent; stroke-width:1; pointer-events:all;}
+.plant-drawing [data-inspect] {cursor:pointer; outline:none;}
+.plant-drawing [data-inspect]:hover>.selection-box {stroke:#806039; fill:#ffa32d; fill-opacity:.025;}
+.plant-drawing [data-inspect][data-selected=true]>.selection-box {stroke:#ffa32d; stroke-dasharray:4 3;}
+.plant-drawing [data-inspect]:focus-visible>.selection-box {stroke:#ffcf88; stroke-width:2;}
+.plant-drawing .cost-annotation {fill:#ddd1bc; font-size:10px;}
+@media(max-width:1100px) {.plant-drawing {height:470px;}.scene-heading {flex-wrap:wrap; gap:8px;}}
+
+.component-picker {display:none;}
+@media(max-width:900px) {.component-picker {display:flex; align-items:center; gap:12px; color:var(--muted); font-size:10px; margin:12px 0;}.component-picker select {flex:1; min-width:0; background:#27231e; color:var(--amber); font:11px 'Departure Mono',monospace; border:1px solid var(--line); border-radius:0; padding:10px;}.component-picker select:focus-visible {outline:2px solid #ffcf88;}}

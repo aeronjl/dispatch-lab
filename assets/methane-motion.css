@@ -1,0 +1,3 @@
+@keyframes methane-flow{to{stroke-dashoffset:-38}}
+@keyframes methane-bubble{50%{transform:translateY(-8px);opacity:.25}}
+@keyframes methane-fan{to{transform:rotate(360deg)}}

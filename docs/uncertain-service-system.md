@@ -1,0 +1,97 @@
+# Uncertain service system: implementation and evidence boundary
+
+This opt-in model extends the existing first service system. It does not grant new
+hardware capabilities. Fixed-clock archives retain their original semantics.
+
+## Execution and observation
+
+Six positive, persistent world-level factors multiply nominal travel, cleaning,
+inspection, repair, supply and support phase times. They are not independent job
+samples and do not model fatigue, queue-dependent travel or detailed terrain.
+Actual factors enter only the execution port. The public duration support reserves
+stocks, return energy, peak electrical demand and shared resources until the upper
+completion bound. Conservative union reservations prevent an earlier-than-expected
+phase transition from using an unreserved tool or work area. Observed completed
+phase boundaries can shorten a public prediction; future boundaries remain hidden.
+Actual phase durations govern labour and energy. Area-dependent brush and water
+use follows treated area, while setup rinse remains a fixed dose. Interrupted work
+retains consumed resources and treated area and requires the existing explicit
+retrieval/return workflow. It never receives an automatic successful return credit.
+
+Current status events can remove communications, route, dock, calibration reference
+or crew availability. They cannot create absent resources or override a shift.
+Future outage endpoints are not forecasts available to the controller. Longer
+supplier or response times can be represented by the supply/support clocks; this
+is not a stochastic external logistics network.
+
+The removable-surface reference has a bounded persistent section offset and bounded
+reading noise. Known geometry, adhered loss, damage, the work-area encoder and the
+main power meter keep their existing assumptions. Conversion residual intervals do
+not identify weather-reference bias separately from array conversion error. An
+empty intersection indicates model discrepancy. Surface inverse intervals retain
+insufficient excitation rather than fabricating cleaning effectiveness.
+
+## Beliefs and decisions
+
+Completed durations and right-censoring replace packets with the same identity.
+Correlated phases are grouped by job and family. An eight-bin, piecewise-uniform,
+regularized likelihood fit retains finite support and convergence status. These
+weights are approximate model fits, not calibrated posteriors. Finite observations
+from a single constant-factor world cannot establish population variability.
+Completion counts use a Beta-binomial model centred on the declared completion
+prior. They are conditional on attempted work. Completion is not verified repair;
+the existing incident beliefs and post-service operating tests retain that boundary.
+
+Fixed and adaptive comparisons use the same initial duration prior. Fixed keeps
+that prior; adaptive updates it. Both condition unfinished work on elapsed time.
+Risk-aware planning adds declared weather regimes and two shared duration quantiles.
+Current actions agree across every branch; future actions agree until an eligible
+power observation or reported interruption distinguishes histories. A risk weight
+mixes expected and worst-branch objective values. Terminal inventory and temperature
+reserves, test windows, robot charging and service stocks remain explicit.
+
+Candidate generation and solver budgets are bounded. Shared-visit predictions use
+full duration envelopes. Charging uses reserved consumption. Possible stranded
+robots cannot claim future charging after the interruption boundary. This can reject
+otherwise recoverable work: the model does not optimise an entire contingent fleet
+retrieval programme. Interrupted-cleaning branches use a labelled union-bound stress
+allowance and retain conservative utility/cost budgets. These are not empirical joint
+failure probabilities. Work/inspection contingencies reuse the existing qualified
+procedure and observation mechanisms, rather than crediting unobserved repair success.
+
+The initial branch set is finite. It is not distributionally robust control, a chance
+constraint guarantee, a complete POMDP or a learned policy. Unsupported model evidence
+and missing feasible incumbents remain visible and invoke existing feasible fallback.
+The baseline projection and joint solve share the declared comparison time budget.
+
+## Reproduction and qualification
+
+`python -m methane.autonomy_studies create` saves a programme of immutable Study
+editions. `run DIRECTORY` executes them sequentially and reuses completed results.
+`report DIRECTORY` derives the write-up without rerunning a controller. A changed
+plant basis creates a separate programme through `create --basis CONFIG.json`.
+
+The initial programme separates six explicit conditions, three policy modes and two
+numerical repetitions of seed 7. Twelve-hour, six-hour-horizon fixtures are mechanism
+qualification, not seasonal operating evidence. The no-op condition collapses duration
+support and observation errors; differences there expose computational/policy effects.
+Original source, weather, assumptions, requested/applied actions, solvers, ending
+inventories and unfinished work remain in the per-edition recordings. Incomplete and
+invalid attempts remain in the comparison. No controller is required to win.
+
+Independent standard-library checks reconcile physical clocks, stock/labour/energy,
+observation availability, censor accounting, fit stationarity, model moments and
+shared branch decisions. Reproduction bundles include the checker and a readable
+recorded autonomy report. These establish declared arithmetic and information
+boundaries; they cannot establish realism or external probability calibration.
+
+## Work after this release
+
+Obtain matched equipment/site observations before claiming calibrated distributions.
+Test multiple seeds and seasonal windows after computation qualification. Review
+sensitivity to duration bounds, dependence assumptions, observation budgets and
+finite branch coverage; narrow bounds are not an efficiency improvement without
+evidence. Extend contingent retrieval and time-varying logistics, richer degradation,
+maintenance value and the remaining hardware families as separate versioned models.
+Evaluate learned policies only against stable baselines and independent held-out
+conditions. The previously paused 14-family programme remains paused.

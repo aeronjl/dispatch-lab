@@ -1,0 +1,55 @@
+{
+  "schema_version": "dispatch-lab/recomputation-comparison/1",
+  "recorded_run_id": "305743ed90180597",
+  "recomputed_run_id": "ca2b5bb30eb08278",
+  "source_matches": true,
+  "recorded_environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "gradio": "6.26.0",
+    "python": "3.12.14",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "recomputed_environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "gradio": "6.26.0",
+    "python": "3.12.14",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "status": "complete",
+  "independent_reference_passed": true,
+  "controllers": {
+    "Greedy": {
+      "first_different_interval": null,
+      "different_intervals": 0,
+      "recorded_intervals": 24,
+      "recomputed_intervals": 24,
+      "methane_delta_kg": 0.0,
+      "cost_delta_eur": 0.0
+    },
+    "MPC \u00b7 methane": {
+      "first_different_interval": 16,
+      "different_intervals": 5,
+      "recorded_intervals": 24,
+      "recomputed_intervals": 24,
+      "methane_delta_kg": -1.500984605981813,
+      "cost_delta_eur": -0.5638124802526363
+    },
+    "MPC \u00b7 economics": {
+      "first_different_interval": null,
+      "different_intervals": 0,
+      "recorded_intervals": 24,
+      "recomputed_intervals": 24,
+      "methane_delta_kg": 0.0,
+      "cost_delta_eur": 0.0
+    }
+  },
+  "archive": "build/engineering/current/recomputed-runs/ca2b5bb30eb08278.json.gz",
+  "note": "Numerical recomputation, distinct from recorded playback. Time-limited optimization can choose different feasible schedules.",
+  "artifact_sha256": "2d0ffad1b27e734ec8ecdfbfd99cb27992b156885d868be59efdbed7a20f15b2",
+  "original_source": "9131923b6104f2e40388b7ca4d810f8bc069bfbc0ac471411ec995b380060cb8",
+  "scope": "Saved historical example; not evidence for the current implementation."
+}

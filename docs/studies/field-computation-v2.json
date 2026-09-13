@@ -1,0 +1,866 @@
+{
+  "schema_version": "dispatch-lab/study-protocol/2",
+  "resolver": "repeated-field-computation/1",
+  "study_id": "field-computation",
+  "revision": 2,
+  "title": "Does the computation budget change the result?",
+  "question": "Do repeated executions retain the same actions, recovery and production when process and service planning budgets change?",
+  "rationale": "Short investigation workflow cases changed enough under finite solver limits to reverse paired methane rankings. This protocol qualifies numerical repetition before treating policy differences as stable evidence.",
+  "baseline_arm": "separate",
+  "policies": {
+    "Separate tests": {
+      "objective": "methane",
+      "terminal_battery_value_kg_per_kwh": 0.0,
+      "version": "dispatch-lab/policy/4",
+      "recovery": {
+        "version": "scheduled-load-tests/1",
+        "maximum_wait_hours": 6,
+        "retry_after_hours": 1,
+        "battery_reserve_fraction": 0.1,
+        "tracking_success_probability": 0.5,
+        "risk_weight": 0.5
+      },
+      "service": {
+        "version": "coordinated-services/3",
+        "maximum_wait_hours": 24,
+        "retry_after_hours": 2,
+        "maximum_repair_attempts": 2,
+        "charging_wait_hours": 6,
+        "robot_reserve_fraction": 0.25,
+        "maximum_candidates": 4,
+        "comparison_seconds": 0.5
+      },
+      "investigation": {
+        "version": "observed-service-investigation/1",
+        "mode": "inspect-first",
+        "reader": "fixed",
+        "assumptions": {
+          "hypotheses": [
+            {
+              "hypothesis_id": "latch",
+              "mechanism": "resettable-trip",
+              "probability": 0.5,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            },
+            {
+              "hypothesis_id": "damage",
+              "mechanism": "equipment-damage",
+              "probability": 0.3,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            },
+            {
+              "hypothesis_id": "shared-contact",
+              "mechanism": "damage-and-stuck-contact",
+              "probability": 0.2,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            }
+          ],
+          "source": "assumption:illustrative-contact-investigation/1",
+          "quadrature_points": 3,
+          "epoch_start_hour": 0
+        },
+        "comparison_seconds": 0.5,
+        "risk_weight": 0.2,
+        "minimum_restoration_probability": 0.3,
+        "observation_wait_hours": 12,
+        "followup_impairment_probability": null
+      }
+    },
+    "Joint tests": {
+      "objective": "methane",
+      "terminal_battery_value_kg_per_kwh": 0.0,
+      "version": "dispatch-lab/policy/4",
+      "recovery": {
+        "version": "scheduled-load-tests/2",
+        "maximum_wait_hours": 6,
+        "retry_after_hours": 1,
+        "battery_reserve_fraction": 0.1,
+        "tracking_success_probability": 0.5,
+        "risk_weight": 0.5
+      },
+      "service": {
+        "version": "coordinated-services/3",
+        "maximum_wait_hours": 24,
+        "retry_after_hours": 2,
+        "maximum_repair_attempts": 2,
+        "charging_wait_hours": 6,
+        "robot_reserve_fraction": 0.25,
+        "maximum_candidates": 4,
+        "comparison_seconds": 0.5
+      },
+      "investigation": {
+        "version": "observed-service-investigation/2",
+        "mode": "inspect-first",
+        "reader": "fixed",
+        "assumptions": {
+          "hypotheses": [
+            {
+              "hypothesis_id": "latch",
+              "mechanism": "resettable-trip",
+              "probability": 0.5,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            },
+            {
+              "hypothesis_id": "damage",
+              "mechanism": "equipment-damage",
+              "probability": 0.3,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            },
+            {
+              "hypothesis_id": "shared-contact",
+              "mechanism": "damage-and-stuck-contact",
+              "probability": 0.2,
+              "fixed_offset_v": 0,
+              "mobile_offset_v": 0,
+              "fixed_dropout": false,
+              "mobile_dropout": false
+            }
+          ],
+          "source": "assumption:illustrative-contact-investigation/1",
+          "quadrature_points": 3,
+          "epoch_start_hour": 0
+        },
+        "comparison_seconds": 0.5,
+        "risk_weight": 0.2,
+        "minimum_restoration_probability": 0.3,
+        "observation_wait_hours": 12,
+        "followup_impairment_probability": null
+      }
+    }
+  },
+  "arms": [
+    {
+      "id": "separate",
+      "label": "Separate operating tests",
+      "controller": "Separate tests",
+      "patch": {}
+    },
+    {
+      "id": "joint",
+      "label": "Joint work and tests",
+      "controller": "Joint tests",
+      "patch": {}
+    }
+  ],
+  "conditions": [
+    {
+      "id": "trip",
+      "label": "Resettable trip",
+      "patch": {
+        "faults.capacity_cause": "resettable-trip",
+        "faults.contact_stuck": "none"
+      }
+    },
+    {
+      "id": "damage",
+      "label": "Damage with a stuck contact",
+      "patch": {
+        "faults.capacity_cause": "equipment-damage",
+        "faults.contact_stuck": "closed"
+      }
+    }
+  ],
+  "reference_config": {
+    "rng_policy": "named-channels/1",
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.5,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.3,
+      "heat_loss_kw_per_k": 0.08,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1,
+      "cleaner_eur": 15000,
+      "rover_eur": 80000,
+      "dock_eur": 5000,
+      "field_asset_years": 8,
+      "field_replaceable_share": 0.2,
+      "cleaner_wear_eur_per_hour": 0.5,
+      "rover_wear_eur_per_hour": 2,
+      "field_maintenance_eur_per_year": 3000,
+      "cleaning_kit_eur": 5,
+      "human_service_eur_per_hour": 80,
+      "fixed_reader_eur": 3000,
+      "reset_eur": 1500,
+      "calibration_kit_eur": 100
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1
+    },
+    "scenario": {
+      "hours": 32,
+      "horizon_hours": 12,
+      "seed": 7,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 2,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 0.5,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.15
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0,
+      "noct_c": 45,
+      "temperature_coefficient": 0,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null,
+    "models": {
+      "battery": "affine/1",
+      "electrolyser": "specific-energy/1",
+      "hydrogen": "balance/1",
+      "co2": "balance/1",
+      "reactor": "analytic/1"
+    },
+    "faults": {
+      "hardware_model": "actuator-interlock/1",
+      "lifecycle": "persistent",
+      "capacity_cause": "resettable-trip",
+      "inspection_fault_start_hour": 0.0,
+      "contact_stuck": "none",
+      "fixed_reader_offset_v": 0.0,
+      "fixed_reader_drift_vph": 0.0,
+      "fixed_reader_dropout": false,
+      "mobile_reader_offset_v": 0.0,
+      "mobile_reader_drift_vph": 0.0,
+      "mobile_reader_dropout": false,
+      "service_fault_start_hour": 0,
+      "cleaner_service_fault": "none",
+      "rover_service_fault": "none",
+      "dock_service_fault": "none",
+      "portable_service_fault": "none"
+    },
+    "field_operations": {
+      "enabled": true,
+      "cleaner_enabled": false,
+      "rover_enabled": false,
+      "reset_enabled": true,
+      "human_fallback": true,
+      "route_open": true,
+      "dock_available": true,
+      "initial_soiling_fraction": 0.05,
+      "soiling_per_day": 0.005,
+      "cleaning_threshold": 0.04,
+      "cleaning_removal_fraction": 0.9,
+      "cleaner_battery_kwh": 2,
+      "rover_battery_kwh": 2,
+      "mission_power_kw": 0.2,
+      "return_reserve_kwh": 0.2,
+      "dock_kw": 1,
+      "charging_efficiency": 0.9,
+      "cleaning_hours": 2,
+      "inspection_hours": 1,
+      "human_lead_hours": 1,
+      "human_work_hours": 2,
+      "service_kits": 3,
+      "cleaning_kits": 12,
+      "mission_failure_probability": 0,
+      "repair_success_probability": 1
+    },
+    "service_system": {
+      "implementation": "plant-service-contracts/1",
+      "inspector": "fixed",
+      "travel_hours": 0.5,
+      "verification_hours": 0.25,
+      "reset_hours": 0.25,
+      "reader_kw": 0.2,
+      "reset_kw": 0.1,
+      "contact_unreadable_probability": 0.05,
+      "contact_error_probability": 0.02,
+      "contact_max_age_hours": 8,
+      "communications_available": true,
+      "crew_available": true,
+      "calibration_reference_available": true,
+      "calibration_kits": 2,
+      "cleaning_model": "lumped-dc/1",
+      "area_m2_per_kw": 5,
+      "cleaning_area_m2ph": 1000,
+      "initial_adhered_fraction": 0.01,
+      "initial_damage_fraction": 0,
+      "brush_life_m2": 50000,
+      "brush_initial_condition": 1,
+      "row_accessible": true,
+      "environment_source": "assumed",
+      "assumed_wind_mps": 3,
+      "assumed_rain_mmph": 0,
+      "cleaning_wind_limit_mps": 8,
+      "cleaning_rain_limit_mmph": 0.1,
+      "work_failure_fraction": 0.5,
+      "support_model": "logistics/1",
+      "crew_shift_start_hour": 0,
+      "crew_shift_duration_hours": 24,
+      "crew_period_hours": 24,
+      "crew_travel_hours": 0.25,
+      "crew_response_lead_hours": 0,
+      "crew_hours_per_period": 24,
+      "remote_hours_per_period": 1,
+      "retrieval_work_hours": 0.5,
+      "robot_test_hours": 0.25,
+      "robot_test_kw": 0.2,
+      "robot_test_success_probability": 1,
+      "support_delivery_hours": 0.5,
+      "store_capacity_kits": 24,
+      "supplier_kits": 24,
+      "delivery_batch_kits": 4,
+      "brush_spares": 2,
+      "brush_change_hours": 0.5,
+      "retrieval_enabled": true,
+      "replenishment_enabled": true,
+      "brush_replacement_enabled": true,
+      "portable_cleaner": "none",
+      "portable_area_m2ph": 1000,
+      "portable_setup_hours": 0.5,
+      "portable_power_kw": 0.5,
+      "portable_loose_removal": 0.9,
+      "portable_adhered_removal": 0.7,
+      "portable_adhered_threshold": 0.05,
+      "portable_water_l_per_m2": 0.5,
+      "portable_rinse_l": 10,
+      "portable_water_capacity_l": 1000,
+      "portable_water_initial_l": 1000,
+      "portable_upstream_water_l": 5000,
+      "portable_water_delivery_l": 1000,
+      "portable_min_ambient_c": 5,
+      "inspection_model": "referenced-contact/1",
+      "inspection_noise_v": 0,
+      "inspection_delay_hours": 0,
+      "inspection_zero_limit_v": 2.0,
+      "inspection_span_tolerance_fraction": 0.1,
+      "inspection_low_v": 6.0,
+      "inspection_high_v": 18.0,
+      "inspection_wait_hours": 8.0,
+      "visit_bundling_enabled": true,
+      "visit_max_jobs": 4,
+      "crew_transfer_hours": 0.25,
+      "equipment_recovery_enabled": false,
+      "remote_assistance_enabled": true,
+      "remote_wait_hours": 2,
+      "remote_release_hours": 0.25,
+      "remote_shift_start_hour": 0,
+      "remote_shift_duration_hours": 12,
+      "hardware_replacement_hours": 1,
+      "hardware_spares": 2,
+      "maintenance_enabled": false,
+      "maintenance_target": "resident",
+      "maintenance_first_due_hour": 720.0,
+      "maintenance_interval_hours": 720.0,
+      "maintenance_work_hours": 1.0,
+      "maintenance_kits": 2,
+      "dock_standby_kw": 0.0,
+      "cleaning_policy": "legacy-condition",
+      "cleaning_first_due_hour": 0.0,
+      "cleaning_period_hours": 168.0,
+      "inspection_interface": "legacy-prepared",
+      "outcome_randomness": "target-action-request/1"
+    },
+    "service_economics": {
+      "schema_version": "dispatch-lab/service-economics/2",
+      "basis": "Illustrative EUR assumptions; procurement at upstream release, with no refund for rejected deliveries. No actual vendor invoices.",
+      "source": "assumption:field-service-prices/2",
+      "initial_asset_purchase": false,
+      "initial_stock_purchase": false,
+      "assets": {
+        "cleaner": {
+          "provision": "owned",
+          "capital_eur": 15000,
+          "life_years": 8,
+          "replaceable_capital_eur": 3000.0,
+          "wear_eur_per_hour": 0.5,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 2000,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "rover": {
+          "provision": "owned",
+          "capital_eur": 80000,
+          "life_years": 8,
+          "replaceable_capital_eur": 16000.0,
+          "wear_eur_per_hour": 2,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 0,
+          "payload_eur": 2000,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "dock": {
+          "provision": "owned",
+          "capital_eur": 5000,
+          "life_years": 8,
+          "replaceable_capital_eur": 1000,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 2000,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 3000,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "fixed_reader": {
+          "provision": "owned",
+          "capital_eur": 3000,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "reset": {
+          "provision": "owned",
+          "capital_eur": 1500,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "portable": {
+          "provision": "contracted",
+          "capital_eur": 0,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 10
+        }
+      },
+      "materials": {
+        "cleaning": {
+          "eur_per_unit": 5,
+          "unit": "kit",
+          "pool": null
+        },
+        "module": {
+          "eur_per_unit": 500,
+          "unit": "kit",
+          "pool": null
+        },
+        "calibration": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": null
+        },
+        "water": {
+          "eur_per_unit": 0.003,
+          "unit": "L",
+          "pool": null
+        },
+        "brush": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": "cleaner"
+        },
+        "maintenance": {
+          "eur_per_unit": 50,
+          "unit": "kit",
+          "pool": null
+        },
+        "hardware:cleaner": {
+          "eur_per_unit": 800,
+          "unit": "module",
+          "pool": "cleaner"
+        },
+        "hardware:rover": {
+          "eur_per_unit": 2500,
+          "unit": "module",
+          "pool": "rover"
+        },
+        "hardware:dock": {
+          "eur_per_unit": 1000,
+          "unit": "module",
+          "pool": "dock"
+        },
+        "hardware:portable": {
+          "eur_per_unit": 250,
+          "unit": "module",
+          "pool": "portable"
+        }
+      },
+      "rates": {
+        "crew_eur_per_hour": 80,
+        "remote_eur_per_hour": 60,
+        "callout_eur": 300,
+        "vehicle_eur_per_travel_hour": 20
+      }
+    },
+    "recovery_policy": {
+      "version": "scheduled-load-tests/1",
+      "maximum_wait_hours": 6,
+      "retry_after_hours": 1,
+      "battery_reserve_fraction": 0.1,
+      "tracking_success_probability": 0.5,
+      "risk_weight": 0.5
+    },
+    "service_policy": {
+      "version": "coordinated-services/3",
+      "maximum_wait_hours": 24,
+      "retry_after_hours": 2,
+      "maximum_repair_attempts": 2,
+      "charging_wait_hours": 6,
+      "robot_reserve_fraction": 0.25,
+      "maximum_candidates": 4,
+      "comparison_seconds": 0.5
+    },
+    "investigation_policy": {
+      "version": "observed-service-investigation/1",
+      "mode": "inspect-first",
+      "reader": "fixed",
+      "assumptions": {
+        "hypotheses": [
+          {
+            "hypothesis_id": "latch",
+            "mechanism": "resettable-trip",
+            "probability": 0.5,
+            "fixed_offset_v": 0,
+            "mobile_offset_v": 0,
+            "fixed_dropout": false,
+            "mobile_dropout": false
+          },
+          {
+            "hypothesis_id": "damage",
+            "mechanism": "equipment-damage",
+            "probability": 0.3,
+            "fixed_offset_v": 0,
+            "mobile_offset_v": 0,
+            "fixed_dropout": false,
+            "mobile_dropout": false
+          },
+          {
+            "hypothesis_id": "shared-contact",
+            "mechanism": "damage-and-stuck-contact",
+            "probability": 0.2,
+            "fixed_offset_v": 0,
+            "mobile_offset_v": 0,
+            "fixed_dropout": false,
+            "mobile_dropout": false
+          }
+        ],
+        "source": "assumption:illustrative-contact-investigation/1",
+        "quadrature_points": 3,
+        "epoch_start_hour": 0
+      },
+      "comparison_seconds": 0.5,
+      "risk_weight": 0.2,
+      "minimum_restoration_probability": 0.3,
+      "observation_wait_hours": 12,
+      "followup_impairment_probability": null
+    }
+  },
+  "tiers": {
+    "smoke": {
+      "hours": 8,
+      "horizon_hours": 12,
+      "solver_seconds": 0.15,
+      "seeds": [
+        7
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        }
+      ],
+      "computation": {
+        "budgets": [
+          {
+            "id": "workflow",
+            "process_seconds": 0.15,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "process-2s",
+            "process_seconds": 2,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "joint-4s",
+            "process_seconds": 2,
+            "service_seconds": 4,
+            "investigation_seconds": 4
+          }
+        ],
+        "repetitions": 2,
+        "absolute_tolerance": 1e-05
+      },
+      "purpose": "Numerical qualification over repeated identical seeds and separate budgets. Smoke does not cover full recovery; sensitivity changes plant size and random seed explicitly."
+    },
+    "reference": {
+      "hours": 32,
+      "horizon_hours": 12,
+      "solver_seconds": 0.15,
+      "seeds": [
+        7
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        }
+      ],
+      "computation": {
+        "budgets": [
+          {
+            "id": "workflow",
+            "process_seconds": 0.15,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "process-2s",
+            "process_seconds": 2,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "joint-4s",
+            "process_seconds": 2,
+            "service_seconds": 4,
+            "investigation_seconds": 4
+          }
+        ],
+        "repetitions": 3,
+        "absolute_tolerance": 1e-05
+      },
+      "purpose": "Numerical qualification over repeated identical seeds and separate budgets. Smoke does not cover full recovery; sensitivity changes plant size and random seed explicitly."
+    },
+    "sensitivity": {
+      "hours": 48,
+      "horizon_hours": 12,
+      "solver_seconds": 0.15,
+      "seeds": [
+        7,
+        19,
+        31
+      ],
+      "variants": [
+        {
+          "id": "reference",
+          "label": "Reference plant",
+          "patch": {}
+        },
+        {
+          "id": "small-battery",
+          "label": "Quarter battery capacity",
+          "scale": {
+            "plant.battery_kwh": 0.25
+          }
+        }
+      ],
+      "computation": {
+        "budgets": [
+          {
+            "id": "workflow",
+            "process_seconds": 0.15,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "process-2s",
+            "process_seconds": 2,
+            "service_seconds": 0.5,
+            "investigation_seconds": 0.5
+          },
+          {
+            "id": "joint-4s",
+            "process_seconds": 2,
+            "service_seconds": 4,
+            "investigation_seconds": 4
+          }
+        ],
+        "repetitions": 3,
+        "absolute_tolerance": 1e-05
+      },
+      "purpose": "Numerical qualification over repeated identical seeds and separate budgets. Smoke does not cover full recovery; sensitivity changes plant size and random seed explicitly."
+    }
+  },
+  "comparison": "Joint minus separate policy within the same budget, repetition, seed, condition and plant. Repetition does not change the random seed. Compare repeatability within each policy/budget before interpreting a paired difference; repeated executions are not independent environmental samples.",
+  "policy_tuning": "Prospectively compare .15/.5/.5 seconds, 2/.5/.5 seconds and 2/4/4 seconds for process/service/investigation. The last two isolate more outer-comparison time from process time. Maximum candidate counts, intervention assumptions, deadlines, test targets and policy versions remain frozen. A wall-clock budget is not a deterministic amount of solver work.",
+  "resolution": {
+    "plant_basis": "Reference or active-run plant, production costs, sensors, process implementation choices and solar design. The protocol supplies service hardware, logistics, service prices and challenge settings; every replacement of an active-run value is recorded.",
+    "variants": "Plant variants and conditions apply first. Each declared computation budget then sets process time and the two named policy comparison times. Repetitions retain identical numerical inputs and seeds, acquire separate case IDs and are interleaved across budgets. No plant, sensor, price or policy-priority tuning occurs between repetitions.",
+    "arms": "Same installed field hardware, service prices, plant and faults. The two complete policies differ in bounded conditional tests and joint acceptance; this is a package comparison. Computation qualification compares each package to itself across repeated executions.",
+    "weather": "Declared hourly DC at 75% of solar nameplate, constant 20°C and no forecast error. This isolates scheduling computation and scales DC with changed nameplate; it does not evaluate solar geometry, panel temperature or weather forecast skill.",
+    "faults": "At hour 2 a persistent resettable trip or equipment damage with a stuck closed contact is injected. Hardware and reader parameters are illustrative and noiseless in the reference fixture. Truth remains outside controller observations.",
+    "randomness": "Each repetition reuses the exact seed and target-action-request outcome policy. Three repetitions are not three independent seeds. Studies execute sequentially in a source-restored worker with one solver thread; fresh worker/host repetitions remain a separate reproducibility check.",
+    "costs": "Complete illustrative activity-based service prices; allocated period cost, incremental decision cost and actual expenditure remain distinct. Fixed ownership is excluded from dispatch incentives. Mission costs and additional charging share the same usage/parts accounting; power and production losses are not charged twice.",
+    "terminal": "Retain ending plant energy, gas inventories, reactor temperature, all public service work and diagnostic estimates. Compare complete trajectories as well as methane and cost. No speculative terminal sale proceeds."
+  },
+  "metric_definitions": {
+    "methane_kg": "Sum of applied methane; hydrogen inventory is separate.",
+    "total_eur": "Allocated plant and service period cost; undefined if an applicable price is missing.",
+    "service_expenditure_eur": "Modelled service billings and procurement events; not total plant cash flow or invoices.",
+    "human_work": "Site visits, actual committed crew hours and remote hours are separate.",
+    "recovery": "Physical restoration is the first hourly truth boundary back at nominal capacity after a derating. Confidence is the next decision boundary after a post-restoration observation restores the capacity estimate, following an earlier estimated derating. Delay is undefined if either event is absent. Probe hours count requested tests; deadline misses and candidate solves apply only to the scheduled policy and are undefined for its baseline.",
+    "terminal": "All ending inventories and service state retained; unfinished and completed-unverified orders reported separately.",
+    "coordination": "Fallback intervals, candidate solves, missed work deadlines and repair retries refer to the recorded coordinated policy. They are undefined for a local baseline without that policy. Unfinished work and actual service costs are reported for every arm."
+  },
+  "checks": [
+    "Independent physical, service-resource and three-view economic audit for every complete arm",
+    "Identical matched weather hashes and exogenous input signatures",
+    "Preserved protocol, original prices, source, attempts and numerical rerun differences",
+    "Explicit incomplete data, solver limitations, unsupported prices and unfinished work",
+    "Distinct repetition IDs with identical inputs and unchanged seeds",
+    "Original requested/applied/state/diagnosis vectors and work histories retained",
+    "Missing or incomplete repeats remain incomplete rather than stable"
+  ],
+  "limits": [
+    "Finite sampled repeatability does not establish determinism, optimality, empirical reliability or controller superiority.",
+    "The reference has one seed. Sensitivity seeds and plant changes must remain separately reported.",
+    "Process solve quality is distinct from outer candidate-search completeness; preserved archives retain all omissions and fallbacks.",
+    "Constant DC is a declared scheduling abstraction, not a solar design or weather-validation study.",
+    "The two controller arms change a policy package; isolate test target and timing before causal attribution.",
+    "The process-2s arm can still exhaust the .5-second outer budget before completing every candidate.",
+    "Public service-work and numeric trajectory comparisons use a declared absolute tolerance. No failed or incomplete repeat is discarded.",
+    "The constant-DC fixture rejects an active explicit solar design or optical section model before execution; such a basis needs a separately declared weather/conversion protocol. The selected plant is never silently simplified."
+  ],
+  "review": {
+    "status": "authored",
+    "scope": "Prospective numerical-qualification protocol. No stable budget or policy ranking has been selected from the outcomes."
+  },
+  "report_metrics": [
+    "capacity_restored_hour",
+    "capacity_confirmed_hour",
+    "completed_unverified_orders",
+    "unfinished_orders",
+    "fault_active_hours",
+    "site_visits",
+    "crew_hours",
+    "service_decision_eur",
+    "service_expenditure_eur",
+    "service_fallback_intervals",
+    "service_candidate_solves",
+    "service_missed_work_deadlines",
+    "service_repair_retries"
+  ],
+  "interpretation_rules": [
+    "Report repeatability separately from solve quality and outer search coverage.",
+    "Do not rank the controller packages when numerical repetitions reverse the paired ranking.",
+    "Choose future research budgets only after inspecting all repeats and retained failures."
+  ],
+  "weather_fixture": {
+    "version": "constant-dc-computation/1",
+    "pv_fraction": 0.75,
+    "ambient_c": 20
+  },
+  "revision_notes": [
+    "Revision 2 explicitly records the inactive followup_impairment_probability=None field in the reference configuration and both policies. No physical, policy or budget value changes. Revision 1 and existing editions remain untouched."
+  ]
+}

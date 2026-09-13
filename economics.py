@@ -204,6 +204,50 @@ def evaluate(result, costs: Costs):
     }
 
 
+def cost_timeline(result, costs: Costs):
+    """Cost states at hourly boundaries, using exactly the completed-run accounting.
+
+    A prefix includes only completed intervals. In particular, the incident budget
+    first appears after the interval in which a fault begins, never in advance.
+    """
+    plant = Plant(**result["plant"])
+    frames = {name: [] for name in result["records"]}
+    records = {name: [] for name in frames}
+    metrics = {
+        name: {
+            "hydrogen_kg": 0,
+            "starts": 0,
+            "initial_battery_kwh": plant.battery_kwh * plant.initial_soc,
+            "final_battery_kwh": plant.battery_kwh * plant.initial_soc,
+            "curtailed_kwh": 0,
+            "startup_kwh": 0,
+        }
+        for name in frames
+    }
+    losses = dict.fromkeys(frames, 0)
+    for hour in range(len(result["records"]["Greedy"]) + 1):
+        if hour:
+            for name in frames:
+                row = result["records"][name][hour - 1]
+                records[name].append(row)
+                m = metrics[name]
+                m["hydrogen_kg"] += row["h2_kg"]
+                m["starts"] += row["started"]
+                m["final_battery_kwh"] = row["battery_kwh"]
+                m["curtailed_kwh"] += row["curtailed_kw"] * plant.dt_hours
+                m["startup_kwh"] += row["startup_kwh"]
+                losses[name] += row["battery_loss_kwh"]
+        prefix = evaluate({**result, "records": records, "metrics": metrics}, costs)
+        for name, values in prefix["controllers"].items():
+            frames[name].append({**values, "battery_loss_kwh": losses[name]})
+    return {
+        "physical_run_id": physical_id(result),
+        "capital": prefix["capital"],
+        "cost_assumptions": asdict(costs),
+        "controllers": frames,
+    }
+
+
 def sensitivities(result, costs: Costs):
     """Explicit stress scenarios, not confidence intervals or market forecasts."""
     fields = [

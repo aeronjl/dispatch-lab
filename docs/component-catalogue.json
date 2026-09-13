@@ -1,0 +1,840 @@
+{
+  "boundary": "Pure kernels depend only on contracts/audits/portable rows/time helpers. Plant assembly owns bus allocation and observation-versus-truth context.",
+  "compatibility": "Schema 2/3 meanings remain unchanged; additive records are unavailable on older archives, never reconstructed as original evidence.",
+  "components": {
+    "battery": {
+      "assumptions": [
+        "eta_charge = eta_discharge = sqrt(roundtrip_efficiency)",
+        "E_end = E_begin + eta \u00d7 charge \u00d7 duration \u2212 discharge \u00d7 duration / eta",
+        "Power limit = usable capacity \u00d7 C-rate; charge and discharge are mutually exclusive",
+        "Constant interval power; no self-discharge, temperature, degradation or SOC-dependent efficiency",
+        "Zero capacity represents an absent battery; its displayed SOC is zero by convention",
+        "Execution accounts for feasible applied actions; plant dispatch owns clipping, bus allocation and curtailment",
+        "Usage-related wear is an economic allowance, not a physical capacity-fade model"
+      ],
+      "execution_interface": "Battery.step(BatteryState(energy_kwh), BatteryInput(charge_kw, discharge_kw, duration_hours)) -> ComponentResult",
+      "inputs": [
+        "initial stored energy: kWh",
+        "DC-bus charge/discharge: kW",
+        "duration: h"
+      ],
+      "model_id": "dispatch-lab/dc-battery",
+      "outputs": [
+        "ending energy: kWh",
+        "charge/discharge loss: kWh",
+        "SOC: %",
+        "named physical audits"
+      ],
+      "parameters": [
+        {
+          "default": 800,
+          "key": "battery_kwh",
+          "label": "Usable energy capacity",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWh",
+          "upper": 1000000000.0
+        },
+        {
+          "default": 0.5,
+          "key": "battery_c_rate",
+          "label": "Power / energy ratio",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "1/h",
+          "upper": 1000.0
+        },
+        {
+          "default": 0.9,
+          "key": "roundtrip_efficiency",
+          "label": "Round-trip efficiency",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        },
+        {
+          "default": 0,
+          "key": "initial_soc",
+          "label": "Initial state of charge",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        }
+      ],
+      "planning_constraints": [
+        "charge_direction",
+        "discharge_direction",
+        "energy_balance"
+      ],
+      "planning_interface": "Battery.planning(BatteryState, tuple[duration_hours, ...]) -> PlanningBlock(bounds, rows); local ports: energy, charge, discharge, charging (binary)",
+      "planning_ports": [
+        {
+          "meaning": "Ending stored energy",
+          "name": "energy",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kWh"
+        },
+        {
+          "meaning": "Mean bus charge",
+          "name": "charge",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "Mean bus discharge",
+          "name": "discharge",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "Charge direction",
+          "name": "charging",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        }
+      ],
+      "references": [],
+      "spec_sha256": "d0e0f86383e8b00165fb5fe72cda45e76f2c6a8ca1059bda49dfb44bc84198aa",
+      "time_semantics": "Positive-duration constant-power intervals; plant scheduling remains hourly. State is at interval end.",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_battery.py: hand-calculated round trip, Decimal reference, subdivision, empty/full/absent battery, invalid actions",
+        "tests/test_battery.py: independent standalone MILP consumer, plan/execution conformance, exclusive directions",
+        "tests/test_battery.py: implementation swap across all controllers, what-if, fallback, archive audit and display lineage",
+        "tests/test_engineering.py::test_pre_refactor_physical_fixture: preserved physical trace"
+      ],
+      "version": "1"
+    },
+    "co2": {
+      "assumptions": [
+        "Delivery occurs at interval start before withdrawal; excess is explicitly rejected",
+        "No pressure or leakage model; delivered feedstock is supplied CO\u2082"
+      ],
+      "execution_interface": "Storage(Parameters(capacity_kg, 'co2')).step(State, Inputs) -> ComponentResult",
+      "inputs": [
+        "initial inventory: kg",
+        "interval inflow/outflow: kg"
+      ],
+      "model_id": "dispatch-lab/co2-buffer",
+      "outputs": [
+        "ending inventory: kg",
+        "accepted inflow: kg",
+        "rejected inflow: kg"
+      ],
+      "parameters": [
+        {
+          "default": 1000,
+          "key": "capacity_kg",
+          "label": "CO\u2082 capacity",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kg",
+          "upper": 1000000000.0
+        }
+      ],
+      "planning_constraints": [
+        "delivery_accounting",
+        "full_before_rejection",
+        "inventory_balance",
+        "rejection_only_when_full",
+        "start_capacity"
+      ],
+      "planning_interface": "Storage.planning(State, intervals, deliveries_kg) -> PlanningBlock; inventory/outflow/accepted/rejected kg, full boolean",
+      "planning_ports": [
+        {
+          "meaning": "inventory / co2",
+          "name": "inventory",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "outflow / co2",
+          "name": "outflow",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "accepted / co2",
+          "name": "accepted",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "rejected / co2",
+          "name": "rejected",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "full / co2",
+          "name": "full",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        }
+      ],
+      "references": [],
+      "spec_sha256": "e0692c8252db7cc11a2b929fd31256b9c5734a723dc7ed5d67988cff77d98c9f",
+      "time_semantics": "Interval mass, not mass rate; state at interval end.",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_components.py: full-tank delivery rejection before withdrawal, delivery accounting, isolated planning and execution"
+      ],
+      "version": "1"
+    },
+    "electrolyser": {
+      "assumptions": [
+        "H\u2082 = productive kW \u00d7 duration / specific energy",
+        "Water consumed = 9 kg/kg H\u2082; startup consumes energy but produces no hydrogen",
+        "Constant efficiency and hard turndown; no stack temperature or pressure",
+        "Available capacity is an explicit input: estimate during planning, physical capacity during execution; no injected fault labels"
+      ],
+      "execution_interface": "Electrolyser.step(State(on), Inputs(productive_kw, available_kw, duration_hours)) -> ComponentResult",
+      "inputs": [
+        "previous on/off state",
+        "productive load: kW",
+        "available capacity: kW",
+        "duration: h"
+      ],
+      "model_id": "dispatch-lab/electrolyser",
+      "outputs": [
+        "ending on/off state",
+        "hydrogen: kg",
+        "water consumed: kg",
+        "total bus demand: kW",
+        "start count"
+      ],
+      "parameters": [
+        {
+          "default": 450,
+          "key": "capacity_kw",
+          "label": "Nameplate productive load",
+          "lower": 1e-06,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW",
+          "upper": 100000
+        },
+        {
+          "default": 0.3,
+          "key": "minimum_fraction",
+          "label": "Minimum productive load",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        },
+        {
+          "default": 55,
+          "key": "specific_energy_kwh_per_kg",
+          "label": "Specific electricity consumption",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWh/kg H\u2082",
+          "upper": 10000
+        },
+        {
+          "default": 40,
+          "key": "start_energy_kwh",
+          "label": "Startup energy",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWh/start",
+          "upper": 100000
+        }
+      ],
+      "planning_constraints": [
+        "already_on_not_start",
+        "electrical_demand",
+        "hydrogen_conversion",
+        "maximum_power",
+        "minimum_power",
+        "off_to_on_starts",
+        "start_requires_on"
+      ],
+      "planning_interface": "Electrolyser.planning(State, available_kw, durations) -> PlanningBlock; local power/electricity kW, hydrogen kg, on/start boolean",
+      "planning_ports": [
+        {
+          "meaning": "Productive DC demand",
+          "name": "power",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "Productive plus start demand",
+          "name": "electricity",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "Hydrogen produced in interval",
+          "name": "hydrogen",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "Operating",
+          "name": "on",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        },
+        {
+          "meaning": "Off to on transition",
+          "name": "start",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        }
+      ],
+      "references": [],
+      "spec_sha256": "5ec0307539bbd01294066a6983a3571f85987e5503d1308fe07eb18e3f564a65",
+      "time_semantics": "Positive-duration constant-power intervals; startup is an interval energy, bus demand is mean power.",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_components.py: independent conversion/start calculations, standalone planning replay, implementation swap and failure limits"
+      ],
+      "version": "1"
+    },
+    "hydrogen": {
+      "assumptions": [
+        "Uniform concurrent flow within the hour; inflow may feed production in the same interval",
+        "No venting; infeasible overflow/exhaustion raises a named physical audit",
+        "No pressure or leakage model"
+      ],
+      "execution_interface": "Storage(Parameters(capacity_kg, 'hydrogen')).step(State, Inputs) -> ComponentResult",
+      "inputs": [
+        "initial inventory: kg",
+        "interval inflow/outflow: kg"
+      ],
+      "model_id": "dispatch-lab/hydrogen-buffer",
+      "outputs": [
+        "ending inventory: kg",
+        "accepted inflow: kg",
+        "rejected inflow: kg"
+      ],
+      "parameters": [
+        {
+          "default": 60,
+          "key": "capacity_kg",
+          "label": "Hydrogen capacity",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kg",
+          "upper": 1000000000.0
+        }
+      ],
+      "planning_constraints": [
+        "inventory_balance"
+      ],
+      "planning_interface": "Storage.planning(State, intervals) -> PlanningBlock; inventory/inflow/outflow kg",
+      "planning_ports": [
+        {
+          "meaning": "inventory / hydrogen",
+          "name": "inventory",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "outflow / hydrogen",
+          "name": "outflow",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "inflow / hydrogen",
+          "name": "inflow",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        }
+      ],
+      "references": [],
+      "spec_sha256": "c0480a54a98e5897d5e4be69969259867233f3f53b3b8e9d1f381c17e011b39b",
+      "time_semantics": "Interval mass, not mass rate; state at interval end.",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_components.py: independent ledgers, zero inventory, simultaneous flow, no silent venting, standalone planning and replacement"
+      ],
+      "version": "1"
+    },
+    "reactor": {
+      "assumptions": [
+        "C dT/dt = heater + reaction heat \u2212 UA(T\u2212ambient) \u2212 cooling",
+        "Constant inputs within each interval; ideal Sabatier stoichiometry",
+        "H\u2082=2, CO\u2082=44, CH\u2084=16, H\u2082O=18 kg/kmol; reaction heat 165 MJ/kmol",
+        "No pressure, kinetics, gas-quality or water-recycling model"
+      ],
+      "execution_interface": "Reactor.execute(ReactorState, ThermalInput, requested_running) -> ComponentResult; thermal and discrete state together",
+      "inputs": [
+        "initial temperature: \u00b0C",
+        "ambient: \u00b0C",
+        "heater/cooling: kW",
+        "methane in interval: kg",
+        "duration: h"
+      ],
+      "model_id": "dispatch-lab/lumped-reactor",
+      "outputs": [
+        "ending temperature: \u00b0C",
+        "reaction heat: kWh",
+        "heat loss: kWh",
+        "operating mode",
+        "commitment: h"
+      ],
+      "parameters": [
+        {
+          "default": 0.3,
+          "key": "thermal_capacity_kwh_per_k",
+          "label": "Thermal capacity",
+          "lower": 1e-06,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWh/K",
+          "upper": 10000
+        },
+        {
+          "default": 0.08,
+          "key": "heat_loss_kw_per_k",
+          "label": "Heat-loss coefficient",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW/K",
+          "upper": 10000
+        },
+        {
+          "default": 250,
+          "key": "temperature_min_c",
+          "label": "Production minimum",
+          "lower": -49,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "\u00b0C",
+          "upper": 1499
+        },
+        {
+          "default": 400,
+          "key": "temperature_max_c",
+          "label": "Production maximum",
+          "lower": -49,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "\u00b0C",
+          "upper": 1499
+        },
+        {
+          "default": 60,
+          "key": "heater_max_kw",
+          "label": "Maximum heating",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW",
+          "upper": 100000
+        },
+        {
+          "default": 40,
+          "key": "cooling_max_kw",
+          "label": "Maximum heat rejection",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW",
+          "upper": 100000
+        },
+        {
+          "default": 4,
+          "key": "minimum_run_hours",
+          "label": "Minimum production run",
+          "lower": 1,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "h",
+          "upper": 240
+        },
+        {
+          "default": 3,
+          "key": "methane_min_kgph",
+          "label": "Minimum methane production",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kg/h",
+          "upper": 100000
+        },
+        {
+          "default": 10,
+          "key": "methane_max_kgph",
+          "label": "Maximum methane production",
+          "lower": 1e-09,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kg/h",
+          "upper": 100000
+        },
+        {
+          "default": 2,
+          "key": "auxiliary_kw",
+          "label": "Running auxiliary demand",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW",
+          "upper": 100000
+        },
+        {
+          "default": 1,
+          "key": "methane_electric_kwh_per_kg",
+          "label": "Production electricity",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWh/kg CH\u2084",
+          "upper": 10000
+        },
+        {
+          "default": 0.1,
+          "key": "cooling_electric_fraction",
+          "label": "Cooling electricity / rejected heat",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 100
+        }
+      ],
+      "planning_constraints": [
+        "already_on_not_start",
+        "co2_use",
+        "cold_cannot_run",
+        "cool_direction",
+        "electrical_demand",
+        "heat_direction",
+        "hot_at_end",
+        "hydrogen_use",
+        "maximum_power",
+        "minimum_power",
+        "minimum_run",
+        "off_to_on_starts",
+        "start_requires_on",
+        "thermal_balance"
+      ],
+      "planning_interface": "Reactor.planning(ReactorState, ambient_c, durations, enforce_commitment) -> PlanningBlock; thermal/gas/electrical ports with units",
+      "planning_ports": [
+        {
+          "meaning": "temperature / reactor",
+          "name": "temperature",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "\u00b0C"
+        },
+        {
+          "meaning": "heater / reactor",
+          "name": "heater",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "cooling / reactor",
+          "name": "cooling",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        },
+        {
+          "meaning": "methane / reactor",
+          "name": "methane",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "on / reactor",
+          "name": "on",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        },
+        {
+          "meaning": "start / reactor",
+          "name": "start",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        },
+        {
+          "meaning": "heating / reactor",
+          "name": "heating",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "boolean"
+        },
+        {
+          "meaning": "hydrogen / reactor",
+          "name": "hydrogen",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "co2 / reactor",
+          "name": "co2",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kg"
+        },
+        {
+          "meaning": "electricity / reactor",
+          "name": "electricity",
+          "timing": "interval mean rate or interval total; state at interval end",
+          "unit": "kW"
+        }
+      ],
+      "references": [
+        "https://doi.org/10.1039/D5RE00337G"
+      ],
+      "spec_sha256": "d57d61fe620e00837393d046cb573e7877012eeb867a752a7d86ab213b32b768",
+      "time_semantics": "Thermal helper accepts positive durations; dispatch and commitments use one-hour intervals",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_components.py: standalone thermal/gas planning, commitment carry, cold-start rejection, forced trip",
+        "tests/test_engineering.py: independent ODE, subdivision and TLC discrete-state conformance"
+      ],
+      "version": "1"
+    },
+    "reference_pv": {
+      "assumptions": [
+        "Cell temperature = ambient + (NOCT\u221220) \u00d7 irradiance / 800",
+        "DC = min(nameplate, max(0,nameplate \u00d7 irradiance/1000 \u00d7 (1\u2212loss) \u00d7 max(0,1+coefficient\u00d7(cell\u221225))))",
+        "Saved stress may adjust generation explicitly after conversion"
+      ],
+      "execution_interface": "pv.convert(Parameters, irradiance_wm2, ambient_c) -> float kW",
+      "inputs": [
+        "reference-plane hourly irradiance: W/m\u00b2",
+        "ambient: \u00b0C",
+        "nameplate: kW",
+        "loss/NOCT/temperature coefficient"
+      ],
+      "model_id": "dispatch-lab/reference-pv",
+      "outputs": [
+        "DC generation: kW"
+      ],
+      "parameters": [],
+      "planning_interface": "Exogenous generation input",
+      "references": [],
+      "spec_sha256": "1134459c76e7acc053f80f6ca5ba82643b1e1e3ed1629fa8bd3f004dd984d746",
+      "time_semantics": "One-hour mean power; no subhour cloud transients",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_boundaries.py: independent known-answer baseline"
+      ],
+      "version": "1"
+    },
+    "solar": {
+      "assumptions": [
+        "30% isotropic diffuse sky; archived reference plane normalisation",
+        "Uniform section shading; independent ideal MPPT",
+        "Panel tiles are schematic; no string I\u2013V or bypass-diode model",
+        "Hourly mean radiation; geometry evaluated at interval midpoint"
+      ],
+      "execution_interface": "solar_model.component_step(SolarInput(design_json, sample_json, UTC time, ArrayCapacity, SolarContext)) -> ComponentResult",
+      "inputs": [
+        "reference-plane irradiance: W/m\u00b2",
+        "ambient: \u00b0C",
+        "UTC interval start",
+        "section design",
+        "reference geometry",
+        "scenario power adjustment"
+      ],
+      "model_id": "dispatch-lab/solar-sections",
+      "outputs": [
+        "DC output: kW",
+        "section outputs: kW",
+        "cell temperature: \u00b0C",
+        "explicit losses/clipping: kW"
+      ],
+      "parameters": [
+        {
+          "default": 333.3333333333333,
+          "key": "capacity_kw",
+          "label": "Section capacity",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kWp",
+          "upper": 10000
+        },
+        {
+          "default": 30,
+          "key": "tilt",
+          "label": "Panel tilt",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "degrees",
+          "upper": 90
+        },
+        {
+          "default": 0,
+          "key": "azimuth",
+          "label": "Azimuth (south = 0)",
+          "lower": -180,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "degrees",
+          "upper": 180
+        },
+        {
+          "default": 0,
+          "key": "shade",
+          "label": "Uniform shading",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        },
+        {
+          "default": 0,
+          "key": "soiling",
+          "label": "Soiling",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        },
+        {
+          "default": 1000,
+          "key": "converter_kw",
+          "label": "Converter limit",
+          "lower": 0,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "kW",
+          "upper": 30000
+        },
+        {
+          "default": 1,
+          "key": "efficiency",
+          "label": "Converter efficiency",
+          "lower": 0.5,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "fraction",
+          "upper": 1
+        },
+        {
+          "default": 45,
+          "key": "noct_c",
+          "label": "Nominal operating cell temperature",
+          "lower": 20,
+          "source": "Illustrative assumption; not calibrated",
+          "unit": "\u00b0C",
+          "upper": 80
+        }
+      ],
+      "planning_interface": "Same pure converter transforms every saved issue independently; output is an exogenous hourly DC-bus power limit",
+      "references": [
+        "https://open-meteo.com/en/docs"
+      ],
+      "spec_sha256": "e87898e334726369e2b27d376e72e1be7426c497e806c61da422660c7108f3c1",
+      "time_semantics": "One-hour mean power; 0\u00b0 azimuth south, \u221290\u00b0 east, +90\u00b0 west",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_solar.py: design replay and altered geometry, no source mutation",
+        "tests/test_engineering.py: independent solar calculations, bounded immutable caching",
+        "tests/test_boundaries.py: standalone inputs, invalid data and I/O dependency firewall"
+      ],
+      "version": "2"
+    },
+    "weather": {
+      "assumptions": [
+        "Forecast boundary has no future realised weather input",
+        "Availability at or before decision time; latest initialized issue wins",
+        "Archive radiation stamped t+1 is the mean for [t,t+1); temperature sampled at t",
+        "Missing intervals/units/nonfinite samples raise IncompleteWeather; no synthetic substitution",
+        "Reanalysis is a historical reference, not a site measurement"
+      ],
+      "execution_interface": "SavedForecastProvider.horizon(ForecastRequest) -> detached horizon; provider JSON is frozen and network-free",
+      "inputs": [
+        "current PV: kW",
+        "current ambient: \u00b0C",
+        "UTC decision start",
+        "saved issues and availability times",
+        "horizon: whole hours"
+      ],
+      "model_id": "dispatch-lab/saved-forecast",
+      "outputs": [
+        "hourly predicted PV: kW",
+        "ambient: \u00b0C",
+        "issue/availability provenance",
+        "current forecast residual: kW"
+      ],
+      "parameters": [],
+      "planning_interface": "Exogenous pv_kw/ambient_c sequences feed component planning; CO\u2082 delivery is a separate DeliverySchedule",
+      "references": [
+        "https://open-meteo.com/en/docs/single-runs-api",
+        "https://open-meteo.com/en/docs/historical-weather-api"
+      ],
+      "spec_sha256": "6572739c9a0e000b8a24f0a8dad9abdeb9e889eeca51e51cf979606ce410a83e",
+      "time_semantics": "UTC one-hour intervals; provider issues and local display times retain offsets",
+      "validation": "Illustrative model; numerical verification is not plant calibration",
+      "verification": [
+        "tests/test_boundaries.py: isolated forecast causality and missing inputs, pure solar conversion and dependency boundaries",
+        "tests/test_methane.py: normalization, null radiation, forecast availability and DST"
+      ],
+      "version": "1"
+    }
+  },
+  "default_implementations": {
+    "battery": "affine/1",
+    "co2": "balance/1",
+    "electrolyser": "specific-energy/1",
+    "hydrogen": "balance/1",
+    "reactor": "analytic/1"
+  },
+  "documentation_topics": {
+    "battery": {
+      "fixture_id": "dispatch-lab/learning/battery/1",
+      "title": "Keeping energy for later",
+      "version": "1"
+    },
+    "bus": {
+      "fixture_id": "dispatch-lab/learning/bus/1",
+      "title": "Several machines share one bus",
+      "version": "1"
+    },
+    "co2": {
+      "fixture_id": "dispatch-lab/learning/co2/1",
+      "title": "Deliveries arrive before withdrawal",
+      "version": "1"
+    },
+    "controllers": {
+      "fixture_id": "dispatch-lab/learning/controllers/1",
+      "title": "Planning with the same information",
+      "version": "1"
+    },
+    "diagnosis": {
+      "fixture_id": "dispatch-lab/learning/diagnosis/2",
+      "title": "An anomaly needs evidence",
+      "version": "2"
+    },
+    "economics": {
+      "fixture_id": "dispatch-lab/learning/economics/1",
+      "title": "Which costs can this action change?",
+      "version": "1"
+    },
+    "electrolyser": {
+      "fixture_id": "dispatch-lab/learning/electrolyser/1",
+      "title": "Turning electricity into hydrogen",
+      "version": "1"
+    },
+    "experiments": {
+      "fixture_id": "dispatch-lab/learning/experiments/1",
+      "title": "Read a comparison through to its boundary",
+      "version": "1"
+    },
+    "hydrogen": {
+      "fixture_id": "dispatch-lab/learning/hydrogen/1",
+      "title": "A buffer is a balance over time",
+      "version": "1"
+    },
+    "reactor": {
+      "fixture_id": "dispatch-lab/learning/reactor/1",
+      "title": "Keeping the reactor ready",
+      "version": "1"
+    },
+    "solar": {
+      "fixture_id": "dispatch-lab/learning/solar/1",
+      "title": "From sunlight to the DC bus",
+      "version": "1"
+    },
+    "weather": {
+      "fixture_id": "dispatch-lab/learning/weather/1",
+      "title": "What could the controller know?",
+      "version": "1"
+    }
+  },
+  "result_schemas": {
+    "battery": "dispatch-lab/battery-record/1",
+    "bundle": "dispatch-lab/reproduction-bundle/1",
+    "component": "dispatch-lab/component-record/1",
+    "methane": [
+      "dispatch-lab/methane/2",
+      "dispatch-lab/methane/3"
+    ],
+    "source": "dispatch-lab/source-capsule/1"
+  },
+  "schema_version": "dispatch-lab/component-catalogue/1"
+}

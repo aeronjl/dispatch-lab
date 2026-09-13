@@ -13,75 +13,30 @@ from pathlib import Path
 os.environ.setdefault("GRADIO_ANALYTICS_ENABLED", "False")
 os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
 
+from dataclasses import asdict
+
 import gradio as gr
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-from economics_ui import build_cost_panel
+from economics import Costs
+from economics_ui import (
+    FIELDS,
+    build_cost_panel,
+    create_cost_inputs,
+    render_cost_inputs,
+)
 from experiment import Scenario, run_experiment
 from plant import Plant
+from playback import build_playback, playback_value
+from ui_theme import AMBER, BACKGROUND, COMPARISON, CSS, FONT, GRID, HTML_CSS, INK, make_theme
 
 ROOT = Path(__file__).resolve().parent
-TEAL, ORANGE, INK, GRID = "#087f73", "#cb713c", "#233a35", "#e8eae4"
-CSS = """
-.gradio-container {max-width: 1500px !important; padding: 28px 32px !important;}
-body {background: #f6f6f0 !important;}
-footer {display: none !important;}
-#settings {background: white; border: 1px solid #e2e7df; border-radius: 16px; padding: 22px;}
-#settings .block {border: 0; box-shadow: none;}
-#settings h3 {font-size: 15px; color: #233a35; margin-top: 10px;}
-#run {min-height: 46px; font-weight: 650; border-radius: 10px;}
-#results .block {border-radius: 12px;}
-#timeseries {border: 1px solid #e2e7df; background: #fff; border-radius: 16px;}
-#run-note {font-size: 12px; padding: 0 4px; color: #60746e;}
-.tabitem {padding: 18px 4px !important;}
-@media(max-width: 800px) {.gradio-container {padding: 16px !important;}}
-"""
-HTML_CSS = """
-* {box-sizing: border-box;}
-.eyebrow {font: 650 11px system-ui; letter-spacing: 1.8px; color: #527269;}
-.topline {display: flex; justify-content: space-between; gap: 12px; align-items: center;}
-.badge {border: 1px solid #d5dfd5; color: #527269; padding: 6px 11px; border-radius: 25px;
-        font: 550 11px system-ui; letter-spacing: .5px; white-space: nowrap;}
-h1 {font: 550 38px system-ui; letter-spacing: -1.7px; color: #233a35; margin: 12px 0 8px;}
-.intro {font: 15px/1.6 system-ui; color: #60746e; max-width: 840px; margin: 0 0 20px;}
-.flow {display: flex; align-items: center; gap: 14px; padding: 16px 20px;
-       border: 1px solid #dfe6dd; border-radius: 12px; background: #edf2e9; margin-bottom: 10px;}
-.node {flex: 1; color: #233a35; font: 600 13px system-ui;}
-.node small {display: block; font: 12px system-ui; color: #60746e; margin-top: 4px;}
-.arrow {color: #7d998d;}
-.cards {display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 6px;}
-.card {padding: 17px; border: 1px solid #e2e7df; border-radius: 12px; background: #fff;}
-.label {font: 600 10px system-ui; letter-spacing: 1px; color: #60746e; text-transform: uppercase;}
-.value {font: 550 27px system-ui; letter-spacing: -.8px; color: #087f73; margin: 9px 0 7px;}
-.value span {font-size: 12px; font-weight: 400; letter-spacing: 0;}
-.compare {font: 12px/1.5 system-ui; color: #cb713c;}
-.insight {border-left: 3px solid #8fb8a2; padding: 12px 16px; background: #edf2e9;
-          color: #35544b; font: 13px/1.6 system-ui; border-radius: 0 10px 10px 0;}
-.insight b {font-weight: 650;}
-.legend {display: flex; gap: 18px; font: 12px system-ui; color: #60746e; padding: 8px 0;}
-.legend span {display: flex; align-items: center; gap: 6px;}
-.dot {height: 8px; width: 8px; border-radius: 50%; display: inline-block;}
-@media(max-width: 1000px) {.cards {grid-template-columns: repeat(2, 1fr);}}
-@media(max-width: 600px) {h1 {font-size: 30px;} .flow {gap: 6px; padding: 12px;}
- .node {font-size: 11px;} .node small {font-size: 10px;} .badge {display: none;}}
-"""
-
+TEAL, ORANGE = AMBER, COMPARISON
 HEADER = """
-<div class="topline"><div class="eyebrow">AUTONOMOUS PLANTS / EXPERIMENT 001</div>
-<span class="badge">LOCAL LAB · SYNTHETIC DATA</span></div>
-<h1>When should a solar plant run?</h1>
-<p class="intro">Give a small hydrogen plant a battery and a weather forecast. Compare a
-simple rule with a controller that plans ahead. Follow the energy, inspect the costs,
-and find which assumptions deserve attention.</p>
-<div class="flow">
- <div class="node">01 · Solar array<small>Intermittent electricity</small></div>
- <span class="arrow">→</span>
- <div class="node">02 · DC bus + battery<small>Use electricity now or store it</small></div>
- <span class="arrow">→</span>
- <div class="node">03 · Electrolyser<small>Minimum load + start-up energy → H₂</small></div>
-</div>
+<div class="lab-masthead"><h1>DISPATCH <span>/</span> LAB</h1>
+<span>SOLAR · STORAGE · HYDROGEN</span><span class="lab-badge">LOCAL / SIMULATED</span></div>
 """
 
 ASSUMPTIONS = """
@@ -222,9 +177,9 @@ def plot_traces(result):
             y=pv + [pv[-1]],
             name="Available solar",
             mode="lines",
-            line={"color": "#bac7b6", "width": 1, "shape": "hv"},
+            line={"color": "#8e7553", "width": 1, "shape": "hv"},
             fill="tozeroy",
-            fillcolor="rgba(183, 199, 173, 0.28)",
+            fillcolor="rgba(255, 163, 45, 0.10)",
             hovertemplate="Hour %{x}<br>Solar: %{y:.0f} kW<extra></extra>",
         ),
         row=1,
@@ -300,10 +255,10 @@ def plot_traces(result):
     fig.update_layout(
         height=670,
         margin={"l": 55, "r": 25, "t": 90, "b": 35},
-        paper_bgcolor="#ffffff",
-        plot_bgcolor="#ffffff",
+        paper_bgcolor=BACKGROUND,
+        plot_bgcolor=BACKGROUND,
         hovermode="x unified",
-        font={"family": "system-ui, sans-serif", "size": 11, "color": INK},
+        font={"family": FONT, "size": 11, "color": INK},
         legend={"orientation": "h", "y": 1.13, "x": 0},
         dragmode="zoom",
         uirevision=str(uuid.uuid4()),
@@ -404,6 +359,7 @@ def present(result, elapsed):
         export_run(result),
         note,
         result,
+        playback_value(result),
     )
 
 
@@ -571,122 +527,191 @@ PRESETS = {
 }
 
 
-def build_app():
+def build_legacy_app():
     default = simulate(*next(iter(PRESETS.values())), progress=None)
     with gr.Blocks(title="Dispatch lab · Autonomous plants", analytics_enabled=False) as demo:
         physical_state = gr.State(default[7])
+        cost_widgets = create_cost_inputs()
         gr.HTML(HEADER, css_template=HTML_CSS)
-        with gr.Row(equal_height=False):
-            with gr.Column(scale=1, min_width=290, elem_id="settings"):
-                gr.Markdown("### Set up an experiment")
-                preset = gr.Dropdown(
-                    list(PRESETS), value=next(iter(PRESETS)), label="Start with a scenario"
-                )
-                solar = gr.Slider(0, 2000, value=1000, step=50, label="Solar array · kW")
-                battery = gr.Slider(0, 4000, value=800, step=100, label="Battery capacity · kWh")
-                electrolyser = gr.Slider(
-                    100, 1200, value=450, step=50, label="Electrolyser capacity · kW"
-                )
-                run = gr.Button("Run experiment →", variant="primary", elem_id="run")
-                gr.Markdown(
-                    "Adjust a setting, then run. Both controllers receive the same conditions."
-                )
-                with gr.Accordion("Weather & foresight", open=False):
-                    weather = gr.Dropdown(
-                        ["Clear days", "Broken clouds", "Passing front"],
-                        value="Broken clouds",
-                        label="Weather pattern",
+        with gr.Tabs(selected="operation", elem_id="workspace-tabs") as screens:
+            with gr.Tab("Plant simulation", id="operation"):
+                draft_notice = gr.Markdown(visible=False, elem_id="draft-notice")
+                playback = build_playback(default[7])
+                with gr.Accordion(
+                    "Run analysis · compare controllers & energy balance",
+                    open=False,
+                    elem_id="physical-report",
+                ):
+                    cards = gr.HTML(default[0], css_template=HTML_CSS)
+                    insight = gr.HTML(default[1], css_template=HTML_CSS)
+                    plot = gr.Plot(default[2], show_label=False, elem_id="timeseries")
+                    with gr.Tabs():
+                        with gr.Tab("Energy ledger"):
+                            gr.Markdown(
+                                "Every available solar kWh must go somewhere. The five destination rows sum to the solar input. **All values are kWh.**"
+                            )
+                            table = gr.Dataframe(
+                                default[3],
+                                headers=["Energy flow", "Greedy", "Forecast MPC"],
+                                datatype=["str", "number", "number"],
+                                interactive=False,
+                                show_label=False,
+                            )
+                        with gr.Tab("Run details"):
+                            details = gr.Markdown(default[4])
+                        with gr.Tab("Model & assumptions"):
+                            gr.Markdown(ASSUMPTIONS)
+                    download = gr.DownloadButton(
+                        "Download physical run · CSV + JSON", value=default[5], size="sm"
                     )
+                with gr.Accordion(
+                    "Cost analysis · breakdown, sensitivity & battery sizing",
+                    open=False,
+                    elem_id="cost-report",
+                ):
+                    build_cost_panel(physical_state, default[7], HTML_CSS, cost_widgets, playback)
+            with gr.Tab("Experiment setup", id="setup"):
+                with gr.Column(elem_id="settings"):
+                    gr.Markdown(
+                        "## Set up an experiment\nSize the plant, choose its conditions, then run both controllers. The simulation stays available while you prepare your next experiment."
+                    )
+                    with gr.Row(equal_height=False):
+                        preset = gr.Dropdown(
+                            list(PRESETS),
+                            value=next(iter(PRESETS)),
+                            label="Starting scenario",
+                            scale=3,
+                        )
+                        run = gr.Button(
+                            "RUN EXPERIMENT →", variant="primary", elem_id="run", scale=1
+                        )
+                    note = gr.Markdown(default[6], elem_id="run-note")
+                    gr.Markdown(
+                        "### 01 / Plant design\nStart with capacity. Open an equipment section for operating limits or cost assumptions."
+                    )
+                    with gr.Row(equal_height=False):
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Solar array")
+                            solar = gr.Slider(
+                                0, 2000, value=1000, step=50, label="Solar capacity · kW"
+                            )
+                            with gr.Accordion("Solar ownership costs", open=False):
+                                render_cost_inputs(cost_widgets, "solar")
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Battery storage")
+                            battery = gr.Slider(
+                                0, 4000, value=800, step=100, label="Battery capacity · kWh"
+                            )
+                            with gr.Accordion("Power & starting inventory", open=False):
+                                c_rate = gr.Slider(
+                                    0.1,
+                                    2,
+                                    value=0.5,
+                                    step=0.1,
+                                    label="Battery power · C-rate",
+                                    info="Capacity × C-rate = charge/discharge limit",
+                                )
+                                initial_soc = gr.Slider(
+                                    0, 100, value=0, step=10, label="Initial battery · %"
+                                )
+                            with gr.Accordion("Battery costs & life", open=False):
+                                render_cost_inputs(cost_widgets, "battery")
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Electrolyser")
+                            electrolyser = gr.Slider(
+                                100, 1200, value=450, step=50, label="Electrolyser capacity · kW"
+                            )
+                            with gr.Accordion("Operating limits", open=False):
+                                start_energy = gr.Slider(
+                                    0, 200, value=40, step=10, label="Energy per start · kWh"
+                                )
+                                minimum_load = gr.Slider(
+                                    5, 80, value=30, step=5, label="Minimum load · %"
+                                )
+                            with gr.Accordion("Stack costs, wear & repairs", open=False):
+                                render_cost_inputs(cost_widgets, "stack")
+                    gr.Markdown(
+                        "### 02 / Operating conditions\nBoth controllers face the same weather and faults. Only MPC uses a forecast."
+                    )
+                    with gr.Row(equal_height=False):
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Weather & duration")
+                            weather = gr.Dropdown(
+                                ["Clear days", "Broken clouds", "Passing front"],
+                                value="Broken clouds",
+                                label="Weather pattern",
+                            )
+                            days = gr.Dropdown([2, 3, 5, 10], value=3, label="Duration · days")
+                            with gr.Accordion("Daylight, variability & seed", open=False):
+                                daylight = gr.Slider(
+                                    6, 18, value=12, step=1, label="Daylight · hours"
+                                )
+                                variability = gr.Slider(
+                                    0,
+                                    0.6,
+                                    value=0.25,
+                                    step=0.05,
+                                    label="Cloud variability",
+                                    info="0 = predictable; larger = noisier weather",
+                                )
+                                seed = gr.Number(
+                                    value=7,
+                                    minimum=0,
+                                    maximum=999999,
+                                    precision=0,
+                                    label="Weather seed",
+                                )
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Forecast controller")
+                            horizon = gr.Dropdown(
+                                [6, 12, 24, 48], value=24, label="Look ahead · hours"
+                            )
+                            with gr.Accordion("Forecast error", open=False):
+                                bias = gr.Slider(
+                                    -60,
+                                    60,
+                                    value=0,
+                                    step=10,
+                                    label="Forecast bias · %",
+                                    info="Positive = overestimate future sunlight",
+                                )
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            gr.Markdown("#### Equipment disturbance")
+                            with gr.Accordion("Inject an electrolyser fault", open=False):
+                                fault_loss = gr.Slider(
+                                    0,
+                                    100,
+                                    value=0,
+                                    step=10,
+                                    label="Electrolyser capacity lost · %",
+                                    info="0 = no fault",
+                                )
+                                fault_start = gr.Slider(
+                                    0,
+                                    239,
+                                    value=34,
+                                    step=1,
+                                    label="Start at hour",
+                                    info="Faults beyond the run end do not occur",
+                                )
+                                fault_duration = gr.Slider(
+                                    1, 24, value=8, step=1, label="Duration · hours"
+                                )
+                    gr.Markdown(
+                        "### 03 / Shared cost assumptions\nIllustrative EUR inputs. Cost edits update the current run immediately; they do not change dispatch. Component prices and lives are grouped with the equipment above."
+                    )
+                    with gr.Row(equal_height=False):
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            with gr.Accordion(
+                                "Site, installation & standing operation", open=False
+                            ):
+                                render_cost_inputs(cost_widgets, "shared")
+                        with gr.Column(min_width=270, elem_classes="setup-card"):
+                            with gr.Accordion("Water & production consumables", open=False):
+                                render_cost_inputs(cost_widgets, "hydrogen")
                     with gr.Row():
-                        days = gr.Dropdown([2, 3, 5, 10], value=3, label="Days", min_width=90)
-                        horizon = gr.Dropdown(
-                            [6, 12, 24, 48], value=24, label="Look ahead · h", min_width=110
-                        )
-                    variability = gr.Slider(
-                        0,
-                        0.6,
-                        value=0.25,
-                        step=0.05,
-                        label="Cloud variability",
-                        info="0 = predictable; larger = noisier weather",
-                    )
-                    bias = gr.Slider(
-                        -60,
-                        60,
-                        value=0,
-                        step=10,
-                        label="Forecast bias · %",
-                        info="Positive = overestimate future sunlight",
-                    )
-                with gr.Accordion("Equipment assumptions", open=False):
-                    start_energy = gr.Slider(
-                        0, 200, value=40, step=10, label="Energy per start · kWh"
-                    )
-                    minimum_load = gr.Slider(5, 80, value=30, step=5, label="Minimum load · %")
-                    c_rate = gr.Slider(
-                        0.1,
-                        2,
-                        value=0.5,
-                        step=0.1,
-                        label="Battery power · C-rate",
-                        info="0.5 × capacity = maximum charge/discharge power",
-                    )
-                    daylight = gr.Slider(6, 18, value=12, step=1, label="Daylight · hours")
-                    initial_soc = gr.Slider(0, 100, value=0, step=10, label="Initial battery · %")
-                with gr.Accordion("Inject a fault", open=False):
-                    fault_loss = gr.Slider(
-                        0,
-                        100,
-                        value=0,
-                        step=10,
-                        label="Electrolyser capacity lost · %",
-                        info="0 = no fault",
-                    )
-                    fault_start = gr.Slider(0, 47, value=34, step=1, label="Start at hour")
-                    fault_duration = gr.Slider(1, 24, value=8, step=1, label="Duration · hours")
-                seed = gr.Number(
-                    value=7, minimum=0, maximum=999999, precision=0, label="Weather seed"
-                )
-            with gr.Column(scale=3, min_width=540, elem_id="results"):
-                note = gr.Markdown(default[6], elem_id="run-note")
-                with gr.Tabs(selected="costs"):
-                    with gr.Tab("Plant operation", id="operation"):
-                        cards = gr.HTML(default[0], css_template=HTML_CSS)
-                        insight = gr.HTML(default[1], css_template=HTML_CSS)
-                        plot = gr.Plot(default[2], show_label=False, elem_id="timeseries")
-                        with gr.Tabs():
-                            with gr.Tab("Energy ledger"):
-                                gr.Markdown(
-                                    "Every available solar kWh must go somewhere. The five destination "
-                                    "rows sum to the solar input. **All values are kWh.**"
-                                )
-                                table = gr.Dataframe(
-                                    default[3],
-                                    headers=["Energy flow", "Greedy", "Forecast MPC"],
-                                    datatype=["str", "number", "number"],
-                                    interactive=False,
-                                    show_label=False,
-                                )
-                            with gr.Tab("Run details"):
-                                details = gr.Markdown(default[4])
-                            with gr.Tab("Model & assumptions"):
-                                gr.Markdown(ASSUMPTIONS)
-                            with gr.Tab("Try this next"):
-                                gr.Markdown("""### Four useful experiments
-
-1. **Remove the battery.** Keep the same weather seed. Which lost solar hours can no controller recover?
-2. **Raise start-up energy.** Inspect whether conserving battery energy can avoid an expensive restart.
-3. **Make the forecast optimistic.** Compare the same plant and weather. Does planning still help?
-4. **Inject a capacity loss.** Watch storage fill, curtailment rise and production recover.
-
-Then repeat with several weather seeds. One attractive trace is not evidence of a better controller.
-The first result worth pursuing is a repeatable improvement attributable to a physical constraint.
-""")
-                        download = gr.DownloadButton(
-                            "Download physical run · CSV + JSON", value=default[5], size="sm"
-                        )
-                    with gr.Tab("Costs & trade-offs", id="costs"):
-                        build_cost_panel(physical_state, default[7], HTML_CSS)
+                        reset_costs = gr.Button("Reset illustrative cost assumptions", size="sm")
+                        back = gr.Button("← RETURN TO SIMULATION", size="sm")
         inputs = [
             solar,
             battery,
@@ -706,17 +731,20 @@ The first result worth pursuing is a repeatable improvement attributable to a ph
             fault_duration,
             seed,
         ]
-        outputs = [cards, insight, plot, table, details, download, note, physical_state]
+        outputs = [cards, insight, plot, table, details, download, note, physical_state, playback]
         preset.change(
             lambda name: PRESETS[name], inputs=preset, outputs=inputs, queue=False, api_name=False
         )
         gr.on(
             triggers=[component.change for component in inputs],
             fn=lambda: (
-                "**Settings changed.** Results below are from the last completed run. "
-                "Press **Run experiment** to apply these settings."
+                "**Unapplied settings.** Run the experiment to apply your physical changes.",
+                gr.Markdown(
+                    "**Setup has unapplied changes.** Showing the last completed simulation.",
+                    visible=True,
+                ),
             ),
-            outputs=note,
+            outputs=[note, draft_notice],
             queue=False,
             api_name=False,
         )
@@ -727,29 +755,76 @@ The first result worth pursuing is a repeatable improvement attributable to a ph
             concurrency_limit=1,
             concurrency_id="simulation",
             api_name="simulate",
+        ).success(
+            lambda: (gr.Tabs(selected="operation"), gr.Markdown(visible=False)),
+            outputs=[screens, draft_notice],
+            queue=False,
+            api_name=False,
+        ).then(
+            fn=None,
+            js="() => {requestAnimationFrame(() => window.scrollTo({top:0,behavior:'instant'}));}",
+        )
+        back.click(
+            lambda: gr.Tabs(selected="operation"), outputs=screens, queue=False, api_name=False
+        ).then(
+            fn=None,
+            js="() => {requestAnimationFrame(() => window.scrollTo({top:0,behavior:'instant'}));}",
+        )
+        reset_costs.click(
+            lambda: [asdict(Costs())[f[0]] * f[2] for f in FIELDS],
+            outputs=cost_widgets,
+            queue=False,
+            api_name=False,
         )
     return demo
+
+
+def build_app():
+    """Build the current methane UI; build_legacy_app preserves the v0.1 interface."""
+    from methane.ui import build_app as build_methane_app
+
+    return build_methane_app()
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run Dispatch lab on localhost.")
     parser.add_argument("--port", type=int, default=7860)
-    args = parser.parse_args()
-    theme = gr.themes.Base(
-        primary_hue="teal",
-        secondary_hue="orange",
-        neutral_hue="stone",
-        font=["system-ui", "sans-serif"],
+    parser.add_argument("--legacy", action="store_true", help="Run the preserved v0.1 hydrogen UI")
+    parser.add_argument(
+        "--archive", type=Path, help="Open a saved methane run without recomputing it"
     )
-    build_app().queue(max_size=8).launch(
+    args = parser.parse_args()
+    if args.legacy and args.archive:
+        parser.error("--archive opens methane runs; it cannot be combined with --legacy")
+    theme = make_theme()
+    if args.legacy:
+        application = build_legacy_app()
+        application_css = CSS
+    else:
+        from ui_theme import ASSETS
+
+        if args.archive:
+            from methane.evidence import load
+            from methane.ui import build_app as build_methane_app
+
+            application = build_methane_app(load(args.archive))
+        else:
+            application = build_app()
+        application_css = CSS + (ASSETS / "methane-motion.css").read_text()
+    from methane.preview_service import lifespan
+    from methane.startup import launch_local
+
+    launch_local(
+        application.queue(max_size=8),
+        app_kwargs={"lifespan": lifespan},
         server_name="127.0.0.1",
         server_port=args.port,
         share=False,
         inbrowser=False,
         show_error=True,
         theme=theme,
-        css=CSS,
-        js="document.body.classList.remove('dark'); "
-        "document.body.style.backgroundColor = '#f6f6f0';",
+        css=application_css,
+        js="document.body.classList.add('dark');",
         footer_links=[],
+        allowed_paths=[str(Path(__file__).resolve().parent / "docs/components.md")],
     )

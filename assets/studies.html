@@ -1,0 +1,16 @@
+<section class="st-workspace" hidden aria-label="Studies" tabindex="-1">
+ <header class="st-header">
+  <button data-st="back">← Back</button>
+  <button data-st="index" aria-expanded="false">Study editions</button>
+  <span class="st-header-title">Studies</span>
+  <button data-st="new">Run a study</button>
+  <button data-u="open">Explore uncertainty</button>
+ </header>
+ <aside class="st-index" hidden aria-label="Saved study editions">
+  <label for="study-search">Find a study edition</label><input id="study-search" type="search" data-st="search" placeholder="Question, tier or edition…">
+  <nav class="st-editions"></nav>
+ </aside>
+ <div class="st-progress" aria-live="polite"><span class="st-status"></span><progress max="1" value="0" hidden></progress><button data-st="cancel" hidden>Cancel execution</button></div>
+ <main class="st-article"></main>
+ <section class="st-panel" hidden><button data-st="close-panel">← Study write-up</button><div class="st-panel-body"></div></section>
+</section>

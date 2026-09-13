@@ -1,0 +1,15 @@
+# Returning an interrupted crew
+
+`interrupted-crew-return/1` is an opt-in physical logistics mechanism. Enable **Crew return enabled** in advanced Support availability. Older configurations omit this mechanism and retain their original stranded-crew behaviour. New active records identify `plant-service-contracts/12`.
+
+A reported interruption leaves the original work failed at its recorded position. A separate request uses that report and the accepted itinerary. It skips every remaining repair, cleaning, inspection and delivery stage, follows the remaining travel legs, and records arrival at the declared home. During a partly completed leg, only its remaining fraction is travelled. The method conservatively follows the known itinerary; it does not find a new shortest route or claim emergency-response capability.
+
+The fixture assumes a mobile human crew can stop its work, pack its tools and drive the otherwise operable service vehicle. Packing takes an illustrative 0.25 hours; an arrival check takes 0.25 hours. Both are editable. A stopped portable cleaning pump does not prevent driving. Vehicle damage, injury, rescue, towing a failed human vehicle, emergency navigation and hazard certification are outside this mechanism. Those conditions must not be described as recovered by this action.
+
+The same crew, tool and any shared-visit equipment remain reserved until arrival. Current route permission, shift coverage and finite crew-hours must allow the whole return. The response lead for a new callout does not apply to people already on site. Return phases create no additional site visit. They do consume recorded labour and applicable portable-equipment activity allowances. Waiting outside execution and vehicle fuel have no separate price in the current model; these limitations remain visible in the inspector.
+
+Only the arrival receipt makes location available at the next hourly decision boundary. It does not refund materials, deliver abandoned stock, complete an interrupted job, repair equipment or assert successful operating verification. A later repair retry is a distinct request with its original obligation deadline. A return interrupted again gets another observed position and a new return request; all prior failed work remains recorded. A shared visit keeps its original interrupted status even when a separate return later brings the crew home.
+
+The service inspector shows the action and its scope. The existing service-vehicle illustration follows recorded stages and depicts packing and return; it shows no repair effect during arrival. The simulation artwork and labels are unchanged.
+
+Independent checks derive remaining durations and skipped work from the original plans and interruption receipts, using separate decimal calculations. They check location, original obligations, route continuity, resource accounting, no new visit, and arrival eligibility. Tests also cover interrupted returns, exhausted labour, short shifts, shared visits, private-truth separation and forged evidence. These verify the reduced model; they are not empirical evidence about a real vehicle or emergency procedure.

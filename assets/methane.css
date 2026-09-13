@@ -1,0 +1,90 @@
+/* A quiet viewport; all detailed controls are revealed on demand. */
+.methane-console{position:fixed;inset:0;width:100%;height:100dvh;overflow:hidden;color:#ffa32d;font:13px 'Departure Mono',monospace;background:#202020;outline:none;font-weight:400}
+.methane-console *{box-sizing:border-box}.methane-console [hidden]{display:none!important}
+.methane-console button,.methane-console select{background:#202020;border:1px solid #745732;border-radius:0;color:#ffa32d;padding:9px 12px;font:inherit;cursor:pointer}
+.methane-console button:hover,.methane-console button[aria-pressed=true]{background:#ffa32d;color:#202020;border-color:#ffa32d}
+.methane-console :focus-visible{outline:2px solid #ffd292;outline-offset:3px}
+.m-muted,.m-menu-help{color:#b9a78b;font-size:11px;line-height:1.8}.m-eyebrow{font-size:10px;letter-spacing:1px}
+/* Keep the original plant illustration vocabulary and line weights. */
+.methane-console{--amber:#ffa32d;--muted:#b9a78b}
+.m-scene-heading{display:flex;justify-content:space-between;gap:12px;padding:16px 0 10px;color:#b9a78b;font-size:10px;line-height:1.6}
+.m-gas-key{color:#ddd1bc;margin-left:16px}
+.m-plant-wrap{overflow:auto;overscroll-behavior-x:contain;scrollbar-color:#806039 #202020;scrollbar-width:thin}
+.m-plant.plant-drawing{width:100%;min-width:0;height:100%;flex:none}
+.m-plant text{font-size:11px}
+.m-plant .plant-component ellipse{fill:none;stroke:currentColor;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.m-component{cursor:pointer;outline:none}
+.m-component:hover>.selection-box{stroke:#806039;fill:#ffa32d;fill-opacity:.025}
+.m-component[data-selected=true]>.selection-box{stroke:#ffa32d;stroke-dasharray:4 3}
+.m-component:focus-visible>.selection-box{stroke:#ffcf88;stroke-width:2}
+.m-plant .vessel-fill{fill:#ffa32d;fill-opacity:.12;stroke:none}
+.m-plant .vessel-gauge{stroke:#806039}
+.m-plant .vessel-level{stroke:#ffd292;stroke-width:2}
+.m-plant .m-heat{fill:#ffa32d;fill-opacity:0;stroke:none}
+.reactor-bed{opacity:.35}
+.reactor-component[data-active=true] .reactor-bed{opacity:1;animation:cell-current 2s ease-in-out infinite alternate}
+.reactor-component[data-heating=true] .heater-coil{stroke:#ffd292;stroke-dasharray:3 4;animation:light-travel 2s linear infinite}
+.reactor-component[data-cooling=true] .m-fan{transform-origin:150px 155px;animation:methane-fan 2s linear infinite}
+.methane-console[data-playing=false] .m-plant *{animation-play-state:paused!important}
+.methane-console [data-active=false] .flow-motion,.methane-console [data-active=false] .sun-rays,.methane-console [data-active=false] .solar-light{animation-play-state:paused}
+
+.m-plant-wrap{position:absolute;inset:60px 24px 92px;display:flex;align-items:center}
+.m-menu-toggle{position:absolute;right:24px;top:20px;z-index:12;width:40px;height:40px;padding:0!important;font-size:19px!important;opacity:.65}
+.m-menu-toggle:hover,.m-menu-toggle:focus-visible,.m-menu-toggle[aria-expanded=true]{opacity:1}
+.m-dock{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:10;background:transparent;transition:opacity 150ms}
+.m-transport{display:flex;gap:0;align-items:center;padding:4px;border:1px solid #685032;background:#202020f5;backdrop-filter:blur(8px)}
+.m-transport button{border:0;width:44px;height:36px;padding:0;font-size:17px}.m-transport .m-play{background:#ffa32d;color:#202020}
+.m-timeline{position:absolute;bottom:58px;left:50%;transform:translateX(-50%);width:min(520px,calc(100vw - 32px));background:#222;border:1px solid #806038;padding:16px;box-shadow:0 12px 36px #0005}
+.m-timeline-head{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#b9a78b}.m-timeline-head button{padding:5px 9px}
+.m-timeline input{width:100%;accent-color:#ffa32d;cursor:pointer;margin:16px 0 20px}.m-timeline label{font-size:10px}.m-timeline select{padding:5px 7px;margin:0 5px}.m-clock-note{float:right;font-size:9px;line-height:30px;color:#b9a78b}
+.methane-console[data-chrome=hidden] .m-dock{opacity:0;visibility:hidden;pointer-events:none}.methane-console[data-chrome=hidden] .m-menu-toggle{opacity:.3}
+.methane-console[data-chrome=hidden] .m-menu-toggle:hover,.methane-console[data-chrome=hidden] .m-menu-toggle:focus-visible{opacity:1}
+.m-inspector,.m-utility{position:absolute;z-index:11;right:24px;top:72px;bottom:100px;width:min(460px,calc(100vw - 32px));display:flex;flex-direction:column;overflow:hidden;background:#202020fa;border:1px solid #806038;box-shadow:0 18px 60px #0005;backdrop-filter:blur(12px);animation:m-panel-in 160ms ease-out}
+.m-panel-head,.m-inspector-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 18px 12px}
+.m-panel-head h2,.m-inspector-head h3{font-size:19px;font-weight:400;margin:4px 0}.m-panel-head button,.m-inspector-head>button{font-size:22px;border:0;padding:4px 8px}
+.m-utility-tabs,.m-inspector-tabs{display:flex;gap:4px;padding:0 18px 12px;border-bottom:1px solid #58452e;overflow-x:auto;flex:none}
+.m-utility-tabs button,.m-inspector-tabs button{font-size:10px;padding:7px 9px;white-space:nowrap}
+.m-utility-body,.m-inspector-content{padding:18px;min-height:0;overflow:auto;flex:1;color:#dac5a6;line-height:1.7}
+.m-run-context time{font-size:13px;color:#ffa32d}.m-run-context p{margin:8px 0 22px}.m-policy{display:flex;flex-direction:column;gap:8px;font-size:11px;color:#b9a78b}
+.m-score{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}.m-score div{display:flex;flex-direction:column;gap:6px}.m-score span{font-size:10px;color:#b9a78b}.m-score strong{font-size:17px;font-weight:400;color:#ffa32d}
+.m-utility-links{display:flex;flex-direction:column;gap:0;border-top:1px solid #58452e;padding:8px 10px;flex:none}.m-utility-links button{text-align:left;border:0;font-size:11px}.m-utility-links button:last-child{color:#b9a78b}
+.m-event-head{font-size:11px;color:#b9a78b}.m-events{display:flex;flex-direction:column;gap:7px;padding:12px 0 20px}.m-events button{font-size:10px;text-align:left;line-height:1.6}.m-events button[data-future=true]{opacity:.5}
+.m-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px}.m-fact span{display:block;color:#b9a78b;font-size:10px}.m-fact strong{font-weight:400;font-size:17px;color:#ffa32d}
+.m-inspector-content p,.m-utility-body p{margin:10px 0;font-size:11px}.m-inspector-content table,.m-comparison table{width:100%;border-collapse:collapse;font-size:11px;text-align:left}.m-inspector-content td,.m-inspector-content th,.m-comparison td,.m-comparison th{padding:7px 8px;border-bottom:1px solid #4c3e2c;font-weight:400;white-space:nowrap}.m-inspector-content th{color:#ffa32d}
+.m-prediction{overflow:auto;max-height:260px}.m-comparison{overflow:auto}.m-truth pre{font:11px 'Departure Mono',monospace;white-space:pre-wrap}.m-mobile-select{display:none}.methane-console[data-costs=false] .m-cost{display:none}
+.m-annotation{border-left:2px solid #ffa32d;padding-left:12px;color:#ffd08a}.m-trajectory{width:100%;height:85px;stroke:#ffa32d;fill:none;stroke-width:2}.m-setup-note{color:#b9a78b;font-size:11px}
+.methane-console[data-playing=false] .m-flow,.methane-console[data-playing=false] .m-bubble,.methane-console[data-playing=false] .m-fan{animation-play-state:paused}
+.methane-console[data-focus=solar]{overflow:auto}.methane-console[data-focus=solar] .s-workspace{padding:24px 28px 100px}
+@keyframes m-panel-in{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:850px){.m-plant-wrap{inset:60px 16px 86px}.m-plant.plant-drawing{width:1150px;min-width:1150px;max-width:none}.m-menu-toggle{right:16px;top:16px}.m-inspector,.m-utility{right:16px;top:66px;bottom:86px}.m-mobile-select{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}.m-mobile-select button{font-size:10px;padding:7px}.m-dock{bottom:20px}.m-inspector-tabs,.m-utility-tabs{padding-inline:12px}.m-inspector-content,.m-utility-body{padding:14px}.m-panel-head,.m-inspector-head{padding:14px}.m-fact strong{font-size:15px}.methane-console[data-focus=solar] .s-workspace{padding:16px 16px 100px}}
+@media(max-height:500px){.m-plant.plant-drawing{height:480px}.m-inspector,.m-utility{top:16px;bottom:70px;right:70px}.m-menu-toggle{top:16px}}
+@media(prefers-reduced-motion:reduce){.methane-console *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Optional site-services reveal. Main plant artwork and labels are untouched. */
+.m-services .m-service-diagram{width:100%;height:auto;color:var(--amber,#ffa329);margin:8px 0 20px}
+.m-services .m-service-order{border-top:1px solid #ffa32944;padding:12px 0}
+.m-services .m-service-order p{margin:5px 0}
+.m-services details{margin-top:22px;line-height:1.6}
+.m-services details summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.m-services pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px}
+.m-service-diagram [data-active="true"]{animation:service-pulse 1.5s ease-in-out infinite}
+@keyframes service-pulse{50%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.m-service-diagram [data-active="true"]{animation:none}}
+.m-services{overflow-wrap:anywhere}
+/* Service alternatives appear only inside the explicitly opened services pane. */
+[data-service-alternatives]{margin-bottom:1rem}
+[data-service-alternatives] [data-sa=workspace]{border-block:1px solid currentColor;margin-block:1rem;padding-block:1rem;overflow-wrap:anywhere}
+[data-service-alternatives] header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+[data-service-alternatives] label{display:grid;gap:.5rem;margin-block:1rem}
+[data-service-alternatives] input,[data-service-alternatives] select{max-width:100%;width:100%;box-sizing:border-box;color:inherit;background:#202020;border:1px solid currentColor;padding:.55rem;font:inherit}
+[data-service-alternatives] .sa-actions{display:flex;flex-wrap:wrap;gap:.5rem}
+[data-service-alternatives] .sa-table{overflow-x:auto}
+[data-service-alternatives] table{width:100%;border-collapse:collapse;font-size:11px}
+[data-service-alternatives] th,[data-service-alternatives] td{padding:7px 5px;border-bottom:1px solid #4c3e2c}
+[data-service-alternatives] thead th,[data-service-alternatives] td{white-space:nowrap}
+[data-service-alternatives] th{text-align:left;font-weight:normal}
+[data-service-alternatives] td{text-align:right}
+[data-service-alternatives] figure{margin:1rem 0}
+[data-service-alternatives] svg{width:100%;display:block}
+[data-service-alternatives] figcaption{font-size:.8em}
+[data-service-alternatives] [data-stale=true]{opacity:.6}
