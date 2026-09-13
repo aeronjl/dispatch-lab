@@ -10,7 +10,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
@@ -22,5 +22,79 @@ jobs:
         run: uv run ruff check .
       - name: Check formatting
         run: uv run ruff format --check .
+      - name: Stamp source under validation
+        run: |
+          uv run python -m methane.catalogue stamp
+          uv run python -m methane.catalogue stamp --directory build/model
       - name: Test
-        run: uv run pytest -q
+        run: uv run pytest -q --junitxml=build/engineering/current/pytest.xml
+      - name: Model evidence
+        run: |
+          cp build/engineering/current/pytest.xml build/model/pytest.xml
+          uv run python -m methane.documentation evidence
+      - name: Audits survive Python optimisation
+        run: uv run python -O -m pytest tests/test_engineering.py -q -k "audits_survive or nonfinite_transition"
+      - name: Test playback clock
+        run: node --test tests/*.test.cjs
+      - name: Independent mutation checks
+        run: |
+          uv run python -m methane.mutations
+          cp build/engineering/mutations.json build/engineering/current/mutations.json
+      - name: Standalone battery implementations
+        run: uv run python -m methane.engineering component battery
+      - name: Generated component reference
+        run: |
+          uv run python -m methane.engineering docs --check
+          uv run python -m methane.catalogue check
+          uv run python -m methane.documentation check
+          uv run python -m methane.taxonomy check
+          uv run python -m methane.assumptions
+          uv run python -m methane.engineering docs --junit build/engineering/current/pytest.xml
+      - name: Pinned TLC verification
+        run: |
+          curl --fail --location --output /tmp/tla2tools.jar https://github.com/tlaplus/tlaplus/releases/download/v1.7.4/tla2tools.jar
+          uv run python -m methane.engineering formal --java "$JAVA_HOME_17_X64/bin/java" --jar /tmp/tla2tools.jar
+          cp build/engineering/formal/report.json build/engineering/current/formal.json
+      - name: Source bundle and independent offline replay
+        run: |
+          uv run python -m methane.acceptance
+          uv sync --project build/engineering/current/restored/source --locked --offline --no-dev --python "$PWD/.venv/bin/python"
+          build/engineering/current/restored/source/.venv/bin/python build/engineering/current/restored/source/recompute.py build/engineering/current/restored/recorded-run.json.gz build/engineering/current/recomputation.json
+      - name: Representative backend budgets
+        run: uv run python -m methane.performance --hours 240
+      - name: Browser dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Browser interactions
+        run: |
+          npm run test:browser
+          cp build/engineering/browser-tests.json build/engineering/current/browser-tests.json
+      - name: Recorded component lineage and offline playback
+        env:
+          DISPATCH_BROWSER_HOURS: 24
+          DISPATCH_BATTERY_TRACE: 1
+          DISPATCH_COMPONENT_TRACE: 1
+        run: |
+          DISPATCH_OFFLINE_PLAYER="$PWD/build/engineering/current/restored/playback.html" npm run test:browser -- --grep 'battery trace|component and repriced|portable offline'
+          cp build/engineering/browser-tests.json build/engineering/current/browser-recorded.json
+      - name: Interactive latency while a batch worker is active
+        env:
+          DISPATCH_BROWSER_HOURS: 240
+          DISPATCH_BATCH_ACTIVE: 1
+          DISPATCH_PERFORMANCE_GATE: 1
+        run: |
+          npm run test:browser -- --grep 'preview latency'
+          cp build/engineering/browser-performance-240h-batch.json build/engineering/current/browser-active.json
+      - name: Collect source-bound evidence
+        if: always()
+        run: uv run python -m methane.catalogue evidence
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: engineering-evidence
+          path: |
+            build/engineering
+            build/model
+            test-results
