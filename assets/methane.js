@@ -12,7 +12,7 @@ function methaneFrame(result, elapsed, controller) {
 function mountMethane(element, props, watch, trigger) {
     let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
-    let solar, model, taxonomy, studies, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
+    let solar, model, taxonomy, studies, sites, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
     const root = element.querySelector('.methane-console');
     const $ = selector => root.querySelector(selector);
@@ -289,6 +289,7 @@ function mountMethane(element, props, watch, trigger) {
     }
     function reset() {
         studies?.close();
+        sites?.close();
         model?.close();
         taxonomy?.close();
         result=decodeMethanePayload(props.value); costs=decodeMethanePayload(props.economics); invalidate();
@@ -298,6 +299,7 @@ function mountMethane(element, props, watch, trigger) {
         $('[data-m="scrubber"]').max=result.records[controller].length;
         refreshEvents();clock.reset(result.records[controller].length);solar?.reset(result);render();
         $('[data-do="studies"]').hidden=!!result.offline_mode;
+        $('[data-do="sites"]').hidden=!!result.offline_mode;
         $('[data-do="study-origin"]').hidden=!result.study_origin||!!result.offline_mode;
         if(result.study_origin){clock.seek(result.study_origin.hour+1);selectComponent(result.study_origin.component);section='Why';inspect(current());}
     }
@@ -311,10 +313,12 @@ function mountMethane(element, props, watch, trigger) {
     taxonomy=typeof createTaxonomyWorkspace==='function'?createTaxonomyWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,pause:()=>clock.pause()}):null;
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
+    sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
         if(event.target.closest('[data-service-alternatives]'))return;
         if(event.target.closest('.st-workspace'))return;
+        if(event.target.closest('.si-workspace'))return;
         const documentation=event.target.closest('[data-model-topic]');if(documentation){if(result.offline_mode){window.location.href='model-report.html#'+encodeURIComponent(documentation.dataset.modelTopic);return;}model?.open(documentation.dataset.modelTopic,documentation.dataset.modelContext||'Current model',documentation);return;}
         const explore=event.target.closest('[data-explore]');if(explore){taxonomy?.open(explore.dataset.explore,explore);return;}
         if(event.target.closest('.x-workspace'))return;
@@ -334,6 +338,7 @@ function mountMethane(element, props, watch, trigger) {
         if(action==='menu'){if(utility)closePanels();else openUtility();}
         if(action==='hide-ui')hideControls();
         if(action==='studies')studies?.open();
+        if(action==='sites')sites?.open();
         if(action==='study-origin')studies?.open(result.study_origin?.edition_id,result.study_origin?.report_id);
         if(action==='timeline'){
             const opening=$('.m-timeline').hidden;closePanels(false);
@@ -361,6 +366,7 @@ function mountMethane(element, props, watch, trigger) {
     $('[data-m="scrubber"]').addEventListener('input',e=>{invalidate();clock.seek(Number(e.target.value));});
     root.addEventListener('keydown',e=>{
         if(studies?.isOpen())return;
+        if(sites?.isOpen())return;
         if(model?.isOpen())return;
         if(taxonomy?.isOpen())return;
         if(e.key==='Escape'&&solar.isOpen()){e.preventDefault();solar.close();return;}

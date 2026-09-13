@@ -1,0 +1,279 @@
+{
+  "reviewed_at": "2026-09-13",
+  "scope": "Primary documentation review and selected read-only API probe. Only PVGIS PVcalc was live-tested; other connectors are proposed and require adapter acceptance.",
+  "sources": [
+    {
+      "id": "pvgis",
+      "publisher": "European Commission JRC",
+      "title": "PVGIS overview and public beta notice",
+      "url": "https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en",
+      "used_for": "PVGIS 6 is offered for testing; do not silently change the pinned production adapter."
+    },
+    {
+      "id": "pvgis-api",
+      "publisher": "European Commission JRC",
+      "title": "PVGIS 5 API",
+      "url": "https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/api-non-interactive-service_en",
+      "used_for": "Versioned server-side API, parameters, units, limits and CORS restrictions. Three v5_3 PVcalc requests were tested."
+    },
+    {
+      "id": "pvgis-manual",
+      "publisher": "European Commission JRC",
+      "title": "PVGIS 5 user manual",
+      "url": "https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/pvgis-5-user-manual_en",
+      "used_for": "SARAH3 2005–2023; provider timestamp and TMY conventions. The detailed hourly explanation also retains older SARAH names; validate the exact selected product."
+    },
+    {
+      "id": "era5",
+      "publisher": "ECMWF",
+      "title": "ECMWF Reanalysis v5",
+      "url": "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5",
+      "used_for": "Long historical hourly atmospheric reconstruction; reanalysis is not a site measurement."
+    },
+    {
+      "id": "era5-land",
+      "publisher": "Copernicus Climate Data Store",
+      "title": "ERA5-Land hourly data from 1950 to present",
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview",
+      "used_for": "Higher-resolution land reconstruction and documented uncertainty; dataset-specific accumulation conversion."
+    },
+    {
+      "id": "weather-runs",
+      "publisher": "Open-Meteo",
+      "title": "Single Runs API",
+      "url": "https://open-meteo.com/en/docs/single-runs-api",
+      "used_for": "ECMWF IFS original runs from March 2024; preserve initialisation and assumed availability, not a stitched hindcast."
+    },
+    {
+      "id": "weather-history",
+      "publisher": "Open-Meteo",
+      "title": "Historical Weather API",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "used_for": "Explicit ERA5/ERA5-Land model selection and hourly conventions."
+    },
+    {
+      "id": "weather-terms",
+      "publisher": "Open-Meteo",
+      "title": "Pricing and use terms",
+      "url": "https://open-meteo.com/en/pricing",
+      "used_for": "Free service is non-commercial; commercial historical/ensemble/single-run access needs an appropriate plan. Data licence and API access are distinct."
+    },
+    {
+      "id": "cams",
+      "publisher": "Copernicus Atmosphere Monitoring Service",
+      "title": "Solar radiation services",
+      "url": "https://atmosphere.copernicus.eu/solar-radiation-supplementary-products",
+      "used_for": "Historical global/direct/diffuse radiation since 2004; satellite coverage and atmospheric inputs."
+    },
+    {
+      "id": "clc",
+      "publisher": "Copernicus Land Monitoring Service",
+      "title": "CLCplus Backbone 2023",
+      "url": "https://land.copernicus.eu/en/products/clc-backbone/clcplus-backbone-2023-raster-10-m-europe-2-yearly",
+      "used_for": "10 m European land-cover raster; observed cover does not establish use permission or ownership."
+    },
+    {
+      "id": "dem",
+      "publisher": "Copernicus Data Space Ecosystem",
+      "title": "Copernicus Contributing Missions documentation",
+      "url": "https://documentation.dataspace.copernicus.eu/Data/Others/CCM.html",
+      "used_for": "GLO-30 is a 30 m digital surface model including vegetation and structures, not a parcel survey."
+    },
+    {
+      "id": "natura",
+      "publisher": "European Environment Agency",
+      "title": "Natura 2000 viewer disclaimer",
+      "url": "https://natura2000.eea.europa.eu/html/Disclaimer.html",
+      "used_for": "The viewer describes the 2024 network; country submissions and sensitive-feature omissions matter."
+    },
+    {
+      "id": "natura-service",
+      "publisher": "European Environment Agency",
+      "title": "Natura 2000 spatial service",
+      "url": "https://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Sites/MapServer",
+      "used_for": "Queryable spatial service; exact version, jurisdiction and coverage must be frozen."
+    },
+    {
+      "id": "england",
+      "publisher": "Natural England / GOV.UK",
+      "title": "Access Natural England maps and data",
+      "url": "https://www.gov.uk/guidance/how-to-access-natural-englands-maps-and-data",
+      "used_for": "MAGIC and downloadable national environmental layers; England is not the whole UK."
+    },
+    {
+      "id": "parcels",
+      "publisher": "European Commission INSPIRE",
+      "title": "Cadastral parcels specification",
+      "url": "https://knowledge-base.inspire.ec.europa.eu/publications/inspire-data-specification-cadastral-parcels-technical-guidelines_en",
+      "used_for": "Common spatial specification; national geometry, rights and access remain separate."
+    },
+    {
+      "id": "flood",
+      "publisher": "European Commission JRC / CEMS",
+      "title": "River flood hazard maps for Europe and the Mediterranean",
+      "url": "https://data.jrc.ec.europa.eu/dataset/1d128b6c-a4ee-4858-9e34-6210707f3c81",
+      "used_for": "Modelled water depths for return periods 10–500 years; river basins >150 km². Explicitly not an official flood-hazard map; CC BY 4.0."
+    },
+    {
+      "id": "wei",
+      "publisher": "European Environment Agency",
+      "title": "Seasonal Water Exploitation Index plus at sub-unit level",
+      "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/5a980253-9e62-4004-830e-ae7a985237b9",
+      "used_for": "2023 edition published January 2026, temporal coverage 2000–2023; seasonal catchment pressure, not an abstraction entitlement."
+    },
+    {
+      "id": "aqueduct",
+      "publisher": "World Resources Institute",
+      "title": "Aqueduct 4.0 data",
+      "url": "https://www.wri.org/data/aqueduct-global-maps-40-data",
+      "used_for": "August 2023 framework; baseline and future water-risk indicators. WRI describes this as prioritisation requiring local investigation."
+    },
+    {
+      "id": "industrial",
+      "publisher": "European Environment Agency",
+      "title": "Industrial Emissions Portal datasets",
+      "url": "https://industry.eea.europa.eu/industrial-emissions/dataset",
+      "used_for": "Facility locations and reported annual emissions; not a CO₂ supply offer, gas assay or captured-volume dataset."
+    },
+    {
+      "id": "ukpn",
+      "publisher": "UK Power Networks DSO",
+      "title": "Network data and development plans",
+      "url": "https://dso.ukpowernetworks.co.uk/dso-data",
+      "used_for": "Indicative EHV network headroom and future scenarios; not a reserved import/export connection."
+    },
+    {
+      "id": "entsoe",
+      "publisher": "ENTSO-E Transparency Platform",
+      "title": "How to get an API security token",
+      "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/12845911031188-How-to-get-security-token",
+      "used_for": "Authenticated API access path; do not embed tokens in exports or browser code."
+    },
+    {
+      "id": "entsoe-api",
+      "publisher": "ENTSO-E",
+      "title": "Transparency data extraction implementation guide",
+      "url": "https://transparency.entsoe.eu/content/static_content/download?path=%2FStatic+content%2Fweb+api%2FIG-for-TP-data-extraction-process.pdf",
+      "used_for": "Market/bidding-zone documents including day-ahead prices; preserve native resolution and publication."
+    },
+    {
+      "id": "elexon",
+      "publisher": "Elexon",
+      "title": "Insights API Developer Portal",
+      "url": "https://developer.data.elexon.co.uk/",
+      "used_for": "GB operational and settlement data; imbalance/system prices are not a site electricity tariff."
+    },
+    {
+      "id": "esios",
+      "publisher": "Red Eléctrica",
+      "title": "e·sios API documentation",
+      "url": "https://api.esios.ree.es/",
+      "used_for": "Spanish market/context data; token access and explicit publication dates."
+    },
+    {
+      "id": "entsog",
+      "publisher": "ENTSOG",
+      "title": "System capacity maps",
+      "url": "https://www.entsog.eu/maps",
+      "used_for": "European transmission context. Map disclaimer restricts use to indicative information and disclaims commercial-use reliance; keep as a reference, not an assumed reusable commercial layer."
+    },
+    {
+      "id": "costs",
+      "publisher": "Danish Energy Agency",
+      "title": "Technology Data for Renewable Fuels",
+      "url": "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels",
+      "used_for": "Live page links August 2026 catalogue/data sheets; scale, technology, currency year and uncertainty must accompany any imported benchmark."
+    },
+    {
+      "id": "rfnbo",
+      "publisher": "European Commission DG Energy",
+      "title": "Renewable hydrogen",
+      "url": "https://energy.ec.europa.eu/topics/eus-energy-system/hydrogen/renewable-hydrogen_en",
+      "used_for": "Additionality and temporal/geographic correlation affect renewable-fuel eligibility; not a certification implemented by this design."
+    },
+    {
+      "id": "metoffice",
+      "publisher": "Met Office",
+      "title": "Weather DataHub observations overview",
+      "url": "https://datahub.metoffice.gov.uk/docs/g/category/observations/overview",
+      "used_for": "Recent hourly station measurements; this API has a 48-hour historical window, not a long-term site calibration archive."
+    },
+    {
+      "id": "dwd",
+      "publisher": "Deutscher Wetterdienst",
+      "title": "10-minute solar observations dataset description",
+      "url": "https://opendatat.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/solar/DESCRIPTION_obsgermany_climate_10min_solar_en.pdf",
+      "used_for": "Station radiation and quality metadata; use identified representative stations, not sunshine duration as irradiance."
+    },
+    {
+      "id": "fraunhofer",
+      "publisher": "Fraunhofer ISE",
+      "title": "Regional hydrogen and Power-to-X ecosystems",
+      "url": "https://www.ise.fraunhofer.de/en/business-areas/hydrogen-technologies/hydrogen-system-analysis/analysis-and-optimization-of-regional-hydrogen-and-power-to-x-ecosystems.html",
+      "used_for": "HYSCOPE / geo-techno-economic analysis combines location, scale, operation and supply chains."
+    },
+    {
+      "id": "reopt",
+      "publisher": "NREL / National Laboratory of the Rockies",
+      "title": "REopt user manual",
+      "url": "https://reopt.nlr.gov/tool/reopt-user-manual.pdf",
+      "used_for": "Techno-economic and resilience design pattern; US-oriented defaults are not European methane-plant inputs."
+    },
+    {
+      "id": "atlite",
+      "publisher": "PyPSA / atlite authors",
+      "title": "Calculate land-use availabilities",
+      "url": "https://atlite.readthedocs.io/en/master/examples/landuse-availability.html",
+      "used_for": "Explicit exclusion masks and renewable-potential calculation; reuse GIS patterns, keep plant kernels."
+    },
+    {
+      "id": "ninja",
+      "publisher": "Pfenninger and Staffell / Renewables.ninja",
+      "title": "About Renewables.ninja",
+      "url": "https://www.renewables.ninja/about",
+      "used_for": "Hourly renewable modelling and validation work; separate commercial-data terms."
+    },
+    {
+      "id": "pv-uncertainty",
+      "publisher": "NREL",
+      "title": "Quantifying Uncertainty in PV Energy Estimates, final report and errata",
+      "url": "https://docs.nlr.gov/docs/fy23osti/84993.pdf",
+      "used_for": "Separates resource variability from performance uncertainty and defines exceedance probabilities. Use its corrected method, not unreviewed defaults."
+    },
+    {
+      "id": "aggregation",
+      "publisher": "Kotzur, Markewitz, Robinius and Stolten",
+      "title": "Time series aggregation for energy system design: Modeling seasonal storage",
+      "url": "https://arxiv.org/abs/1710.07593",
+      "used_for": "2018 Applied Energy study, DOI 10.1016/j.apenergy.2018.01.023; inter-period storage states matter for representative-period design."
+    },
+    {
+      "id": "maplibre",
+      "publisher": "MapLibre",
+      "title": "MapLibre GL JS",
+      "url": "https://maplibre.org/projects/gl-js/",
+      "used_for": "Browser vector-map rendering; tiles and data have separate licences."
+    },
+    {
+      "id": "osm-tiles",
+      "publisher": "OpenStreetMap Foundation",
+      "title": "Tile usage policy",
+      "url": "https://operations.osmfoundation.org/policies/tiles/",
+      "used_for": "The public raster tile service prohibits bulk/offline prefetch; select a suitable provider or licensed local data."
+    },
+    {
+      "id": "osm-data",
+      "publisher": "OpenStreetMap Foundation",
+      "title": "Copyright and licence",
+      "url": "https://www.openstreetmap.org/copyright",
+      "used_for": "Road/vector data is ODbL with attribution and database obligations; data rights are distinct from hosted tiles, geocoding and routing services."
+    },
+    {
+      "id": "natural-earth",
+      "publisher": "Natural Earth",
+      "title": "Terms of use",
+      "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "used_for": "Public-domain low-resolution geography suitable for the offline overview; not cadastral boundaries."
+    }
+  ]
+}

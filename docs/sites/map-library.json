@@ -1,0 +1,12 @@
+{
+  "package": "maplibre-gl",
+  "version": "6.9.0",
+  "licence": "BSD-3-Clause",
+  "files": {
+    "maplibre-gl-worker.mjs": "836616cb05bef91f9c7f3920ee2aeef648b81cee0645a037e70365286009ac98",
+    "maplibre-gl.mjs": "0197eee4c6e8fd5d8b68f5f94a23e1c77e0c8fd054c377a280bcd08117aadfc4",
+    "maplibre-gl.css": "8e2dbbab312dc57656fbb76e9fa5308c75c9d7c7ba5808a7d55bcdb64cc813fa",
+    "maplibre-gl-shared.mjs": "0aa7432c2d4644e8f46158cc99d0a05e0bf5db98afe6ded2b258a68dcc91bb90",
+    "LICENSE.txt": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+  }
+}

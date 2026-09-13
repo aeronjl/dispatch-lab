@@ -80,6 +80,11 @@ async def lifespan(app):
 
     app.add_api_route("/dispatch/studies", handle, methods=["POST"])
     app.add_api_route("/dispatch/study-download/{edition_id}", download, methods=["GET"])
+    from methane.siting.service import handle as sites_handle
+    from methane.siting.service import static as sites_static
+
+    app.add_api_route("/dispatch/sites", sites_handle, methods=["POST"])
+    app.add_api_route("/dispatch/site-static/{filename}", sites_static, methods=["GET"])
     try:
         yield
     finally:

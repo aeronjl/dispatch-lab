@@ -1,0 +1,9 @@
+{
+  "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_110m_admin_0_countries.geojson",
+  "edition": "Natural Earth 5.1.2 / 110m",
+  "original_sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+  "licence": "Public domain",
+  "attribution": "Natural Earth",
+  "transformation": "Countries intersecting Europe bbox; properties reduced; original geometry retained",
+  "scope": "Coarse geographical context, not parcel or administrative evidence"
+}

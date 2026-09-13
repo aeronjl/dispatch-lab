@@ -1,0 +1,226 @@
+[
+  {
+    "family": "Solar resource",
+    "sources": [
+      "pvgis-api",
+      "pvgis-manual"
+    ],
+    "coverage": "Europe / SARAH3 2005–2023, approximately 5 km; hourly and aggregate products",
+    "inputs": "Radiation, horizon, reference PV; design tilt and orientation",
+    "access": "Public versioned GET API; raw JSON cache. Three PVcalc requests tested. Server-side integration.",
+    "boundary": "Provider PV is a cross-check, not plant DC plus another loss stage. Exact hourly timestamp adapter still requires qualification.",
+    "stage": "A"
+  },
+  {
+    "family": "Historical weather",
+    "sources": [
+      "era5",
+      "era5-land"
+    ],
+    "coverage": "Global / ERA5 since 1940, ERA5-Land since 1950; hourly gridded reanalysis",
+    "inputs": "Temperature, humidity/dewpoint, radiation, wind, precipitation and snow where supported",
+    "access": "Copernicus CDS authenticated downloads; accept the selected dataset terms. Cache original files and metadata.",
+    "boundary": "Grid estimates are not on-site measurements; resolution, accumulations and provider revisions matter.",
+    "stage": "B"
+  },
+  {
+    "family": "Operational weather",
+    "sources": [
+      "weather-runs",
+      "weather-history",
+      "weather-terms"
+    ],
+    "coverage": "European coordinates; ECMWF original forecast runs from March 2024",
+    "inputs": "Original forecasts, issue/availability times, explicit ERA5 replay reference",
+    "access": "Reuse Open-Meteo adapter; commercial advanced APIs require appropriate plan. Free prototype access is non-commercial.",
+    "boundary": "Shorter archive than climate history. No automatic stitched forecast or synthetic substitution.",
+    "stage": "A/B"
+  },
+  {
+    "family": "Solar cross-check",
+    "sources": [
+      "cams"
+    ],
+    "coverage": "Historical record since 2004; European satellite coverage",
+    "inputs": "Global, direct, diffuse and direct-normal radiation",
+    "access": "Copernicus Atmosphere Data Store product access; qualify interval and licence metadata.",
+    "boundary": "Shares atmospheric/satellite information with other products; disagreement is not independent validation.",
+    "stage": "B"
+  },
+  {
+    "family": "Land cover",
+    "sources": [
+      "clc"
+    ],
+    "coverage": "European CLCplus Backbone 2023; 10 m raster",
+    "inputs": "Cover classes, confidence/quality layers where supplied, usable-area masks",
+    "access": "CLMS/WEkEO downloads and services; preserve CLMS attribution and edition.",
+    "boundary": "Does not establish ownership, lease availability or permission to build.",
+    "stage": "A"
+  },
+  {
+    "family": "Terrain",
+    "sources": [
+      "dem"
+    ],
+    "coverage": "Copernicus GLO-30; 30 m global surface model",
+    "inputs": "Elevation, slope distribution and broad horizon",
+    "access": "Copernicus Data Space / regional extracts; record product licence and attribution.",
+    "boundary": "Vegetation and structures affect elevations; parcel levelling and near-object shadows need better evidence.",
+    "stage": "A"
+  },
+  {
+    "family": "Protected areas",
+    "sources": [
+      "natura",
+      "natura-service",
+      "england"
+    ],
+    "coverage": "EU Natura 2000 plus separate national jurisdiction layers",
+    "inputs": "Intersections, nearby designations, configurable avoidance distances",
+    "access": "EEA spatial services/downloads; national open-data products under their own terms.",
+    "boundary": "Selected screening policy is not a legal verdict. UK coverage is not supplied by an England-only layer.",
+    "stage": "A"
+  },
+  {
+    "family": "Parcel and planning",
+    "sources": [
+      "parcels"
+    ],
+    "coverage": "Country/region-specific cadastral and planning data",
+    "inputs": "Geometry, parcel IDs, zoning; uploaded lease and survey evidence",
+    "access": "INSPIRE-compatible national services where available; rights/access evidence is obtained separately.",
+    "boundary": "No uniform European database of available industrial land, asking price and development permission.",
+    "stage": "A/C"
+  },
+  {
+    "family": "Flood exposure",
+    "sources": [
+      "flood"
+    ],
+    "coverage": "Europe and Mediterranean river basins >150 km²; return periods 10–500 years",
+    "inputs": "Modelled flood-depth intersections and exposure flags",
+    "access": "JRC/CEMS open downloads; CC BY 4.0. Higher-detail national layers as candidate-specific additions.",
+    "boundary": "Not an official flood map; no automatic site failure probability or complete coastal/pluvial coverage.",
+    "stage": "A"
+  },
+  {
+    "family": "Water stress",
+    "sources": [
+      "wei",
+      "aqueduct"
+    ],
+    "coverage": "European seasonal sub-units 2000–2023; global Aqueduct baseline/future indicators",
+    "inputs": "Seasonality and regional water-pressure context",
+    "access": "EEA downloadable data; WRI public datasets with attribution/registration terms.",
+    "boundary": "Not a supply entitlement, delivered volume, treatment specification or usable rainfall model.",
+    "stage": "A"
+  },
+  {
+    "family": "Industrial supply and demand",
+    "sources": [
+      "industrial"
+    ],
+    "coverage": "Reported European industrial facilities; coverage depends on reporting regime",
+    "inputs": "Locations, sector, reported emissions and potential co-location leads",
+    "access": "EEA industrial reporting downloads; record reporting year, thresholds and country coverage.",
+    "boundary": "Reported CO₂ emissions are not captured, pure, biogenic or available CO₂. An actual offer is a separate input.",
+    "stage": "A/C"
+  },
+  {
+    "family": "Electrical connection",
+    "sources": [
+      "ukpn"
+    ],
+    "coverage": "First proposed national adapter: UKPN EHV headroom and plans",
+    "inputs": "Network context, indicative headroom, scenario year; uploaded operator quotation",
+    "access": "Operator data portals and dated documents; licence/automation review per dataset.",
+    "boundary": "No guarantee of import/export capacity, firm access, cost, reinforcement or commissioning date.",
+    "stage": "C"
+  },
+  {
+    "family": "Electricity market",
+    "sources": [
+      "entsoe",
+      "entsoe-api",
+      "elexon",
+      "esios"
+    ],
+    "coverage": "Bidding zones and national products; native hourly/sub-hourly intervals",
+    "inputs": "Historical prices, price publication times, market/context series",
+    "access": "ENTSO-E/e·sios authentication; Elexon public documented APIs; reuse rights checked per product.",
+    "boundary": "Market or imbalance prices are not the delivered site tariff. No implied grid interface in current physics.",
+    "stage": "C"
+  },
+  {
+    "family": "Gas export",
+    "sources": [
+      "entsog"
+    ],
+    "coverage": "European transmission maps and operator-specific connection evidence",
+    "inputs": "Network leads, offered injection capacity and product acceptance requirements",
+    "access": "ENTSOG reference links only until use rights are resolved; operator offers imported explicitly.",
+    "boundary": "Map is indicative and has restrictive commercial-use wording. Nearby infrastructure is not an injection right.",
+    "stage": "C"
+  },
+  {
+    "family": "Capital and operation",
+    "sources": [
+      "costs"
+    ],
+    "coverage": "Technology/scale-specific catalogue editions, including August 2026",
+    "inputs": "Equipment benchmark ranges and referenced lifetime/performance assumptions",
+    "access": "Danish Energy Agency catalogue/data sheets; dated vendor/site quotes override matched assumptions.",
+    "boundary": "Large-plant reference values do not calibrate the current small package or local installation costs.",
+    "stage": "C"
+  },
+  {
+    "family": "Measured weather and performance",
+    "sources": [
+      "dwd",
+      "metoffice"
+    ],
+    "coverage": "DWD identified radiation stations; Met Office recent hourly station observations",
+    "inputs": "Quality-controlled measured inputs; user-uploaded pyranometer/PV/plant traces",
+    "access": "DWD open data; Met Office subscription/access terms; explicit upload rights and provenance.",
+    "boundary": "Representativeness and sensor exposure need review. Met Office recent API is not a long archive.",
+    "stage": "B/E"
+  },
+  {
+    "family": "Service access and logistics",
+    "sources": [
+      "osm-data",
+      "osm-tiles",
+      "maplibre"
+    ],
+    "coverage": "Candidate region plus surveyed site access graph",
+    "inputs": "Road/route geometry, depot travel, gate restrictions, delivery and service quotes",
+    "access": "Licence-compatible vector/road provider or local extract; OSM data requires ODbL compliance and attribution. Surveyed access and operator records.",
+    "boundary": "A routable public road does not prove heavy-vehicle or robot access. No automatic repair capability or response-time guarantee.",
+    "stage": "C"
+  },
+  {
+    "family": "Renewable-fuel eligibility",
+    "sources": [
+      "rfnbo"
+    ],
+    "coverage": "EU framework plus separately versioned national/UK rules",
+    "inputs": "Rule references, evidence obligations and conditional price-premium scenario",
+    "access": "Official rules and project-specific specialist evidence; no automated certification in the first release.",
+    "boundary": "Renewable supply or CO₂ consumption does not establish certified fuel, sale acceptance or net removal.",
+    "stage": "C/E"
+  },
+  {
+    "family": "Offline basemap",
+    "sources": [
+      "natural-earth",
+      "osm-tiles",
+      "maplibre"
+    ],
+    "coverage": "World overview plus licensed regional tiles",
+    "inputs": "Geographical context and selection",
+    "access": "Natural Earth public-domain overview; appropriate licensed/self-hosted detailed tiles.",
+    "boundary": "Public OSM raster tiles cannot be bulk-prefetched. A rendering library does not grant data rights.",
+    "stage": "A"
+  }
+]
