@@ -1747,7 +1747,9 @@ class PlantServices:
             consumed = sum(
                 e["amount"]
                 for e in record["resource_events"]
-                if e["kind"] == "consume" and e["resource"] == "brush:cleaner"
+                if e["kind"] == "consume"
+                and e["resource"] == "brush:cleaner"
+                and self.executive.missions[e["mission_id"]].plan.order.action == "clean-section"
             )
             record["audits"].append(
                 check(

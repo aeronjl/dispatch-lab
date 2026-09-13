@@ -2918,6 +2918,7 @@ def audit(result):
         }
         service_stocks = {k: D(r["initial"]) for k, r in service_specs.items()}
         surface_state, brush_pass = {}, {}
+        surface_jobs = set()
         optical_surface = (
             service_system and service_system.get("cleaning_model") == "section-optical/1"
         )
@@ -3149,6 +3150,11 @@ def audit(result):
                             hour=i,
                         )
                     if optical_surface:
+                        surface_jobs.update(
+                            p["order"]["order_id"]
+                            for p in service["new_missions"]
+                            if p["order"]["action"] == "clean-section"
+                        )
                         solar = row["component_records"]["solar"]
                         encoded = json.loads(solar["parameters"]["design_json"])
                         baseline = service["optical"]["baseline_design"]
@@ -3275,7 +3281,9 @@ def audit(result):
                             sum(
                                 D(e["amount"])
                                 for e in service["resource_events"]
-                                if e["kind"] == "consume" and e["resource"] == "brush:cleaner"
+                                if e["kind"] == "consume"
+                                and e["resource"] == "brush:cleaner"
+                                and e["mission_id"] in surface_jobs
                             ),
                             "m2",
                             controller=name,

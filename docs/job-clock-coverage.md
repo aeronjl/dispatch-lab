@@ -20,3 +20,7 @@ This correction changes neither hardware capability nor the assumed removal
 fraction. Tests independently require a full section's area and brush use for a
 completed pass, and 30% for the declared interruption, with variable job clocks.
 Portable treatment retains its separate water and adhered-fouling assumptions.
+
+The coverage invariant counts only consumption by registered cleaning jobs.
+Discarding an old brush allowance during replacement is a separate recorded
+maintenance loss; it remains in the resource ledger without implying treatment.
