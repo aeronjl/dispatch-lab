@@ -1,11 +1,11 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+  "source": "783a978c022c6af6edc056439fdfa0a169671441b4d8d74e48e024b7538c5010",
   "topics": {
     "battery": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "battery": {
             "bindings": {
@@ -264,7 +264,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -608,7 +608,7 @@
     },
     "bus": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "coupling": {
             "bindings": {
@@ -755,7 +755,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -1413,7 +1413,7 @@
     },
     "co2": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -1702,7 +1702,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -1962,7 +1962,7 @@
     },
     "controllers": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "control": {
             "bindings": {
@@ -1977,7 +1977,7 @@
               "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
-              "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+              "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
               "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
@@ -2678,7 +2678,7 @@
           "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -2939,7 +2939,7 @@
     },
     "diagnosis": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "control": {
             "bindings": {
@@ -2954,7 +2954,7 @@
               "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
-              "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+              "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
               "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
@@ -3088,7 +3088,7 @@
               "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
               "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
-              "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+              "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
               "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
@@ -4256,7 +4256,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
@@ -4476,7 +4476,7 @@
     },
     "economics": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "economics": {
             "bindings": {
@@ -6697,7 +6697,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -6967,7 +6967,7 @@
     },
     "electrolyser": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -7405,7 +7405,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -7689,7 +7689,7 @@
     },
     "experiments": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "coupling": {
             "bindings": {
@@ -10532,14 +10532,14 @@
           "methane/evidence.py": "5962057e6253e1cb2b14aab2c1efb086163850bc1a1260594236e3eea6629f4e",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
-          "methane/field_studies.py": "0f0f8aec4ece641d6fbee89380aaab4ab00ce3b88c0590407405109d37bd822a",
+          "methane/field_studies.py": "750bc2e56840cdb1dd98513408b207ccb39fac3b207f52b6e60502b6fe1e51d6",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
           "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/offline_model.py": "cb4688574241ddd7f5fdf1992d5e3a331d5ada2412ecb7a5c685aedbe6256072",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -10800,7 +10800,7 @@
     },
     "hydrogen": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -11204,7 +11204,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -11476,7 +11476,7 @@
     },
     "reactor": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -11914,7 +11914,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -12327,7 +12327,7 @@
     },
     "solar": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "cleaning": {
             "bindings": {
@@ -13316,7 +13316,7 @@
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
@@ -13708,7 +13708,7 @@
     },
     "weather": {
       "assumption_review": {
-        "edition": "2026-09-13 / 7",
+        "edition": "2026-09-13 / 8",
         "groups": {
           "experiment": {
             "bindings": {
@@ -14356,7 +14356,7 @@
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-          "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+          "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
           "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
           "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",

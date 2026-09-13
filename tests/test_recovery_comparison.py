@@ -51,3 +51,20 @@ def test_historical_prefix_preserves_raw_data_and_availability(monkeypatch):
         uncertainty_weather_input(c, {"weather_source_hours": 24})
     with pytest.raises(ValueError, match="historical"):
         uncertainty_weather_input(fixture("null"), {"weather_source_hours": 240})
+
+
+def test_report_without_null_cases_does_not_report_a_failed_null_test(tmp_path):
+    import json
+
+    from methane.recovery_comparison import report
+
+    (tmp_path / "programme.json").write_text(
+        json.dumps(
+            dict(entries=[], seeds=[7], protocol_scope="No cases selected", weather_scope="None")
+        )
+    )
+    path = report(tmp_path)
+    payload = json.loads(path.with_suffix(".json").read_text())
+    assert payload["null_comparison_status"] == "not-included"
+    assert payload["null_trace_identical_by_seed"] == {}
+    assert "No null condition was included" in path.read_text()

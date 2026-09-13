@@ -15,7 +15,7 @@ from methane.provenance import LOADED_CAPSULE, LOADED_SOURCE, digest
 
 SCHEMA = "dispatch-lab/study-protocol/2"
 RESOLVER = "matched-field-workflow/1"
-REPORTING = "field-study-reporting/4"
+REPORTING = "field-study-reporting/5"
 RESTORATION_COUNT = (
     "Ended reset, module replacement, flow calibration or hardware replacement procedures "
     "without recorded operating acceptance. Includes the executive's awaiting-verification "
@@ -42,7 +42,11 @@ REPORT_METRICS = {
     "capacity_confirmed_hour": "Post-restoration confidence available / hour",
     "recovery_confirmation_delay_hours": "Post-restoration confirmation delay / h",
     "recovery_probe_hours": "Requested load-test intervals / h",
-    "recovery_deadline_misses": "Scheduled test deadlines missed",
+    "recovery_deadline_misses": "Legacy scheduler test deadlines missed (versions 1–2)",
+    "recovery_verification_windows": "Post-mission verification windows opened",
+    "recovery_verification_deadline_misses": "Post-mission verification windows expired",
+    "recovery_observer_confirmed_windows": "Observer-confirmed verification windows",
+    "recovery_escalation_hours": "Recovery escalation intervals / h",
     "recovery_candidate_solves": "Recovery window solves",
     "service_fallback_intervals": "Service fallback intervals",
     "service_candidate_solves": "Service candidate solves",
@@ -317,6 +321,10 @@ def values(metrics):
                 "recovery_confirmation_delay_hours",
                 "recovery_probe_hours",
                 "recovery_deadline_misses",
+                "recovery_verification_windows",
+                "recovery_verification_deadline_misses",
+                "recovery_observer_confirmed_windows",
+                "recovery_escalation_hours",
                 "recovery_candidate_solves",
             )
         },

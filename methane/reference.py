@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 from decimal import Decimal, localcontext
 from pathlib import Path
 
-VERSION = "dispatch-lab/reference/1"
+VERSION = "dispatch-lab/reference/2"
 
 
 def D(value):
@@ -496,6 +496,25 @@ def surface_reference(patches, operation):
             )
             result.append((a, b, loose * (1 - dose), attached, damaged))
     return result
+
+
+def stock_bounds(checks, key, stock, capacity, unit, *, controller=None, hour=None):
+    """Measure overrun in resource units, including replay rounding at zero.
+
+    Decimal replay is exact for the rounded recorded operands, not for the
+    producer's unrounded floating-point intermediates. A Boolean comparison
+    would turn a tiny replay residual into a unit-sized failure. Keep the
+    independent tolerance unchanged and report the actual boundary error.
+    """
+    compare(
+        checks,
+        "service.stock_bounds:" + key,
+        max(D(0), -D(stock), D(stock) - D(capacity)),
+        D(0),
+        unit,
+        controller=controller,
+        hour=hour,
+    )
 
 
 def compare(checks, name, actual, expected, unit="", *, controller=None, hour=None):
@@ -3051,11 +3070,12 @@ def audit(result):
                                     hour=i,
                                 )
                                 service_stocks[key] += accepted
-                            compare(
+                            stock_bounds(
                                 checks,
-                                "service.stock_bounds:" + key,
-                                0 <= service_stocks[key] <= D(spec["capacity"]),
-                                True,
+                                key,
+                                service_stocks[key],
+                                spec["capacity"],
+                                spec["unit"],
                                 controller=name,
                                 hour=i,
                             )

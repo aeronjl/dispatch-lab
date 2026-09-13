@@ -356,10 +356,12 @@ def report(directory):
         programme=p,
         records=records,
         matching=matching,
+        null_comparison_status="included" if null else "not-included",
         null_trace_identical_by_seed={
             str(seed): len({r.get("trace_hash") for r in null if r["seed"] == seed}) == 1
             and all(r["status"] == "complete" for r in null if r["seed"] == seed)
             for seed in p["seeds"]
+            if null
         },
         null_numerical_spread={
             str(seed): trace_spread(
@@ -409,8 +411,13 @@ def report(directory):
         + "</p><p>Read physical matches, unfinished work and numerical limitations before interpreting an advantage. Every case retains its original Study report, source and operands. No ranking or overall trust score is inferred.</p>"
     )
     body += (
-        "<p>Null traces identical within each seed across modes and numerical repeats: "
-        + html.escape(str(output["null_trace_identical_by_seed"]))
+        "<p>"
+        + (
+            "Null traces identical within each seed across modes and numerical repeats: "
+            + html.escape(str(output["null_trace_identical_by_seed"]))
+            if null
+            else "No null condition was included in this programme."
+        )
         + '</p><div class="scroll"><table><tr><th>Condition</th><th>Arm</th><th>Seed</th><th>Repeat</th><th>Status</th><th>Methane / kg</th><th>Accepted missions</th><th>Fallback intervals</th><th>Gap</th></tr>'
         + "".join(lines)
         + "</table></div>"

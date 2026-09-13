@@ -71,7 +71,7 @@ def outcomes(rows, truth, nameplate_kw):
         for row in rows
         if "recovery_planning" in row["decision"]
     ]
-    return dict(
+    result = dict(
         capacity_restored_hour=restored,
         capacity_confirmed_hour=confirmed,
         recovery_confirmation_delay_hours=confirmed - restored if confirmed is not None else None,
@@ -83,6 +83,26 @@ def outcomes(rows, truth, nameplate_kw):
         if scheduling
         else None,
     )
+    loops = [r for r in scheduling if r.get("version") == LOOP_VERSION]
+    if loops:
+        # Count receipt-defined windows once, using the latest recorded outcome.
+        # Escalation can precede a completed mission, so intervals are separate.
+        episodes = {
+            tuple(e["receipt_ids"]): e for r in loops for e in r["verification_loop"]["episodes"]
+        }
+        result.update(
+            recovery_episode_report_version="post-mission-outcomes/1",
+            recovery_deadline_misses=None,
+            recovery_verification_windows=len(episodes),
+            recovery_verification_deadline_misses=sum(
+                e.get("outcome") == "verification deadline missed" for e in episodes.values()
+            ),
+            recovery_observer_confirmed_windows=sum(
+                e.get("outcome") == "observer confirmed" for e in episodes.values()
+            ),
+            recovery_escalation_hours=sum(r["status"] == "escalation-required" for r in loops),
+        )
+    return result
 
 
 def compare(

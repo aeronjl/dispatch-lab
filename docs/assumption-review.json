@@ -1,6 +1,6 @@
 {
   "schema_version": "dispatch-lab/assumption-review/1",
-  "edition": "2026-09-13 / 7",
+  "edition": "2026-09-13 / 8",
   "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
   "categories": {
     "design": "Chosen capacity, geometry or initial condition; requires a matched design, not statistical calibration.",
@@ -509,7 +509,7 @@
         "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
         "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
         "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
-        "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+        "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
         "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
@@ -654,7 +654,7 @@
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
         "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
-        "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+        "methane/recovery.py": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
         "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
         "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
         "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
@@ -7043,5 +7043,6 @@
     ]
   },
   "reference_configuration_note": "Optional blocks and example arrays are inventoried but not enabled. [] represents repeated objects. Values absent from a run remain unavailable. Within enabled blocks, variant-specific parameters may still be inactive.",
-  "calibration_gate": "Open: no matched plant or service measurement series is supplied. Existing numerical, reference and historical-weather evidence has narrower scope."
+  "calibration_gate": "Open: no matched plant or service measurement series is supplied. Existing numerical, reference and historical-weather evidence has narrower scope.",
+  "revision_note": "Reviewed reporting-only corrections: numeric stock-bound overrun uses the existing independent tolerance; post-mission window counts are distinct from escalation intervals and legacy scheduler counts. Physical mechanisms, defaults and calibration claims are unchanged."
 }

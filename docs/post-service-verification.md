@@ -2,6 +2,15 @@
 
 ## Coordinated verification episodes
 
+New version-3 results report distinct post-mission windows opened, windows
+expired, observer-confirmed windows and escalation intervals separately. Repeated
+snapshots of one receipt-defined window count once. Escalation can occur before
+any completed mission, so its interval count is not a count of failed repairs.
+The legacy `recovery_deadline_misses` metric is undefined for these new version-3
+results; it counted the earlier scheduler's `deadline-missed` state. Earlier
+archives retain their original reported values. Dated research reports can add
+explicitly identified derivations from their saved episode histories.
+
 Recovery `scheduled-load-tests/3` is the opt-in completion of the bounded loop.
 It uses the existing joint electricity, dock charging and test-window solver. A
 whole-mission return and eligible receipt open a separate test window of
