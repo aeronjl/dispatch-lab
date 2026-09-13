@@ -82,6 +82,12 @@ def solar_resource(store, latitude, longitude, tilt=30, azimuth=0, loss_percent=
         raddatabase="PVGIS-SARAH3",
         outputformat="json",
     )
+    # Pinned reference fixtures use original request ordering/number formatting.
+    # Reuse only a parameter-equivalent response, never a nearby location.
+    if offline:
+        for source in store.list("source"):
+            if source["product"] == "PVGIS 5.3 PVcalc" and source["request"] == params:
+                return resource_view(source["id"], json.loads(store.read_raw(source["raw_sha256"])))
     source_id, data = fetch(
         store,
         PVGIS,

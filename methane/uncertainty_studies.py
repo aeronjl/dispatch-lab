@@ -143,7 +143,12 @@ def resolve_cases(spec, basis, tier):
                 )
                 if (
                     recovery
-                    and recovery["version"] in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+                    and recovery["version"]
+                    in (
+                        "scheduled-load-tests/2",
+                        "scheduled-load-tests/3",
+                        "scheduled-load-tests/4",
+                    )
                     and fields["objective"] == "greedy"
                 ):
                     recovery["version"] = "scheduled-load-tests/1"

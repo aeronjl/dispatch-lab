@@ -15,7 +15,9 @@ from methane.services.scenario_planning import Branch, solve
 
 JOINT_VERSION = "scheduled-load-tests/2"
 LOOP_VERSION = "scheduled-load-tests/3"
-JOINT_VERSIONS = (JOINT_VERSION, LOOP_VERSION)
+WEATHER_VERSION = "scheduled-load-tests/4"
+LOOP_VERSIONS = (LOOP_VERSION, WEATHER_VERSION)
+JOINT_VERSIONS = (JOINT_VERSION, *LOOP_VERSIONS)
 
 
 @dataclass(frozen=True)
@@ -83,7 +85,7 @@ def outcomes(rows, truth, nameplate_kw):
         if scheduling
         else None,
     )
-    loops = [r for r in scheduling if r.get("version") == LOOP_VERSION]
+    loops = [r for r in scheduling if r.get("version") in LOOP_VERSIONS]
     if loops:
         # Count receipt-defined windows once, using the latest recorded outcome.
         # Escalation can precede a completed mission, so intervals are separate.

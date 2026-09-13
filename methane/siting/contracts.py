@@ -115,6 +115,7 @@ class DeploymentDesign(Record):
     assessment_id: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     evidence_ids: list[str] = Field(default_factory=list)
     layout: list[dict] = Field(default_factory=list)
+    utilities: dict | None = None
     assumptions: list[str] = Field(default_factory=list)
     parent_id: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
 
@@ -123,4 +124,8 @@ class DeploymentDesign(Record):
         from methane.config import Config
 
         Config.from_dict(self.config)
+        if self.utilities is not None:
+            from methane.siting.utilities import Utilities
+
+            Utilities(**self.utilities)
         return self

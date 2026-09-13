@@ -14,7 +14,7 @@ def audit_run(result):
         prior = {}
         for row in rows:
             record = row["decision"].get("recovery_planning", {})
-            if record.get("version") != "scheduled-load-tests/3":
+            if record.get("version") not in ("scheduled-load-tests/3", "scheduled-load-tests/4"):
                 continue
             loop = record["verification_loop"]
             policy = result["provenance"]["controller_policies"][controller]["recovery"]
@@ -34,7 +34,10 @@ def audit_run(result):
                 key = tuple(episode["receipt_ids"])
                 boundary = episode["available_boundary"]
                 check(
-                    "bounded-window", episode["due_hour"] == boundary + policy["maximum_wait_hours"]
+                    "bounded-window",
+                    (boundary <= episode["due_hour"] <= boundary + policy["maximum_wait_hours"])
+                    if record["version"] == "scheduled-load-tests/4"
+                    else episode["due_hour"] == boundary + policy["maximum_wait_hours"],
                 )
                 check("available-before-opening", boundary <= episode["opened_at"] <= row["hour"])
                 for identity in key:

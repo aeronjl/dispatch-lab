@@ -72,6 +72,14 @@ if os.environ.get("DISPATCH_BROWSER_HOURS") and not os.environ.get("DISPATCH_BRO
     )
     fixture = run(config, strategies=("Greedy",))
 
+if os.environ.get("DISPATCH_SITES_STUDIES"):
+    sys.path.insert(0, str(ROOT / "tests"))
+    from test_siting_production import fixture as site_fixture
+
+    from methane.siting.store import Store as SiteStore
+
+    site_fixture(SiteStore(), hours=6)
+
 launch_local(
     build_app(fixture).queue(max_size=8),
     app_kwargs={"lifespan": lifespan},

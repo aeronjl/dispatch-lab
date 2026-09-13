@@ -120,6 +120,11 @@ def playback_value(result, register_contexts=True):
     from methane.study_service import register as register_study
 
     p = result["config"]["plant"]
+    period = result.get("continuous_period")
+    display_result = result
+    if period:
+        times = [r["time"] for r in next(iter(result["records"].values()))]
+        display_result = {**result, "weather": {**result["weather"], "times": times}}
     frames, view_records = {}, {}
     for name, rows in result["records"].items():
         values = {
@@ -132,6 +137,13 @@ def playback_value(result, register_contexts=True):
                 result["weather"]["times"][0], result["config"]["weather"]["timezone"]
             ),
         }
+        if period:
+            values.update(
+                {k: period["initial_state"][k] for k in ("h2_kg", "co2_kg", "battery_kwh")}
+            )
+            values["local_time"] = local_stamp(
+                rows[0]["time"], result["config"]["weather"]["timezone"]
+            )
         frames[name] = [dict(values)]
         view_records[name] = []
         for row in rows:
@@ -246,7 +258,7 @@ def playback_value(result, register_contexts=True):
         "field_operations_model": result.get("field_operations_model"),
         "taxonomy": result.get("taxonomy") if not register_contexts else None,
         "records": view_records,
-        "preview_token": register_preview(result) if register_contexts else None,
+        "preview_token": register_preview(display_result) if register_contexts else None,
         "model_token": register_model(result) if register_contexts else None,
         "study_token": register_study(result) if register_contexts else None,
         "component_specs": {k: v.to_dict() for k, v in SPECS.items()},
@@ -259,7 +271,25 @@ def playback_value(result, register_contexts=True):
         },
         "frames": frames,
         "weather": weather,
-        "solar": solar_preview(result),
+        "solar": solar_preview(display_result),
+        "continuous_period": period,
+        **(
+            {
+                "events": {
+                    name: [
+                        {
+                            **event,
+                            "global_hour": event["hour"],
+                            "hour": event["hour"] - period["start_hour"],
+                        }
+                        for event in values
+                    ]
+                    for name, values in result["events"].items()
+                }
+            }
+            if period
+            else {}
+        ),
         "start_local": local_stamp(
             result["weather"]["times"][0], result["config"]["weather"]["timezone"]
         ),
@@ -438,6 +468,7 @@ def build_app(default=None):
                         "Bounded post-mission verification and escalation (version 3)",
                         "scheduled-load-tests/3",
                     ),
+                    ("Forecast-aware bounded verification (version 4)", "scheduled-load-tests/4"),
                 ],
                 value=value,
                 label=label,
@@ -912,7 +943,13 @@ def build_app(default=None):
             "metrics": {
                 name: {
                     **result["metrics"][name],
-                    **allocation(p, costs, rows, service_economics=service_prices),
+                    **allocation(
+                        p,
+                        costs,
+                        rows,
+                        service_economics=service_prices,
+                        service_prefix=result.get("service_accounting_prefix"),
+                    ),
                 }
                 for name, rows in result["records"].items()
             },
@@ -978,6 +1015,7 @@ def build_app(default=None):
                     + (ASSETS / "model.js").read_text()
                     + (ASSETS / "taxonomy.js").read_text()
                     + (ASSETS / "studies.js").read_text()
+                    + (ASSETS / "sites-studies.js").read_text()
                     + (ASSETS / "sites.js").read_text()
                     + "\nmountMethane(element, props, watch, trigger);",
                     apply_default_css=False,
@@ -1856,10 +1894,20 @@ def build_app(default=None):
             request = evt._data
             if request.get("run_id") != current["run_id"]:
                 return tuple(gr.skip() for _ in range(7 + len(widgets)))
-            entry = studies.entry_for(
-                request["edition_id"], request["case_id"], attempt_id=request.get("attempt_id")
-            )
-            r = studies.archive_for(request["edition_id"], entry)
+            if request.get("kind") == "site-study":
+                from methane.siting.production import entries, load_period
+                from methane.siting.store import Store
+
+                site_store = Store()
+                admitted = entries(site_store, request["edition_id"], request["case_id"])
+                if request["period_sha256"] not in {e["period_sha256"] for e in admitted}:
+                    raise gr.Error("Period does not belong to this site study case")
+                r = load_period(site_store, request["period_sha256"])
+            else:
+                entry = studies.entry_for(
+                    request["edition_id"], request["case_id"], attempt_id=request.get("attempt_id")
+                )
+                r = studies.archive_for(request["edition_id"], entry)
             name, hour = request["controller"], int(request["hour"])
             if name not in r["records"] or not 0 <= hour < len(r["records"][name]):
                 raise gr.Error("This study interval is not available for recorded playback")
@@ -1867,7 +1915,15 @@ def build_app(default=None):
             view = playback_value(r)
             view["study_origin"] = {
                 k: request.get(k)
-                for k in ("edition_id", "case_id", "controller", "hour", "component", "report_id")
+                for k in (
+                    "edition_id",
+                    "case_id",
+                    "controller",
+                    "hour",
+                    "component",
+                    "report_id",
+                    "kind",
+                )
             }
             return (
                 r,

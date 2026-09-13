@@ -1,0 +1,28 @@
+const {test,expect}=require('@playwright/test');
+test('Sites runs a frozen case, opens its original interval and publishes a comparison',async({page})=>{
+ test.skip(!process.env.DISPATCH_SITES_STUDIES,'Requires the isolated Sites teaching environment');
+ test.setTimeout(90000);const errors=[];page.on('pageerror',err=>errors.push(err.message));
+ await page.goto('/');await page.locator('.m-plant').waitFor();
+ await page.locator('[data-do=menu]').click();await page.locator('[data-do=sites]').click();
+ await page.locator('[data-si=model]').click();await expect(page.locator('.d-workspace')).toBeVisible();await expect(page.locator('.d-workspace')).toContainText('From a location to an operating case');await page.keyboard.press('Escape');await expect(page.locator('.si-workspace')).toBeVisible();
+ await page.locator('[data-si=studies]').click();await page.locator('[data-si=study-new]').click();
+ await page.locator('[data-study=name]').fill('Browser chronological study');
+ await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
+ await page.locator('[data-si=study-start]').click();
+ await expect(page.locator('[data-si=period-play]')).toBeVisible({timeout:60000});
+ await expect(page.locator('.si-page')).toContainText('6 / 6 hours');
+ await page.screenshot({path:'build/siting-study-calendar.png'});
+ await page.locator('[data-si=period-play]').first().click();
+ await expect(page.locator('.si-workspace')).toBeHidden();
+ await page.locator('[data-do=menu]').click();await expect(page.locator('[data-do=study-origin]')).toBeVisible();await page.locator('[data-do=study-origin]').click();
+ await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
+ await page.locator('[data-si=publish-study]').click();
+ await expect(page.locator('.si-page')).toContainText('Write-up frozen');
+ const url=await page.locator('.si-page a').first().getAttribute('href');const response=await page.request.get(url);expect(response.ok()).toBe(true);expect(await response.text()).toContain('Browser chronological study');
+ await page.locator('[data-si=bundle]').click();await expect(page.locator('.si-export-result')).toContainText('Download ZIP');
+ await page.locator('[data-si=compare]').click();await page.locator('[data-compare-study]').first().check();
+ await page.locator('[data-si=compare-build]').click();await expect(page.locator('.si-page')).toContainText('1 complete / 1 declared');
+ await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:'build/siting-comparison-mobile.png'});
+ expect(errors).toEqual([]);
+});

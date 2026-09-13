@@ -65,15 +65,19 @@ def decision_cost(p, c, rows, *, service_economics=None, service_report=None):
     }
 
 
-def service_costs(c, rows, assumptions=None, *, detailed=False):
+def service_costs(c, rows, assumptions=None, *, detailed=False, prefix=None):
     if assumptions is None:
         return field_costing(c, rows)
     from methane.service_economics import field_costs
 
+    if prefix:
+        from methane.siting.period_costs import services
+
+        return services(rows, assumptions, prefix, detailed=detailed)
     return field_costs(rows, assumptions, detailed=detailed)
 
 
-def allocation(p, c, rows, *, with_lineage=False, service_economics=None):
+def allocation(p, c, rows, *, with_lineage=False, service_economics=None, service_prefix=None):
     cap = capital(p, c)
     hours, y = len(rows), len(rows) / 8760
     total = lambda k: sum(r[k] for r in rows)  # noqa: E731
@@ -105,7 +109,7 @@ def allocation(p, c, rows, *, with_lineage=False, service_economics=None):
         if r.get("intervention_accounting", "legacy-alarm-allowance/1")
         == "legacy-alarm-allowance/1"
     )
-    field = service_costs(c, rows, service_economics, detailed=with_lineage)
+    field = service_costs(c, rows, service_economics, detailed=with_lineage, prefix=service_prefix)
     water = total("h2_produced_kg") * c.water_litres_per_kg / 1000
     components = {
         "solar": cap["solar"] / c.solar_years * y,
@@ -192,7 +196,13 @@ def reprice(result, costs=None, *, service_economics=_SAVED):
         "basis": "Illustrative EUR; allocated cost and marginal decision proxies are separate",
         "controllers": {
             name: [
-                allocation(p, c, rows[:i], service_economics=service_economics)
+                allocation(
+                    p,
+                    c,
+                    rows[:i],
+                    service_economics=service_economics,
+                    service_prefix=result.get("service_accounting_prefix"),
+                )
                 for i in range(len(rows) + 1)
             ]
             for name, rows in result["records"].items()
@@ -451,6 +461,24 @@ def allocation_lineage(p, c, rows, cap, result):
             "sum(charged terms); max(calendar, usage) replaceables once",
             tuple(ids),
         )
+    if result["field_operations"].get("period_difference"):
+        for key, operands in result["field_operations"]["period_difference"]["components"].items():
+            parents = []
+            for side in ("before", "after"):
+                node = "service_period." + key + "." + side
+                add(
+                    node,
+                    operands[side],
+                    "EUR",
+                    "/service_accounting_prefix and recorded period",
+                    (),
+                    "Cumulative service allocation at the named boundary under original prices",
+                )
+                parents.append(node)
+            component_formulas[key] = (
+                "after − before; cumulative wear pool retained",
+                tuple(parents),
+            )
     for key, value in result["components"].items():
         formula, parents = component_formulas[key]
         add("allocation." + key, value, "EUR", "derived", parents, formula)

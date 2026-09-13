@@ -313,7 +313,7 @@ function mountMethane(element, props, watch, trigger) {
     taxonomy=typeof createTaxonomyWorkspace==='function'?createTaxonomyWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,pause:()=>clock.pause()}):null;
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
-    sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
+    sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:()=>model?.open('siting'),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
         if(event.target.closest('[data-service-alternatives]'))return;
@@ -339,7 +339,7 @@ function mountMethane(element, props, watch, trigger) {
         if(action==='hide-ui')hideControls();
         if(action==='studies')studies?.open();
         if(action==='sites')sites?.open();
-        if(action==='study-origin')studies?.open(result.study_origin?.edition_id,result.study_origin?.report_id);
+        if(action==='study-origin'){if(result.study_origin?.kind==='site-study')sites?.openStudy(result.study_origin.edition_id);else studies?.open(result.study_origin?.edition_id,result.study_origin?.report_id);}
         if(action==='timeline'){
             const opening=$('.m-timeline').hidden;closePanels(false);
             root.dataset.chrome='visible';$('.m-timeline').hidden=!opening;

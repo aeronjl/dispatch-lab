@@ -24,14 +24,8 @@ VERSION = "service-decision-pricing/3"
 PREFIX_VERSION = "service-cost-input-projection/1"
 
 
-def recorded_inputs(rows, *, activity=True):
-    """Copy the exact recorded cost interface, excluding unrelated decision trees.
-
-    Source indices are retained, so quantity references still resolve into the
-    original run. Compare all operands and references against the complete input
-    before returning: a future accounting dependency cannot silently be omitted.
-    This is an economic input identity, not a hash of the entire physical trace.
-    """
+def projected_row(row):
+    """One cost-interface record; retain its global interval index."""
     fields = {
         "hour",
         "assets",
@@ -44,17 +38,25 @@ def recorded_inputs(rows, *, activity=True):
         "support_effects",
         *(key + "_hours" for key in ASSETS),
     }
-    projected = []
-    for row in rows:
-        r = row.get("field_operations")
-        if r is None:
-            projected.append({})
-            continue
-        item = {key: copy.deepcopy(value) for key, value in r.items() if key in fields}
-        item["state"] = {
-            "executive": {"resources": copy.deepcopy(r["state"]["executive"]["resources"])}
-        }
-        projected.append({"field_operations": item})
+    r = row.get("field_operations")
+    if r is None:
+        return {}
+    item = {key: copy.deepcopy(value) for key, value in r.items() if key in fields}
+    item["state"] = {
+        "executive": {"resources": copy.deepcopy(r["state"]["executive"]["resources"])}
+    }
+    return {"field_operations": item}
+
+
+def recorded_inputs(rows, *, activity=True):
+    """Copy the exact recorded cost interface, excluding unrelated decision trees.
+
+    Source indices are retained, so quantity references still resolve into the
+    original run. Compare all operands and references against the complete input
+    before returning: a future accounting dependency cannot silently be omitted.
+    This is an economic input identity, not a hash of the entire physical trace.
+    """
+    projected = [projected_row(row) for row in rows]
     if quantities(rows, activity=activity) != quantities(projected, activity=activity):
         raise ValueError("Service cost projection does not preserve its original recorded operands")
     return dict(

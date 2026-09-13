@@ -2798,7 +2798,8 @@ def audit(result):
             checks.extend(companion["audit_run"](result))
         recovery_tests(result, checks)
         if any(
-            row["decision"].get("recovery_planning", {}).get("version") == "scheduled-load-tests/3"
+            row["decision"].get("recovery_planning", {}).get("version")
+            in ("scheduled-load-tests/3", "scheduled-load-tests/4")
             for rows in result["records"].values()
             for row in rows
         ):

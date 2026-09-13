@@ -157,7 +157,7 @@ def evidence(p, state, forecast, planned, diagnosis, objective):
     }
 
 
-def summarise(rows, config, truth_rows=None):
+def summarise(rows, config, truth_rows=None, *, service_prefix=None):
     from methane.recovery import outcomes as recovery_outcomes
     from methane.services.outcomes import calculate as field_outcomes
 
@@ -218,7 +218,13 @@ def summarise(rows, config, truth_rows=None):
             ),
             default=0,
         ),
-        **allocation(p, config.costs, rows, service_economics=config.service_economics),
+        **allocation(
+            p,
+            config.costs,
+            rows,
+            service_economics=config.service_economics,
+            service_prefix=service_prefix,
+        ),
     }
 
 
@@ -230,8 +236,14 @@ def _run(
     cancelled=None,
     policies=None,
     uncertainty=None,
+    continuation=None,
 ):
     execution_config = config or Config()
+    site_utilities = None
+    if continuation is not None and continuation.utilities is not None:
+        from methane.siting.utilities import Utilities
+
+        site_utilities = Utilities(**continuation.utilities)
     c = execution_config
     if uncertainty is not None:
         from methane.uncertainty import VERSION as UNCERTAINTY_VERSION
@@ -302,7 +314,7 @@ def _run(
                 recovery=replace(c.recovery_policy, version="scheduled-load-tests/1")
                 if c.recovery_policy is not None
                 and c.recovery_policy.version
-                in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+                in ("scheduled-load-tests/2", "scheduled-load-tests/3", "scheduled-load-tests/4")
                 and p.objective == "greedy"
                 else c.recovery_policy,
                 service=c.service_policy if p.objective != "greedy" else None,
@@ -321,7 +333,8 @@ def _run(
         if (
             policies is None
             and c.recovery_policy is not None
-            and c.recovery_policy.version in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+            and c.recovery_policy.version
+            in ("scheduled-load-tests/2", "scheduled-load-tests/3", "scheduled-load-tests/4")
         ):
             provenance["recovery_configuration_scope"] = (
                 "Joint work/charging/tests apply to coordinated MPC strategies. Greedy retains the independent version-1 recovery scheduler and local service rule; this compares policy packages, not an isolated change in process objective. Exact per-controller policies are recorded."
@@ -333,6 +346,8 @@ def _run(
     service_cost_version = (
         provenance_digest(c.service_economics) if c.service_economics is not None else None
     )
+    if continuation is not None and len(names) != 1:
+        raise ValueError("Continuous partitions execute one named controller at a time")
     for k, name in enumerate(names):
         policy = resolved_policies[name]
         service_controller = None
@@ -367,14 +382,16 @@ def _run(
         recovery_scheduler = None
         joint_recovery_scheduler = None
         if policy.recovery is not None:
-            from methane.recovery import JOINT_VERSIONS, LOOP_VERSION, RecoveryScheduler
+            from methane.recovery import JOINT_VERSIONS, LOOP_VERSIONS, RecoveryScheduler
 
             if policy.recovery.version in JOINT_VERSIONS:
                 from methane.services.joint_recovery import Scheduler
 
-                if policy.recovery.version == LOOP_VERSION:
+                if policy.recovery.version in LOOP_VERSIONS:
                     from methane.services.recovery_loop import Scheduler
 
+                if policy.recovery.version == "scheduled-load-tests/4":
+                    from methane.services.weather_recovery import Scheduler
                 joint_recovery_scheduler = Scheduler(policy.recovery)
             else:
                 recovery_scheduler = RecoveryScheduler(policy.recovery)
@@ -456,13 +473,42 @@ def _run(
             )
             physical_optical.surface = services.optical.surface
         controller_truth = []
-        for t in range(s.hours):
+        start_hour, stop_hour = 0, s.hours
+        previous_row = None
+        service_cost_rows = []
+        if continuation is not None:
+            restored = continuation.restore()
+            start_hour, stop_hour = continuation.start_hour, continuation.stop_hour
+            if restored is not None:
+                service_cost_rows = restored["service_cost_rows"]
+                state, observation, diagnosis = (
+                    restored[n] for n in ("state", "observation", "diagnosis")
+                )
+                physical_faults, services, physical_optical = (
+                    restored[n] for n in ("physical_faults", "services", "physical_optical")
+                )
+                observer, service_controller, recovery_scheduler, joint_recovery_scheduler = (
+                    restored[n]
+                    for n in (
+                        "observer",
+                        "service_controller",
+                        "recovery_scheduler",
+                        "joint_recovery_scheduler",
+                    )
+                )
+                previous_recovery, previous_issue, previous_row = (
+                    restored[n] for n in ("previous_recovery", "previous_issue", "previous_row")
+                )
+            continuation.initial = asdict(state)
+            if previous_row is not None:
+                rows.append(previous_row)
+        for t in range(start_hour, stop_hour):
             if cancelled and cancelled():
                 break
             if progress and t % 4 == 0:
                 progress(
-                    (k * s.hours + t) / (len(names) * s.hours),
-                    desc=f"{name} · hour {t + 1}/{s.hours}",
+                    (k * s.hours + t - start_hour) / (len(names) * (stop_hour - start_hour)),
+                    desc=f"{name} · hour {t + 1}/{continuation.total_hours if continuation else s.hours}",
                 )
             try:
                 coordinated = None
@@ -489,6 +535,10 @@ def _run(
                     )
                     services.surface_observation = packet
                 forecast = forecast_at(weather, c, t, provider)
+                if site_utilities is not None:
+                    from methane.siting.utilities import forecast as supply_forecast
+
+                    forecast = supply_forecast(forecast, p, c.costs, site_utilities, t)
                 if observer and not optical_mode:
                     from methane.adaptation import current_nominal
                     from methane.forecast import ForecastRequest
@@ -522,6 +572,8 @@ def _run(
                     forecast = observer.forecast(
                         base_forecast, c.solar["converter_kw"] if c.solar else p.solar_kw
                     )
+                if site_utilities is not None:
+                    forecast = supply_forecast(forecast, p, c.costs, site_utilities, t)
                 base_pv = forecast["pv_kw"][0]
                 if services:
                     n = len(forecast["pv_kw"])
@@ -667,6 +719,12 @@ def _run(
                                 else {}
                             ),
                         )
+                    if site_utilities is not None:
+                        forecast = supply_forecast(forecast, p, c.costs, site_utilities, t)
+                        if raw_forecast is not None:
+                            raw_forecast = supply_forecast(
+                                raw_forecast, p, c.costs, site_utilities, t
+                            )
                     if c.service_system is not None:
                         if getattr(services, "belief_record", None) and observer:
                             services.belief_record["performance"] = observer.record()
@@ -701,7 +759,7 @@ def _run(
                             diagnosis.capacity_kw,
                             c.costs,
                             c.service_economics,
-                            prefix=rows,
+                            prefix=service_cost_rows if continuation is not None else rows,
                             objective=policy.objective,
                             seconds=s.solver_seconds,
                             components=components,
@@ -894,7 +952,12 @@ def _run(
                         forecast["pv_kw"][0],
                         forecast["ambient_c"][0],
                         forecast["deliveries_kg"][0],
-                        interval_truth["capacity_kw"],
+                        min(
+                            interval_truth["capacity_kw"],
+                            forecast["electrolyser_supply_limit_kw"][0],
+                        )
+                        if site_utilities is not None
+                        else interval_truth["capacity_kw"],
                         execution_config.costs,
                         battery=physical_components.battery,
                         components=physical_components,
@@ -1014,6 +1077,12 @@ def _run(
                         )
                     row["field_operations"] = service_record
                     row["audits"].extend(service_record["audits"])
+                if site_utilities is not None:
+                    from methane.siting.utilities import applied as supply_applied
+
+                    row["site_utilities"] = supply_applied(
+                        row, execution_config.plant, execution_config.costs, site_utilities
+                    )
                 controller_truth.append(interval_truth)
                 rows.append(row)
 
@@ -1084,20 +1153,36 @@ def _run(
                         "CO2 delivery" + ("; excess rejected" if row["co2_rejected_kg"] else ""),
                     )
                 observation = observed
+                if continuation is not None:
+                    if c.service_economics is not None:
+                        from methane.services.pricing import projected_row
+
+                        service_cost_rows.append(projected_row(row))
+                    continuation.capture(t + 1, locals())
             except CancelledOperation:
                 break
             except PhysicalAuditError as exc:
                 failures[name] = {"hour": t, "audits": exc.audits, "context": exc.context}
                 break
+        if continuation is not None:
+            if previous_row is not None:
+                rows.pop(0)
         if services:
-            event_list.extend(services.messages)
+            event_list.extend(e for e in services.messages if e["hour"] >= start_hour)
             event_list.sort(key=lambda e: e["hour"])
             if c.service_system is not None:
                 service_planning_catalogues.update(services.planning_catalogues)
         truth_by_controller[name] = controller_truth
         records[name], metrics[name], events[name] = (
             rows,
-            summarise(rows, execution_config, controller_truth),
+            summarise(
+                rows,
+                execution_config,
+                controller_truth,
+                service_prefix=service_cost_rows[:start_hour]
+                if continuation is not None and start_hour and c.service_economics is not None
+                else None,
+            ),
             event_list,
         )
         if observer:
@@ -1168,7 +1253,7 @@ def _run(
         "invalid"
         if failures
         else "complete"
-        if all(len(records.get(name, [])) == s.hours for name in names)
+        if all(len(records.get(name, [])) == stop_hour - start_hour for name in names)
         else "cancelled"
     )
     result = {
@@ -1202,6 +1287,17 @@ def _run(
         "weather": weather,
         "status": status,
     }
+    if continuation is not None:
+        result["service_accounting_prefix"] = service_cost_rows[:start_hour]
+        result["continuous_period"] = {
+            "schema_version": "dispatch-lab/continuous-period/1",
+            "start_hour": start_hour,
+            "stop_hour": stop_hour,
+            "total_hours": continuation.total_hours,
+            "binding": continuation.binding,
+            "initial_state": continuation.initial,
+            "scope": "Original recorded global intervals; initial state carried from checkpoint",
+        }
     if uncertainty is not None:
         result["controller_config"] = c.to_dict()
     from methane.uncertainty import snapshot as uncertainty_snapshot
@@ -1267,7 +1363,11 @@ def what_if(result, controller, hour, alternative):
 
         original = recovery["inputs"]
         joint_inputs = {}
-        if original["policy"]["version"] in ("scheduled-load-tests/2", "scheduled-load-tests/3"):
+        if original["policy"]["version"] in (
+            "scheduled-load-tests/2",
+            "scheduled-load-tests/3",
+            "scheduled-load-tests/4",
+        ):
             joint_inputs["accepted_start"] = recovery["commitment"]["start_hour"]
             if "not_before_hour" in original:
                 joint_inputs["not_before_hour"] = original["not_before_hour"]
@@ -1366,9 +1466,12 @@ def run(
     cancelled=None,
     policies=None,
     uncertainty=None,
+    continuation=None,
 ):
     token = predicate.set(cancelled)
     try:
-        return _run(config, weather, strategies, progress, cancelled, policies, uncertainty)
+        return _run(
+            config, weather, strategies, progress, cancelled, policies, uncertainty, continuation
+        )
     finally:
         predicate.reset(token)

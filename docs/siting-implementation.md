@@ -48,3 +48,19 @@ products; the extract is a validation rectangle, not a deployable parcel.
 This checkpoint does not yet deliver continuous studies, project cash flow or
 recommendations. Imported data attachment and original-run handoff are still in
 progress. Country links are investigation routes, not qualified grid connections.
+
+### Continuous operating and project workflow checkpoint
+
+Delivered checkpointed source-frozen studies, original-period playback, finite search,
+project cash scenarios, explicit water/CO2 supply constraints, forecast-aware recovery
+version 4, source-bound imports, measurement calibration, a Sites learning essay,
+licensed offline reports and verified restoration. The full checkpoint suite passed
+1,042 Python tests, 75 browser-logic tests and 89 browser integration tests (18 optional
+configurations skipped). Original plant and solar baselines passed unchanged.
+
+Three 2025 anchor cases completed 26,280 intervals on their earlier frozen source;
+independent checks passed for each. These are implementation qualification under
+ERA5 and previous-day persistence, without a service fleet. They do not establish
+annual autonomous reliability or plant calibration. Final qualification is in
+progress: an ECMWF gust interval mismatch was caught by the live archive check;
+its incomplete acquisition is retained and a separately tested correction follows.

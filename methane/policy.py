@@ -64,6 +64,7 @@ class Policy:
         if self.recovery is not None and self.recovery.version in (
             "scheduled-load-tests/2",
             "scheduled-load-tests/3",
+            "scheduled-load-tests/4",
         ):
             if self.service is None or self.service.version != "coordinated-services/3":
                 raise ValueError("Joint recovery requires the version-3 service controller")
@@ -90,7 +91,12 @@ class Policy:
                 "observed-service-investigation/3",
             ) and (
                 self.recovery is None
-                or self.recovery.version not in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+                or self.recovery.version
+                not in (
+                    "scheduled-load-tests/2",
+                    "scheduled-load-tests/3",
+                    "scheduled-load-tests/4",
+                )
             ):
                 raise ValueError(
                     "Observed investigation continuations require joint work and recovery tests"

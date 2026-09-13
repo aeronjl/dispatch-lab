@@ -205,6 +205,11 @@ def capacity_horizon(p, forecast, capacity):
         )
     ):
         raise ValueError("Electrolyser capacity needs one finite in-range estimate per hour")
+    supply = forecast.get("electrolyser_supply_limit_kw")
+    if supply is not None:
+        if len(supply) != len(values) or any(not np.isfinite(v) or v < 0 for v in supply):
+            raise ValueError("Invalid site electrolyser supply limit")
+        values = [min(v, limit) for v, limit in zip(values, supply, strict=True)]
     return values
 
 

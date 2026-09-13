@@ -585,6 +585,67 @@ TOPICS = {
     ),
 }
 
+TOPICS["siting"] = topic(
+    "From a location to an operating case",
+    "Sites and projects",
+    [],
+    [
+        "siting/geometry.py",
+        "siting/environment.py",
+        "siting/production.py",
+        "siting/checkpoint.py",
+        "siting/cashflow.py",
+        "siting/comparison.py",
+        "siting/layout.py",
+        "siting/utilities.py",
+    ],
+    "Site evidence, continuous operation and investment assumptions answer different questions. A strong resource does not establish a deployable parcel or profitable project.",
+    [
+        P(
+            "Keep spatial evidence at its real resolution",
+            "The toy parcel has one hectare. Change the portion excluded by a declared policy and the footprint reserved for equipment. Real Sites assessments union source geometries in EPSG:3035 before subtracting them. Overlapping exclusions count once. Missing land, terrain, national protection or flood coverage remains unresolved. A point is a regional anchor. Route drawings report lengths without inventing pipe, cable or robot performance.",
+            [
+                C("excluded", "Area excluded by policy", 0.2, 0, 1, 0.05),
+                C("footprint", "Equipment footprint", 500, 0, 10000, 100, "m²"),
+            ],
+            "PV capacity = max(0, area − exclusions − footprint) × density",
+            [
+                ("area", "Parcel area in square metres"),
+                ("density", "Illustrative 0.04 kW/m², not an engineered row layout"),
+            ],
+        ),
+        P(
+            "Weather becomes power, then operation",
+            "Change the hourly plane-of-array irradiance. The current conversion kernel applies temperature and losses once. PVGIS reference PV output is a separate cross-check, not a second loss applied to this curve. ERA5 is reanalysis. Persistence uses the previous completed day; original ECMWF issues remain unavailable until their publication boundary. A continuous operating case carries inventories, heat, observer beliefs, service work and economic usage across saved partitions. The example below is a resource conversion, with no methane production claim.",
+            [
+                C("irradiance", "Hourly irradiance", 600, 0, 1200, 50, "W/m²"),
+                C("ambient", "Ambient temperature", 20, -20, 45, 1, "°C"),
+            ],
+        ),
+        P(
+            "Cash is distinct from allocated cost",
+            "The fixed teaching trace assumes 30,000 kg gross methane per year for ten years, €500,000 initial capital and €20,000 annual cash costs. Change acceptance and price while that physical trace stays fixed. The actual Sites ledger uses recorded hourly production and dated cost items. It excludes ownership allocation and usage wear already represented by capital and replacement cash. Missing quotations make complete NPV unavailable. No-build has zero new-project cash flow. Scenario ranges are not probabilities, and numerical repeats do not become weather samples.",
+            [
+                C("acceptance", "Accepted fraction", 0.8, 0, 1, 0.05),
+                C("price", "Accepted methane price", 1, 0, 8, 0.1, "EUR/kg"),
+                C("discount", "Real discount rate", 0.07, 0, 0.2, 0.01),
+            ],
+            "NPV = −capital + Σ(net cash / (1 + rate)^year)",
+            [
+                ("capital", "Initial cash expenditure"),
+                ("net cash", "Receipts less cash costs; no depreciation charge"),
+                ("rate", "Consistent real discount rate"),
+            ],
+        ),
+    ],
+    "Illustrative teaching geometry and fixed production, independent of any site study. No consent, grid import, gas certification, hydrogen sales, CO2 capture or investment recommendation. Service and fault assumptions retain their original calibration gaps. Supplied water bounds electrolysis separately from equipment-capacity estimates.",
+    [
+        "https://re.jrc.ec.europa.eu/pvg_tools/en/",
+        "https://open-meteo.com/en/docs/historical-weather-api",
+        "https://open-meteo.com/en/docs/single-runs-api",
+    ],
+)
+
 for key, item in TOPICS.items():
     item["id"] = key
     item["fixture_id"] = "dispatch-lab/learning/" + key + "/1"
@@ -617,5 +678,12 @@ TOPICS["experiments"]["passages"].append(
     P(
         "Separate learning effects from numerical variation",
         "The uncertain-service qualification programme saves matched fixed, adaptive and risk-aware editions and repeats their numerical execution without changing seeds. A no-op condition collapses duration support and observation error. Inspect matching physical and source identities, within-arm trace variation, solver limitations, ending inventories and unfinished work before comparing production or cost. A short stable sample is not evidence of realism, annual performance or optimality. The frozen programme can be repeated with a new plant basis without replacing its earlier editions.",
+    )
+)
+
+TOPICS["controllers"]["passages"].append(
+    P(
+        "Weather-aware verification windows",
+        "Opt-in recovery version 4 sets a finite deadline when the verification episode opens. It uses the currently eligible forecast, estimated inventories and operating limits to find a feasible load-test window. Later forecast changes cannot roll that deadline forward. If no feasible window is found within the bounded search, the original maximum wait remains. A missed deadline escalates; only actual observation tracking restores estimated capacity. This is an illustrative supervisory policy, not evidence that a repair succeeded.",
     )
 )

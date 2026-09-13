@@ -6,7 +6,7 @@ opens a distinct test window; a receipt never establishes repaired capacity.
 
 import copy
 
-from methane.recovery import LOOP_VERSION
+from methane.recovery import LOOP_VERSIONS
 from methane.services.contracts import available_boundary
 from methane.services.joint_recovery import Scheduler as JointScheduler
 from methane.services.verification import validate as validate_evidence
@@ -14,7 +14,7 @@ from methane.services.verification import validate as validate_evidence
 
 class Scheduler(JointScheduler):
     def __init__(self, policy):
-        if policy.version != LOOP_VERSION:
+        if policy.version not in LOOP_VERSIONS:
             raise ValueError("The bounded verification loop requires recovery policy version 3")
         super().__init__(policy)
         self.episodes = []
@@ -23,6 +23,9 @@ class Scheduler(JointScheduler):
         self.escalated = False
         self.last_hour = -1
         self.original_deadline = None
+
+    def open_deadline(self, plant, sensors, diagnosis, hour, boundary):
+        return boundary + self.policy.maximum_wait_hours
 
     def begin(
         self, plant, sensors, diagnosis, *, hour, orders=(), continuation=None, evidence=None
@@ -55,7 +58,8 @@ class Scheduler(JointScheduler):
         new = [o for o in completed if o["id"] not in self.completed_receipts]
         active = sensors.enabled and diagnosis.capacity_kw < plant.electrolyser_kw * 0.999
         if active and self.original_deadline is None:
-            self.original_deadline = hour + self.policy.maximum_wait_hours
+            self.original_deadline = self.open_deadline(plant, sensors, diagnosis, hour, hour)
+            self.due_hour = self.original_deadline
         if new:
             if self.episodes:
                 self.episodes[-1].setdefault("closed_at", hour)
@@ -66,7 +70,7 @@ class Scheduler(JointScheduler):
                 max(available_boundary(o["completed_hour"]), o["reported"]["available_at"])
                 for o in new
             )
-            self.due_hour = boundary + self.policy.maximum_wait_hours
+            self.due_hour = self.open_deadline(plant, sensors, diagnosis, hour, boundary)
             self.episodes.append(
                 dict(
                     receipt_ids=sorted(o["id"] for o in new),
@@ -136,7 +140,7 @@ class Scheduler(JointScheduler):
             self.accepted = None
             self.previous_probe = False
         self.pending.update(
-            version=LOOP_VERSION,
+            version=self.policy.version,
             status=status,
             verification_loop=dict(
                 version="post-mission-verification-episodes/1",

@@ -314,6 +314,7 @@ class Config:
             if self.recovery_policy.version in (
                 "scheduled-load-tests/2",
                 "scheduled-load-tests/3",
+                "scheduled-load-tests/4",
             ) and (
                 self.service_policy is None
                 or self.service_policy.version != "coordinated-services/3"
@@ -329,7 +330,11 @@ class Config:
             and (
                 self.recovery_policy is None
                 or self.recovery_policy.version
-                not in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+                not in (
+                    "scheduled-load-tests/2",
+                    "scheduled-load-tests/3",
+                    "scheduled-load-tests/4",
+                )
             )
         ):
             raise ValueError(

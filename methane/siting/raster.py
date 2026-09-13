@@ -123,6 +123,9 @@ def window_source(store, candidate, family, offline=False):
 
 def analyse(store, source_id, geometry, family, policy):
     source = store.get("source", source_id)
+    if source["units"].get("band_1") != ("class" if family == "land" else "m"):
+        raise ValueError("Raster band units do not match the declared assessment family")
+
     raw = store.read_raw(source["raw_sha256"])
     geographic(geometry, polygon=True)
     with MemoryFile(raw) as mem, mem.open() as ds:

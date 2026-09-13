@@ -74,9 +74,11 @@ def perform(request, store, current_config):
             raise ValueError("Parent revision belongs to another site")
         return view(store, store.put("site", candidate))
     if request.operation == "discover":
-        return geometry.candidates_within(
+        result = geometry.candidates_within(
             d["geometry"], d.get("spacing_m", 5000), d.get("limit", 100)
         )
+        value = {"schema_version": "site-discovery/1", "region": d["geometry"], **result}
+        return {"id": store.put("discovery", value), **value}
     if request.operation == "source":
         return {"source": store.get("source", request.id)}
     if request.operation == "import-source":
@@ -183,7 +185,9 @@ def perform(request, store, current_config):
                 collection = json.loads(store.read_raw(source["raw_sha256"]))
                 if collection.get("type") != "FeatureCollection":
                     raise ValueError("Vector layer requires source-bound GeoJSON")
-                coverage_geometry = d.get("coverage_geometry", {}).get(product["source_id"])
+                coverage_geometry = d.get("coverage_geometry", {}).get(
+                    product["source_id"], source["coverage"].get("geometry")
+                )
                 if source["product"] == "Natura 2000 spatial extract":
                     from shapely.geometry import box, mapping
 
@@ -222,12 +226,72 @@ def perform(request, store, current_config):
             != record.site_revision
         ):
             raise ValueError("Assessment belongs to another site revision")
-        for key in record.evidence_ids:
+        for key in [*record.evidence_ids, *(record.utilities or {}).get("evidence_ids", [])]:
             if store.get("evidence", key)["site_id"] != site["site_id"]:
                 raise ValueError("Evidence belongs to another site")
-        return {"design_id": store.put("design", record), **view(store, record.site_revision)}
+        from methane.siting.layout import calculate
+
+        layout = calculate(site, record.layout)
+        for feature in record.layout:
+            if (
+                feature.get("evidence_id")
+                and store.get("evidence", feature["evidence_id"])["site_id"] != site["site_id"]
+            ):
+                raise ValueError("Layout evidence belongs to another site")
+        return {
+            "design_id": store.put("design", record),
+            "layout": layout,
+            **view(store, record.site_revision),
+        }
     if request.operation == "design":
-        return {"design": store.get("design", request.id)}
+        from methane.siting.layout import calculate
+
+        design = store.get("design", request.id)
+        return {
+            "design": design,
+            "layout": calculate(store.get("site", design["site_revision"]), design["layout"]),
+        }
+    from methane.siting import cashflow, comparison, environment, jobs, production, reporting
+
+    if request.operation == "studies-index":
+        return dict(
+            designs=store.list("design"),
+            environments=store.list("environment"),
+            studies=[
+                {"id": s["id"], "name": s["name"], "state": production.state(store, s["id"])}
+                for s in store.list("study")
+            ],
+            recommendations=store.list("recommendation"),
+            publications=store.list("publication"),
+        )
+    if request.operation == "prepare-environment":
+        return jobs.launch(store, request.token, d, request.offline)
+    if request.operation == "data-job":
+        return jobs.poll(request.token, request.id, d.get("cancel", False))
+    if request.operation == "import-environment":
+        return environment.import_measurements(store, **d)
+    if request.operation == "calibrate":
+        return environment.calibration(store, request.id, d["training_end"])
+    if request.operation == "create-study":
+        return production.create(store, **d)
+    if request.operation == "study":
+        return production.inspect(store, request.id)
+    if request.operation == "start-study":
+        return production.launch(store, request.id)
+    if request.operation == "cancel-study":
+        return production.cancel(store, request.id)
+    if request.operation == "cash-defaults":
+        return dict(assumptions=cashflow.defaults(store.get("design", request.id)["config"]))
+    if request.operation == "cash-report":
+        return cashflow.report(store, request.id, d["case_id"], d["assumptions"])
+    if request.operation == "search-designs":
+        return comparison.search(store, **d)
+    if request.operation == "recommend":
+        return comparison.recommend(store, **d)
+    if request.operation == "publish":
+        return reporting.publish(store, d["kind"], request.id)
+    if request.operation == "export":
+        return reporting.bundle(store, request.id)
     raise ValueError("Unknown Sites operation")
 
 
@@ -237,6 +301,22 @@ def handle(request: Request):
     current = context(request.token, request.run_id)
     try:
         answer = perform(request, Store(), current["config"])
+        if request.operation in ("publish", "export"):
+            from urllib.parse import urlencode
+
+            key = answer.get("publication_id", request.id)
+            answer["download_url"] = (
+                "/dispatch/site-download/"
+                + key
+                + "?"
+                + urlencode(
+                    dict(
+                        token=request.token,
+                        run_id=request.run_id,
+                        format="html" if request.operation == "publish" else "zip",
+                    )
+                )
+            )
         return {"key": request.key, **answer}
     except (ValueError, KeyError, TypeError, OSError) as exc:
         return {"key": request.key, "error": str(exc)}
@@ -256,4 +336,28 @@ def static(filename: str):
     return FileResponse(
         root / "vendor" / "maplibre" / filename,
         media_type="text/css" if filename.endswith(".css") else "text/javascript",
+    )
+
+
+def download(publication_id: str, token: str, run_id: str, format: str = "html"):
+    from methane.siting.store import identifier
+    from methane.study_service import context
+
+    context(token, run_id)
+    store = Store()
+    store.get("publication", publication_id)
+    if format not in ("html", "zip"):
+        raise HTTPException(400, "Unknown report format")
+    path = (
+        store.root
+        / ("reports" if format == "html" else "exports")
+        / (identifier(publication_id) + "." + format)
+    )
+    if not path.exists():
+        raise HTTPException(404, "Generate this publication/export first")
+    return FileResponse(
+        path,
+        media_type="text/html" if format == "html" else "application/zip",
+        filename="dispatch-sites-" + publication_id[:12] + "." + format,
+        content_disposition_type="inline" if format == "html" else "attachment",
     )

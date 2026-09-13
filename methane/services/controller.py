@@ -468,8 +468,20 @@ class ServiceController:
                 orders=rt.public()["orders"],
                 continuation=Continuation.from_dict(nominated) if nominated else None,
                 **(
+                    dict(
+                        state=state,
+                        forecast=forecast,
+                        costs=costs,
+                        seconds=seconds,
+                        components=components,
+                    )
+                    if recovery_scheduler.policy.version == "scheduled-load-tests/4"
+                    else {}
+                ),
+                **(
                     dict(evidence=self.verification["previous_test"] if self.verification else None)
-                    if recovery_scheduler.policy.version == "scheduled-load-tests/3"
+                    if recovery_scheduler.policy.version
+                    in ("scheduled-load-tests/3", "scheduled-load-tests/4")
                     else {}
                 ),
             )

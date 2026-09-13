@@ -21,6 +21,8 @@ KINDS = {
     "cashflow",
     "recommendation",
     "measurement",
+    "publication",
+    "discovery",
 }
 
 

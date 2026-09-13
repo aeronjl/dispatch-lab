@@ -143,6 +143,7 @@ def test_raster_classes_and_missing_coverage(tmp_path):
         raw,
         provider="Independent fixture",
         product="Class grid",
+        units={"band_1": "class"},
         edition="1",
         retrieved_at=datetime.now(UTC),
         request={},

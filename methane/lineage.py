@@ -228,6 +228,7 @@ def economic(result, controller, end_hour, costs=None, *, service_economics=_SAV
         result["records"][controller][:end_hour],
         with_lineage=True,
         service_economics=service_economics,
+        service_prefix=result.get("service_accounting_prefix"),
     )
     original = digest(result.get("controller_config", result["config"])["costs"])
     return dict(

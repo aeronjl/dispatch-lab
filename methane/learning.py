@@ -569,6 +569,60 @@ def _experiments(v):
     )
 
 
+def _siting(v):
+    from methane.siting.cashflow import calculate
+    from methane.weather import dc_power
+
+    capacity = max(0, 10000 * (1 - v["excluded"]) - v["footprint"]) * 0.04
+    p = Plant(solar_kw=capacity)
+    powers = [
+        dc_power(
+            v["irradiance"] * max(0, math.sin(math.pi * (h - 6) / 12)),
+            v["ambient"],
+            p,
+            WeatherConfig(),
+        )
+        if 6 <= h <= 18
+        else 0
+        for h in range(24)
+    ]
+    years = [
+        dict(
+            receipts_eur=30000 * v["acceptance"] * v["price"],
+            cost_eur=20000,
+            accepted_kg=30000 * v["acceptance"],
+        )
+        for _ in range(10)
+    ]
+    cash = calculate(500000, years, v["discount"])
+    independent = -500000 + sum(
+        (30000 * v["acceptance"] * v["price"] - 20000) / (1 + v["discount"]) ** i
+        for i in range(1, 11)
+    )
+    return result(
+        [
+            metric("Coarse PV capacity", capacity, "kW"),
+            metric("Resource DC energy", sum(powers), "kWh"),
+            metric("Project NPV", cash["npv_eur"], "EUR"),
+            metric("Accepted methane", 30000 * v["acceptance"], "kg/year"),
+        ],
+        [
+            series("Hourly DC resource", powers, "kW"),
+            series(
+                "Cumulative discounted cash",
+                [r["discounted_cumulative_eur"] for r in cash["ledger"]],
+                "EUR",
+            ),
+        ],
+        cash["ledger"],
+        [dict(id="cash-independent", passed=abs(independent - cash["npv_eur"]) < 1e-6)],
+        geometry=dict(
+            parcel_m2=10000, excluded_m2=10000 * v["excluded"], footprint_m2=v["footprint"]
+        ),
+        cashflow=cash,
+    )
+
+
 def _digest(value):
     import hashlib
 
@@ -614,6 +668,8 @@ def evaluate(topic, inputs=None):
 
 def learning_summary(topic, inputs, payload):
     m = {x["label"]: x["value"] for x in payload["metrics"]}
+    if topic == "siting":
+        return f"The declared area screen supports {m['Coarse PV capacity']:.1f} kW. The fixed teaching production yields an assumed NPV of €{m['Project NPV']:.0f}; this is independent of resource power and is not an operating simulation."
     if topic == "battery":
         return f"This interval ends with {m['Ending energy']:.2f} kWh stored. Charging loses {m['Charge loss']:.2f} kWh and discharging loses {m['Discharge loss']:.2f} kWh. A complete 100 kWh cycle returns {m['Round-trip bus return']:.1f} kWh at this efficiency."
     if topic == "solar":
