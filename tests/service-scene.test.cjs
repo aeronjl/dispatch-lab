@@ -65,3 +65,11 @@ test('interrupted section work preserves the recorded partial sweep position',()
   assert.deepEqual([x.x,x.y],[expected.x,expected.y]);
   assert.notDeepEqual(fieldSectionBrush('PV-01'),fieldSectionBrush('PV-03'));
 });
+
+test('a saved study window preserves the original global mission clock and sprite pose',()=>{
+ const full=data.mobile.value,window=structuredClone(full);
+ window.records.Greedy=window.records.Greedy.slice(2);
+ window.continuous_period={start_hour:2};
+ assert.deepEqual(sample(0,.6,'mobile',window).actors,sample(2,.6,'mobile',full).actors);
+ assert.equal(sample(0,.6,'mobile',window).clock,2.6);
+});

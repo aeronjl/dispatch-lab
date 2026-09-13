@@ -208,3 +208,25 @@ def test_api_design_and_source_boundaries(tmp_path):
         call("source", key="../source")
     with pytest.raises(ValueError, match="Unknown"):
         call("unsupported")
+
+
+def test_layout_keeps_metric_lengths_and_rejects_unbounded_positions():
+    from methane.siting.layout import calculate
+
+    site = dict(geometry=mapping(box(0, 51, 0.01, 51.01)))
+    features = [
+        dict(
+            asset_id="pv/pad",
+            kind="pv-area",
+            geometry=mapping(box(0.001, 51.001, 0.004, 51.004)),
+            assumption="Toy geometry",
+        )
+    ]
+    result = calculate(site, features)
+    assert result["overlapping_area_m2"] == 0
+    assert result["occupied_union_m2"] + result["unallocated_area_m2"] == pytest.approx(
+        result["parcel_area_m2"]
+    )
+    features[0]["geometry"] = mapping(box(0, 50, 0.1, 51))
+    with pytest.raises(ValueError, match="outside"):
+        calculate(site, features)

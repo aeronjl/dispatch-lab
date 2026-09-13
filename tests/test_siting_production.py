@@ -139,3 +139,24 @@ def test_thin_summary_matches_full_decision_operands(tmp_path):
         Config.from_dict(full["config"]),
         full["retrospective_truth_by_controller"]["Greedy"],
     )
+
+
+def test_restricted_process_visibility_is_not_worker_death(tmp_path, monkeypatch):
+    import os
+
+    from methane.siting.production import state
+    from methane.siting.store import atomic
+
+    store = Store(tmp_path)
+    d, e = fixture(store, 2)
+    study = create(store, name="Visibility", cases=[dict(design_id=d, environment_id=e)])
+    atomic(
+        directory(store, study["id"]) / "progress.json",
+        encode(dict(status="running", pid=123, fraction=0.5)),
+    )
+
+    def restricted(*args):
+        raise PermissionError("OS process visibility restricted")
+
+    monkeypatch.setattr(os, "kill", restricted)
+    assert state(store, study["id"])["status"] == "running"

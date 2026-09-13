@@ -274,3 +274,14 @@ is checked for freshness alongside the human-readable [component reference](docs
 New injected faults persist until compatible successful service; timed transients are explicit. The optional cleaner, inspection rover, DC dock, bounded reset and human fallback are available through the field-services setup presets and **Simulation menu → Site services**. See [mechanics, boundaries and accounting](docs/field-operations.md). Existing archives preserve their timed-fault semantics.
 
 Component exploration and the complete site taxonomy are described in [the taxonomy guide](docs/site-taxonomy.md). New runs preserve original catalogue snapshots; older runs explicitly distinguish current interpretation from missing original metadata.
+
+
+## Sites and production studies
+
+Open **Sites** from the simulation menu to save European site evidence, configure a
+plant, run continuous chronological studies, inspect original periods and compare
+project cash scenarios. Reference examples for London, Seville and Copenhagen are
+available in the local saved store. The [Sites workflow](docs/sites/implementation.md)
+and [qualification record](research/siting-implementation/README.md) distinguish
+implemented data adapters, required site evidence and model boundaries. Grid-assisted
+operation, CO2 capture and certified product export remain separate extensions.

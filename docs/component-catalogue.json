@@ -815,6 +815,11 @@
       "title": "Keeping the reactor ready",
       "version": "1"
     },
+    "siting": {
+      "fixture_id": "dispatch-lab/learning/siting/1",
+      "title": "From a location to an operating case",
+      "version": "1"
+    },
     "solar": {
       "fixture_id": "dispatch-lab/learning/solar/1",
       "title": "From sunlight to the DC bus",

@@ -96,3 +96,10 @@ The reference plant remains illustrative. Annual numerical conservation does not
 calibrate thermal dynamics, fault incidence, repair capability, weather conversion,
 land availability or accepted product value. Grid import/export, fuel-export branches,
 capture and new physical families remain separately reviewed extensions.
+
+Forecast gust maxima are normalized from the following timestamp into their
+preceding operating interval; ERA5 gust values retain the indicated-hour sample
+convention. This distinction is documented separately by the provider's
+[forecast](https://open-meteo.com/en/docs) and
+[historical](https://open-meteo.com/en/docs/historical-weather-api) variable tables.
+Initial null forecast accumulations are not fabricated as zero.

@@ -30,7 +30,8 @@ def physical(rows):
 
 
 @pytest.mark.parametrize("services", [False, True])
-def test_checkpoint_matches_uninterrupted_runtime(services):
+@pytest.mark.parametrize("start", ["2025-01-01", "2025-12-31"])
+def test_checkpoint_matches_uninterrupted_runtime(services, start):
     c = Config(
         scenario=Scenario(
             hours=30,
@@ -40,6 +41,7 @@ def test_checkpoint_matches_uninterrupted_runtime(services):
             fault_start_hour=10,
         )
     )
+    c = replace(c, weather=replace(c.weather, start=start))
     if services:
         from methane.services.configuration import ServiceSystem
 

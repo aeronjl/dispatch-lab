@@ -28,7 +28,7 @@ function fieldVisualState(result, controller, clock) {
     const underway=(clock.playing||fraction>0)&&hour<rows.length;
     const after=hour?rows[hour-1]?.field_operations?.state:null;
     // Only the current interval's *beginning* work orders may animate before completion.
-    const state=(underway?fieldBegin(rows[hour]):after)||{orders:[],robots:{},surface:fieldBegin(rows[0])?.surface};
+    const state=(underway?fieldBegin(rows[hour]):after)||(result.continuous_period?fieldBegin(rows[0]):null)||{orders:[],robots:{},surface:fieldBegin(rows[0])?.surface};
     if(state.implementation_id==='plant-service-contracts/1'||result.config?.service_system?.implementation==='plant-service-contracts/1')
         return fractionalFieldVisualState(result,state,{hour,fraction,underway});
     const actors=[];
@@ -152,7 +152,7 @@ function fieldCrewReturnGeometry(order,span,progress,orders,hardware,depth=0) {
 // Fractional service schedules are supplied by Python. Interpolate their recorded
 // time spans; do not infer repair success from a working pose or later plant truth.
 function fractionalFieldVisualState(result,state,{hour,fraction,underway}) {
-    const config=result.config.field_operations,options=result.config.service_system,at=hour+(underway?fraction:0);
+    const config=result.config.field_operations,options=result.config.service_system,globalHour=hour+(result.continuous_period?.start_hour||0),at=globalHour+(underway?fraction:0);
     const hardwareKinds=['remote-release','hardware-test','guided-return'];
     const definitions=[['cleaner',['cleaning','self-test',...hardwareKinds]],['rover',['inspection','inspection-confirm','self-test',...hardwareKinds]],['fixed_reader',['inspection']],['human',['module-replacement','flow-calibration','retrieve','restock','replace-brush','routine-service','portable-cleaning','hardware-replacement','pack-return','hardware-test','crew-return']],['reset',['reset']]];
     const actors=[];
@@ -173,7 +173,7 @@ function fractionalFieldVisualState(result,state,{hour,fraction,underway}) {
         else if(failed){phase=info.status==='stranded'||order.kind==='crew-return'&&info.status==='blocked'?'stranded':'failed';progress=info.progress||0;}
         else if(!info||order?.status==='queued'||order?.started_hour>at)phase=order?'queued':'docked';
         else if(!['scheduled','active'].includes(info.status))phase='docked';
-        if(order?.retrieved_at!==undefined&&order.retrieved_at<=hour){phase='docked';progress=1;failed=false;}
+        if(order?.retrieved_at!==undefined&&order.retrieved_at<=globalHour){phase='docked';progress=1;failed=false;}
         let pose={x:asset==='fixed_reader'?606:622,y:asset==='fixed_reader'?153:194,heading:1},visible=true,working=false,walking=false;
         const sectionBrush=asset==='cleaner'&&order?.section?fieldSectionBrush(order.section):null;
         const route=sectionBrush?[...FIELD_ROUTES.cleaner.slice(0,-1),sectionBrush[0]]:FIELD_ROUTES[asset];

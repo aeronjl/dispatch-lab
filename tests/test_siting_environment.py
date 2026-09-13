@@ -58,3 +58,25 @@ def test_preceding_radiation_and_unit_validation():
     raw["hourly_units"]["global_tilted_irradiance"] = "J/m²"
     with pytest.raises(ValueError):
         hourly(raw, Config())
+
+
+def test_forecast_gust_maximum_and_reanalysis_instant_are_distinct():
+    raw = dict(
+        hourly_units={
+            "global_tilted_irradiance": "W/m²",
+            "temperature_2m": "°C",
+            "wind_gusts_10m": "m/s",
+        },
+        hourly=dict(
+            time=["2025-01-01T00:00", "2025-01-01T01:00", "2025-01-01T02:00"],
+            global_tilted_irradiance=[None, 100, 200],
+            temperature_2m=[10, 20, 30],
+            relative_humidity_2m=[50, 60, 70],
+            wind_gusts_10m=[None, 4, 7],
+        ),
+    )
+    first = stamp(utc("2025-01-01"))
+    forecast = hourly(raw, Config(), gust_support="preceding-hour-max")
+    assert forecast[first]["gust_mps"] == 4
+    raw["hourly"]["wind_gusts_10m"][0] = 2
+    assert hourly(raw, Config())[first]["gust_mps"] == 2

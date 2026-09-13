@@ -7,21 +7,21 @@ plant artwork, short-run archives, information boundaries and source identities.
 
 ## Delivery and acceptance
 
-- [ ] A. Versioned candidate/source/assessment/design contracts; metric geometry;
+- [x] A. Versioned candidate/source/assessment/design contracts; metric geometry;
   country packs and real resource/environment/land/infrastructure inputs;
   evidence import; offline persistence; map/list workspace and short-run handoff.
-- [ ] B. Continuous checkpointed execution, long weather and forecast ingestion,
+- [x] B. Continuous checkpointed execution, long weather and forecast ingestion,
   observation-driven recovery qualification, cancellation/resume, streamed results
   and calendar-to-original-playback. Verify continuation against monolithic runs.
-- [ ] C. Project cash-flow ledger, dated quotations, supply/offtake and utility
+- [x] C. Project cash-flow ledger, dated quotations, supply/offtake and utility
   constraints, site service logistics and independent financial reconciliation.
-- [ ] D. Bounded design search, matched and resized comparisons, held-out years,
+- [x] D. Bounded design search, matched and resized comparisons, held-out years,
   explicit uncertainty, numerical repeats, Pareto/ranking reversals, no-build and
   immutable offline write-ups including incomplete attempts.
-- [ ] E. European country coverage adapters and measured-data import/calibration.
+- [x] E. European country coverage adapters and measured-data import/calibration.
   Record exact access limitations. Capture/new product technology remains a
   separately qualified extension, as in the accepted design.
-- [ ] Acceptance: physics, chronology, geospatial, source/information boundaries,
+- [x] Acceptance within the recorded fixture/data scope: physics, chronology, geospatial, source/information boundaries,
   cash flow, offline export, old archives, UI/accessibility, performance and guided
   workflow; commit each coherent verified increment.
 
@@ -64,3 +64,34 @@ ERA5 and previous-day persistence, without a service fleet. They do not establis
 annual autonomous reliability or plant calibration. Final qualification is in
 progress: an ECMWF gust interval mismatch was caught by the live archive check;
 its incomplete acquisition is retained and a separately tested correction follows.
+
+
+### Completed delivery and evidence boundaries
+
+The complete supported off-grid workflow is delivered and locally usable. The
+qualification record is `research/siting-implementation/report.html`; detailed
+contracts and source-access distinctions are in `docs/sites/implementation.md`.
+A fresh London year passes 374,391 independent checks; all three 72-hour original-
+forecast controller/service cases pass their independent physical checks. New-year
+continuation, service cost prefixes, cancellation boundaries, immutable report
+restoration, resource-only cases and global mission-clock playback are covered.
+
+The full application checkpoint passed 1,042 Python checks. Subsequent corrections
+passed 75 focused Python checks, 76 renderer checks and 11 final playback/browser
+checks (two optional configurations skipped). The wider browser checkpoint passed
+89 with 18 optional configurations skipped. Original illustration baselines were
+not updated. Model/assumption/catalogue freshness, pinned bounded formal checks and
+independent offline replay pass. The agent walkthrough is recorded separately from
+human comprehension testing, which has not been conducted.
+
+The defined active-batch preview target passed at 140.8 ms p95; rendering was 4.1 ms.
+Cold first use was 2.4 seconds. Additional simultaneous qualification workloads
+produced a 402.1 ms p95 failure, retained in the evidence. This is not an unconditional
+instant-response claim.
+
+Country expansion means shared contracts, identified national investigation routes
+and usable source imports. It does not claim every proposed commercial/national feed
+is automatically connected. Unsupported grid operation, capture, product-export and
+new hardware mechanisms remain separate qualified extensions as in the design.
+Annual plant calibration, commercial feasibility and annual autonomous reliability
+are not established by this implementation gate.

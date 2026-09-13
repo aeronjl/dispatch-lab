@@ -9,7 +9,8 @@
     "inputs": "Radiation, horizon, reference PV; design tilt and orientation",
     "access": "Public versioned GET API; raw JSON cache. Three PVcalc requests tested. Server-side integration.",
     "boundary": "Provider PV is a cross-check, not plant DC plus another loss stage. Exact hourly timestamp adapter still requires qualification.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Implemented PVGIS 5.3 reference PV adapter; live fixtures saved"
   },
   {
     "family": "Historical weather",
@@ -21,7 +22,8 @@
     "inputs": "Temperature, humidity/dewpoint, radiation, wind, precipitation and snow where supported",
     "access": "Copernicus CDS authenticated downloads; accept the selected dataset terms. Cache original files and metadata.",
     "boundary": "Grid estimates are not on-site measurements; resolution, accumulations and provider revisions matter.",
-    "stage": "B"
+    "stage": "B",
+    "implementation_status": "Implemented Open-Meteo ERA5 hourly reference; complete 2025 anchor years saved; direct CDS access remains a separate route"
   },
   {
     "family": "Operational weather",
@@ -34,7 +36,8 @@
     "inputs": "Original forecasts, issue/availability times, explicit ERA5 replay reference",
     "access": "Reuse Open-Meteo adapter; commercial advanced APIs require appropriate plan. Free prototype access is non-commercial.",
     "boundary": "Shorter archive than climate history. No automatic stitched forecast or synthetic substitution.",
-    "stage": "A/B"
+    "stage": "A/B",
+    "implementation_status": "Implemented original ECMWF issues and explicit prior-day persistence; 72-hour original-vintage example qualified"
   },
   {
     "family": "Solar cross-check",
@@ -45,7 +48,8 @@
     "inputs": "Global, direct, diffuse and direct-normal radiation",
     "access": "Copernicus Atmosphere Data Store product access; qualify interval and licence metadata.",
     "boundary": "Shares atmospheric/satellite information with other products; disagreement is not independent validation.",
-    "stage": "B"
+    "stage": "B",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Land cover",
@@ -56,7 +60,8 @@
     "inputs": "Cover classes, confidence/quality layers where supplied, usable-area masks",
     "access": "CLMS/WEkEO downloads and services; preserve CLMS attribution and edition.",
     "boundary": "Does not establish ownership, lease availability or permission to build.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Implemented ESA WorldCover 2021/v200 class COG adapter; CLCplus remains a separately reviewed source"
   },
   {
     "family": "Terrain",
@@ -67,7 +72,8 @@
     "inputs": "Elevation, slope distribution and broad horizon",
     "access": "Copernicus Data Space / regional extracts; record product licence and attribution.",
     "boundary": "Vegetation and structures affect elevations; parcel levelling and near-object shadows need better evidence.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Implemented bounded native GLO-30 COG windows and slope transforms; no parcel survey"
   },
   {
     "family": "Protected areas",
@@ -80,7 +86,8 @@
     "inputs": "Intersections, nearby designations, configurable avoidance distances",
     "access": "EEA spatial services/downloads; national open-data products under their own terms.",
     "boundary": "Selected screening policy is not a legal verdict. UK coverage is not supplied by an England-only layer.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Implemented Natura regional extraction; national coverage requires identified imports"
   },
   {
     "family": "Parcel and planning",
@@ -91,7 +98,8 @@
     "inputs": "Geometry, parcel IDs, zoning; uploaded lease and survey evidence",
     "access": "INSPIRE-compatible national services where available; rights/access evidence is obtained separately.",
     "boundary": "No uniform European database of available industrial land, asking price and development permission.",
-    "stage": "A/C"
+    "stage": "A/C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Flood exposure",
@@ -102,7 +110,8 @@
     "inputs": "Modelled flood-depth intersections and exposure flags",
     "access": "JRC/CEMS open downloads; CC BY 4.0. Higher-detail national layers as candidate-specific additions.",
     "boundary": "Not an official flood map; no automatic site failure probability or complete coastal/pluvial coverage.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Water stress",
@@ -114,7 +123,8 @@
     "inputs": "Seasonality and regional water-pressure context",
     "access": "EEA downloadable data; WRI public datasets with attribution/registration terms.",
     "boundary": "Not a supply entitlement, delivered volume, treatment specification or usable rainfall model.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Industrial supply and demand",
@@ -125,7 +135,8 @@
     "inputs": "Locations, sector, reported emissions and potential co-location leads",
     "access": "EEA industrial reporting downloads; record reporting year, thresholds and country coverage.",
     "boundary": "Reported CO₂ emissions are not captured, pure, biogenic or available CO₂. An actual offer is a separate input.",
-    "stage": "A/C"
+    "stage": "A/C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Electrical connection",
@@ -136,7 +147,8 @@
     "inputs": "Network context, indicative headroom, scenario year; uploaded operator quotation",
     "access": "Operator data portals and dated documents; licence/automation review per dataset.",
     "boundary": "No guarantee of import/export capacity, firm access, cost, reinforcement or commissioning date.",
-    "stage": "C"
+    "stage": "C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Electricity market",
@@ -150,7 +162,8 @@
     "inputs": "Historical prices, price publication times, market/context series",
     "access": "ENTSO-E/e·sios authentication; Elexon public documented APIs; reuse rights checked per product.",
     "boundary": "Market or imbalance prices are not the delivered site tariff. No implied grid interface in current physics.",
-    "stage": "C"
+    "stage": "C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Gas export",
@@ -161,7 +174,8 @@
     "inputs": "Network leads, offered injection capacity and product acceptance requirements",
     "access": "ENTSOG reference links only until use rights are resolved; operator offers imported explicitly.",
     "boundary": "Map is indicative and has restrictive commercial-use wording. Nearby infrastructure is not an injection right.",
-    "stage": "C"
+    "stage": "C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Capital and operation",
@@ -172,7 +186,8 @@
     "inputs": "Equipment benchmark ranges and referenced lifetime/performance assumptions",
     "access": "Danish Energy Agency catalogue/data sheets; dated vendor/site quotes override matched assumptions.",
     "boundary": "Large-plant reference values do not calibrate the current small package or local installation costs.",
-    "stage": "C"
+    "stage": "C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Measured weather and performance",
@@ -184,7 +199,8 @@
     "inputs": "Quality-controlled measured inputs; user-uploaded pyranometer/PV/plant traces",
     "access": "DWD open data; Met Office subscription/access terms; explicit upload rights and provenance.",
     "boundary": "Representativeness and sensor exposure need review. Met Office recent API is not a long archive.",
-    "stage": "B/E"
+    "stage": "B/E",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Service access and logistics",
@@ -197,7 +213,8 @@
     "inputs": "Road/route geometry, depot travel, gate restrictions, delivery and service quotes",
     "access": "Licence-compatible vector/road provider or local extract; OSM data requires ODbL compliance and attribution. Surveyed access and operator records.",
     "boundary": "A routable public road does not prove heavy-vehicle or robot access. No automatic repair capability or response-time guarantee.",
-    "stage": "C"
+    "stage": "C",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Renewable-fuel eligibility",
@@ -208,7 +225,8 @@
     "inputs": "Rule references, evidence obligations and conditional price-premium scenario",
     "access": "Official rules and project-specific specialist evidence; no automated certification in the first release.",
     "boundary": "Renewable supply or CO₂ consumption does not establish certified fuel, sale acceptance or net removal.",
-    "stage": "C/E"
+    "stage": "C/E",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   },
   {
     "family": "Offline basemap",
@@ -221,6 +239,7 @@
     "inputs": "Geographical context and selection",
     "access": "Natural Earth public-domain overview; appropriate licensed/self-hosted detailed tiles.",
     "boundary": "Public OSM raster tiles cannot be bulk-prefetched. A rendering library does not grant data rights.",
-    "stage": "A"
+    "stage": "A",
+    "implementation_status": "Source-bound import / investigation route; no automatic feed or qualified site entitlement"
   }
 ]

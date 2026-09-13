@@ -39,7 +39,9 @@ def metadata(product, edition):
     )
 
 
-def hourly(raw, config):
+def hourly(raw, config, *, gust_support="instant"):
+    if gust_support not in ("instant", "preceding-hour-max"):
+        raise ValueError("Unsupported gust interval convention")
     result = normalize({"raw": raw}, config.plant, config.weather)
     h = raw.get("hourly", {})
     units = raw.get("hourly_units", {})
@@ -49,7 +51,7 @@ def hourly(raw, config):
             continue
         for field, name, offset, expected in (
             ("wind_speed_10m", "wind_mps", 0, "m/s"),
-            ("wind_gusts_10m", "gust_mps", 0, "m/s"),
+            ("wind_gusts_10m", "gust_mps", 1 if gust_support == "preceding-hour-max" else 0, "m/s"),
             ("precipitation", "rain_mmph", 1, "mm"),
         ):
             if field not in h:
@@ -154,7 +156,7 @@ def prepare(
                     source="ECMWF IFS original issue; hourly interpolation",
                     initialized_at=stamp(cursor),
                     available_at=stamp(cursor + timedelta(hours=w.publication_lag_hours)),
-                    data=hourly(raw, c),
+                    data=hourly(raw, c, gust_support="preceding-hour-max"),
                 )
             )
             source_ids.append(sid)
@@ -180,7 +182,8 @@ def prepare(
         },
         source_ids=sorted(set(source_ids)),
         normalized_sha256=store.raw(encode(payload)),
-        convention=CONVENTION,
+        convention=CONVENTION
+        + "; ERA5 gust sampled at t, ECMWF gust maximum at t+1 describes [t,t+1); rain at t+1 is interval total",
         publication_lag_hours=w.publication_lag_hours,
         assumptions=[
             "Current hourly mean treated as observed by scheduler",

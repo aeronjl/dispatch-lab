@@ -291,7 +291,7 @@ def playback_value(result, register_contexts=True):
             else {}
         ),
         "start_local": local_stamp(
-            result["weather"]["times"][0], result["config"]["weather"]["timezone"]
+            display_result["weather"]["times"][0], result["config"]["weather"]["timezone"]
         ),
     }
 

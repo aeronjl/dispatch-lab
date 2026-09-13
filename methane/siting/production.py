@@ -159,7 +159,10 @@ def state(store, study_id):
     if result["status"] == "running":
         try:
             os.kill(result["pid"], 0)
-        except (OSError, KeyError):
+        except PermissionError:
+            # An OS visibility restriction does not establish that the worker died.
+            result["process_visibility"] = "unavailable; retain recorded running state"
+        except (ProcessLookupError, KeyError):
             result.update(
                 status="interrupted", description="Resume from the last committed checkpoint"
             )
