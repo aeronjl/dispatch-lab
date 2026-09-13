@@ -306,3 +306,25 @@ def test_invalid_greedy_candidate_returns_explicit_safe_off(monkeypatch):
     action, solver = dispatch.greedy_action(c.plant, State.initial(c.plant), 400, 20, 0, 450)
     assert solver["status"] == "safe-off"
     assert not any(action.values())
+
+
+def test_preview_http_serialization_retains_operands_and_generation():
+    import json
+
+    from methane.preview_service import PreviewRequest, calculate, register, response
+    from methane.solar import design_for
+
+    c = Config()
+    result = dict(run_id="serialization-fixture", config=c.to_dict(), weather=synthetic(c))
+    request = PreviewRequest(
+        token=register(result),
+        run_id=result["run_id"],
+        key="generation-2",
+        design=design_for(result),
+    )
+    expected = calculate(request)
+    http = response(request)
+    assert json.loads(http.body) == expected
+    assert http.media_type == "application/json"
+    assert "preview;dur=" in http.headers["server-timing"]
+    assert "serialize;dur=" in http.headers["server-timing"]

@@ -10,9 +10,11 @@ import secrets
 from collections import OrderedDict
 from contextlib import asynccontextmanager
 from threading import Lock
+from time import perf_counter
 
 from fastapi import HTTPException
 from pydantic import BaseModel, Field
+from starlette.responses import JSONResponse
 
 from methane.solar import preview, source_config, source_weather
 
@@ -61,9 +63,24 @@ def calculate(request: PreviewRequest):
         return {"key": request.key, "error": str(exc)}
 
 
+def response(request: PreviewRequest):
+    # The kernel returns JSON-native operands. Avoid FastAPI's second recursive
+    # dataclass/Pydantic conversion over every frame, section and audit operand.
+    start = perf_counter()
+    value = calculate(request)
+    calculated = perf_counter()
+    result = JSONResponse(value)
+    encoded = perf_counter()
+    result.headers["Server-Timing"] = (
+        f"preview;dur={(calculated - start) * 1000:.3f}, "
+        f"serialize;dur={(encoded - calculated) * 1000:.3f}"
+    )
+    return result
+
+
 @asynccontextmanager
 async def lifespan(app):
-    app.add_api_route("/dispatch/preview-solar", calculate, methods=["POST"])
+    app.add_api_route("/dispatch/preview-solar", response, methods=["POST"])
     from methane.taxonomy_service import document as taxonomy_document
 
     app.add_api_route("/dispatch/taxonomy", taxonomy_document, methods=["POST"])

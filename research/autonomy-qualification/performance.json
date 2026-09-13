@@ -1,0 +1,288 @@
+{
+  "schema_version": "qualification-interaction-performance/1",
+  "scope": "Local Apple Silicon macOS, pinned Playwright Chromium, 30 successive edits per condition. First edit retained separately. Rendering is the larger of the separate plant and solar p95 timings; individual sample counts are recorded. One real cancellable batch, not unbounded parallel load.",
+  "measurements": [
+    {
+      "label": "72-hour archive / idle",
+      "observations": {
+        "environment": "darwin",
+        "preview_samples_ms": [
+          85.59999990463257,
+          85.5,
+          85,
+          84.90000009536743,
+          84.5,
+          85,
+          83.5,
+          84.69999992847443,
+          85.5,
+          85.20000004768372,
+          84,
+          83.79999995231628,
+          84.60000002384186,
+          84.5,
+          84.89999997615814,
+          85,
+          84.89999997615814,
+          84.89999997615814,
+          85.19999992847443,
+          84.60000002384186,
+          84.60000002384186,
+          84.5,
+          85.10000002384186,
+          85.29999995231628,
+          84.69999992847443,
+          83.89999997615814,
+          84.60000002384186,
+          85,
+          85.60000002384186,
+          79.79999995231628
+        ],
+        "first_input_ms": 85.59999990463257,
+        "preview_p95_ms": 85.59999990463257,
+        "render_p95_ms": 1,
+        "plant_render_p95_ms": 1,
+        "solar_render_p95_ms": 0.5999999046325684,
+        "render_sample_counts": {
+          "plant": 2,
+          "solar": 62
+        },
+        "fixture": "archived demo",
+        "fixture_hours": 72,
+        "batch_active": false
+      }
+    },
+    {
+      "label": "240-hour reference / idle",
+      "observations": {
+        "environment": "darwin",
+        "preview_samples_ms": [
+          106.79999995231628,
+          103.10000002384186,
+          101.69999992847443,
+          101.90000009536743,
+          101.70000004768372,
+          101.19999992847443,
+          101.80000007152557,
+          101.79999995231628,
+          101.89999997615814,
+          102,
+          101.80000007152557,
+          221.29999995231628,
+          100.39999997615814,
+          101.70000004768372,
+          101,
+          101.79999995231628,
+          101.5,
+          101.70000004768372,
+          102.30000007152557,
+          101.69999992847443,
+          101.90000009536743,
+          102.10000002384186,
+          101.70000004768372,
+          102.30000007152557,
+          101.70000004768372,
+          102.5,
+          103.39999997615814,
+          102.30000007152557,
+          101.89999997615814,
+          102.39999997615814
+        ],
+        "first_input_ms": 106.79999995231628,
+        "preview_p95_ms": 106.79999995231628,
+        "render_p95_ms": 2.299999952316284,
+        "plant_render_p95_ms": 2.299999952316284,
+        "solar_render_p95_ms": 0.7000000476837158,
+        "render_sample_counts": {
+          "plant": 2,
+          "solar": 62
+        },
+        "fixture": "240",
+        "fixture_hours": 240,
+        "batch_active": false
+      }
+    },
+    {
+      "label": "240-hour reference / one batch active",
+      "observations": {
+        "environment": "darwin",
+        "preview_samples_ms": [
+          103.09999990463257,
+          97.60000002384186,
+          98.29999995231628,
+          98.89999997615814,
+          98.5,
+          98.89999997615814,
+          98.20000004768372,
+          98.39999997615814,
+          97.70000004768372,
+          98.60000002384186,
+          99,
+          97.5,
+          98.39999997615814,
+          99,
+          98.79999995231628,
+          100.09999990463257,
+          100.10000002384186,
+          99.5,
+          138.5,
+          128.19999992847443,
+          104.60000002384186,
+          108.80000007152557,
+          103.19999992847443,
+          114,
+          109.09999990463257,
+          102.60000002384186,
+          103.5,
+          104.90000009536743,
+          102.5,
+          103.29999995231628
+        ],
+        "first_input_ms": 103.09999990463257,
+        "preview_p95_ms": 128.19999992847443,
+        "render_p95_ms": 1,
+        "plant_render_p95_ms": 1,
+        "solar_render_p95_ms": 0.6999999284744263,
+        "render_sample_counts": {
+          "plant": 4,
+          "solar": 62
+        },
+        "fixture": "240",
+        "fixture_hours": 240,
+        "batch_active": true
+      }
+    }
+  ],
+  "first_edits": {
+    "scope": "Five fresh browser contexts; first edit after the page and fonts are ready. Already-loaded local server; distinct tilt inputs. No CPU/network throttling. Not a process-cold or field percentile.",
+    "fixture_hours": 240,
+    "browser": "153.0.8010.12",
+    "samples": [
+      {
+        "tilt": 61,
+        "input_ms": 98.70000004768372,
+        "request_ms": 20.600000023841858,
+        "server_timing": [
+          {
+            "name": "preview",
+            "duration_ms": 17.107
+          },
+          {
+            "name": "serialize",
+            "duration_ms": 2.201
+          }
+        ]
+      },
+      {
+        "tilt": 62,
+        "input_ms": 97.80000007152557,
+        "request_ms": 19.699999928474426,
+        "server_timing": [
+          {
+            "name": "preview",
+            "duration_ms": 16.375
+          },
+          {
+            "name": "serialize",
+            "duration_ms": 2.101
+          }
+        ]
+      },
+      {
+        "tilt": 63,
+        "input_ms": 99.19999992847443,
+        "request_ms": 20.600000023841858,
+        "server_timing": [
+          {
+            "name": "preview",
+            "duration_ms": 17.239
+          },
+          {
+            "name": "serialize",
+            "duration_ms": 2.196
+          }
+        ]
+      },
+      {
+        "tilt": 64,
+        "input_ms": 98,
+        "request_ms": 20,
+        "server_timing": [
+          {
+            "name": "preview",
+            "duration_ms": 16.735
+          },
+          {
+            "name": "serialize",
+            "duration_ms": 2.085
+          }
+        ]
+      },
+      {
+        "tilt": 65,
+        "input_ms": 99,
+        "request_ms": 20.09999990463257,
+        "server_timing": [
+          {
+            "name": "preview",
+            "duration_ms": 16.746
+          },
+          {
+            "name": "serialize",
+            "duration_ms": 2.073
+          }
+        ]
+      }
+    ]
+  },
+  "interpretation": "All measured conditions meet the chosen 200 ms p95 interaction and 10 ms render targets. Five additional fresh-page first edits span 97.8\u201399.2 ms on the already-loaded 240-hour server. This does not establish process-cold, remote-network or arbitrary-archive performance. The page-load layout shift remains unaddressed.",
+  "exploratory_before": {
+    "schema_version": "preview-observation/1",
+    "scope": "Exploratory Chrome DevTools observations of the pre-change live app on this Mac, collected during the qualification session. Rounded values transcribed from tool responses; not a matched 240-hour baseline or a field percentile.",
+    "fixture_hours": 16,
+    "page": "http://127.0.0.1:7860/",
+    "first_input_ms": 616.7,
+    "following_input_samples_ms": [
+      82.6,
+      82.1,
+      81.7,
+      81.7
+    ],
+    "first_preview_request_duration_ms": 399.3,
+    "first_preview_request_ttfb_ms": 398.8,
+    "page_load_lcp_ms": 750,
+    "page_load_cls": 0.1306,
+    "page_load_cls_observation": "The main contributor was the Gradio loading/ETA overlay, not the plant SVG; the later interaction trace had CLS 0.",
+    "causal_limit": "This observation motivated avoiding collapsed detail work. It is not an isolated measurement of either subsequent code change."
+  },
+  "devtools_after": {
+    "fixture_hours": 240,
+    "scope": "One unthrottled local reload trace and one subsequent first-edit inspection; not field percentiles or a matched pre/post experiment.",
+    "lcp_ms": 473,
+    "ttfb_ms": 32,
+    "cls": 0.1306,
+    "cls_affected_elements": [
+      {
+        "element": "Gradio loading overlay / ETA bar",
+        "score": 0.1146
+      },
+      {
+        "element": "Gradio main application container",
+        "score": 0.016
+      }
+    ],
+    "first_edit_ms": 104.8,
+    "preview_request_ms": 25.3,
+    "server_calculation_ms": 20.914,
+    "server_serialization_ms": 2.419,
+    "remaining": "Investigate and stabilise the initial loading shell without altering the reviewed plant artwork."
+  },
+  "implementation_files_sha256": {
+    "assets/methane.js": "c758931104934f0da758c5e6e01080ab0aa9fc0781a842d5bf6cf8f28b6e6a6d",
+    "assets/solar.js": "66ed7e2c68c1e1a6d334764346d586b41f075c6370e2fa91565826640410aade",
+    "assets/solar.html": "6ecddae84f3e544c2120235b9eb0b31370e0251299d03af8015a70b2fa223c57",
+    "methane/preview_service.py": "87e9aac7fa71e16ed0f6424406f266e7437a4bec42ba2aa7d77c5477cf0090d5",
+    "tests/browser/platform.spec.cjs": "f954f629fad8d69cfc77b9e2daa763ddcc67c25751d59d3d97610546ef545727",
+    "research/autonomy-qualification/preview-first-edits.cjs": "78d19a305df8789e17d20c355d330083923561d1459c37620a11035258beeec9"
+  }
+}

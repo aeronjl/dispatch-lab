@@ -92,6 +92,15 @@ contexts. Expired contexts report an error; they never switch to other data.
 Gradio's existing preview callback remains available. Both paths call the same
 Python component and preserve request-generation checks.
 
+Recorded solar decision/cost details and calculation lineage are fetched when
+their disclosure is opened. Opening the diagram alone does not enqueue that
+hidden work. The preview route serialises JSON-native operands directly and
+exposes separate calculation and serialization durations in `Server-Timing`.
+Measurements retain the first edit separately; plant rendering and solar preview
+rendering each have their own timing series, so the plant-only timing cannot
+stand in for a preview redraw. The September autonomy qualification report records
+the 72-hour and 240-hour fixtures and the active-batch measurements separately.
+
 Solar caching covers individual sections and full intervals; cache values are
 immutable and callers receive separate results. Full plant changes still
 propagate through dispatch. Batch and interactive queues are separate, and

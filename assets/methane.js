@@ -196,7 +196,7 @@ function mountMethane(element, props, watch, trigger) {
         if(!result || !clock) return;
         fieldScene?.render(clock.visualSnapshot());
         const f=current(), p=result.config.plant, row=f.row, d=f.decision;
-        if(selected || solar?.isOpen())loadDetail(f);
+        if(selected || solar?.needsDetail())loadDetail(f);
         root.dataset.playing=String(clock.snapshot().playing);
         $('[data-do="play"]').textContent=clock.snapshot().playing?'Ⅱ':'▶';
         $('[data-do="play"]').setAttribute('aria-label',clock.snapshot().playing?'Pause simulation':'Play simulation');
@@ -307,6 +307,7 @@ function mountMethane(element, props, watch, trigger) {
         inspect:origin=>{clock.pause();openUtility('services',origin);}}):null;
     clock=createPlaybackClock({onFrame:frame=>fieldScene?.render(frame),duration:result.records[controller]?.length || 0,onChange:()=>{if(answer&&answer.key!==currentKey())invalidate();render();}});
     solar=createSolarWorkspace({root,props,watch,trigger,getResult:()=>result,getFrame:current,getCost:()=>costFrame(current().hour),
+        onInspect:()=>loadDetail(current()),
         pause:()=>clock.pause(),onReturn:()=>{selected=null;render();$('.m-plant .solar-component').focus({preventScroll:true});}});
     $('.m-mobile-select').innerHTML=Object.entries(labels).map(([key,label])=>`<button data-mobile-component="${key}">${label}</button>`).join('');
     model=typeof createModelWorkspace==='function'?createModelWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,getPrices:()=>costs?.costs,getServicePrices:()=>costs?.service_economics,pause:()=>clock.pause()}):null;

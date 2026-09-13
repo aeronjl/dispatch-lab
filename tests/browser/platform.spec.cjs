@@ -72,15 +72,17 @@ test('preview latency, render cost and immutable restored design',async({page})=
   await page.locator('[data-s="restore"]').click();await expect(page.locator('[data-s="status"]')).toHaveText('RECORDED DESIGN');
   await page.locator('[data-s="back"]').click();
   const timings=await page.evaluate(()=>performance.getEntriesByName('dispatch-render').map(e=>e.duration));
+  const solarTimings=await page.evaluate(()=>performance.getEntriesByName('dispatch-solar-render').map(e=>e.duration));
   const hours=Number(await page.locator('[data-m="scrubber"]').getAttribute('max'));
   const p95=x=>[...x].sort((a,b)=>a-b)[Math.floor(x.length*.95)];
-  fs.mkdirSync('build/engineering',{recursive:true});fs.writeFileSync(`build/engineering/browser-performance${process.env.DISPATCH_BATCH_ACTIVE?`-${hours}h-batch`:''}.json`,JSON.stringify({environment:process.platform,preview_samples_ms:samples,preview_p95_ms:p95(samples),render_p95_ms:p95(timings),fixture:process.env.DISPATCH_BROWSER_ARCHIVE||process.env.DISPATCH_BROWSER_HOURS||'archived demo',fixture_hours:hours,batch_active:!!process.env.DISPATCH_BATCH_ACTIVE},null,2));
+  fs.mkdirSync('build/engineering',{recursive:true});fs.writeFileSync(`build/engineering/browser-performance${process.env.DISPATCH_BATCH_ACTIVE?`-${hours}h-batch`:''}.json`,JSON.stringify({environment:process.platform,preview_samples_ms:samples,first_input_ms:samples[0],preview_p95_ms:p95(samples),render_p95_ms:Math.max(p95(timings),p95(solarTimings)),plant_render_p95_ms:p95(timings),solar_render_p95_ms:p95(solarTimings),render_sample_counts:{plant:timings.length,solar:solarTimings.length},fixture:process.env.DISPATCH_BROWSER_ARCHIVE||process.env.DISPATCH_BROWSER_HOURS||'archived demo',fixture_hours:hours,batch_active:!!process.env.DISPATCH_BATCH_ACTIVE},null,2));
   if(process.env.DISPATCH_BATCH_ACTIVE){
     await analysis(page);await page.getByRole('tab',{name:'Experiments',exact:true}).click();
     await page.getByRole('button',{name:'Cancel suite',exact:true}).click();
     await expect(page.getByText('Cancellation requested.',{exact:false})).toBeVisible();
   }
   expect(p95(timings)).toBeLessThanOrEqual(10);
+  expect(p95(solarTimings)).toBeLessThanOrEqual(10);
   if(process.env.DISPATCH_PERFORMANCE_GATE)expect(p95(samples)).toBeLessThanOrEqual(200);
 });
 
@@ -220,4 +222,15 @@ test('portable offline bundle plays without network access',async({page})=>{
   await page.getByRole('button',{name:'NEXT',exact:true}).click();
   await expect(page.locator('.m-prediction table')).toBeVisible();
   expect(errors).toEqual([]);expect(requests).toEqual([]);
+});
+
+test('solar defers recorded lineage until its disclosure is opened',async({page})=>{
+  await ready(page);await page.locator('.solar-component').click();
+  const lineage=page.locator('[data-s="lineage"]');
+  await expect(lineage).toContainText('Select an executed interval');
+  await page.locator('.s-workspace').getByText('MODEL AND EVIDENCE',{exact:true}).click();
+  await expect(lineage).toContainText('Select an executed interval');
+  await page.locator('.s-workspace').getByText('TRACE RECORDED GENERATION',{exact:true}).click();
+  await expect(lineage).toContainText('PLANT-01/PV-01');
+  await page.keyboard.press('Escape');await expect(page.locator('.s-workspace')).toBeHidden();
 });

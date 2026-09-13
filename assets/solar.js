@@ -17,7 +17,7 @@ function solarPanelGeometry(section) {
     }
     return {rows,tiles};
 }
-function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCost,pause,onReturn}) {
+function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCost,pause,onReturn,onInspect}) {
     const $=s=>root.querySelector(s), $$=s=>[...root.querySelectorAll(s)], workspace=$('.s-workspace');
     const q=s=>workspace.querySelector(s), qq=s=>[...workspace.querySelectorAll(s)];
     const num=(v,d=0)=>Number.isFinite(v)?(Math.abs(v)<.05?0:v).toLocaleString('en-GB',{maximumFractionDigits:d}):'—';
@@ -110,6 +110,7 @@ function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCo
     }
     function render(frame) {
         if(!design||!frame)return;
+        const renderStart=performance.now();
         const optical=frame.row?.field_operations?.optical;
         const recordedOptics=optical&&!dirty;
         drawBanks(recordedOptics?JSON.parse(optical.parameters.design_json):design);if(!open)return;
@@ -152,6 +153,7 @@ function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCo
         q('[data-s="apply"]').disabled=applying||Boolean(pending)||!dirty||!response?.frames;
         q('[data-s="restore"]').disabled=applying;
         qq('[data-setting]').forEach(n=>n.disabled=applying);
+        performance.measure('dispatch-solar-render',{start:renderStart});
     }
     workspace.addEventListener('click',event=>{
         const bank=event.target.closest('[data-bank]');
@@ -169,10 +171,12 @@ function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCo
         if(key in design)design[key]=value;else design.sections[selected][key]=value;
         dirty=JSON.stringify(design)!==JSON.stringify(baseline.design);requestPreview();
     });
+    function needsDetail(){return open&&qq('[data-s-detail][open]').some(n=>!n.parentElement.closest('details:not([open])'));}
+    workspace.addEventListener('toggle',()=>{if(needsDetail())onInspect?.();},true);
     workspace.addEventListener('keydown',event=>{
         const bank=event.target.closest('.s-bank');if(bank&&['Enter',' '].includes(event.key)){event.preventDefault();event.stopPropagation();selected=Number(bank.dataset.bank);drawn='';inputValues();render(getFrame());}
     });
     watch('solar_answer',()=>{const value=props.solar_answer;if(value?.key!==pending)return;pending=null;applying=false;response=value;render(getFrame());});
-    return {open:()=>changeView(true),close:()=>changeView(false),isOpen:()=>open,render,reset};
+    return {open:()=>changeView(true),close:()=>changeView(false),isOpen:()=>open,needsDetail,render,reset};
 }
 if(typeof module!=='undefined')module.exports={solarPanelGeometry};
