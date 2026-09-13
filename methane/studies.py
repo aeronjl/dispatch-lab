@@ -234,6 +234,30 @@ def prepare_source(directory, capsule):
     return source
 
 
+def uncertainty_weather_input(config, specification):
+    """An explicit shorter study window within a cached historical envelope."""
+    from dataclasses import replace
+
+    from methane.weather import prepare
+
+    hours = specification.get("weather_source_hours", config.scenario.hours)
+    if type(hours) is not int or not config.scenario.hours <= hours <= 240:
+        raise ValueError("Weather source hours must cover the complete study window")
+    if "weather_source_hours" in specification and config.weather.mode != "historical":
+        raise ValueError("A cached weather source envelope is only supported for historical replay")
+    source = replace(config, scenario=replace(config.scenario, hours=hours))
+    weather = prepare(source)
+    if hours != config.scenario.hours:
+        weather["times"] = weather["times"][: config.scenario.hours]
+        weather["study_window"] = dict(
+            version="historical-prefix-window/1",
+            source_hours=hours,
+            study_hours=config.scenario.hours,
+            convention="Study uses the initial UTC intervals of the declared saved historical envelope. Raw responses and forecast availability remain unchanged.",
+        )
+    return weather
+
+
 def create(
     basis=None,
     tier="reference",
@@ -324,7 +348,7 @@ def create(
                         }
                     )
                     if key not in uncertainty_weather:
-                        uncertainty_weather[key] = prepare(cfg)
+                        uncertainty_weather[key] = uncertainty_weather_input(cfg, spec)
                     weather = copy.deepcopy(uncertainty_weather[key])
                     if cfg.solar:
                         from methane.solar import transform_weather
@@ -1238,6 +1262,7 @@ All coefficients are illustrative. Numerical checks are not empirical calibratio
             "recovery_loop_reference.py",
             "autonomy_reference.py",
             "duration_reference.py",
+            "retrieval_reference.py",
             "performance_reference.py",
         ):
             if "methane/" + companion in source:

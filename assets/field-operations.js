@@ -69,12 +69,13 @@ function renderFieldOperations(result, frame, costs, visual) {
     }
     const control=record.decision?.service_control;
     const recovery=frame.row?.decision?.recovery_planning;
-    if(recovery?.version==='scheduled-load-tests/2'&&recovery.status!=='inactive'){
+    if(['scheduled-load-tests/2','scheduled-load-tests/3'].includes(recovery?.version)&&recovery.status!=='inactive'){
         out+='<details class="m-recovery-commitment"><summary>Reserved recovery test</summary><p>'+esc(recovery.status)+'</p>';
-        const c=recovery.commitment;
-        if(c)out+=fact('Accepted window','H'+n(c.start_hour)+' → H'+n(c.end_hour))+fact('Requested load',n(c.target_kw)+' kW')+fact('Original deadline','H'+n(c.due_hour));
-        else if(recovery.due_hour!=null)out+=fact('Original deadline','H'+n(recovery.due_hour));
+        const c=recovery.commitment, deadlineLabel=recovery.verification_loop?'Verification deadline':'Original deadline';
+        if(c)out+=fact('Accepted window','H'+n(c.start_hour)+' → H'+n(c.end_hour))+fact('Requested load',n(c.target_kw)+' kW')+fact(deadlineLabel,'H'+n(c.due_hour));
+        else if(recovery.due_hour!=null)out+=fact(deadlineLabel,'H'+n(recovery.due_hour));
         for(const reason of recovery.commitment_changes||[])out+='<p>'+esc(reason)+'</p>';
+        if(recovery.verification_loop){const loop=recovery.verification_loop;out+=fact('Diagnosis deadline',loop.original_diagnosis_deadline==null?'—':'H'+n(loop.original_diagnosis_deadline))+fact('Verification loop',recovery.status)+fact('Reason',loop.reason||'Recorded bounded verification episode');}
         out+='<p class="m-muted">Work, dock charging and load tests share this prediction. A reserved or performed test does not establish recovery; actual operating observations must confirm it.</p></details>';
     }
     if(control){
@@ -107,6 +108,8 @@ function renderFieldOperations(result, frame, costs, visual) {
             if(test){const p=test.inputs.packet, o=test.operands;out+='<p>H'+n(p.hour)+' → H'+n(p.available_at)+': '+esc(test.outcome)+'. '+esc(test.reason)+'.</p>'+fact('Requested / measured power',n(o.requested_kw)+' / '+n(o.measured_kw)+' kW')+fact('Hydrogen balance / electrical estimate',n(o.balance_hydrogen_kg)+' / '+n(o.expected_hydrogen_kg)+' kg')+fact('Resource check',test.resource_check.status)+'<p class="m-muted">'+esc(test.scope)+'</p><pre>'+esc(JSON.stringify(test,null,2))+'</pre>';}
             out+='</details>';
         }
+        const chosen=(control.candidates||[]).find(c=>c.candidate_id===control.selected_candidate_id)?.evaluation;
+        for(const r of chosen?.conditional_returns||[])out+='<p>'+esc(r.robot)+' · '+(r.available_at==null?'charging unavailable':'charging predicted after H'+n(r.available_at))+'. '+esc(r.reason)+'</p>';
         out+='<details><summary>Candidate calculations</summary>';
         for(const candidate of control.candidates||[]){const e=candidate.evaluation,p=e?.process_plan?.predicted;out+='<p>'+esc(candidate.candidate_id)+' · '+esc(candidate.status)+(p?' · predicted '+n(p.methane_kg)+' kg CH₄; incremental mission cost €'+n(e.mission_decision_eur):'')+'</p>';for(const c of e?.constraints||[])out+='<p class="m-muted">'+esc(c.reason||c.condition)+'</p>';}
         out+='<p>Source calculation '+esc(control.input_id)+'. These are predictions at the selected decision, not later realised outcomes.</p></details></section>';

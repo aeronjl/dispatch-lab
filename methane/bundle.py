@@ -25,6 +25,7 @@ def make(result, path):
     )
     files["checker/autonomy_reference.py"] = LOADED_FILES["methane/autonomy_reference.py"]
     files["checker/duration_reference.py"] = LOADED_FILES["methane/duration_reference.py"]
+    files["checker/retrieval_reference.py"] = LOADED_FILES["methane/retrieval_reference.py"]
     files["checker/recovery_loop_reference.py"] = LOADED_FILES["methane/recovery_loop_reference.py"]
     files["checker/performance_reference.py"] = LOADED_FILES["methane/performance_reference.py"]
     files["checker/reference.py"] = LOADED_FILES["methane/reference.py"]

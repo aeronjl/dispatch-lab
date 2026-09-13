@@ -132,6 +132,9 @@ def projected_quantities(commitments, at_hour, hours, *, visits=(), activity=Fal
                 plan.capability.effect_kind == "supply"
                 and stage.effect
                 and not (routine or dock_charge)
+                # Registered retrieval relocates an existing asset; it does not
+                # deliver a consumable whose acceptance/headroom needs pricing.
+                and plan.capability.implementation_id != "field-retrieval/1"
             ):
                 conditions.append(
                     dict(

@@ -307,6 +307,9 @@ def evaluate(
         for t, r in enumerate(rows)
     ]
     batteries = []
+    from methane.services.retrieval_planning import return_boundary
+
+    returns = []
     for target in targets:
         name, asset, resource = target.robot, ASSETS[target.robot], "energy:" + target.robot
         if asset not in runtime.registry.assets:
@@ -320,14 +323,18 @@ def evaluate(
                 )
             )
             return result
-        stranded = any(
-            m.plan.asset.asset_id == asset
-            and m.status == "stranded"
-            and not runtime.support.recovered(m)
-            for m in runtime.executive.missions.values()
+        retrieval = return_boundary(
+            runtime, name, commitments, (*runtime.executive.visits.values(), *visits)
         )
+        if retrieval:
+            returns.append(retrieval)
         available = tuple(
-            not stranded and _free(runtime, asset, now + t, now + t + 1, extra_bookings)
+            (
+                retrieval is None
+                or retrieval["available_at"] is not None
+                and now + t >= retrieval["available_at"]
+            )
+            and _free(runtime, asset, now + t, now + t + 1, extra_bookings)
             for t in range(n)
         )
         use = tuple(r["robot_use_kwh"].get(resource, 0) for r in rows)
@@ -352,6 +359,8 @@ def evaluate(
                 max(1, int(target.due_hour - now)),
             )
         )
+    if returns:
+        result["conditional_returns"] = returns
     if recovery_request is not None:
         from methane.services.joint_recovery import evaluate as evaluate_recovery
 

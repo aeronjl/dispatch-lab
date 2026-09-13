@@ -118,7 +118,9 @@ class Scheduler(JointScheduler):
             self.shortfalls = []
             if self.episodes:
                 self.episodes[-1].setdefault("closed_at", hour)
-                self.episodes[-1].setdefault("outcome", "observer confirmed")
+                self.episodes[-1].setdefault(
+                    "outcome", "observer confirmed" if sensors.enabled else "sensing disabled"
+                )
         elif self.escalated or status == "deadline-missed":
             self.escalated = True
             status = "escalation-required"
@@ -153,4 +155,8 @@ class Scheduler(JointScheduler):
                 ),
             ),
         )
+        if not active:
+            # A later independent diagnosis starts its own original deadline.
+            # Completed episodes retain the immutable deadline recorded above.
+            self.original_deadline = None
         return request

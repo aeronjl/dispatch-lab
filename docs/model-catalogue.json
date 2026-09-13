@@ -1,11 +1,11 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "e8f4b092a5ef94f55b22dc14a4f2470efefcf70d928a4b18fadb81de4a1a22ac",
+  "source": "6fba8601cccae7baf85bf1fe51819bc87891c0760f54b25e8ef05efe71d46a57",
   "topics": {
     "battery": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "battery": {
             "bindings": {
@@ -270,8 +270,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -309,14 +309,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -607,7 +608,7 @@
     },
     "bus": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "coupling": {
             "bindings": {
@@ -760,8 +761,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -799,14 +800,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -1411,7 +1413,7 @@
     },
     "co2": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -1706,8 +1708,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -1745,14 +1747,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -1959,10 +1962,11 @@
     },
     "controllers": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "control": {
             "bindings": {
+              "docs/conditional-retrieval.md": "8bdfdc3b72569bf958d50583f081f6afa4090d8c48ead23f74f6b37faad56b14",
               "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
@@ -1975,10 +1979,14 @@
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
               "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
+              "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
+              "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
               "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
               "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
               "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
-              "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+              "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
+              "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
+              "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
               "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
@@ -1989,11 +1997,12 @@
               "tests/test_uncertainty.py",
               "tests/test_adaptation.py",
               "tests/test_recovery_loop.py",
-              "tests/test_duration_population.py"
+              "tests/test_duration_population.py",
+              "tests/test_retrieval_planning.py"
             ],
             "evidence_status": "Policy choice and bounded approximation",
             "id": "control",
-            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
+            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted.",
             "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
             "priority": 1,
             "review_status": "reviewed",
@@ -2675,8 +2684,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -2714,14 +2723,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -2929,10 +2939,11 @@
     },
     "diagnosis": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "control": {
             "bindings": {
+              "docs/conditional-retrieval.md": "8bdfdc3b72569bf958d50583f081f6afa4090d8c48ead23f74f6b37faad56b14",
               "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
@@ -2945,10 +2956,14 @@
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
               "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
+              "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
+              "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
               "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
               "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
               "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
-              "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+              "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
+              "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
+              "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
               "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
@@ -2959,11 +2974,12 @@
               "tests/test_uncertainty.py",
               "tests/test_adaptation.py",
               "tests/test_recovery_loop.py",
-              "tests/test_duration_population.py"
+              "tests/test_duration_population.py",
+              "tests/test_retrieval_planning.py"
             ],
             "evidence_status": "Policy choice and bounded approximation",
             "id": "control",
-            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
+            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted.",
             "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
             "priority": 1,
             "review_status": "reviewed",
@@ -3075,7 +3091,7 @@
               "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
-              "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+              "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
               "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Generic module replacement and erasing a flow bias lack a named replaceable part, reference instrument, procedure and cause-clearance test. Remote release addresses only declared control holds. All capability conclusions are conditional.",
@@ -4247,8 +4263,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -4286,14 +4302,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -4459,7 +4476,7 @@
     },
     "economics": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "economics": {
             "bindings": {
@@ -6686,8 +6703,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -6725,14 +6742,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -6949,7 +6967,7 @@
     },
     "electrolyser": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -7393,8 +7411,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -7432,14 +7450,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -7670,7 +7689,7 @@
     },
     "experiments": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "coupling": {
             "bindings": {
@@ -10499,7 +10518,7 @@
           "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
-          "methane/bundle.py": "0907e45165b53e37e2bdabd0ff37262576547c96ba35d5d878b4d431bfde3821",
+          "methane/bundle.py": "c13c63e23b78f42f035f6a1bb2c8572a9f5da5a3949df095b659e7a2eb6397dd",
           "methane/computation_studies.py": "640fff1e6f3d058049cb8b7dc3e3142d610e385aa63c3ce1b32213409b15af5e",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
@@ -10526,8 +10545,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -10565,14 +10584,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -10589,7 +10609,7 @@
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/studies.py": "8eafa6d8325a5ca7e3265c739443b1b3533960e615a33fac2bf0b2065df07389",
+          "methane/studies.py": "77d5e78c552dae357879e22c209d8131e829b6048a200dffde6c4dbcd67396de",
           "methane/study_bundle_check.py": "35a2cafbf3e65041576df86c268319b598a40986ea52357c680ed746beb41242",
           "methane/study_presentation.py": "cd21d284483b28c78d895df0396e19d535b18e8deb86a119e77085bf189a82bf",
           "methane/study_service.py": "f8f71960e060f6f70dec8df2fa43c4070b7915ce9dbfc90bee69403baf5c9adf",
@@ -10780,7 +10800,7 @@
     },
     "hydrogen": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -11190,8 +11210,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -11229,14 +11249,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -11455,7 +11476,7 @@
     },
     "reactor": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -11899,8 +11920,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -11938,14 +11959,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -12305,7 +12327,7 @@
     },
     "solar": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "cleaning": {
             "bindings": {
@@ -13298,8 +13320,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -13337,14 +13359,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
@@ -13683,7 +13706,7 @@
     },
     "weather": {
       "assumption_review": {
-        "edition": "2026-09-13 / 5",
+        "edition": "2026-09-13 / 6",
         "groups": {
           "experiment": {
             "bindings": {
@@ -14337,8 +14360,8 @@
           "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
           "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
           "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
-          "methane/services/alternatives.py": "8d6bd63b3efe6c1b53a630a1ca7a853edd75a101480fc4990707cdb9c32fc6f5",
-          "methane/services/charge_control.py": "28df4a068a81d78a55b6dda87a56218ffa9a0361ba017c3bcc9d7acdec99b3b3",
+          "methane/services/alternatives.py": "3dbc4b6a0a6934cd64f414c772c2ab7becb9211ae9d1a448039b440169c0117e",
+          "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
           "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
           "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
           "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
@@ -14376,14 +14399,15 @@
           "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
-          "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
+          "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
           "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
           "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
           "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
           "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
-          "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+          "methane/services/recovery_loop.py": "bdf9abd61dd82581947fe0d77b0b31c4cd60252537a9d2f32ca9e3a3a71cad01",
           "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
           "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+          "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
           "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
           "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
           "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",

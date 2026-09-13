@@ -2746,6 +2746,14 @@ def audit(result):
     p, scenario = result["config"]["plant"], result["config"]["scenario"]
     checks, failures = [], []
     try:
+        if any(
+            c.get("evaluation", {}).get("conditional_returns")
+            for rows in result["records"].values()
+            for row in rows
+            for c in row["decision"].get("service_control", {}).get("candidates", [])
+        ):
+            companion = runpy.run_path(str(Path(__file__).with_name("retrieval_reference.py")))
+            checks.extend(companion["audit_run"](result))
         if (
             result.get("provenance", {})
             .get("uncertainty_world", {})

@@ -86,6 +86,31 @@ def test_pending_remedy_does_not_compete_with_its_own_verification():
     assert s.finish()["status"] == "awaiting-procedure"
 
 
+def test_later_incident_has_a_new_deadline_without_rewriting_the_old_episode():
+    s = loop()
+    begin(s, 0)
+    s.finish()
+    begin(s, 5, orders=[receipt()])
+    s.finish()
+    s.begin(Plant(), Sensors(), Diagnosis(450), hour=6, orders=[receipt()])
+    confirmed = s.finish()
+    assert confirmed["verification_loop"]["episodes"][0]["outcome"] == "observer confirmed"
+    request = begin(s, 20, orders=[receipt()])
+    assert request.due_hour == 24
+    later = s.finish()
+    assert later["verification_loop"]["original_diagnosis_deadline"] == 24
+    assert later["verification_loop"]["episodes"] == confirmed["verification_loop"]["episodes"]
+
+
+def test_disabling_sensing_does_not_claim_observed_recovery():
+    s = loop()
+    begin(s, 5, orders=[receipt()])
+    s.finish()
+    s.begin(Plant(), Sensors(enabled=False), Diagnosis(225), hour=6, orders=[receipt()])
+    result = s.finish()
+    assert result["verification_loop"]["episodes"][0]["outcome"] == "sensing disabled"
+
+
 def test_future_receipts_or_evidence_cannot_change_earlier_request():
     a, b = loop(), loop()
     future = receipt(completed_hour=20)
