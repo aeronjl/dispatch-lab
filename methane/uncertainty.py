@@ -239,6 +239,13 @@ def catalogue(config):
         "scope": "Every registered parameter has an explicit uncertainty status. Unquantified is not exact. Scenario support is not a probability distribution. Disabled optional mechanisms are not enabled by this catalogue.",
         "knowledge_boundary": "Hidden plant, conversion, sensor and service outcomes use separate execution ports. Opt-in service uncertainty adds private time factors within declared support and current-only support status observations. Other hidden weather-model choices, unimplemented mechanisms and unsupported capabilities remain rejected. Bounds, sensor models and scenario weights are assumptions, not calibration.",
     }
+    from methane.duration_population import AUTONOMY_VERSION, default_model
+
+    result["autonomy"]["equipment_job_defaults"] = {
+        **copy.deepcopy(AUTONOMY_DEFAULT),
+        "version": AUTONOMY_VERSION,
+        "duration_model": default_model(),
+    }
     result["content_hash"] = digest(result)
     return result
 

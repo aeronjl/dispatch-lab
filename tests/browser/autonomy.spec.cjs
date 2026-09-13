@@ -7,5 +7,9 @@ test('autonomous service assumptions are explicit, resettable and invalidate a r
  await expect.poll(()=>packets.some(p=>p.operation==='uncertainty-preview')).toBeTruthy();
  const sent=packets.find(p=>p.operation==='uncertainty-preview');expect(sent.uncertainty.autonomy.mode).toBe('risk-aware');expect(sent.uncertainty.autonomy.duration_bounds.cleaning).toEqual([.5,2]);expect(sent.uncertainty.autonomy.source).toContain('no site calibration');
  await page.locator('[data-u=autonomy]').selectOption('fixed');await expect(page.locator('[data-u=start]')).toBeDisabled();
+ await page.locator('[data-u=duration-model]').selectOption('equipment-job');await page.locator('[data-u=preview]').click();
+ await expect.poll(()=>packets.some(p=>p.uncertainty?.autonomy?.version==='uncertainty-aware-services/2')).toBeTruthy();
+ const extended=packets.find(p=>p.uncertainty?.autonomy?.version==='uncertainty-aware-services/2');expect(extended.uncertainty.autonomy.duration_model.groups.cleaning.job_multiplier_bounds).toEqual([.8,1.2]);
+ await page.locator('[data-u=duration-model]').selectOption('population');await expect(page.locator('[data-u=start]')).toBeDisabled();
  await page.locator('[data-u=autonomy]').selectOption('off');await expect(page.locator('[data-u=autonomy]')).toHaveValue('off');await page.setViewportSize({width:390,height:844});expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();await page.keyboard.press('Escape');
 });

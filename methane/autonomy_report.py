@@ -15,6 +15,11 @@ def report_html(result):
             belief = row["decision"].get("uncertainty_beliefs")
             if belief is None:
                 continue
+            displayed = dict(belief["durations"])
+            for asset, groups in belief.get("equipment_durations", {}).items():
+                displayed.update(
+                    {asset + " / " + k: v for k, v in groups.items() if v["independent_jobs"]}
+                )
             duration = "".join(
                 "<tr><td>"
                 + html.escape(k)
@@ -29,7 +34,7 @@ def report_html(result):
                 + "</td><td>"
                 + html.escape(v["status"])
                 + "</td></tr>"
-                for k, v in belief["durations"].items()
+                for k, v in displayed.items()
             )
             record = dict(
                 beliefs=belief,

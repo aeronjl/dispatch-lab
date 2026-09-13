@@ -32,6 +32,8 @@ def audit_run(result):
             check("clock", belief["hour"] == h, controller, h)
             check("evidence_set", set(belief["evidence_ids"]) == set(seen), controller, h)
             for family, value in belief["durations"].items():
+                if "duration_model" in belief["options"]:
+                    continue  # Equipment-specific posteriors have their own independent checker.
                 packets = [p for p in seen.values() if p["group"] == family]
                 check(
                     "duration_availability",

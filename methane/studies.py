@@ -1237,6 +1237,7 @@ All coefficients are illustrative. Numerical checks are not empirical calibratio
         for companion in (
             "recovery_loop_reference.py",
             "autonomy_reference.py",
+            "duration_reference.py",
             "performance_reference.py",
         ):
             if "methane/" + companion in source:

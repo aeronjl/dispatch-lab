@@ -20,21 +20,46 @@ from methane.services.uncertain_timing import GROUPS, envelope, group, scaled, s
 VERSION = "uncertain-service-process-planning/1"
 
 
+def nominal_only(options, runtime, belief):
+    """A true null model has neither duration, weather nor completion uncertainty.
+
+    Reuse the validated nominal solve, including its recovery outcome tree. Do
+    not spend another time-limited solve choosing among equivalent optima.
+    """
+    return (
+        all(pair == [1, 1] for pair in options["duration_bounds"].values())
+        and options["weather_factors"] == [1]
+        and not options["terminal_minimum"]
+        and runtime.config.mission_failure_probability == 0
+        and all(v["interrupted"] == 0 for v in belief["reliability"].values())
+    )
+
+
 def quantile(belief, q, elapsed=0):
-    mass = []
-    for (a, b), w in zip(belief["bins"], belief["weights"], strict=True):
-        lower = max(a, elapsed)
-        portion = w * max(0, b - lower) / (b - a) if b > a else w * (b > elapsed)
-        mass.append((lower, b, portion))
-    total = sum(w for _, _, w in mass)
-    if total <= 0:
+    """Inverse CDF of a uniform mixture, including overlapping intervals/atoms."""
+    if not 0 <= q <= 1:
+        raise ValueError("Quantile must lie between zero and one")
+    elapsed = max(elapsed, belief.get("minimum_elapsed_factor", 0))
+    bins, weights = belief["bins"], belief["weights"]
+
+    def cdf(x):
+        return sum(
+            w * (max(0, min(1, (x - a) / (b - a))) if b > a else float(x >= b))
+            for (a, b), w in zip(bins, weights, strict=True)
+        )
+
+    initial = cdf(elapsed)
+    if 1 - initial <= 1e-12:
         raise ValueError("Unfinished work is outside the duration belief support")
-    target = q * total
-    for a, b, w in mass:
-        if w and target <= w:
-            return a + (b - a) * target / w
-        target -= w
-    return mass[-1][1]
+    target = initial + q * (1 - initial)
+    lo, hi = elapsed, max(b for _, b in bins)
+    for _ in range(64):
+        middle = (lo + hi) / 2
+        if cdf(middle) >= target:
+            hi = middle
+        else:
+            lo = middle
+    return hi
 
 
 def prediction(plan, belief, q, now, cursor=0, entered=False):
@@ -53,7 +78,9 @@ def prediction(plan, belief, q, now, cursor=0, entered=False):
             continue
         key = group(plan, raw)
         elapsed = max(0, now - slots[i][0]) / raw.duration_hours if i == cursor and entered else 0
-        factor = quantile(belief["durations"][key], q, elapsed) if key else 1
+        from methane.duration_population import for_plan
+
+        factor = quantile(for_plan(belief, plan, key), q, elapsed) if key else 1
         stages.append(scaled(raw, factor))
     return replace(plan, stages=tuple(stages))
 
@@ -133,11 +160,27 @@ def evaluate(runtime, plant, state, forecast, capacity_kw, costs, targets, **kwa
     if belief is None:
         raise ValueError("Uncertainty planning requires recorded current beliefs")
     belief = copy.deepcopy(belief)
-    if options["mode"] == "fixed":
+    if options["mode"] == "fixed" and "duration_model" not in options:
         for item in belief["durations"].values():
             item["weights"] = [1 / len(item["bins"])] * len(item["bins"])
         belief["reliability"] = {}
     solar = (belief.get("performance") or {}).get("solar") or {}
+    contradicted = [
+        asset + "/" + key
+        for asset, groups in belief.get("equipment_durations", {}).items()
+        for key, item in groups.items()
+        if item.get("unsupported")
+    ]
+    if contradicted and options["mode"] != "fixed":
+        baseline.update(state="unresolved", current_requests=[])
+        baseline["uncertainty_planning"] = dict(
+            version=VERSION,
+            status="model-inadequacy",
+            assumptions=copy.deepcopy(options),
+            reason="Observed duration contradicts the equipment/job model: "
+            + ", ".join(contradicted),
+        )
+        return baseline
     if (
         options["mode"] != "fixed"
         and "feasible_multiplier_interval" in solar
@@ -152,6 +195,17 @@ def evaluate(runtime, plant, state, forecast, capacity_kw, costs, targets, **kwa
         )
         baseline["constraints"].append(
             dict(condition="unexplained reference observations", reason=solar["model_evidence"])
+        )
+        return baseline
+    if nominal_only(options, runtime, belief):
+        baseline["uncertainty_planning"] = dict(
+            version=VERSION,
+            status="canonical-nominal",
+            assumptions=copy.deepcopy(options),
+            belief_id=identity(belief),
+            reason="All duration factors and weather factors are one, interruption probability is zero, and no additional terminal constraint is requested. Reused the validated nominal candidate and its recovery tree.",
+            hypotheses=[],
+            outcome={},
         )
         return baseline
     selected = kwargs.get("selections", ())

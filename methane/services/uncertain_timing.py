@@ -155,13 +155,14 @@ def visit_reservations(visit):
 
 
 class BoundedExecutive(Executive):
-    def __init__(self, ledger, effect_port, factors):
+    def __init__(self, ledger, effect_port, factors, *, job_clock=None):
         super().__init__(ledger, effect_port)
         self._factors = dict(factors)
         self._execution_plans, self._contracts = {}, {}
         self._integrating = False
+        self._job_clock = job_clock
 
-    def _physical_plan(self, plan, starting_at=None):
+    def _physical_plan(self, plan, starting_at=None, factors=None):
         if plan.timing is None:
             return plan
         value = plan.timing
@@ -169,7 +170,7 @@ class BoundedExecutive(Executive):
         for raw, bounds, key in zip(
             value["nominal_stages"], value["bounds"], value["groups"], strict=True
         ):
-            factor = self._factors[key] if key else 1
+            factor = (factors or self._factors)[key] if key else 1
             if not bounds[0] <= factor <= bounds[1]:
                 raise ValueError(
                     "Actual task duration lies outside its declared reservation support"
@@ -183,18 +184,26 @@ class BoundedExecutive(Executive):
         )
 
     def submit(self, plan):
-        physical = self._physical_plan(plan)
+        prepared = self._job_clock.prepare([plan]) if self._job_clock else None
+        factors = prepared[1][plan.order.order_id]["factors"] if prepared else None
+        physical = self._physical_plan(plan, factors=factors)
         key = super().submit(plan)
+        if prepared:
+            self._job_clock.commit(prepared)
         self._contracts[key], self._execution_plans[key] = plan, physical
         return key
 
     def submit_visit(self, visit):
+        prepared = self._job_clock.prepare(visit.members) if self._job_clock else None
         physical, at = {}, visit.starting_at
         for p in visit.members:
-            actual = self._physical_plan(p, at)
+            factors = prepared[1][p.order.order_id]["factors"] if prepared else None
+            actual = self._physical_plan(p, at, factors)
             physical[p.order.order_id] = actual
             at = actual.ending_at
         key = super().submit_visit(visit)
+        if prepared:
+            self._job_clock.commit(prepared)
         self._contracts.update({p.order.order_id: p for p in visit.members})
         self._execution_plans.update(physical)
         return key
@@ -273,6 +282,7 @@ class BoundedExecutive(Executive):
                     dict(
                         id=f"{key}/{i}",
                         order_id=key,
+                        asset_id=original.asset.asset_id,
                         action=original.order.action,
                         group=original.timing["groups"][i],
                         phase=original.stages[i].phase,

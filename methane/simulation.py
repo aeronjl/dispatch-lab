@@ -980,6 +980,10 @@ def _run(
                     interval_truth["service_effects"] = service_record.pop("retrospective_effects")
                     if "random_draws" in service_record:
                         interval_truth["service_randomness"] = service_record.pop("random_draws")
+                    if "retrospective_job_clocks" in service_record:
+                        interval_truth["service_job_clocks"] = service_record.pop(
+                            "retrospective_job_clocks"
+                        )
                     if "hardware_execution" in service_record:
                         interval_truth["hardware_execution"] = service_record.pop(
                             "hardware_execution"

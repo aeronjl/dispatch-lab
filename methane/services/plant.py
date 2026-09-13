@@ -364,10 +364,17 @@ class PlantServices:
             from methane.services.uncertain_timing import GROUPS, BoundedExecutive
 
             actual_options = execution_options or options
+            factors = {key: getattr(actual_options, key + "_time_factor") for key in GROUPS}
+            job_clock = None
+            if "duration_model" in self.autonomy:
+                from methane.services.job_clock import JobClock
+
+                job_clock = JobClock(self.autonomy["duration_model"], factors, seed)
             self.executive = BoundedExecutive(
                 self.ledger,
                 self._effects,
-                {key: getattr(actual_options, key + "_time_factor") for key in GROUPS},
+                factors,
+                job_clock=job_clock,
             )
         from methane.services.hardware import HardwareMonitor
 
@@ -1589,6 +1596,13 @@ class PlantServices:
         record, c = self.interval, self.config
         if self.autonomy:
             record["duration_observations"] = self.executive.observed_durations()
+            if self.executive._job_clock:
+                clocks = self.executive._job_clock.retrospective()
+                record["retrospective_job_clocks"] = {
+                    p["order"]["order_id"]: clocks[p["order"]["order_id"]]
+                    for p in record["new_missions"]
+                    if p["order"]["order_id"] in clocks
+                }
         record["retrospective_effects"] = self._effects.commit()
         if self._effects.random_events is not None:
             record["random_draws"] = self._effects.random_events.retrospective(

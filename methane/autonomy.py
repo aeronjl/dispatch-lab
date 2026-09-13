@@ -37,9 +37,19 @@ SCOPE = (
 
 
 def validate(value):
-    if not isinstance(value, dict) or set(value) != set(DEFAULT):
+    from methane.duration_population import AUTONOMY_VERSION
+    from methane.duration_population import validate as validate_population
+
+    extended = isinstance(value, dict) and value.get("version") == AUTONOMY_VERSION
+    if not isinstance(value, dict) or set(value) != set(DEFAULT) | (
+        {"duration_model"} if extended else set()
+    ):
         raise ValueError("Autonomy requires every versioned assumption explicitly")
-    if value["version"] != VERSION or value["mode"] not in ("fixed", "adaptive", "risk-aware"):
+    if value["version"] not in (VERSION, AUTONOMY_VERSION) or value["mode"] not in (
+        "fixed",
+        "adaptive",
+        "risk-aware",
+    ):
         raise ValueError("Unsupported autonomous service mode")
     bounds = value["duration_bounds"]
     if not isinstance(bounds, dict) or set(bounds) != set(GROUPS):
@@ -81,6 +91,8 @@ def validate(value):
         raise ValueError("Terminal minima require named nonnegative physical states")
     if not isinstance(value["source"], str) or not value["source"].strip():
         raise ValueError("Record the evidence or assumption behind autonomous service uncertainty")
+    if extended:
+        validate_population(value["duration_model"], bounds)
     digest(value)
     return copy.deepcopy(value)
 
@@ -95,6 +107,13 @@ def validate_world(world):
         low, high = options["duration_bounds"][key]
         if not low <= x <= high:
             raise ValueError("Actual duration exceeds declared support: " + key)
+        if (
+            "duration_model" in options
+            and x not in options["duration_model"]["groups"][key]["persistent_factors"]
+        ):
+            raise ValueError(
+                "Actual persistent equipment factor is outside its declared grid: " + key
+            )
     validate_support_events(world.get("support_events", []))
 
 
@@ -211,7 +230,7 @@ class Beliefs:
 
     def record(self):
         duration = {}
-        for key in GROUPS:
+        for key in () if "duration_model" in self.options else GROUPS:
             lo, hi = self.options["duration_bounds"][key]
             bins = (
                 [(lo + (hi - lo) * i / 8, lo + (hi - lo) * (i + 1) / 8) for i in range(8)]
@@ -358,8 +377,8 @@ class Beliefs:
                 pending_verifications=sum(r["pending_verification"] for r in rows),
                 interpretation="Beta-binomial work-completion model conditional on attempted action. Completion probability is not repair success; unverified recovery remains unresolved.",
             )
-        return dict(
-            version=VERSION,
+        record = dict(
+            version=self.options["version"],
             hour=self.hour,
             options=copy.deepcopy(self.options),
             durations=duration,
@@ -367,6 +386,11 @@ class Beliefs:
             evidence_ids=sorted(self.durations),
             scope=SCOPE,
         )
+        if "duration_model" in self.options:
+            from methane.duration_population import record as population_record
+
+            record.update(population_record(self.options, list(self.durations.values()), self.hour))
+        return record
 
 
 class ReferenceMonitors:

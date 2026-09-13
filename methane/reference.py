@@ -589,7 +589,15 @@ def executed_service_spans(plan, options, visit_members=()):
         if not timing:
             return [(s, D(s["duration_hours"])) for s in p["stages"]]
         return [
-            (s, D(s["duration_hours"]) * D(options.get(g + "_time_factor", 1) if g else 1))
+            (
+                s,
+                D(s["duration_hours"])
+                * D(
+                    p.get("_reference_factors", {}).get(g, options.get(g + "_time_factor", 1))
+                    if g
+                    else 1
+                ),
+            )
             for s, g in zip(timing["nominal_stages"], timing["groups"], strict=True)
         ]
 
@@ -2738,6 +2746,15 @@ def audit(result):
     p, scenario = result["config"]["plant"], result["config"]["scenario"]
     checks, failures = [], []
     try:
+        if (
+            result.get("provenance", {})
+            .get("uncertainty_world", {})
+            .get("autonomy", {})
+            .get("duration_model")
+        ):
+            companion = runpy.run_path(str(Path(__file__).with_name("duration_reference.py")))
+            result, duration_checks = companion["prepare"](result)
+            checks.extend(duration_checks)
         if any(
             r["decision"].get("performance_estimates")
             for rows in result["records"].values()

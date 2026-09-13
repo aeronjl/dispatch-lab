@@ -1,18 +1,18 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "cf54ea951a22a746506e1d41685050894952d6edf72984accbc682b520be0d0c",
+  "source": "e8f4b092a5ef94f55b22dc14a4f2470efefcf70d928a4b18fadb81de4a1a22ac",
   "topics": {
     "battery": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "battery": {
             "bindings": {
               "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "90% round-trip efficiency is an assumption at the model bus. No standby loss, thermal response, state-dependent efficiency, physical fade or ageing feedback. Wear cost is not a capacity model.",
@@ -38,7 +38,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -243,20 +243,24 @@
           "battery": "d0e0f86383e8b00165fb5fe72cda45e76f2c6a8ca1059bda49dfb44bc84198aa"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -293,6 +297,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -301,7 +306,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -320,15 +325,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "67d26dedbfe54e7d7ebd2aa63e80af1f0f4a0da0453048d2785dc5986169dde6"
@@ -602,7 +607,7 @@
     },
     "bus": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "coupling": {
             "bindings": {
@@ -612,7 +617,7 @@
               "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "No voltage, frequency, ramp, protection or sub-hour ride-through model. One-hour energy sufficiency does not demonstrate real-time physical feasibility.",
@@ -727,21 +732,25 @@
           "reactor": "d57d61fe620e00837393d046cb573e7877012eeb867a752a7d86ab213b32b768"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
           "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -778,6 +787,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -786,7 +796,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -805,15 +815,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "f813abc413a5bfb56f91290cac55ac513d8e7ce95c8bc3667e11ad6ce7123e1f"
@@ -1401,14 +1411,14 @@
     },
     "co2": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "chemistry": {
             "bindings": {
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
               "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
             "checks": [
@@ -1440,7 +1450,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "No pressure, temperature, compressor consumption, usable heel, leakage, boil-off, delivery purity or unloading equipment. Supply quantities and timing are scenarios, not contracted logistics.",
@@ -1469,7 +1479,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -1669,20 +1679,24 @@
           "co2": "e0692c8252db7cc11a2b929fd31256b9c5734a723dc7ed5d67988cff77d98c9f"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -1719,6 +1733,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -1727,7 +1742,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -1746,15 +1761,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "4b04e26e3ceba15519d8068d055efc6b8609b9db09f65aa06d6f72dce1612626"
@@ -1944,22 +1959,27 @@
     },
     "controllers": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "control": {
             "bindings": {
+              "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
+              "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+              "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+              "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
               "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
               "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+              "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
               "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Weights, priors, probe size, retries and risk budgets are policy choices. Optimality is bounded by information, terminal inventory treatment, candidate coverage and solver termination; model mismatch is separate.",
@@ -1968,11 +1988,12 @@
               "tests/test_investigation_planning.py",
               "tests/test_uncertainty.py",
               "tests/test_adaptation.py",
-              "tests/test_recovery_loop.py"
+              "tests/test_recovery_loop.py",
+              "tests/test_duration_population.py"
             ],
             "evidence_status": "Policy choice and bounded approximation",
             "id": "control",
-            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity.",
+            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
             "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
             "priority": 1,
             "review_status": "reviewed",
@@ -1994,7 +2015,7 @@
               "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "No voltage, frequency, ramp, protection or sub-hour ride-through model. One-hour energy sufficiency does not demonstrate real-time physical feasibility.",
@@ -2020,14 +2041,19 @@
           },
           "experiment": {
             "bindings": {
+              "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+              "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+              "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+              "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
-              "methane/simulation.py": "4b0265ae3d57e8d27113af2fc3afddf6f6630d1a70d35b066870bde81f52f924",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
+              "methane/simulation.py": "62a7bec43a278114bd5c2e4740b99e682312ae41f607d675a18ece990555bea4",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Repeatability does not establish realism; time-limited optimization need not reproduce identical numerical decisions. Model versions and source identities must accompany claims.",
@@ -2035,11 +2061,12 @@
               "tests/test_engineering.py",
               "tests/test_studies.py",
               "tests/test_uncertainty.py",
-              "tests/test_adaptation.py"
+              "tests/test_adaptation.py",
+              "tests/test_duration_population.py"
             ],
             "evidence_status": "Experiment design",
             "id": "experiment",
-            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope.",
+            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
             "next_data": "Separate scenario design, calibration data and blind evaluation. Compare inventories, failures, solver limitations and service obligations at the same boundary.",
             "priority": 1,
             "review_status": "reviewed",
@@ -2618,22 +2645,26 @@
       "bindings": {
         "contracts": {},
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
           "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
@@ -2671,6 +2702,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -2679,7 +2711,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -2698,18 +2730,18 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
-        "narrative": "0e65175b95c4d10cad138e39cd614ac19c06d799d6b7147de15cfe3ac492a21a"
+        "narrative": "25cc2d35707d2fc67e67cd0f08128fc0fa9fa655bbf3a9191755398747600d21"
       },
       "configuration_reference": {
         "capacity_fraction": 1,
@@ -2877,6 +2909,13 @@
           "controls": [],
           "equation": "",
           "terms": [],
+          "text": "Service autonomy version 2 separates a persistent equipment factor from a fresh bounded multiplier for each accepted job. Completed and unfinished phase clocks update equipment-specific estimates without revealing private execution factors. Correlated phases of one job count once. A return journey can use that same job's observed travel factor; a future job retains fresh variability. An observation outside declared support makes the model inapplicable rather than silently widening its bounds. Studies can select this clock model explicitly. Observation calibration has a predeclared time holdout and records field versus simulated sources. No matched field duration dataset has yet calibrated these illustrative distributions.",
+          "title": "Equipment uncertainty and individual jobs"
+        },
+        {
+          "controls": [],
+          "equation": "",
+          "terms": [],
           "text": "The opt-in autonomy model keeps physical phase clocks private within explicit resource-reservation bounds. Completed phase boundaries and right-censored elapsed work update a finite duration model; completion is distinct from verified recovery. Fixed, adaptive and risk-aware modes share the original assumptions. Risk-aware candidates combine declared weather regimes and shared duration quantiles with process dispatch, robot charging, recovery-test windows and terminal reserves. Current actions agree across all outcomes; future differences require an eligible observation. Bounds, weights and dependence are assumptions, not calibration. Shared visits and stranded-robot charging use conservative envelopes, and unresolved candidates retain their reason and feasible fallback. The first service system supports explicit current-only support outages; it does not predict an unavailable future timetable or optimise an entire contingent retrieval fleet.",
           "title": "Plan with uncertain service time"
         }
@@ -2890,22 +2929,27 @@
     },
     "diagnosis": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "control": {
             "bindings": {
+              "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
+              "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+              "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+              "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
               "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
               "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+              "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
               "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Weights, priors, probe size, retries and risk budgets are policy choices. Optimality is bounded by information, terminal inventory treatment, candidate coverage and solver termination; model mismatch is separate.",
@@ -2914,11 +2958,12 @@
               "tests/test_investigation_planning.py",
               "tests/test_uncertainty.py",
               "tests/test_adaptation.py",
-              "tests/test_recovery_loop.py"
+              "tests/test_recovery_loop.py",
+              "tests/test_duration_population.py"
             ],
             "evidence_status": "Policy choice and bounded approximation",
             "id": "control",
-            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity.",
+            "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
             "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
             "priority": 1,
             "review_status": "reviewed",
@@ -2937,7 +2982,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "55 matches a DOE 2022 system benchmark numerically, not a particular plant calibration. A DC-bus input needs an explicit rectifier/balance-of-plant boundary. Startup, standby, turndown, pressure and load-dependent efficiency are not established.",
@@ -2967,7 +3012,7 @@
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
               "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Fault schedules and categorical causes are test scenarios, not estimated incidence, MTBF or a complete failure-mode analysis. A contact cannot uniquely diagnose all equipment faults.",
@@ -2997,7 +3042,7 @@
               "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
               "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
               "methane/services/inspection.py": "ae777006f3d17e3bc0156baeb50ba26944bc4ad74997ac9fde278935c77729a7",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Prepared test points and a common contact are not guaranteed OEM features. Thresholds, read errors and references are uncalibrated. Reference checks on contacts do not calibrate a hydrogen flow meter.",
             "checks": [
@@ -3031,7 +3076,7 @@
               "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455",
               "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
               "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Generic module replacement and erasing a flow bias lack a named replaceable part, reference instrument, procedure and cause-clearance test. Remote release addresses only declared control holds. All capability conclusions are conditional.",
             "checks": [
@@ -3062,7 +3107,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3\u03c3 threshold do not establish a field false-alarm rate.",
@@ -4174,20 +4219,24 @@
       "bindings": {
         "contracts": {},
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -4225,6 +4274,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -4233,7 +4283,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -4252,15 +4302,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "0da9db2720f73ac8676baec2085225fb17112ae5fb382005984ac36cc37c062a"
@@ -4409,7 +4459,7 @@
     },
     "economics": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "economics": {
             "bindings": {
@@ -4418,7 +4468,7 @@
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
               "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "EUR defaults have no quotations, price year, location-specific tariffs or matched equipment scope. Purchased water is 12 L/kg H\u2082 versus 9 kg/kg reaction consumption; the additional treatment/handling allowance is not an independently tracked water process. Linear capacity scaling and wear proxies are scenario assumptions. No annual ROI can be inferred from short injected-fault windows.",
@@ -4450,7 +4500,7 @@
               "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
               "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
               "methane/services/maintenance.py": "5e43715f03cdacb5cc82bd144bbffcd0ce5729d00ba7a8367c84a42c05438e00",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Fixed intervals, success probabilities and calendar lives are assumptions. Preventive maintenance is not a measured hazard reduction or a physical degradation model.",
             "checks": [
@@ -6609,20 +6659,24 @@
       "bindings": {
         "contracts": {},
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -6659,6 +6713,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -6667,7 +6722,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -6686,15 +6741,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "f34bff6533d7f1b4184bcbce463a73aa847a06040cdb055b2e329dfc9d4484cb"
@@ -6894,14 +6949,14 @@
     },
     "electrolyser": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "chemistry": {
             "bindings": {
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
               "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
             "checks": [
@@ -6933,7 +6988,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "55 matches a DOE 2022 system benchmark numerically, not a particular plant calibration. A DC-bus input needs an explicit rectifier/balance-of-plant boundary. Startup, standby, turndown, pressure and load-dependent efficiency are not established.",
@@ -6961,7 +7016,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -6992,7 +7047,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3\u03c3 threshold do not establish a field false-alarm rate.",
@@ -7311,20 +7366,24 @@
           "electrolyser": "5ec0307539bbd01294066a6983a3571f85987e5503d1308fe07eb18e3f564a65"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -7361,6 +7420,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -7369,7 +7429,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -7388,15 +7448,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "3486fe6750c07eabc55dad333f6c6703ff4570cc6754d9429b1f5fb9aef22241"
@@ -7610,7 +7670,7 @@
     },
     "experiments": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "coupling": {
             "bindings": {
@@ -7620,7 +7680,7 @@
               "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "No voltage, frequency, ramp, protection or sub-hour ride-through model. One-hour energy sufficiency does not demonstrate real-time physical feasibility.",
@@ -7651,7 +7711,7 @@
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
               "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "EUR defaults have no quotations, price year, location-specific tariffs or matched equipment scope. Purchased water is 12 L/kg H\u2082 versus 9 kg/kg reaction consumption; the additional treatment/handling allowance is not an independently tracked water process. Linear capacity scaling and wear proxies are scenario assumptions. No annual ROI can be inferred from short injected-fault windows.",
@@ -7680,14 +7740,19 @@
           },
           "experiment": {
             "bindings": {
+              "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+              "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+              "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+              "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
-              "methane/simulation.py": "4b0265ae3d57e8d27113af2fc3afddf6f6630d1a70d35b066870bde81f52f924",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
+              "methane/simulation.py": "62a7bec43a278114bd5c2e4740b99e682312ae41f607d675a18ece990555bea4",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Repeatability does not establish realism; time-limited optimization need not reproduce identical numerical decisions. Model versions and source identities must accompany claims.",
@@ -7695,11 +7760,12 @@
               "tests/test_engineering.py",
               "tests/test_studies.py",
               "tests/test_uncertainty.py",
-              "tests/test_adaptation.py"
+              "tests/test_adaptation.py",
+              "tests/test_duration_population.py"
             ],
             "evidence_status": "Experiment design",
             "id": "experiment",
-            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope.",
+            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
             "next_data": "Separate scenario design, calibration data and blind evaluation. Compare inventories, failures, solver limitations and service obligations at the same boundary.",
             "priority": 1,
             "review_status": "reviewed",
@@ -7717,7 +7783,7 @@
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
               "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Fault schedules and categorical causes are test scenarios, not estimated incidence, MTBF or a complete failure-mode analysis. A contact cannot uniquely diagnose all equipment faults.",
@@ -7746,7 +7812,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -7780,7 +7846,7 @@
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "methane/weather.py": "9e96615f383685cc62d771746c6a37f4f7d6619909c65b56a02a1a10d4305f43",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
@@ -10426,26 +10492,30 @@
       "bindings": {
         "contracts": {},
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
-          "methane/bundle.py": "adda2ed37dd8daad0a9d178e1988a1e59112e4972ffdbdbbc2afae44122bb42a",
+          "methane/bundle.py": "0907e45165b53e37e2bdabd0ff37262576547c96ba35d5d878b4d431bfde3821",
           "methane/computation_studies.py": "640fff1e6f3d058049cb8b7dc3e3142d610e385aa63c3ce1b32213409b15af5e",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
           "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
-          "methane/documentation.py": "1205fae55ee6c537b6da4c2c7190c666dca94bbd3b91d433fd8df3b3c2a172ef",
+          "methane/documentation.py": "0100fed7680b2358bf8bee83a9fd14ca85a5762a42e97b01af0f6d23aeb443d1",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/evidence.py": "5962057e6253e1cb2b14aab2c1efb086163850bc1a1260594236e3eea6629f4e",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/field_studies.py": "0f0f8aec4ece641d6fbee89380aaab4ab00ce3b88c0590407405109d37bd822a",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/offline_model.py": "cb4688574241ddd7f5fdf1992d5e3a331d5ada2412ecb7a5c685aedbe6256072",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
@@ -10483,6 +10553,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -10491,7 +10562,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -10510,19 +10581,19 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/studies.py": "ab3ea76d4d1a47b86e859a4056f0c3dad783066248ea54478fe275034f6e7063",
+          "methane/studies.py": "8eafa6d8325a5ca7e3265c739443b1b3533960e615a33fac2bf0b2065df07389",
           "methane/study_bundle_check.py": "35a2cafbf3e65041576df86c268319b598a40986ea52357c680ed746beb41242",
           "methane/study_presentation.py": "cd21d284483b28c78d895df0396e19d535b18e8deb86a119e77085bf189a82bf",
           "methane/study_service.py": "f8f71960e060f6f70dec8df2fa43c4070b7915ce9dbfc90bee69403baf5c9adf",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "befcfd39cffb7c3a7af1adc2330a77bed3c7e1b86c15a19abbcbbb341ed9e4f7"
@@ -10709,14 +10780,14 @@
     },
     "hydrogen": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "chemistry": {
             "bindings": {
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
               "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
             "checks": [
@@ -10748,7 +10819,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "No pressure, temperature, compressor consumption, usable heel, leakage, boil-off, delivery purity or unloading equipment. Supply quantities and timing are scenarios, not contracted logistics.",
@@ -10777,7 +10848,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -10808,7 +10879,7 @@
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3\u03c3 threshold do not establish a field false-alarm rate.",
@@ -11092,20 +11163,24 @@
           "hydrogen": "c0480a54a98e5897d5e4be69969259867233f3f53b3b8e9d1f381c17e011b39b"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -11142,6 +11217,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -11150,7 +11226,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -11169,15 +11245,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "5a6e33554f505e9a4040f1cc584ecb8c4cfdeb5fba37d89ae330be5a1589ae8a"
@@ -11379,14 +11455,14 @@
     },
     "reactor": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "chemistry": {
             "bindings": {
               "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
               "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
             "checks": [
@@ -11417,7 +11493,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -11449,7 +11525,7 @@
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
               "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
               "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "C=0.3 kWh/K and UA=0.08 kW/K are unmeasured. No spatial hot spots, catalyst kinetics, feed sensible heat, pressure, conversion efficiency, condensation or purge. The 4-hour commitment is a scheduling assumption.",
@@ -11796,20 +11872,24 @@
           "reactor": "d57d61fe620e00837393d046cb573e7877012eeb867a752a7d86ab213b32b768"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -11846,6 +11926,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -11854,7 +11935,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -11873,15 +11954,15 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
           "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "0fdc798cbfa073578329043eb92de6518238a49acfacf904b77dc9ba62f4bddd"
@@ -12224,7 +12305,7 @@
     },
     "solar": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "cleaning": {
             "bindings": {
@@ -12234,7 +12315,7 @@
               "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
               "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
               "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
             },
             "boundary": "Uniform deposition, ideal soiling knowledge, efficacy and brush life are assumptions. Weather is often assumed rather than site data. Global annual soiling cannot calibrate 0.5 percentage points/day. Cleaning cannot remove module damage.",
             "checks": [
@@ -12263,7 +12344,7 @@
             "bindings": {
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
@@ -12297,7 +12378,7 @@
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
               "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Nameplate is a reference rating, not by itself a physical output ceiling. Sections have no string mismatch, diode, wind or snow model. Generic losses, section soiling and service soiling need non-overlapping definitions.",
@@ -13189,20 +13270,24 @@
           "solar": "e87898e334726369e2b27d376e72e1be7426c497e806c61da422660c7108f3c1"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
@@ -13240,6 +13325,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -13248,7 +13334,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -13267,8 +13353,8 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
@@ -13276,7 +13362,7 @@
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "a47b00fd1de13f0904c96a484a09a2af87787554eef1a3f3d2248b7b9e5c8c2e"
@@ -13597,18 +13683,23 @@
     },
     "weather": {
       "assumption_review": {
-        "edition": "2026-09-13 / 4",
+        "edition": "2026-09-13 / 5",
         "groups": {
           "experiment": {
             "bindings": {
+              "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
               "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
               "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
               "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+              "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+              "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+              "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
-              "methane/simulation.py": "4b0265ae3d57e8d27113af2fc3afddf6f6630d1a70d35b066870bde81f52f924",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
+              "methane/simulation.py": "62a7bec43a278114bd5c2e4740b99e682312ae41f607d675a18ece990555bea4",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Repeatability does not establish realism; time-limited optimization need not reproduce identical numerical decisions. Model versions and source identities must accompany claims.",
@@ -13616,11 +13707,12 @@
               "tests/test_engineering.py",
               "tests/test_studies.py",
               "tests/test_uncertainty.py",
-              "tests/test_adaptation.py"
+              "tests/test_adaptation.py",
+              "tests/test_duration_population.py"
             ],
             "evidence_status": "Experiment design",
             "id": "experiment",
-            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope.",
+            "mechanism": "Named seeds and saved forecasts preserve inputs. Simulation duration, solver limits, model identifiers and archive context define comparison scope. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration.",
             "next_data": "Separate scenario design, calibration data and blind evaluation. Compare inventories, failures, solver limitations and service obligations at the same boundary.",
             "priority": 1,
             "review_status": "reviewed",
@@ -13640,7 +13732,7 @@
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
               "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
             "boundary": "Nameplate is a reference rating, not by itself a physical output ceiling. Sections have no string mismatch, diode, wind or snow model. Generic losses, section soiling and service soiling need non-overlapping definitions.",
@@ -13674,7 +13766,7 @@
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
-              "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+              "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
               "methane/weather.py": "9e96615f383685cc62d771746c6a37f4f7d6619909c65b56a02a1a10d4305f43",
               "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
             },
@@ -14217,21 +14309,25 @@
           "weather": "6572739c9a0e000b8a24f0a8dad9abdeb9e889eeca51e51cf979606ce410a83e"
         },
         "implementations": {
+          "docs/equipment-job-uncertainty.md": "6357010a5701b63f072003d066ad931cd706c04650db304ca47fecd5f64fc3c7",
           "docs/uncertain-service-system.md": "6b7a27f4d64f142703aeb32eb26130602ec8ad953603f8eecd7440b101aa966a",
           "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
-          "methane/autonomy.py": "bebffbb827ecb08a63638d4221f1f41759ee035f991991d852ad153b0972a798",
-          "methane/autonomy_reference.py": "6bfa8c241b50772b7a3b6cee769eb31328e926bad2458ed009fd1991b44da0d2",
+          "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+          "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
           "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
           "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
           "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+          "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+          "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+          "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
           "methane/learning.py": "304bc29106e1e8ba0e8abffc48a476911759918aa718da8bde3e8c20f3f972fa",
-          "methane/model_topics.py": "a5a68582807f0d04039db5d218db5738a6841c6fa26dc1a3228b49fcbbb9d91b",
+          "methane/model_topics.py": "f23722127cf37ade13d58d2990db051fa14afffbfbf2d0224ba62feee03180e4",
           "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
           "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
           "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -14268,6 +14364,7 @@
           "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
           "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
           "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+          "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
           "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
           "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
           "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
@@ -14276,7 +14373,7 @@
           "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
           "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
           "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
-          "methane/services/plant.py": "5332b70d2f6e5cfc51f2801b681fc0433b2f9f7d0b7e488616004480aa831ae3",
+          "methane/services/plant.py": "abfca3a51b538d37782c1d020e1ad639ba956ce81ced4d1b2f583ecf1427c79a",
           "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
           "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
           "methane/services/pricing.py": "cccc5ebce1d1afdcdea05253cc4ef14f81fc61e1498d6ccf2bb9109407cff01d",
@@ -14295,8 +14392,8 @@
           "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
           "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
           "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
-          "methane/services/uncertain_planning.py": "1216aeed284689a6976272d9e2437a3d8d018bdeb993d91c0671fb4f0f865412",
-          "methane/services/uncertain_timing.py": "a2f6e7edbc8d6f02f11fef585975f5dcb66733a2405d2c23ab89572a0be1b29a",
+          "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+          "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
           "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
           "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
           "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
@@ -14304,7 +14401,7 @@
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
           "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
-          "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
+          "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
           "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a"
         },
         "narrative": "12dd9a17bf77a601b250fb436eb93d82bc4773545f908520f5ec1320b92de47f"
