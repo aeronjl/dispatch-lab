@@ -1,0 +1,20 @@
+[
+  {
+    "arm": "disclosed",
+    "edition_id": "30e0f1527483421984e634ae2434bdcc",
+    "report_id": "b3322c44ce284829888d916c822da64f",
+    "status": "complete"
+  },
+  {
+    "arm": "fixed",
+    "edition_id": "0100a3f6a72f41fa8d0d14feb2ade741",
+    "report_id": "af6c9d903b0544c0964d8dcac379739a",
+    "status": "complete"
+  },
+  {
+    "arm": "adaptive",
+    "edition_id": "df83e67ef14746b192eebdc0bfb8f3f0",
+    "report_id": "e13c6eb6c0694b28bd0e326b0aea3413",
+    "status": "complete"
+  }
+]

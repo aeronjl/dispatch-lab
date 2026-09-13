@@ -1,0 +1,287 @@
+{
+  "schema_version": "realism-sources/1",
+  "review_date": "2026-09-12",
+  "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+  "items": [
+    {
+      "id": "S01",
+      "title": "Ecoppia T4 datasheet",
+      "url": "https://www.ecoppia.com/warehouse/temp/ecoppia/T4_Datasheet.pdf",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated; file label 020321",
+      "accessed": "2026-09-12",
+      "access": "PDF pp. 2–4 inspected",
+      "scope": "Single-axis tracker geometry; up to 400 m² nightly, 3 m²/min; own PV dock; vendor maintenance. Product claims, not an independent reliability or cost estimate."
+    },
+    {
+      "id": "S02",
+      "title": "SolarCleano F1",
+      "url": "https://www.solarcleano.com/products/remote-solarcleano-f1",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Portable remote-controlled wet/dry cleaning with one operator, setup and access limitations. Its stated daily MW coverage is not an autonomous service rate."
+    },
+    {
+      "id": "S03",
+      "title": "ExRobotics products and services",
+      "url": "https://www.exrobotics.com/our-products",
+      "evidence_type": "Manufacturer/service description",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Inspection payloads, commissioned routes, charging, connectivity and service provision. Endurance and unattended-period claims lack an exposed fleet denominator."
+    },
+    {
+      "id": "S04",
+      "title": "AutoInspect: Towards Long-Term Autonomous Industrial Inspection",
+      "url": "https://arxiv.org/html/2404.12785v2",
+      "evidence_type": "Primary deployment research",
+      "publication": "22 April 2024, v2",
+      "accessed": "2026-09-12",
+      "access": "Full HTML, deployment tables inspected",
+      "scope": "Two deployments report mission success and minor/serious/fatal interventions. Calendar deployment time differs from active operation and intervention-free duration."
+    },
+    {
+      "id": "S05",
+      "title": "ANYmal X",
+      "url": "https://www.anybotics.com/robotics/anymal-x/",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Advertised Zone 1 IIB and inspection capabilities. This does not establish IIC hydrogen-area eligibility for the proposed payload and configuration."
+    },
+    {
+      "id": "S06",
+      "title": "Taurob Operator",
+      "url": "https://www.taurob.com/operator/",
+      "evidence_type": "Manufacturer prototype",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Explicitly a prototype. Constrained manipulation is a design prospect, not evidence of autonomous hydrogen-system replacement."
+    },
+    {
+      "id": "S07",
+      "title": "A Robot Factors Approach to Designing Modular Hardware",
+      "url": "https://www.eecs.harvard.edu/~jkwerfel/iros22melenbrink.pdf",
+      "evidence_type": "Primary laboratory research",
+      "publication": "IROS 2022",
+      "accessed": "2026-09-12",
+      "access": "Full author PDF inspected",
+      "scope": "Prepared mechanical/electrical and water-filter interfaces; redesign enables constrained manipulation. Laboratory tasks are not qualified hydrogen repairs."
+    },
+    {
+      "id": "S08",
+      "title": "DJI Dock 3 specifications",
+      "url": "https://enterprise.dji.com/dock-3/specs",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Dock max input 800 W and 12 m/s landing/operation wind specification. Backup power excludes aircraft charging and some thermal loads; maximum draw is not standby demand."
+    },
+    {
+      "id": "S09",
+      "title": "EASA Specific Category — Civil Drones",
+      "url": "https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/specific-category-civil-drones",
+      "evidence_type": "Regulator guidance",
+      "publication": "Current page accessed on review date",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "BVLOS operation is an example within the specific category; site and mission authorization remain separate from dock automation. EU scope."
+    },
+    {
+      "id": "S10",
+      "title": "UK CAA categories of UAS operations",
+      "url": "https://regulatorylibrary.caa.co.uk/2019-947/Content/AMC-GM/GM1%20Article%203%20Categories%20of.htm",
+      "evidence_type": "Regulator guidance",
+      "publication": "Current page accessed on review date",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "UK operation has its own applicable authorization framework; European product availability is not permission for a London mission."
+    },
+    {
+      "id": "S11",
+      "title": "Reinforcement Learning for RUG",
+      "url": "https://www.geckorobotics.com/resources/blog/reinforcement-learning-for-rug",
+      "evidence_type": "Manufacturer technical account",
+      "publication": "2 June 2025",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Specialist contact/ultrasonic inspection. Requires accessible material and a corresponding integrity model; no generic repair capability."
+    },
+    {
+      "id": "S12",
+      "title": "Renu Robotics autonomous vegetation management",
+      "url": "https://renurobotics.com/about-us/",
+      "evidence_type": "Manufacturer/service account",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Renubot, recharge infrastructure and Mission Control remote monitoring form a service system. Does not remove all human maintenance."
+    },
+    {
+      "id": "S13",
+      "title": "Swagelok calibration and switching modules",
+      "url": "https://products.swagelok.com/en/all-products/analytical-instrumentation/analytical-subsystems-press/calibrating-switching-modules/c/502?clp=true",
+      "evidence_type": "Manufacturer subsystem specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Conditioned sample/reference routing with pneumatic actuation. Not a complete analyzer or a hydrogen-flow calibration procedure."
+    },
+    {
+      "id": "S14",
+      "title": "Endress+Hauser Liquiline Control CDC90",
+      "url": "https://www.endress.com/en/field-instruments-overview/liquid-analysis-product-overview/pH-sensor-automatic-cleaning-calibration-cdc90",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Automatic pH/ORP cleaning/calibration with compatible assemblies and utilities, non-Ex applications. Not a hydrogen flow meter remedy."
+    },
+    {
+      "id": "S15",
+      "title": "Emerson corrosion and erosion monitoring",
+      "url": "https://www.emerson.com/en/measurement-instrumentation/catalog/corrosion-and-erosion-monitoring",
+      "evidence_type": "Manufacturer technology catalogue",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Technology-specific ultrasonic, acoustic and intrusive observations. A sensor family does not confer general fault observability or remaining-life truth."
+    },
+    {
+      "id": "S16",
+      "title": "Rotork IQ3 Pro intelligent actuators",
+      "url": "https://www.rotork.com/en/products/electric-intelligent-actuators/iq3-pro",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Purpose-built actuation and feedback. Cause-specific reset/interlock semantics require an engineered equipment interface; this product is not evidence for the simulated electrolyser reset."
+    },
+    {
+      "id": "S17",
+      "title": "Maximo completes 100 MW of robotic solar installation",
+      "url": "https://www.nasdaq.com/press-release/maximo-completes-100-mw-robotic-solar-installation-2026-03-25",
+      "evidence_type": "Company press release hosted by Nasdaq",
+      "publication": "25 March 2026",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Company-reported installation deployment. Construction task scope and site crews remain; not independent O&M autonomy evidence."
+    },
+    {
+      "id": "S18",
+      "title": "Next-generation Terafab completes field testing",
+      "url": "https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment",
+      "evidence_type": "Manufacturer announcement",
+      "publication": "19 March 2026",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Version-specific field-test/deployment announcement; planned availability is not a completed fleet deployment."
+    },
+    {
+      "id": "S19",
+      "title": "5B Maverick",
+      "url": "https://5b.co/en/5b-maverick",
+      "evidence_type": "Manufacturer specification",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Pre-wired deployable PV blocks use people and a telehandler. A site design alternative, not autonomous daily maintenance."
+    },
+    {
+      "id": "S20",
+      "title": "DOE technical targets for PEM electrolysis",
+      "url": "https://www.energy.gov/cmei/fuels/technical-targets-proton-exchange-membrane-electrolysis",
+      "evidence_type": "Government status/target table",
+      "publication": "2022 status and 2026 targets displayed",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "System 55 kWh/kg is a status guidepost; target 51 kWh/kg is aspirational. Continuous-life values do not determine intermittent-duty fault rates."
+    },
+    {
+      "id": "S21",
+      "title": "Hydrogen Shot Water Electrolysis Technology Assessment",
+      "url": "https://www.energy.gov/sites/default/files/2024-12/hydrogen-shot-water-electrolysis-technology-assessment.pdf",
+      "evidence_type": "Government technical assessment",
+      "publication": "December 2024",
+      "accessed": "2026-09-12",
+      "access": "Relevant PDF sections inspected",
+      "scope": "Stack and balance-of-plant scope, dynamic durability and development needs. No equipment-specific repair hazard or duration for this fixture."
+    },
+    {
+      "id": "S22",
+      "title": "Enapter EL 4.1 handbook",
+      "url": "https://handbook.enapter.com/electrolyser/el41/",
+      "evidence_type": "OEM operating documentation",
+      "publication": "Current online handbook",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "AEM equipment illustrates cause-specific faults, reset conditions, service escalation, utilities, telemetry and venting. Structural analogy only; do not transfer AEM numerical values to an unspecified 450 kW plant."
+    },
+    {
+      "id": "S23",
+      "title": "Bronkhorst MV-191-H2 datasheet",
+      "url": "https://products.bronkhorst.com/media/lbmdbkcf/3276-mv-191-h2-en-datasheet.pdf",
+      "evidence_type": "Manufacturer metrology specification",
+      "publication": "Modification printed 01-12-2025",
+      "accessed": "2026-09-12",
+      "access": "PDF specification inspected",
+      "scope": "Range-dependent reading/full-scale accuracy and temperature effects differ from 2% independent Gaussian noise. Flow/pressure scope is not a proposed plant meter selection."
+    },
+    {
+      "id": "S24",
+      "title": "DNV hydrogen and renewable flow calibration",
+      "url": "https://www.dnv.com/energy/services/laboratories-test-facilities/technology-centre-groningen-the-netherlands/hydrogen-and-renewable-flow-calibration/",
+      "evidence_type": "Calibration facility description",
+      "publication": "Undated current page",
+      "accessed": "2026-09-12",
+      "access": "Primary page inspected",
+      "scope": "Hydrogen-specific reference facilities and operating ranges. Blend calibration uncertainties cannot be transferred to pure-H2 or arbitrary on-site calibration."
+    },
+    {
+      "id": "S25",
+      "title": "Ignition and flow stopping considerations for hydrogen networks",
+      "url": "https://hysafe.info/uploads/papers/2023/114.pdf",
+      "evidence_type": "Primary HSE-authored technical paper",
+      "publication": "2023",
+      "accessed": "2026-09-12",
+      "access": "Relevant PDF passage inspected",
+      "scope": "Hydrogen gas-group IIC distinction; paper network/pressure scope differs from this plant. Used only to flag equipment certification compatibility."
+    },
+    {
+      "id": "S26",
+      "title": "Soiling losses — impact on photovoltaic power plants",
+      "url": "https://iea-pvps.org/wp-content/uploads/2023/01/IEA-PVPS-T13-21-2022-EXEC-SUMM-Soiling-Losses-PV-Plants.pdf",
+      "evidence_type": "IEA PVPS technical report executive summary",
+      "publication": "2022 report; January 2023 file",
+      "accessed": "2026-09-12",
+      "access": "Three-page executive summary inspected",
+      "scope": "Site-dependent soiling and measurement uncertainty. Global loss estimates are not London, Seville or Copenhagen daily deposition rates."
+    },
+    {
+      "id": "S27",
+      "title": "EU harmonised protocols for testing low temperature water electrolysers",
+      "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC122565/jrc122565_ltwe_harmonisation_online_identifier_4.pdf",
+      "evidence_type": "JRC technical testing protocol",
+      "publication": "2021",
+      "accessed": "2026-09-12",
+      "access": "PDF contents and relevant testing sections inspected",
+      "scope": "Reference conditions and measurement requirements; dynamic loading, cold starts and standby transitions require specified tests. Not field failure-rate data."
+    },
+    {
+      "id": "S28",
+      "title": "Determination of reaction kinetics in three phase CO₂ methanation",
+      "url": "https://publikationen.bibliothek.kit.edu/1000188810/171087110",
+      "evidence_type": "Peer-reviewed primary research, author repository",
+      "publication": "Online December 2025; journal issue March 2026",
+      "accessed": "2026-09-12",
+      "access": "Author-hosted publisher PDF inspected; DOI 10.1039/D5RE00337G",
+      "scope": "Reaction enthalpy and heat-management rationale supported; the liquid/catalyst experiment does not calibrate the fixture thermal capacity, heat loss or operating band."
+    }
+  ]
+}

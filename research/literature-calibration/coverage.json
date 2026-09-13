@@ -1,0 +1,199 @@
+{
+  "schema_version": "dispatch-lab/literature-coverage/1",
+  "baseline_registry": "docs/assumption-review.json",
+  "scope": "Group-level evidence progression. Does not relabel all individual parameters as calibrated.",
+  "groups": {
+    "layout": {
+      "title": "Capacities and initial conditions",
+      "status": "design_choice",
+      "sources": [
+        "density",
+        "t4",
+        "gekko"
+      ],
+      "finding": "Capacities and geometry are designs; select an internally compatible reference package before sizing conclusions."
+    },
+    "thermal": {
+      "title": "Reactor heat and operating envelope",
+      "status": "structural_change_required",
+      "sources": [
+        "slurry",
+        "fixed-bed",
+        "kinetics"
+      ],
+      "finding": "New digitized response benchmark; ambient losses, coolant exchange, startup and aged catalyst must be separated."
+    },
+    "chemistry": {
+      "title": "Stoichiometry and product boundary",
+      "status": "reference_calculation_available",
+      "sources": [
+        "nist-ch4",
+        "nist-co2",
+        "nist-h2",
+        "nist-water"
+      ],
+      "finding": "Molecular weights and gas enthalpies quantified. Feed enthalpy is consequential; ideal conversion remains explicit."
+    },
+    "electrolyser": {
+      "title": "Electrolyser system performance",
+      "status": "reference_fit_available",
+      "sources": [
+        "pem-data",
+        "pem-code",
+        "pem-dispatch",
+        "pem-age",
+        "jrc"
+      ],
+      "finding": "Raw-data fit complete. Plant transfer requires AC/DC, cooling, purification and standby boundaries."
+    },
+    "battery": {
+      "title": "Battery losses and power limits",
+      "status": "published_curve_available",
+      "sources": [
+        "battery"
+      ],
+      "finding": "Near-scale published cycle curve reproduced; raw SCADA and current fixture chemistry not matched."
+    },
+    "gas-storage": {
+      "title": "Gas buffers and deliveries",
+      "status": "reference_calculation_available",
+      "sources": [
+        "density",
+        "compression",
+        "co2-phase"
+      ],
+      "finding": "Density check points verified; usable pressure heel quantified. Compressor, vaporizer and purchase design still open."
+    },
+    "solar": {
+      "title": "PV conversion and clipping",
+      "status": "reference_fit_available",
+      "sources": [
+        "pv-data",
+        "pv-report"
+      ],
+      "finding": "Held-out temperature model fitted; back temperature not cell junction, no site yield or shading validation."
+    },
+    "weather": {
+      "title": "Weather provenance and forecast availability",
+      "status": "method_defined_data_extension_needed",
+      "sources": [
+        "forecast",
+        "soiling"
+      ],
+      "finding": "No new weather bias fit. Add rain/wind and calibrate lead-time errors with chronologically withheld seasons; reanalysis is not measured plant output."
+    },
+    "sensing": {
+      "title": "Measurement uncertainty and diagnosis",
+      "status": "bounded_reference_available",
+      "sources": [
+        "flow",
+        "pressure",
+        "methyinfra",
+        "gum"
+      ],
+      "finding": "Accuracy floors and span/temperature/drift terms now explicit; fault probabilities and residual covariance remain unmeasured."
+    },
+    "faults": {
+      "title": "Fault lifecycle and incidence",
+      "status": "mechanisms_supported_rates_open",
+      "sources": [
+        "wind2h2",
+        "pem-age",
+        "kinetics",
+        "hycred"
+      ],
+      "finding": "Failures have cause-specific persistence and recovery. No defensible modern fleet incidence rate extracted."
+    },
+    "cleaning": {
+      "title": "Cleaning physics and environmental limits",
+      "status": "named_specs_and_regional_evidence",
+      "sources": [
+        "soiling",
+        "abrasion",
+        "t4",
+        "gekko"
+      ],
+      "finding": "European soiling evidence and equipment rates available; exact site deposition/removal and permanent damage not fitted."
+    },
+    "inspection": {
+      "title": "Inspection channels and references",
+      "status": "published_deployment_and_mechanics",
+      "sources": [
+        "autoinspect",
+        "spot",
+        "dock3",
+        "gecko"
+      ],
+      "finding": "Inspection success and intervention are distinct. Observation detection confusion matrices not yet calibrated."
+    },
+    "recovery": {
+      "title": "Recovery and intervention capability",
+      "status": "capability_boundaries_supported",
+      "sources": [
+        "taurob",
+        "cdc90",
+        "enapter",
+        "wind2h2"
+      ],
+      "finding": "Bounded actuation/cleaning/calibration are not generic equipment repair. No autonomous PEM stack swap evidence."
+    },
+    "support": {
+      "title": "Support system and access",
+      "status": "named_specifications_available",
+      "sources": [
+        "gekko",
+        "t4",
+        "spot",
+        "dock3",
+        "ceora",
+        "sampling"
+      ],
+      "finding": "Explicit utilities, geometry, charging, operators and sampling lag replace generic support budgets in reference designs."
+    },
+    "maintenance": {
+      "title": "Reliability and routine maintenance",
+      "status": "definitions_supported_incidence_open",
+      "sources": [
+        "hycred",
+        "festo",
+        "autoinspect",
+        "wind2h2"
+      ],
+      "finding": "Avoid mixing cycle reliability, active-time failure and calendar intervention; no universal repair success or lead time."
+    },
+    "economics": {
+      "title": "Prices, allocations and decision economics",
+      "status": "updated_external_benchmark",
+      "sources": [
+        "dea",
+        "dea-brief"
+      ],
+      "finding": "Dated European capacity-specific costs provide benchmark; no 450kW installed quote or field-robot service contract inferred."
+    },
+    "control": {
+      "title": "Objectives and planning approximations",
+      "status": "policy_choice",
+      "sources": [],
+      "finding": "Risk preferences, minimum run and horizon are policies unless named equipment imposes them. Test utility after calibrated observation/boundary changes."
+    },
+    "coupling": {
+      "title": "Plant electrical and temporal boundary",
+      "status": "structural_change_required",
+      "sources": [
+        "density",
+        "pem-data",
+        "battery",
+        "nist-water",
+        "sampling"
+      ],
+      "finding": "Support electricity, pressure heels, feed enthalpy and evidence arrival all compete with production."
+    },
+    "experiment": {
+      "title": "Reproducibility and comparison settings",
+      "status": "verification_choice",
+      "sources": [],
+      "finding": "Keep fixed seeds, publication boundaries and paired weather; parameter calibration split separate from policy evaluation split."
+    }
+  },
+  "parameter_count": 407
+}

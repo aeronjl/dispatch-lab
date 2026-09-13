@@ -1,0 +1,82 @@
+{
+  "reference_checks": [
+    {
+      "temperature_k": 200,
+      "pressure_mpa": 1,
+      "z": 1.0067545044710082,
+      "reference_z": 1.0067545,
+      "molar_density_mol_per_l": 0.597326452457939,
+      "reference_molar_density": 0.59732645
+    },
+    {
+      "temperature_k": 300,
+      "pressure_mpa": 10,
+      "z": 1.0598528193342671,
+      "reference_z": 1.05985282,
+      "molar_density_mol_per_l": 3.782670484564419,
+      "reference_molar_density": 3.78267048
+    },
+    {
+      "temperature_k": 400,
+      "pressure_mpa": 50,
+      "z": 1.2430476300820887,
+      "reference_z": 1.24304763,
+      "molar_density_mol_per_l": 12.094490229067182,
+      "reference_molar_density": 12.09449023
+    },
+    {
+      "temperature_k": 500,
+      "pressure_mpa": 200,
+      "z": 1.7446162945667256,
+      "reference_z": 1.74461629,
+      "molar_density_mol_per_l": 27.57562673349054,
+      "reference_molar_density": 27.57562673
+    },
+    {
+      "temperature_k": 200,
+      "pressure_mpa": 200,
+      "z": 2.8595344874784483,
+      "reference_z": 2.85953449,
+      "molar_density_mol_per_l": 42.06006951725914,
+      "reference_molar_density": 42.06006952
+    }
+  ],
+  "storage_examples": [
+    {
+      "pressure_bar": 20,
+      "z": 1.0119030685829749,
+      "density_kg_per_m3": 1.6346741136028644,
+      "volume_for_60kg_m3": 36.704563619569676,
+      "ideal_gas_density_overstatement_percent": 1.1903068582974852
+    },
+    {
+      "pressure_bar": 30,
+      "z": 1.0178919607220118,
+      "density_kg_per_m3": 2.4375844620797222,
+      "volume_for_60kg_m3": 24.614531694548386,
+      "ideal_gas_density_overstatement_percent": 1.7891960722011824
+    },
+    {
+      "pressure_bar": 100,
+      "z": 1.0608180476283078,
+      "density_kg_per_m3": 7.796491374680458,
+      "volume_for_60kg_m3": 7.695769432241452,
+      "ideal_gas_density_overstatement_percent": 6.081804762830778
+    },
+    {
+      "pressure_bar": 200,
+      "z": 1.124752744441221,
+      "density_kg_per_m3": 14.706625610499563,
+      "volume_for_60kg_m3": 4.079793801044609,
+      "ideal_gas_density_overstatement_percent": 12.475274444122109
+    },
+    {
+      "pressure_bar": 350,
+      "z": 1.2239790730113644,
+      "density_kg_per_m3": 23.650163873569227,
+      "volume_for_60kg_m3": 2.5369803068068526,
+      "ideal_gas_density_overstatement_percent": 22.397907301136442
+    }
+  ],
+  "scope": "Density correlation only; no pressure-vessel design or safety certification. Pressure selection is a design assumption."
+}

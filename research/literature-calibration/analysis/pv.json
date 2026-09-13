@@ -1,0 +1,566 @@
+{
+  "source": "SUPSI IEA-PVPS Task13 Annex1",
+  "raw_rows": 36449,
+  "accepted_rows": 26023,
+  "excluded_rows": 10426,
+  "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "units": "Temperature errors K; module power W",
+  "training_days": 156,
+  "parameters": {
+    "U0": 27.280819627095234,
+    "U1": 4.4652775232259145,
+    "effective_NOCT": 44.75560906743645
+  },
+  "bootstrap_95_percentiles": {
+    "U0": [
+      26.963426723996303,
+      27.811231618731185
+    ],
+    "U1": [
+      3.7817678397710774,
+      4.972025959470083
+    ],
+    "effective_NOCT": [
+      44.17965768644492,
+      45.19355844468128
+    ]
+  },
+  "bootstrap_replicates": 80,
+  "scores": [
+    {
+      "split": "training_odd_months",
+      "model": "NOCT45",
+      "n": 12858,
+      "rmse": 3.553087166169862,
+      "bias": 0.0650209448385246,
+      "mae": 2.4662597151568866
+    },
+    {
+      "split": "training_odd_months",
+      "model": "fitted_NOCT",
+      "n": 12858,
+      "rmse": 3.546253305812491,
+      "bias": -0.1412699666072321,
+      "mae": 2.512703701697061
+    },
+    {
+      "split": "training_odd_months",
+      "model": "published_Faiman",
+      "n": 12858,
+      "rmse": 3.042425630167029,
+      "bias": -0.9628692801451825,
+      "mae": 2.2904863578178527
+    },
+    {
+      "split": "training_odd_months",
+      "model": "fitted_Faiman",
+      "n": 12858,
+      "rmse": 2.8278748898952704,
+      "bias": -0.025248613665849053,
+      "mae": 1.9677044534871733
+    },
+    {
+      "split": "holdout_even_months",
+      "model": "NOCT45",
+      "n": 13165,
+      "rmse": 3.3794148237494475,
+      "bias": -0.4976504051807064,
+      "mae": 2.48515716557575
+    },
+    {
+      "split": "holdout_even_months",
+      "model": "fitted_NOCT",
+      "n": 13165,
+      "rmse": 3.414427016529638,
+      "bias": -0.7003454108938527,
+      "mae": 2.575140628415688
+    },
+    {
+      "split": "holdout_even_months",
+      "model": "published_Faiman",
+      "n": 13165,
+      "rmse": 3.1092285536236655,
+      "bias": -1.1884575562804542,
+      "mae": 2.468046458318982
+    },
+    {
+      "split": "holdout_even_months",
+      "model": "fitted_Faiman",
+      "n": 13165,
+      "rmse": 2.822941871434972,
+      "bias": -0.13990015796245134,
+      "mae": 2.002236816628118
+    }
+  ],
+  "monthly": [
+    {
+      "month": 1,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 1656,
+      "rmse": 4.8451806886071775,
+      "bias": 1.7093328928205769,
+      "mae": 3.79540552047894
+    },
+    {
+      "month": 1,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 1656,
+      "rmse": 4.759313680070386,
+      "bias": 1.5010285392916964,
+      "mae": 3.775152204517466
+    },
+    {
+      "month": 1,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 1656,
+      "rmse": 2.7738143662016745,
+      "bias": 0.10089138580069518,
+      "mae": 2.170165181676827
+    },
+    {
+      "month": 1,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 1656,
+      "rmse": 2.672053610564681,
+      "bias": 0.8931978041137777,
+      "mae": 1.912732896595039
+    },
+    {
+      "month": 2,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 2060,
+      "rmse": 3.9389129302339074,
+      "bias": -0.7972623285504855,
+      "mae": 3.1919182649865294
+    },
+    {
+      "month": 2,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 2060,
+      "rmse": 4.005080388714648,
+      "bias": -1.0150106163554298,
+      "mae": 3.316812998372771
+    },
+    {
+      "month": 2,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 2060,
+      "rmse": 3.1933930684256024,
+      "bias": -1.0751034885415531,
+      "mae": 2.605388129296876
+    },
+    {
+      "month": 2,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 2060,
+      "rmse": 2.7024742604422918,
+      "bias": 0.2639896151072437,
+      "mae": 1.8113264277310785
+    },
+    {
+      "month": 3,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 2499,
+      "rmse": 3.3558929258931594,
+      "bias": 0.27334243782993195,
+      "mae": 2.4197203357581034
+    },
+    {
+      "month": 3,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 2499,
+      "rmse": 3.3513633381629235,
+      "bias": 0.04704126372657669,
+      "mae": 2.4739678019006868
+    },
+    {
+      "month": 3,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 2499,
+      "rmse": 2.6030750459641347,
+      "bias": -0.5242515857158485,
+      "mae": 1.9852944104322738
+    },
+    {
+      "month": 3,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 2499,
+      "rmse": 2.4906942813265043,
+      "bias": 0.6497312523669176,
+      "mae": 1.8222781057966222
+    },
+    {
+      "month": 4,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 2152,
+      "rmse": 3.76126705203558,
+      "bias": 0.37714241160548334,
+      "mae": 2.722523284407528
+    },
+    {
+      "month": 4,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 2152,
+      "rmse": 3.7236478465107044,
+      "bias": 0.19112206049220853,
+      "mae": 2.71490514203728
+    },
+    {
+      "month": 4,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 2152,
+      "rmse": 3.3281337824870647,
+      "bias": -0.35802064337525014,
+      "mae": 2.450879077038317
+    },
+    {
+      "month": 4,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 2152,
+      "rmse": 3.415480912400666,
+      "bias": 0.5578248481432407,
+      "mae": 2.466811065310765
+    },
+    {
+      "month": 5,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 2445,
+      "rmse": 3.5508331246579696,
+      "bias": 0.7127719016738242,
+      "mae": 2.4608545898128833
+    },
+    {
+      "month": 5,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 2445,
+      "rmse": 3.498642145722894,
+      "bias": 0.5197291966452497,
+      "mae": 2.442212320660436
+    },
+    {
+      "month": 5,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 2445,
+      "rmse": 2.8690885189576134,
+      "bias": -0.4754611386856809,
+      "mae": 2.1799490059587896
+    },
+    {
+      "month": 5,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 2445,
+      "rmse": 2.7801130017199083,
+      "bias": 0.29739537367012453,
+      "mae": 2.0517526352166597
+    },
+    {
+      "month": 6,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 2334,
+      "rmse": 2.5961053207913793,
+      "bias": -0.8695607166184662,
+      "mae": 1.8095820019697944
+    },
+    {
+      "month": 6,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 2334,
+      "rmse": 2.664504814892177,
+      "bias": -1.0717407915279298,
+      "mae": 1.9189005143283913
+    },
+    {
+      "month": 6,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 2334,
+      "rmse": 2.895965007435057,
+      "bias": -1.6164136638226463,
+      "mae": 2.275844425874668
+    },
+    {
+      "month": 6,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 2334,
+      "rmse": 2.6021421951668624,
+      "bias": -0.6083248300668133,
+      "mae": 1.8567954469766461
+    },
+    {
+      "month": 7,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 2710,
+      "rmse": 2.5180036251180766,
+      "bias": -0.5412925494407287,
+      "mae": 1.6590607661455257
+    },
+    {
+      "month": 7,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 2710,
+      "rmse": 2.5523731494801334,
+      "bias": -0.7439509429391161,
+      "mae": 1.7152618017375156
+    },
+    {
+      "month": 7,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 2710,
+      "rmse": 2.921786449574547,
+      "bias": -1.6626766646259667,
+      "mae": 2.1943990000061357
+    },
+    {
+      "month": 7,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 2710,
+      "rmse": 2.626014722898383,
+      "bias": -0.8192234335814444,
+      "mae": 1.8016181961282194
+    },
+    {
+      "month": 8,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 3057,
+      "rmse": 2.9512019262503113,
+      "bias": -1.0249635058881257,
+      "mae": 2.0481698765129215
+    },
+    {
+      "month": 8,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 3057,
+      "rmse": 3.0261751206366307,
+      "bias": -1.2352632274430673,
+      "mae": 2.1756237842750834
+    },
+    {
+      "month": 8,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 3057,
+      "rmse": 3.225601434290225,
+      "bias": -1.9743803884845734,
+      "mae": 2.608767995141959
+    },
+    {
+      "month": 8,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 3057,
+      "rmse": 2.7532122760091595,
+      "bias": -1.000855708087166,
+      "mae": 2.010907929159215
+    },
+    {
+      "month": 9,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 2813,
+      "rmse": 3.66652626575716,
+      "bias": -1.0690427619985334,
+      "mae": 2.4249000243207877
+    },
+    {
+      "month": 9,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 2813,
+      "rmse": 3.728038360305098,
+      "bias": -1.2807462510180418,
+      "mae": 2.5521246495351817
+    },
+    {
+      "month": 9,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 2813,
+      "rmse": 3.7237818916198178,
+      "bias": -1.898549936806913,
+      "mae": 2.7913909254945652
+    },
+    {
+      "month": 9,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 2813,
+      "rmse": 3.309968598581968,
+      "bias": -0.8616227861464162,
+      "mae": 2.1663070726338858
+    },
+    {
+      "month": 10,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 1757,
+      "rmse": 2.879548527884019,
+      "bias": -0.6540899457011241,
+      "mae": 2.229396061561255
+    },
+    {
+      "month": 10,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 1757,
+      "rmse": 2.941596577799373,
+      "bias": -0.8589000249636528,
+      "mae": 2.3475505059204544
+    },
+    {
+      "month": 10,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 1757,
+      "rmse": 2.939446279948561,
+      "bias": -1.2483502285633283,
+      "mae": 2.4536496521698825
+    },
+    {
+      "month": 10,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 1757,
+      "rmse": 2.600049681540009,
+      "bias": -0.16266116571128889,
+      "mae": 1.9008625140460667
+    },
+    {
+      "month": 11,
+      "split": "train",
+      "model": "NOCT45",
+      "n": 735,
+      "rmse": 3.591184209834577,
+      "bias": 0.07305317684302746,
+      "mae": 2.782322230956973
+    },
+    {
+      "month": 11,
+      "split": "train",
+      "model": "fitted_NOCT",
+      "n": 735,
+      "rmse": 3.5846649391848877,
+      "bias": -0.09741528717610096,
+      "mae": 2.8238794053390013
+    },
+    {
+      "month": 11,
+      "split": "train",
+      "model": "published_Faiman",
+      "n": 735,
+      "rmse": 3.1027235336706314,
+      "bias": -0.31097606643278536,
+      "mae": 2.4041497051602585
+    },
+    {
+      "month": 11,
+      "split": "train",
+      "model": "fitted_Faiman",
+      "n": 735,
+      "rmse": 3.106518801650556,
+      "bias": 0.6656436408425823,
+      "mae": 2.1586978229382368
+    },
+    {
+      "month": 12,
+      "split": "holdout",
+      "model": "NOCT45",
+      "n": 1805,
+      "rmse": 4.145553507615033,
+      "bias": 0.3275825637226454,
+      "mae": 3.2581738313722295
+    },
+    {
+      "month": 12,
+      "split": "holdout",
+      "model": "fitted_NOCT",
+      "n": 1805,
+      "rmse": 4.1328553616980646,
+      "bias": 0.1364597776599237,
+      "mae": 3.308794339560536
+    },
+    {
+      "month": 12,
+      "split": "holdout",
+      "model": "published_Faiman",
+      "n": 1805,
+      "rmse": 2.9646172878122443,
+      "bias": -0.3651681035722304,
+      "mae": 2.355985159904961
+    },
+    {
+      "month": 12,
+      "split": "holdout",
+      "model": "fitted_Faiman",
+      "n": 1805,
+      "rmse": 2.7758909109429144,
+      "bias": 0.6532955464001633,
+      "mae": 1.9382915719513754
+    }
+  ],
+  "electrical_measured_temperature_check": {
+    "n": 25328,
+    "rmse": 19.600483318082876,
+    "bias": 0.22363957344389754,
+    "mae": 9.157393911864778
+  },
+  "caveats": [
+    "Back-of-module temperature, not cell junction temperature.",
+    "Alternating-month hold-out at the same site and module. No external-site validation.",
+    "Odd-month calibration includes January. January is not an independent transfer test in this split.",
+    "No filtering by residuals or output accuracy. Dataset already contains selected daylight records; not an annual energy-yield measurement.",
+    "Time labels retained as supplied without claiming UTC: the supplied CSV header does not specify timezone.",
+    "Bootstrap intervals exclude systematic metrology and transfer uncertainty."
+  ],
+  "july_to_january": {
+    "coefficients": [
+      29.383920422551174,
+      1.8272994508471552
+    ],
+    "n": 1656,
+    "rmse": 3.747432795204936,
+    "bias": 1.6897512268191468,
+    "mae": 2.886628080864288
+  }
+}

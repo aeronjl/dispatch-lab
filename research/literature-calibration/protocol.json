@@ -1,0 +1,37 @@
+{
+  "schema": "dispatch-lab/literature-calibration-protocol/1",
+  "scope": "Published reference devices. No automatic transfer to production defaults. No autonomy study queue execution.",
+  "pv": {
+    "source": "SUPSI/IEA-PVPS Task13 Annex1 one-year measured crystalline module",
+    "models": [
+      "current NOCT45",
+      "one-parameter fitted NOCT",
+      "Faiman U0/U1 fitted nonnegative"
+    ],
+    "training": "Odd calendar months",
+    "holdout": "Even calendar months; also report January seasonal transfer",
+    "filters": "Finite irradiance, air/module temperature, wind; irradiance >=200 W/m2; wind >=0. No residual filtering.",
+    "objective": "Unweighted back-of-module temperature squared error; fitted variable is not cell temperature.",
+    "uncertainty": "Day-block bootstrap fixed seed20260912; conditional sampling interval, no transfer uncertainty"
+  },
+  "pem": {
+    "source": "Veatch et al experimental November5,2025 time traces from immutable GitHub tree",
+    "models": [
+      "constant 55 kWh/kg",
+      "fitted through-origin yield",
+      "affine load-yield"
+    ],
+    "segmentation": "Find command plateaus; require >=300 seconds; omit first120 seconds; fit first half of stable plateau and test second half.",
+    "units": "Use authors chart labels kW and kg/h; distinguish hydrogen_flow from hydrogen_flow_cs; do not fit synthetic published simulation outputs.",
+    "caveat": "One experiment; temporally held-out samples within same plateaus are not independent device validation."
+  },
+  "reactor": {
+    "source": "Sauerschell2022 figure8",
+    "method": "Digitized temperature curve approximate first-order effective closed-coolant response. Retain axis calibration, pixel picks, +/-1K sensitivity.",
+    "identifiability": "Do not identify independent ambient UA or heat capacity from closed-coolant load step."
+  },
+  "gas": {
+    "source": "Lemmon Huber Leachman2008 equation3 and tables1/2",
+    "method": "Reimplement nine-term density equation and verify published reference points; density only."
+  }
+}

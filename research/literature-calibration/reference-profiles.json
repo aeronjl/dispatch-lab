@@ -1,0 +1,432 @@
+{
+  "schema_version": "dispatch-lab/literature-profiles/1",
+  "scope": "Research reference records; not loaded into production or historical archives.",
+  "profiles": [
+    {
+      "id": "supsi-mono-temperature-v1",
+      "component": "solar",
+      "status": "fitted_reference",
+      "values": {
+        "U0": 27.280819627095234,
+        "U1": 4.4652775232259145,
+        "effective_NOCT": 44.75560906743645
+      },
+      "units": {
+        "U0": "W/(m² K)",
+        "U1": "W s/(m³ K)",
+        "effective_NOCT": "°C"
+      },
+      "domain": "SUPSI module back temperature, selected daylight Gpoa≥200 W/m²; same site 2018–2019, local measured wind; not an external-site calibration.",
+      "sources": [
+        "pv-data",
+        "pv-report"
+      ],
+      "artifact": "analysis/pv.json",
+      "promotion": "Add named wind-aware reference option; preserve generic fixture and wind measurement height. Do not use as new universal NOCT."
+    },
+    {
+      "id": "csu-pem-ac-flow-v1",
+      "component": "electrolyser",
+      "status": "fitted_reference",
+      "values": {
+        "power_boundary": "system_power",
+        "hydrogen_channel": "hydrogen_flow",
+        "model": "parameters",
+        "fitted_kwh_per_kg": 109.507274614268,
+        "affine_kg_per_kwh": 0.015057457386370935,
+        "affine_kg_per_h": -0.3485106475684506
+      },
+      "units": {
+        "affine_kg_per_kwh": "kg/kWh",
+        "affine_kg_per_h": "kg/h"
+      },
+      "domain": "Observed one-day 60 kW-class PEM system, about 36–75 kW whole-system AC demand. Net-looking measured flow channel retained by original name. Do not extrapolate to zero or 450 kW.",
+      "sources": [
+        "pem-data",
+        "pem-code",
+        "pem-preprint"
+      ],
+      "artifact": "analysis/pem.json",
+      "promotion": "Build stack, conversion, support-load and usable-output interfaces before transfer. Reference-device fit is suitable for adapter tests."
+    },
+    {
+      "id": "italy-nmc-ac-v1",
+      "component": "battery",
+      "status": "published_fit_reproduced",
+      "values": {
+        "source": "Grimaldi2023 table6",
+        "coefficients": [
+          [
+            101.1,
+            0.03028,
+            -4.493
+          ],
+          [
+            97.81,
+            0.02736,
+            -3.065
+          ],
+          [
+            97.3,
+            0.02692,
+            -3.379
+          ],
+          [
+            97.72,
+            0.03237,
+            -5.629
+          ]
+        ],
+        "curve": [
+          {
+            "year": 1,
+            "power_pu": 0.15,
+            "power_kw": 75.0,
+            "rte_without_separate_aux": 0.8344519799201242
+          },
+          {
+            "year": 1,
+            "power_pu": 0.32,
+            "power_kw": 160.0,
+            "rte_without_separate_aux": 0.909226373963686
+          },
+          {
+            "year": 1,
+            "power_pu": 0.55,
+            "power_kw": 275.0,
+            "rte_without_separate_aux": 0.9335327958571724
+          },
+          {
+            "year": 1,
+            "power_pu": 1,
+            "power_kw": 500,
+            "rte_without_separate_aux": 0.9363566405249059
+          },
+          {
+            "year": 2,
+            "power_pu": 0.15,
+            "power_kw": 75.0,
+            "rte_without_separate_aux": 0.8226183322056834
+          },
+          {
+            "year": 2,
+            "power_pu": 0.32,
+            "power_kw": 160.0,
+            "rte_without_separate_aux": 0.8912514196222939
+          },
+          {
+            "year": 2,
+            "power_pu": 0.55,
+            "power_kw": 275.0,
+            "rte_without_separate_aux": 0.9148921882361091
+          },
+          {
+            "year": 2,
+            "power_pu": 1,
+            "power_kw": 500,
+            "rte_without_separate_aux": 0.9214018610808286
+          },
+          {
+            "year": 3,
+            "power_pu": 0.15,
+            "power_kw": 75.0,
+            "rte_without_separate_aux": 0.819880629550079
+          },
+          {
+            "year": 3,
+            "power_pu": 0.32,
+            "power_kw": 160.0,
+            "rte_without_separate_aux": 0.8866851822437448
+          },
+          {
+            "year": 3,
+            "power_pu": 0.55,
+            "power_kw": 275.0,
+            "rte_without_separate_aux": 0.9090137805241626
+          },
+          {
+            "year": 3,
+            "power_pu": 1,
+            "power_kw": 500,
+            "rte_without_separate_aux": 0.913703475635882
+          },
+          {
+            "year": 4,
+            "power_pu": 0.1,
+            "power_kw": 50.0,
+            "rte_without_separate_aux": 0.7326047387625594
+          },
+          {
+            "year": 4,
+            "power_pu": 0.15,
+            "power_kw": 75.0,
+            "rte_without_separate_aux": 0.7953071168777758
+          },
+          {
+            "year": 4,
+            "power_pu": 0.32,
+            "power_kw": 160.0,
+            "rte_without_separate_aux": 0.869418025552686
+          },
+          {
+            "year": 4,
+            "power_pu": 0.55,
+            "power_kw": 275.0,
+            "rte_without_separate_aux": 0.8919245771330939
+          },
+          {
+            "year": 4,
+            "power_pu": 1,
+            "power_kw": 500,
+            "rte_without_separate_aux": 0.8902698574154614
+          }
+        ],
+        "boundary": "500kW/822kWh NMC AC-coupled installation; operating energy657.6kWh. Separate auxiliaries must not be included twice.",
+        "evidence": "Reproduction of authors' regression, not independent refit or validation; source raw SCADA unavailable here."
+      },
+      "units": {
+        "power": "AC kW",
+        "rte": "fraction"
+      },
+      "domain": "500 kW/822 kWh NMC AC-coupled installation, SOC10–90%; first three years P≥0.15 pu, year4≥0.10 pu. Authors cycle-level fit, no independent refit.",
+      "sources": [
+        "battery"
+      ],
+      "artifact": "analysis/battery.json",
+      "promotion": "Reference AC profile only. Separate auxiliary boundary; round-trip data does not identify directional efficiency."
+    },
+    {
+      "id": "kit-slurry-step-v1",
+      "component": "thermal",
+      "status": "digitized_descriptive_fit",
+      "values": {
+        "baseline_c": 319.6865243081041,
+        "increment_k": 14.772824406718433,
+        "effective_time_constant_minutes": 9.299393265602896,
+        "digitization_perturbation_95_percentiles_minutes": [
+          8.074881743271211,
+          10.869910515102651
+        ],
+        "n": 12,
+        "rmse": 0.48978657776031503,
+        "bias": 2.2560205555540355e-10,
+        "mae": 0.3763494796020173,
+        "scope": "Effective response to a feed-rate step with coolant inlet held310C. Not ambient heat loss; does not identify independent C and UA. Perturbation interval is not an experimental confidence interval.",
+        "fit": "First-order descriptive fit to manually digitized published figure8; fixed input step at5min; all points fit, no independent hold-out."
+      },
+      "units": {
+        "effective_time_constant_minutes": "min"
+      },
+      "domain": "Figure8 feed-rate step with controlled 310°C coolant, 20 bar slurry pilot. Does not identify ambient UA or independent thermal capacity.",
+      "sources": [
+        "slurry"
+      ],
+      "artifact": "analysis/reactor.json",
+      "promotion": "Use as a reduced-response benchmark after separating coolant and ambient heat paths. No ambient-loss coefficient replacement."
+    },
+    {
+      "id": "nist-h2-density-v1",
+      "component": "gas-storage",
+      "status": "reference_equation_verified",
+      "values": {
+        "check_points": [
+          {
+            "temperature_k": 200,
+            "pressure_mpa": 1,
+            "z": 1.0067545044710082,
+            "reference_z": 1.0067545,
+            "molar_density_mol_per_l": 0.597326452457939,
+            "reference_molar_density": 0.59732645
+          },
+          {
+            "temperature_k": 300,
+            "pressure_mpa": 10,
+            "z": 1.0598528193342671,
+            "reference_z": 1.05985282,
+            "molar_density_mol_per_l": 3.782670484564419,
+            "reference_molar_density": 3.78267048
+          },
+          {
+            "temperature_k": 400,
+            "pressure_mpa": 50,
+            "z": 1.2430476300820887,
+            "reference_z": 1.24304763,
+            "molar_density_mol_per_l": 12.094490229067182,
+            "reference_molar_density": 12.09449023
+          },
+          {
+            "temperature_k": 500,
+            "pressure_mpa": 200,
+            "z": 1.7446162945667256,
+            "reference_z": 1.74461629,
+            "molar_density_mol_per_l": 27.57562673349054,
+            "reference_molar_density": 27.57562673
+          },
+          {
+            "temperature_k": 200,
+            "pressure_mpa": 200,
+            "z": 2.8595344874784483,
+            "reference_z": 2.85953449,
+            "molar_density_mol_per_l": 42.06006951725914,
+            "reference_molar_density": 42.06006952
+          }
+        ]
+      },
+      "units": {
+        "pressure": "MPa absolute",
+        "temperature": "K",
+        "density": "mol/L"
+      },
+      "domain": "Correlation 150–1000 K, ≤200 MPa; accuracy is subdomain-specific. Density only, not full thermodynamic EOS.",
+      "sources": [
+        "density"
+      ],
+      "artifact": "analysis/gas.json",
+      "promotion": "Can underpin explicit pressure-volume-inventory reference states. Pressure design and minimum delivery pressure remain choices."
+    },
+    {
+      "id": "nist-ideal-chemistry-v1",
+      "component": "chemistry",
+      "status": "reference_calculation",
+      "values": {
+        "molecular_weights_g_per_mol": {
+          "ch4": 16.0425,
+          "co2": 44.0095,
+          "h2": 2.01588,
+          "water": 18.01528
+        },
+        "ratios": {
+          "h2_kg_per_kg_ch4": 0.502634876110332,
+          "co2_kg_per_kg_ch4": 2.7433068412030543,
+          "water_kg_per_kg_ch4": 2.2459442106903538,
+          "electrolysis_water_kg_per_kg_h2": 8.936682739051928
+        },
+        "mass_rounding_residual_kg_per_kg_ch4": -2.493376967560579e-06,
+        "standard_reaction_kj_per_mol": -165.00349999999997,
+        "standard_reaction_kwh_per_kg_ch4": 2.857055044759579,
+        "thermal": [
+          {
+            "temperature_c": 250,
+            "reaction_release_kwh_per_kg_ch4": 3.044228251716819,
+            "cold_feed_heating_kwh_per_kg_ch4": 0.6161510179819649,
+            "net_release_after_feed_heating_kwh_per_kg_ch4": 2.428077233734854
+          },
+          {
+            "temperature_c": 300,
+            "reaction_release_kwh_per_kg_ch4": 3.0809818094625707,
+            "cold_feed_heating_kwh_per_kg_ch4": 0.7573798904027373,
+            "net_release_after_feed_heating_kwh_per_kg_ch4": 2.323601919059833
+          },
+          {
+            "temperature_c": 320,
+            "reaction_release_kwh_per_kg_ch4": 3.09505464844238,
+            "cold_feed_heating_kwh_per_kg_ch4": 0.8142225732103628,
+            "net_release_after_feed_heating_kwh_per_kg_ch4": 2.2808320752320173
+          },
+          {
+            "temperature_c": 350,
+            "reaction_release_kwh_per_kg_ch4": 3.1154821688068206,
+            "cold_feed_heating_kwh_per_kg_ch4": 0.8998504507916603,
+            "net_release_after_feed_heating_kwh_per_kg_ch4": 2.21563171801516
+          },
+          {
+            "temperature_c": 400,
+            "reaction_release_kwh_per_kg_ch4": 3.147709503499963,
+            "cold_feed_heating_kwh_per_kg_ch4": 1.0435108103186372,
+            "net_release_after_feed_heating_kwh_per_kg_ch4": 2.1041986931813255
+          }
+        ],
+        "co2_300kg_day_ch4_steady_supply_ceiling_kg_per_day": 109.35707063247708,
+        "scope": "Ideal complete conversion, gas water, no pressure/equilibrium/kinetics correction or heat recovery credit."
+      },
+      "units": {
+        "reaction_heat": "kWh/kg CH4",
+        "material_ratios": "kg/kg"
+      },
+      "domain": "Complete ideal gas reaction, water vapour; common Shomate range500–1000 K, reference heat at298.15 K separate. No conversion or kinetics guarantee.",
+      "sources": [
+        "nist-ch4",
+        "nist-co2",
+        "nist-h2",
+        "nist-water"
+      ],
+      "artifact": "analysis/derived.json",
+      "promotion": "Update chemistry as a versioned optional model with independent balance checks; account for feed enthalpy before changing reaction heat."
+    },
+    {
+      "id": "serbot-gekko-support-v1",
+      "component": "support",
+      "status": "vendor_specification_and_derivation",
+      "values": {
+        "area_m2": 5000,
+        "rate_m2_per_h": 670,
+        "productive_hours": 7.462686567164179,
+        "robot_electricity_kwh": 5.970149253731344,
+        "water_litres_range": [
+          223.88059701492537,
+          1343.2835820895523
+        ],
+        "water_litres_per_m2_range": [
+          0.04477611940298507,
+          0.26865671641791045
+        ],
+        "excluded": "Travel, setup, row transfers, compressor, lift, pumping and water treatment. Vendor average-rate claim, not a measured site guarantee."
+      },
+      "units": {
+        "area": "m²",
+        "electricity": "kWh",
+        "water": "L"
+      },
+      "domain": "Named joystick-operated wet cleaner. Vendor rate, not whole-site delivered productivity. Air supply, operator, water and lift required.",
+      "sources": [
+        "gekko"
+      ],
+      "artifact": "analysis/derived.json",
+      "promotion": "Named contract with separate air, electricity and water inputs; unsupported autonomy remains unavailable."
+    },
+    {
+      "id": "ecoppia-t4-v1",
+      "component": "cleaning",
+      "status": "vendor_specification_and_derivation",
+      "values": {
+        "assumed_area_m2": 5000,
+        "vendor_speed_m2_per_h": 180,
+        "vendor_max_nightly_area_m2": 400,
+        "minimum_units_for_single_night": 13,
+        "scope": "Ecoppia T4 tracker-specific reference. Geometry may require more units; speed and nightly area are different constraints."
+      },
+      "units": {
+        "area": "m²",
+        "rate": "m²/h"
+      },
+      "domain": "Tracker-compatible stow≤2°, dedicated bridges and dock PV. Per-device nightly capacity separate from transit speed.",
+      "sources": [
+        "t4"
+      ],
+      "artifact": "analysis/derived.json",
+      "promotion": "Alternative array design, not a direct replacement for the fixed-tilt fixture robot."
+    },
+    {
+      "id": "autoinspect-deployments-v1",
+      "component": "inspection",
+      "status": "published_deployment_counts",
+      "values": {
+        "b1_actions_successful": 673,
+        "b1_actions_attempted": 730,
+        "b1_action_fraction": 0.9219178082191781,
+        "b1_mtbi_hours": 78,
+        "jet_mtbi_hours": 140,
+        "scope": "Published deployment summaries, not fitted per-mission hardware failure hazards. Interventions were clustered; MTBI includes calendar exposure."
+      },
+      "units": {
+        "mtbi": "calendar hours"
+      },
+      "domain": "Two Spot/Frontier deployments at UKAEA in2023/2024; clustered software/configuration interventions, inspection actions not repair attempts.",
+      "sources": [
+        "autoinspect"
+      ],
+      "artifact": "analysis/derived.json",
+      "promotion": "Reference scenario separates invalid observations, autonomy recovery and human intervention; no universal Bernoulli hazard."
+    }
+  ]
+}

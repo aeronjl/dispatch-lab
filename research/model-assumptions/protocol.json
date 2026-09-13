@@ -1,0 +1,11 @@
+{
+  "schema_version": "assumption-review-protocol/1",
+  "date": "2026-09-12",
+  "scope": "Existing illustrative plant, every configuration family and implemented service system; London, Seville and Copenhagen. No production default or repair capability changes.",
+  "questions": ["Which assumptions have applicable evidence?", "Which mechanisms preclude defensible numerical calibration?", "Which conclusions survive joint parameter stress?", "What observations would support a calibration and an independent validation?"],
+  "calibration_rule": "No fitted plant parameter without matching observations, measurement uncertainty, operating conditions, identifiable parameters and separate validation. Literature targets and other plants are context only.",
+  "uncertainty_rule": "Exploratory ranges are not probability distributions or confidence intervals. Cross-factor combinations are retained including failures. No requirement that MPC win.",
+  "study": {"hours": 48, "horizon_hours": 12, "solver_seconds": 0.2, "seeds": [7, 19, 41], "strategies": ["Greedy", "MPC · methane", "MPC · economics"], "profiles": ["reference", "retentive", "demanding", "storage-constrained", "coupled-stress"], "weather": "Reproducible synthetic paired weather for plant stress; cached European weather inspected separately without substitution."},
+  "preservation": "Earlier field-realism experiments and paused programme queue remain untouched. Review artifacts, numerical source identities, failures and inputs saved in this directory.",
+  "completion_gate": "All reference configuration paths classified; consequential mechanisms reviewed with sources or explicit gaps; independent checks and conditional sensitivity reported; UI distinguishes chosen, assumed, source-supported and measured evidence; old archives retain original context. Real-plant calibration may remain blocked by absent measurements."
+}

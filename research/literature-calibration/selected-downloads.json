@@ -1,0 +1,17 @@
+{
+  "pem-data__experiment__chiller_power.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/chiller_power.txt",
+  "pem-data__experiment__hydrogen_flow.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow.txt",
+  "pem-data__experiment__hydrogen_flow_cs.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow_cs.txt",
+  "pem-data__experiment__power_command.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/power_command.txt",
+  "pem-data__experiment__smps_power.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/smps_power.txt",
+  "pem-data__experiment__stack_power.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/stack_power.txt",
+  "pem-data__experiment__subsystem_power.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/subsystem_power.txt",
+  "pem-data__experiment__timestamp.txt": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/timestamp.txt",
+  "pem-src__matlab__models__define_electrolyzer_system.m": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/matlab/models/define_electrolyzer_system.m",
+  "pem-src__python__experiment__generate_efficiency_plot.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/generate_efficiency_plot.py",
+  "pem-src__python__experiment__plot_polarization_and_power_curves.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_polarization_and_power_curves.py",
+  "pem-src__python__experiment__plot_step_test.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test.py",
+  "pem-src__python__experiment__plot_step_test_results.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test_results.py",
+  "pem-src__python__experiment__smps_curves.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/smps_curves.py",
+  "pem-src__python__experiment__validation__validated_polarization_curve.py": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/validation/validated_polarization_curve.py"
+}

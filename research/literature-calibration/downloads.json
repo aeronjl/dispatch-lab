@@ -1,0 +1,362 @@
+{
+  "pem-experiment.zip": {
+    "url": "https://datadryad.org/downloads/file_stream/4942215",
+    "retrieved_utc": "2026-09-12T21:58:37.885333+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "pem-github.json": {
+    "url": "https://api.github.com/repos/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/git/trees/main?recursive=1",
+    "retrieved_utc": "2026-09-12T21:59:12.972720+00:00",
+    "status": "downloaded",
+    "final_url": "https://api.github.com/repos/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/git/trees/main?recursive=1",
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 52461,
+    "sha256": "83a85651be0fbf4316307aa96cc6501d7ee57ce85367f765f8ab925d8b103dc4"
+  },
+  "pem-data__experiment__chiller_power.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/chiller_power.txt",
+    "retrieved_utc": "2026-09-12T21:59:55.477162+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/chiller_power.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 180326,
+    "sha256": "2e1f8d6366442942961cb71e3afc7277e8aa3a3eb8f1f69a0b71f8e177972300"
+  },
+  "pem-data__experiment__hydrogen_flow.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow.txt",
+    "retrieved_utc": "2026-09-12T21:59:55.729525+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 261475,
+    "sha256": "6fd504cc8d6279d513a3a28f5518ab4f1c1c042567ebb981288b0c01a3048242"
+  },
+  "pem-data__experiment__hydrogen_flow_cs.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow_cs.txt",
+    "retrieved_utc": "2026-09-12T21:59:55.994396+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow_cs.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 262695,
+    "sha256": "385aff2e906e70791913f5d7a037ecf74c0d09daae68410ee15d34415f763aff"
+  },
+  "pem-data__experiment__power_command.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/power_command.txt",
+    "retrieved_utc": "2026-09-12T21:59:56.407009+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/power_command.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 93872,
+    "sha256": "51a712d9a7404356bd83647042dbadb24a56e1ba83b71644468ce023d7f2e665"
+  },
+  "pem-data__experiment__smps_power.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/smps_power.txt",
+    "retrieved_utc": "2026-09-12T21:59:56.635737+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/smps_power.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 179464,
+    "sha256": "87aec5e5f7fe5d4db89e9e84e8b4605dcd20fd9a5bbf96e8ae248d1140f8c512"
+  },
+  "pem-data__experiment__stack_power.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/stack_power.txt",
+    "retrieved_utc": "2026-09-12T21:59:56.930868+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/stack_power.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 90139,
+    "sha256": "85da23b187d85dd17bcf963170c93dfe6bedf75b49abc94c57b979ddbbcd7557"
+  },
+  "pem-data__experiment__subsystem_power.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/subsystem_power.txt",
+    "retrieved_utc": "2026-09-12T21:59:57.360925+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/subsystem_power.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 60272,
+    "sha256": "b74bdb68744d7515bec3f703bf134a66ee01e2d8f5c109d8399e53b513e35f6d"
+  },
+  "pem-data__experiment__timestamp.txt": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/timestamp.txt",
+    "retrieved_utc": "2026-09-12T21:59:57.752261+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/timestamp.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 316428,
+    "sha256": "ee2a2dd9e5695afd273ce48fb2495e9960df493acc7d714534f1d9fd8091daba"
+  },
+  "pem-src__matlab__models__define_electrolyzer_system.m": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/matlab/models/define_electrolyzer_system.m",
+    "retrieved_utc": "2026-09-12T21:59:58.339200+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/matlab/models/define_electrolyzer_system.m",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 6528,
+    "sha256": "987f99ffee3cafe279dd6eda601f1f654e6d69c90bf24b4e49e25c49fbc946bb"
+  },
+  "pem-src__python__experiment__generate_efficiency_plot.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/generate_efficiency_plot.py",
+    "retrieved_utc": "2026-09-12T21:59:58.569419+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/generate_efficiency_plot.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 5207,
+    "sha256": "de0c8dfcb35168cb45117edd0360d49346144ba7e26f78208d02908abe143b4d"
+  },
+  "pem-src__python__experiment__plot_polarization_and_power_curves.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_polarization_and_power_curves.py",
+    "retrieved_utc": "2026-09-12T21:59:58.772400+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_polarization_and_power_curves.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 5232,
+    "sha256": "9ddc0767a10dee747a034c65295480bdb64cb7660388d53ff59aaad2a3e535b6"
+  },
+  "pem-src__python__experiment__plot_step_test.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test.py",
+    "retrieved_utc": "2026-09-12T21:59:59.147578+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 3172,
+    "sha256": "7ab78d3f78c48b58763946329af4b430201535c2a85de338d20a871d4c50d7f9"
+  },
+  "pem-src__python__experiment__plot_step_test_results.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test_results.py",
+    "retrieved_utc": "2026-09-12T21:59:59.347112+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/plot_step_test_results.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 6340,
+    "sha256": "d4e8bc462dcaa72d03e0ff515a45373aae27bf94c0dd164a571d08c1d72d3e50"
+  },
+  "pem-src__python__experiment__smps_curves.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/smps_curves.py",
+    "retrieved_utc": "2026-09-12T21:59:59.558207+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/smps_curves.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 2930,
+    "sha256": "f2c087697561e2a975e306f0572dd76892f11f73324801f61bc09e594f0470a9"
+  },
+  "pem-src__python__experiment__validation__validated_polarization_curve.py": {
+    "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/validation/validated_polarization_curve.py",
+    "retrieved_utc": "2026-09-12T21:59:59.765620+00:00",
+    "status": "downloaded",
+    "final_url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/src/python/experiment/validation/validated_polarization_curve.py",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 5866,
+    "sha256": "4f7c4bb0b290fbb3eac6830048f0fb9d76122b4797573c63fe2d09f19b9247c5"
+  },
+  "supsi-july.csv": {
+    "url": "https://pvpmc.sandia.gov/download/3976/",
+    "retrieved_utc": "2026-09-12T22:00:28.115415+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_07.csv",
+    "content_type": "text/csv",
+    "bytes": 362872,
+    "sha256": "40d84aaea31995b619dcd86fdd2a42d5ae0c35e75b53fe4bad3cd5369f858a4b"
+  },
+  "supsi-january.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4022/",
+    "retrieved_utc": "2026-09-12T22:00:31.010374+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_01.csv",
+    "content_type": "text/csv",
+    "bytes": 252127,
+    "sha256": "9240ad21d8a4c529ff73889291f350feda05fa49198f59ed0ed7f420a8acbcd1"
+  },
+  "supsi-characterization.zip": {
+    "url": "https://pvpmc.sandia.gov/download/3973/",
+    "retrieved_utc": "2026-09-12T22:00:33.631758+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/IEC61853_1-2.xlsx",
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 17325,
+    "sha256": "22a6ae417ebda8738be107013aa0859fbda7f34d0e77ad9373a60d1a58c0780d"
+  },
+  "supsi-report.pdf": {
+    "url": "https://pvpmc.sandia.gov/download/3773/",
+    "retrieved_utc": "2026-09-12T22:00:34.946981+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/Report-IEA-PVPS-T13-20_2020-Climatic-Rating-of-PV-Modules.pdf",
+    "content_type": "application/pdf",
+    "bytes": 9335018,
+    "sha256": "21cf9b5a8e0c207dca3823756f87668b523de6343c42cf6709ac1168cd571c3e"
+  },
+  "reactor-slurry.pdf": {
+    "url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+    "retrieved_utc": "2026-09-12T22:00:39.930479+00:00",
+    "status": "downloaded",
+    "final_url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+    "content_type": "application/pdf",
+    "bytes": 4193318,
+    "sha256": "7cb22a9a2c77225695ea10f261f0a8e13853ab64487939a4f9897f17a06b5733"
+  },
+  "reactor-danish.pdf": {
+    "url": "https://pure.au.dk/ws/files/174380919/Catalytic_methanation_of_CO2_in_biogas_RCE_Published.pdf",
+    "retrieved_utc": "2026-09-12T22:00:40.974250+00:00",
+    "status": "downloaded",
+    "final_url": "https://pure.au.dk/ws/files/174380919/Catalytic_methanation_of_CO2_in_biogas_RCE_Published.pdf",
+    "content_type": "application/pdf",
+    "bytes": 770819,
+    "sha256": "2dcb651009db3c7d57ef27dbabb71db621777fac276e6fbd7c150ee921124b1f"
+  },
+  "soiling-europe.pdf": {
+    "url": "https://elib.dlr.de/210457/1/Published_Paper_Photovoltaic%20soiling%20loss%20in%20Europe_Geographical%20distribution%20and%20cleaning%20recommendations.pdf",
+    "retrieved_utc": "2026-09-12T22:00:41.418180+00:00",
+    "status": "downloaded",
+    "final_url": "https://elib.dlr.de/210457/1/Published_Paper_Photovoltaic%20soiling%20loss%20in%20Europe_Geographical%20distribution%20and%20cleaning%20recommendations.pdf",
+    "content_type": "application/pdf",
+    "bytes": 9840586,
+    "sha256": "52ba605d172a05aaf21b9b14614224f20f2fcaa76506340d75ff2ce236cc3fab"
+  },
+  "battery-italy.pdf": {
+    "url": "https://iris.polito.it/retrieve/handle/11583/2977810/3d8ed5b7-7e2e-4251-a62e-49f2682c8297/1-s2.0-S2352152X23006291-main.pdf",
+    "retrieved_utc": "2026-09-12T22:01:57.641041+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "hydrogen-density.pdf": {
+    "url": "https://nvlpubs.nist.gov/nistpubs/jres/113/6/V113.N06.A05.pdf",
+    "retrieved_utc": "2026-09-12T22:01:57.971310+00:00",
+    "status": "downloaded",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/jres/113/6/V113.N06.A05.pdf",
+    "content_type": "application/pdf",
+    "bytes": 353061,
+    "sha256": "dec55642bf7b13e347efd6eccb83f5e78bfb6943a60343c4fb9811045d5ffa61"
+  },
+  "dea-aug2026.pdf": {
+    "url": "https://ens.dk/media/7823/download",
+    "retrieved_utc": "2026-09-12T22:01:58.776269+00:00",
+    "status": "downloaded",
+    "final_url": "https://ens.dk/media/7823/download",
+    "content_type": "application/pdf",
+    "bytes": 16014527,
+    "sha256": "6966d50f586132b8ea77a650f877b61290a61d78f4a5423f45a2ccf5d38c9e29"
+  },
+  "dea-brief-aug2026.pdf": {
+    "url": "https://ens.dk/media/3352/download",
+    "retrieved_utc": "2026-09-12T22:02:01.376646+00:00",
+    "status": "downloaded",
+    "final_url": "https://ens.dk/media/3352/download",
+    "content_type": "application/pdf",
+    "bytes": 423958,
+    "sha256": "8faad103315953bb8ea67a608b6ca7dec663449f1b9d1b036165b56ec4365e31"
+  },
+  "wind2h2.pdf": {
+    "url": "https://docs.nlr.gov/docs/fy09osti/44082.pdf",
+    "retrieved_utc": "2026-09-12T22:02:02.004313+00:00",
+    "status": "downloaded",
+    "final_url": "https://docs.nlr.gov/docs/fy09osti/44082.pdf",
+    "content_type": "application/pdf",
+    "bytes": 3960916,
+    "sha256": "c72a4983d63ee65160099b91d97a4a0f1c225db0504af1ce273d085c6a076f8c"
+  },
+  "pem-preprint.pdf": {
+    "url": "https://papers.ssrn.com/sol3/Delivery.cfm/0d3b8e79-e30a-46f0-ad9e-588a074d9f91-MECA.pdf?abstractid=7117658&mirid=1",
+    "retrieved_utc": "2026-09-12T22:02:06.167922+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "supsi-august.csv": {
+    "url": "https://pvpmc.sandia.gov/download/3978/",
+    "retrieved_utc": "2026-09-12T22:02:55.359858+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_08.csv",
+    "content_type": "text/csv",
+    "bytes": 355651,
+    "sha256": "7d60fef02c0ee3bc79fc45a8dccadf651410a40e5c69b5c376e9f322dd2c7078"
+  },
+  "supsi-september.csv": {
+    "url": "https://pvpmc.sandia.gov/download/3980/",
+    "retrieved_utc": "2026-09-12T22:02:56.976162+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_09.csv",
+    "content_type": "text/csv",
+    "bytes": 359432,
+    "sha256": "70a4dfb83b0683cb9798d281a3d40218919b7c9728c38c84b68248b30dd77c99"
+  },
+  "supsi-october.csv": {
+    "url": "https://pvpmc.sandia.gov/download/3983/",
+    "retrieved_utc": "2026-09-12T22:02:58.915993+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_10.csv",
+    "content_type": "text/csv",
+    "bytes": 298933,
+    "sha256": "bfb2abb07102c21f1768b45c767a1d38b8f27ec244dceaa3174961c328de8ca2"
+  },
+  "supsi-november.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4014/",
+    "retrieved_utc": "2026-09-12T22:03:00.670654+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_11.csv",
+    "content_type": "text/csv",
+    "bytes": 264848,
+    "sha256": "b892f2c27b4cc4fdce41e49cf6773b0e07eb3680ea07faf1d0ba7e4c00ff77ea"
+  },
+  "supsi-december.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4018/",
+    "retrieved_utc": "2026-09-12T22:03:02.204124+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2018_12.csv",
+    "content_type": "text/csv",
+    "bytes": 235266,
+    "sha256": "ae8529c2df0fe6c1c2b6cbdc439bf8fce8c8166f39a1364d1c5fbc5795aa1ab8"
+  },
+  "supsi-february.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4025/",
+    "retrieved_utc": "2026-09-12T22:03:03.757016+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_02.csv",
+    "content_type": "text/csv",
+    "bytes": 274085,
+    "sha256": "5d9052381abe2a4ef5dc1a7719037dd0c4580477a6ae3c5fd662e53aa16dc896"
+  },
+  "supsi-march.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4029/",
+    "retrieved_utc": "2026-09-12T22:03:05.383033+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_03.csv",
+    "content_type": "text/csv",
+    "bytes": 351327,
+    "sha256": "3bed31381767e2150379da41e0a178ef506e80ff9b367acf2bb48e013054e36d"
+  },
+  "supsi-april.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4033/",
+    "retrieved_utc": "2026-09-12T22:03:07.424574+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_04.csv",
+    "content_type": "text/csv",
+    "bytes": 374244,
+    "sha256": "420ffbd8b1ba5ecf2cb00b7df9de1a0c2bcb14fb1544cf5978a3dff799e01ce2"
+  },
+  "supsi-may.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4037/",
+    "retrieved_utc": "2026-09-12T22:03:09.275601+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_05.csv",
+    "content_type": "text/csv",
+    "bytes": 393335,
+    "sha256": "cf766fab6630400a52bc083d56fd438a16ae79a54cf237e5e0f87ec6ebcb4d06"
+  },
+  "supsi-june.csv": {
+    "url": "https://pvpmc.sandia.gov/download/4039/",
+    "retrieved_utc": "2026-09-12T22:03:11.097761+00:00",
+    "status": "downloaded",
+    "final_url": "https://pvpmc.sandia.gov/app/uploads/sites/243/2022/10/2019_06.csv",
+    "content_type": "text/csv",
+    "bytes": 336930,
+    "sha256": "b73de2ca0993b3faa62ae94a8961cb98ced0680cdaf27fed104711a4a1aa0f4e"
+  },
+  "reactor-kinetics2026.pdf": {
+    "url": "https://publikationen.bibliothek.kit.edu/1000188810/171087110",
+    "retrieved_utc": "2026-09-12T22:32:31.532386+00:00",
+    "status": "downloaded",
+    "final_url": "https://publikationen.bibliothek.kit.edu/1000188810/171087110",
+    "content_type": "application/pdf",
+    "bytes": 836245,
+    "sha256": "f6f01db894fdcfcbb2c63111711678c967e9818b778645bea99e2b10aa4dd740"
+  }
+}

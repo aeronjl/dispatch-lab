@@ -1,0 +1,1097 @@
+{
+  "case": {
+    "family": "cleaning",
+    "seed": 7,
+    "power": 300,
+    "soil": 0.01,
+    "arm": "portable-wet"
+  },
+  "config": {
+    "rng_policy": "named-channels/1",
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.5,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.3,
+      "heat_loss_kw_per_k": 0.08,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1,
+      "cleaner_eur": 15000,
+      "rover_eur": 80000,
+      "dock_eur": 5000,
+      "field_asset_years": 8,
+      "field_replaceable_share": 0.2,
+      "cleaner_wear_eur_per_hour": 0.5,
+      "rover_wear_eur_per_hour": 2,
+      "field_maintenance_eur_per_year": 3000,
+      "cleaning_kit_eur": 5,
+      "human_service_eur_per_hour": 80,
+      "fixed_reader_eur": 3000,
+      "reset_eur": 1500,
+      "calibration_kit_eur": 100
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0.02,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1,
+      "ambiguity_policy": "reduce-capacity/1"
+    },
+    "scenario": {
+      "hours": 48,
+      "horizon_hours": 6,
+      "seed": 7,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 6,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 1,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.05
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0,
+      "noct_c": 45,
+      "temperature_coefficient": 0,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null,
+    "models": {
+      "battery": "affine/1",
+      "electrolyser": "specific-energy/1",
+      "hydrogen": "balance/1",
+      "co2": "balance/1",
+      "reactor": "analytic/1"
+    },
+    "faults": {
+      "hardware_model": "actuator-interlock/1",
+      "lifecycle": "persistent",
+      "capacity_cause": "resettable-trip",
+      "inspection_fault_start_hour": 0.0,
+      "contact_stuck": "none",
+      "fixed_reader_offset_v": 0.0,
+      "fixed_reader_drift_vph": 0.0,
+      "fixed_reader_dropout": false,
+      "mobile_reader_offset_v": 0.0,
+      "mobile_reader_drift_vph": 0.0,
+      "mobile_reader_dropout": false,
+      "service_fault_start_hour": 0,
+      "cleaner_service_fault": "none",
+      "rover_service_fault": "none",
+      "dock_service_fault": "none",
+      "portable_service_fault": "none"
+    },
+    "field_operations": {
+      "enabled": true,
+      "cleaner_enabled": false,
+      "rover_enabled": false,
+      "reset_enabled": false,
+      "human_fallback": true,
+      "route_open": true,
+      "dock_available": true,
+      "initial_soiling_fraction": 0.01,
+      "soiling_per_day": 0,
+      "cleaning_threshold": 0.04,
+      "cleaning_removal_fraction": 0.9,
+      "cleaner_battery_kwh": 2,
+      "rover_battery_kwh": 2,
+      "mission_power_kw": 0.2,
+      "return_reserve_kwh": 0.2,
+      "dock_kw": 1,
+      "charging_efficiency": 0.9,
+      "cleaning_hours": 2,
+      "inspection_hours": 1,
+      "human_lead_hours": 1,
+      "human_work_hours": 2,
+      "service_kits": 2,
+      "cleaning_kits": 12,
+      "mission_failure_probability": 0.05,
+      "repair_success_probability": 0.95
+    },
+    "service_system": {
+      "implementation": "plant-service-contracts/1",
+      "inspector": "none",
+      "travel_hours": 0.5,
+      "verification_hours": 0.25,
+      "reset_hours": 0.25,
+      "reader_kw": 0.2,
+      "reset_kw": 0.1,
+      "contact_unreadable_probability": 0.05,
+      "contact_error_probability": 0.02,
+      "contact_max_age_hours": 8,
+      "communications_available": true,
+      "crew_available": true,
+      "calibration_reference_available": true,
+      "calibration_kits": 2,
+      "cleaning_model": "section-optical/1",
+      "area_m2_per_kw": 5,
+      "cleaning_area_m2ph": 1000,
+      "initial_adhered_fraction": 0,
+      "initial_damage_fraction": 0,
+      "brush_life_m2": 50000,
+      "brush_initial_condition": 1,
+      "row_accessible": true,
+      "environment_source": "assumed",
+      "assumed_wind_mps": 3,
+      "assumed_rain_mmph": 0,
+      "cleaning_wind_limit_mps": 8,
+      "cleaning_rain_limit_mmph": 0.1,
+      "work_failure_fraction": 0.5,
+      "support_model": "logistics/1",
+      "crew_shift_start_hour": 0,
+      "crew_shift_duration_hours": 24,
+      "crew_period_hours": 24,
+      "crew_travel_hours": 1,
+      "crew_response_lead_hours": 2,
+      "crew_hours_per_period": 24,
+      "remote_hours_per_period": 1,
+      "retrieval_work_hours": 0.5,
+      "robot_test_hours": 0.25,
+      "robot_test_kw": 0.2,
+      "robot_test_success_probability": 1,
+      "support_delivery_hours": 0.5,
+      "store_capacity_kits": 24,
+      "supplier_kits": 24,
+      "delivery_batch_kits": 4,
+      "brush_spares": 2,
+      "brush_change_hours": 0.5,
+      "retrieval_enabled": true,
+      "replenishment_enabled": true,
+      "brush_replacement_enabled": true,
+      "portable_cleaner": "wet",
+      "portable_area_m2ph": 1000,
+      "portable_setup_hours": 0.5,
+      "portable_power_kw": 0.5,
+      "portable_loose_removal": 0.9,
+      "portable_adhered_removal": 0.7,
+      "portable_adhered_threshold": 0.02,
+      "portable_water_l_per_m2": 0.5,
+      "portable_rinse_l": 10,
+      "portable_water_capacity_l": 4000,
+      "portable_water_initial_l": 4000,
+      "portable_upstream_water_l": 5000,
+      "portable_water_delivery_l": 1000,
+      "portable_min_ambient_c": 5,
+      "inspection_model": "referenced-contact/1",
+      "inspection_noise_v": 0.1,
+      "inspection_delay_hours": 0.0,
+      "inspection_zero_limit_v": 2.0,
+      "inspection_span_tolerance_fraction": 0.1,
+      "inspection_low_v": 6.0,
+      "inspection_high_v": 18.0,
+      "inspection_wait_hours": 8.0,
+      "visit_bundling_enabled": false,
+      "visit_max_jobs": 4,
+      "crew_transfer_hours": 0.25,
+      "crew_return_enabled": true,
+      "crew_return_pack_hours": 0.25,
+      "crew_return_check_hours": 0.25,
+      "equipment_recovery_enabled": false,
+      "remote_assistance_enabled": true,
+      "remote_wait_hours": 2,
+      "remote_release_hours": 0.25,
+      "remote_shift_start_hour": 0,
+      "remote_shift_duration_hours": 12,
+      "hardware_replacement_hours": 1,
+      "hardware_spares": 2,
+      "maintenance_enabled": false,
+      "maintenance_target": "resident",
+      "maintenance_first_due_hour": 720.0,
+      "maintenance_interval_hours": 720.0,
+      "maintenance_work_hours": 1.0,
+      "maintenance_kits": 2,
+      "dock_standby_kw": 0.05,
+      "cleaning_policy": "condition",
+      "cleaning_first_due_hour": 0.0,
+      "cleaning_period_hours": 168.0,
+      "inspection_interface": "accessible-port",
+      "outcome_randomness": "target-action-request/1"
+    },
+    "service_economics": {
+      "schema_version": "dispatch-lab/service-economics/2",
+      "basis": "Illustrative EUR assumptions; procurement at upstream release, with no refund for rejected deliveries. No actual vendor invoices.",
+      "source": "assumption:field-service-prices/2",
+      "initial_asset_purchase": false,
+      "initial_stock_purchase": false,
+      "assets": {
+        "cleaner": {
+          "provision": "owned",
+          "capital_eur": 15000,
+          "life_years": 8,
+          "replaceable_capital_eur": 3000.0,
+          "wear_eur_per_hour": 0.5,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 2000,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "rover": {
+          "provision": "owned",
+          "capital_eur": 80000,
+          "life_years": 8,
+          "replaceable_capital_eur": 16000.0,
+          "wear_eur_per_hour": 2,
+          "installation_eur": 2000,
+          "mapping_eur": 1000,
+          "access_eur": 0,
+          "payload_eur": 2000,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 600,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "dock": {
+          "provision": "owned",
+          "capital_eur": 5000,
+          "life_years": 8,
+          "replaceable_capital_eur": 1000,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 2000,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 3000,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "fixed_reader": {
+          "provision": "owned",
+          "capital_eur": 3000,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 500,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "reset": {
+          "provision": "owned",
+          "capital_eur": 1500,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 0
+        },
+        "portable": {
+          "provision": "contracted",
+          "capital_eur": 0,
+          "life_years": 8,
+          "replaceable_capital_eur": 0,
+          "wear_eur_per_hour": 0,
+          "installation_eur": 500,
+          "mapping_eur": 0,
+          "access_eur": 0,
+          "payload_eur": 0,
+          "references_eur": 0,
+          "scheduled_maintenance_eur_per_year": 0,
+          "software_communications_eur_per_year": 0,
+          "retainer_eur_per_hour": 0,
+          "service_eur_per_active_hour": 10
+        }
+      },
+      "materials": {
+        "cleaning": {
+          "eur_per_unit": 5,
+          "unit": "kit",
+          "pool": null
+        },
+        "module": {
+          "eur_per_unit": 500,
+          "unit": "kit",
+          "pool": null
+        },
+        "calibration": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": null
+        },
+        "water": {
+          "eur_per_unit": 0.003,
+          "unit": "L",
+          "pool": null
+        },
+        "brush": {
+          "eur_per_unit": 100,
+          "unit": "kit",
+          "pool": "cleaner"
+        },
+        "maintenance": {
+          "eur_per_unit": 50,
+          "unit": "kit",
+          "pool": null
+        },
+        "hardware:cleaner": {
+          "eur_per_unit": 800,
+          "unit": "module",
+          "pool": "cleaner"
+        },
+        "hardware:rover": {
+          "eur_per_unit": 2500,
+          "unit": "module",
+          "pool": "rover"
+        },
+        "hardware:dock": {
+          "eur_per_unit": 1000,
+          "unit": "module",
+          "pool": "dock"
+        },
+        "hardware:portable": {
+          "eur_per_unit": 250,
+          "unit": "module",
+          "pool": "portable"
+        }
+      },
+      "rates": {
+        "crew_eur_per_hour": 80,
+        "remote_eur_per_hour": 60,
+        "callout_eur": 300,
+        "vehicle_eur_per_travel_hour": 20
+      }
+    },
+    "recovery_policy": null,
+    "service_policy": null,
+    "investigation_policy": null
+  },
+  "weather": {
+    "mode": "synthetic",
+    "times": [
+      "2026-07-10T00:00:00+00:00",
+      "2026-07-10T01:00:00+00:00",
+      "2026-07-10T02:00:00+00:00",
+      "2026-07-10T03:00:00+00:00",
+      "2026-07-10T04:00:00+00:00",
+      "2026-07-10T05:00:00+00:00",
+      "2026-07-10T06:00:00+00:00",
+      "2026-07-10T07:00:00+00:00",
+      "2026-07-10T08:00:00+00:00",
+      "2026-07-10T09:00:00+00:00",
+      "2026-07-10T10:00:00+00:00",
+      "2026-07-10T11:00:00+00:00",
+      "2026-07-10T12:00:00+00:00",
+      "2026-07-10T13:00:00+00:00",
+      "2026-07-10T14:00:00+00:00",
+      "2026-07-10T15:00:00+00:00",
+      "2026-07-10T16:00:00+00:00",
+      "2026-07-10T17:00:00+00:00",
+      "2026-07-10T18:00:00+00:00",
+      "2026-07-10T19:00:00+00:00",
+      "2026-07-10T20:00:00+00:00",
+      "2026-07-10T21:00:00+00:00",
+      "2026-07-10T22:00:00+00:00",
+      "2026-07-10T23:00:00+00:00",
+      "2026-07-11T00:00:00+00:00",
+      "2026-07-11T01:00:00+00:00",
+      "2026-07-11T02:00:00+00:00",
+      "2026-07-11T03:00:00+00:00",
+      "2026-07-11T04:00:00+00:00",
+      "2026-07-11T05:00:00+00:00",
+      "2026-07-11T06:00:00+00:00",
+      "2026-07-11T07:00:00+00:00",
+      "2026-07-11T08:00:00+00:00",
+      "2026-07-11T09:00:00+00:00",
+      "2026-07-11T10:00:00+00:00",
+      "2026-07-11T11:00:00+00:00",
+      "2026-07-11T12:00:00+00:00",
+      "2026-07-11T13:00:00+00:00",
+      "2026-07-11T14:00:00+00:00",
+      "2026-07-11T15:00:00+00:00",
+      "2026-07-11T16:00:00+00:00",
+      "2026-07-11T17:00:00+00:00",
+      "2026-07-11T18:00:00+00:00",
+      "2026-07-11T19:00:00+00:00",
+      "2026-07-11T20:00:00+00:00",
+      "2026-07-11T21:00:00+00:00",
+      "2026-07-11T22:00:00+00:00",
+      "2026-07-11T23:00:00+00:00"
+    ],
+    "truth": {
+      "2026-07-10T00:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T01:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T02:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T03:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T04:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T05:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T06:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T07:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T08:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T09:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T10:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T11:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T12:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T13:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T14:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T15:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T16:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T17:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T18:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T19:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T20:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T21:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T22:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-10T23:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T00:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T01:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T02:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T03:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T04:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T05:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T06:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T07:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T08:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T09:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T10:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T11:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T12:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T13:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T14:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T15:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T16:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T17:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T18:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T19:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T20:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T21:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T22:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-11T23:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T00:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T01:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T02:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T03:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T04:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      },
+      "2026-07-12T05:00:00+00:00": {
+        "pv_kw": 300,
+        "ambient_c": 20,
+        "irradiance_wm2": 300,
+        "humidity_pct": 60
+      }
+    },
+    "template": {
+      "2026-07-10T00:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T01:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T02:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T03:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T04:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T05:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T06:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T07:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T08:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T09:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T10:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T11:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T12:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T13:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T14:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T15:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T16:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T17:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T18:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T19:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T20:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T21:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T22:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-10T23:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T00:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T01:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T02:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T03:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T04:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T05:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T06:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T07:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T08:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T09:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T10:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T11:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T12:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T13:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T14:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T15:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T16:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T17:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T18:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T19:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T20:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T21:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T22:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-11T23:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T00:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T01:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T02:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T03:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T04:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      },
+      "2026-07-12T05:00:00+00:00": {
+        "pv_kw": 300,
+        "irradiance_wm2": 300,
+        "ambient_c": 20
+      }
+    },
+    "vintages": [],
+    "snapshots": [],
+    "timezone": "Europe/London",
+    "reference": "Declared constant-input stress fixture; not measured European weather",
+    "attribution": "Dispatch Lab realism boundary review; 20\u00b0C ambient, constant irradiance, no implied site frequency",
+    "forecast_cadence": "hourly template plus present-observation correction"
+  },
+  "case_id": "4fc83998d236847ea277"
+}

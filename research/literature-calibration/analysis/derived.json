@@ -1,0 +1,136 @@
+{
+  "schema_version": "dispatch-lab/literature-derived/1",
+  "chemistry": {
+    "molecular_weights_g_per_mol": {
+      "ch4": 16.0425,
+      "co2": 44.0095,
+      "h2": 2.01588,
+      "water": 18.01528
+    },
+    "ratios": {
+      "h2_kg_per_kg_ch4": 0.502634876110332,
+      "co2_kg_per_kg_ch4": 2.7433068412030543,
+      "water_kg_per_kg_ch4": 2.2459442106903538,
+      "electrolysis_water_kg_per_kg_h2": 8.936682739051928
+    },
+    "mass_rounding_residual_kg_per_kg_ch4": -2.493376967560579e-06,
+    "standard_reaction_kj_per_mol": -165.00349999999997,
+    "standard_reaction_kwh_per_kg_ch4": 2.857055044759579,
+    "thermal": [
+      {
+        "temperature_c": 250,
+        "reaction_release_kwh_per_kg_ch4": 3.044228251716819,
+        "cold_feed_heating_kwh_per_kg_ch4": 0.6161510179819649,
+        "net_release_after_feed_heating_kwh_per_kg_ch4": 2.428077233734854
+      },
+      {
+        "temperature_c": 300,
+        "reaction_release_kwh_per_kg_ch4": 3.0809818094625707,
+        "cold_feed_heating_kwh_per_kg_ch4": 0.7573798904027373,
+        "net_release_after_feed_heating_kwh_per_kg_ch4": 2.323601919059833
+      },
+      {
+        "temperature_c": 320,
+        "reaction_release_kwh_per_kg_ch4": 3.09505464844238,
+        "cold_feed_heating_kwh_per_kg_ch4": 0.8142225732103628,
+        "net_release_after_feed_heating_kwh_per_kg_ch4": 2.2808320752320173
+      },
+      {
+        "temperature_c": 350,
+        "reaction_release_kwh_per_kg_ch4": 3.1154821688068206,
+        "cold_feed_heating_kwh_per_kg_ch4": 0.8998504507916603,
+        "net_release_after_feed_heating_kwh_per_kg_ch4": 2.21563171801516
+      },
+      {
+        "temperature_c": 400,
+        "reaction_release_kwh_per_kg_ch4": 3.147709503499963,
+        "cold_feed_heating_kwh_per_kg_ch4": 1.0435108103186372,
+        "net_release_after_feed_heating_kwh_per_kg_ch4": 2.1041986931813255
+      }
+    ],
+    "co2_300kg_day_ch4_steady_supply_ceiling_kg_per_day": 109.35707063247708,
+    "scope": "Ideal complete conversion, gas water, no pressure/equilibrium/kinetics correction or heat recovery credit."
+  },
+  "gas_storage": [
+    {
+      "max_pressure_bar_absolute": 30,
+      "min_pressure_bar_absolute": 20,
+      "temperature_c": 20,
+      "nominal_mass_kg": 60,
+      "volume_m3": 24.614531694548386,
+      "heel_kg": 40.236737779535495,
+      "usable_mass_kg": 19.763262220464508,
+      "volume_for_60kg_usable_m3": 74.72814382554863
+    },
+    {
+      "max_pressure_bar_absolute": 100,
+      "min_pressure_bar_absolute": 20,
+      "temperature_c": 20,
+      "nominal_mass_kg": 60,
+      "volume_m3": 7.695769432241452,
+      "heel_kg": 12.580075075141314,
+      "usable_mass_kg": 47.41992492485869,
+      "volume_for_60kg_usable_m3": 9.73738711451288
+    },
+    {
+      "max_pressure_bar_absolute": 200,
+      "min_pressure_bar_absolute": 20,
+      "temperature_c": 20,
+      "nominal_mass_kg": 60,
+      "volume_m3": 4.079793801044609,
+      "heel_kg": 6.669133315405057,
+      "usable_mass_kg": 53.330866684594945,
+      "volume_for_60kg_usable_m3": 4.589980311221633
+    },
+    {
+      "max_pressure_bar_absolute": 350,
+      "min_pressure_bar_absolute": 20,
+      "temperature_c": 20,
+      "nominal_mass_kg": 60,
+      "volume_m3": 2.5369803068068526,
+      "heel_kg": 4.147136034257414,
+      "usable_mass_kg": 55.852863965742586,
+      "volume_for_60kg_usable_m3": 2.725353860131053
+    }
+  ],
+  "metrology": {
+    "pressure_example_bound_kg": 0.1964716375789024,
+    "temperature_example_bound_kg": 0.20319844260179565,
+    "scope": "Separate one-at-a-time error examples, not combined uncertainty or Gaussian noise. Assumed 40 bar span, \u00b10.25% span, \u00b11 K, and fixed reference volume."
+  },
+  "sampling": {
+    "well_mixed_volume_cm3": 100,
+    "actual_flow_cm3_per_min": 100,
+    "time_to_95_percent_replacement_min": 2.995732273553991
+  },
+  "portable_cleaning": {
+    "area_m2": 5000,
+    "rate_m2_per_h": 670,
+    "productive_hours": 7.462686567164179,
+    "robot_electricity_kwh": 5.970149253731344,
+    "water_litres_range": [
+      223.88059701492537,
+      1343.2835820895523
+    ],
+    "water_litres_per_m2_range": [
+      0.04477611940298507,
+      0.26865671641791045
+    ],
+    "excluded": "Travel, setup, row transfers, compressor, lift, pumping and water treatment. Vendor average-rate claim, not a measured site guarantee."
+  },
+  "row_cleaning": {
+    "assumed_area_m2": 5000,
+    "vendor_speed_m2_per_h": 180,
+    "vendor_max_nightly_area_m2": 400,
+    "minimum_units_for_single_night": 13,
+    "scope": "Ecoppia T4 tracker-specific reference. Geometry may require more units; speed and nightly area are different constraints."
+  },
+  "inspection": {
+    "b1_actions_successful": 673,
+    "b1_actions_attempted": 730,
+    "b1_action_fraction": 0.9219178082191781,
+    "b1_mtbi_hours": 78,
+    "jet_mtbi_hours": 140,
+    "scope": "Published deployment summaries, not fitted per-mission hardware failure hazards. Interventions were clustered; MTBI includes calendar exposure."
+  }
+}

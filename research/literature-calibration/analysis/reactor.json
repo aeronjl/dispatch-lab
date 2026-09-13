@@ -1,0 +1,15 @@
+{
+  "baseline_c": 319.6865243081041,
+  "increment_k": 14.772824406718433,
+  "effective_time_constant_minutes": 9.299393265602896,
+  "digitization_perturbation_95_percentiles_minutes": [
+    8.074881743271211,
+    10.869910515102651
+  ],
+  "n": 12,
+  "rmse": 0.48978657776031503,
+  "bias": 2.2560205555540355e-10,
+  "mae": 0.3763494796020173,
+  "scope": "Effective response to a feed-rate step with coolant inlet held310C. Not ambient heat loss; does not identify independent C and UA. Perturbation interval is not an experimental confidence interval.",
+  "fit": "First-order descriptive fit to manually digitized published figure8; fixed input step at5min; all points fit, no independent hold-out."
+}

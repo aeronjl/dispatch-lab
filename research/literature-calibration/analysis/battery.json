@@ -1,0 +1,131 @@
+{
+  "source": "Grimaldi2023 table6",
+  "coefficients": [
+    [
+      101.1,
+      0.03028,
+      -4.493
+    ],
+    [
+      97.81,
+      0.02736,
+      -3.065
+    ],
+    [
+      97.3,
+      0.02692,
+      -3.379
+    ],
+    [
+      97.72,
+      0.03237,
+      -5.629
+    ]
+  ],
+  "curve": [
+    {
+      "year": 1,
+      "power_pu": 0.15,
+      "power_kw": 75.0,
+      "rte_without_separate_aux": 0.8344519799201242
+    },
+    {
+      "year": 1,
+      "power_pu": 0.32,
+      "power_kw": 160.0,
+      "rte_without_separate_aux": 0.909226373963686
+    },
+    {
+      "year": 1,
+      "power_pu": 0.55,
+      "power_kw": 275.0,
+      "rte_without_separate_aux": 0.9335327958571724
+    },
+    {
+      "year": 1,
+      "power_pu": 1,
+      "power_kw": 500,
+      "rte_without_separate_aux": 0.9363566405249059
+    },
+    {
+      "year": 2,
+      "power_pu": 0.15,
+      "power_kw": 75.0,
+      "rte_without_separate_aux": 0.8226183322056834
+    },
+    {
+      "year": 2,
+      "power_pu": 0.32,
+      "power_kw": 160.0,
+      "rte_without_separate_aux": 0.8912514196222939
+    },
+    {
+      "year": 2,
+      "power_pu": 0.55,
+      "power_kw": 275.0,
+      "rte_without_separate_aux": 0.9148921882361091
+    },
+    {
+      "year": 2,
+      "power_pu": 1,
+      "power_kw": 500,
+      "rte_without_separate_aux": 0.9214018610808286
+    },
+    {
+      "year": 3,
+      "power_pu": 0.15,
+      "power_kw": 75.0,
+      "rte_without_separate_aux": 0.819880629550079
+    },
+    {
+      "year": 3,
+      "power_pu": 0.32,
+      "power_kw": 160.0,
+      "rte_without_separate_aux": 0.8866851822437448
+    },
+    {
+      "year": 3,
+      "power_pu": 0.55,
+      "power_kw": 275.0,
+      "rte_without_separate_aux": 0.9090137805241626
+    },
+    {
+      "year": 3,
+      "power_pu": 1,
+      "power_kw": 500,
+      "rte_without_separate_aux": 0.913703475635882
+    },
+    {
+      "year": 4,
+      "power_pu": 0.1,
+      "power_kw": 50.0,
+      "rte_without_separate_aux": 0.7326047387625594
+    },
+    {
+      "year": 4,
+      "power_pu": 0.15,
+      "power_kw": 75.0,
+      "rte_without_separate_aux": 0.7953071168777758
+    },
+    {
+      "year": 4,
+      "power_pu": 0.32,
+      "power_kw": 160.0,
+      "rte_without_separate_aux": 0.869418025552686
+    },
+    {
+      "year": 4,
+      "power_pu": 0.55,
+      "power_kw": 275.0,
+      "rte_without_separate_aux": 0.8919245771330939
+    },
+    {
+      "year": 4,
+      "power_pu": 1,
+      "power_kw": 500,
+      "rte_without_separate_aux": 0.8902698574154614
+    }
+  ],
+  "boundary": "500kW/822kWh NMC AC-coupled installation; operating energy657.6kWh. Separate auxiliaries must not be included twice.",
+  "evidence": "Reproduction of authors' regression, not independent refit or validation; source raw SCADA unavailable here."
+}

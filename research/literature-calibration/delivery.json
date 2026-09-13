@@ -1,0 +1,20 @@
+{
+  "schema_version": "dispatch-lab/literature-delivery/1",
+  "review_date": "2026-09-12",
+  "source_count": 46,
+  "reference_profile_count": 9,
+  "numerical_document_checks": 33,
+  "browser_checks": 13,
+  "scope": "Research and reference calibration only. No production defaults, archive snapshots, SVG assets or paused experiment queue changed.",
+  "visual_review": "Desktop, narrow-screen and battery section screenshots inspected. Five scientific plots use stored results; reactor extraction checked against original figure.",
+  "artifacts": {
+    "report.html": "6dd72d94d65f42c7dfa491ade49c9dc5283a61f14113b5a7b2e5a25cda5bfbe5",
+    "report.md": "1f3cf9f009db9d6fa920bf71a2dcf8e755647b00db751a1b3196481acf6bf64b",
+    "sources.json": "01dab73757bdc4f33cfbe66d1627c7e5525e7a5f81654505827ce628bc9f4a37",
+    "coverage.json": "cc618298bf2496261d16368878ed60f7989febefc625befea9a666b9ff2f4bba",
+    "reference-profiles.json": "03b195c986c8a6b0de2b38d8682677d2d1d0332aa38036887b120f22b6aeff15",
+    "validation.json": "1828f954a7bb13378f0eb569d221b8eb646f47a88bef0378445aaf0c9c127b1d",
+    "browser-validation.json": "00bb0e0e10621aa1480487dc2e15f114d7ef317c61edac71e3dc9aa715cdb46b",
+    "analysis/manifest.json": "739b5ad02402bc8ca722ce6071c91e5c554b300575e38a0d8d20f12a9ef42efb"
+  }
+}

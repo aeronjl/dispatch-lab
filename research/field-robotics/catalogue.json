@@ -1,0 +1,196 @@
+{
+  "schema_version": "dispatch-lab/research-field-robotics/1",
+  "as_of": "2026-09-10",
+  "status": "Research proposals, not implemented asset definitions",
+  "archetypes": [
+    {
+      "id": "row-cleaner",
+      "name": "Dedicated solar-row cleaner",
+      "maturity": "Commercial, geometry-specific",
+      "examples": "Ecoppia E4/H4/T4",
+      "mechanism": "Dry brushing with docking; some systems use their own solar supply.",
+      "simulation": "Soiling removal per section, finite coverage, brush condition, docking and weather limits.",
+      "limits": "Track/bridge layout; no automatic cross-row compatibility; consumables and servicing remain.",
+      "sources": [
+        "ecoppia",
+        "t4"
+      ],
+      "priority": "First implementation"
+    },
+    {
+      "id": "portable-cleaner",
+      "name": "Portable wet/dry cleaner",
+      "maturity": "Commercial, operator-assisted",
+      "examples": "SolarCleano F1",
+      "mechanism": "Battery-powered cleaner transported and operated by a person.",
+      "simulation": "Water, setup/movement labour, energy, coverage and cleaning effectiveness.",
+      "limits": "Remote control does not eliminate the operator or deployment visit.",
+      "sources": [
+        "solarcleano"
+      ],
+      "priority": "Comparison baseline"
+    },
+    {
+      "id": "ground-inspector",
+      "name": "Mobile ground inspector",
+      "maturity": "Commercial, commissioned routes",
+      "examples": "ANYmal X; ExR-2.5; Spot",
+      "mechanism": "Visual, thermal, acoustic and optional gas sensing on taught inspection rounds.",
+      "simulation": "Travel graph, payload, observation quality, delay, charge, failed missions and assistance.",
+      "limits": "Mobility, gas-group rating and payload compatibility differ; a reading is not a repair.",
+      "sources": [
+        "anymal",
+        "exr",
+        "spot"
+      ],
+      "priority": "First implementation"
+    },
+    {
+      "id": "aerial-inspector",
+      "name": "Docked aerial inspector",
+      "maturity": "Commercial, operation-dependent",
+      "examples": "DJI Dock 3 / Matrice 4TD",
+      "mechanism": "Repeatable visual/thermal survey with automatic dock charging.",
+      "simulation": "Survey coverage, wind/rain restrictions, flight reserve, dock power and delayed observations.",
+      "limits": "Weather, airspace/authorization and dock dependence; no generic gas identification.",
+      "sources": [
+        "dock",
+        "easa",
+        "caa"
+      ],
+      "priority": "Second implementation"
+    },
+    {
+      "id": "contact-inspector",
+      "name": "Contact inspection crawler",
+      "maturity": "Commercial specialist inspection",
+      "examples": "Gecko Robotics RUG",
+      "mechanism": "Ultrasonic measurement of surface/material thickness.",
+      "simulation": "Inspection method, reachable surfaces and measurement uncertainty.",
+      "limits": "Deployment and contact preparation may require people; requires a corresponding degradation model.",
+      "sources": [
+        "gecko"
+      ],
+      "priority": "Later, if integrity mechanics added"
+    },
+    {
+      "id": "grounds",
+      "name": "Vegetation-management robot",
+      "maturity": "Commercial deployments reported",
+      "examples": "Renu Robotics Renubot",
+      "mechanism": "Mapped autonomous mowing with recharge pod and remote monitoring.",
+      "simulation": "Seasonal growth, access obstruction, service hours, energy and human support.",
+      "limits": "Terrain, obstacles and robot maintenance; economics differ with site and climate.",
+      "sources": [
+        "renu"
+      ],
+      "priority": "Later site-operations example"
+    },
+    {
+      "id": "sampler",
+      "name": "Sampling and analyzer station",
+      "maturity": "Commercial engineered subsystem",
+      "examples": "Swagelok calibration/switching modules",
+      "mechanism": "Condition and route process or reference samples to an analyzer.",
+      "simulation": "Purge/transport delay, sample use, contamination, analyzer status and reference inventory.",
+      "limits": "Requires an analyzer, utilities and compatible process interfaces; not gas-quality certification.",
+      "sources": [
+        "sampling"
+      ],
+      "priority": "Initial architecture; later mechanism"
+    },
+    {
+      "id": "calibration",
+      "name": "Automatic sensor service station",
+      "maturity": "Commercial for specified sensors",
+      "examples": "Endress+Hauser CDC90",
+      "mechanism": "Retract, clean, validate and calibrate compatible pH/ORP sensors.",
+      "simulation": "Calibration age, reference/cleaner stocks, temporary unavailability and verified return.",
+      "limits": "Not a generic cure for a hydrogen flow meter; electrode and reagent replacement remain.",
+      "sources": [
+        "cdc90"
+      ],
+      "priority": "First fixed-hardware comparison"
+    },
+    {
+      "id": "fixed-sensor",
+      "name": "Rugged fixed sensor package",
+      "maturity": "Commercial, technology-specific",
+      "examples": "Emerson corrosion/erosion sensing",
+      "mechanism": "Permanent ultrasonic, acoustic or intrusive measurements.",
+      "simulation": "Independent channels, battery life, drift, dropout and common-mode error.",
+      "limits": "Sensor coverage and calibration are bounded; no automatic remaining-life ground truth.",
+      "sources": [
+        "emerson"
+      ],
+      "priority": "First inspection baseline"
+    },
+    {
+      "id": "remote-actuator",
+      "name": "Remote actuator / redundant service path",
+      "maturity": "Commercial with engineered integration",
+      "examples": "Rotork IQ3 Pro and shutdown options",
+      "mechanism": "Commanded actuation with position/torque feedback; optional stored-energy shutdown.",
+      "simulation": "Actuation power, stuck states, position uncertainty and service-path prerequisites.",
+      "limits": "Indication backup is not actuator motive power; valve action must have a modeled physical effect.",
+      "sources": [
+        "rotork",
+        "shutdown"
+      ],
+      "priority": "First bounded-recovery example"
+    },
+    {
+      "id": "manipulator",
+      "name": "Mobile maintenance manipulator",
+      "maturity": "Prototype / constrained demonstrations",
+      "examples": "Taurob Operator",
+      "mechanism": "Valve manipulation, tooling and material handling.",
+      "simulation": "Tool/reach/torque compatibility, multi-stage tasks, failure, verification and remote assistance.",
+      "limits": "Manufacturer page explicitly says prototype; no universal consumable-replacement capability.",
+      "sources": [
+        "taurob"
+      ],
+      "priority": "Explicit future-capability fixture"
+    },
+    {
+      "id": "service-module",
+      "name": "Robot-compatible replaceable module",
+      "maturity": "Research demonstration / design option",
+      "examples": "Melenbrink–Teeple–Werfel modular hardware",
+      "mechanism": "Single-axis guided insertion, combined latching and compliant mechanical interfaces.",
+      "simulation": "Service-port compatibility, spare stock, isolation, swap and post-service check.",
+      "limits": "Space-habitat lab hardware is evidence for a design principle, not pressure-system qualification.",
+      "sources": [
+        "robotfactors"
+      ],
+      "priority": "Explicit future-capability fixture"
+    },
+    {
+      "id": "construction",
+      "name": "Solar construction robot",
+      "maturity": "Commercial deployments reported; evolving versions",
+      "examples": "AES/Maximo; Terabase Terafab",
+      "mechanism": "Mechanized panel handling, assembly and installation alongside construction crews.",
+      "simulation": "Build-phase labour, rented equipment, mobilization, capacity commissioning and defects.",
+      "limits": "Not a daily O&M robot; module installation is only part of project completion.",
+      "sources": [
+        "maximo",
+        "terabase"
+      ],
+      "priority": "Separate commissioning scenario"
+    },
+    {
+      "id": "deployable-array",
+      "name": "Pre-integrated deployable solar array",
+      "maturity": "Commercial, crew-assisted",
+      "examples": "5B Maverick",
+      "mechanism": "Transportable pre-wired solar blocks unfolded with a small crew and machinery.",
+      "simulation": "Transport, installation time/cost, footprint and compatible cleaning/access geometry.",
+      "limits": "A design alternative rather than an autonomous robot; crew and telehandler still required.",
+      "sources": [
+        "maverick"
+      ],
+      "priority": "Separate design comparison"
+    }
+  ]
+}

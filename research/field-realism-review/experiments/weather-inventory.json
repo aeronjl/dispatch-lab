@@ -1,0 +1,3163 @@
+[
+  {
+    "path": "runs/weather/0047ae6741bd08819fa03dec80a6000d4018408b198fcd641211fba7943485af.json",
+    "sha256": "6a24c4434fd6a6a2c3c7e3258b0e9f83ec315587d1ebe3f070e9d099ccf480e9",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:07.504699+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-09T00:00",
+    "end": "2026-01-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/02b50ff2028c4c06bd5d4ed1ec6e51b14c88789ae6ffb053bf6924bb93e86bc0.json",
+    "sha256": "d465d70c275c508734ea5a665b791e69fd7aeb608878488e171ea5d35cc7928c",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:26.884713+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/06923d5c812fd845d8dbb7a88bd93a2088f5f4aa1eae3f80954de3692607af0e.json",
+    "sha256": "e9aff08c165e757bf1e467e8f3a58659f566571c3dc4ee453ce15d7dde4f738f",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:30.143997+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-09T00:00",
+    "end": "2026-04-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/07768a3d68f4ae8e335a41969e47fe228943eabf7776636044c88df419c61418.json",
+    "sha256": "9aa289e77779bf16c39bc698115320ca4a313387d02ae8a62a7cfde108b6214c",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:30.511904+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-11T00:00",
+    "end": "2026-04-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0a1c99a942544dd23935c37b5f749940647750ddcc36b4687ce2834efec93d0d.json",
+    "sha256": "05db96518306a57c0010975440aae4d6f5ef83f56b63122fb88e4ee92d819863",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:28.254516+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-16T00:00",
+    "end": "2026-07-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0b532a499ee5125453379af460ccad439120bde241a5eb9718dc1cd4ad56c5b1.json",
+    "sha256": "7887d80d5e7b35e01ace6009cc8224ce3e8fa34b786a2e31e2d2bd0abb1d97c9",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:00.641481+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0d41a50068477a52ff33052680f0068b044a869c8546f92706294f115a49ef44.json",
+    "sha256": "ad81200c7e1b54a8ea80b8e92ed09a91fe71a0e13ca3aed34b0a3dbbe251915b",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.886085+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-17T00:00",
+    "end": "2026-07-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0db2107b43b672ded2c6a7c10bb7c6d43cd8a5c5c723106b6eeb561f222aacc7.json",
+    "sha256": "4f5c80dba66e62ac0c407626a77c123b338aa74fba715585740b0f3ed9fe57fa",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.804202+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-14T00:00",
+    "end": "2026-07-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0e28425f0ff63b5d72ecf36f7e9fea01de47541958324dd99db06539a0443939.json",
+    "sha256": "8656ffa2f2b9a83887a73ade62d21dc82561d5c9b4cd0bf42ad1323fedcdd5f6",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:01:59.851924+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-11T00:00",
+    "end": "2026-07-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/0f160d31c9d5dfef17477a0a0fc499998635a9d2cf17dd270ac0c9586a0e0f9d.json",
+    "sha256": "7f326e90bb1c58c453d9048b0eb7fd84cda69c82633529350596b8f7127e89b7",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:08.433652+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-13T00:00",
+    "end": "2026-01-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/13c7b296aaf789be5b8cb35251aff9d31bb8959f8aba26dd21310523e15140c3.json",
+    "sha256": "25bf23d9b2a232ae6f207f739a5a4c44b5db00d73bb03f6410c19865b7a818bc",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:50.170815+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-16T00:00",
+    "end": "2026-07-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/1608d766bad7ee3ce93d24fc41e6b480566fc7fd32dc26ffbcc212f65af486a9.json",
+    "sha256": "c2fc51f42002f1dd96ddb8d3101ed109ede604674683d42fcbad129dc2fea802",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:29.075384+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-19T00:00",
+    "end": "2026-07-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/181bc9a08967ca657eea4c2408dcea923f31bceeb3786f55ace1742af5b9a2d6.json",
+    "sha256": "b66f5baebe3bf73b8b6a4bd29ea08be7ac6a78e039c632a9f8c639aa982e2191",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:27.217183+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-12T00:00",
+    "end": "2026-07-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/18e1a92e6e2c2baf3eab5f54022232f7caeef19c24f287e8e109a2cc2352026e.json",
+    "sha256": "07071b19eb66877977d21369ad98d10d2bd07bddd0f432b6996ad6ca7eca379e",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:31.979177+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-18T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/1903a4a93b59cff2232e80813ae80deb6f6ec6cee44e6f86b7ad9834df10caab.json",
+    "sha256": "22acd1d0524a08ef936b34f6d86fae136f89286af2bf01f9defcaacf8f647030",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:30.961163+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-13T00:00",
+    "end": "2026-04-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/1a02f4bc5c3ebba09948861e85f1d06bf19936a9fb8a077b01ce594cbf4c0b7b.json",
+    "sha256": "0943e480fb60bd33ca13925c2537e4b27abb34ccfd3a9da1377d62ecd2770b76",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-07-10&end_date=2026-07-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:01:59.351899+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/1aef2472797817c99e7ea719bf6ddc6a04fd477c0eef3d344d17368fecfbdd9a.json",
+    "sha256": "b75d1682506de82b0e4b975e164124ecdf29998d668e7df404b4111ba677fe08",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:28.861027+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-18T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/1d51f308d4723504d83537825c139686e2428e6ef67ff1257c7ec06a60b2ea6c.json",
+    "sha256": "ff6036b6926991d35f328b0e1b7f98599f98a80a07edf4cdbbd8ffbf9984a620",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.744985+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-16T00:00",
+    "end": "2026-07-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/21d9494ed2876ea66b408244728e7908e512eceb1b6fbf5c82c97a24795738b2.json",
+    "sha256": "81ceeb41f648f4de6d8286b9ce8db894568e82e26481b39734b032d5e2320d61",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-07-10&end_date=2026-07-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:48.796509+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/220bbefa23f581d76b73840882a6d76a5750585cb1ec360d310e0761cfd1d05e.json",
+    "sha256": "f762ee58713706724792b4b7272ff4064d9e55ce40ed398bb36a5e862dc790ae",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.303457+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-11T00:00",
+    "end": "2026-07-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/24423dab7c251633ab5bff1a3dc960f32bed723d47a3ac3b515947553bdc6381.json",
+    "sha256": "00b3f99e275ab14bc47ae5320e2769794d7f26bebeb39716f80c42ead4fdbc68",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.968345+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-17T00:00",
+    "end": "2026-04-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/254e04f5341d30a8fe4ee3fa9b03aba99775fecc3dcb97cbf4b8bfd5772c43e2.json",
+    "sha256": "b1d8b85cc0d7795eeaeed37ef18cd45526a8afbf1665b008980320ce8df68431",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:03.342314+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-19T00:00",
+    "end": "2026-04-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/256aa378b9c43059b8ad00b7bd835cf36819d3790499a33512039e7221670c86.json",
+    "sha256": "c8875cafb23474bf4b774d02c9b1b6767b4b0645491eab0976bfd64697c858b0",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-01-10",
+      "end_date": "2026-01-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-01-10&end_date=2026-01-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:19.684479+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/25d008432329068f0058d62b976b6fba4c0d231adf11cbb1427e604e0a499171.json",
+    "sha256": "383df2ac9caf91b6567c7c7ce4fe9d081dcf776bfff5c72d1748bf7b22c197e3",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-01-10",
+      "end_date": "2026-01-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-01-10&end_date=2026-01-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:07.336338+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/26157fa1274824ef40a1a9bb8c4f94f2b51caf33a73f72c60ce3ccda14d268e9.json",
+    "sha256": "4ba2f61e68cad6514a183f6e50a89e4b2b11a25b46feb287336adeb5668d6b6a",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:02.659132+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-16T00:00",
+    "end": "2026-04-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/266e22ba6e2bbd32e2e870759161c6637c8af3b566ef4e6574de6cb3525024cb.json",
+    "sha256": "0ddf109c3aa2408895371a6d609ed9a8be5cc2b019eb9e9b91e66087ffccd488",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:09.732336+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-19T00:00",
+    "end": "2026-01-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/272bcc47b9c01559fdbebea8eb57571117aede989a07b7c026d06f94c477eb15.json",
+    "sha256": "0d7fb0ea093ae531fd33cc48fc39ea8da8e77df2cd0b50468b1cee7201f4ba8d",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:48.920323+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-11T00:00",
+    "end": "2026-04-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/279b2cff991ea88b04e91167568436c855199d8c199b08d9e5fe028cac4ba11c.json",
+    "sha256": "5d6a66768a10a5c2618717cb8bdb9add0481662b14b44e0fda2dd113da1c2083",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:20.076307+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/29c66dee42685e4eb2a9688c9a17e96c9d1e420f88bbdde3e732d312e645b1af.json",
+    "sha256": "904a3f41c262a2e2e6509dc92485ab65b5f6a22ecad0b47288b436fb82379f5a",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.017838+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-09T00:00",
+    "end": "2026-01-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/2a04b5bbe1d32862cce83aa8c5a8f10a2c1c40071305b939c4896816cdbb389d.json",
+    "sha256": "3168a5529a63179c11051d9651df3044d9ea65b72dd9cf744d6ce52b4bc5939d",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.189506+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-13T00:00",
+    "end": "2026-07-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/2afc70ccd84ef92ed67eae1307fd008b5705d2a9fb1f1931e390664560cb8e8a.json",
+    "sha256": "cffe1d3ea88cd8935761e7e29a5cb34aaa9fc197fbaacb6839003a279c8e45ee",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:08.608607+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-14T00:00",
+    "end": "2026-01-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/2b7dd13091244ab0cbfa670679fc45df03e7bb2860a9f7b4bf0b6399303999c4.json",
+    "sha256": "37ee2caf152ab65d85330efffbaf008d98e761407e1a63f94282625744f23b97",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:31.493670+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-16T00:00",
+    "end": "2026-04-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/2d430485c6b3f25fefc47100d7eabaf423367722a73bb3c4231d18caed5892c3.json",
+    "sha256": "5fecfa8ce256655328d998fa866992e28dbb62edc78170194c696405060a9dff",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.005559+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-09T00:00",
+    "end": "2026-07-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/2fa03d870e96f1e410b527cca65a2d54bb06c6891a1c556c7b79a49b8ce072fe.json",
+    "sha256": "89e18f6f03c7d28aff064b6ff3d5014e8e26134dbf8699c0b901c3606a5fcc19",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:01.917856+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-15T00:00",
+    "end": "2026-04-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/30b57393d4da99bcc07b95da892b05cd2721e6c3784165050e1a07a28967a658.json",
+    "sha256": "0c897799a1a1c70e35af6ee71b2b3ea9994b6cd0f4d70cd0cbd0e9a034e4a45d",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:50.638055+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-19T00:00",
+    "end": "2026-07-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/31aeaa6672438555b878ea8ca3b06856c1849dc7b81d1a11da3985e5f6ec5f16.json",
+    "sha256": "914d428807b20988669c9eacabc70429eca392211085fed0e1fa011d41a8a847",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:27.054066+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-11T00:00",
+    "end": "2026-07-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/324837437047f85cbe0d385525cceaee8ba2c9be88d4d79b655768c97bb84fde.json",
+    "sha256": "1182a0d1c1809f2845ddba21ddb7288b972c04a2b28cd38df634e2ea31cc1b83",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:20.815036+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-14T00:00",
+    "end": "2026-01-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/329553ef7234f5c8917b26da52cefa9615ef92d5236ea97c025f6d19194d67a5.json",
+    "sha256": "acf48c1549852fe9654582c997514a309e099c5f3952f91da6bc69232f82ce87",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-09-09T12:00",
+      "forecast_days": 3,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-09-09T12%3A00&forecast_days=3&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:36.997472+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-09-09T12:00",
+    "end": "2026-09-12T11:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/348326b382159d26bc1315db8900f7f766dde665017bd446a4e4ab67654f9645.json",
+    "sha256": "80dc7684120246ae69c56bc138a945bdaf4c146684b6a5a026fd13f07d225e80",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:01:59.701879+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/34b69664c40cfaabdee6ce4d732b21c9583b4e6de21c9a03d06e07ac7cadfd4e.json",
+    "sha256": "bd299c21cc237d1c68e71a5851789adc601a56ae1096b699aa0adda74dcffb62",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:09.093674+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-16T00:00",
+    "end": "2026-01-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/350b1e1f8e50a813197f0e2b6b76069a8dddd66365499ecfe7ec21c633bb85ce.json",
+    "sha256": "f099e201e3b1e3070c3fe43a817dd68ef85e8fe537cdc5b3e7a3b40f8b438c09",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:08.269154+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-12T00:00",
+    "end": "2026-01-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/3774499c33b0c748342d7ea8780e33ea28a443769f4c743fca30ab020d0572e1.json",
+    "sha256": "29f09287054700b9d2bf94be8c19a5fe25a755c8f5027ad8b664716b5b8e9050",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.986350+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-15T00:00",
+    "end": "2026-01-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/37f75140ddef62d8abcf6dde39535c26843c314bbd958de24fe8bdcba27f38d4.json",
+    "sha256": "f61c0350b2775ae8c9325c54691e41d54a6d27bfc359c680786be5fef8fc9a7e",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.842314+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-14T00:00",
+    "end": "2026-01-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/39698c3bce56928a82a2d899ed360d6badb6d5df1ab818434aab427b921af62e.json",
+    "sha256": "c2c9099d800ece6ac3c858888d24b430ab97fd279220d0b83382c1388bc101f2",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:08.884831+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-15T00:00",
+    "end": "2026-01-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/3c9ac78122ccfddccaf29c0c32affe2ad2e824da300d0f586eaf773f2a8ad1bb.json",
+    "sha256": "602dec4e044036fc1e1647e4b5d237002cc0e967e54674d0ce10db57636a6d67",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:20.455503+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-12T00:00",
+    "end": "2026-01-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/458c0037e288be7ee1029f1493f6b7eed689fcb7dd0fc9b6236345fa0570ccd9.json",
+    "sha256": "a72c97757c6cd3f7a2421e9192da151027d4f61fdfbda4b21101ceac461a871e",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:27.657101+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-14T00:00",
+    "end": "2026-07-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/463b7316eea2b9e085cc23f88b68f0bdb6f1ac0e8ce2b8b4dcb42a5573f61f6c.json",
+    "sha256": "1e41d9b5347c53949e0cae03536d19990407e5c8df608a8f67b8e91f99692fb6",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:48.578932+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-09T00:00",
+    "end": "2026-04-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/496af74fe3c8243aeddc0435d4ef656d3c7d68deb6fd5454e20ad54c991f3d18.json",
+    "sha256": "124fc69138d170cfaf7197571679e213f67137abfc823b6f71d76fc7ce15713a",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:01.269485+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-19T00:00",
+    "end": "2026-07-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/4d02b25d2957261a371f4be5fa22a0f414c89036aefb88dd458a3b30da71a057.json",
+    "sha256": "401947878227df591d5d23e5f74ab216f92fbaf6282b355fe1e47d231e1a05bd",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:27.429828+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-13T00:00",
+    "end": "2026-07-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/4dbc39bc85641847d25e28b59a6c4352d1b7aadefb3acc7f990a5f39d8339579.json",
+    "sha256": "e65798cd24e0729a81a1fac66c5dc3c1028516bdb005837ec02d77db454fa7d7",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.048448+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-12T00:00",
+    "end": "2026-07-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/4e4daeae47ad5d3991357d41800c951c1bb9edba20618e78142ad58ae4b22ec7.json",
+    "sha256": "9357f60c173d7c9d3150add007325eeb9c9e1e4679f6ebbd372cf43691f81b8e",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:09.510573+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-18T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/542ac96948053b75df14d9982823de3b009e104fb3471301395e3407339c9dff.json",
+    "sha256": "4bfded720d4d42afb3dc286033c4d591d37132ef30bffbcbc45da498f0519bfe",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:20.252080+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-11T00:00",
+    "end": "2026-01-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/55e07cbcaf787e9f2a326c63f4a678e1a47ca245313078ba9c91703fbc5064ff.json",
+    "sha256": "aa5a92e0fe17ff3b0bc8f21218a7d7a6767b6f14aff2b3dd1617b9efbf683c17",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:50.318850+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-17T00:00",
+    "end": "2026-07-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/56dc9960ba34b40271af51d88794d7ab1356eb928f2bb573af1e04cfb72432d7.json",
+    "sha256": "6b23a4d8c92f87b495fbe31b26fd93ee4bb1f348aa02c056b350e21aceb3dc43",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:52.403558+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-17T00:00",
+    "end": "2026-01-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/57bc6c9eceb494c9c9699f97471cc298d86ccdb3b7d00c7454bff1ab644a09a3.json",
+    "sha256": "dd0f2c226bb4ce020787142852c37e326f02cb1c8438504bf00e5463963a116b",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:01:59.556565+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-09T00:00",
+    "end": "2026-07-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/585845c532ad802fa9a960805df417974c11e384ca57d220d854f95714daac25.json",
+    "sha256": "0682fc793d541900690d9d030eb81fe97fe63b78c7e695e7389573b43dd42b87",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:21.237340+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-16T00:00",
+    "end": "2026-01-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/594c48175ba5f79c03177e975b970d87cfbe39f0a195679052bfbcf64647d07b.json",
+    "sha256": "d3598044cd0ff19d8d1c42913e20e734791cccf1190e6b97071b5f775ec3a08d",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:31.352089+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-15T00:00",
+    "end": "2026-04-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/5a0835ca0c22505cdd2f1faa99eb2941cc72cc5e22cc4ae10bb39953b69e8f00.json",
+    "sha256": "aa8219f0fd72a0b4f74e3ff211cb063346889df6b7e8b4e4ded0e05111e7edab",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:28.579691+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-17T00:00",
+    "end": "2026-07-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/5d53b5ed90b1111cdf34dd1d122c2175a4f2d4c4ffc322e3665d2a9beb374ee1.json",
+    "sha256": "b082ba0282b2ec01a0b3af711190490fbebe575946315428f7c16f3b8fbc354a",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:20.639737+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-13T00:00",
+    "end": "2026-01-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/62eee83538418817cf2d179e5df39e8b65be6d28b48b1eb4c5ba8bc6d08a0ea2.json",
+    "sha256": "cd086bf1480ece9e544e554366b05e74c2bdda12b723f8a8ebde9c3b06b0670c",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.148260+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/64f4bec35d87d83dc421f0d051f85337e2aa82522b0fcb2dad46674d90e0da2a.json",
+    "sha256": "c167abe53314e6d3af0942b067c8bfbb659224bd6b3d33d557dfbbdcbddff706",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.668891+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-13T00:00",
+    "end": "2026-07-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/65e746d595804100b14f2cd232314637710be090f7c6078dbe1136fbd78322eb.json",
+    "sha256": "53995182bc1008b4ed826c42362d49ee467cea1062c688fa353387f6e13f1f23",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.207724+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-13T00:00",
+    "end": "2026-04-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/675c4c848e4c30837613b4c0d77333c047b6eaa3cbf17b74eba1e8e5bf9709c9.json",
+    "sha256": "710c40a7977d49264af4d7b94163014d02a46d8f4354fb2510c2b9bf010fcad2",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:50.279265+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-19T00:00",
+    "end": "2026-04-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/67dcf4b1e01eeaecdcbd3073fc95abf6663260f28179f0bf971a4fa28ea9c4f4.json",
+    "sha256": "8b54afce514572f1f089202b784e937dbea3f3dc22bcf574a4a1fcba9ac6d799",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:09.351590+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-17T00:00",
+    "end": "2026-01-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/688893a4ac0f927d942cc49235a80b77d4f3988296e98d0d54e3fa04e919f166.json",
+    "sha256": "bb779b0157a837c0d6bc8270a57b716366bb0049640a99e3087e59f1d590867f",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:00.975403+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-11T00:00",
+    "end": "2026-04-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/69b8c01a9642430febbb1b2524c19182a2bbfdfbbc52e226e48e0af3a01364c5.json",
+    "sha256": "910c057cf8f7f659c12802f5b4dcbc389565481b04937a339fb88a55f94e2ff9",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:31.135098+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-14T00:00",
+    "end": "2026-04-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/6cdef55dc8ad1c0b9c7ef8b85f196c35e2691fa7222ce178c7569fed0ff1594b.json",
+    "sha256": "8557ae90b1d2b9ad7d438d124734163cc99bb45f5358a2eac6fc3e417b7c60f1",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:52.229569+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-16T00:00",
+    "end": "2026-01-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/704b41a65600c30a115f14d435b1d9e5a3b404cef1582df667b790d0ab18c3ce.json",
+    "sha256": "ab6e71e3d26f5f92cc56226fe93749c5856d12193ffa6cd4a4552ce4edf9b069",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:22.098675+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-19T00:00",
+    "end": "2026-01-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/7725a999c8d6ba313a9164ef338fdea18aad254fd7aba0285bf245ca1d2e4666.json",
+    "sha256": "5fa11504220b97f212916147511cc8fcbad15c01dfacefae2bf3bc6f0b0e20db",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.355643+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-14T00:00",
+    "end": "2026-07-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/7c9afb07ded0c383a72bc8bc29cada2b643de2eaab5c8cf44651122839c7c709.json",
+    "sha256": "dfda0b899abb8a601a1a66ecd6b596195e00b92dfcc1fa229503bf3591823176",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:03.139350+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-18T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/8281488cd94b2336789ad76873ac90077384cf83436c52253a1ad222ceddcb5e.json",
+    "sha256": "4765712632c43ee5108d1ad40e1e0d111c4745cf4588845f887a42c1aa6cf7af",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:21.637811+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-17T00:00",
+    "end": "2026-01-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/833c4df174546bb14c94b41f1b559f792a85e512130ff4d93caff075d3e85512.json",
+    "sha256": "a18cc0df23284c067dde86da7f788b15bacaf3e1071f1341dfd124f65dd62cbc",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:21.846793+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-18T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/8370f40568e2836306a7b94e54e676a36bebbafc4e07a13149e961405edf845d.json",
+    "sha256": "a9037308adf8cd93bcdc6b720dbb638280dfa3954f2f20f478c5f0dcf7a55a38",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-01-10",
+      "end_date": "2026-01-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-01-10&end_date=2026-01-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:50.861163+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/84e3e0fa5c6b165e8ed51bee1185498fcbf17647f7993ad2b64a6382dcf1c2ff.json",
+    "sha256": "8cc80990c9586ed882b5374af65883a5baeace2f346a5d58132fc33868422e0a",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:50.499364+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-18T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/895bf4b6437620631e2b6eed65d283291c948a6dcd886d9a0d33fe22414632fa.json",
+    "sha256": "cdd6d6908e8f0dc55c9692e9a678b1241c55f5a24904705595c566ae3a91b361",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.341796+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-11T00:00",
+    "end": "2026-01-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/8d2fbfa43c966dc6d570a8388240cd7b5365dad6654ee00a432f68ced888e0ef.json",
+    "sha256": "f5df8a7a9ae5d714cfcf8528ada618b9ab2fe9bafa14b29385865ec3a1beba49",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.066703+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-12T00:00",
+    "end": "2026-04-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/90800a7c98eface809d94395f327a43a783478862010db81f88f31257f0b39e6.json",
+    "sha256": "4564df5c1a554399d907a64718acf85c2f8aa887fa75449cd3a7319e94456752",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:30.733612+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-12T00:00",
+    "end": "2026-04-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/950f102ecd8135f034dcace565ef40a91a48a565e79f479953c92e89290e5d9e.json",
+    "sha256": "769943c212ff583d302a6d75f512d826ead18ab903c5b9023931086e1fb9d63a",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-04-10",
+      "end_date": "2026-04-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-04-10&end_date=2026-04-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:29.939658+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/9dd8f0aeb1301a4260471a7615585c96d316f430546380e13deec7ac92d9b064.json",
+    "sha256": "0c50faa2d60d3f643b6fcf3ad65393c936f1df8c294a526a09d03df6870097db",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:49.525625+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-12T00:00",
+    "end": "2026-07-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/a5e37b06b4e702039e95eec6b7c3a1720a49f9f814cf2b7d4fb819ba4a7340fd.json",
+    "sha256": "0daf18d642adfdb8ff730d8ed3a4b6df277088e88029638acb76dd227eee5532",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.586751+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-15T00:00",
+    "end": "2026-04-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/ac160e97d834ae4394227e2ec7a922ddf0fd31b6c43ae74ddfeae52a95cd0deb.json",
+    "sha256": "183137b99113017076bf5cfd53ff38b7a52ef66dab0cf8251dd5141640fc1f7a",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:02.882877+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-17T00:00",
+    "end": "2026-04-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/ac1a9d3076de4cb896b7cea4be5a52ad7ae8162f6706d1d2a4d31d2cd095aa4d.json",
+    "sha256": "1e983bcb45db5f5fe28f6f13481b72c78dbba7a5d901637d11a5b812e336c75a",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-16T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-16T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.746315+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-16T00:00",
+    "end": "2026-04-19T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/ade669b240989a6062806795853d6b656d885dab62e6aa596f732f7ee48b6cce.json",
+    "sha256": "0647a4b27c143ca62c4a22f69fbffb00991df046143081c5f935d30eab3f830e",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-04-10",
+      "end_date": "2026-04-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-04-10&end_date=2026-04-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:00.136880+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/ae84e87f3acd1569dc086f6ddef8326edbd99dece7be9e98b17a08ad054af61e.json",
+    "sha256": "84ffd0269a1faaeff68b08603b6523476c9dabd4e235a1d93f27eae97ab417aa",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:52.750261+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-19T00:00",
+    "end": "2026-01-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/af812d99f1d4f6e80bc02ff98a048242fd61c558e1429c3f3e6761fc6fb16344.json",
+    "sha256": "ac6334f25b1269aab7ed448089f95ca14daa8e3e737632866765403036def6d2",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:01.388077+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-13T00:00",
+    "end": "2026-04-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/b3272a8a4b7224268e798110f79a56bdacc966eb88ee5987f9f0ae156ecd8b44.json",
+    "sha256": "13b832278f76d9b354ddb07548e9327e02b433a49e290f8c4076acda38094bfc",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:00.573580+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-15T00:00",
+    "end": "2026-07-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/b6f8458c21ef517ca37718affed7fbc8001762023a9002ef62afbd8ec97c4b44.json",
+    "sha256": "d7fe6ba14338eded8f63f19eb4de18c76307ca0f241931ac158cad2e41aafa3d",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:34:50.030858+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-15T00:00",
+    "end": "2026-07-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/bda18765eaeea8a052eb37ba0f67354d0b664f1a62149fd60517ea07efe764f3.json",
+    "sha256": "8a14bd4ca52f3831dd3b5ee86d8d5e0ffa371eeb66ada0a6da4973446c53cdda",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-17T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-17T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:31.738427+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-17T00:00",
+    "end": "2026-04-20T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c04b0de3dd86d7cd33c081acf1e0d424befdb888002dede5c2c1dd8df498e6bf.json",
+    "sha256": "abb45b855a67f334e90b6c2ac523c2ed6082956b1ea576b43d6968d0734923b7",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:21.059989+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-15T00:00",
+    "end": "2026-01-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c2fb13d9accf8c5f236a7083c5afac6d75873ec6319137b8a105afc1bb286aff.json",
+    "sha256": "b19475fefe80018f352eff725562a9bb010087948614b3b1cd274ef6706773ac",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:49.420734+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-14T00:00",
+    "end": "2026-04-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c3e15c7c15a588e38b1754cbc8d1e3edb2943b9ecc3a777cc6b70ed08aa49ccd.json",
+    "sha256": "950609ac0a878e684149f861c11dbcd90c85720f1cee30bb4d60cd9170d55b9d",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-14T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-14T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:01.616388+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-14T00:00",
+    "end": "2026-04-17T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c648c7cade707afc4cf1d9401f594158dbbbac9ba6bf29f649b2849f52f1e3bf.json",
+    "sha256": "26776a1fec4ab96b0f1c8ce3c916fac32294c95f7c08b900ec2c45173f12abc0",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:26.645861+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-09T00:00",
+    "end": "2026-07-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c6de19a94e3d8dc637a1b75f776a72c2687e0374ee67b7418ce6d0de785a5ae9.json",
+    "sha256": "4b30e945f7abc848016106a22fe2233e617b986f2c8c1217161481e399285047",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:01.153428+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-12T00:00",
+    "end": "2026-04-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/c92d3bf2cad67d9c63f728f29875eb38d20e9ce1e34f423032fbe3b9ff3fa750.json",
+    "sha256": "d5ea71a89188aa9aea9fc2fe6b3a45a6ecb5614a580d01816be9163cf5ad23cc",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:50.127335+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-18T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/d2906dde8dcdbae1b08072c5ab797fb69439d36890d7324315165a8c36682ea2.json",
+    "sha256": "37ae3253b658428cf376f800a827dee259bb244b306f1d5324b4f1a5243a150f",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.202231+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/d85a260d0d93257e849c5c17e5ddbc130fd8ded238fa7c2d47c9e237c910b7e6.json",
+    "sha256": "b860a8bfa6ca44da7f3df805410cedf65d202036d6fa99603cc9b611abcb5446",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:48.718416+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/d8d782352b12f7c52f87282d3805cebd0398475a77474d30a105238b3ca24db4.json",
+    "sha256": "e3a489a121416d9ef376ab4cc743397d1dce44668d4510976c8332eddd6ec81e",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-13T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-13T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.693875+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-13T00:00",
+    "end": "2026-01-16T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/db66c5f7a85918c721e5316d70de441a4fe8b870871d2b09537880129499da4a.json",
+    "sha256": "3cf0f7a953bf5dc56afc37ab62099c3610bebf106b2b66022a30aa87900a3415",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-19T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-19T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:32.174380+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-19T00:00",
+    "end": "2026-04-22T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/dc33ef662b51db963a7aa717cf12a43d447033b1afcdc24e4b964f4aa5844ff6.json",
+    "sha256": "6d9efbbfe03ddfa078670a2dd046020802d8df5e2b2cb61c6b5b18823b5bf128",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:07.772163+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-10T00:00",
+    "end": "2026-01-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/e22b3ccaa348f67fdff01ea4123520bcfa9e51cf2654e95f3ca12d6fd0b083a3.json",
+    "sha256": "9c29f008a194f486efbe20a6c286930e93d4b5f3ec3df48c8ca3ed90fa5388de",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-10T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-10T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:42:30.351800+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-13T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/e2f65bd66532a40248ae925a4d21f9c4f514efb690157f8c244ba20f0e03dc4e.json",
+    "sha256": "798cf0808cb80aa27a72cae7a6dece63318f950b7f3e984d480d31d3ad4dcc0e",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:51:19.927226+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-09T00:00",
+    "end": "2026-01-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/e4221a4769ddcf68c8243f2461abd51ce0105eee64b007be115f886d2e24cc6e.json",
+    "sha256": "0d85b6ca4308247cc17e26279bc520ef1a4ba9f7d17487712d5352d685b6089e",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-07-10&end_date=2026-07-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:26.472171+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-10T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/e710d451d6a7ccc2feabc224984d2571ada309ada11362ce0078ffe3ec6e8026.json",
+    "sha256": "46c4afec93115621c0181aaee5b9b10dfd5b74fa9dd8a5cae65220a5bdb7404f",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-15T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-15T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:46:27.871629+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-15T00:00",
+    "end": "2026-07-18T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/efbf2fe0b4b58b8764ae6387636657a7545d0d425db6e15ab06f28c995f30749.json",
+    "sha256": "7a79c1ce4b21e6cb81779142f0bd7b4bbbbac9801b8ac86ca68cee0b2738ffe3",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-12T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-12T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:51.483733+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-12T00:00",
+    "end": "2026-01-15T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/f2c453351c53d559d4f5c4529794747bebff1330b49dcd4273993ed515137945.json",
+    "sha256": "3b8f351630c48a297aad0da1bc4fb2e06ebc9b27bfa7a05b31fcae1a97d9b7c3",
+    "request": {
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-11T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.3891&longitude=-5.9845&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-11T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:38:08.019941+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-11T00:00",
+    "end": "2026-01-14T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/f3f9deb0cdbe9e9b6df8ef0bc231ce8e39b993129da97593db185736f646e982.json",
+    "sha256": "a80d881318490ce343d669b177809f2bdd8b5c8dd5adffd69b95f412762c222d",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-04-09T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-04-09T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:56:00.426301+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-09T00:00",
+    "end": "2026-04-12T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/f4f03f10d177807c040abb197feec8e07d0ffca6672f6900e27b4857b88151b2.json",
+    "sha256": "385d33f6a9c6f05b75388065cd3edea32a28ad4a063b928309192780d04bd3c7",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "era5",
+      "start_date": "2026-04-10",
+      "end_date": "2026-04-21",
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=era5&start_date=2026-04-10&end_date=2026-04-21&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:30:48.434783+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-04-10T00:00",
+    "end": "2026-04-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/f8c15fbf46933d2c46258520507d3081b8a985676f61cf3cc95def667aed66fc.json",
+    "sha256": "fad3aa11c340ececd983e4fe5d96abc7321af50858d5c518f5f48bad06e000fe",
+    "request": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-01-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-01-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T21:29:52.557916+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-01-18T00:00",
+    "end": "2026-01-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  },
+  {
+    "path": "runs/weather/fedb5f3bfba9860b00efae6c6dd659c75c2d79a75ff7150dbf15a42cdd8c5323.json",
+    "sha256": "fc3d423b6700053e23e484a952ff551a7bd99dda25703c7c19788fc569a36129",
+    "request": {
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "hourly": "temperature_2m,relative_humidity_2m,global_tilted_irradiance",
+      "models": "ecmwf_ifs",
+      "run": "2026-07-18T00:00",
+      "forecast_days": 4,
+      "tilt": 30,
+      "azimuth": 0,
+      "timezone": "UTC"
+    },
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&hourly=temperature_2m%2Crelative_humidity_2m%2Cglobal_tilted_irradiance&models=ecmwf_ifs&run=2026-07-18T00%3A00&forecast_days=4&tilt=30&azimuth=0&timezone=UTC",
+    "retrieved_at": "2026-09-09T22:02:01.106747+00:00",
+    "variables": [
+      "time",
+      "temperature_2m",
+      "relative_humidity_2m",
+      "global_tilted_irradiance"
+    ],
+    "start": "2026-07-18T00:00",
+    "end": "2026-07-21T23:00",
+    "missing_service_fields": [
+      "wind_speed_10m",
+      "precipitation"
+    ]
+  }
+]

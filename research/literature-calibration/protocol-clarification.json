@@ -1,0 +1,5 @@
+{
+  "scope": "Clarifications from file structures before coefficient estimation",
+  "pem": "Use >=900-second command plateaus. The raw trace contains short commissioning steps and eight roughly30-minute production plateaus; the longer threshold separates these. Retain both supplied flow channels without inventing sensor identity.",
+  "pv": "Fit odd months, hold out even months. January therefore belongs to main training. Add separate July-only training -> January test as originally proposed. Non-numeric measurement entries become explicit missing values, never zero."
+}

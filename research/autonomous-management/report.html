@@ -1,0 +1,586 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Autonomous management of renewable-powered methane plants</title><style>
+:root{color-scheme:light;--ink:#202124;--muted:#5b5e63;--line:#dadddf;--paper:#fff;--wash:#f4f5f6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:var(--paper);font:18px/1.7 Georgia,'Times New Roman',serif}a{color:inherit;text-decoration-color:#9b9da0;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible,input:focus-visible,.table-scroll:focus-visible{outline:3px solid #30343b;outline-offset:4px}.skip{position:fixed;top:-100px;left:20px;background:white;z-index:5;padding:10px}.skip:focus{top:10px}
+.layout{display:grid;grid-template-columns:244px minmax(0,1080px);gap:58px;max-width:1450px;margin:auto;padding:60px 44px 100px}aside{font:13px/1.5 system-ui,sans-serif;position:sticky;top:36px;align-self:start;max-height:calc(100vh - 72px);overflow:auto;padding-right:10px}aside strong{display:block;margin:0 0 18px;font-size:14px}nav a{display:block;padding:8px 0;text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink);text-decoration:underline}.downloads{border-top:1px solid var(--line);margin-top:20px;padding-top:14px}.downloads a{display:block;margin:8px 0}main{min-width:0}h1,h2,h3,th,button,label,.architecture{font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(32px,3.2vw,48px);line-height:1.15;letter-spacing:-1.2px;margin:0 0 36px;max-width:950px}h2{font-size:28px;line-height:1.3;letter-spacing:-.45px;margin:64px 0 24px;padding-top:24px;border-top:1px solid var(--line)}h3{font-size:20px;line-height:1.4;margin:32px 0 16px}p,li{max-width:82ch}p{margin:0 0 22px}li{padding-left:3px;margin:12px 0}strong{font-weight:700}code{font: .83em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}p code,li code{background:var(--wash);padding:1px 4px}pre{background:var(--wash);padding:22px;overflow:auto;border:1px solid var(--line);border-radius:3px;line-height:1.55}pre code{font-size:13px}
+.table-scroll{overflow-x:auto;margin:24px 0 32px;border:1px solid var(--line);border-radius:3px}table{border-collapse:collapse;width:100%;font:14px/1.6 system-ui,sans-serif;min-width:680px}td,th{padding:15px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--wash);font-size:13px}tr:last-child td{border-bottom:0}td:first-child{min-width:145px}#approaches td{font-size:13px}#approaches td:nth-child(2){min-width:210px}#approaches td:nth-child(3){min-width:210px}#approaches td:nth-child(4){min-width:175px}tr[hidden]{display:none}.catalogue-filter{font:14px/1.5 system-ui,sans-serif;margin:28px 0 0}.catalogue-filter label{display:block;font-weight:600;margin-bottom:10px}.catalogue-filter>div{display:flex;gap:12px}input{font:15px system-ui,sans-serif;border:1px solid #888;border-radius:3px;padding:11px 13px;width:min(100%,430px);min-width:0;background:white;color:var(--ink)}button{font-size:14px;background:var(--wash);border:1px solid #888;border-radius:3px;padding:10px 14px;cursor:pointer;white-space:nowrap}.catalogue-filter p{color:var(--muted);font-size:12px;margin:9px 0 0}.architecture{background:var(--wash);padding:25px;margin:28px 0;border:1px solid var(--line);font-size:14px;line-height:1.5}.architecture-top{border:1px solid #8b8d90;padding:16px;text-align:center;background:#fff}.architecture-row{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;gap:6px}.architecture-row>div{padding:16px 12px;border:1px solid #8b8d90;background:white;min-height:102px}.architecture small{display:block;font-size:12px;line-height:1.4;color:var(--muted);margin-top:8px}.connectors>div{border:0;min-height:0;background:none;text-align:center;padding:7px;font-size:20px}.arrow{text-align:center;padding:8px;font-size:20px}.architecture figcaption{font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin:18px 0 0}.footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media(max-width:1000px){.layout{grid-template-columns:180px minmax(0,1fr);gap:28px;padding:36px 25px}body{font-size:17px}.architecture{padding:15px}.architecture-row{grid-template-columns:1fr}.architecture-row>span{display:none}.connectors{display:none}.architecture-row>div{min-height:0}h1{font-size:36px}}
+@media(max-width:720px){.layout{display:block;padding:28px 20px 70px}aside{position:static;max-height:none;padding:0 0 25px;margin-bottom:32px;border-bottom:1px solid var(--line)}aside nav{display:flex;flex-wrap:wrap;gap:6px 17px;max-height:165px;overflow:auto}nav a{padding:3px 0;font-size:12px}.downloads{display:flex;gap:15px;flex-wrap:wrap;margin-top:15px;padding-top:9px}.downloads a{margin:2px 0}h1{font-size:34px;letter-spacing:-.7px}h2{font-size:25px;margin-top:44px}pre{padding:14px}.architecture{margin-left:0;margin-right:0}.catalogue-filter>div{gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.layout{display:block;max-width:none;padding:0}aside,.skip,.catalogue-filter{display:none}body{font-size:10.5pt;line-height:1.5}h1{font-size:25pt}h2{font-size:17pt;margin-top:26pt}h3{font-size:12pt}table{font-size:8pt;min-width:0}#approaches td{font-size:8pt;min-width:0!important}td,th{padding:6pt}pre{white-space:pre-wrap}a{text-decoration:none}.table-scroll{overflow:visible}tr{break-inside:avoid}tr[hidden]{display:table-row}.architecture{break-inside:avoid}h2,h3{break-after:avoid}}
+</style></head><body><a class="skip" href="#report">Skip to report</a><div class="layout"><aside aria-label="Report navigation"><strong>Contents</strong><nav><a href="#section-1">1. What autonomy should mean here</a><a href="#section-2">2. Where the state of the art sits</a><a href="#section-3">3. Catalogue of approaches</a><a href="#section-4">4. What to optimize—and what must not be traded away</a><a href="#section-5">5. Homeostatic RL and related neuroscience ideas</a><a href="#section-6">6. Scheduling intermittent power and adapting to wrong forecasts</a><a href="#section-7">7. Faults: detection, localization, maintenance and recovery</a><a href="#section-8">8. Controller architecture and available machinery</a><a href="#section-9">9. Experiments that would establish progress</a><a href="#section-10">10. Implications for the product and the physical plant</a><a href="#section-11">References and evidence scope</a></nav><div class="downloads"><a href="report.md">Markdown report</a><a href="catalogue.json">Approach catalogue</a><a href="sources.json">Source records</a></div></aside><main id="report"><h1>Autonomous management of renewable-powered methane plants</h1>
+<p>The strongest direction for Dispatch Lab is a <strong>hierarchical controller that plans under uncertainty, maintains an estimate of plant health, and executes bounded recovery procedures</strong>. A constrained economic planner should coordinate electricity, gas inventories and reactor heat. Learning should initially improve forecasts, health estimates and the value assigned to future operating opportunities. A separate supervisor should govern starts, stops, diagnostic probes, degraded modes and recovery. Homeostatic reinforcement learning deserves a focused experimental track within this architecture.</p>
+<p>This recommendation is an engineering synthesis, not a claim that one published algorithm solves unattended methane production. The literature supports many of the constituent capabilities. Public industrial evidence is strongest for bounded process optimization and control, with local protection and fallback retained. Evidence for prolonged, whole-plant operation through unfamiliar mechanical faults is substantially thinner in the sources reviewed.</p>
+<p>The assessment covers publications and official company material available through <strong>10 September 2026</strong>. It distinguishes mathematical results, simulations, equipment experiments, industrial case reports and vendor claims. The accompanying catalogue contains 16 approach families and 42 primary references. Where only an abstract or indexed publisher excerpt was accessible, that limitation is recorded in the bibliography. No new controller experiments were run for this assessment.</p>
+<h2 id="section-1">1. What autonomy should mean here</h2>
+<p>An autonomous methane plant must repeatedly answer four connected questions: what condition is the plant actually in; what can it safely do; which feasible action best serves its mission; and whether the result justifies continuing, investigating or recovering. Scheduling alone addresses only part of that loop.</p>
+<p>For this platform, a useful mission statement is: <strong>produce useful methane over sustained operation, economically and with bounded intervention, while retaining the ability to remain within operating limits and reach an appropriate shutdown or restart state</strong>. Useful production will eventually include gas specification and delivery acceptance. Until those mechanisms exist in the model, the defensible output is simulated methane mass, not certified saleable product.</p>
+<p>Autonomy should be specified as a coverage envelope: a set of operating conditions, disturbances, fault classes, available recovery actions and acceptable escalation outcomes. A controller that safely identifies an unrecoverable fault and arranges service can be more autonomous than one that repeatedly attempts an unsafe restart. “No human action under any circumstance” is an unsuitable target for equipment whose physical repair options are limited.</p>
+<p>There is a substantial precedent outside process engineering. Model-based spacecraft autonomy combines reasoning about system modes with diagnosis and reconfiguration; NASA's Remote Agent announcement described a bounded Deep Space 1 command experiment in 1999. The transferable idea is an explicit relationship between plans, execution and equipment state. Neither source implies that software can repair arbitrary broken hardware. <sup><a href="https://aaai.org/papers/144-aaai96-144-a-model-based-approach-to-reactive-self-configuring-systems/" title="A Model-Based Approach to Reactive Self-Configuring Systems" aria-label="Source 24: A Model-Based Approach to Reactive Self-Configuring Systems">[24]</a></sup> <sup><a href="https://www.jpl.nasa.gov/news/computer-program-assumes-spacecraft-command/" title="Computer Program Assumes Spacecraft Command" aria-label="Source 25: Computer Program Assumes Spacecraft Command">[25]</a></sup></p>
+<h3>The starting point in Dispatch Lab</h3>
+<p>The current source already has coupled electrical and material accounting; battery and gas buffers; a lumped thermal reactor; greedy, methane-MPC and economic-MPC policies; versioned execution and planning components; causal forecast selection; recorded decisions; bounded diagnosis; isolated jobs; and reproducible archives. These are useful foundations for comparing autonomous strategies under identical information.</p>
+<p>Several simplifications now become research boundaries. The simulation is hourly. Battery energy, CO₂ inventory and reactor temperature are currently ideal observed state channels. Hydrogen-buffer metrology noise scales with interval throughput rather than tank capacity, making low-flow residuals easier to observe than some real installations would allow. There are two injected fault classes, and the simulator's scheduled capacity recovery is not a repair process. Pressure, product quality, local reactor hotspots, detailed actuator dynamics and essential protection loads are outside the current plant abstraction. These observations come from the local configuration, sensing and simulation source, not external literature.</p>
+<p>The next step in realism should therefore be selected by the autonomy question. Studying sensor isolation requires independent measurement channels with plausible errors and delays. Studying unattended restart requires restart prerequisites and failure outcomes. Studying maintenance requires health evolution. Adding a highly detailed illustration or a neural policy cannot compensate for missing mechanisms. Dynamic methanation literature also considers spatial temperature profiles, conversion and product composition during changing hydrogen loads—behaviour that the current lumped thermal fixture does not represent. <sup><a href="https://www.sciencedirect.com/science/article/pii/S0196890424001985" title="Power-to-Gas: Process analysis and control strategies for dynamic catalytic methanation system" aria-label="Source 23: Power-to-Gas: Process analysis and control strategies for dynamic catalytic methanation system">[23]</a></sup></p>
+<h2 id="section-2">2. Where the state of the art sits</h2>
+<p>Three strands are converging. Process control supplies constrained optimization, estimators and supervisory sequencing. Machine learning supplies adaptable models, policies and value estimates. Reliability engineering supplies diagnosis, inspection and maintenance decisions. A process-industry RL review spans control and related operational tasks, illustrating that the field is broader than one end-to-end policy. The learning-MPC literature distinguishes learning the prediction model, tuning the optimization formulation and using MPC to constrain a learned controller. <sup><a href="https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124227" title="Reinforcement Learning in Process Industries: Review and Perspective" aria-label="Source 8: Reinforcement Learning in Process Industries: Review and Perspective">[8]</a></sup> <sup><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625" title="Learning-Based Model Predictive Control: Toward Safe Learning in Control" aria-label="Source 1: Learning-Based Model Predictive Control: Toward Safe Learning in Control">[1]</a></sup></p>
+<p><strong>Industrial learning control is real, but its operating boundary matters.</strong> Yokogawa and JSR reported 35 consecutive days of reinforcement-learning control in early 2022. The described equipment was a distillation column, with existing protection, monitoring and integration into a distributed control system. This is stronger evidence than simulation, but it does not establish unattended recovery of an entire chemical plant. <sup><a href="https://www.yokogawa.com/news/press-releases/2022/2022-03-22/" title="Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days" aria-label="Source 33: Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days">[33]</a></sup></p>
+<p><strong>Hybrid planning and learning is especially relevant to renewable fuels.</strong> A 2024 electrolyser study combines site-wide planning with real-time optimization. A 2026 green-ammonia paper uses a Q-function as the terminal cost of stochastic MPC, addressing consequences beyond its immediate horizon. The latter is a simulation study in an adjacent process, not a methane deployment. It is nevertheless a close match to the problem of valuing energy and feedstock left for tomorrow. <sup><a href="https://arxiv.org/abs/2404.06748" title="Combination of Site-Wide and Real-Time Optimization for the Control of Systems of Electrolyzers" aria-label="Source 6: Combination of Site-Wide and Real-Time Optimization for the Control of Systems of Electrolyzers">[6]</a></sup> <sup><a href="https://www.sciencedirect.com/science/article/pii/S0959152426000557" title="Q-learning-based stochastic model predictive control for green ammonia production" aria-label="Source 7: Q-learning-based stochastic model predictive control for green ammonia production">[7]</a></sup></p>
+<p><strong>Safety results are conditional results.</strong> A predictive safety filter can check a proposed action against a model and backup trajectory. Its guarantee depends on the stated uncertainty, feasibility and computation assumptions. It cannot protect an unmodelled pressure system merely because the battery and thermal equations are verified. Keeping those scopes visible is essential when incorporating such methods into the platform. <sup><a href="https://arxiv.org/abs/1812.05506" title="A predictive safety filter for learning-based control of constrained nonlinear dynamical systems" aria-label="Source 2: A predictive safety filter for learning-based control of constrained nonlinear dynamical systems">[2]</a></sup></p>
+<h3>Company landscape: what the public evidence actually establishes</h3>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Organization</th>
+<th>Relevant public evidence</th>
+<th>Implication and remaining boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yokogawa / JSR</td>
+<td>Joint March 2022 report of 35 days of RL control of a distillation column.</td>
+<td>Bounded industrial deployment with protection retained; not whole-plant fault autonomy. <sup><a href="https://www.yokogawa.com/news/press-releases/2022/2022-03-22/" title="Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days" aria-label="Source 33: Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days">[33]</a></sup></td>
+</tr>
+<tr>
+<td>Phaidra</td>
+<td>June 2024 Merck case describes autonomous cooling setpoints and transfer back to local building-management control.</td>
+<td>Useful pattern for learned supervision and fallback; a vendor case, not an independent comparison of general recovery methods. <sup><a href="https://www.phaidra.ai/blog/autonomous-ai-control-of-mission-critical-cooling-at-merck" title="Autonomous AI Control of Mission-Critical Cooling at Merck" aria-label="Source 34: Autonomous AI Control of Mission-Critical Cooling at Merck">[34]</a></sup></td>
+</tr>
+<tr>
+<td>Imubit</td>
+<td>Named refinery case material describes closed-loop optimization and retraining after feed changes.</td>
+<td>Model updating is part of operations, rather than a one-off training event. Public material does not provide a common benchmark against alternatives. <sup><a href="https://imubit.com/blog/3-reasons-your-refinery-needs-closed-loop-ai-optimization" title="3 Reasons Your Refinery Needs Closed-Loop AI Optimization" aria-label="Source 35: 3 Reasons Your Refinery Needs Closed-Loop AI Optimization">[35]</a></sup></td>
+</tr>
+<tr>
+<td>Rivan</td>
+<td>August 2026 announcement of a deployed 1 MW system entering commissioning.</td>
+<td>Direct mission relevance. Commissioning and planned autonomous validation should not be presented as an established long-duration reliability record. <sup><a href="https://rivan.com/news/rivan-deploys-full-scale-1mw-system/" title="Rivan deploys full-scale 1MW system" aria-label="Source 36: Rivan deploys full-scale 1MW system">[36]</a></sup></td>
+</tr>
+<tr>
+<td>Terraform Industries</td>
+<td>Company timeline reports a March 2024 end-to-end sunlight/air-to-gas demonstration.</td>
+<td>Evidence of integrated process ambition; the cited page does not document comprehensive diagnosis or recovery performance. <sup><a href="https://www.terraformindustries.com/" title="Terraform Industries" aria-label="Source 37: Terraform Industries">[37]</a></sup></td>
+</tr>
+<tr>
+<td>Siemens gPROMS</td>
+<td>Process-modelling and digital-twin offerings include hydrogen applications.</td>
+<td>A route to richer engineering models and model exchange; software availability is distinct from validated autonomous operation. <sup><a href="https://www.siemens.com/en-us/products/gproms/sustainability/" title="gPROMS for sustainability" aria-label="Source 38: gPROMS for sustainability">[38]</a></sup></td>
+</tr>
+<tr>
+<td>ANYbotics</td>
+<td>June 2025 material describes mobile gas-leak inspection.</td>
+<td>Physical inspection can become an action available to autonomy. Detection and localization remain separate from repair. <sup><a href="https://www.anybotics.com/news/robotic-gas-leak-detection-anymal/" title="Robotic Gas Leak Detection with ANYmal" aria-label="Source 39: Robotic Gas Leak Detection with ANYmal">[39]</a></sup></td>
+</tr>
+<tr>
+<td>Augury</td>
+<td>Machine Health offering combines condition monitoring and diagnostic support.</td>
+<td>Relevant to pumps, compressors and other monitored machinery; it does not establish catalyst or electrolyser remaining life. <sup><a href="https://www.augury.com/machine-health/" title="Machine Health" aria-label="Source 40: Machine Health">[40]</a></sup></td>
+</tr>
+<tr>
+<td>Raptor Maps</td>
+<td>Remote solar inspection and drone operations.</td>
+<td>A potential inspection layer for PV assets. Its thermography guidance makes clear that useful inspection depends on environmental conditions. <sup><a href="https://raptormaps.com/" title="Raptor Maps" aria-label="Source 41: Raptor Maps">[41]</a></sup> <sup><a href="https://pages.raptormaps.com/raptor-maps-knowledge-hub/solar-pv-inspection-drone-flight-guidelines" title="Solar PV Inspection Drone Flight Guidelines" aria-label="Source 42: Solar PV Inspection Drone Flight Guidelines">[42]</a></sup></td>
+</tr>
+</tbody>
+</table></div>
+<p>The commercial opportunity suggested by this evidence is integration: a plant that can connect an uncertain forecast, a health hypothesis, a changed schedule and a verified recovery action. This is an inference from the coverage of these examples, not proof that no company already offers overlapping capabilities.</p>
+<h2 id="section-3">3. Catalogue of approaches</h2>
+<p>The methods below solve different parts of the problem and can be composed. “Priority” expresses a recommendation for Dispatch Lab, not a ranking of scientific quality. Maturity in another domain does not validate transfer to methane equipment.</p>
+<div class="catalogue-filter"><label for="method-search">Filter the approach catalogue</label><div><input id="method-search" type="search" placeholder="Try recovery, learning or uncertainty"><button id="clear-search" type="button">Show all</button></div><p id="filter-status" role="status" aria-live="polite">16 approaches</p></div><div class="table-scroll" tabindex="0"><table id="approaches">
+<thead>
+<tr>
+<th>Approach</th>
+<th>Role and strength</th>
+<th>Limitation</th>
+<th>Evidence</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rules, state machines and supervisory control</strong></td>
+<td>Reference policy and explicit start, stop, hold, trip and restart sequences. Fast, legible and suitable for preconditioned recovery actions.</td>
+<td>Rules proliferate as resources and fault combinations interact; local choices can consume tomorrow's reserves.</td>
+<td>Established control architecture; plant-specific sequences still need engineering. <a href="https://aaai.org/papers/144-aaai96-144-a-model-based-approach-to-reactive-self-configuring-systems/">24</a> <a href="https://www.jpl.nasa.gov/news/computer-program-assumes-spacecraft-command/">25</a></td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td><strong>Mixed-integer economic MPC</strong></td>
+<td>Schedule discrete modes, minimum runs, gas buffers, battery and reactor heat together. Makes resource trade-offs and forecast-dependent commitments explicit.</td>
+<td>Model mismatch, finite-horizon effects and solver deadlines; an incumbent is not necessarily optimal.</td>
+<td>Established research framework; specific implementations require validation. <a href="https://flore.unifi.it/handle/2158/599111">3</a> <a href="https://arxiv.org/abs/2404.06748">6</a> <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625">1</a></td>
+<td>Primary planner</td>
+</tr>
+<tr>
+<td><strong>Scenario and chance-constrained MPC</strong></td>
+<td>Choose actions against several plausible weather and equipment trajectories. Represents recourse and asymmetric shortage costs.</td>
+<td>Scenario quality, temporal correlation and nonanticipativity matter; nominal probability bounds are conditional on assumptions.</td>
+<td>Substantial control literature; adjacent renewable-fuels simulation studies. <a href="https://escholarship.org/uc/item/1wt3d4vr">4</a> <a href="https://www.sciencedirect.com/science/article/pii/S0959152426000557">7</a> <a href="https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty">26</a></td>
+<td>Near term</td>
+</tr>
+<tr>
+<td><strong>Robust MPC, viability and predictive safety filters</strong></td>
+<td>Keep a feasible protective or shutdown trajectory available while accepting useful planner actions. Separates performance proposals from constraint enforcement.</td>
+<td>A guarantee depends on valid uncertainty bounds, a suitable backup set and timely computation; excessive robustness sacrifices output.</td>
+<td>Conditional mathematical results and benchmark demonstrations. <a href="https://arxiv.org/abs/1812.05506">2</a> <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625">1</a></td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td><strong>State and health estimation; Kalman filters and MHE</strong></td>
+<td>Infer inventories, temperatures, biases and available capacity from noisy observations. Carries uncertainty and reconciles several measurements with conservation laws.</td>
+<td>Unobservable faults cannot be recovered by choosing a more sophisticated estimator; model and sensor errors can be confounded.</td>
+<td>Established estimation methods; MHE tooling available. <a href="https://www.do-mpc.com/en/latest/">27</a> <a href="https://www.vehicular.isy.liu.se/Edu/Courses/DocDiagnos/CourseMaterial/sensplace.pdf">18</a></td>
+<td>Near term</td>
+</tr>
+<tr>
+<td><strong>Structural diagnosis and residual hypothesis banks</strong></td>
+<td>Design independent residuals and determine which faults can be distinguished with available sensors. Connects an alarm to violated physical relationships and additional evidence needed.</td>
+<td>Diagnosis is conditional on mode, excitation and the completeness of the fault hypotheses.</td>
+<td>Mature model-based diagnosis literature and open tooling. <a href="https://www.vehicular.isy.liu.se/Edu/Courses/DocDiagnos/CourseMaterial/sensplace.pdf">18</a> <a href="https://faultdiagnosistoolbox.github.io/">19</a></td>
+<td>Near term</td>
+</tr>
+<tr>
+<td><strong>Learned anomaly detection and soft sensors</strong></td>
+<td>Detect unfamiliar patterns or estimate unavailable measurements from operating history. Can capture nonlinear signatures omitted by reduced physics.</td>
+<td>Novel operating regimes can look faulty; anomaly scores do not identify causes or establish safe recovery.</td>
+<td>Active process-industry research and commercial condition monitoring. <a href="https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124227">8</a> <a href="https://www.augury.com/machine-health/">40</a></td>
+<td>Complement to physics</td>
+</tr>
+<tr>
+<td><strong>Dual control and active fault diagnosis</strong></td>
+<td>Choose a small perturbation or inspection that improves decisions by revealing health or sensor reliability. Makes the cost of uncertainty and the benefit of information explicit.</td>
+<td>Probes consume energy, time and equipment life and may be unsafe or uninformative in the current mode.</td>
+<td>Research literature; bounded probes are a tractable implementation subset. <a href="https://www.sciencedirect.com/science/article/pii/S2405896318324467">20</a> <a href="https://pubsonline.informs.org/doi/10.1287/opre.2013.1171">21</a></td>
+<td>Near term, bounded</td>
+</tr>
+<tr>
+<td><strong>Health-aware control and partially observed maintenance planning</strong></td>
+<td>Jointly plan production, inspection, service and replacement using health uncertainty. Connects present stress with future availability and intervention costs.</td>
+<td>Requires equipment-specific degradation and service data; an accounting wear charge is not a remaining-life model.</td>
+<td>Operations-research theory, experimental degradation studies and commercial monitoring. <a href="https://pubsonline.informs.org/doi/10.1287/opre.2013.1171">21</a> <a href="https://research-hub.nlr.gov/en/publications/electrolyzer-durability-at-low-catalyst-loading-and-with-dynamic--2/">22</a> <a href="https://www.augury.com/machine-health/">40</a></td>
+<td>After health data</td>
+</tr>
+<tr>
+<td><strong>Learning-enhanced MPC</strong></td>
+<td>Learn forecast corrections, residual dynamics or a terminal continuation value around a constrained planner. Improves a bounded part of the controller while retaining interpretable resource constraints.</td>
+<td>Learned uncertainty and terminal values can be wrong out of distribution; revalidation remains necessary.</td>
+<td>Broad learning-control literature; 2026 green-ammonia simulation example. <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625">1</a> <a href="https://www.sciencedirect.com/science/article/pii/S0959152426000557">7</a></td>
+<td>First learning experiment</td>
+</tr>
+<tr>
+<td><strong>Offline and online reinforcement learning</strong></td>
+<td>Learn a sequential policy or value function from simulated or logged transitions. Can represent complex long-term behaviour and make fast deployed decisions.</td>
+<td>Exploration, reward errors, dataset coverage and simulator exploitation; offline conservatism is not physical safety.</td>
+<td>Industrial deployments on bounded tasks; wider process research remains heterogeneous. <a href="https://papers.nips.cc/paper_files/paper/2020/hash/0d2b2061826a5df3221116a5085a6052-Abstract.html">9</a> <a href="https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124227">8</a> <a href="https://www.yokogawa.com/news/press-releases/2022/2022-03-22/">33</a> <a href="https://www.phaidra.ai/blog/autonomous-ai-control-of-mission-critical-cooling-at-merck">34</a></td>
+<td>Challenger policy</td>
+</tr>
+<tr>
+<td><strong>Homeostatic and allostatic RL</strong></td>
+<td>Represent internal resource needs and learn anticipatory regulation of reserves. A useful hypothesis for balancing coupled energy, feedstock, heat and health states over time.</td>
+<td>Fixed setpoints can waste energy; drive reduction can crowd out production; industrial benefit is unestablished by the cited neuroscience studies.</td>
+<td>Neuroscience theory and simulations, including 2024–2026 developments. <a href="https://elifesciences.org/articles/04811">10</a> <a href="https://academic.oup.com/pnasnexus/article/3/12/pgae540/7912045">11</a> <a href="https://arxiv.org/abs/2507.04998">12</a> <a href="https://pubmed.ncbi.nlm.nih.gov/41513000/">13</a> <a href="https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf">15</a></td>
+<td>Focused research track</td>
+</tr>
+<tr>
+<td><strong>Active inference</strong></td>
+<td>Jointly reason about preferred states and information-seeking actions using a generative model. Provides a unified language for belief, anticipation and investigation.</td>
+<td>Preferences and model likelihoods are design choices; usefulness must be compared with explicit decision-theoretic baselines.</td>
+<td>Computational neuroscience simulations; plant application here is a proposal. <a href="https://pubmed.ncbi.nlm.nih.gov/35051559/">14</a></td>
+<td>Exploratory</td>
+</tr>
+<tr>
+<td><strong>Hierarchical and distributed control</strong></td>
+<td>Separate slow production scheduling, faster regulation and equipment protection; coordinate local controllers through shared constraints. Matches different physical time scales and modular component interfaces.</td>
+<td>Independent agents can fight over the same bus or learn nonstationary environments unless coordination is explicit.</td>
+<td>Electrolyser control research and commercial multi-plant cooling systems. <a href="https://arxiv.org/abs/2404.06748">6</a> <a href="https://www.phaidra.ai/blog/autonomous-ai-control-of-mission-critical-cooling-at-merck">34</a> <a href="https://aaai.org/papers/144-aaai96-144-a-model-based-approach-to-reactive-self-configuring-systems/">24</a></td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td><strong>Calibrated ensemble and decision-focused forecasting</strong></td>
+<td>Estimate distributions of available power and train forecasts against consequences of decision errors. Targets the shortages that matter operationally rather than only average forecast accuracy.</td>
+<td>Coverage can fail by regime or lead time; marginal calibration does not establish joint trajectory safety.</td>
+<td>Weather ensemble practice and statistical/optimization research. <a href="https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty">26</a> <a href="https://arxiv.org/abs/2106.00170">17</a> <a href="https://arxiv.org/abs/1710.08005">16</a></td>
+<td>Near term</td>
+</tr>
+<tr>
+<td><strong>LLM-assisted engineering and operator support</strong></td>
+<td>Retrieve grounded explanations, propose structured experiments and summarize recorded decisions. Makes complex evidence and controller reasoning accessible.</td>
+<td>Free-form generation does not establish numerical correctness, diagnosis or actuator safety; use typed tools and independent checks.</td>
+<td>Architectural proposal for this platform, not a claimed plant-control result.</td>
+<td>Interface support</td>
+</tr>
+</tbody>
+</table></div>
+<p>An architecture based on these methods should avoid creating independent equipment agents that all optimize their own utilization. The battery, electrolyser and heater share the same bus; their local requests require plant-wide coordination. Modularity is valuable at the interfaces, while resource feasibility remains a joint property.</p>
+<h2 id="section-4">4. What to optimize—and what must not be traded away</h2>
+<h3>A hierarchy of obligations</h3>
+<p>The proposed controller should separate three levels. First are non-negotiable physical and protective conditions. Second are mission commitments, such as an explicitly assumed production obligation or an allowed service interruption. Third is optimization among the remaining alternatives. A finite “safety penalty” in an otherwise economic reward permits a sufficiently large revenue to purchase a violation. That is the wrong semantics for a forbidden operating condition.</p>
+<p>The protective envelope should include more than instantaneous limits. Given the current state estimate and specified disturbances, is there enough energy and working equipment to follow a controlled shutdown sequence? Can the system fulfil a minimum-run commitment, or must that commitment be interrupted to respect a more fundamental limit? Is a restart feasible after the action? Maintaining a set of states from which an acceptable future trajectory exists is a useful control concept; the appropriate set must be derived from this plant's model and uncertainty assumptions.</p>
+<p>When no safe continuation is available inside the supervisory model, the outcome must be explicit: invoke the appropriate independently implemented protective action, record the loss of supervisory feasibility and escalate. A solver's “infeasible” status is not itself a physical shutdown procedure.</p>
+<h3>Proposed decision objective</h3>
+<p>For economic experiments, maximize expected operating contribution plus the value of future operating opportunities, with an explicit downside-risk term:</p>
+<pre><code class="language-text">maximize  E[ Στ { vτ mτ − cinputs,τ − cwear,τ − cintervention,τ
+                  − ccontract-shortfall,τ } + VH(bH, calendarH) ]
+          − λ CVaRα(L)
+
+subject to physical balances, admissible modes and actions,
+           commitments, uncertainty treatment and recovery constraints.
+</code></pre>
+<p>Here, <code>m</code> is simulated methane output; <code>v</code> is an explicit assumed value per kg; every cost term is in the same monetary unit; <code>b</code> is the estimated state and its uncertainty; and <code>V</code> is a continuation value. <code>L</code> is a separately defined adverse operating loss over the horizon, such as unmet contracted production plus recovery expense. Its definition and any overlap with expected costs must be visible. <code>λ</code> is an intentional premium against bad outcomes, not a hidden duplication in the accounting report. CVaR provides a tractable way to price the adverse tail of a modeled distribution; it is not protection against every possible event. <sup><a href="https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf" title="Optimization of Conditional Value-at-Risk" aria-label="Source 5: Optimization of Conditional Value-at-Risk">[5]</a></sup></p>
+<p>This is a proposed formulation. Economic MPC provides relevant theory, but its published stability conditions do not automatically apply to a nonstationary solar plant with binary modes and time-limited solves. <sup><a href="https://flore.unifi.it/handle/2158/599111" title="On Average Performance and Stability of Economic Model Predictive Control" aria-label="Source 3: On Average Performance and Stability of Economic Model Predictive Control">[3]</a></sup></p>
+<p>Several accounting choices have important behavioural consequences:</p>
+<ul>
+<li><strong>Fixed ownership allocation stays outside dispatch incentives.</strong> It matters for comparing asset designs and reporting full period cost, but it is not avoided by switching an installed asset off for an hour.</li>
+<li><strong>Incremental wear appears once.</strong> If a degradation model already prices start-induced damage, a second generic start penalty needs a distinct rationale. A small tie-break discouraging unnecessary switches should be labelled separately.</li>
+<li><strong>Ending inventory has operational value without assumed sale proceeds.</strong> Hydrogen, CO₂, battery energy and reactor heat may enable later methane production. The continuation value belongs to planning; it must not be booked as inventory revenue in the period cost report.</li>
+<li><strong>Contract shortfall only exists if a contract is actually modeled.</strong> An invented demand penalty can dominate all other choices and make a controller look impressive at solving an artificial problem.</li>
+<li><strong>Zero-output unit cost remains undefined.</strong> Optimizing an hourly cost-per-kg ratio encourages unstable choices and confuses periods of preparation with failure. Report ratios over meaningful windows, alongside their numerator and denominator.</li>
+</ul>
+<p>Keep a second, explicitly different objective for physical research: maximize methane over the chosen evaluation window, subject to the same operational constraints and an explicit treatment of terminal state. That allows the value of planning to be studied without confusing it with an illustrative methane price. Neither policy should be required to beat the other on its own objective.</p>
+<h3>Preserve productive options, rather than maximize reserves</h3>
+<p>The relevant resource is often a <em>combination</em>. Hydrogen without CO₂ cannot make methane. Full gas buffers with a cold reactor and an empty battery may be less useful than smaller inventories with sufficient start-up energy. Keeping a reactor hot through a long outage may destroy more future production than allowing it to cool and restarting later.</p>
+<p>The current fixture gives a concrete illustration. At the minimum 3 kg CH₄/h output for a four-hour run, ideal stoichiometry requires <strong>6 kg H₂ and 33 kg CO₂</strong> for the 12 kg methane total. Those are independently calculated material requirements, not a complete start permission: heat, auxiliary electricity, cooling capability and the timing of inflows must also be feasible. At 10 kg CH₄/h, hydrogen use is 5 kg/h, so a full 60 kg buffer supplies at most 12 hours at that rate before accounting for new hydrogen, other constraints or losses absent from the ideal model.</p>
+<p>A reserve policy should therefore ask “which future actions remain available?” rather than “is SOC above 30%?” Useful derived quantities include energy needed for the current commitment, the lower-confidence inventory available before the next credible delivery, time until controlled shutdown becomes necessary, and the probability of a feasible restart under the forecast scenarios. These are proposed engineering quantities whose units and assumptions should be inspectable.</p>
+<p>Terminal treatment deserves a dedicated experiment. Start with a longer look-ahead or a transparent continuation rollout using a conservative reference policy. Then test a learned terminal value against that reference. A finite-horizon policy that empties every store just before the experiment ends can win an output table while leaving the next shift unable to operate. Conversely, a controller can hoard inventory to inflate its terminal score and never produce. Compare both behaviours across extended windows and report every ending inventory.</p>
+<p>Curtailment, equipment utilization and number of starts are diagnostic metrics, not universal primary objectives. Deliberately curtailing a brief solar peak can be sensible when starting consumes scarce energy or accelerates damage. If assumed revenue is below avoidable costs, idling can be the correct economic result; the response is to inspect the assumptions, not secretly reward production until the controller runs.</p>
+<p>If decarbonization is part of the mission, add a separate, documented carbon accounting model and test carbon-intensity constraints or a multi-objective frontier. It would require explicit electricity provenance, CO₂ origin, process emissions, methane leakage and product fate. Do not substitute “renewable-powered” for a calculated lifecycle result. Similarly, water availability can become a physical operating constraint before its price becomes economically significant. These are proposed extensions, not quantities the present methane-mass model already verifies.</p>
+<h2 id="section-5">5. Homeostatic RL and related neuroscience ideas</h2>
+<p>Homeostatic RL links reward to changes in an internal drive function: an action is valuable when it reduces deviation from a physiologically preferred state. Keramati and Gutkin's 2014 formulation connects discounted drive-reduction reward to regulation and anticipatory behaviour. It also exposes why discounting and trajectory treatment matter: an undiscounted difference of consecutive drive values can telescope into an endpoint comparison. This is a computational account of regulation, not evidence of industrial control performance. <sup><a href="https://elifesciences.org/articles/04811" title="Homeostatic reinforcement learning for integrating reward collection and physiological stability" aria-label="Source 10: Homeostatic reinforcement learning for integrating reward collection and physiological stability">[10]</a></sup></p>
+<p>The idea has continued to develop. A 2024 deep-HRL study models long-term nutritional behaviour. A 2025 perspective relates internal state to motivation and anticipation. A 2026 computational study investigates gradual proactive regulation and shows that coupling several internal variables through shared actions can create destabilizing interactions. Those are useful research signals for a plant in which heating uses the electricity needed to replenish hydrogen; they do not establish a ready-made plant controller. <sup><a href="https://academic.oup.com/pnasnexus/article/3/12/pgae540/7912045" title="Modeling long-term nutritional behaviors using deep homeostatic reinforcement learning" aria-label="Source 11: Modeling long-term nutritional behaviors using deep homeostatic reinforcement learning">[11]</a></sup> <sup><a href="https://arxiv.org/abs/2507.04998" title="Linking Homeostasis to Reinforcement Learning: Internal State Control of Motivated Behavior" aria-label="Source 12: Linking Homeostasis to Reinforcement Learning: Internal State Control of Motivated Behavior">[12]</a></sup> <sup><a href="https://pubmed.ncbi.nlm.nih.gov/41513000/" title="Gradual proactive regulation of body state by reinforcement learning of homeostasis" aria-label="Source 13: Gradual proactive regulation of body state by reinforcement learning of homeostasis">[13]</a></sup></p>
+<p>Active inference offers a related but different formulation: action and information seeking arise from a generative model and preferred outcomes. A 2022 study explicitly simulates homeostatic, allostatic and goal-directed regulation. Its “free energy” terminology is a statistical construct, not reactor heat or electrical energy. For this project, any claimed advantage should be translated into measurable decisions and compared with ordinary belief-state planning. <sup><a href="https://pubmed.ncbi.nlm.nih.gov/35051559/" title="Simulating homeostatic, allostatic and goal-directed forms of interoceptive control using active inference" aria-label="Source 14: Simulating homeostatic, allostatic and goal-directed forms of interoceptive control using active inference">[14]</a></sup></p>
+<h3>A plant-specific hypothesis worth testing</h3>
+<p>The proposed analogue of internal state is the vector of energy, feedstock, thermal readiness, equipment health and uncertainty. <strong>Homeostasis</strong> would regulate these around fixed acceptable bands. <strong>Allostasis</strong>, as used in this engineering proposal, would shift the bands in anticipation of weather, delivery schedules, commitments and likely equipment availability.</p>
+<p>For example, a long low-solar forecast could increase the energy reserved for essential services while reducing planned electrolysis. An imminent credible CO₂ delivery could justify filling the hydrogen buffer. A doubtful cooling subsystem could narrow admissible reactor operation even with abundant sunlight. A cold, intentionally stopped plant is a legitimate operating mode: a universal reward for approaching 300°C would be a serious design error.</p>
+<p>An interpretable candidate drive function is:</p>
+<pre><code class="language-text">D(b,t) = Σi wi · deficit_i(b, viable_band_i(t))²
+</code></pre>
+<p>Each deficit should be dimensionless and uncertainty-aware. The bands depend on mode and forecast, and may overlap only where joint operation is feasible. This separable expression is a useful baseline, not a full measure of viability: it can miss complementarity between resources. A richer candidate could measure the margin to losing a feasible commitment or recovery trajectory. Such a margin must be computed and checked, rather than inferred from a visually appealing “plant health” score.</p>
+<p>There are two different experiments to keep separate. One changes the mission objective by directly rewarding low drive. The other uses drive as a <strong>potential-based shaping signal</strong> while retaining the original production/economic objective:</p>
+<pre><code class="language-text">Φ(b,t) = −D(b,t)
+rshaped = rmission + β [ γ Φ(bnext,t+1) − Φ(b,t) ]
+</code></pre>
+<p>Potential-based shaping has policy-invariance results under its stated MDP and discount assumptions. Applying it with changing targets requires representing the relevant context in the state; finite episodes also need consistent terminal handling. A belief approximation, a truncated simulation or an incorrectly reset potential can invalidate the intended interpretation. <sup><a href="https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf" title="Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping" aria-label="Source 15: Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping">[15]</a></sup></p>
+<p>The research question is not whether an internally motivated agent can keep a battery charged. It is whether this representation improves sustained production, sample efficiency, adaptation or interpretability compared with a planner or learned policy given exactly the same reserve information. Test fixed-band HRL, forecast-conditioned HRL, MPC with those same bands, and a baseline RL policy with the same observations and hard action constraints. Keep model-learning benefits separate from reward-design benefits.</p>
+<p>Useful adversarial cases include a safe cold shutdown, a long night, scarce CO₂, repeated reset opportunities, cheap but damaging cycling, an uncertainty signal that can be manipulated by avoiding measurements, and a fault that makes all reserve targets jointly impossible. These distinguish useful anticipation from hoarding, reward loops and conflicting drives.</p>
+<h2 id="section-6">6. Scheduling intermittent power and adapting to wrong forecasts</h2>
+<h3>Plan jointly across resources and time scales</h3>
+<p>The recommended scheduler is initially mixed-integer economic MPC, retaining the existing HiGHS implementation and verified component ports. It should choose equipment modes, electrical allocations, gas use, heater power and cooling together. The first action is implemented; observations then update the next optimization. A faster regulation layer would eventually track its setpoints, while independent local protection handles faster failures.</p>
+<p>There should be no universal allocation order such as “electrolysis first, battery second.” Near a constrained restart, another kWh in the battery may be more useful than hydrogen; with adequate thermal reserve and a hydrogen-limited run ahead, the opposite can hold. Explain such choices through matched counterfactual replans. Marginal values from a continuous relaxation may also help, but must be labelled as relaxation results: binary starts and minimum runs can make actual trade-offs discontinuous.</p>
+<p>Time scales should be treated as design choices to validate. Hourly decisions suit the current sandbox. A later plant may require a supervisory update every few minutes, faster temperature/flow regulation and much faster electrical protection. An hourly balance cannot demonstrate correct behaviour during a subsecond DC-bus collapse or a local temperature excursion between recorded samples.</p>
+<p>For uncertainty, begin with a small set of coherent forecast trajectories: central, overestimate, delayed-ramp and prolonged-shortage cases, then calibrated ensembles. ECMWF ensembles provide a source of meteorological uncertainty, but conversion to site PV and operationally meaningful shortage probabilities requires additional modelling and calibration. Preserve correlation across hours; independent hourly noise can create implausible alternating weather and underestimate sustained shortages. <sup><a href="https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty" title="Quantifying forecast uncertainty" aria-label="Source 26: Quantifying forecast uncertainty">[26]</a></sup></p>
+<p>In scenario MPC, alternative future plans may branch only after the relevant information would be observed. Their first action must be shared. Otherwise an apparently excellent controller has effectively selected a different present action for each future weather realization. Record scenario weights, branches, availability times and the uncertainty model version alongside the plan. Stochastic MPC supplies several formulations, each with its own assumptions and computational burden. <sup><a href="https://escholarship.org/uc/item/1wt3d4vr" title="Stochastic Model Predictive Control: An Overview and Perspectives for Future Research" aria-label="Source 4: Stochastic Model Predictive Control: An Overview and Perspectives for Future Research">[4]</a></sup></p>
+<h3>Adapt the right model when conditions change</h3>
+<p>Forecast adaptation should separate at least four causes of error: weather forecast bias; local PV conversion error; sensor bias; and changed equipment capability. A solar shortfall should not automatically become an electrolyser capacity fault. A lower methane rate should not automatically trigger retraining of the weather model.</p>
+<p>Use lead-time- and regime-dependent residuals, recent forecast calibration, and explicit missing-data states. A rolling bias correction is a useful baseline. More advanced predictors can be evaluated against the decision losses they cause, rather than just RMSE; “predict, then optimize” research formalizes that distinction. Adaptive conformal methods can help track uncertainty coverage under change, but long-run coverage does not guarantee adequate coverage for every night, fault condition or joint trajectory. <sup><a href="https://arxiv.org/abs/1710.08005" title="Smart ‘Predict, then Optimize’" aria-label="Source 16: Smart ‘Predict, then Optimize’">[16]</a></sup> <sup><a href="https://arxiv.org/abs/2106.00170" title="Adaptive Conformal Inference Under Distribution Shift" aria-label="Source 17: Adaptive Conformal Inference Under Distribution Shift">[17]</a></sup></p>
+<p>A practical proposal is stochastic planning for normal economic choices, with a more conservative recovery envelope for essential loads and irreversible commitments. The uncertainty sets must be distinguishable: an expected-revenue scenario distribution and a protective disturbance bound serve different purposes. Neither should silently expand into a claim of safety under arbitrary weather or faults.</p>
+<p>When forecast confidence falls, actions should change in proportion to their consequences. Shorten an unreliable commitment, leave more reserve, prefer a reversible action, or move to a known degraded policy. Record the triggering evidence and the cost of conservatism. The “healthy” planner should not remain nominal merely because its solver found a mathematically feasible trajectory under an outdated forecast.</p>
+<h2 id="section-7">7. Faults: detection, localization, maintenance and recovery</h2>
+<h3>Begin with distinguishability and measurements</h3>
+<p>Sensor-based diagnosis should start with a fault-to-measurement structure. Which independent relationship is violated by capacity loss, a biased flow meter, a leak, a stuck valve or a drifting temperature sensor? Which pairs produce the same observable signature? Structural sensor-placement literature and the Fault Diagnosis Toolbox provide concrete machinery for asking these questions before training an anomaly detector. <sup><a href="https://www.vehicular.isy.liu.se/Edu/Courses/DocDiagnos/CourseMaterial/sensplace.pdf" title="Sensor Placement for Fault Diagnosis" aria-label="Source 18: Sensor Placement for Fault Diagnosis">[18]</a></sup> <sup><a href="https://faultdiagnosistoolbox.github.io/" title="Fault Diagnosis Toolbox for Python and Matlab" aria-label="Source 19: Fault Diagnosis Toolbox for Python and Matlab">[19]</a></sup></p>
+<p>For the current electrolyser example, compare electrical tracking with hydrogen mass balance. The power residual should use the command actually issued after resource allocation, with timing and mode semantics preserved. Comparing measured power to an infeasible pre-allocation request can classify a cloud-induced shortage as broken equipment. Compare flow-meter hydrogen with independently inferred inventory change plus known outflow, allowing for metrology uncertainty, startup behaviour and transport delay.</p>
+<p>These are not automatically independent channels in real equipment. Tank mass inferred from pressure and temperature inherits both sensors' errors and a gas model. Several identical sensors can share calibration drift, power loss or a common communication fault. “Two sensors agree” does not prove that either is correct. The measurement model should express such dependencies and classify unresolved combinations as ambiguous.</p>
+<p>An estimator—initially a modest Kalman-style or moving-horizon formulation, depending on the model—can maintain state, slow parameter changes and candidate sensor biases. Do-mpc supplies MHE tooling. Estimation complexity should follow demonstrated observability, not precede it. Learned soft sensors can supplement this evidence, but their training coverage and correlated inputs must remain visible. <sup><a href="https://www.do-mpc.com/en/latest/" title="do-mpc documentation" aria-label="Source 27: do-mpc documentation">[27]</a></sup></p>
+<h3>Proposed fault-handling map</h3>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Evidence to seek</th>
+<th>Autonomous response to model</th>
+<th>Boundary or recovery test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electrolyser capacity reduction</td>
+<td>Sustained tracking deficit under a feasible command; consistent independent hydrogen production estimate.</td>
+<td>Derate the estimated capacity, reschedule hydrogen production and downstream commitments.</td>
+<td>A small permitted upward probe must track before capacity is restored. Equipment repair is a separate event/action.</td>
+</tr>
+<tr>
+<td>Hydrogen-flow sensor bias</td>
+<td>Flow channel disagrees with independently reconciled inventory and electrical evidence.</td>
+<td>Isolate the channel; use a qualified alternative estimate with greater uncertainty.</td>
+<td>Require calibrated agreement before reinstating it; tank and outflow errors can make localization ambiguous.</td>
+</tr>
+<tr>
+<td>Slow sensor drift</td>
+<td>Mode-conditioned residual changes over time, calibration checks, disagreement with a diverse reference.</td>
+<td>Increase uncertainty, reject affected measurements or schedule inspection.</td>
+<td>Do not adapt the physical model so aggressively that it absorbs the sensor bias.</td>
+</tr>
+<tr>
+<td>Cooling capacity loss</td>
+<td>Actuation feedback and heat-balance evidence; abnormal temperature response at comparable load.</td>
+<td>Lower production/heat input or enter a specified cooling/shutdown sequence.</td>
+<td>Reaction heat and local hotspots make this a higher-fidelity task than the present single-temperature model supports.</td>
+</tr>
+<tr>
+<td>CO₂ delivery delay or valve failure</td>
+<td>Delivery confirmation, inventory movement and valve/flow feedback.</td>
+<td>Replan feedstock commitments; avoid creating unusable excess hydrogen.</td>
+<td>Distinguish logistics delay from instrument error or blocked transfer.</td>
+</tr>
+<tr>
+<td>PV string/converter underperformance</td>
+<td>Measured irradiance and temperature, peer/string electrical signatures, inspection where informative.</td>
+<td>Revise available generation; route inspection; preserve downstream reserves.</td>
+<td>Cloud, shading, soiling and electrical faults require different evidence.</td>
+</tr>
+<tr>
+<td>Communication or compute failure</td>
+<td>Stale timestamps, missed deadlines, command/acknowledgement failure.</td>
+<td>Retain bounded local control or execute a pre-agreed safe sequence.</td>
+<td>Return only after state reconciliation; blindly replaying an old plan is inappropriate.</td>
+</tr>
+<tr>
+<td>Leak, persistent failed restart or unisolated critical fault</td>
+<td>Independent protective detection or repeated failed postconditions.</td>
+<td>Enter the specified protective state and request intervention.</td>
+<td>No automatic retry loop merely because the high-level objective rewards uptime.</td>
+</tr>
+</tbody>
+</table></div>
+<p>This table is a proposed simulation expansion, not equipment-specific operating instructions. Recovery sequences require manufacturer and plant engineering input before use beyond the sandbox.</p>
+<h3>Diagnosis under uncertainty and low activity</h3>
+<p>Use mode-specific residual distributions and a sequential confirmation rule. CUSUM, generalized likelihood ratios, change-point models or a small explicit hypothesis bank are candidates to compare; there is no need to begin with all of them. Preserve “insufficient excitation,” “ambiguous,” and “unknown anomaly” as distinct outcomes. Idle equipment supplies little tracking evidence. Repeated measurements do not eliminate a systematic bias.</p>
+<p>Tune detection with missed-fault consequences and false-intervention cost, not accuracy alone. False alarms per operating hour, detection delay after the first informative interval, and time spent uncertain are more interpretable than a single classifier score on an artificially balanced dataset. A threshold of three standard deviations is not by itself a validated false-alarm rate when residuals are serially correlated or non-Gaussian.</p>
+<h3>Inspection and active diagnosis are control actions</h3>
+<p>A small load perturbation can discriminate a capacity limit from a flow-sensor fault. An inspection can resolve a hypothesis that ordinary operation cannot. Active fault diagnosis studies deliberate auxiliary inputs under uncertainty; partially observed maintenance research connects the timing of observations to subsequent decisions. <sup><a href="https://www.sciencedirect.com/science/article/pii/S2405896318324467" title="A Survey of Active Fault Diagnosis Methods" aria-label="Source 20: A Survey of Active Fault Diagnosis Methods">[20]</a></sup> <sup><a href="https://pubsonline.informs.org/doi/10.1287/opre.2013.1171" title="Joint Optimization of Sampling and Control of Partially Observable Failing Systems" aria-label="Source 21: Joint Optimization of Sampling and Control of Partially Observable Failing Systems">[21]</a></sup></p>
+<p>For Dispatch Lab, start with a finite menu of probes. Each should specify its permissible modes, available power, storage headroom, thermal prerequisites, maximum duration, expected discriminating observations and abort conditions. Permit a probe only when its likely operational benefit exceeds its energy, delay and wear cost. Do not award an unlimited information bonus that makes the controller repeatedly interrogate already-understood equipment.</p>
+<p>Physical inspection has its own constraints. A mobile robot may obtain an independent gas measurement; a drone may inspect PV thermally. Raptor Maps' particular thermography protocol calls for sufficient irradiance, including a 600 W/m² threshold. That is a provider-specific requirement, not a universal standard, but it illustrates a general planning issue: the moment an inspection is most needed may not be the moment it is informative or possible. <sup><a href="https://www.anybotics.com/news/robotic-gas-leak-detection-anymal/" title="Robotic Gas Leak Detection with ANYmal" aria-label="Source 39: Robotic Gas Leak Detection with ANYmal">[39]</a></sup> <sup><a href="https://pages.raptormaps.com/raptor-maps-knowledge-hub/solar-pv-inspection-drone-flight-guidelines" title="Solar PV Inspection Drone Flight Guidelines" aria-label="Source 42: Solar PV Inspection Drone Flight Guidelines">[42]</a></sup></p>
+<h3>Predictive maintenance needs a health model</h3>
+<p>The current usage and start allowances price assumptions; they do not predict failure. A credible maintenance model needs equipment-specific measurements, loading history, maintenance events, censored lifetimes and uncertainty about failure mechanisms. Remaining useful life should be a conditional distribution or a bounded estimate, with clear dependence on the future operating policy—not a single countdown displayed as fact.</p>
+<p>Electrolyser technology matters. Experimental work on PEM electrolyser durability found materially different degradation under different dynamic protocols; renewable-like profiles were less severe than some accelerated square/triangle cycling protocols. This is evidence against a universal “one start equals this much damage” rule, and it does not provide coefficients for alkaline or anion-exchange equipment. <sup><a href="https://research-hub.nlr.gov/en/publications/electrolyzer-durability-at-low-catalyst-loading-and-with-dynamic--2/" title="Electrolyzer Durability at Low Catalyst Loading and with Dynamic Operation" aria-label="Source 22: Electrolyzer Durability at Low Catalyst Loading and with Dynamic Operation">[22]</a></sup></p>
+<p>The recommended progression is a documented synthetic health model for controlled experiments, then calibration against relevant equipment data. Add service actions with duration, cost, crew/spare requirements and uncertain efficacy. A repair can restore only some health variables; replacing a sensor should not rejuvenate the stack. Maintenance planning can then trade a visit during a low-solar interval against the probability and consequence of later failure. The POMDP maintenance literature supplies a framework, not ready-made parameters. <sup><a href="https://pubsonline.informs.org/doi/10.1287/opre.2013.1171" title="Joint Optimization of Sampling and Control of Partially Observable Failing Systems" aria-label="Source 21: Joint Optimization of Sampling and Control of Partially Observable Failing Systems">[21]</a></sup></p>
+<h3>Recovery should be a verifiable sequence</h3>
+<p>Represent recovery as <code>suspect → isolate or derate → stabilize → investigate → attempt permitted restoration → verify → return or lock out</code>. The sequence is an engineering proposal. Every action needs preconditions, expected postconditions, a timeout and a bounded retry policy. A restored communication link, a reset drive and a repaired cooling loop require different evidence.</p>
+<p>Report recovery by fault class and available hardware. Software can substitute a sensor, reroute through a modeled redundant component, reduce load, or verify that a repaired subsystem is usable. It cannot replace a failed pump unless the plant actually contains an autonomous replacement mechanism. This distinction makes the future case for modular hardware, redundancy and remote maintenance measurable.</p>
+<h2 id="section-8">8. Controller architecture and available machinery</h2>
+<p>The recommended architecture is shown below. The arrows represent information and authorized proposals; detailed equipment protection remains local. Each box should retain the versioned interfaces already established in the platform.</p>
+<figure class="architecture" aria-label="Recommended controller architecture">
+<div class="architecture-top">Mission, risk limits and eligible forecasts</div>
+<div class="arrow" aria-hidden="true">↓</div>
+<div class="architecture-row"><div>Observations<small>Timestamped measurements</small></div><span aria-hidden="true">→</span><div>State and health belief<small>Estimates and uncertainty</small></div><span aria-hidden="true">→</span><div>Joint planner<small>Resources and commitments</small></div></div>
+<div class="architecture-row connectors" aria-hidden="true"><div>↓</div><span></span><div>↓</div><span></span><div>↓</div></div>
+<div class="architecture-row"><div>Diagnosis and inspection<small>Evidence and bounded probes</small></div><span aria-hidden="true">→</span><div>Recovery executive<small>Modes and verified sequences</small></div><span aria-hidden="true">←</span><div>Safety check<small>Admissible proposals and fallback</small></div></div>
+<div class="arrow" aria-hidden="true">↓</div>
+<div class="architecture-top">Local regulation and protection → Physical plant → New observations</div>
+<figcaption>Offline training supplies evaluated model candidates. Every observation, proposal, intervention and outcome enters the versioned evidence record. This is a proposed architecture; it does not imply that the current hourly model implements local equipment protection.</figcaption>
+</figure>
+<p>The central interface is a <strong>control context</strong> containing timestamped observations, a state/health belief with uncertainty, eligible forecasts, active commitments, available action capabilities, and versioned objectives. It must not contain injected fault labels, the scheduled time at which a simulator will repair a fault, or future realized weather. A planner returns a proposal with predicted trajectories, assumptions, solver termination and constraint evidence. The executive records what was requested, what was authorized, what was applied and what was observed.</p>
+<p>A safety filter can reject or minimally modify a proposal only within its modeled scope. The rejected proposal and the replacement both remain in the record. When safety intervention becomes frequent, the planner is poorly matched to its environment; the filter's success should not conceal that failure. Independent local protection and a feasible fallback remain necessary design elements. <sup><a href="https://arxiv.org/abs/1812.05506" title="A predictive safety filter for learning-based control of constrained nonlinear dynamical systems" aria-label="Source 2: A predictive safety filter for learning-based control of constrained nonlinear dynamical systems">[2]</a></sup></p>
+<h3>Tools the autonomous manager could call</h3>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Input and output</th>
+<th>Authority and resource boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read observations and forecasts</td>
+<td>Timestamped, provenance-bearing records and uncertainty.</td>
+<td>Read-only; only information available at the decision time.</td>
+</tr>
+<tr>
+<td>Evaluate a candidate plan</td>
+<td>Predicted states, constraints, costs and uncertainty under a named model.</td>
+<td>Simulation only; clearly separated from executed actions.</td>
+</tr>
+<tr>
+<td>Diagnose and request inspection</td>
+<td>Hypotheses, evidence gaps and a bounded probe/inspection proposal.</td>
+<td>Executive checks prerequisites; no arbitrary actuator exploration.</td>
+</tr>
+<tr>
+<td>Optimize operation</td>
+<td>A typed scheduling problem and a validated incumbent or explicit fallback.</td>
+<td>Deadline and compute budget; preserve solver limitations.</td>
+</tr>
+<tr>
+<td>Fit a model or value function</td>
+<td>Frozen dataset, training specification and candidate model artifact.</td>
+<td>Isolated worker; cannot consume resources needed by active control.</td>
+</tr>
+<tr>
+<td>Evaluate and register a candidate</td>
+<td>Matched held-out experiments, regressions and source/data identities.</td>
+<td>Training does not grant deployment authority; promotion follows a distinct reviewed release process.</td>
+</tr>
+<tr>
+<td>Plan maintenance</td>
+<td>Available service actions, health belief, logistics and expected downtime.</td>
+<td>Scheduling capability only; physical work is a separate modeled event.</td>
+</tr>
+<tr>
+<td>Explain a decision</td>
+<td>Recorded operands, active limits, alternatives and uncertainty.</td>
+<td>Grounded reporting; explanations must not invent causal importance scores.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Learning can operate at several levels. <strong>Supervised identification</strong> learns conversion losses, thermal parameters and degradation residuals. <strong>Forecast learning</strong> estimates and calibrates available power distributions. <strong>Value learning</strong> approximates continuation beyond the planning horizon. <strong>Policy learning</strong> proposes actions directly. These should be separate experiments, so a gain from improved forecasts is not incorrectly credited to a new reward or policy architecture.</p>
+<p>Begin with offline training in the simulator and shadow evaluation. Offline RL methods such as Conservative Q-Learning address one important problem—overoptimistic values outside logged action support—but do not create evidence for unobserved fault regimes or guarantee physical safety. Real exploration should eventually be restricted to engineered identification and probe actions, rather than unconstrained reinforcement learning on working equipment. <sup><a href="https://papers.nips.cc/paper_files/paper/2020/hash/0d2b2061826a5df3221116a5085a6052-Abstract.html" title="Conservative Q-Learning for Offline Reinforcement Learning" aria-label="Source 9: Conservative Q-Learning for Offline Reinforcement Learning">[9]</a></sup></p>
+<h3>Software choices</h3>
+<p>Keep Python, SciPy/HiGHS and the existing component contracts for scheduling. Add a Gymnasium-compatible environment adapter when training is needed, with strict observation/truth separation and seeded resets. Use the Fault Diagnosis Toolbox for an initial isolability and sensor-placement study. For nonlinear estimation or faster lower-level control, evaluate CasADi with do-mpc or acados in a separate component; these tools do not directly replace mixed-integer scheduling. <sup><a href="https://gymnasium.farama.org/" title="Gymnasium documentation" aria-label="Source 30: Gymnasium documentation">[30]</a></sup> <sup><a href="https://faultdiagnosistoolbox.github.io/" title="Fault Diagnosis Toolbox for Python and Matlab" aria-label="Source 19: Fault Diagnosis Toolbox for Python and Matlab">[19]</a></sup> <sup><a href="https://web.casadi.org/docs/" title="CasADi documentation" aria-label="Source 28: CasADi documentation">[28]</a></sup> <sup><a href="https://www.do-mpc.com/en/latest/" title="do-mpc documentation" aria-label="Source 27: do-mpc documentation">[27]</a></sup> <sup><a href="https://docs.acados.org/" title="acados documentation" aria-label="Source 29: acados documentation">[29]</a></sup></p>
+<p>The training environment should support batched rollouts, checkpoints, cancellation, scenario registries and held-out evaluation. Use an independently checked high-fidelity or alternative model for final challenges where possible. A fast simulator used for both training and evaluation can reward exploitation of its own approximations. BOPTEST and safe-control-gym offer useful examples of standardized control comparisons, while their underlying buildings and robotics systems should not be mistaken for methane validation. <sup><a href="https://ibpsa.github.io/project1-boptest/index.html" title="Building Optimization Testing Framework (BOPTEST)" aria-label="Source 31: Building Optimization Testing Framework (BOPTEST)">[31]</a></sup> <sup><a href="https://arxiv.org/abs/2109.06325" title="safe-control-gym: A Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics" aria-label="Source 32: safe-control-gym: A Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics">[32]</a></sup></p>
+<p>An LLM can be useful around this machinery: searching model documentation, producing structured experiment proposals and explaining recorded outcomes. The recommendation is to keep its outputs as typed requests to checked tools. It should not define a new safety limit, certify a diagnosis or send an unconstrained valve command through prose. This is an architectural choice for the project, not a claim that the cited industrial deployments use LLMs.</p>
+<h2 id="section-9">9. Experiments that would establish progress</h2>
+<p>The benchmark should measure <strong>sustained mission performance under partial information</strong>, with physical feasibility and reproducibility checked independently. No experiment should require MPC or RL to win. A simple policy may be best in a given weather or feedstock regime.</p>
+<p>Existing local reports already show why comparison boundaries matter: some MPC traces preserve more terminal energy and heat, while some greedy traces produce more methane inside the displayed window. The solver comparison also records that mathematically equivalent formulations can produce different time-limited incumbents and diverging trajectories. These are findings from the saved local studies, not general statements about optimal control. Future comparisons need both equal wall-clock budgets and a higher-budget reference to distinguish control ideas from solver artifacts.</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Research question</th>
+<th>Matched comparison</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Does uncertainty modelling help?</td>
+<td>Deterministic MPC versus scenario MPC with identical forecasts and feasible actions.</td>
+<td>Shortage severity, missed commitments, conservatism cost, tail performance and calibration.</td>
+</tr>
+<tr>
+<td>Does health estimation improve decisions?</td>
+<td>Identical controllers with diagnosis on/off and with realistic versus ideal sensors.</td>
+<td>Detection delay, false alarms, uncertainty, mistaken localization, production and intervention burden.</td>
+</tr>
+<tr>
+<td>Are probes worth their cost?</td>
+<td>Passive diagnosis versus a fixed safe probe policy versus information-aware probe selection.</td>
+<td>Energy/wear spent, ambiguity resolved, prevented downtime and unsuccessful probes.</td>
+</tr>
+<tr>
+<td>Does a terminal value help?</td>
+<td>Short horizon, longer-horizon reference, reference-policy rollout, learned continuation value.</td>
+<td>Extended-window output, ending states, feasibility and value prediction error.</td>
+</tr>
+<tr>
+<td>Does homeostatic structure add value?</td>
+<td>Fixed-band HRL, forecast-conditioned HRL, MPC with identical bands, and ordinary RL with matched information.</td>
+<td>Sample efficiency, sustained output, reserve shortfalls, hoarding, sensitivity and distribution-shift behaviour.</td>
+</tr>
+<tr>
+<td>Can recovery be autonomous?</td>
+<td>Explicit recoverable faults, unavailable recovery hardware, failed resets and repaired components.</td>
+<td>Successful verified restoration, lockouts, time to recovery and human actions actually needed.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use weather blocks held out by location and time, and equipment parameter families held out from training. Randomly splitting adjacent hours leaks correlated weather and operating history. Retain common random numbers across policies, but do not treat three fixed seeds as strong evidence of generalization. Include unseen combinations: forecast overestimate plus capacity loss; sensor drift plus CO₂ delay; a failed cooling actuator during a warm run; missing weather; stale telemetry; common-cause sensor errors; and prolonged power scarcity.</p>
+<p>Metrics should preserve their meanings. Report methane and all ending inventories; allocated period costs separately from decision contribution; starts and forced downtime; health loss under the stated model; time spent in degraded modes; failed restarts; manual interventions; solver deadlines and fallback use. Diagnostic results should include delay after informative evidence, false alarms per operating time, missed faults, isolation accuracy, uncertainty duration and recovery-probe outcomes. Report both central and adverse-tail results rather than an overall “autonomy score.”</p>
+<p>Use paired comparisons and uncertainty intervals that respect correlated weather blocks. Preserve incomplete runs, infeasible alternatives and failed training candidates. Zero observed violations in a finite suite are not a proof of zero risk. Formal checking can establish specific properties of a finite supervisor or bounded kernel, while empirical validation concerns agreement with physical equipment. Keep those evidence categories separate.</p>
+<h3>Three proposed research increments</h3>
+<p><strong>First: uncertainty and operational viability.</strong> Formalize essential loads, stop/restart semantics and terminal-state treatment; add a belief-bearing controller context and coherent forecast scenarios. Compare risk-aware MPC with current policies before introducing a learned policy. The gate is a reproducible case where a present reserve decision changes future recovery or productive capability, and the full balance reconciles.</p>
+<p><strong>Second: diagnosis and recovery as decisions.</strong> Expand sensor realism, enumerate distinguishable faults, and implement a small action library for probing, derating, isolation and verified restoration. The gate is correctly differentiated weather limitation, equipment derating and sensor inconsistency, plus an honest unresolved case and an unrecoverable case.</p>
+<p><strong>Third: learning and homeostatic hypotheses.</strong> Add the training adapter and candidate registry. Compare learned forecast/model corrections, continuation values and bounded policies separately. Test homeostatic and allostatic representations under matched information and constraints. The gate is a documented benefit or a well-supported negative result on held-out conditions, including computation and intervention costs.</p>
+<h2 id="section-10">10. Implications for the product and the physical plant</h2>
+<p>The simulation UI can make autonomy concrete through a repeated chain: <strong>observed evidence → current belief → threatened commitment or opportunity → chosen action → expected test of success → observed outcome</strong>. A battery inspector could explain the energy reserved for a restart; an electrolyser inspector could show that a channel is isolated and which evidence would restore it. The living Model workspace can expose the exact objective, reserve definition, sensor assumptions and claim boundaries without filling the main illustration with text.</p>
+<p>A guided experiment should include both successful adaptation and deliberate refusal to continue. For example: a forecast overestimate threatens a minimum run; the planner changes electrical allocation; a discrepancy creates competing equipment and sensor hypotheses; a permitted probe resolves one case but leaves another uncertain; a derated plan preserves feasible operation; a restoration test either passes or produces a lockout. The score is the sustained physical and economic outcome, not the drama of the animation.</p>
+<p>Before selecting physical implementation parameters, the most consequential missing inputs are the actual equipment technology and permissible operating envelope; essential loads and stop/restart sequences; available independent sensors and calibration histories; redundancy and remotely actuated recovery options; degradation and maintenance data; and the commercial definition of useful output and acceptable interruption. These are engineering design inputs. The platform can investigate sensitivity while they remain assumptions, but should not present illustrative values as calibrated requirements.</p>
+<p>Future distributed ownership or DePIN machinery can use the same asset identities, evidence records and economic attribution. It should not sit in the fast control path. A signed record can authenticate who reported a reading; it does not establish that the sensor was calibrated or that the physical claim is true. The immediate research value lies in traceable decisions and explicitly bounded autonomy.</p>
+<h2 id="section-11">References and evidence scope</h2>
+<p>Sources below support their associated factual descriptions. Plant-specific objective functions, architecture, fault expansion and research increments are recommendations derived from that evidence, not reproduced results. Company material is identified as such; inaccessible full papers are not treated as fully reviewed. External references require a connection; this report and its catalogue are otherwise self-contained.</p>
+<p><a id="source-hewing"></a></p>
+<p><strong>1. L. Hewing, K. P. Wabersich, M. Menner and M. N. Zeilinger.</strong> <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625">Learning-Based Model Predictive Control: Toward Safe Learning in Control</a>. 2020. <strong>Evidence:</strong> Peer-reviewed review. <strong>Access:</strong> Publisher text. <strong>Scope:</strong> Taxonomy of learning within and around MPC; no universal safety guarantee.</p>
+<p><a id="source-safety"></a></p>
+<p><strong>2. K. P. Wabersich and M. N. Zeilinger.</strong> <a href="https://arxiv.org/abs/1812.05506">A predictive safety filter for learning-based control of constrained nonlinear dynamical systems</a>. 2021; preprint first posted 2018. <strong>Evidence:</strong> Peer-reviewed method; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Conditional predictive safety construction, not a safety certification for a methane plant.</p>
+<p><a id="source-empc"></a></p>
+<p><strong>3. D. Angeli, R. Amrit and J. B. Rawlings.</strong> <a href="https://flore.unifi.it/handle/2158/599111">On Average Performance and Stability of Economic Model Predictive Control</a>. 2012. <strong>Evidence:</strong> Peer-reviewed control theory. <strong>Access:</strong> Author institutional record and abstract. <strong>Scope:</strong> Economic MPC performance and stability under stated mathematical assumptions.</p>
+<p><a id="source-mesbah"></a></p>
+<p><strong>4. A. Mesbah.</strong> <a href="https://escholarship.org/uc/item/1wt3d4vr">Stochastic Model Predictive Control: An Overview and Perspectives for Future Research</a>. 2016. <strong>Evidence:</strong> Peer-reviewed review. <strong>Access:</strong> Indexed author-repository abstract; direct page challenged. <strong>Scope:</strong> Uncertainty-aware MPC; different formulations have different guarantees and computational demands.</p>
+<p><a id="source-cvar"></a></p>
+<p><strong>5. R. T. Rockafellar and S. Uryasev.</strong> <a href="https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf">Optimization of Conditional Value-at-Risk</a>. 2000 publication; linked manuscript dated 1999-09-05. <strong>Evidence:</strong> Peer-reviewed optimization method; author manuscript. <strong>Access:</strong> Author-hosted PDF text. <strong>Scope:</strong> Tail-risk optimization technique, originally illustrated in finance; plant objective is an application proposal.</p>
+<p><a id="source-hydrogen"></a></p>
+<p><strong>6. V. Henkel, L. P. Wagner, F. Gehlhoff and A. Fay.</strong> <a href="https://arxiv.org/abs/2404.06748">Combination of Site-Wide and Real-Time Optimization for the Control of Systems of Electrolyzers</a>. 2024. <strong>Evidence:</strong> Peer-reviewed application; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Hierarchical electrolyser scheduling and real-time control; not evidence of whole-plant unattended recovery.</p>
+<p><a id="source-qsmcp"></a></p>
+<p><strong>7. H. M. Park, T. H. Oh and J. M. Lee.</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0959152426000557">Q-learning-based stochastic model predictive control for green ammonia production</a>. 2026-04. <strong>Evidence:</strong> Peer-reviewed application study. <strong>Access:</strong> Indexed publisher abstract and highlights; direct full text unavailable. <strong>Scope:</strong> Simulation of ammonia production with a learned terminal Q-function; transfer to methane remains to be tested.</p>
+<p><a id="source-processrl"></a></p>
+<p><strong>8. O. Dogru et al..</strong> <a href="https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124227">Reinforcement Learning in Process Industries: Review and Perspective</a>. 2024-02. <strong>Evidence:</strong> Peer-reviewed review. <strong>Access:</strong> Publisher abstract and article metadata. <strong>Scope:</strong> Process-industry RL landscape across control and related tasks; individual deployment claims need their own evidence.</p>
+<p><a id="source-cql"></a></p>
+<p><strong>9. A. Kumar, A. Zhou, G. Tucker and S. Levine.</strong> <a href="https://papers.nips.cc/paper_files/paper/2020/hash/0d2b2061826a5df3221116a5085a6052-Abstract.html">Conservative Q-Learning for Offline Reinforcement Learning</a>. 2020. <strong>Evidence:</strong> Peer-reviewed ML method. <strong>Access:</strong> Conference abstract. <strong>Scope:</strong> Addresses offline value overestimation; does not certify safety or fill missing operating-regime coverage.</p>
+<p><a id="source-homeo14"></a></p>
+<p><strong>10. M. Keramati and B. Gutkin.</strong> <a href="https://elifesciences.org/articles/04811">Homeostatic reinforcement learning for integrating reward collection and physiological stability</a>. 2014-12-02. <strong>Evidence:</strong> Peer-reviewed computational neuroscience. <strong>Access:</strong> Full publisher text. <strong>Scope:</strong> Drive reduction, reward and physiological regulation; no industrial plant experiment.</p>
+<p><a id="source-homeo24"></a></p>
+<p><strong>11. N. Yoshida, E. Arikawa, H. Kanazawa and Y. Kuniyoshi.</strong> <a href="https://academic.oup.com/pnasnexus/article/3/12/pgae540/7912045">Modeling long-term nutritional behaviors using deep homeostatic reinforcement learning</a>. 2024. <strong>Evidence:</strong> Peer-reviewed computational neuroscience. <strong>Access:</strong> Publisher text. <strong>Scope:</strong> Long-term nutritional behaviour in simulated agents; not plant control validation.</p>
+<p><a id="source-homeo25"></a></p>
+<p><strong>12. N. Yoshida, H. Sprekeler and B. Gutkin.</strong> <a href="https://arxiv.org/abs/2507.04998">Linking Homeostasis to Reinforcement Learning: Internal State Control of Motivated Behavior</a>. 2025-07-07 preprint. <strong>Evidence:</strong> Research perspective; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Conceptual synthesis of internal-state-dependent motivation, anticipation and hierarchical behaviour.</p>
+<p><a id="source-homeo26"></a></p>
+<p><strong>13. Mana Fujiwara and Honda Naoki (as indexed by PubMed).</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/41513000/">Gradual proactive regulation of body state by reinforcement learning of homeostasis</a>. 2026-02; online 2026-01-07. <strong>Evidence:</strong> Peer-reviewed computational neuroscience. <strong>Access:</strong> PubMed abstract. <strong>Scope:</strong> Proactive regulation and interacting internal variables in a computational model; industrial application is untested.</p>
+<p><a id="source-activeinference"></a></p>
+<p><strong>14. A. Tschantz, L. Barca, D. Maisto, C. L. Buckley, A. K. Seth and G. Pezzulo.</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/35051559/">Simulating homeostatic, allostatic and goal-directed forms of interoceptive control using active inference</a>. 2022. <strong>Evidence:</strong> Peer-reviewed computational neuroscience. <strong>Access:</strong> PubMed abstract. <strong>Scope:</strong> Generative-model simulations of three forms of regulation; not a plant recovery demonstration.</p>
+<p><a id="source-shaping"></a></p>
+<p><strong>15. A. Y. Ng, D. Harada and S. Russell.</strong> <a href="https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf">Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping</a>. 1999. <strong>Evidence:</strong> Peer-reviewed RL theory; author manuscript. <strong>Access:</strong> Author-hosted PDF text. <strong>Scope:</strong> Potential-based reward shaping under stated MDP and discount assumptions.</p>
+<p><a id="source-spo"></a></p>
+<p><strong>16. A. N. Elmachtoub and P. Grigas.</strong> <a href="https://arxiv.org/abs/1710.08005">Smart ‘Predict, then Optimize’</a>. 2022 publication; preprint 2017. <strong>Evidence:</strong> Peer-reviewed optimization/learning method; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Prediction trained around downstream decision loss; application to weather dispatch is a proposal.</p>
+<p><a id="source-aci"></a></p>
+<p><strong>17. I. Gibbs and E. Candès.</strong> <a href="https://arxiv.org/abs/2106.00170">Adaptive Conformal Inference Under Distribution Shift</a>. 2021. <strong>Evidence:</strong> Peer-reviewed statistical method; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Adaptive long-run coverage; not a conditional or joint physical-safety guarantee.</p>
+<p><a id="source-sensors"></a></p>
+<p><strong>18. M. Krysander and E. Frisk.</strong> <a href="https://www.vehicular.isy.liu.se/Edu/Courses/DocDiagnos/CourseMaterial/sensplace.pdf">Sensor Placement for Fault Diagnosis</a>. 2008. <strong>Evidence:</strong> Peer-reviewed diagnosis method; author manuscript. <strong>Access:</strong> Indexed author-hosted PDF and author publication record; direct PDF retrieval failed. <strong>Scope:</strong> Structural detectability and isolability; actual signal quality and operating excitation remain relevant.</p>
+<p><a id="source-fdtool"></a></p>
+<p><strong>19. E. Frisk and contributors.</strong> <a href="https://faultdiagnosistoolbox.github.io/">Fault Diagnosis Toolbox for Python and Matlab</a>. Undated documentation; accessed 2026-09-10. <strong>Evidence:</strong> Primary research software documentation. <strong>Access:</strong> Official documentation. <strong>Scope:</strong> Structural analysis, isolability, sensor placement and residual generation tooling.</p>
+<p><a id="source-activefault"></a></p>
+<p><strong>20. I. Punčochář and J. Škach.</strong> <a href="https://www.sciencedirect.com/science/article/pii/S2405896318324467">A Survey of Active Fault Diagnosis Methods</a>. 2018. <strong>Evidence:</strong> Peer-reviewed review. <strong>Access:</strong> Indexed publisher abstract; bibliographic authors corroborated by university-hosted reference. <strong>Scope:</strong> Auxiliary-input design for diagnosis under uncertainty; specific probes require plant constraints.</p>
+<p><a id="source-maintenance"></a></p>
+<p><strong>21. M. J. Kim and V. Makis.</strong> <a href="https://pubsonline.informs.org/doi/10.1287/opre.2013.1171">Joint Optimization of Sampling and Control of Partially Observable Failing Systems</a>. 2013-06-01 online. <strong>Evidence:</strong> Peer-reviewed operations research. <strong>Access:</strong> Publisher abstract. <strong>Scope:</strong> Joint observation/maintenance decisions in a particular partially observed failing-system model.</p>
+<p><a id="source-degradation"></a></p>
+<p><strong>22. S. M. Alia, S. Stariha and R. L. Borup.</strong> <a href="https://research-hub.nlr.gov/en/publications/electrolyzer-durability-at-low-catalyst-loading-and-with-dynamic--2/">Electrolyzer Durability at Low Catalyst Loading and with Dynamic Operation</a>. 2019. <strong>Evidence:</strong> Peer-reviewed experimental electrochemistry. <strong>Access:</strong> National-laboratory publication abstract. <strong>Scope:</strong> PEM technology and specified catalyst/loading/cycling conditions; coefficients must not be transferred to alkaline equipment.</p>
+<p><a id="source-methanation"></a></p>
+<p><strong>23. L. Colelli, C. Bassano, N. Verdone, V. Segneri and G. Vilardi.</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0196890424001985">Power-to-Gas: Process analysis and control strategies for dynamic catalytic methanation system</a>. 2024-04-01. <strong>Evidence:</strong> Peer-reviewed process study. <strong>Access:</strong> Indexed publisher abstract/excerpts; direct full text unavailable. <strong>Scope:</strong> Dynamic methanation modelling and thermal control; does not calibrate the current lumped reactor fixture.</p>
+<p><a id="source-livingstone"></a></p>
+<p><strong>24. B. C. Williams and P. P. Nayak.</strong> <a href="https://aaai.org/papers/144-aaai96-144-a-model-based-approach-to-reactive-self-configuring-systems/">A Model-Based Approach to Reactive Self-Configuring Systems</a>. 1996 (paper year; repository page is newer). <strong>Evidence:</strong> Peer-reviewed model-based autonomy. <strong>Access:</strong> AAAI paper record and author manuscript excerpt. <strong>Scope:</strong> Model-based diagnosis/reconfiguration precedent; predefined physical alternatives bound recovery.</p>
+<p><a id="source-nasa"></a></p>
+<p><strong>25. NASA Jet Propulsion Laboratory.</strong> <a href="https://www.jpl.nasa.gov/news/computer-program-assumes-spacecraft-command/">Computer Program Assumes Spacecraft Command</a>. 1999-05-17. <strong>Evidence:</strong> Agency mission announcement. <strong>Access:</strong> Official text. <strong>Scope:</strong> Remote Agent taking command for a bounded spacecraft test; announcement is not a final performance report.</p>
+<p><a id="source-ecmwf"></a></p>
+<p><strong>26. ECMWF.</strong> <a href="https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty">Quantifying forecast uncertainty</a>. Undated documentation; accessed 2026-09-10. <strong>Evidence:</strong> Official forecasting documentation. <strong>Access:</strong> Official text. <strong>Scope:</strong> Ensemble weather uncertainty; local PV conversion and calibration remain separate tasks.</p>
+<p><a id="source-dompc"></a></p>
+<p><strong>27. do-mpc contributors.</strong> <a href="https://www.do-mpc.com/en/latest/">do-mpc documentation</a>. Current documentation accessed 2026-09-10. <strong>Evidence:</strong> Primary software documentation. <strong>Access:</strong> Official documentation. <strong>Scope:</strong> Nonlinear/robust MPC and moving-horizon estimation tooling; not a certified controller.</p>
+<p><a id="source-casadi"></a></p>
+<p><strong>28. CasADi contributors.</strong> <a href="https://web.casadi.org/docs/">CasADi documentation</a>. Current documentation accessed 2026-09-10. <strong>Evidence:</strong> Primary software documentation. <strong>Access:</strong> Official documentation. <strong>Scope:</strong> Symbolic differentiation and optimization interfaces.</p>
+<p><a id="source-acados"></a></p>
+<p><strong>29. acados contributors.</strong> <a href="https://docs.acados.org/">acados documentation</a>. Current documentation accessed 2026-09-10. <strong>Evidence:</strong> Primary software documentation. <strong>Access:</strong> Official documentation. <strong>Scope:</strong> Fast optimal-control problem solvers; not a direct replacement for a mixed-integer scheduling solver.</p>
+<p><a id="source-gym"></a></p>
+<p><strong>30. Farama Foundation and contributors.</strong> <a href="https://gymnasium.farama.org/">Gymnasium documentation</a>. Current documentation accessed 2026-09-10. <strong>Evidence:</strong> Primary software documentation. <strong>Access:</strong> Official documentation. <strong>Scope:</strong> Standard environment interfaces and seeding; observation separation is the environment author's responsibility.</p>
+<p><a id="source-boptest"></a></p>
+<p><strong>31. IBPSA Project 1 contributors.</strong> <a href="https://ibpsa.github.io/project1-boptest/index.html">Building Optimization Testing Framework (BOPTEST)</a>. Project documentation accessed 2026-09-10. <strong>Evidence:</strong> Primary benchmark project. <strong>Access:</strong> Official project documentation. <strong>Scope:</strong> Reproducible building-control benchmarking precedent; its buildings are not methane-plant models.</p>
+<p><a id="source-safegym"></a></p>
+<p><strong>32. Z. Yuan et al..</strong> <a href="https://arxiv.org/abs/2109.06325">safe-control-gym: A Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics</a>. 2022 publication; preprint 2021. <strong>Evidence:</strong> Peer-reviewed benchmark; author preprint. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Robotics benchmark pattern for safety/performance comparisons; not plant validation.</p>
+<p><a id="source-yokogawa"></a></p>
+<p><strong>33. Yokogawa Electric Corporation and JSR Corporation.</strong> <a href="https://www.yokogawa.com/news/press-releases/2022/2022-03-22/">Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days</a>. 2022-03-22. <strong>Evidence:</strong> Joint supplier/customer deployment announcement. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Control of a distillation column with existing protection and monitoring; title is broader than the described test boundary.</p>
+<p><a id="source-phaidra"></a></p>
+<p><strong>34. Phaidra.</strong> <a href="https://www.phaidra.ai/blog/autonomous-ai-control-of-mission-critical-cooling-at-merck">Autonomous AI Control of Mission-Critical Cooling at Merck</a>. 2024-06-25. <strong>Evidence:</strong> Vendor customer case study. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Cooling setpoint control with local BMS handover; not independently audited general fault repair.</p>
+<p><a id="source-imubit"></a></p>
+<p><strong>35. Imubit.</strong> <a href="https://imubit.com/blog/3-reasons-your-refinery-needs-closed-loop-ai-optimization">3 Reasons Your Refinery Needs Closed-Loop AI Optimization</a>. Undated page; accessed 2026-09-10. <strong>Evidence:</strong> Vendor customer case material. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Named refinery closed-loop optimization and retraining after feed changes; no cross-vendor benchmark.</p>
+<p><a id="source-rivan"></a></p>
+<p><strong>36. Harvey Hodd / Rivan.</strong> <a href="https://rivan.com/news/rivan-deploys-full-scale-1mw-system/">Rivan deploys full-scale 1MW system</a>. 2026-08-12. <strong>Evidence:</strong> Company deployment announcement. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Deployment and commissioning; extended autonomous performance remains to be established by the cited announcement.</p>
+<p><a id="source-terraform"></a></p>
+<p><strong>37. Terraform Industries.</strong> <a href="https://www.terraformindustries.com/">Terraform Industries</a>. Undated company timeline; accessed 2026-09-10. <strong>Evidence:</strong> Company technology/timeline page. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Company-reported sunlight/air-to-gas demonstration in March 2024; no broad fault-recovery benchmark.</p>
+<p><a id="source-gproms"></a></p>
+<p><strong>38. Siemens.</strong> <a href="https://www.siemens.com/en-us/products/gproms/sustainability/">gPROMS for sustainability</a>. Undated product page; accessed 2026-09-10. <strong>Evidence:</strong> Vendor technical/product page. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Process modelling and digital twins, including hydrogen applications; tool availability is not deployment validation.</p>
+<p><a id="source-anybotics"></a></p>
+<p><strong>39. ANYbotics.</strong> <a href="https://www.anybotics.com/news/robotic-gas-leak-detection-anymal/">Robotic Gas Leak Detection with ANYmal</a>. 2025-06-17. <strong>Evidence:</strong> Vendor technical announcement. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Mobile gas inspection and detection capability; repair and process control are separate functions.</p>
+<p><a id="source-augury"></a></p>
+<p><strong>40. Augury.</strong> <a href="https://www.augury.com/machine-health/">Machine Health</a>. Undated product page; accessed 2026-09-10. <strong>Evidence:</strong> Vendor product page. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Machine condition monitoring and diagnostic support; rotating-equipment evidence does not establish catalyst or electrolyser remaining life.</p>
+<p><a id="source-raptor"></a></p>
+<p><strong>41. Raptor Maps.</strong> <a href="https://raptormaps.com/">Raptor Maps</a>. Undated product page; accessed 2026-09-10. <strong>Evidence:</strong> Vendor product page. <strong>Access:</strong> Official company text. <strong>Scope:</strong> Solar inspection and remote drone operations; capability claims are company supplied.</p>
+<p><a id="source-flight"></a></p>
+<p><strong>42. Raptor Maps.</strong> <a href="https://pages.raptormaps.com/raptor-maps-knowledge-hub/solar-pv-inspection-drone-flight-guidelines">Solar PV Inspection Drone Flight Guidelines</a>. Undated operational guidance; accessed 2026-09-10. <strong>Evidence:</strong> Vendor inspection protocol. <strong>Access:</strong> Official guidance. <strong>Scope:</strong> Provider-specific thermography conditions, including irradiance; not a universal inspection standard.</p>
+<h3>Local platform material reviewed</h3>
+<ul>
+<li><code>methane/config.py</code>, <code>methane/sensing.py</code> and the execution loop in <code>methane/simulation.py</code>: current assumptions, observation boundaries and controller behaviour.</li>
+<li><code>docs/evidence-summary.md</code> and <code>docs/solver-comparison.md</code>: previously saved experiment interpretation and solver sensitivity, not newly rerun evidence.</li>
+<li><code>docs/living-documentation-research.md</code>: existing research on explanation and evidence presentation.</li>
+<li>The original project brief and future-company/DePIN notes supplied with the project: scope and motivation, treated as project material rather than scientific evidence.</li>
+</ul>
+<p>The report is stored outside the application source-capsule allowlist. Producing this research does not alter the simulation or the evidence identity of an existing run.</p>
+<p class="footer">Research assessment · 10 September 2026 · No application code or controller behaviour changed. The report works offline; following an external source link requires a connection.</p></main></div><script>
+const field=document.getElementById('method-search');
+const rows=[...document.querySelectorAll('#approaches tbody tr')];
+function filter(){const query=field.value.toLocaleLowerCase().trim();let count=0;for(const row of rows){row.hidden=!row.textContent.toLocaleLowerCase().includes(query);if(!row.hidden)count++;}document.getElementById('filter-status').textContent=`${count} of ${rows.length} approaches`;}
+field.addEventListener('input',filter);
+document.getElementById('clear-search').addEventListener('click',()=>{field.value='';filter();field.focus();});
+</script></body></html>

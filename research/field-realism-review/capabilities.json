@@ -1,0 +1,243 @@
+{
+  "schema_version": "realism-capabilities/1",
+  "review_date": "2026-09-12",
+  "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+  "items": [
+    {
+      "id": "row-cleaner",
+      "name": "Dedicated solar-row cleaner",
+      "feasibility": "Conditional commercial",
+      "permitted_scope": "Dry removal of compatible loose deposits on prepared rows.",
+      "unavailable_scope": "One generic robot serving arbitrary array geometry; removal of permanent damage.",
+      "prerequisites": "Named cleaner/module/tracker combination; parking, bridges, clearances, approved operating weather.",
+      "support": "Per-row docks, communications, brushes, inspection, retrieval and vendor maintenance.",
+      "current_model": "Section optical treatment exists; generic 1,000 m²/h and bus-fed charger are not T4 parameters.",
+      "sources": [
+        "S01",
+        "S26"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F01",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "portable-cleaner",
+      "name": "Portable wet/dry cleaner",
+      "feasibility": "Commercial, human operated",
+      "permitted_scope": "Person-deployed and supervised compatible cleaning.",
+      "unavailable_scope": "Unattended deployment or operation inferred from remote control.",
+      "prerequisites": "Access, lifting/transport, module limits, water method, operator availability.",
+      "support": "Travel, setup, water/refill, battery charging, consumables, return journey.",
+      "current_model": "Portable wet service/logistics implemented as illustrative bundle.",
+      "sources": [
+        "S02"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F02",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "ground-inspector",
+      "name": "Mobile ground inspector",
+      "feasibility": "Conditional commercial",
+      "permitted_scope": "Commissioned visual/thermal/acoustic/gas observations with appropriate payload.",
+      "unavailable_scope": "Repair, unqualified hydrogen-area access, or universal fault localization.",
+      "prerequisites": "Route, lighting, terrain, stairs, reachable view/port and gas-group/payload certificate.",
+      "support": "Dock, mapping, connectivity, remote assistance, retrieval, batteries and vendor service.",
+      "current_model": "Mobile prepared-contact reader exists; not a realistic visual/thermal inspection model.",
+      "sources": [
+        "S03",
+        "S04",
+        "S05",
+        "S25"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F03",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "aerial-inspector",
+      "name": "Docked aerial inspector",
+      "feasibility": "Conditional commercial",
+      "permitted_scope": "Permitted repeatable visual/thermal survey.",
+      "unavailable_scope": "General manipulation, concealed-fault diagnosis or permission implied by autonomy.",
+      "prerequisites": "Flight authorization, site airspace, landing margin, weather and inspection conditions.",
+      "support": "Dock mains/backup, internet, aircraft maintenance, remote pilot responsibilities and retrieval.",
+      "current_model": "Catalogue concept; no complete flight/payload mechanism reviewed.",
+      "sources": [
+        "S08",
+        "S09",
+        "S10"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F04",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "contact-inspector",
+      "name": "Contact inspection crawler",
+      "feasibility": "Specialist commercial",
+      "permitted_scope": "Compatible contact/ultrasonic material measurements.",
+      "unavailable_scope": "Repair or automatic launch on every process surface.",
+      "prerequisites": "Reachable material, coupling/contact, geometry and a thickness/degradation hypothesis.",
+      "support": "Preparation, qualified interpretation, deployment/retrieval, sensor maintenance.",
+      "current_model": "No corresponding wall-integrity process in current plant.",
+      "sources": [
+        "S11"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F05",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "grounds",
+      "name": "Vegetation-management robot",
+      "feasibility": "Conditional commercial",
+      "permitted_scope": "Mapped vegetation cutting on suitable ground.",
+      "unavailable_scope": "Universal terrain operation or value without vegetation/access mechanics.",
+      "prerequisites": "Terrain/obstacles, exclusion rules, growth and shading/access effects.",
+      "support": "Charging pod, Mission Control, blade service, weather and recovery.",
+      "current_model": "Future site-operations mechanism.",
+      "sources": [
+        "S12"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F06",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "sampler",
+      "name": "Sampling and analyzer station",
+      "feasibility": "Commercial engineered subsystem",
+      "permitted_scope": "Switch and condition compatible process/reference samples.",
+      "unavailable_scope": "Complete chemical diagnosis or certification from a selector alone.",
+      "prerequisites": "Analyzer, gas compatibility, flow/pressure conditioning, transport/purge delays.",
+      "support": "Reference gases, filters, utilities, calibration, purge/sample accounting.",
+      "current_model": "No complete analyzer/sample-chain model.",
+      "sources": [
+        "S13"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F07",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "calibration",
+      "name": "Automatic sensor service station",
+      "feasibility": "Commercial for named sensors",
+      "permitted_scope": "Clean/calibrate a compatible pH/ORP sensor using the specified station.",
+      "unavailable_scope": "Generic autonomous hydrogen-flow calibration.",
+      "prerequisites": "Matching sensor, references, retractable assembly and permitted environment.",
+      "support": "Reagents, reference replacement, waste, pneumatics and technician service.",
+      "current_model": "Generic calibration remedy lacks identified H2 metrology procedure.",
+      "sources": [
+        "S14",
+        "S24"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F08",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "fixed-sensor",
+      "name": "Rugged fixed sensor package",
+      "feasibility": "Conditional commercial",
+      "permitted_scope": "Named electrical/process/material measurements with bounded error.",
+      "unavailable_scope": "Perfect inventory, exact loose/adhered fractions or generic remaining-life truth.",
+      "prerequisites": "Measurement model, range, placement, references and channel independence.",
+      "support": "Calibration, drift checks, protection, power/comms and replacement.",
+      "current_model": "Fixed contact/reference acquisition exists; other ideal plant observations remain.",
+      "sources": [
+        "S15",
+        "S23",
+        "S27"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F09",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "remote-actuator",
+      "name": "Remote actuator / redundant service path",
+      "feasibility": "Conditional engineered capability",
+      "permitted_scope": "Command and verify a specified permitted action after cause clearance.",
+      "unavailable_scope": "Reset repairing physical damage; bypass of unresolved trips.",
+      "prerequisites": "OEM semantics, permissives, position/process feedback, power and communication.",
+      "support": "Actuator maintenance, stored-energy provision where required, testing and fallback.",
+      "current_model": "Latched trip reset exists; only an illustrative engineered interface.",
+      "sources": [
+        "S16",
+        "S22"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F10",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "manipulator",
+      "name": "Mobile maintenance manipulator",
+      "feasibility": "Prototype / speculative for this plant",
+      "permitted_scope": "Separate prepared-site research tasks.",
+      "unavailable_scope": "Credible default autonomous electrolyser repair or consumable exchange.",
+      "prerequisites": "Reach, tool, torque, connectors, isolation and acceptance specification.",
+      "support": "Tooling, fixtures, remote supervision, parts and recovery.",
+      "current_model": "Future capability; do not substitute rover inspection for manipulation.",
+      "sources": [
+        "S06"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F11",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "service-module",
+      "name": "Robot-compatible replaceable module",
+      "feasibility": "Design principle demonstrated in laboratory",
+      "permitted_scope": "Explicitly speculative purpose-designed module scenario.",
+      "unavailable_scope": "Qualified hydrogen module replacement inferred from a water-filter lab demo.",
+      "prerequisites": "Guides/connectors, depressurization/isolation, lifting, seals and proof tests.",
+      "support": "Spare compatibility, handling, waste, tools and trained fallback.",
+      "current_model": "Current human module replacement is generic; robotic replacement not established.",
+      "sources": [
+        "S07",
+        "S22"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F12",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "construction",
+      "name": "Solar construction robot",
+      "feasibility": "Company-reported commercial deployments",
+      "permitted_scope": "Construction-phase installation assistance on compatible designs.",
+      "unavailable_scope": "Ongoing maintenance autonomy or whole-site commissioning from panel placement alone.",
+      "prerequisites": "Foundation/tracker readiness, logistics, quality acceptance and crew workflow.",
+      "support": "Mobilization, transport, rented equipment, operators and commissioning.",
+      "current_model": "Separate build-phase scenario; not daily service comparison.",
+      "sources": [
+        "S17",
+        "S18"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F13",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    },
+    {
+      "id": "deployable-array",
+      "name": "Pre-integrated deployable solar array",
+      "feasibility": "Commercial, crew assisted",
+      "permitted_scope": "Alternative array/deployment design.",
+      "unavailable_scope": "An autonomous maintenance robot.",
+      "prerequisites": "Ground preparation, access, footprint, wind design and compatible cleaning.",
+      "support": "Transport, crew, telehandler, electrical commissioning and O&M access.",
+      "current_model": "Separate plant-design alternative.",
+      "sources": [
+        "S19"
+      ],
+      "reviewed": "2026-09-12",
+      "review_id": "F14",
+      "catalogue_schema": "dispatch-lab/research-field-robotics/1"
+    }
+  ]
+}

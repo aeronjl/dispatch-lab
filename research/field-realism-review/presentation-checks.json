@@ -1,0 +1,17 @@
+{
+  "main": {
+    "font": "Departure, monospace",
+    "headings": 10,
+    "tables": 5,
+    "overflow": false
+  },
+  "mobile": {
+    "overflow": false,
+    "menuClosed": true,
+    "hash": "#section-4"
+  },
+  "escape": "false",
+  "motion": "auto",
+  "externalRequests": [],
+  "errors": []
+}

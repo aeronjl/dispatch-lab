@@ -1,0 +1,1229 @@
+{
+  "schema_version": "realism-assumptions/1",
+  "review_date": "2026-09-12",
+  "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+  "items": [
+    {
+      "id": "A01",
+      "priority": 0,
+      "claim": "A generic module replacement restores capacity damage",
+      "binding": "methane/faults.py: service; FaultPolicy.capacity_cause",
+      "current": "equipment-damage → nominal capacity after successful module-replacement",
+      "units": "As specified in current",
+      "role": "Feasibility/restoration",
+      "sources": [
+        "S22",
+        "S07"
+      ],
+      "range_or_gap": "No component-specific cause or compatible replacement procedure identified.",
+      "consequence": "Remedy may not exist; a faster repair simulation cannot answer its value.",
+      "required_change_or_evidence": "Specify pump/power-stage/stack cause separately, named remedy, prerequisites and acceptance; unresolved causes require human escalation.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "faults.capacity_cause",
+          "default": "equipment-damage",
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "priority": 0,
+      "claim": "A trip may be cleared by a remote reset",
+      "binding": "FieldOperations.reset_enabled; services/plant.py; faults.py",
+      "current": "Latched resettable-trip; reset duration 0.25 h",
+      "units": "As specified in current",
+      "role": "Action availability",
+      "sources": [
+        "S22",
+        "S16"
+      ],
+      "range_or_gap": "Cause-clearance and actual OEM interface unbound.",
+      "consequence": "A nominal reset could mask a persistent unsafe/process condition.",
+      "required_change_or_evidence": "Model cause clearance, reset eligibility, command feedback and successful process tracking separately.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.reset_enabled",
+          "default": true,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.reset_hours",
+          "default": 0.25,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "priority": 0,
+      "claim": "Flow bias is removable by a generic calibration task",
+      "binding": "FaultPolicy / services/core.py calibration capability",
+      "current": "Successful calibration clears injected bias",
+      "units": "As specified in current",
+      "role": "Metrology/remedy",
+      "sources": [
+        "S14",
+        "S24",
+        "S23"
+      ],
+      "range_or_gap": "No named H2 meter, reference path or on-site procedure. pH/ORP station is incompatible evidence.",
+      "consequence": "Invalid repair option distorts downtime and robot value.",
+      "required_change_or_evidence": "Choose a specific meter and permitted verification/replacement/calibration workflow; otherwise leave fault unresolved.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "scenario.flow_bias_fraction",
+          "default": 0,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "priority": 0,
+      "claim": "Inventory provides independent high-quality H2 balance",
+      "binding": "methane/sensing.py: observe",
+      "current": "Noise SD = hourly H2 production × 0.02; exact when production = 0",
+      "units": "As specified in current",
+      "role": "Observability",
+      "sources": [
+        "S23",
+        "S27"
+      ],
+      "range_or_gap": "No pressure/temperature/volume metrology or measured error covariance.",
+      "consequence": "Current diagnosis may lose identifiability with range errors or drift.",
+      "required_change_or_evidence": "Replace with declared measurement chain; propagate difference-of-reading and outflow uncertainty.",
+      "independent_check": "Eight observation stress sequences show isolation lost under unmodelled drift.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "sensors.noise_fraction",
+          "default": 0.02,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "priority": 0,
+      "claim": "Downstream outflow and other states are known exactly",
+      "binding": "methane/sensing.py: observe",
+      "current": "Exact H2 outflow, battery energy, CO2 and reactor temperature",
+      "units": "As specified in current",
+      "role": "Observability",
+      "sources": [
+        "S23",
+        "S27"
+      ],
+      "range_or_gap": "Ideal sensors; no independent errors or common cause.",
+      "consequence": "Mass-balance fault localization receives unrealistic information.",
+      "required_change_or_evidence": "Identify separate channels and errors; keep retrospective truth separate.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "sensors.noise_fraction",
+          "default": 0.02,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "priority": 0,
+      "claim": "Soil types are distinguishable without an inspection task",
+      "binding": "services/surface.py: Surface.public",
+      "current": "Exact section loose/adhered/damaged fractions exposed",
+      "units": "As specified in current",
+      "role": "Observability",
+      "sources": [
+        "S26"
+      ],
+      "range_or_gap": "No optical/soiling station inference model.",
+      "consequence": "Condition cleaning has perfect information; treatment choice overstates autonomy.",
+      "required_change_or_evidence": "Use irradiance/reference-cell or inspection evidence with ambiguity; ideal monitor remains teaching-only.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.cleaning_model",
+          "default": "lumped-dc/1",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "priority": 0,
+      "claim": "Mobile and fixed readers provide independent fault evidence",
+      "binding": "services/inspection.py: classify/sample/evidence",
+      "current": "Two readers can share one trip contact; zero/span references",
+      "units": "As specified in current",
+      "role": "Information independence",
+      "sources": [
+        "S22"
+      ],
+      "range_or_gap": "References check acquisition, not the physical contact or equipment.",
+      "consequence": "Agreeing readers cannot exclude a shared stuck contact.",
+      "required_change_or_evidence": "Represent sensor-to-hypothesis graph and common causes; require independent process evidence.",
+      "independent_check": "Shared-contact equivalence and seven voltage boundary cases checked.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.inspection_model",
+          "default": "bounded-contact/1",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "faults.contact_stuck",
+          "default": "none",
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.inspection_zero_limit_v",
+          "default": 2.0,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.inspection_span_tolerance_fraction",
+          "default": 0.1,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A08",
+      "priority": 0,
+      "claim": "The cleaner works on the chosen array layout",
+      "binding": "ServiceSystem.cleaning_model, row_accessible; solar design",
+      "current": "Generic row access; area 5 m²/kW; 1,000 m²/h",
+      "units": "As specified in current",
+      "role": "Feasibility/fleet size",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "range_or_gap": "No installed cleaner/array pairing. T4 up to 400 m²/night on near-flat trackers is not this fixture.",
+      "consequence": "Single asset can become a distributed fleet with altered cost and downtime.",
+      "required_change_or_evidence": "Bind task to geometry and measured cycle; separate dedicated-row and portable products.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.cleaning_area_m2ph",
+          "default": 1000,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.area_m2_per_kw",
+          "default": 5,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.row_accessible",
+          "default": true,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A09",
+      "priority": 0,
+      "claim": "Inspection robot may approach the hydrogen equipment",
+      "binding": "ServiceSystem.inspection_interface; service route graph",
+      "current": "Accessible port; no gas-zone or payload certification model",
+      "units": "As specified in current",
+      "role": "Access",
+      "sources": [
+        "S05",
+        "S25"
+      ],
+      "range_or_gap": "Advertised IIB does not establish IIC H2 eligibility. Site zone unspecified.",
+      "consequence": "An assumed inspection action can be unavailable.",
+      "required_change_or_evidence": "Keep path outside restricted area or require matching certificate/site classification; do not infer approval.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.inspection_interface",
+          "default": "legacy-prepared",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A10",
+      "priority": 0,
+      "claim": "Human replacement reliably clears all capacity-loss causes",
+      "binding": "FieldOperations.human_fallback/human_work_hours/repair_success_probability",
+      "current": "Human fallback; 2 h work; success 0.95",
+      "units": "As specified in current",
+      "role": "Fallback capability",
+      "sources": [
+        "S22"
+      ],
+      "range_or_gap": "No cause-specific parts, isolation, test and expert qualification.",
+      "consequence": "Human baseline is also optimistic, affecting relative and absolute rankings.",
+      "required_change_or_evidence": "Specify complete procedure, unreachable/irreparable cases and escalation; do not use a generic repair probability.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.human_work_hours",
+          "default": 2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "field_operations.repair_success_probability",
+          "default": 0.95,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "priority": 1,
+      "claim": "Field availability can be inferred from saved European weather",
+      "binding": "ServiceSystem.environment_source/assumed_wind_mps/assumed_rain_mmph; runs/weather",
+      "current": "Default fixed 3 m/s and 0 mm/h; cached snapshots lack wind/rain",
+      "units": "As specified in current",
+      "role": "Joint exposure",
+      "sources": [
+        "S01",
+        "S08",
+        "S26"
+      ],
+      "range_or_gap": "No site service-window evidence or precipitation-driven soil removal.",
+      "consequence": "Weather can simultaneously create need and prevent work.",
+      "required_change_or_evidence": "Add provenance-preserving wind/precipitation data and joint access scenarios; missing data must remain unavailable.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.environment_source",
+          "default": "assumed",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.assumed_wind_mps",
+          "default": 3,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.assumed_rain_mmph",
+          "default": 0,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "priority": 1,
+      "claim": "European soiling accumulates at the fixture rate",
+      "binding": "FieldOperations.soiling_per_day",
+      "current": "0.005 fraction/day; no rain wash-off",
+      "units": "As specified in current",
+      "role": "Service demand",
+      "sources": [
+        "S26"
+      ],
+      "range_or_gap": "Explicit gap: 0.5 percentage point/day is not a site rate or confidence bound.",
+      "consequence": "Cleaning benefit can be manufactured by unsupported deposition.",
+      "required_change_or_evidence": "Site/season monitoring; rain/dew/adhered effects; threshold studies until then.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.soiling_per_day",
+          "default": 0.005,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A13",
+      "priority": 1,
+      "claim": "Treatments remove a fixed fraction and wear predictably",
+      "binding": "FieldOperations.cleaning_removal_fraction; ServiceSystem.brush_life_m2",
+      "current": "Loose removal .9; brush life 50,000 m²; wet adhered .7",
+      "units": "As specified in current",
+      "role": "Restoration/wear",
+      "sources": [
+        "S01",
+        "S02",
+        "S26"
+      ],
+      "range_or_gap": "No module/deposit/brush field calibration; permanent damage is separately retained.",
+      "consequence": "Repeated work may be ineffective or damage coatings.",
+      "required_change_or_evidence": "Pair-specific efficacy/wear evidence; never use dust-removal claim for bonded deposits.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.cleaning_removal_fraction",
+          "default": 0.9,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.brush_life_m2",
+          "default": 50000,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.portable_adhered_removal",
+          "default": 0.7,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A14",
+      "priority": 1,
+      "claim": "Robot mission failure is an independent fixed probability",
+      "binding": "FieldOperations.mission_failure_probability; ServiceSystem.outcome_randomness",
+      "current": "0.05 per mission; matched target/action stream option",
+      "units": "As specified in current",
+      "role": "Reliability",
+      "sources": [
+        "S04",
+        "S03"
+      ],
+      "range_or_gap": "No duration/exposure/cause-specific hazard fit or denominator.",
+      "consequence": "Longer or repeated missions change failure exposure artificially.",
+      "required_change_or_evidence": "Log distance/time/weather/interventions; separate repeatable failure causes and common support outages.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.mission_failure_probability",
+          "default": 0.05,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.outcome_randomness",
+          "default": "legacy-reason/1",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A15",
+      "priority": 1,
+      "claim": "Robot/dock energy resembles the installed product",
+      "binding": "FieldOperations cleaner/rover battery, mission_power_kw, dock_kw; ServiceSystem.dock_standby_kw",
+      "current": "2 kWh packs; .2 kW mission; 1 kW dock; default zero standby, review .05 kW",
+      "units": "As specified in current",
+      "role": "Energy/support",
+      "sources": [
+        "S01",
+        "S03",
+        "S08"
+      ],
+      "range_or_gap": "No measured duty/load curve. T4 own PV, drone dock max 800 W are different boundaries.",
+      "consequence": "Shared plant energy and autonomy margins change.",
+      "required_change_or_evidence": "Separate traction/payload/standby/thermal/dock loads and independent supply; no max-to-average transfer.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.mission_power_kw",
+          "default": 0.2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "field_operations.dock_kw",
+          "default": 1,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.dock_standby_kw",
+          "default": 0.0,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A16",
+      "priority": 1,
+      "claim": "Mission durations cover the whole service cycle",
+      "binding": "FieldOperations.clean_hours/inspect_hours; ServiceSystem travel/verification hours",
+      "current": "2 h clean, 1 h inspect; .5 h travel, .25 h verification",
+      "units": "As specified in current",
+      "role": "Timing",
+      "sources": [
+        "S01",
+        "S02",
+        "S04"
+      ],
+      "range_or_gap": "No route length, commissioning, view quality, setup or test procedure calibration.",
+      "consequence": "Apparent intervention-free performance omits human work.",
+      "required_change_or_evidence": "Measured full-cycle durations with remote and site effort separated.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.cleaning_hours",
+          "default": 2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "field_operations.inspection_hours",
+          "default": 1,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.travel_hours",
+          "default": 0.5,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.verification_hours",
+          "default": 0.25,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A17",
+      "priority": 1,
+      "claim": "Human/remote support will be available on request",
+      "binding": "ServiceSystem support_model, crew shifts, response, travel, remote hours",
+      "current": "Optional logistics/1; example 2 h response, 1 h travel; finite shifts/stocks",
+      "units": "As specified in current",
+      "role": "Support",
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "range_or_gap": "No European supplier SLA, shared fleet contention or adverse-weather response data.",
+      "consequence": "Robot failures can create prolonged stranded assets.",
+      "required_change_or_evidence": "Contract/crew scope and distributions; count return journeys, retrieval, maintenance and unserved work.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.support_model",
+          "default": "none",
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.crew_response_lead_hours",
+          "default": 2,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.crew_travel_hours",
+          "default": 1,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A18",
+      "priority": 1,
+      "claim": "Spares, brushes and water are compatible and replenishable",
+      "binding": "ServiceSystem portable water/stock/supplier fields; FieldOperations kits",
+      "current": "12 cleaning kits, 2 service kits; default 1,000 L portable tank; review 4,000 L",
+      "units": "As specified in current",
+      "role": "Support/consumables",
+      "sources": [
+        "S02",
+        "S07",
+        "S24"
+      ],
+      "range_or_gap": "Generic kits; no exact part/reference shelf life or supplier stock evidence.",
+      "consequence": "Tasks become impossible when compatibility or water fails.",
+      "required_change_or_evidence": "Part IDs, storage conditions, supply delay, water quality/waste and replenishment limits.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "field_operations.cleaning_kits",
+          "default": 12,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "field_operations.service_kits",
+          "default": 2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "service_system.portable_water_capacity_l",
+          "default": 1000,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A19",
+      "priority": 1,
+      "claim": "Injected fault timing represents maintenance demand",
+      "binding": "Scenario.fault_start_hour/capacity_fraction; FaultPolicy",
+      "current": "One scheduled fault, persistent unless repaired or explicitly transient",
+      "units": "As specified in current",
+      "role": "Exposure",
+      "sources": [
+        "S21",
+        "S27"
+      ],
+      "range_or_gap": "No event frequency, competing failure modes, degradation or environmental hazard fit.",
+      "consequence": "A 48 h injected event cannot justify annual robot savings.",
+      "required_change_or_evidence": "Treat as challenge; obtain service logs or present break-even incidents/year without claiming incidence.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "scenario.fault_start_hour",
+          "default": 34,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "faults.lifecycle",
+          "default": "persistent",
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A20",
+      "priority": 1,
+      "claim": "Capacity loss reduces all electrolysis capability proportionally",
+      "binding": "FaultPolicy.capacity_cause; simulation execution capacity",
+      "current": "Scalar available kW; unchanged conversion efficiency",
+      "units": "As specified in current",
+      "role": "Fault consequence",
+      "sources": [
+        "S20",
+        "S21",
+        "S22"
+      ],
+      "range_or_gap": "Pump fault, stack ageing, contamination and sensor fault have different effects.",
+      "consequence": "Same derating can understate complete shutdown or efficiency loss.",
+      "required_change_or_evidence": "Create cause→physics→observations→allowed remedies contract.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "scenario.capacity_fraction",
+          "default": 1,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A21",
+      "priority": 1,
+      "claim": "Electrolysis has constant efficiency and simple starts",
+      "binding": "Plant.specific_energy_kwh_per_kg, min_load_fraction, start_energy_kwh",
+      "current": "55 kWh/kg; 30% minimum; 40 kWh/start",
+      "units": "As specified in current",
+      "role": "Production/start value",
+      "sources": [
+        "S20",
+        "S27"
+      ],
+      "range_or_gap": "55 is a PEM status guidepost; load, temperature, cold/standby/purge curves uncalibrated.",
+      "consequence": "Recovered electricity may yield a different amount or incur downtime.",
+      "required_change_or_evidence": "Use system-level measured load/start maps; distinguish stack vs balance-of-plant.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "plant.specific_energy_kwh_per_kg",
+          "default": 55,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.min_load_fraction",
+          "default": 0.3,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.start_energy_kwh",
+          "default": 40,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A22",
+      "priority": 1,
+      "claim": "Missing auxiliaries cannot change service value",
+      "binding": "methane/physics.py scope; Plant auxiliary values",
+      "current": "No pressure dynamics, purge/vent losses, compression, water treatment or detailed cooling circuit",
+      "units": "As specified in current",
+      "role": "Plant boundary",
+      "sources": [
+        "S21",
+        "S22"
+      ],
+      "range_or_gap": "Utilities unspecified. An hourly balanced sandbox is not a complete process energy audit.",
+      "consequence": "Important failures or start costs may be absent entirely.",
+      "required_change_or_evidence": "Declare pressure/purity/utility interfaces; add only consequential auxiliary loads and failure modes.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "plant.auxiliary_kw",
+          "default": 2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.cooling_electric_fraction",
+          "default": 0.1,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A23",
+      "priority": 1,
+      "claim": "The reactor thermal response is representative",
+      "binding": "Plant thermal_capacity/heat_loss/heater/cooling/band/minimum_run",
+      "current": "0.3 kWh/K; .08 kW/K; 60/40 kW; 250–400°C; 4 h run",
+      "units": "As specified in current",
+      "role": "Delayed response",
+      "sources": [
+        "S28"
+      ],
+      "range_or_gap": "Reaction exotherm supported; C, UA, band and commitments are illustrative.",
+      "consequence": "Warm-up, heat retention and capacity-repair value can change direction.",
+      "required_change_or_evidence": "Obtain design/step-response envelope; continue analytic sensitivity as conditional evidence.",
+      "independent_check": "864 Decimal exponential cases reconcile within 1e-9°C; no empirical validation.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "plant.thermal_capacity_kwh_per_k",
+          "default": 0.3,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.heat_loss_kw_per_k",
+          "default": 0.08,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.heater_max_kw",
+          "default": 60,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.cooling_max_kw",
+          "default": 40,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.minimum_run_hours",
+          "default": 4,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A24",
+      "priority": 1,
+      "claim": "CO2 supply and initial stocks permit useful extra production",
+      "binding": "Plant co2_delivery_kg/every_hours, initial_co2_kg, initial_h2_kg",
+      "current": "300 kg/day; 500 kg initial CO2; H2 empty",
+      "units": "As specified in current",
+      "role": "Bottleneck/terminal effect",
+      "sources": [],
+      "range_or_gap": "Supply contract and delivered gas condition unspecified.",
+      "consequence": "Repairs/cleaning may restore capacity with no methane gain because feedstock binds.",
+      "required_change_or_evidence": "Publish cumulative inputs/ending inventories and constrained shadow value.",
+      "independent_check": "Independent supply bound 109.09 kg CH4/day; initial stock supports 181.82 kg.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "plant.co2_delivery_kg",
+          "default": 300,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.co2_delivery_every_hours",
+          "default": 24,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.initial_co2_kg",
+          "default": 500,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.initial_h2_kg",
+          "default": 0,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A25",
+      "priority": 1,
+      "claim": "Sabatier mass and heat arithmetic are appropriate",
+      "binding": "methane/physics.py ratios; reactor.py REACTION_KWH_PER_KG",
+      "current": "MW H2/CO2/CH4/H2O=2/44/16/18; 165 MJ/kmol",
+      "units": "As specified in current",
+      "role": "Numerical mechanism",
+      "sources": [
+        "S28"
+      ],
+      "range_or_gap": "Ideal conversion; no kinetic/selectivity/gas-quality certification.",
+      "consequence": "Exact arithmetic cannot validate full reactor design.",
+      "required_change_or_evidence": "Retain ideal chemistry label; separate produced methane from accepted product.",
+      "independent_check": "Independent mass equality and 2.864583 kWh/kg checked.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Numerically supported within the declared abstraction",
+        "permitted_use": "Mechanism/accounting checks under stated inputs; no empirical plant or cost validation.",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": []
+    },
+    {
+      "id": "A26",
+      "priority": 1,
+      "claim": "Short matched windows identify economic service value",
+      "binding": "Scenario.hours; initial inventories; service open orders",
+      "current": "48 h core, 240 h extension; no terminal sales",
+      "units": "As specified in current",
+      "role": "Interpretation",
+      "sources": [],
+      "range_or_gap": "No annual site utilization/fault process.",
+      "consequence": "Postponed work or consumed initial stock can manufacture apparent savings.",
+      "required_change_or_evidence": "Retain all terminal states/unresolved obligations and extend every matched arm; no annualization.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "scenario.hours",
+          "default": 72,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "plant.initial_soc",
+          "default": 0.0,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A27",
+      "priority": 1,
+      "claim": "Service prices are representative European costs",
+      "binding": "HydrogenCosts field asset/human/maintenance defaults; service_economics.illustrative",
+      "current": "Cleaner €15k, rover €80k, dock €5k; 8-year life; human €80/h; other activity assumptions",
+      "units": "As specified in current",
+      "role": "Economics",
+      "sources": [
+        "S03"
+      ],
+      "range_or_gap": "No supplier quote or local labor/insurance/transport contract.",
+      "consequence": "Ownership/contract preference can reverse.",
+      "required_change_or_evidence": "Use fixed-trace break-even thresholds; report cash expenditure, allocation and decision cost separately.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "costs.cleaner_eur",
+          "default": 15000,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "costs.rover_eur",
+          "default": 80000,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "costs.dock_eur",
+          "default": 5000,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "costs.field_asset_years",
+          "default": 8,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        },
+        {
+          "path": "costs.human_service_eur_per_hour",
+          "default": 80,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A28",
+      "priority": 1,
+      "claim": "Costs account for wear without duplicate ownership charges",
+      "binding": "methane/service_economics.py; services/pricing.py",
+      "current": "Replaceable capital separated; max(calendar,usage,parts) allocation; expenditure separate",
+      "units": "As specified in current",
+      "role": "Accounting",
+      "sources": [],
+      "range_or_gap": "Arithmetic convention, not actual invoices; contract inclusions need review.",
+      "consequence": "Double counting or omitted inclusions biases ranking.",
+      "required_change_or_evidence": "Preserve accounting reconciliation and explicit price/version boundaries.",
+      "independent_check": "Independent per-run audit and targeted economic tests.",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Numerically supported within the declared abstraction",
+        "permitted_use": "Mechanism/accounting checks under stated inputs; no empirical plant or cost validation.",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "costs.field_replaceable_share",
+          "default": 0.2,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A29",
+      "priority": 2,
+      "claim": "Robotic actuator completion proves restored operation",
+      "binding": "services/verification.py and investigation/recovery variants",
+      "current": "Versioned contact/process evidence and optional scheduled tests",
+      "units": "As specified in current",
+      "role": "Recovery acceptance",
+      "sources": [
+        "S22",
+        "S27"
+      ],
+      "range_or_gap": "Actual test load/duration/acceptance depend on cause and instrumentation.",
+      "consequence": "False restoration or insufficient power delays confirmation.",
+      "required_change_or_evidence": "Keep physical restoration, service receipt and observation confirmation timestamps distinct.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "service_system.verification_hours",
+          "default": 0.25,
+          "activation": "Optional service defaults, only active when configured",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A30",
+      "priority": 2,
+      "claim": "Schematic routes and hourly dispatch establish field response",
+      "binding": "ServiceSystem graph; Plant.dt_hours",
+      "current": "Hourly plant plus fractional service events; illustrated paths",
+      "units": "As specified in current",
+      "role": "Resolution",
+      "sources": [],
+      "range_or_gap": "No geometric navigation, emergency controls or pressure-system dynamics.",
+      "consequence": "Animation can imply capabilities beyond the calculation.",
+      "required_change_or_evidence": "Keep illustrations as task explanation; emergency/safety and navigation behavior outside validated scope.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": [
+        {
+          "path": "plant.dt_hours",
+          "default": 1.0,
+          "activation": "Recorded default",
+          "version": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+        }
+      ]
+    },
+    {
+      "id": "A31",
+      "priority": 2,
+      "claim": "Other hardware families are ready to add as interchangeable robots",
+      "binding": "F04–F14 capability entries",
+      "current": "Uneven commercial maturity; most absent as full mechanisms",
+      "units": "As specified in current",
+      "role": "Architecture",
+      "sources": [
+        "S06",
+        "S07",
+        "S13",
+        "S17",
+        "S19"
+      ],
+      "range_or_gap": "Each needs its own task/effect/sensor/support contract.",
+      "consequence": "A common class label can conceal unavailable mechanics.",
+      "required_change_or_evidence": "Expand only after family-specific feasibility gate, not generic success rate.",
+      "independent_check": "Numerical checks do not establish empirical validity",
+      "review": {
+        "date": "2026-09-12",
+        "reviewer": "Codex source/code review; not a hardware qualification",
+        "source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+        "outcome": "Conditional use / evidence gap",
+        "permitted_use": "Explicit illustrative or threshold study only until listed evidence is supplied",
+        "invalidate_on": "Change to bound mechanism, hardware/interface, evidence scope or operating envelope"
+      },
+      "config_bindings": []
+    }
+  ]
+}

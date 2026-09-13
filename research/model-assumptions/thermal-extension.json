@@ -1,0 +1,11 @@
+{
+ "schema_version":"assumption-review-amendment/1",
+ "date":"2026-09-12",
+ "reason":"The initial joint profiles changed C and UA proportionally, leaving C/UA = 3.75 hours. Add distinct cooling time constants while preserving other default parameters and paired weather/seeds. This amendment follows the first results; it is exploratory, not preregistered confirmatory evidence.",
+ "profiles":{
+  "slow-cooling":{"thermal_capacity_kwh_per_k":0.6,"heat_loss_kw_per_k":0.04},
+  "fast-cooling":{"thermal_capacity_kwh_per_k":0.15,"heat_loss_kw_per_k":0.16}
+ },
+ "time_constants_hours":{"slow-cooling":15,"fast-cooling":0.9375},
+ "comparison":"Compare against the saved reference, with unchanged scientific implementation hashes. Do not rerun or replace earlier cases. These are hypothetical ranges, not measured reactor specifications."
+}

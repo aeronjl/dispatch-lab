@@ -1,0 +1,69 @@
+{
+  "schema_version": "dispatch-lab/realism-review-amendment/1",
+  "scope": "Correction declared after examining first results: the review runner set adhered threshold to zero, making zero adhered material eligible and generating repeated portable jobs. Use a positive 0.02 threshold with the existing loose threshold 0.04; initial adhered remains zero. Rerun EVERY affected power/soil/seed arm. Preserve all original cases as misconfigured policy challenges, excluded from hardware ranking. This corrects research setup only; no production change. This amendment is frozen before its own execution.",
+  "frozen_before_results": false,
+  "source_policy": "Freeze actual production source and complete case inputs before execution. Preserve each output and independent audit. No existing study or archive is modified.",
+  "controller": "Greedy",
+  "seeds": [
+    7,
+    19,
+    31
+  ],
+  "hours": 48,
+  "horizon_hours": 6,
+  "cleaning": {
+    "available_unsoiled_dc_kw": [
+      300,
+      1000
+    ],
+    "initial_loose_fraction": [
+      0.01,
+      0.1
+    ],
+    "arms": [
+      "no-cleaning",
+      "condition-cleaner",
+      "portable-wet"
+    ],
+    "cases": 12,
+    "question": "Does recovered optical input produce methane, or hit conversion/feedstock/production constraints? What methane price would pay for the incremental service inputs?",
+    "classification": "Conditional stress levels, not measured European soiling ranges. Perfect surface observation remains an explicitly unvalidated assumption. Portable and resident treatments are distinct action bundles, not an isolated test of robot autonomy."
+  },
+  "recovery": {
+    "conditions": [
+      "resettable-trip",
+      "equipment-damage",
+      "reset-unavailable",
+      "crew-unavailable"
+    ],
+    "arms": [
+      "no-service",
+      "human-only",
+      "fixed-assisted",
+      "mobile-assisted"
+    ],
+    "cases": 0,
+    "question": "Which reductions in downtime or human work depend on a permitted reset, a prepared contact, a compatible replacement or available support?",
+    "classification": "Matched synthetic fault challenges; they supply no fault incidence or field repair reliability. A generic replacement is retained only as the existing illustrative conditional capability, not established feasibility."
+  },
+  "analytic_checks": [
+    "Independent rounded Sabatier stoichiometry and daily CO2 upper bound",
+    "Independent exponential thermal calculation across capacity, loss, ambient, heating and production stress values",
+    "Contact-channel dropout, ambiguous voltage, offset/reference failure and shared-contact observation equivalence",
+    "Hydrogen inventory/outflow error sensitivity using only observations and the production diagnosis function"
+  ],
+  "interpretation_rules": [
+    "Retain every case, failure, incomplete execution and unresolved work; do not drop a losing arm.",
+    "Separate physical methane, ending inventories, human/remote work, allocated cost and decision costs.",
+    "Report rank reversals and zero additional methane; use break-even thresholds when price/rate ranges lack evidence.",
+    "Do not convert a 48-hour result or injected fault into annual event rates or annual savings.",
+    "Independent checks verify implemented mechanisms; they do not establish empirical realism.",
+    "No requirement that robots, planning, or diagnosis win.",
+    "If capability evidence is missing, the credible-use gate remains open regardless of repeatability."
+  ],
+  "case_filter": {
+    "family": "cleaning",
+    "arm": "portable-wet"
+  },
+  "portable_adhered_threshold": 0.02
+}

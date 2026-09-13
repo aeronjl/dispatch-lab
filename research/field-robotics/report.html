@@ -1,0 +1,420 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Research and simulation design for field robotics, inspection, remote maintenance and service economics."><title>Field robotics and remote maintenance for Dispatch Lab</title><style>
+:root{color-scheme:light;--ink:#202124;--muted:#5b5e63;--line:#dadddf;--paper:#fff;--wash:#f4f5f6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:var(--paper);font:18px/1.7 Georgia,'Times New Roman',serif}a{color:inherit;text-decoration-color:#9b9da0;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible,input:focus-visible,.table-scroll:focus-visible{outline:3px solid #30343b;outline-offset:4px}.skip{position:fixed;top:-100px;left:20px;background:white;z-index:5;padding:10px}.skip:focus{top:10px}
+.layout{display:grid;grid-template-columns:244px minmax(0,1080px);gap:58px;max-width:1450px;margin:auto;padding:60px 44px 100px}aside{font:13px/1.5 system-ui,sans-serif;position:sticky;top:36px;align-self:start;max-height:calc(100vh - 72px);overflow:auto;padding-right:10px}aside strong{display:block;margin:0 0 18px;font-size:14px}nav a{display:block;padding:8px 0;text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink);text-decoration:underline}.downloads{border-top:1px solid var(--line);margin-top:20px;padding-top:14px}.downloads a{display:block;margin:8px 0}main{min-width:0}h1,h2,h3,th,button,label,.architecture{font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(32px,3.2vw,48px);line-height:1.15;letter-spacing:-1.2px;margin:0 0 36px;max-width:950px}h2{font-size:28px;line-height:1.3;letter-spacing:-.45px;margin:64px 0 24px;padding-top:24px;border-top:1px solid var(--line)}h3{font-size:20px;line-height:1.4;margin:32px 0 16px}p,li{max-width:82ch}p{margin:0 0 22px}li{padding-left:3px;margin:12px 0}strong{font-weight:700}code{font: .83em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}p code,li code{background:var(--wash);padding:1px 4px}pre{background:var(--wash);padding:22px;overflow:auto;border:1px solid var(--line);border-radius:3px;line-height:1.55}pre code{font-size:13px}
+.table-scroll{overflow-x:auto;margin:24px 0 32px;border:1px solid var(--line);border-radius:3px}table{border-collapse:collapse;width:100%;font:14px/1.6 system-ui,sans-serif;min-width:680px}td,th{padding:15px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--wash);font-size:13px}tr:last-child td{border-bottom:0}td:first-child{min-width:145px}#hardware td{font-size:13px}#hardware td:nth-child(2){min-width:210px}#hardware td:nth-child(3){min-width:210px}#hardware td:nth-child(4){min-width:175px}tr[hidden]{display:none}.catalogue-filter{font:14px/1.5 system-ui,sans-serif;margin:28px 0 0}.catalogue-filter label{display:block;font-weight:600;margin-bottom:10px}.catalogue-filter>div{display:flex;gap:12px}input{font:15px system-ui,sans-serif;border:1px solid #888;border-radius:3px;padding:11px 13px;width:min(100%,430px);min-width:0;background:white;color:var(--ink)}button{font-size:14px;background:var(--wash);border:1px solid #888;border-radius:3px;padding:10px 14px;cursor:pointer;white-space:nowrap}.catalogue-filter p{color:var(--muted);font-size:12px;margin:9px 0 0}.architecture{background:var(--wash);padding:25px;margin:28px 0;border:1px solid var(--line);font-size:14px;line-height:1.5}.architecture-top{border:1px solid #8b8d90;padding:16px;text-align:center;background:#fff}.architecture-row{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;gap:6px}.architecture-row>div{padding:16px 12px;border:1px solid #8b8d90;background:white;min-height:102px}.architecture small{display:block;font-size:12px;line-height:1.4;color:var(--muted);margin-top:8px}.connectors>div{border:0;min-height:0;background:none;text-align:center;padding:7px;font-size:20px}.arrow{text-align:center;padding:8px;font-size:20px}.architecture figcaption{font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin:18px 0 0}.footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media(max-width:1000px){.layout{grid-template-columns:180px minmax(0,1fr);gap:28px;padding:36px 25px}body{font-size:17px}.architecture{padding:15px}.architecture-row{grid-template-columns:1fr}.architecture-row>span{display:none}.connectors{display:none}.architecture-row>div{min-height:0}h1{font-size:36px}}
+@media(max-width:720px){.layout{display:block;padding:28px 20px 70px}aside{position:static;max-height:none;padding:0 0 25px;margin-bottom:32px;border-bottom:1px solid var(--line)}aside nav{display:flex;flex-wrap:wrap;gap:6px 17px;max-height:165px;overflow:auto}nav a{padding:3px 0;font-size:12px}.downloads{display:flex;gap:15px;flex-wrap:wrap;margin-top:15px;padding-top:9px}.downloads a{margin:2px 0}h1{font-size:34px;letter-spacing:-.7px}h2{font-size:25px;margin-top:44px}pre{padding:14px}.architecture{margin-left:0;margin-right:0}.catalogue-filter>div{gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.layout{display:block;max-width:none;padding:0}aside,.skip,.catalogue-filter{display:none}body{font-size:10.5pt;line-height:1.5}h1{font-size:25pt}h2{font-size:17pt;margin-top:26pt}h3{font-size:12pt}table{font-size:8pt;min-width:0}#hardware td{font-size:8pt;min-width:0!important}td,th{padding:6pt}pre{white-space:pre-wrap}a{text-decoration:none}.table-scroll{overflow:visible}tr{break-inside:avoid}tr[hidden]{display:table-row}.architecture{break-inside:avoid}h2,h3{break-after:avoid}}
+
+#hardware td:nth-child(2){min-width:185px}#hardware td:nth-child(3){min-width:235px}#hardware td:nth-child(4){min-width:210px}sup{font:11px/1.2 system-ui,sans-serif;white-space:nowrap}h2{scroll-margin-top:20px}figure{margin-left:0;margin-right:0}
+</style></head><body><a class="skip" href="#report">Skip to report</a><div class="layout"><aside aria-label="Report navigation"><strong>Contents</strong><nav><a href="#section-1">1. Current capability and emerging designs</a><a href="#section-2">2. The abstraction: assets, capabilities, work and evidence</a><a href="#section-3">3. Physical detail that changes decisions</a><a href="#section-4">4. Site geometry, weather and time</a><a href="#section-5">5. Running costs and economic attribution</a><a href="#section-6">6. What the controller should optimise</a><a href="#section-7">7. Changes required in the present model</a><a href="#section-8">8. A first coherent demonstration</a><a href="#section-9">9. Experiments and evidence after the extension</a><a href="#section-10">10. Presentation and implementation order</a><a href="#section-11">11. Source records and scope</a><a href="#section-12">12. Local platform material</a></nav><div class="downloads"><a href="report.md">Markdown report</a><a href="catalogue.json">Hardware catalogue</a><a href="sources.json">Source records</a><a href="../autonomous-management/report.html">Earlier autonomy research</a></div></aside><main id="report"><h1>Field robotics and remote maintenance for Dispatch Lab</h1>
+<p>The next useful extension is a <strong>field-operations layer</strong>: equipment that gathers evidence, maintains the plant, restores particular capabilities and reduces the work requiring a person on site. Mobile robots are one member of this class. Fixed analyzers, self-cleaning instruments, remote actuators, charging docks, spare parts and human service crews belong in the same operational picture.</p>
+<p>This changes the autonomy problem. The controller must decide when to produce, when to learn more about a suspected problem, when to intervene, and how to preserve the resources needed to do so. A maintenance action consumes time and resources, can fail, and needs evidence of success. A robot also becomes another asset that can require maintenance.</p>
+<p><strong>Recommendation:</strong> define this layer before the next expanded controller experiments. Implement a deliberately small first example around solar cleaning, an inspection rover and one engineered recovery action. Preserve the completed battery study as evidence about its original plant boundary. Continue solver checks on that frozen boundary; evaluate field operations through new, explicitly different study editions.</p>
+<h2 id="section-1">1. Current capability and emerging designs</h2>
+<p>Commercial capability is strongest in repeatable inspection, cleaning, sensing and purpose-built actuation. Capability falls off as tasks require irregular manipulation, unknown fault repair, new tools, or work in an unprepared environment. “Autonomous” needs to be resolved into the actual workflow: who commissions the route, starts the mission, supervises exceptions, replaces consumables and retrieves a failed robot?</p>
+<p>The catalogue distinguishes commercial products and deployments from prototypes, research demonstrations and proposed simulation abstractions. Manufacturer availability and performance claims are identified as such. A product description is not an independent estimate of uptime, maintenance burden or lifecycle cost.</p>
+<div class="catalogue-filter"><label for="hardware-search">Filter the hardware catalogue</label><div><input id="hardware-search" type="search" placeholder="Try cleaning, prototype or sampling"><button id="clear-search" type="button">Show all</button></div><p id="filter-status" role="status" aria-live="polite">14 hardware classes</p></div><div class="table-scroll" tabindex="0"><table id="hardware">
+<thead>
+<tr>
+<th>Hardware class</th>
+<th>Evidence and examples</th>
+<th>Mechanics to represent</th>
+<th>Limits and proposed scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dedicated solar-row cleaner</strong></td>
+<td>Commercial, geometry-specific. Ecoppia E4/H4/T4. <sup><a href="https://www.ecoppia.com/" title="Robotic solar panel cleaning services" aria-label="Source 1: Robotic solar panel cleaning services">[1]</a></sup> <sup><a href="https://www.ecoppia.com/warehouse/temp/ecoppia/T4_Datasheet.pdf" title="T4 autonomous robotic cleaning solution" aria-label="Source 2: T4 autonomous robotic cleaning solution">[2]</a></sup></td>
+<td>Dry brushing with docking; some systems use their own solar supply. Soiling removal per section, finite coverage, brush condition, docking and weather limits.</td>
+<td>Track/bridge layout; no automatic cross-row compatibility; consumables and servicing remain. <strong>Scope:</strong> First implementation.</td>
+</tr>
+<tr>
+<td><strong>Portable wet/dry cleaner</strong></td>
+<td>Commercial, operator-assisted. SolarCleano F1. <sup><a href="https://www.solarcleano.com/products/remote-solarcleano-f1" title="SolarCleano F1" aria-label="Source 3: SolarCleano F1">[3]</a></sup></td>
+<td>Battery-powered cleaner transported and operated by a person. Water, setup/movement labour, energy, coverage and cleaning effectiveness.</td>
+<td>Remote control does not eliminate the operator or deployment visit. <strong>Scope:</strong> Comparison baseline.</td>
+</tr>
+<tr>
+<td><strong>Mobile ground inspector</strong></td>
+<td>Commercial, commissioned routes. ANYmal X; ExR-2.5; Spot. <sup><a href="https://www.anybotics.com/robotics/anymal-x/" title="ANYmal X — Ex-proof inspection robot" aria-label="Source 4: ANYmal X — Ex-proof inspection robot">[4]</a></sup> <sup><a href="https://www.exrobotics.com/our-products" title="ExR-2.5 products, software and services" aria-label="Source 5: ExR-2.5 products, software and services">[5]</a></sup> <sup><a href="https://bostondynamics.com/blog/automated-inspections-made-simple/" title="Automated inspections made simple" aria-label="Source 6: Automated inspections made simple">[6]</a></sup></td>
+<td>Visual, thermal, acoustic and optional gas sensing on taught inspection rounds. Travel graph, payload, observation quality, delay, charge, failed missions and assistance.</td>
+<td>Mobility, gas-group rating and payload compatibility differ; a reading is not a repair. <strong>Scope:</strong> First implementation.</td>
+</tr>
+<tr>
+<td><strong>Docked aerial inspector</strong></td>
+<td>Commercial, operation-dependent. DJI Dock 3 / Matrice 4TD. <sup><a href="https://enterprise.dji.com/dock-3/specs" title="DJI Dock 3 specifications" aria-label="Source 15: DJI Dock 3 specifications">[15]</a></sup> <sup><a href="https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/specific-category-civil-drones" title="Specific Category — Civil Drones" aria-label="Source 30: Specific Category — Civil Drones">[30]</a></sup> <sup><a href="https://regulatorylibrary.caa.co.uk/2019-947/Content/AMC-GM/GM1%20Article%203%20Categories%20of.htm" title="GM1 Article 3: Categories of UAS Operations" aria-label="Source 31: GM1 Article 3: Categories of UAS Operations">[31]</a></sup></td>
+<td>Repeatable visual/thermal survey with automatic dock charging. Survey coverage, wind/rain restrictions, flight reserve, dock power and delayed observations.</td>
+<td>Weather, airspace/authorization and dock dependence; no generic gas identification. <strong>Scope:</strong> Second implementation.</td>
+</tr>
+<tr>
+<td><strong>Contact inspection crawler</strong></td>
+<td>Commercial specialist inspection. Gecko Robotics RUG. <sup><a href="https://www.geckorobotics.com/resources/blog/reinforcement-learning-for-rug" title="Reinforcement Learning for RUG" aria-label="Source 8: Reinforcement Learning for RUG">[8]</a></sup></td>
+<td>Ultrasonic measurement of surface/material thickness. Inspection method, reachable surfaces and measurement uncertainty.</td>
+<td>Deployment and contact preparation may require people; requires a corresponding degradation model. <strong>Scope:</strong> Later, if integrity mechanics added.</td>
+</tr>
+<tr>
+<td><strong>Vegetation-management robot</strong></td>
+<td>Commercial deployments reported. Renu Robotics Renubot. <sup><a href="https://renurobotics.com/about-us/" title="Renu Robotics: autonomous vegetation management" aria-label="Source 9: Renu Robotics: autonomous vegetation management">[9]</a></sup></td>
+<td>Mapped autonomous mowing with recharge pod and remote monitoring. Seasonal growth, access obstruction, service hours, energy and human support.</td>
+<td>Terrain, obstacles and robot maintenance; economics differ with site and climate. <strong>Scope:</strong> Later site-operations example.</td>
+</tr>
+<tr>
+<td><strong>Sampling and analyzer station</strong></td>
+<td>Commercial engineered subsystem. Swagelok calibration/switching modules. <sup><a href="https://products.swagelok.com/en/all-products/analytical-instrumentation/analytical-subsystems-press/calibrating-switching-modules/c/502?clp=true" title="Calibration and switching modules" aria-label="Source 10: Calibration and switching modules">[10]</a></sup></td>
+<td>Condition and route process or reference samples to an analyzer. Purge/transport delay, sample use, contamination, analyzer status and reference inventory.</td>
+<td>Requires an analyzer, utilities and compatible process interfaces; not gas-quality certification. <strong>Scope:</strong> Initial architecture; later mechanism.</td>
+</tr>
+<tr>
+<td><strong>Automatic sensor service station</strong></td>
+<td>Commercial for specified sensors. Endress+Hauser CDC90. <sup><a href="https://www.endress.com/en/field-instruments-overview/liquid-analysis-product-overview/pH-sensor-automatic-cleaning-calibration-cdc90" title="Cleaning and calibration system Liquiline Control CDC90" aria-label="Source 11: Cleaning and calibration system Liquiline Control CDC90">[11]</a></sup></td>
+<td>Retract, clean, validate and calibrate compatible pH/ORP sensors. Calibration age, reference/cleaner stocks, temporary unavailability and verified return.</td>
+<td>Not a generic cure for a hydrogen flow meter; electrode and reagent replacement remain. <strong>Scope:</strong> First fixed-hardware comparison.</td>
+</tr>
+<tr>
+<td><strong>Rugged fixed sensor package</strong></td>
+<td>Commercial, technology-specific. Emerson corrosion/erosion sensing. <sup><a href="https://www.emerson.com/en/measurement-instrumentation/catalog/corrosion-and-erosion-monitoring" title="Corrosion and erosion monitoring" aria-label="Source 12: Corrosion and erosion monitoring">[12]</a></sup></td>
+<td>Permanent ultrasonic, acoustic or intrusive measurements. Independent channels, battery life, drift, dropout and common-mode error.</td>
+<td>Sensor coverage and calibration are bounded; no automatic remaining-life ground truth. <strong>Scope:</strong> First inspection baseline.</td>
+</tr>
+<tr>
+<td><strong>Remote actuator / redundant service path</strong></td>
+<td>Commercial with engineered integration. Rotork IQ3 Pro and shutdown options. <sup><a href="https://www.rotork.com/en/products/electric-intelligent-actuators/iq3-pro" title="IQ3 Pro intelligent electric actuators" aria-label="Source 13: IQ3 Pro intelligent electric actuators">[13]</a></sup> <sup><a href="https://www.rotork.com/uploads/news/2950/rotork-v3pdf.pdf" title="Power generation: actuator solutions" aria-label="Source 14: Power generation: actuator solutions">[14]</a></sup></td>
+<td>Commanded actuation with position/torque feedback; optional stored-energy shutdown. Actuation power, stuck states, position uncertainty and service-path prerequisites.</td>
+<td>Indication backup is not actuator motive power; valve action must have a modeled physical effect. <strong>Scope:</strong> First bounded-recovery example.</td>
+</tr>
+<tr>
+<td><strong>Mobile maintenance manipulator</strong></td>
+<td>Prototype / constrained demonstrations. Taurob Operator. <sup><a href="https://www.taurob.com/operator/" title="Taurob Operator" aria-label="Source 16: Taurob Operator">[16]</a></sup></td>
+<td>Valve manipulation, tooling and material handling. Tool/reach/torque compatibility, multi-stage tasks, failure, verification and remote assistance.</td>
+<td>Manufacturer page explicitly says prototype; no universal consumable-replacement capability. <strong>Scope:</strong> Explicit future-capability fixture.</td>
+</tr>
+<tr>
+<td><strong>Robot-compatible replaceable module</strong></td>
+<td>Research demonstration / design option. Melenbrink–Teeple–Werfel modular hardware. <sup><a href="https://www.eecs.harvard.edu/~jkwerfel/iros22melenbrink.pdf" title="A Robot Factors Approach to Designing Modular Hardware" aria-label="Source 17: A Robot Factors Approach to Designing Modular Hardware">[17]</a></sup></td>
+<td>Single-axis guided insertion, combined latching and compliant mechanical interfaces. Service-port compatibility, spare stock, isolation, swap and post-service check.</td>
+<td>Space-habitat lab hardware is evidence for a design principle, not pressure-system qualification. <strong>Scope:</strong> Explicit future-capability fixture.</td>
+</tr>
+<tr>
+<td><strong>Solar construction robot</strong></td>
+<td>Commercial deployments reported; evolving versions. AES/Maximo; Terabase Terafab. <sup><a href="https://www.nasdaq.com/press-release/maximo-completes-100-mw-robotic-solar-installation-2026-03-25" title="Maximo Completes 100 MW of Robotic Solar Installation" aria-label="Source 18: Maximo Completes 100 MW of Robotic Solar Installation">[18]</a></sup> <sup><a href="https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment" title="Next-generation Terafab completes field testing, ready for deployment" aria-label="Source 19: Next-generation Terafab completes field testing, ready for deployment">[19]</a></sup></td>
+<td>Mechanized panel handling, assembly and installation alongside construction crews. Build-phase labour, rented equipment, mobilization, capacity commissioning and defects.</td>
+<td>Not a daily O&amp;M robot; module installation is only part of project completion. <strong>Scope:</strong> Separate commissioning scenario.</td>
+</tr>
+<tr>
+<td><strong>Pre-integrated deployable solar array</strong></td>
+<td>Commercial, crew-assisted. 5B Maverick. <sup><a href="https://5b.co/en/5b-maverick" title="5B Maverick" aria-label="Source 20: 5B Maverick">[20]</a></sup></td>
+<td>Transportable pre-wired solar blocks unfolded with a small crew and machinery. Transport, installation time/cost, footprint and compatible cleaning/access geometry.</td>
+<td>A design alternative rather than an autonomous robot; crew and telehandler still required. <strong>Scope:</strong> Separate design comparison.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Inspection and cleaning that can be represented now</h3>
+<p>Ecoppia reports more than 5 GW of robotic cleaning deployments. Its designs demonstrate that a cleaner can be persistent site infrastructure. Geometry is consequential: the T4 datasheet describes tracker cleaning near horizontal stow, dedicated bridges and up to 400 m² daily coverage. That specification must not become a generic robot cleaning an arbitrary fixed-tilt array. SolarCleano's F1 provides a useful contrasting model: a portable wet/dry cleaner with an operator and transport/setup work. <sup><a href="https://www.ecoppia.com/" title="Robotic solar panel cleaning services" aria-label="Source 1: Robotic solar panel cleaning services">[1]</a></sup> <sup><a href="https://www.ecoppia.com/warehouse/temp/ecoppia/T4_Datasheet.pdf" title="T4 autonomous robotic cleaning solution" aria-label="Source 2: T4 autonomous robotic cleaning solution">[2]</a></sup> <sup><a href="https://www.solarcleano.com/products/remote-solarcleano-f1" title="SolarCleano F1" aria-label="Source 3: SolarCleano F1">[3]</a></sup></p>
+<p>ANYmal X, ExR-2.5 and Spot support inspection with different combinations of mobility and sensing. ExRobotics describes optional optical, thermal, acoustic and gas payloads, autonomous docking and missions lasting two to six hours depending on travel. Its advertised six months without physical human intervention is a design claim, not a published measured fleet mean. <sup><a href="https://www.anybotics.com/robotics/anymal-x/" title="ANYmal X — Ex-proof inspection robot" aria-label="Source 4: ANYmal X — Ex-proof inspection robot">[4]</a></sup> <sup><a href="https://www.exrobotics.com/our-products" title="ExR-2.5 products, software and services" aria-label="Source 5: ExR-2.5 products, software and services">[5]</a></sup> <sup><a href="https://bostondynamics.com/blog/automated-inspections-made-simple/" title="Automated inspections made simple" aria-label="Source 6: Automated inspections made simple">[6]</a></sup></p>
+<p>The AutoInspect research is especially useful because it records the assistance behind deployment duration. Its 35-day JET deployment included 81 missions and 16 interventions; the longest period without a serious or fatal intervention was 15 days. Its graph-based mission architecture also offers a practical abstraction for this simulator. These are results from that research system, not failure-rate defaults for commercial robots. <sup><a href="https://arxiv.org/html/2404.12785v2" title="AutoInspect: Towards Long-Term Autonomous Industrial Inspection" aria-label="Source 7: AutoInspect: Towards Long-Term Autonomous Industrial Inspection">[7]</a></sup></p>
+<p>A docked drone adds broad visual and thermal coverage. DJI's Dock 3 illustrates why the dock must be a separate asset: the published maximum input is 800 W, its backup battery does not support aircraft charging or air conditioning during an outage, and a 27-minute charge specification applies to 15–95% charge at 25°C. Neither maximum dock power nor ideal charge time is a measured average mission cost. <sup><a href="https://enterprise.dji.com/dock-3/specs" title="DJI Dock 3 specifications" aria-label="Source 15: DJI Dock 3 specifications">[15]</a></sup></p>
+<p>Contact inspection and grounds maintenance are additional concrete classes. Gecko describes robot-carried ultrasonic measurements for material-thickness inference. Renu reports deployed electric mowing robots with charging pods and remote Mission Control. These need distinct plant effects: measured wall condition and vegetation/access state, respectively. They should enter only when those mechanisms matter to an experiment. <sup><a href="https://www.geckorobotics.com/resources/blog/reinforcement-learning-for-rug" title="Reinforcement Learning for RUG" aria-label="Source 8: Reinforcement Learning for RUG">[8]</a></sup> <sup><a href="https://renurobotics.com/about-us/" title="Renu Robotics: autonomous vegetation management" aria-label="Source 9: Renu Robotics: autonomous vegetation management">[9]</a></sup></p>
+<h3>Fixed hardware can eliminate an entire task</h3>
+<p>Swagelok's sampling modules route and condition process or calibration streams for an analyzer. Endress+Hauser's CDC90 automates cleaning and calibration for compatible pH/ORP sensors. Emerson offers permanent corrosion/erosion monitoring. These are different answers to a site visit: bring the sample to an instrument, automate instrument servicing, or measure continuously. <sup><a href="https://products.swagelok.com/en/all-products/analytical-instrumentation/analytical-subsystems-press/calibrating-switching-modules/c/502?clp=true" title="Calibration and switching modules" aria-label="Source 10: Calibration and switching modules">[10]</a></sup> <sup><a href="https://www.endress.com/en/field-instruments-overview/liquid-analysis-product-overview/pH-sensor-automatic-cleaning-calibration-cdc90" title="Cleaning and calibration system Liquiline Control CDC90" aria-label="Source 11: Cleaning and calibration system Liquiline Control CDC90">[11]</a></sup> <sup><a href="https://www.emerson.com/en/measurement-instrumentation/catalog/corrosion-and-erosion-monitoring" title="Corrosion and erosion monitoring" aria-label="Source 12: Corrosion and erosion monitoring">[12]</a></sup></p>
+<p>Remote actuation is similarly important. Rotork's IQ3 Pro reports torque, position and other diagnostic information. However, keeping position indication alive during power loss is different from having energy to move a valve. Dedicated shutdown-battery or spring-based products address that separate function. Our simulated equipment must distinguish those capabilities. <sup><a href="https://www.rotork.com/en/products/electric-intelligent-actuators/iq3-pro" title="IQ3 Pro intelligent electric actuators" aria-label="Source 13: IQ3 Pro intelligent electric actuators">[13]</a></sup> <sup><a href="https://www.rotork.com/uploads/news/2950/rotork-v3pdf.pdf" title="Power generation: actuator solutions" aria-label="Source 14: Power generation: actuator solutions">[14]</a></sup></p>
+<p>These examples support <strong>service capability</strong> as the general abstraction. They do not imply that a pH calibration system can calibrate the existing hydrogen-flow sensor, or that a motorized valve can reverse irreversible electrolyser degradation.</p>
+<h3>Manipulation and replacement: plausible, bounded, less mature</h3>
+<p>Taurob's Operator is a particularly relevant design, but its product page explicitly labels it a prototype. It describes valve manipulation, customized tools and substantial arm torque. This supports an exploratory fixture for specific tool-compatible tasks; it does not establish an off-the-shelf robot that changes arbitrary filters or repairs an entire methane skid unattended. <sup><a href="https://www.taurob.com/operator/" title="Taurob Operator" aria-label="Source 16: Taurob Operator">[16]</a></sup></p>
+<p>The strongest design lesson comes from Melenbrink, Teeple and Werfel's “robot factors” work. They redesigned power and water-filter modules so one robot arm with a standard gripper could replace them. Combining actions, guiding insertion and adding compliance reduced manipulation demands. Those laboratory demonstrations suggest that <strong>the plant's service interfaces are design variables alongside the robot</strong>. They do not establish qualification for pressurized gas service. <sup><a href="https://www.eecs.harvard.edu/~jkwerfel/iros22melenbrink.pdf" title="A Robot Factors Approach to Designing Modular Hardware" aria-label="Source 17: A Robot Factors Approach to Designing Modular Hardware">[17]</a></sup></p>
+<p>Learning could make these tasks more adaptable. The July 2026 Gemini Robotics On-Device 2 model card describes locally executed manipulation models, trusted-tester distribution and limitations on unfamiliar tasks; its safety discussion excludes mobile/whole-body risks from the scope of primarily standing bi-arm evaluations. That is evidence of an emerging enabling technology, not a basis for assuming reliable autonomous field repair. <sup><a href="https://deepmind.google/models/model-cards/gemini-robotics-on-device-2/" title="Gemini Robotics On-Device 2 model card" aria-label="Source 27: Gemini Robotics On-Device 2 model card">[27]</a></sup></p>
+<p>For the next few years, the defensible scenario is broader libraries of constrained tasks on prepared equipment, with remote assistance for exceptions. Routine replacement of a standardized cartridge is a better hypothesis than universal mechanical dexterity. Dates and success rates for that transition remain uncertain. “Present hardware,” “prepared-site prototype” and “future capability assumption” should be separate selectable configurations.</p>
+<h3>Deployment is a different part of the lifecycle</h3>
+<p>Maximo's March 2026 company release reports 100 MW installed at Bellefield and describes its role alongside skilled crews. Terabase's March 2026 announcement reports five first-generation project deployments and completed testing of its second-generation field-factory system. These are substantive construction capabilities; they do not mean an unattended plant can construct itself. <sup><a href="https://www.nasdaq.com/press-release/maximo-completes-100-mw-robotic-solar-installation-2026-03-25" title="Maximo Completes 100 MW of Robotic Solar Installation" aria-label="Source 18: Maximo Completes 100 MW of Robotic Solar Installation">[18]</a></sup> <sup><a href="https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment" title="Next-generation Terafab completes field testing, ready for deployment" aria-label="Source 19: Next-generation Terafab completes field testing, ready for deployment">[19]</a></sup></p>
+<p>5B's pre-integrated Maverick blocks offer another approach: simplify the solar array's deployment and reduce tasks on site. The advertised workflow still includes a crew and telehandler. Represent that as an alternative plant design with transport, labour, footprint and commissioning consequences. Construction machinery can leave after commissioning rather than silently becoming a permanent O&amp;M expense. <sup><a href="https://5b.co/en/5b-maverick" title="5B Maverick" aria-label="Source 20: 5B Maverick">[20]</a></sup></p>
+<h2 id="section-2">2. The abstraction: assets, capabilities, work and evidence</h2>
+<p>A single new <code>Robot</code> class with energy and repair probability would miss most of the interesting decisions. Use composition through a small collection of explicit records. The following is a proposed contract, not an implemented interface.</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Essential contents</th>
+<th>Why it exists</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Field asset</strong></td>
+<td>Stable asset ID; platform and model versions; mobility; location; modes; battery or utility connection; health; service requirements; ownership/service contract</td>
+<td>Represents a rover, cleaner, fixed station or dock without forcing them into identical mechanics</td>
+</tr>
+<tr>
+<td><strong>Capability</strong></td>
+<td>Action and target-interface IDs; tool/payload; measurable quantities; reach/access limits; duration/energy model; weather and operating restrictions; autonomy/assistance mode</td>
+<td>Describes exactly which work an asset can attempt</td>
+</tr>
+<tr>
+<td><strong>Work order</strong></td>
+<td>Target, reason, evidence available when requested, priority/deadline, prerequisites, reserved resources, task stages and acceptance test</td>
+<td>Separates a desired outcome from the machine assigned to achieve it</td>
+</tr>
+<tr>
+<td><strong>Service interface</strong></td>
+<td>Compatible tools/connectors; reachable pose or named service point; required shutdown/isolation state; permitted actions and verification</td>
+<td>Lets plant design make maintenance easier or impossible</td>
+</tr>
+<tr>
+<td><strong>Mission record</strong></td>
+<td>Requested and applied stages, timestamps, observations, resource use, interruptions, assistance and verified outcome</td>
+<td>Makes every service claim and charge traceable</td>
+</tr>
+<tr>
+<td><strong>Support resource</strong></td>
+<td>Docks/charging slots, tools, spares, references, cleaning materials, communications and available crew hours</td>
+<td>Makes autonomy depend on finite infrastructure</td>
+</tr>
+</tbody>
+</table></div>
+<p>A human service crew can execute a work order through the same task/result interface, with travel, labour and availability. A fixed actuator may perform an action immediately at its installed location. A rover may first need to travel and acquire a usable observation. This shared description permits meaningful comparison without pretending these executors are interchangeable.</p>
+<p>Separate four types of effect: <strong>inspection produces evidence; cleaning changes a physical loss; repair changes a specified failure mechanism; deployment changes commissioned capacity</strong>. Each effect needs its own kernel, units, limits and evidence. Inspecting an asset never directly sets its true health to “healthy.”</p>
+<figure class="architecture" aria-label="Proposed field operations architecture">
+<div class="architecture-top">Current observations, eligible forecasts and mission requirements</div><div class="arrow" aria-hidden="true">↓</div>
+<div class="architecture-row"><div>Plant and service estimates<small>State, uncertainty and usable resources</small></div><span aria-hidden="true">→</span><div>Service scheduler<small>Inspection, maintenance and work orders</small></div><span aria-hidden="true">↔</span><div>Dispatch planner<small>Power allocation and operating commitments</small></div></div>
+<div class="arrow" aria-hidden="true">↓</div><div class="architecture-top">Task executive checks access, operating state, capability and resources</div><div class="arrow" aria-hidden="true">↓</div>
+<div class="architecture-row"><div>Mobile robot<small>Travel, sensing and compatible tools</small></div><span></span><div>Fixed hardware<small>Sampling, calibration and remote actuation</small></div><span></span><div>Human service<small>Remote assistance, site work and replenishment</small></div></div>
+<div class="arrow" aria-hidden="true">↓</div><div class="architecture-top">Physical effects → Acceptance checks → New observations and estimates</div>
+<figcaption>Proposed task-level simulation. Docks, tools, spares, references and access constrain each task. All attempts record resource use, human work and evidence; motion completion alone does not establish restoration.</figcaption></figure>
+<p>A mission might pass through <code>queued → preparing → travelling → performing → verifying → returning → complete</code>. It can also become <code>blocked</code>, <code>aborted</code>, <code>failed</code>, <code>awaiting remote help</code>, or <code>awaiting site visit</code>. Completion of motion is not proof that the plant is restored. An inconclusive check remains inconclusive.</p>
+<h2 id="section-3">3. Physical detail that changes decisions</h2>
+<h3>Solar cleaning</h3>
+<p>Introduce a section-level removable-soiling state, separately from fixed optical losses, permanent degradation, shading and electrical faults. A minimal declared model can accumulate soiling between rain/cleaning events, reduce it by an imperfect cleaning action and retain a persistent damage term. The present PV conversion can consume the resulting transmission factor before converter clipping. Avoid counting soiling again inside an existing aggregate loss allowance.</p>
+<p>IEA PVPS explicitly notes that clipping and curtailment can conceal or reduce the value of recovered solar energy. Its global soiling statistics should not be used as a constant loss in London, Seville or Copenhagen. Local rainfall, dust, pollen, biological fouling and seasonal conditions need either sourced data or visible scenario assumptions. <sup><a href="https://iea-pvps.org/wp-content/uploads/2025/09/Fact-Sheet-Task-1316-Soiling.pdf" title="Understanding, Measuring, and Mitigating Soiling Losses in PV Power Systems" aria-label="Source 21: Understanding, Measuring, and Mitigating Soiling Losses in PV Power Systems">[21]</a></sup></p>
+<p>Cleaning should use covered area and actual work duration, not give an entire array an instantaneous reset. Preserve residual dirt, missed rows, interrupted work, brush wear and any water consumption. Dry dust, adhered fouling and snow are distinct regimes; a dry brush should not be a universal remedy.</p>
+<p>More frequent cleaning can also damage some surfaces. An 18-month Doha experiment found substantial differences between module types in abrasion associated with dry robotic brushing. This supports a sensitivity test with explicit module/cleaner pairing, not an assumed universal deterioration rate. <sup><a href="https://doi.org/10.1109/JPHOTOV.2024.3414192" title="Abrasion of PV Antireflective Coatings by Robot Cleaning" aria-label="Source 22: Abrasion of PV Antireflective Coatings by Robot Cleaning">[22]</a></sup></p>
+<p>The controller should value cleaning through the resulting plant trajectory. Additional available PV may become methane, charge storage, enable a restart, or be curtailed. The existing battery study's fixed CO₂ ceiling is a concrete example of why recovering kWh does not automatically recover saleable production.</p>
+<h3>Inspection and sensor servicing</h3>
+<p>Every measurement needs a sensing method and observation model: what it measures, its error, conditions for a useful reading, and when the controller receives it. Poor light, reflections, an obscured target, sensor drift or an interrupted mission can make it unavailable or misleading. A new measurement can share errors with an existing instrument; independent packaging does not guarantee independent evidence.</p>
+<p>A normal thermal camera should not reveal arbitrary internal component state. Conventional optical gas imaging is spectrally selective and does not directly image hydrogen. A methane-capable camera cannot be relabelled a hydrogen detector. Use a suitable gas-specific payload or another declared observation method, and keep its detection limits explicit. <sup><a href="https://www.flir.com/en-gb/discover/instruments/gas-detection/understanding-cooled-vs-uncooled-optical-gas-imaging/" title="Understanding Cooled vs Uncooled Optical Gas Imaging" aria-label="Source 28: Understanding Cooled vs Uncooled Optical Gas Imaging">[28]</a></sup></p>
+<p>Calibration requires a compatible reference and an actual procedure. The reference can be depleted, expired or contaminated. During calibration the channel may be unavailable. Record as-found error and the post-service check. The existing flow-sensor-bias example would need a specified flow reference or independent measurement path; importing a pH calibration product would not provide that mechanism.</p>
+<p>Sampling introduces transit, purging, analysis and communication delay. Record sampled material and its fate—returned, consumed, captured as waste or explicitly released. No sampling model should silently create or discard hydrogen or CO₂. An analyzer result is an observation; adding it does not confer product-quality certification.</p>
+<h3>Recovery and degradation</h3>
+<p>For each fault, define which actions could affect its cause. A latched controller trip may permit a bounded reset. A fouled service element may permit a documented cleaning/replacement sequence. A failed power module might require a spare and a prepared interface. Irreversible stack damage cannot be repaired by a restart command.</p>
+<p>Represent degradation as an explicit state with a declared evolution and effect on performance. Inspection estimates that state; it does not observe perfect remaining useful life. Until calibrated degradation data exists, predictive-maintenance results are sensitivity experiments under stated synthetic mechanisms.</p>
+<p>The same discipline applies to the robots: battery ageing, brush/tool wear, failed docking, obstructed routes, localization loss, contaminated optics, actuator jams and communications loss can produce service work. A robot requiring physical retrieval counts as a site visit. Bounded retries prevent endless “recovery” loops.</p>
+<h2 id="section-4">4. Site geometry, weather and time</h2>
+<p>Use a lightweight <strong>access graph</strong> with named inspection points, work areas, docks and connecting paths. Each edge can have travel time, energy, surface/slope class, permitted platforms and current obstruction. Tool reach and service-port compatibility determine whether an intervention is possible. This supports meaningful differences between a flat-site wheeled rover, a stair-capable platform, a row cleaner and a drone without simulating locomotion dynamics.</p>
+<p>Separate this graph from the existing process-flow diagram. A pipe connection is not necessarily a traversable route. Layout changes should affect access and maintenance, while the circuit illustration continues to explain material and electricity flows.</p>
+<p>Hazard compatibility is a concrete attribute, not a generic “industrial robot” flag. ANYmal X currently advertises Zone 1 IIB; hydrogen is associated with gas group IIC. That label alone therefore cannot justify entry into a hydrogen-classified area. Store the exact platform/payload certificate scope, zone/group/temperature requirements and source version, or mark compatibility unverified. The simulator is not performing a real site-classification assessment. <sup><a href="https://www.anybotics.com/robotics/anymal-x/" title="ANYmal X — Ex-proof inspection robot" aria-label="Source 4: ANYmal X — Ex-proof inspection robot">[4]</a></sup> <sup><a href="https://h2tools.org/sites/default/files/2025-03/0700-006-EU_MSA-White-Paper_Working-Safely-with%20Hydrogen_EN.pdf" title="Working Safely with Hydrogen" aria-label="Source 29: Working Safely with Hydrogen">[29]</a></sup></p>
+<p>A drone mission also has an operation-specific permission envelope. EASA guidance places BVLOS outside the Open category, with authorization, applicable standard-scenario declaration or relevant LUC privileges determining the route. UK CAA requirements must be represented separately for UK locations. The simulation can use a declared mission-eligibility input rather than attempting an automated legal decision. <sup><a href="https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/specific-category-civil-drones" title="Specific Category — Civil Drones" aria-label="Source 30: Specific Category — Civil Drones">[30]</a></sup> <sup><a href="https://regulatorylibrary.caa.co.uk/2019-947/Content/AMC-GM/GM1%20Article%203%20Categories%20of.htm" title="GM1 Article 3: Categories of UAS Operations" aria-label="Source 31: GM1 Article 3: Categories of UAS Operations">[31]</a></sup></p>
+<p>Weather affects both plant need and the ability to intervene. Wind may stop a survey when storm damage makes it valuable; wet ground can block travel; cold can reduce battery availability; rain may make cleaning unnecessary. Preserve these correlations. Expand saved weather inputs to include relevant wind/gust and precipitation fields before using them. Existing archives lacking them must show incomplete applicability, or use an explicitly labelled synthetic scenario—not an inferred “real” weather history.</p>
+<p>Keep hourly plant scheduling initially. Represent field tasks as timed events with fractional-hour durations and integrate their electrical/consumable demand over each hour. In the first implementation, task observations and restored plant capacity become eligible at the next hourly decision boundary after completion. This avoids future-information leakage and optimistic within-hour restoration. It also means the model cannot evaluate second-by-second emergency response; that requires a later, explicitly different execution resolution.</p>
+<h2 id="section-5">5. Running costs and economic attribution</h2>
+<p>The economic unit is a complete service system: robot, payload, docking infrastructure, site preparation, software, support, consumables and remaining human work. Public manufacturer pages reviewed here generally do not provide a complete, comparable installed price and annual service breakdown. Preserve quote-required fields and use visibly illustrative sensitivity inputs rather than invented market averages.</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Cost category</th>
+<th>What the simulator should record</th>
+<th>Accounting boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ownership or subscription</td>
+<td>Platform, payload, dock, charging converter, installation, access modifications, mapping/commissioning</td>
+<td>Choose purchase allocation or the contracted service basis; do not charge both for the same equipment</td>
+</tr>
+<tr>
+<td>Standing operation</td>
+<td>Software, communications, monitoring retainers, scheduled inspection/calibration and dock standby/climate control</td>
+<td>Fixed commitments remain outside marginal dispatch incentives</td>
+</tr>
+<tr>
+<td>Mission resources</td>
+<td>Charger input, utility demand, cleaning water, purge/reference gases, sample disposal and other consumables</td>
+<td>Physical quantities follow the actual task and the supply boundary</td>
+</tr>
+<tr>
+<td>Usage-related wear</td>
+<td>Robot battery, brushes, tyres/tracks, tools and actuators</td>
+<td>Use a consistent allowance or explicit replacement treatment; reconcile the two instead of adding duplicate charges</td>
+</tr>
+<tr>
+<td>Human work</td>
+<td>Remote setup/supervision, interventions, callouts, travel, on-site labour, training and robot retrieval</td>
+<td>Report remote minutes and visits separately; telemetry review is not zero labour</td>
+</tr>
+<tr>
+<td>Logistics and spares</td>
+<td>Deliveries, stock replenishment, storage, lead time, tools and unavailable service slots</td>
+<td>A robot cannot replace a part that is not present</td>
+</tr>
+<tr>
+<td>Production consequences</td>
+<td>Shutdown, derating, task-related unavailability and delayed restart</td>
+<td>Already reflected in the production trace; avoid also subtracting the same lost output as a second cost</td>
+</tr>
+</tbody>
+</table></div>
+<p>Retain distinct economic views. <strong>Allocated period cost</strong> distributes ownership and applicable allowances. <strong>Action-dependent economics</strong> guides task selection using consumables, wear and other avoidable costs. A separate expenditure ledger can show actual purchases, subscriptions and service events. Repricing changes the report; new decision prices require a new run.</p>
+<p>Robot charging belongs in the electrical balance, with losses. If a cleaner has its own solar panel, model that external generation and battery explicitly. It is not free electricity from outside the account. For site-supplied charging, the opportunity cost of using power can be computed by replanning; it should not be added on top of the same forgone methane in a comparison of total contribution.</p>
+<p>Scale matters. One sub-kW dock load may have little dispatch impact beside this plant's 1,000 kW solar array. The economically decisive effects may instead be delayed evidence, technician travel, standby systems and avoided downtime. The simulation should be allowed to show that a resident robot is uneconomic for a small, accessible site.</p>
+<p>For purchase decisions, compare lifecycle contribution and human-work burden over matched scenarios. For an installed robot, compare the value of a specific mission against its avoidable costs. A useful break-even expression is:</p>
+<p><code>required avoided visits = (incremental annual service-system cost − other net annual benefit) / cost per genuinely avoided visit</code></p>
+<p>This is a comparison aid with explicit user inputs, not a robot price estimate. Visits bundled with feedstock deliveries or another repair are not independently avoidable. A reduction in routine inspections does not eliminate CO₂ delivery, spare replenishment, periodic checks or emergency callouts.</p>
+<h2 id="section-6">6. What the controller should optimise</h2>
+<p>A field-operations planner adds two kinds of choice: <strong>information acquisition</strong> and <strong>physical intervention</strong>. Inspection can be valuable even when it changes no physical state, because the result changes the best subsequent action. Maintenance can be valuable even when it temporarily reduces output, because it preserves later capability.</p>
+<p>POMDP and Bayesian inspection-planning literature explicitly treats uncertainty about deterioration and inspection outcomes. The Andriotis/Papakonstantinou work adds resource and risk constraints; Morato and colleagues connect Bayesian deterioration models to inspection and maintenance decisions. These provide relevant formulations, but their numerical results are not evidence that a particular algorithm will outperform our plant controller. <sup><a href="https://arxiv.org/abs/2007.01380" title="Deep reinforcement learning driven inspection and maintenance planning under incomplete information and constraints" aria-label="Source 23: Deep reinforcement learning driven inspection and maintenance planning under incomplete information and constraints">[23]</a></sup> <sup><a href="https://arxiv.org/abs/2009.04547" title="Optimal Inspection and Maintenance Planning for Deteriorating Structural Components through Dynamic Bayesian Networks and Markov Decision Processes" aria-label="Source 24: Optimal Inspection and Maintenance Planning for Deteriorating Structural Components through Dynamic Bayesian Networks and Markov Decision Processes">[24]</a></sup></p>
+<p>Initially, use a small mission scheduler around the existing planner. It proposes tasks, reserves robot/dock/tool capacity and returns predicted electrical demand, observation arrival times and equipment unavailability. The dispatch planner tests the plant consequences. A task executive checks prerequisites and applies permitted stages. If these schedules cannot be reconciled, record a blocked task or a fallback; do not claim this decomposition is globally optimal.</p>
+<p>Open-RMF provides an implementation precedent for fleet task allocation with integrated charging. We can borrow those interface ideas while retaining Python and the existing architecture. A ROS installation, photorealistic simulator or robot foundation model is not needed to investigate task-level plant management. <sup><a href="https://github.com/open-rmf/rmf_demos/blob/main/README.md" title="Open-RMF demonstrations: task dispatching" aria-label="Source 26: Open-RMF demonstrations: task dispatching">[26]</a></sup></p>
+<p>The proposed objective remains sustained useful production or operating contribution, subject to physical limits and declared operational commitments. Add mission costs, intervention risk and continuation value for service capability. Keep site visits, remote human time, downtime and adverse outcomes visible as separate metrics. If independence from human visits is a mission requirement, make its target explicit and examine the trade-off; do not hide it inside an arbitrary “autonomy score.”</p>
+<p>A practical initial inspection policy can ask whether plausible findings would change the chosen action. If all credible outcomes imply waiting safely for a technician, an immediate inspection may have limited operational value. If one result permits production and another requires isolation, the information could be valuable. The score must use the controller's current belief and predicted observations, not the hidden fault identity.</p>
+<p>Learning can later improve soiling forecasts, task-duration estimates, diagnosis or continuation values. A published cleaning-scheduling study compares PPO and SAC in an Abu Dhabi simulation case, but its claimed savings should not be transferred to European weather or a feedstock-constrained methane plant. Use it as a candidate approach, with held-out tests. <sup><a href="https://arxiv.org/abs/2603.07518" title="Reinforcement learning-based dynamic cleaning scheduling framework for solar energy system" aria-label="Source 25: Reinforcement learning-based dynamic cleaning scheduling framework for solar energy system">[25]</a></sup></p>
+<p>Homeostatic ideas become more interesting in this extended system: keeping energy to inspect and recover, retaining usable calibration references, and avoiding simultaneous exhaustion of plant and robot reserves. These are joint, mode-dependent opportunities. Rewarding high robot battery charge or spare inventory by itself could produce inactivity and hoarding. Compare any learned reserve representation against MPC using the same information and service capabilities.</p>
+<h2 id="section-7">7. Changes required in the present model</h2>
+<p>The current code contains useful foundations—component contracts, separated observations, decision records, cost lineage and preserved Studies editions. It also has boundaries that matter directly to this proposal:</p>
+<ul>
+<li><code>methane/simulation.py</code> constructs capacity loss and flow bias from a scheduled start and duration. At the end of that interval the injected condition disappears. That is useful for a transient-fault benchmark, but cannot serve as the recovery mechanism in a repair experiment.</li>
+<li><code>methane/costing.py</code> allocates an assumed repair and visit charge for a confirmed incident. It does not yet represent a technician arriving, work being performed or the failure persisting when service is unavailable.</li>
+<li><code>methane/config.py</code> has no field-asset, mission, access-graph or spare-stock contract. Its current scenario length is limited to 240 hours.</li>
+<li>The solar model exposes section-level conversion and losses, but does not provide a dynamic service-dependent soiling state. Existing weather archives are not automatically adequate for all mission weather restrictions.</li>
+</ul>
+<p>Introduce a new versioned field-operations configuration with <strong>disabled</strong> as the compatibility default. For enabled runs, separate incident detection, service request, mobilization, work, verification and restored capability. Repairable faults persist until the declared causal transition occurs; naturally transient faults retain an explicit exogenous recovery model. Diagnosis-disabled runs still incur actual physical failures and service requirements.</p>
+<p>Replace the incident-based cost shortcut only in the new accounting version. Preserve it in old archives and clearly identify its assumptions. Check the scope of standing O&amp;M allowances before adding itemized service charges. Capture the service catalogue, capability assumptions, exact prices and model identities once per run alongside existing documentation snapshots.</p>
+<p>Keep hidden fault causes in simulator truth. Controllers receive observations and beliefs; task eligibility can depend on measured/estimated conditions, while execution still enforces physical limits. A post-repair test may fail, requiring derating or escalation. A generic capacity-loss event without a cause must not acquire an invented thermal signature or a guaranteed robotic fix.</p>
+<h2 id="section-8">8. A first coherent demonstration</h2>
+<p>The first implementation should contain a small but complete chain, with all numeric parameters marked as assumptions until supported by hardware/site data:</p>
+<p><strong>Solar cleaner:</strong> a fixed-tilt-compatible archetype with a dock, per-section coverage, removable soiling, energy/brush consumption, weather restrictions and a blocked/failed mission case. Compare scheduled and condition-dependent cleaning with a human-operated baseline.</p>
+<p><strong>Inspection rover:</strong> one mapped route and a small set of declared observations. Start with a visible actuator-position indication or an additional independent instrument channel whose relation to a fault is explicitly modelled. Do not use an omniscient “inspect fault” action. Include an unreadable result, a route obstruction and a request for remote assistance.</p>
+<p><strong>One prepared recovery interface:</strong> a low-complexity service action such as switching to a pre-installed redundant auxiliary path, or a bounded reset of a specifically modelled latched trip. Give it prerequisite states, nonzero duration, possible failure and a post-action tracking test. Arbitrary pressure-system manipulation and catalyst/stack replacement remain outside this first example.</p>
+<p><strong>Human service fallback:</strong> a finite response time and resource cost, including cases in which neither the installed hardware nor the available spare can solve the issue. The robot may also need retrieval or servicing.</p>
+<p>A guided sequence could begin with suspected solar underperformance ahead of a forecast shortfall. The controller decides whether to inspect, clean or wait for predicted rain. A separate equipment anomaly later presents competing hypotheses. The rover obtains partial evidence; the supervisor attempts the compatible recovery action, verifies its effect and either restores operation or calls for service. A second replay can make the inspection inconclusive or the recovery fail. These are proposed fixtures, not outcomes already demonstrated.</p>
+<h2 id="section-9">9. Experiments and evidence after the extension</h2>
+<p>Retain the solver and scoring-boundary studies, with field operations fixed or disabled, so we can still isolate numerical effects. Then introduce a separate series of studies whose questions explicitly include the service system.</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Matched alternatives</th>
+<th>Necessary outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When is cleaning worthwhile?</td>
+<td>Human cleaning, fixed schedule, condition-dependent robot schedule, waiting for rain</td>
+<td>Methane/contribution, usable recovered energy, curtailment, water, wear, labour and ending soiling</td>
+</tr>
+<tr>
+<td>Is mobile inspection worth installing?</td>
+<td>Existing sensing, added fixed sensors, rover, drone where eligible</td>
+<td>Detection/isolation performance, decision changes, remote time, visits and complete system cost</td>
+</tr>
+<tr>
+<td>Does intervention change recovery?</td>
+<td>Diagnosis only, remote actuator, compatible robot action, human service</td>
+<td>Verified restoration, unsuccessful attempts, downtime and resources consumed</td>
+</tr>
+<tr>
+<td>How much does service-friendly design help?</td>
+<td>Same task on a conventional interface and a prepared interface</td>
+<td>Extra installation cost, task feasibility/duration, assistance and residual human work</td>
+</tr>
+<tr>
+<td>What happens when support fails?</td>
+<td>Power shortage, failed dock, exhausted reference/spare, blocked access, lost communications</td>
+<td>Deferred work, uncertainty duration, stranded assets, retrieval and fallback outcomes</td>
+</tr>
+<tr>
+<td>When do resident assets pay?</td>
+<td>Purchased system, contracted/shared service and on-call human crew</td>
+<td>Utilization, mobilization, response time, allocated cost and actual service expenditure</td>
+</tr>
+</tbody>
+</table></div>
+<p>Distinguish short injected-fault challenges from annual economics. A three-day stress case cannot establish annual maintenance savings. Longer seasonal simulations require extending the present ten-day limit and supplying validated weather/degradation or explicit scenario distributions. Construction studies need their own commissioning boundary, labour schedule and capacity-availability trace.</p>
+<p>For matched policies, retain common weather, latent scenario draws and initial resources. Inspection timing and use-dependent degradation can legitimately change observations and failures. Use named random streams by asset/mechanism and a documented exposure-based hazard construction when wear drives failure; do not force identical failure times if actions alter physical exposure. Predeclare whether a study tests recovery from a fixed injected fault or changes to failure incidence.</p>
+<p>Count human work consistently: initial commissioning, routine remote attention, remote corrective intervention, planned site visit, unplanned site visit and robot retrieval. Report unresolved service backlog at the end. A policy should not look independent simply because it defers every difficult task beyond the scoring window.</p>
+<p>Evidence gates include electrical/material/resource conservation; no simultaneous incompatible tasks; no observation before it becomes available; no repair without a compatible effect; acceptance tests before restoration; no double-counted service cost; and no hidden truth in decisions. Keep uncertain, failed and incomplete outcomes. The service-layer-disabled configuration should retain the old physical trace for a matched numerical execution environment.</p>
+<h2 id="section-10">10. Presentation and implementation order</h2>
+<p>Preserve the main plant illustration and its labels. An optional <strong>Site services</strong> layer can reveal the dock, active worker and selected route. Equipment appears active because of a recorded mission; movement in the drawing is an interpolation of that record, not a hidden numerical model. Keep additional text inside inspectors.</p>
+<p>Selecting the cleaner shows what it is treating, remaining work, energy, effectiveness and why the task was scheduled. Selecting the rover shows the question it is investigating, its payload and the evidence it has actually returned. Selecting a service point reveals compatible actions, prerequisites, missing resources and the test required for restoration. Costs remain toggleable and link to recorded task quantities.</p>
+<p>Extend the Model workspace with living explanations of field assets, inspection uncertainty, service interfaces and robot economics. A learned or hypothetical capability should carry that label beside its parameters. Studies should link to the relevant mission and then to the calculation or assumption behind a result. A screenshot or simulated thermal overlay must not masquerade as real sensor evidence.</p>
+<p>The recommended delivery sequence is:</p>
+<ol>
+<li><strong>Service contracts and accounting:</strong> define work orders, capabilities, fault/action compatibility, human work, resources, lifecycle boundaries and archive versions. Record explicit unknowns and the source-backed/assumed status of each parameter.</li>
+<li><strong>Complete first operating example:</strong> cleaner, rover, dock, human fallback and one prepared recovery action; introduce only the physical mechanisms needed for those tasks. Add explanations and reconcile costs and balances.</li>
+<li><strong>Reproducible service studies:</strong> cleaning value, information value, verified recovery and support-system failure, followed by longer-horizon economics once its data and time resolution are adequate.</li>
+<li><strong>Optional hardware families:</strong> docked drone, sampling station, vegetation maintenance and prepared consumable replacement. Add deployment machinery under a separate construction experiment.</li>
+</ol>
+<p>This order establishes which maintenance actions actually exist before asking a more capable controller to choose between them. It also leaves room to test whether modest fixed automation, a different service interface or a human visit is the better design for a particular plant.</p>
+<h2 id="section-11">11. Source records and scope</h2>
+<p>Assessment current to 10 September 2026. Sources were selected for implemented mechanisms, current product descriptions, physical demonstrations and explicit operating constraints. Commercial savings, availability and deployment quantities remain attributed manufacturer claims. Research methods demonstrated in structural maintenance, laboratories or other climates are not empirical validation of this plant.</p>
+<p>Complete installed prices, service contracts, platform-specific failure distributions, local soiling data and compatible plant-service procedures remain unresolved inputs. Current documentation takes precedence over older brochures where versions conflict. For example, Maximo's dated March 2026 milestone is used rather than smaller figures on older product pages. No robot capability, repair outcome or price has been added to the running simulator by this report.</p>
+<p><a id="source-ecoppia"></a></p>
+<p><strong>1. Ecoppia.</strong> <a href="https://www.ecoppia.com/">Robotic solar panel cleaning services</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer deployment claims. <strong>Access:</strong> Public product/company page. <strong>Scope:</strong> Reports more than 5 GW of deployments; no independent fleet availability or cost audit.</p>
+<p><a id="source-t4"></a></p>
+<p><strong>2. Ecoppia.</strong> <a href="https://www.ecoppia.com/warehouse/temp/ecoppia/T4_Datasheet.pdf">T4 autonomous robotic cleaning solution</a>. Undated datasheet. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> PDF text. <strong>Scope:</strong> Tracker-specific geometry, coverage and stow requirements; not transferable to fixed-tilt rows.</p>
+<p><a id="source-solarcleano"></a></p>
+<p><strong>3. SolarCleano.</strong> <a href="https://www.solarcleano.com/products/remote-solarcleano-f1">SolarCleano F1</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Portable wet/dry cleaner requiring an operator; distinguishes remote control from unattended operation.</p>
+<p><a id="source-anymal"></a></p>
+<p><strong>4. ANYbotics.</strong> <a href="https://www.anybotics.com/robotics/anymal-x/">ANYmal X — Ex-proof inspection robot</a>. Undated; current page refers to 2026 specifications. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Inspection payloads and advertised Zone 1 IIB rating; not evidence of hydrogen-area suitability for a particular configuration.</p>
+<p><a id="source-exr"></a></p>
+<p><strong>5. ExRobotics.</strong> <a href="https://www.exrobotics.com/our-products">ExR-2.5 products, software and services</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer technical and service claims. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Modular inspection, autonomous charging, optional payloads, mission durations and service models; advertised unattended intervals are design claims.</p>
+<p><a id="source-spot"></a></p>
+<p><strong>6. Boston Dynamics.</strong> <a href="https://bostondynamics.com/blog/automated-inspections-made-simple/">Automated inspections made simple</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer workflow description. <strong>Access:</strong> Public article. <strong>Scope:</strong> Teach-in, repeatable missions, payloads and integration with maintenance systems.</p>
+<p><a id="source-autoinspect"></a></p>
+<p><strong>7. M. Staniaszek et al..</strong> <a href="https://arxiv.org/html/2404.12785v2">AutoInspect: Towards Long-Term Autonomous Industrial Inspection</a>. 22 April 2024, arXiv v2. <strong>Evidence:</strong> Research deployment report. <strong>Access:</strong> Full author manuscript. <strong>Scope:</strong> 49-day and 35-day deployments; mission-level architecture and recorded interventions. Not zero-touch operation for those entire periods.</p>
+<p><a id="source-gecko"></a></p>
+<p><strong>8. L. Roberto / Gecko Robotics.</strong> <a href="https://www.geckorobotics.com/resources/blog/reinforcement-learning-for-rug">Reinforcement Learning for RUG</a>. 2 June 2025. <strong>Evidence:</strong> Manufacturer technical article. <strong>Access:</strong> Public article. <strong>Scope:</strong> Contact ultrasonic inspection and thickness inference; does not establish unattended deployment or automatic repair.</p>
+<p><a id="source-renu"></a></p>
+<p><strong>9. Renu Robotics.</strong> <a href="https://renurobotics.com/about-us/">Renu Robotics: autonomous vegetation management</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer deployment and operating claims. <strong>Access:</strong> Public company page. <strong>Scope:</strong> Electric mower, recharge pod and remote Mission Control; not independent savings evidence.</p>
+<p><a id="source-sampling"></a></p>
+<p><strong>10. Swagelok.</strong> <a href="https://products.swagelok.com/en/all-products/analytical-instrumentation/analytical-subsystems-press/calibrating-switching-modules/c/502?clp=true">Calibration and switching modules</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Sample conditioning and selection of process/calibration streams; the module is not itself a complete analyzer.</p>
+<p><a id="source-cdc90"></a></p>
+<p><strong>11. Endress+Hauser.</strong> <a href="https://www.endress.com/en/field-instruments-overview/liquid-analysis-product-overview/pH-sensor-automatic-cleaning-calibration-cdc90">Cleaning and calibration system Liquiline Control CDC90</a>. Undated; current product page. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Automatic pH/ORP cleaning and calibration; not a hydrogen-flow-meter calibration method.</p>
+<p><a id="source-emerson"></a></p>
+<p><strong>12. Emerson.</strong> <a href="https://www.emerson.com/en/measurement-instrumentation/catalog/corrosion-and-erosion-monitoring">Corrosion and erosion monitoring</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer technical description. <strong>Access:</strong> Public product catalogue. <strong>Scope:</strong> Permanently installed ultrasonic, acoustic and intrusive monitoring options; no plant-specific calibration.</p>
+<p><a id="source-rotork"></a></p>
+<p><strong>13. Rotork.</strong> <a href="https://www.rotork.com/en/products/electric-intelligent-actuators/iq3-pro">IQ3 Pro intelligent electric actuators</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Remote actuation and diagnostic torque/position data; retained indication on power loss is distinct from actuation power.</p>
+<p><a id="source-shutdown"></a></p>
+<p><strong>14. Rotork.</strong> <a href="https://www.rotork.com/uploads/news/2950/rotork-v3pdf.pdf">Power generation: actuator solutions</a>. Undated application document. <strong>Evidence:</strong> Manufacturer application note. <strong>Access:</strong> PDF text. <strong>Scope:</strong> Dedicated shutdown battery or mechanical spring designs for specified failsafe applications.</p>
+<p><a id="source-dock"></a></p>
+<p><strong>15. DJI.</strong> <a href="https://enterprise.dji.com/dock-3/specs">DJI Dock 3 specifications</a>. Undated; current product specification. <strong>Evidence:</strong> Manufacturer technical specification. <strong>Access:</strong> Public specification text. <strong>Scope:</strong> Dock power, aircraft battery, conditional charge time, landing wind and backup-power exclusions. Maximum ratings are not average consumption.</p>
+<p><a id="source-taurob"></a></p>
+<p><strong>16. Taurob.</strong> <a href="https://www.taurob.com/operator/">Taurob Operator</a>. Undated; current page. <strong>Evidence:</strong> Manufacturer prototype description. <strong>Access:</strong> Public product page explicitly labelled PROTOTYPE. <strong>Scope:</strong> Valve manipulation and tool handling; broad capability language does not establish routine unattended maintenance availability.</p>
+<p><a id="source-robotfactors"></a></p>
+<p><strong>17. N. Melenbrink, C. Teeple and J. Werfel.</strong> <a href="https://www.eecs.harvard.edu/~jkwerfel/iros22melenbrink.pdf">A Robot Factors Approach to Designing Modular Hardware</a>. 2022, IROS author manuscript. <strong>Evidence:</strong> Robotics research with physical demonstrations. <strong>Access:</strong> Full author PDF. <strong>Scope:</strong> Robot-friendly power and water-filter modules; laboratory space-habitat examples, not certified industrial gas service.</p>
+<p><a id="source-maximo"></a></p>
+<p><strong>18. Maximo / AES.</strong> <a href="https://www.nasdaq.com/press-release/maximo-completes-100-mw-robotic-solar-installation-2026-03-25">Maximo Completes 100 MW of Robotic Solar Installation</a>. 25 March 2026. <strong>Evidence:</strong> Company press release distributed by PRNewswire, hosted by Nasdaq. <strong>Access:</strong> Full press release. <strong>Scope:</strong> Company-reported 100 MW installation at Bellefield; construction crews remain part of the system.</p>
+<p><a id="source-terabase"></a></p>
+<p><strong>19. Terabase Energy.</strong> <a href="https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment">Next-generation Terafab completes field testing, ready for deployment</a>. 19 March 2026. <strong>Evidence:</strong> Company announcement. <strong>Access:</strong> Public announcement. <strong>Scope:</strong> First generation on five projects; V2 field testing complete and ready for shipment as of announcement, not evidence of every planned deployment.</p>
+<p><a id="source-maverick"></a></p>
+<p><strong>20. 5B.</strong> <a href="https://5b.co/en/5b-maverick">5B Maverick</a>. Undated; current product page. <strong>Evidence:</strong> Manufacturer design and deployment claims. <strong>Access:</strong> Public product page. <strong>Scope:</strong> Prefabricated, pre-wired folding PV blocks deployed with a crew and telehandler; not an autonomous robot.</p>
+<p><a id="source-pvps"></a></p>
+<p><strong>21. IEA PVPS Tasks 13 and 16.</strong> <a href="https://iea-pvps.org/wp-content/uploads/2025/09/Fact-Sheet-Task-1316-Soiling.pdf">Understanding, Measuring, and Mitigating Soiling Losses in PV Power Systems</a>. September 2025. <strong>Evidence:</strong> Research-programme technical synthesis. <strong>Access:</strong> PDF text. <strong>Scope:</strong> Site-specific soiling, clipping, curtailment and storage interactions; global figures are not European-site defaults.</p>
+<p><a id="source-abrasion"></a></p>
+<p><strong>22. B. W. Figgis et al..</strong> <a href="https://doi.org/10.1109/JPHOTOV.2024.3414192">Abrasion of PV Antireflective Coatings by Robot Cleaning</a>. 21 June 2024; IEEE Journal of Photovoltaics 14(5), 824–829. <strong>Evidence:</strong> Peer-reviewed physical field experiment. <strong>Access:</strong> Indexed publisher abstract and introduction; full paper not reviewed. <strong>Scope:</strong> 18-month Doha test shows module-dependent abrasion effects. No universal wear coefficient follows.</p>
+<p><a id="source-pomdp"></a></p>
+<p><strong>23. C. P. Andriotis and K. G. Papakonstantinou.</strong> <a href="https://arxiv.org/abs/2007.01380">Deep reinforcement learning driven inspection and maintenance planning under incomplete information and constraints</a>. 2 July 2020, author preprint. <strong>Evidence:</strong> Research method. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Constrained POMDP and DRL formulation for inspection/maintenance; no validation for this plant.</p>
+<p><a id="source-dbn"></a></p>
+<p><strong>24. P. G. Morato et al..</strong> <a href="https://arxiv.org/abs/2009.04547">Optimal Inspection and Maintenance Planning for Deteriorating Structural Components through Dynamic Bayesian Networks and Markov Decision Processes</a>. 28 November 2021, arXiv v2. <strong>Evidence:</strong> Research method and numerical experiments. <strong>Access:</strong> Author abstract. <strong>Scope:</strong> Belief-state inspection and maintenance for structural deterioration; transfer to plant scheduling is a proposal.</p>
+<p><a id="source-cleanrl"></a></p>
+<p><strong>25. H. An.</strong> <a href="https://arxiv.org/abs/2603.07518">Reinforcement learning-based dynamic cleaning scheduling framework for solar energy system</a>. 2025 journal article; author manuscript posted 8 March 2026. <strong>Evidence:</strong> Published simulation study, according to author record. <strong>Access:</strong> Author abstract and publication metadata. <strong>Scope:</strong> PPO/SAC cleaning scheduling in an Abu Dhabi case; not European field validation or whole-plant optimization.</p>
+<p><a id="source-rmf"></a></p>
+<p><strong>26. Open-RMF contributors.</strong> <a href="https://github.com/open-rmf/rmf_demos/blob/main/README.md">Open-RMF demonstrations: task dispatching</a>. Living repository; accessed 10 September 2026. <strong>Evidence:</strong> Official open-source implementation documentation. <strong>Access:</strong> Repository README. <strong>Scope:</strong> Fleet task allocation and integrated charging; an architectural reference, not a mandated dependency.</p>
+<p><a id="source-gemini"></a></p>
+<p><strong>27. Google DeepMind.</strong> <a href="https://deepmind.google/models/model-cards/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2 model card</a>. 30 July 2026. <strong>Evidence:</strong> Developer model card. <strong>Access:</strong> Public model card. <strong>Scope:</strong> Trusted-tester distribution, manipulation benchmarks and explicit generalization/mobile-platform limitations; not industrial field qualification.</p>
+<p><a id="source-flir"></a></p>
+<p><strong>28. FLIR.</strong> <a href="https://www.flir.com/en-gb/discover/instruments/gas-detection/understanding-cooled-vs-uncooled-optical-gas-imaging/">Understanding Cooled vs Uncooled Optical Gas Imaging</a>. Undated; current article. <strong>Evidence:</strong> Instrument manufacturer technical explanation. <strong>Access:</strong> Public article. <strong>Scope:</strong> Spectrally selective OGI; hydrogen cannot be directly imaged by the described conventional OGI method. The article incorrectly groups these gases as noble; that wording is not adopted.</p>
+<p><a id="source-hydrogen"></a></p>
+<p><strong>29. MSA Safety, hosted by H2tools.</strong> <a href="https://h2tools.org/sites/default/files/2025-03/0700-006-EU_MSA-White-Paper_Working-Safely-with%20Hydrogen_EN.pdf">Working Safely with Hydrogen</a>. Document available March 2025; publication date not independently established. <strong>Evidence:</strong> Manufacturer technical white paper. <strong>Access:</strong> Indexed PDF text. <strong>Scope:</strong> Hydrogen gas-group IIC distinction; not a site classification or certificate assessment.</p>
+<p><a id="source-easa"></a></p>
+<p><strong>30. European Union Aviation Safety Agency.</strong> <a href="https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/specific-category-civil-drones">Specific Category — Civil Drones</a>. Living guidance; accessed 10 September 2026. <strong>Evidence:</strong> Aviation authority guidance. <strong>Access:</strong> Public guidance. <strong>Scope:</strong> BVLOS and applicable authorization/declaration routes in EASA states; not a permission for a particular mission.</p>
+<p><a id="source-caa"></a></p>
+<p><strong>31. UK Civil Aviation Authority.</strong> <a href="https://regulatorylibrary.caa.co.uk/2019-947/Content/AMC-GM/GM1%20Article%203%20Categories%20of.htm">GM1 Article 3: Categories of UAS Operations</a>. Living regulatory library; accessed 10 September 2026. <strong>Evidence:</strong> Aviation authority guidance. <strong>Access:</strong> Public regulatory text. <strong>Scope:</strong> UK BVLOS lies outside Open category; separate UK scope from EASA rules.</p>
+<h2 id="section-12">12. Local platform material</h2>
+<p>The local assessment is based on <a href="../../methane/config.py">configuration</a>, <a href="../../methane/simulation.py">simulation execution</a>, <a href="../../methane/sensing.py">sensing</a>, <a href="../../methane/costing.py">cost allocation</a>, <a href="../../methane/solar.py">solar conversion</a>, <a href="../../docs/studies.md">Studies documentation</a>, and the <a href="../autonomous-management/report.html">earlier autonomy research</a>.</p>
+<p>The <a href="../../runs/studies/d3631a7f3a124e5a9526cd986ff5971f/reports/4c562340cdb0422eb970b45bf4f629bb.html">completed battery study</a> remains evidence for its original configuration. Local code links describe the inspected checkout; the accompanying verification record includes content hashes so later changes need not be mistaken for the code reviewed here.</p>
+<p class="footer">Research assessment · 10 September 2026 · Proposed software models only. This report changes no running simulation. Reading works offline; external references require a connection.</p></main></div><script>const field=document.getElementById('hardware-search');
+const rows=[...document.querySelectorAll('#hardware tbody tr')];
+function filter(){const q=field.value.toLocaleLowerCase().trim();let count=0;for(const r of rows){r.hidden=!r.textContent.toLocaleLowerCase().includes(q);if(!r.hidden)count++;}document.getElementById('filter-status').textContent=`${count} of ${rows.length} hardware classes`;}
+field.addEventListener('input',filter);document.getElementById('clear-search').addEventListener('click',()=>{field.value='';filter();field.focus();});</script></body></html>

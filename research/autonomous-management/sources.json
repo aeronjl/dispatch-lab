@@ -1,0 +1,422 @@
+[
+  {
+    "id": "hewing",
+    "title": "Learning-Based Model Predictive Control: Toward Safe Learning in Control",
+    "authors": "L. Hewing, K. P. Wabersich, M. Menner and M. N. Zeilinger",
+    "date": "2020",
+    "url": "https://www.annualreviews.org/content/journals/10.1146/annurev-control-090419-075625",
+    "type": "Peer-reviewed review",
+    "access": "Publisher text",
+    "scope": "Taxonomy of learning within and around MPC; no universal safety guarantee."
+  },
+  {
+    "id": "safety",
+    "title": "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems",
+    "authors": "K. P. Wabersich and M. N. Zeilinger",
+    "date": "2021; preprint first posted 2018",
+    "url": "https://arxiv.org/abs/1812.05506",
+    "type": "Peer-reviewed method; author preprint",
+    "access": "Author abstract",
+    "scope": "Conditional predictive safety construction, not a safety certification for a methane plant."
+  },
+  {
+    "id": "empc",
+    "title": "On Average Performance and Stability of Economic Model Predictive Control",
+    "authors": "D. Angeli, R. Amrit and J. B. Rawlings",
+    "date": "2012",
+    "url": "https://flore.unifi.it/handle/2158/599111",
+    "type": "Peer-reviewed control theory",
+    "access": "Author institutional record and abstract",
+    "scope": "Economic MPC performance and stability under stated mathematical assumptions."
+  },
+  {
+    "id": "mesbah",
+    "title": "Stochastic Model Predictive Control: An Overview and Perspectives for Future Research",
+    "authors": "A. Mesbah",
+    "date": "2016",
+    "url": "https://escholarship.org/uc/item/1wt3d4vr",
+    "type": "Peer-reviewed review",
+    "access": "Indexed author-repository abstract; direct page challenged",
+    "scope": "Uncertainty-aware MPC; different formulations have different guarantees and computational demands."
+  },
+  {
+    "id": "cvar",
+    "title": "Optimization of Conditional Value-at-Risk",
+    "authors": "R. T. Rockafellar and S. Uryasev",
+    "date": "2000 publication; linked manuscript dated 1999-09-05",
+    "url": "https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf",
+    "type": "Peer-reviewed optimization method; author manuscript",
+    "access": "Author-hosted PDF text",
+    "scope": "Tail-risk optimization technique, originally illustrated in finance; plant objective is an application proposal."
+  },
+  {
+    "id": "hydrogen",
+    "title": "Combination of Site-Wide and Real-Time Optimization for the Control of Systems of Electrolyzers",
+    "authors": "V. Henkel, L. P. Wagner, F. Gehlhoff and A. Fay",
+    "date": "2024",
+    "url": "https://arxiv.org/abs/2404.06748",
+    "type": "Peer-reviewed application; author preprint",
+    "access": "Author abstract",
+    "scope": "Hierarchical electrolyser scheduling and real-time control; not evidence of whole-plant unattended recovery."
+  },
+  {
+    "id": "qsmcp",
+    "title": "Q-learning-based stochastic model predictive control for green ammonia production",
+    "authors": "H. M. Park, T. H. Oh and J. M. Lee",
+    "date": "2026-04",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0959152426000557",
+    "type": "Peer-reviewed application study",
+    "access": "Indexed publisher abstract and highlights; direct full text unavailable",
+    "scope": "Simulation of ammonia production with a learned terminal Q-function; transfer to methane remains to be tested."
+  },
+  {
+    "id": "processrl",
+    "title": "Reinforcement Learning in Process Industries: Review and Perspective",
+    "authors": "O. Dogru et al.",
+    "date": "2024-02",
+    "url": "https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124227",
+    "type": "Peer-reviewed review",
+    "access": "Publisher abstract and article metadata",
+    "scope": "Process-industry RL landscape across control and related tasks; individual deployment claims need their own evidence."
+  },
+  {
+    "id": "cql",
+    "title": "Conservative Q-Learning for Offline Reinforcement Learning",
+    "authors": "A. Kumar, A. Zhou, G. Tucker and S. Levine",
+    "date": "2020",
+    "url": "https://papers.nips.cc/paper_files/paper/2020/hash/0d2b2061826a5df3221116a5085a6052-Abstract.html",
+    "type": "Peer-reviewed ML method",
+    "access": "Conference abstract",
+    "scope": "Addresses offline value overestimation; does not certify safety or fill missing operating-regime coverage."
+  },
+  {
+    "id": "homeo14",
+    "title": "Homeostatic reinforcement learning for integrating reward collection and physiological stability",
+    "authors": "M. Keramati and B. Gutkin",
+    "date": "2014-12-02",
+    "url": "https://elifesciences.org/articles/04811",
+    "type": "Peer-reviewed computational neuroscience",
+    "access": "Full publisher text",
+    "scope": "Drive reduction, reward and physiological regulation; no industrial plant experiment."
+  },
+  {
+    "id": "homeo24",
+    "title": "Modeling long-term nutritional behaviors using deep homeostatic reinforcement learning",
+    "authors": "N. Yoshida, E. Arikawa, H. Kanazawa and Y. Kuniyoshi",
+    "date": "2024",
+    "url": "https://academic.oup.com/pnasnexus/article/3/12/pgae540/7912045",
+    "type": "Peer-reviewed computational neuroscience",
+    "access": "Publisher text",
+    "scope": "Long-term nutritional behaviour in simulated agents; not plant control validation."
+  },
+  {
+    "id": "homeo25",
+    "title": "Linking Homeostasis to Reinforcement Learning: Internal State Control of Motivated Behavior",
+    "authors": "N. Yoshida, H. Sprekeler and B. Gutkin",
+    "date": "2025-07-07 preprint",
+    "url": "https://arxiv.org/abs/2507.04998",
+    "type": "Research perspective; author preprint",
+    "access": "Author abstract",
+    "scope": "Conceptual synthesis of internal-state-dependent motivation, anticipation and hierarchical behaviour."
+  },
+  {
+    "id": "homeo26",
+    "title": "Gradual proactive regulation of body state by reinforcement learning of homeostasis",
+    "authors": "Mana Fujiwara and Honda Naoki (as indexed by PubMed)",
+    "date": "2026-02; online 2026-01-07",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41513000/",
+    "type": "Peer-reviewed computational neuroscience",
+    "access": "PubMed abstract",
+    "scope": "Proactive regulation and interacting internal variables in a computational model; industrial application is untested."
+  },
+  {
+    "id": "activeinference",
+    "title": "Simulating homeostatic, allostatic and goal-directed forms of interoceptive control using active inference",
+    "authors": "A. Tschantz, L. Barca, D. Maisto, C. L. Buckley, A. K. Seth and G. Pezzulo",
+    "date": "2022",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35051559/",
+    "type": "Peer-reviewed computational neuroscience",
+    "access": "PubMed abstract",
+    "scope": "Generative-model simulations of three forms of regulation; not a plant recovery demonstration."
+  },
+  {
+    "id": "shaping",
+    "title": "Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping",
+    "authors": "A. Y. Ng, D. Harada and S. Russell",
+    "date": "1999",
+    "url": "https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf",
+    "type": "Peer-reviewed RL theory; author manuscript",
+    "access": "Author-hosted PDF text",
+    "scope": "Potential-based reward shaping under stated MDP and discount assumptions."
+  },
+  {
+    "id": "spo",
+    "title": "Smart ‘Predict, then Optimize’",
+    "authors": "A. N. Elmachtoub and P. Grigas",
+    "date": "2022 publication; preprint 2017",
+    "url": "https://arxiv.org/abs/1710.08005",
+    "type": "Peer-reviewed optimization/learning method; author preprint",
+    "access": "Author abstract",
+    "scope": "Prediction trained around downstream decision loss; application to weather dispatch is a proposal."
+  },
+  {
+    "id": "aci",
+    "title": "Adaptive Conformal Inference Under Distribution Shift",
+    "authors": "I. Gibbs and E. Candès",
+    "date": "2021",
+    "url": "https://arxiv.org/abs/2106.00170",
+    "type": "Peer-reviewed statistical method; author preprint",
+    "access": "Author abstract",
+    "scope": "Adaptive long-run coverage; not a conditional or joint physical-safety guarantee."
+  },
+  {
+    "id": "sensors",
+    "title": "Sensor Placement for Fault Diagnosis",
+    "authors": "M. Krysander and E. Frisk",
+    "date": "2008",
+    "url": "https://www.vehicular.isy.liu.se/Edu/Courses/DocDiagnos/CourseMaterial/sensplace.pdf",
+    "type": "Peer-reviewed diagnosis method; author manuscript",
+    "access": "Indexed author-hosted PDF and author publication record; direct PDF retrieval failed",
+    "scope": "Structural detectability and isolability; actual signal quality and operating excitation remain relevant."
+  },
+  {
+    "id": "fdtool",
+    "title": "Fault Diagnosis Toolbox for Python and Matlab",
+    "authors": "E. Frisk and contributors",
+    "date": "Undated documentation; accessed 2026-09-10",
+    "url": "https://faultdiagnosistoolbox.github.io/",
+    "type": "Primary research software documentation",
+    "access": "Official documentation",
+    "scope": "Structural analysis, isolability, sensor placement and residual generation tooling."
+  },
+  {
+    "id": "activefault",
+    "title": "A Survey of Active Fault Diagnosis Methods",
+    "authors": "I. Punčochář and J. Škach",
+    "date": "2018",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2405896318324467",
+    "type": "Peer-reviewed review",
+    "access": "Indexed publisher abstract; bibliographic authors corroborated by university-hosted reference",
+    "scope": "Auxiliary-input design for diagnosis under uncertainty; specific probes require plant constraints."
+  },
+  {
+    "id": "maintenance",
+    "title": "Joint Optimization of Sampling and Control of Partially Observable Failing Systems",
+    "authors": "M. J. Kim and V. Makis",
+    "date": "2013-06-01 online",
+    "url": "https://pubsonline.informs.org/doi/10.1287/opre.2013.1171",
+    "type": "Peer-reviewed operations research",
+    "access": "Publisher abstract",
+    "scope": "Joint observation/maintenance decisions in a particular partially observed failing-system model."
+  },
+  {
+    "id": "degradation",
+    "title": "Electrolyzer Durability at Low Catalyst Loading and with Dynamic Operation",
+    "authors": "S. M. Alia, S. Stariha and R. L. Borup",
+    "date": "2019",
+    "url": "https://research-hub.nlr.gov/en/publications/electrolyzer-durability-at-low-catalyst-loading-and-with-dynamic--2/",
+    "type": "Peer-reviewed experimental electrochemistry",
+    "access": "National-laboratory publication abstract",
+    "scope": "PEM technology and specified catalyst/loading/cycling conditions; coefficients must not be transferred to alkaline equipment."
+  },
+  {
+    "id": "methanation",
+    "title": "Power-to-Gas: Process analysis and control strategies for dynamic catalytic methanation system",
+    "authors": "L. Colelli, C. Bassano, N. Verdone, V. Segneri and G. Vilardi",
+    "date": "2024-04-01",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0196890424001985",
+    "type": "Peer-reviewed process study",
+    "access": "Indexed publisher abstract/excerpts; direct full text unavailable",
+    "scope": "Dynamic methanation modelling and thermal control; does not calibrate the current lumped reactor fixture."
+  },
+  {
+    "id": "livingstone",
+    "title": "A Model-Based Approach to Reactive Self-Configuring Systems",
+    "authors": "B. C. Williams and P. P. Nayak",
+    "date": "1996 (paper year; repository page is newer)",
+    "url": "https://aaai.org/papers/144-aaai96-144-a-model-based-approach-to-reactive-self-configuring-systems/",
+    "type": "Peer-reviewed model-based autonomy",
+    "access": "AAAI paper record and author manuscript excerpt",
+    "scope": "Model-based diagnosis/reconfiguration precedent; predefined physical alternatives bound recovery."
+  },
+  {
+    "id": "nasa",
+    "title": "Computer Program Assumes Spacecraft Command",
+    "authors": "NASA Jet Propulsion Laboratory",
+    "date": "1999-05-17",
+    "url": "https://www.jpl.nasa.gov/news/computer-program-assumes-spacecraft-command/",
+    "type": "Agency mission announcement",
+    "access": "Official text",
+    "scope": "Remote Agent taking command for a bounded spacecraft test; announcement is not a final performance report."
+  },
+  {
+    "id": "ecmwf",
+    "title": "Quantifying forecast uncertainty",
+    "authors": "ECMWF",
+    "date": "Undated documentation; accessed 2026-09-10",
+    "url": "https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty",
+    "type": "Official forecasting documentation",
+    "access": "Official text",
+    "scope": "Ensemble weather uncertainty; local PV conversion and calibration remain separate tasks."
+  },
+  {
+    "id": "dompc",
+    "title": "do-mpc documentation",
+    "authors": "do-mpc contributors",
+    "date": "Current documentation accessed 2026-09-10",
+    "url": "https://www.do-mpc.com/en/latest/",
+    "type": "Primary software documentation",
+    "access": "Official documentation",
+    "scope": "Nonlinear/robust MPC and moving-horizon estimation tooling; not a certified controller."
+  },
+  {
+    "id": "casadi",
+    "title": "CasADi documentation",
+    "authors": "CasADi contributors",
+    "date": "Current documentation accessed 2026-09-10",
+    "url": "https://web.casadi.org/docs/",
+    "type": "Primary software documentation",
+    "access": "Official documentation",
+    "scope": "Symbolic differentiation and optimization interfaces."
+  },
+  {
+    "id": "acados",
+    "title": "acados documentation",
+    "authors": "acados contributors",
+    "date": "Current documentation accessed 2026-09-10",
+    "url": "https://docs.acados.org/",
+    "type": "Primary software documentation",
+    "access": "Official documentation",
+    "scope": "Fast optimal-control problem solvers; not a direct replacement for a mixed-integer scheduling solver."
+  },
+  {
+    "id": "gym",
+    "title": "Gymnasium documentation",
+    "authors": "Farama Foundation and contributors",
+    "date": "Current documentation accessed 2026-09-10",
+    "url": "https://gymnasium.farama.org/",
+    "type": "Primary software documentation",
+    "access": "Official documentation",
+    "scope": "Standard environment interfaces and seeding; observation separation is the environment author's responsibility."
+  },
+  {
+    "id": "boptest",
+    "title": "Building Optimization Testing Framework (BOPTEST)",
+    "authors": "IBPSA Project 1 contributors",
+    "date": "Project documentation accessed 2026-09-10",
+    "url": "https://ibpsa.github.io/project1-boptest/index.html",
+    "type": "Primary benchmark project",
+    "access": "Official project documentation",
+    "scope": "Reproducible building-control benchmarking precedent; its buildings are not methane-plant models."
+  },
+  {
+    "id": "safegym",
+    "title": "safe-control-gym: A Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics",
+    "authors": "Z. Yuan et al.",
+    "date": "2022 publication; preprint 2021",
+    "url": "https://arxiv.org/abs/2109.06325",
+    "type": "Peer-reviewed benchmark; author preprint",
+    "access": "Author abstract",
+    "scope": "Robotics benchmark pattern for safety/performance comparisons; not plant validation."
+  },
+  {
+    "id": "yokogawa",
+    "title": "Yokogawa and JSR Use AI to Autonomously Control a Chemical Plant for 35 Consecutive Days",
+    "authors": "Yokogawa Electric Corporation and JSR Corporation",
+    "date": "2022-03-22",
+    "url": "https://www.yokogawa.com/news/press-releases/2022/2022-03-22/",
+    "type": "Joint supplier/customer deployment announcement",
+    "access": "Official company text",
+    "scope": "Control of a distillation column with existing protection and monitoring; title is broader than the described test boundary."
+  },
+  {
+    "id": "phaidra",
+    "title": "Autonomous AI Control of Mission-Critical Cooling at Merck",
+    "authors": "Phaidra",
+    "date": "2024-06-25",
+    "url": "https://www.phaidra.ai/blog/autonomous-ai-control-of-mission-critical-cooling-at-merck",
+    "type": "Vendor customer case study",
+    "access": "Official company text",
+    "scope": "Cooling setpoint control with local BMS handover; not independently audited general fault repair."
+  },
+  {
+    "id": "imubit",
+    "title": "3 Reasons Your Refinery Needs Closed-Loop AI Optimization",
+    "authors": "Imubit",
+    "date": "Undated page; accessed 2026-09-10",
+    "url": "https://imubit.com/blog/3-reasons-your-refinery-needs-closed-loop-ai-optimization",
+    "type": "Vendor customer case material",
+    "access": "Official company text",
+    "scope": "Named refinery closed-loop optimization and retraining after feed changes; no cross-vendor benchmark."
+  },
+  {
+    "id": "rivan",
+    "title": "Rivan deploys full-scale 1MW system",
+    "authors": "Harvey Hodd / Rivan",
+    "date": "2026-08-12",
+    "url": "https://rivan.com/news/rivan-deploys-full-scale-1mw-system/",
+    "type": "Company deployment announcement",
+    "access": "Official company text",
+    "scope": "Deployment and commissioning; extended autonomous performance remains to be established by the cited announcement."
+  },
+  {
+    "id": "terraform",
+    "title": "Terraform Industries",
+    "authors": "Terraform Industries",
+    "date": "Undated company timeline; accessed 2026-09-10",
+    "url": "https://www.terraformindustries.com/",
+    "type": "Company technology/timeline page",
+    "access": "Official company text",
+    "scope": "Company-reported sunlight/air-to-gas demonstration in March 2024; no broad fault-recovery benchmark."
+  },
+  {
+    "id": "gproms",
+    "title": "gPROMS for sustainability",
+    "authors": "Siemens",
+    "date": "Undated product page; accessed 2026-09-10",
+    "url": "https://www.siemens.com/en-us/products/gproms/sustainability/",
+    "type": "Vendor technical/product page",
+    "access": "Official company text",
+    "scope": "Process modelling and digital twins, including hydrogen applications; tool availability is not deployment validation."
+  },
+  {
+    "id": "anybotics",
+    "title": "Robotic Gas Leak Detection with ANYmal",
+    "authors": "ANYbotics",
+    "date": "2025-06-17",
+    "url": "https://www.anybotics.com/news/robotic-gas-leak-detection-anymal/",
+    "type": "Vendor technical announcement",
+    "access": "Official company text",
+    "scope": "Mobile gas inspection and detection capability; repair and process control are separate functions."
+  },
+  {
+    "id": "augury",
+    "title": "Machine Health",
+    "authors": "Augury",
+    "date": "Undated product page; accessed 2026-09-10",
+    "url": "https://www.augury.com/machine-health/",
+    "type": "Vendor product page",
+    "access": "Official company text",
+    "scope": "Machine condition monitoring and diagnostic support; rotating-equipment evidence does not establish catalyst or electrolyser remaining life."
+  },
+  {
+    "id": "raptor",
+    "title": "Raptor Maps",
+    "authors": "Raptor Maps",
+    "date": "Undated product page; accessed 2026-09-10",
+    "url": "https://raptormaps.com/",
+    "type": "Vendor product page",
+    "access": "Official company text",
+    "scope": "Solar inspection and remote drone operations; capability claims are company supplied."
+  },
+  {
+    "id": "flight",
+    "title": "Solar PV Inspection Drone Flight Guidelines",
+    "authors": "Raptor Maps",
+    "date": "Undated operational guidance; accessed 2026-09-10",
+    "url": "https://pages.raptormaps.com/raptor-maps-knowledge-hub/solar-pv-inspection-drone-flight-guidelines",
+    "type": "Vendor inspection protocol",
+    "access": "Official guidance",
+    "scope": "Provider-specific thermography conditions, including irradiance; not a universal inspection standard."
+  }
+]

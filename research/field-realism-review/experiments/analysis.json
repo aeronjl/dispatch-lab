@@ -1,0 +1,5943 @@
+{
+  "schema_version": "realism-analysis/1",
+  "all_cases": 128,
+  "comparison_cases": 112,
+  "retained_setup_error_cases": 16,
+  "statuses": {
+    "complete": 128
+  },
+  "audits_passed": 128,
+  "audit_assertions": 1970488,
+  "groups": [
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/5080cb90e45d2e10f157/summary.json",
+        "experiments/primary/cases/168577917fbc132007b4/summary.json",
+        "experiments/primary/cases/bc39fcb1fe8eb6dd27cd/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 768.259109589041,
+        "min": 768.259109589041,
+        "max": 768.259109589041
+      },
+      "decision_eur": {
+        "mean": 224.35499999999988,
+        "min": 224.35499999999985,
+        "max": 224.35499999999988
+      },
+      "contribution_eur": {
+        "mean": 65.64500000000014,
+        "min": 65.64500000000012,
+        "max": 65.64500000000015
+      },
+      "service_allocated_eur": {
+        "mean": 38.21917808219178,
+        "min": 38.21917808219178,
+        "max": 38.21917808219178
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 47520.0,
+        "min": 47520.0,
+        "max": 47520.0
+      },
+      "curtailment_kwh": {
+        "mean": 35035.63874014791,
+        "min": 35035.63874014791,
+        "max": 35035.63874014791
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/4c4b9b78255c3042c81a/summary.json",
+        "experiments/primary/cases/9b54bc158f0794e23a26/summary.json",
+        "experiments/primary/cases/133b79aa80e907f7206c/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 730.0399315068493,
+        "min": 730.0399315068493,
+        "max": 730.0399315068493
+      },
+      "decision_eur": {
+        "mean": 224.35499999999988,
+        "min": 224.35499999999985,
+        "max": 224.35499999999988
+      },
+      "contribution_eur": {
+        "mean": 65.64500000000014,
+        "min": 65.64500000000012,
+        "max": 65.64500000000015
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 47520.0,
+        "min": 47520.0,
+        "max": 47520.0
+      },
+      "curtailment_kwh": {
+        "mean": 35038.03874014791,
+        "min": 35038.03874014791,
+        "max": 35038.03874014791
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 3,
+      "case_paths": [
+        "experiments/portable-correction/cases/889e029797ceaa26270e/summary.json",
+        "experiments/portable-correction/cases/628a2cd5e4e0f270f583/summary.json",
+        "experiments/portable-correction/cases/edb853c29d983a0dd1bc/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 730.3823972602739,
+        "min": 730.3823972602739,
+        "max": 730.3823972602739
+      },
+      "decision_eur": {
+        "mean": 224.35499999999988,
+        "min": 224.35499999999985,
+        "max": 224.35499999999988
+      },
+      "contribution_eur": {
+        "mean": 65.64500000000014,
+        "min": 65.64500000000012,
+        "max": 65.64500000000015
+      },
+      "service_allocated_eur": {
+        "mean": 0.3424657534246575,
+        "min": 0.3424657534246575,
+        "max": 0.3424657534246575
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 47520.0,
+        "min": 47520.0,
+        "max": 47520.0
+      },
+      "curtailment_kwh": {
+        "mean": 35038.03874014791,
+        "min": 35038.03874014791,
+        "max": 35038.03874014791
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/a54b86954764624a25d2/summary.json",
+        "experiments/primary/cases/e583732963ec6cac7f6a/summary.json",
+        "experiments/primary/cases/580ff708ec3a2b573054/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 785.5793150684931,
+        "min": 785.5793150684931,
+        "max": 785.5793150684931
+      },
+      "decision_eur": {
+        "mean": 243.72999999999988,
+        "min": 243.72999999999985,
+        "max": 243.72999999999988
+      },
+      "contribution_eur": {
+        "mean": 46.27000000000013,
+        "min": 46.270000000000124,
+        "max": 46.27000000000015
+      },
+      "service_allocated_eur": {
+        "mean": 55.53938356164384,
+        "min": 55.53938356164384,
+        "max": 55.53938356164384
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 46964.4,
+        "min": 46964.4,
+        "max": 46964.4
+      },
+      "curtailment_kwh": {
+        "mean": 34478.094295703464,
+        "min": 34478.094295703464,
+        "max": 34478.094295703464
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/ff5674a861e4af372b73/summary.json",
+        "experiments/primary/cases/7d7a5c7ecf3b15acbb28/summary.json",
+        "experiments/primary/cases/ad0e57180da53a1ffeb2/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 730.0399315068493,
+        "min": 730.0399315068493,
+        "max": 730.0399315068493
+      },
+      "decision_eur": {
+        "mean": 224.35499999999988,
+        "min": 224.35499999999985,
+        "max": 224.35499999999988
+      },
+      "contribution_eur": {
+        "mean": 65.64500000000014,
+        "min": 65.64500000000012,
+        "max": 65.64500000000015
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 43200.0,
+        "min": 43200.0,
+        "max": 43200.0
+      },
+      "curtailment_kwh": {
+        "mean": 30718.038740147906,
+        "min": 30718.038740147906,
+        "max": 30718.038740147906
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 3,
+      "case_paths": [
+        "experiments/portable-correction/cases/4b9037e0d2c369628a6c/summary.json",
+        "experiments/portable-correction/cases/f22e23648f477292b75a/summary.json",
+        "experiments/portable-correction/cases/71e11ea6d1f2ebeeebd6/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 3195.8990639269405,
+        "min": 2965.4723972602737,
+        "max": 3656.7523972602744
+      },
+      "decision_eur": {
+        "mean": 2689.871666666667,
+        "min": 2459.445,
+        "max": 3150.7250000000004
+      },
+      "contribution_eur": {
+        "mean": -2399.871666666667,
+        "min": -2860.7250000000004,
+        "max": -2169.445
+      },
+      "service_allocated_eur": {
+        "mean": 2465.859132420091,
+        "min": 2235.4324657534244,
+        "max": 2926.712465753425
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 46358.8,
+        "min": 46160.4,
+        "max": 46458.0
+      },
+      "curtailment_kwh": {
+        "mean": 33874.19985125902,
+        "min": 33675.52207348124,
+        "max": 33973.53874014791
+      },
+      "human_visits": {
+        "mean": 3.3333333333333335,
+        "min": 3,
+        "max": 4
+      },
+      "crew_hours": {
+        "mean": 14.527777777777779,
+        "min": 13.25,
+        "max": 17.083333333333336
+      },
+      "travel_hours": {
+        "mean": 6.666666666666667,
+        "min": 6.0,
+        "max": 8.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/c544781efecf1cb27eef/summary.json",
+        "experiments/primary/cases/e04f83b86a2ca128f4e2/summary.json",
+        "experiments/primary/cases/078e844b85dbdb333dc1/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 787.1521291564648,
+        "min": 785.0467125153483,
+        "max": 791.359109589041
+      },
+      "decision_eur": {
+        "mean": 261.24801956742346,
+        "min": 259.1426029263069,
+        "max": 265.4549999999998
+      },
+      "contribution_eur": {
+        "mean": 28.751980432576563,
+        "min": 24.545000000000186,
+        "max": 30.857397073693107
+      },
+      "service_allocated_eur": {
+        "mean": 38.21917808219178,
+        "min": 38.21917808219178,
+        "max": 38.21917808219178
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 14256.0,
+        "min": 14256.0,
+        "max": 14256.0
+      },
+      "curtailment_kwh": {
+        "mean": 1773.9392681483284,
+        "min": 1769.475038012328,
+        "max": 1777.403399094933
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.91883217934543,
+        "min": 59.85584798031624,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/250c25fd38d177c9f0df/summary.json",
+        "experiments/primary/cases/db2f260ecb8f99f0c0d3/summary.json",
+        "experiments/primary/cases/e4f2a0fcf353e87062a5/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 748.9329498194766,
+        "min": 746.8275322046694,
+        "max": 753.1399315068493
+      },
+      "decision_eur": {
+        "mean": 261.2480183126271,
+        "min": 259.14260069782,
+        "max": 265.45499999999976
+      },
+      "contribution_eur": {
+        "mean": 28.751981687372886,
+        "min": 24.545000000000243,
+        "max": 30.85739930218
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 14256.0,
+        "min": 14256.0,
+        "max": 14256.0
+      },
+      "curtailment_kwh": {
+        "mean": 1776.3400706344194,
+        "min": 1771.8750380123251,
+        "max": 1779.8048242901648
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.918817588689194,
+        "min": 59.85582206767564,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 3,
+      "case_paths": [
+        "experiments/portable-correction/cases/4fc83998d236847ea277/summary.json",
+        "experiments/portable-correction/cases/42c129983c51d62144e1/summary.json",
+        "experiments/portable-correction/cases/f230b57929655f1236ea/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 749.2754155729012,
+        "min": 747.1699979580941,
+        "max": 753.482397260274
+      },
+      "decision_eur": {
+        "mean": 261.2480183126271,
+        "min": 259.14260069782,
+        "max": 265.45499999999976
+      },
+      "contribution_eur": {
+        "mean": 28.751981687372886,
+        "min": 24.545000000000243,
+        "max": 30.85739930218
+      },
+      "service_allocated_eur": {
+        "mean": 0.3424657534246575,
+        "min": 0.3424657534246575,
+        "max": 0.3424657534246575
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 14256.0,
+        "min": 14256.0,
+        "max": 14256.0
+      },
+      "curtailment_kwh": {
+        "mean": 1776.3400706344194,
+        "min": 1771.8750380123251,
+        "max": 1779.8048242901648
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.918817588689194,
+        "min": 59.85582206767564,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/5916bd0f263edd728915/summary.json",
+        "experiments/primary/cases/497d48eb367f3131e913/summary.json",
+        "experiments/primary/cases/11e7fadcf99d66948ec1/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 804.3640761690132,
+        "min": 802.2993735906756,
+        "max": 808.4934813256882
+      },
+      "decision_eur": {
+        "mean": 280.5147611005199,
+        "min": 278.45005852218236,
+        "max": 284.64416625719485
+      },
+      "contribution_eur": {
+        "mean": 9.485238899480143,
+        "min": 5.355833742805146,
+        "max": 11.54994147781764
+      },
+      "service_allocated_eur": {
+        "mean": 55.53938356164384,
+        "min": 55.53938356164384,
+        "max": 55.53938356164384
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 14089.320000000002,
+        "min": 14089.320000000002,
+        "max": 14089.320000000002
+      },
+      "curtailment_kwh": {
+        "mean": 1674.549889746977,
+        "min": 1651.975957288432,
+        "max": 1719.6977546640667
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 58.66001279674376,
+        "min": 57.83914252552394,
+        "max": 59.070447932353666
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/435ed6c152a0993bbd83/summary.json",
+        "experiments/primary/cases/a517203c8f6d4a8bb3a5/summary.json",
+        "experiments/primary/cases/7861e82e28b2a70c64a1/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 758.0370911202474,
+        "min": 755.2398520639069,
+        "max": 763.631489789986
+      },
+      "decision_eur": {
+        "mean": 270.35215961339793,
+        "min": 267.55492055705747,
+        "max": 275.9465582831365
+      },
+      "contribution_eur": {
+        "mean": 19.647840386602088,
+        "min": 14.053441716863517,
+        "max": 22.44507944294253
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 12960.000000000004,
+        "min": 12960.000000000004,
+        "max": 12960.000000000004
+      },
+      "curtailment_kwh": {
+        "mean": 481.53978289479056,
+        "min": 475.87503801233197,
+        "max": 492.8184661268095
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 796.3492593179564,
+        "min": 789.0477779538692,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.96697224881527,
+        "min": 59.90184050158942,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 3,
+      "case_paths": [
+        "experiments/portable-correction/cases/09e7d392f5d93008547b/summary.json",
+        "experiments/portable-correction/cases/e9d95c3402f9b3bbb5b0/summary.json",
+        "experiments/portable-correction/cases/1c9136a13a13eb1d6993/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 3217.594590925093,
+        "min": 2984.359162269888,
+        "max": 3684.0522132451174
+      },
+      "decision_eur": {
+        "mean": 2729.567193664819,
+        "min": 2496.331765009614,
+        "max": 3196.0248159848434
+      },
+      "contribution_eur": {
+        "mean": -2439.567193664819,
+        "min": -2906.0248159848434,
+        "max": -2206.331765009614
+      },
+      "service_allocated_eur": {
+        "mean": 2465.859132420091,
+        "min": 2235.4324657534244,
+        "max": 2926.712465753425
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 13907.64,
+        "min": 13848.12,
+        "max": 13937.4
+      },
+      "curtailment_kwh": {
+        "mean": 1423.736789839896,
+        "min": 1361.1960554575453,
+        "max": 1459.2392760498144
+      },
+      "human_visits": {
+        "mean": 3.3333333333333335,
+        "min": 3,
+        "max": 4
+      },
+      "crew_hours": {
+        "mean": 14.527777777777779,
+        "min": 13.25,
+        "max": 17.083333333333336
+      },
+      "travel_hours": {
+        "mean": 6.666666666666667,
+        "min": 6.0,
+        "max": 8.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.947988350609876,
+        "min": 59.84610476295479,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "fixed-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/02c7f395d54952fb5a30/summary.json",
+        "experiments/primary/cases/66ec04deb82f5bf9cd64/summary.json",
+        "experiments/primary/cases/1a7d25fc71e9887af67a/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 738.3495205479452,
+        "min": 738.3495205479452,
+        "max": 738.3495205479452
+      },
+      "decision_eur": {
+        "mean": 228.5549999999999,
+        "min": 228.55499999999986,
+        "max": 228.5549999999999
+      },
+      "contribution_eur": {
+        "mean": 61.445000000000114,
+        "min": 61.44500000000011,
+        "max": 61.445000000000135
+      },
+      "service_allocated_eur": {
+        "mean": 4.109589041095891,
+        "min": 4.109589041095891,
+        "max": 4.109589041095891
+      },
+      "fault_hours": {
+        "mean": 4,
+        "min": 4,
+        "max": 4
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18677.738740147906,
+        "min": 18677.738740147906,
+        "max": 18677.738740147906
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "human-only",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/3e3e67012f354aade1e1/summary.json",
+        "experiments/primary/cases/67b61e71f16fda151f73/summary.json",
+        "experiments/primary/cases/f21239e50846916113c6/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 757.2824477549079,
+        "min": 757.2783813709127,
+        "max": 757.2851811751773
+      },
+      "decision_eur": {
+        "mean": 251.59751624805818,
+        "min": 251.59344986406296,
+        "max": 251.60024966832756
+      },
+      "contribution_eur": {
+        "mean": 38.40248375194182,
+        "min": 38.399750331672436,
+        "max": 38.40655013593704
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 42,
+        "min": 42,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18794.80160476162,
+        "min": 18793.053487147467,
+        "max": 18797.402199177162
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.33158427975071,
+        "min": 59.28430074492263,
+        "max": 59.36336823637163
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "mobile-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/d18b6987a3035e5d743f/summary.json",
+        "experiments/primary/cases/2410022932d8fbe6dd3a/summary.json",
+        "experiments/primary/cases/9970473109578988e432/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 821.4832937986525,
+        "min": 820.7919863013699,
+        "max": 822.865908793218
+      },
+      "decision_eur": {
+        "mean": 235.84630749728262,
+        "min": 235.1549999999999,
+        "max": 237.22892249184807
+      },
+      "contribution_eur": {
+        "mean": 54.153692502717384,
+        "min": 52.77107750815193,
+        "max": 54.84500000000011
+      },
+      "service_allocated_eur": {
+        "mean": 84.45205479452055,
+        "min": 84.45205479452055,
+        "max": 84.45205479452055
+      },
+      "fault_hours": {
+        "mean": 5,
+        "min": 5,
+        "max": 5
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18720.647898862448,
+        "min": 18715.088740147905,
+        "max": 18731.766216291526
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.89892438700838,
+        "min": 59.69677316102513,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "no-service",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/d0f946c6c15e3dce62e2/summary.json",
+        "experiments/primary/cases/9cae592690eaef79bca7/summary.json",
+        "experiments/primary/cases/dba9a72191802e703b2d/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 757.2824477549079,
+        "min": 757.2783813709127,
+        "max": 757.2851811751773
+      },
+      "decision_eur": {
+        "mean": 251.59751624805818,
+        "min": 251.59344986406296,
+        "max": 251.60024966832756
+      },
+      "contribution_eur": {
+        "mean": 38.40248375194182,
+        "min": 38.399750331672436,
+        "max": 38.40655013593704
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 42,
+        "min": 42,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18794.80160476162,
+        "min": 18793.053487147467,
+        "max": 18797.402199177162
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.33158427975071,
+        "min": 59.28430074492263,
+        "max": 59.36336823637163
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "fixed-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/52c778cc6b3e683fc836/summary.json",
+        "experiments/primary/cases/1923cf87c757ce0b846f/summary.json",
+        "experiments/primary/cases/49d22f30dd67223d893f/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 1924.6290038359664,
+        "min": 1916.2495205479452,
+        "max": 1941.3879704120086
+      },
+      "decision_eur": {
+        "mean": 1414.834483288021,
+        "min": 1406.455,
+        "max": 1431.593449864063
+      },
+      "contribution_eur": {
+        "mean": -1124.834483288021,
+        "min": -1141.593449864063,
+        "max": -1116.455
+      },
+      "service_allocated_eur": {
+        "mean": 1184.109589041096,
+        "min": 1184.109589041096,
+        "max": 1184.109589041096
+      },
+      "fault_hours": {
+        "mean": 19.333333333333332,
+        "min": 8,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18730.90989315766,
+        "min": 18717.788740147906,
+        "max": 18757.152199177162
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "human-only",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/2c07fd56fdc0717d13c1/summary.json",
+        "experiments/primary/cases/c5734e4738962e4f6a27/summary.json",
+        "experiments/primary/cases/514a18c3c04ae1bc49eb/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 1920.5194147948705,
+        "min": 1912.1399315068493,
+        "max": 1937.2783813709127
+      },
+      "decision_eur": {
+        "mean": 1414.834483288021,
+        "min": 1406.455,
+        "max": 1431.593449864063
+      },
+      "contribution_eur": {
+        "mean": -1124.834483288021,
+        "min": -1141.593449864063,
+        "max": -1116.455
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 18.666666666666668,
+        "min": 7,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18731.15989315766,
+        "min": 18718.038740147906,
+        "max": 18757.402199177162
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "mobile-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/557c2eb2717b5d8bf313/summary.json",
+        "experiments/primary/cases/fc41d960c555ca480f12/summary.json",
+        "experiments/primary/cases/5a7b2bcdb41a76e592f7/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 2004.971469589391,
+        "min": 1996.5919863013698,
+        "max": 2021.7304361654333
+      },
+      "decision_eur": {
+        "mean": 1419.334483288021,
+        "min": 1410.955,
+        "max": 1436.093449864063
+      },
+      "contribution_eur": {
+        "mean": -1129.334483288021,
+        "min": -1146.093449864063,
+        "max": -1120.955
+      },
+      "service_allocated_eur": {
+        "mean": 1264.4520547945206,
+        "min": 1264.4520547945206,
+        "max": 1264.4520547945206
+      },
+      "fault_hours": {
+        "mean": 20,
+        "min": 9,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18728.259893157658,
+        "min": 18715.138740147904,
+        "max": 18754.50219917716
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "no-service",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/70486333326b348697e3/summary.json",
+        "experiments/primary/cases/05f8491b846e227093e7/summary.json",
+        "experiments/primary/cases/57ed3c059748cf1a3a9c/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 757.2824477549079,
+        "min": 757.2783813709127,
+        "max": 757.2851811751773
+      },
+      "decision_eur": {
+        "mean": 251.59751624805818,
+        "min": 251.59344986406296,
+        "max": 251.60024966832756
+      },
+      "contribution_eur": {
+        "mean": 38.40248375194182,
+        "min": 38.399750331672436,
+        "max": 38.40655013593704
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 42,
+        "min": 42,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18794.80160476162,
+        "min": 18793.053487147467,
+        "max": 18797.402199177162
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.33158427975071,
+        "min": 59.28430074492263,
+        "max": 59.36336823637163
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "fixed-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/73cc9feae47226cbcec7/summary.json",
+        "experiments/primary/cases/563472f1af7347ede5f9/summary.json",
+        "experiments/primary/cases/c9c07ddf002cc596e0e3/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 1923.2591408222677,
+        "min": 1914.8796575342465,
+        "max": 1940.01810739831
+      },
+      "decision_eur": {
+        "mean": 1414.834483288021,
+        "min": 1406.455,
+        "max": 1431.593449864063
+      },
+      "contribution_eur": {
+        "mean": -1124.834483288021,
+        "min": -1141.593449864063,
+        "max": -1116.455
+      },
+      "service_allocated_eur": {
+        "mean": 1182.7397260273974,
+        "min": 1182.7397260273974,
+        "max": 1182.7397260273974
+      },
+      "fault_hours": {
+        "mean": 19.333333333333332,
+        "min": 8,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18730.90989315766,
+        "min": 18717.788740147906,
+        "max": 18757.152199177162
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "human-only",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/592f3ff468552f4295ca/summary.json",
+        "experiments/primary/cases/06d39ab5d27e5a6d304c/summary.json",
+        "experiments/primary/cases/70a4bd83c4dff0c8042a/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 1920.5194147948705,
+        "min": 1912.1399315068493,
+        "max": 1937.2783813709127
+      },
+      "decision_eur": {
+        "mean": 1414.834483288021,
+        "min": 1406.455,
+        "max": 1431.593449864063
+      },
+      "contribution_eur": {
+        "mean": -1124.834483288021,
+        "min": -1141.593449864063,
+        "max": -1116.455
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 18.666666666666668,
+        "min": 7,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18731.15989315766,
+        "min": 18718.038740147906,
+        "max": 18757.402199177162
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "mobile-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/f0bc647881d767890203/summary.json",
+        "experiments/primary/cases/175caa75070ceab18553/summary.json",
+        "experiments/primary/cases/c5207ec1a5f79e9501ca/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 2003.6016065756924,
+        "min": 1995.2221232876711,
+        "max": 2020.3605731517346
+      },
+      "decision_eur": {
+        "mean": 1419.334483288021,
+        "min": 1410.955,
+        "max": 1436.093449864063
+      },
+      "contribution_eur": {
+        "mean": -1129.334483288021,
+        "min": -1146.093449864063,
+        "max": -1120.955
+      },
+      "service_allocated_eur": {
+        "mean": 1263.082191780822,
+        "min": 1263.082191780822,
+        "max": 1263.082191780822
+      },
+      "fault_hours": {
+        "mean": 20,
+        "min": 9,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18728.259893157658,
+        "min": 18715.138740147904,
+        "max": 18754.50219917716
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "no-service",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/c647ac5b60e1a63e05ba/summary.json",
+        "experiments/primary/cases/d1d8560cc679a3c9889e/summary.json",
+        "experiments/primary/cases/bb069e19e52c65f40063/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 757.2824477549079,
+        "min": 757.2783813709127,
+        "max": 757.2851811751773
+      },
+      "decision_eur": {
+        "mean": 251.59751624805818,
+        "min": 251.59344986406296,
+        "max": 251.60024966832756
+      },
+      "contribution_eur": {
+        "mean": 38.40248375194182,
+        "min": 38.399750331672436,
+        "max": 38.40655013593704
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 42,
+        "min": 42,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18794.80160476162,
+        "min": 18793.053487147467,
+        "max": 18797.402199177162
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.33158427975071,
+        "min": 59.28430074492263,
+        "max": 59.36336823637163
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "fixed-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/1bc9a6a5f78b8362abba/summary.json",
+        "experiments/primary/cases/ac989eb1da412486c4e8/summary.json",
+        "experiments/primary/cases/328c7aa89b97e5b625ee/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 738.3495205479452,
+        "min": 738.3495205479452,
+        "max": 738.3495205479452
+      },
+      "decision_eur": {
+        "mean": 228.5549999999999,
+        "min": 228.55499999999986,
+        "max": 228.5549999999999
+      },
+      "contribution_eur": {
+        "mean": 61.445000000000114,
+        "min": 61.44500000000011,
+        "max": 61.445000000000135
+      },
+      "service_allocated_eur": {
+        "mean": 4.109589041095891,
+        "min": 4.109589041095891,
+        "max": 4.109589041095891
+      },
+      "fault_hours": {
+        "mean": 4,
+        "min": 4,
+        "max": 4
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18677.738740147906,
+        "min": 18677.738740147906,
+        "max": 18677.738740147906
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "human-only",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/9161d8e1f0a52fb9a616/summary.json",
+        "experiments/primary/cases/9ee461273bc40d68c875/summary.json",
+        "experiments/primary/cases/2a711e7d0a6a70c59e10/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 1920.5194147948705,
+        "min": 1912.1399315068493,
+        "max": 1937.2783813709127
+      },
+      "decision_eur": {
+        "mean": 1414.834483288021,
+        "min": 1406.455,
+        "max": 1431.593449864063
+      },
+      "contribution_eur": {
+        "mean": -1124.834483288021,
+        "min": -1141.593449864063,
+        "max": -1116.455
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 18.666666666666668,
+        "min": 7,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18731.15989315766,
+        "min": 18718.038740147906,
+        "max": 18757.402199177162
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.76143358164087,
+        "min": 59.28430074492261,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "mobile-assisted",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/03e2bf0150c1a8e26d77/summary.json",
+        "experiments/primary/cases/5aa65dc313b029837dae/summary.json",
+        "experiments/primary/cases/34746a818407f0af6268/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 821.4832937986525,
+        "min": 820.7919863013699,
+        "max": 822.865908793218
+      },
+      "decision_eur": {
+        "mean": 235.84630749728262,
+        "min": 235.1549999999999,
+        "max": 237.22892249184807
+      },
+      "contribution_eur": {
+        "mean": 54.153692502717384,
+        "min": 52.77107750815193,
+        "max": 54.84500000000011
+      },
+      "service_allocated_eur": {
+        "mean": 84.45205479452055,
+        "min": 84.45205479452055,
+        "max": 84.45205479452055
+      },
+      "fault_hours": {
+        "mean": 5,
+        "min": 5,
+        "max": 5
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18720.647898862448,
+        "min": 18715.088740147905,
+        "max": 18731.766216291526
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0.3333333333333333,
+        "min": 0,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.89892438700838,
+        "min": 59.69677316102513,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 48,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "no-service",
+      "n": 3,
+      "case_paths": [
+        "experiments/primary/cases/2ae3f9a750cc785fd467/summary.json",
+        "experiments/primary/cases/9730bc3a7e317593c8a2/summary.json",
+        "experiments/primary/cases/e7a4d8e01e967e875dab/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 290.0,
+        "min": 290.0,
+        "max": 290.0
+      },
+      "allocated_eur": {
+        "mean": 757.2824477549079,
+        "min": 757.2783813709127,
+        "max": 757.2851811751773
+      },
+      "decision_eur": {
+        "mean": 251.59751624805818,
+        "min": 251.59344986406296,
+        "max": 251.60024966832756
+      },
+      "contribution_eur": {
+        "mean": 38.40248375194182,
+        "min": 38.399750331672436,
+        "max": 38.40655013593704
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 42,
+        "min": 42,
+        "max": 42
+      },
+      "available_dc_kwh": {
+        "mean": 31200.0,
+        "min": 31200.0,
+        "max": 31200.0
+      },
+      "curtailment_kwh": {
+        "mean": 18794.80160476162,
+        "min": 18793.053487147467,
+        "max": 18797.402199177162
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.33158427975071,
+        "min": 59.28430074492263,
+        "max": 59.36336823637163
+      },
+      "ending_co2_kg": {
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/c918fb53be8ba6e7bcfb/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3595.9502449149027,
+        "min": 3595.9502449149027,
+        "max": 3595.9502449149027
+      },
+      "decision_eur": {
+        "mean": 876.4296969696954,
+        "min": 876.4296969696954,
+        "max": 876.4296969696954
+      },
+      "contribution_eur": {
+        "mean": 287.2066666666683,
+        "min": 287.2066666666683,
+        "max": 287.2066666666683
+      },
+      "service_allocated_eur": {
+        "mean": 191.0958904109589,
+        "min": 191.0958904109589,
+        "max": 191.0958904109589
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 237600.0,
+        "min": 237600.0,
+        "max": 237600.0
+      },
+      "curtailment_kwh": {
+        "mean": 197967.61697755463,
+        "min": 197967.61697755463,
+        "max": 197967.61697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/8a947458b2e159afa92c/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3404.854354503944,
+        "min": 3404.854354503944,
+        "max": 3404.854354503944
+      },
+      "decision_eur": {
+        "mean": 876.4296969696954,
+        "min": 876.4296969696954,
+        "max": 876.4296969696954
+      },
+      "contribution_eur": {
+        "mean": 287.2066666666683,
+        "min": 287.2066666666683,
+        "max": 287.2066666666683
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 237600.0,
+        "min": 237600.0,
+        "max": 237600.0
+      },
+      "curtailment_kwh": {
+        "mean": 197979.61697755463,
+        "min": 197979.61697755463,
+        "max": 197979.61697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 1,
+      "case_paths": [
+        "experiments/portable-boundary-correction/cases/33ced8fd82929a58ae3b/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3406.5666832710667,
+        "min": 3406.5666832710667,
+        "max": 3406.5666832710667
+      },
+      "decision_eur": {
+        "mean": 876.4296969696954,
+        "min": 876.4296969696954,
+        "max": 876.4296969696954
+      },
+      "contribution_eur": {
+        "mean": 287.2066666666683,
+        "min": 287.2066666666683,
+        "max": 287.2066666666683
+      },
+      "service_allocated_eur": {
+        "mean": 1.7123287671232876,
+        "min": 1.7123287671232876,
+        "max": 1.7123287671232876
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 237600.0,
+        "min": 237600.0,
+        "max": 237600.0
+      },
+      "curtailment_kwh": {
+        "mean": 197979.61697755463,
+        "min": 197979.61697755463,
+        "max": 197979.61697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/0bd1eb86ec7a5aaf581b/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3610.9502449149027,
+        "min": 3610.9502449149027,
+        "max": 3610.9502449149027
+      },
+      "decision_eur": {
+        "mean": 895.8046969696954,
+        "min": 895.8046969696954,
+        "max": 895.8046969696954
+      },
+      "contribution_eur": {
+        "mean": 267.8316666666683,
+        "min": 267.8316666666683,
+        "max": 267.8316666666683
+      },
+      "service_allocated_eur": {
+        "mean": 206.0958904109589,
+        "min": 206.0958904109589,
+        "max": 206.0958904109589
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 236468.4,
+        "min": 236468.4,
+        "max": 236468.4
+      },
+      "curtailment_kwh": {
+        "mean": 196834.0725331102,
+        "min": 196834.0725331102,
+        "max": 196834.0725331102
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/12df21b6539cea4a670b/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3404.854354503944,
+        "min": 3404.854354503944,
+        "max": 3404.854354503944
+      },
+      "decision_eur": {
+        "mean": 876.4296969696954,
+        "min": 876.4296969696954,
+        "max": 876.4296969696954
+      },
+      "contribution_eur": {
+        "mean": 287.2066666666683,
+        "min": 287.2066666666683,
+        "max": 287.2066666666683
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 216000.0,
+        "min": 216000.0,
+        "max": 216000.0
+      },
+      "curtailment_kwh": {
+        "mean": 176379.61697755463,
+        "min": 176379.61697755463,
+        "max": 176379.61697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "1000",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 1,
+      "case_paths": [
+        "experiments/portable-boundary-correction/cases/96ccc1fdabca4226e01c/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 5641.656683271067,
+        "min": 5641.656683271067,
+        "max": 5641.656683271067
+      },
+      "decision_eur": {
+        "mean": 3111.5196969696954,
+        "min": 3111.5196969696954,
+        "max": 3111.5196969696954
+      },
+      "contribution_eur": {
+        "mean": -1947.8833333333316,
+        "min": -1947.8833333333316,
+        "max": -1947.8833333333316
+      },
+      "service_allocated_eur": {
+        "mean": 2236.802328767123,
+        "min": 2236.802328767123,
+        "max": 2236.802328767123
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 236538.0,
+        "min": 236538.0,
+        "max": 236538.0
+      },
+      "curtailment_kwh": {
+        "mean": 196915.11697755463,
+        "min": 196915.11697755463,
+        "max": 196915.11697755463
+      },
+      "human_visits": {
+        "mean": 3,
+        "min": 3,
+        "max": 3
+      },
+      "crew_hours": {
+        "mean": 13.25,
+        "min": 13.25,
+        "max": 13.25
+      },
+      "travel_hours": {
+        "mean": 6.0,
+        "min": 6.0,
+        "max": 6.0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": 1.4210854715202004e-14,
+        "min": 1.4210854715202004e-14,
+        "max": 1.4210854715202004e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/f424dace590f3ad208c1/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3612.7502449149024,
+        "min": 3612.7502449149024,
+        "max": 3612.7502449149024
+      },
+      "decision_eur": {
+        "mean": 922.6328702122622,
+        "min": 922.6328702122622,
+        "max": 922.6328702122622
+      },
+      "contribution_eur": {
+        "mean": 241.00349342410152,
+        "min": 241.00349342410152,
+        "max": 241.00349342410152
+      },
+      "service_allocated_eur": {
+        "mean": 191.0958904109589,
+        "min": 191.0958904109589,
+        "max": 191.0958904109589
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 71280.0,
+        "min": 71280.0,
+        "max": 71280.0
+      },
+      "curtailment_kwh": {
+        "mean": 31618.742164307943,
+        "min": 31618.742164307943,
+        "max": 31618.742164307943
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -7.105427357601002e-15,
+        "min": -7.105427357601002e-15,
+        "max": -7.105427357601002e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/a40d4688f2189ab13e64/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3421.6543545039435,
+        "min": 3421.6543545039435,
+        "max": 3421.6543545039435
+      },
+      "decision_eur": {
+        "mean": 922.6138965463017,
+        "min": 922.6138965463017,
+        "max": 922.6138965463017
+      },
+      "contribution_eur": {
+        "mean": 241.02246709006204,
+        "min": 241.02246709006204,
+        "max": 241.02246709006204
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 71280.0,
+        "min": 71280.0,
+        "max": 71280.0
+      },
+      "curtailment_kwh": {
+        "mean": 31630.786608752387,
+        "min": 31630.786608752387,
+        "max": 31630.786608752387
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -7.105427357601002e-15,
+        "min": -7.105427357601002e-15,
+        "max": -7.105427357601002e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.01",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 1,
+      "case_paths": [
+        "experiments/portable-boundary-correction/cases/467cd4ea383e62274a7f/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3423.366683271067,
+        "min": 3423.366683271067,
+        "max": 3423.366683271067
+      },
+      "decision_eur": {
+        "mean": 922.6138965463017,
+        "min": 922.6138965463017,
+        "max": 922.6138965463017
+      },
+      "contribution_eur": {
+        "mean": 241.02246709006204,
+        "min": 241.02246709006204,
+        "max": 241.02246709006204
+      },
+      "service_allocated_eur": {
+        "mean": 1.7123287671232876,
+        "min": 1.7123287671232876,
+        "max": 1.7123287671232876
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 71280.0,
+        "min": 71280.0,
+        "max": 71280.0
+      },
+      "curtailment_kwh": {
+        "mean": 31630.786608752387,
+        "min": 31630.786608752387,
+        "max": 31630.786608752387
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -7.105427357601002e-15,
+        "min": -7.105427357601002e-15,
+        "max": -7.105427357601002e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "condition-cleaner",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/fd004882a79a1f55d816/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3627.7502449149024,
+        "min": 3627.7502449149024,
+        "max": 3627.7502449149024
+      },
+      "decision_eur": {
+        "mean": 942.3493961995607,
+        "min": 942.3493961995607,
+        "max": 942.3493961995607
+      },
+      "contribution_eur": {
+        "mean": 221.28696743680302,
+        "min": 221.28696743680302,
+        "max": 221.28696743680302
+      },
+      "service_allocated_eur": {
+        "mean": 206.0958904109589,
+        "min": 206.0958904109589,
+        "max": 206.0958904109589
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 70940.52,
+        "min": 70940.52,
+        "max": 70940.52
+      },
+      "curtailment_kwh": {
+        "mean": 31276.517719863503,
+        "min": 31276.517719863503,
+        "max": 31276.517719863503
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.99999999999999,
+        "min": 59.99999999999999,
+        "max": 59.99999999999999
+      },
+      "ending_co2_kg": {
+        "mean": 3.197442310920451e-14,
+        "min": 3.197442310920451e-14,
+        "max": 3.197442310920451e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "no-cleaning",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/66140db825b2bdc5d6e3/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3430.0543545039436,
+        "min": 3430.0543545039436,
+        "max": 3430.0543545039436
+      },
+      "decision_eur": {
+        "mean": 1000.1278847747441,
+        "min": 1000.1278847747441,
+        "max": 1000.1278847747441
+      },
+      "contribution_eur": {
+        "mean": 163.50847886161966,
+        "min": 163.50847886161966,
+        "max": 163.50847886161966
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 64800.000000000015,
+        "min": 64800.000000000015,
+        "max": 64800.000000000015
+      },
+      "curtailment_kwh": {
+        "mean": 24988.892074693194,
+        "min": 24988.892074693194,
+        "max": 24988.892074693194
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 59.99999999999999,
+        "min": 59.99999999999999,
+        "max": 59.99999999999999
+      },
+      "ending_co2_kg": {
+        "mean": 3.197442310920451e-14,
+        "min": 3.197442310920451e-14,
+        "max": 3.197442310920451e-14
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "cleaning",
+      "power": "300",
+      "soil": "0.1",
+      "condition": "",
+      "arm": "portable-wet",
+      "n": 1,
+      "case_paths": [
+        "experiments/portable-boundary-correction/cases/32bbc43bd03bf36121e0/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 5660.5566832710665,
+        "min": 5660.5566832710665,
+        "max": 5660.5566832710665
+      },
+      "decision_eur": {
+        "mean": 3159.803896546302,
+        "min": 3159.803896546302,
+        "max": 3159.803896546302
+      },
+      "contribution_eur": {
+        "mean": -1996.1675329099382,
+        "min": -1996.1675329099382,
+        "max": -1996.1675329099382
+      },
+      "service_allocated_eur": {
+        "mean": 2236.802328767123,
+        "min": 2236.802328767123,
+        "max": 2236.802328767123
+      },
+      "fault_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "available_dc_kwh": {
+        "mean": 70961.4,
+        "min": 70961.4,
+        "max": 70961.4
+      },
+      "curtailment_kwh": {
+        "mean": 31309.68660875239,
+        "min": 31309.68660875239,
+        "max": 31309.68660875239
+      },
+      "human_visits": {
+        "mean": 3,
+        "min": 3,
+        "max": 3
+      },
+      "crew_hours": {
+        "mean": 13.25,
+        "min": 13.25,
+        "max": 13.25
+      },
+      "travel_hours": {
+        "mean": 6.0,
+        "min": 6.0,
+        "max": 6.0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -7.105427357601002e-15,
+        "min": -7.105427357601002e-15,
+        "max": -7.105427357601002e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "fixed-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/b322203f6ee4642a62e9/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3429.602299709423,
+        "min": 3429.602299709423,
+        "max": 3429.602299709423
+      },
+      "decision_eur": {
+        "mean": 880.6296969696955,
+        "min": 880.6296969696955,
+        "max": 880.6296969696955
+      },
+      "contribution_eur": {
+        "mean": 283.00666666666825,
+        "min": 283.00666666666825,
+        "max": 283.00666666666825
+      },
+      "service_allocated_eur": {
+        "mean": 20.54794520547945,
+        "min": 20.54794520547945,
+        "max": 20.54794520547945
+      },
+      "fault_hours": {
+        "mean": 4,
+        "min": 4,
+        "max": 4
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116339.31697755464,
+        "min": 116339.31697755464,
+        "max": 116339.31697755464
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "human-only",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/c2d6e7aa8c3ddc55127d/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3476.058012832464,
+        "min": 3476.058012832464,
+        "max": 3476.058012832464
+      },
+      "decision_eur": {
+        "mean": 947.6333552982194,
+        "min": 947.6333552982194,
+        "max": 947.6333552982194
+      },
+      "contribution_eur": {
+        "mean": 216.00300833814435,
+        "min": 216.00300833814435,
+        "max": 216.00300833814435
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116545.18432559393,
+        "min": 116545.18432559393,
+        "max": 116545.18432559393
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "mobile-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/832f0a1811a229bcbfb0/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3833.414628476546,
+        "min": 3833.414628476546,
+        "max": 3833.414628476546
+      },
+      "decision_eur": {
+        "mean": 887.2296969696954,
+        "min": 887.2296969696954,
+        "max": 887.2296969696954
+      },
+      "contribution_eur": {
+        "mean": 276.40666666666834,
+        "min": 276.40666666666834,
+        "max": 276.40666666666834
+      },
+      "service_allocated_eur": {
+        "mean": 422.2602739726027,
+        "min": 422.2602739726027,
+        "max": 422.2602739726027
+      },
+      "fault_hours": {
+        "mean": 5,
+        "min": 5,
+        "max": 5
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116367.06697755463,
+        "min": 116367.06697755463,
+        "max": 116367.06697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "crew-unavailable",
+      "arm": "no-service",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/8efa7200fc7408d82eae/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3476.058012832464,
+        "min": 3476.058012832464,
+        "max": 3476.058012832464
+      },
+      "decision_eur": {
+        "mean": 947.6333552982194,
+        "min": 947.6333552982194,
+        "max": 947.6333552982194
+      },
+      "contribution_eur": {
+        "mean": 216.00300833814435,
+        "min": 216.00300833814435,
+        "max": 216.00300833814435
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116545.18432559393,
+        "min": 116545.18432559393,
+        "max": 116545.18432559393
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "fixed-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/451b85eb9e174cae1c52/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 4676.605958037943,
+        "min": 4676.605958037943,
+        "max": 4676.605958037943
+      },
+      "decision_eur": {
+        "mean": 2127.6333552982196,
+        "min": 2127.6333552982196,
+        "max": 2127.6333552982196
+      },
+      "contribution_eur": {
+        "mean": -963.9969916618559,
+        "min": -963.9969916618559,
+        "max": -963.9969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1200.5479452054794,
+        "min": 1200.5479452054794,
+        "max": 1200.5479452054794
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116504.93432559393,
+        "min": 116504.93432559393,
+        "max": 116504.93432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "human-only",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/875dc5840249e878a3d9/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 4656.058012832464,
+        "min": 4656.058012832464,
+        "max": 4656.058012832464
+      },
+      "decision_eur": {
+        "mean": 2127.6333552982196,
+        "min": 2127.6333552982196,
+        "max": 2127.6333552982196
+      },
+      "contribution_eur": {
+        "mean": -963.9969916618559,
+        "min": -963.9969916618559,
+        "max": -963.9969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116505.18432559393,
+        "min": 116505.18432559393,
+        "max": 116505.18432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "mobile-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/078c5da90dcdbe59d1ff/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 5078.318286805066,
+        "min": 5078.318286805066,
+        "max": 5078.318286805066
+      },
+      "decision_eur": {
+        "mean": 2132.1333552982196,
+        "min": 2132.1333552982196,
+        "max": 2132.1333552982196
+      },
+      "contribution_eur": {
+        "mean": -968.4969916618559,
+        "min": -968.4969916618559,
+        "max": -968.4969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1602.2602739726028,
+        "min": 1602.2602739726028,
+        "max": 1602.2602739726028
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116492.68432559393,
+        "min": 116492.68432559393,
+        "max": 116492.68432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "equipment-damage",
+      "arm": "no-service",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/29d89fcbfc3a36b39265/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3476.058012832464,
+        "min": 3476.058012832464,
+        "max": 3476.058012832464
+      },
+      "decision_eur": {
+        "mean": 947.6333552982194,
+        "min": 947.6333552982194,
+        "max": 947.6333552982194
+      },
+      "contribution_eur": {
+        "mean": 216.00300833814435,
+        "min": 216.00300833814435,
+        "max": 216.00300833814435
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116545.18432559393,
+        "min": 116545.18432559393,
+        "max": 116545.18432559393
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "fixed-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/6d1c4b30e7101f71c8b2/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 4669.75664296945,
+        "min": 4669.75664296945,
+        "max": 4669.75664296945
+      },
+      "decision_eur": {
+        "mean": 2127.6333552982196,
+        "min": 2127.6333552982196,
+        "max": 2127.6333552982196
+      },
+      "contribution_eur": {
+        "mean": -963.9969916618559,
+        "min": -963.9969916618559,
+        "max": -963.9969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1193.6986301369861,
+        "min": 1193.6986301369861,
+        "max": 1193.6986301369861
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116504.93432559393,
+        "min": 116504.93432559393,
+        "max": 116504.93432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "human-only",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/0d9ff8cf006b9ed7e3d8/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 4656.058012832464,
+        "min": 4656.058012832464,
+        "max": 4656.058012832464
+      },
+      "decision_eur": {
+        "mean": 2127.6333552982196,
+        "min": 2127.6333552982196,
+        "max": 2127.6333552982196
+      },
+      "contribution_eur": {
+        "mean": -963.9969916618559,
+        "min": -963.9969916618559,
+        "max": -963.9969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116505.18432559393,
+        "min": 116505.18432559393,
+        "max": 116505.18432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "mobile-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/07c39113ce95efdccdd0/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 5071.468971736574,
+        "min": 5071.468971736574,
+        "max": 5071.468971736574
+      },
+      "decision_eur": {
+        "mean": 2132.1333552982196,
+        "min": 2132.1333552982196,
+        "max": 2132.1333552982196
+      },
+      "contribution_eur": {
+        "mean": -968.4969916618559,
+        "min": -968.4969916618559,
+        "max": -968.4969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1595.4109589041095,
+        "min": 1595.4109589041095,
+        "max": 1595.4109589041095
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116492.68432559393,
+        "min": 116492.68432559393,
+        "max": 116492.68432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "reset-unavailable",
+      "arm": "no-service",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/a03b8db011c0b2bcde2c/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3476.058012832464,
+        "min": 3476.058012832464,
+        "max": 3476.058012832464
+      },
+      "decision_eur": {
+        "mean": 947.6333552982194,
+        "min": 947.6333552982194,
+        "max": 947.6333552982194
+      },
+      "contribution_eur": {
+        "mean": 216.00300833814435,
+        "min": 216.00300833814435,
+        "max": 216.00300833814435
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116545.18432559393,
+        "min": 116545.18432559393,
+        "max": 116545.18432559393
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "fixed-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/81df39d3676a29f35b42/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3429.602299709423,
+        "min": 3429.602299709423,
+        "max": 3429.602299709423
+      },
+      "decision_eur": {
+        "mean": 880.6296969696955,
+        "min": 880.6296969696955,
+        "max": 880.6296969696955
+      },
+      "contribution_eur": {
+        "mean": 283.00666666666825,
+        "min": 283.00666666666825,
+        "max": 283.00666666666825
+      },
+      "service_allocated_eur": {
+        "mean": 20.54794520547945,
+        "min": 20.54794520547945,
+        "max": 20.54794520547945
+      },
+      "fault_hours": {
+        "mean": 4,
+        "min": 4,
+        "max": 4
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116339.31697755464,
+        "min": 116339.31697755464,
+        "max": 116339.31697755464
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "human-only",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/e1c9eb23d1a373cc8e8e/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 4656.058012832464,
+        "min": 4656.058012832464,
+        "max": 4656.058012832464
+      },
+      "decision_eur": {
+        "mean": 2127.6333552982196,
+        "min": 2127.6333552982196,
+        "max": 2127.6333552982196
+      },
+      "contribution_eur": {
+        "mean": -963.9969916618559,
+        "min": -963.9969916618559,
+        "max": -963.9969916618559
+      },
+      "service_allocated_eur": {
+        "mean": 1180.0,
+        "min": 1180.0,
+        "max": 1180.0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116505.18432559393,
+        "min": 116505.18432559393,
+        "max": 116505.18432559393
+      },
+      "human_visits": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "crew_hours": {
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25
+      },
+      "travel_hours": {
+        "mean": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "unresolved": {
+        "mean": 1,
+        "min": 1,
+        "max": 1
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "mobile-assisted",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/1d1ab4259b598224ebe9/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3833.414628476546,
+        "min": 3833.414628476546,
+        "max": 3833.414628476546
+      },
+      "decision_eur": {
+        "mean": 887.2296969696954,
+        "min": 887.2296969696954,
+        "max": 887.2296969696954
+      },
+      "contribution_eur": {
+        "mean": 276.40666666666834,
+        "min": 276.40666666666834,
+        "max": 276.40666666666834
+      },
+      "service_allocated_eur": {
+        "mean": 422.2602739726027,
+        "min": 422.2602739726027,
+        "max": 422.2602739726027
+      },
+      "fault_hours": {
+        "mean": 5,
+        "min": 5,
+        "max": 5
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116367.06697755463,
+        "min": 116367.06697755463,
+        "max": 116367.06697755463
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 60.0,
+        "min": 60.0,
+        "max": 60.0
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    },
+    {
+      "hours": 240,
+      "family": "recovery",
+      "power": "650",
+      "soil": "None",
+      "condition": "resettable-trip",
+      "arm": "no-service",
+      "n": 1,
+      "case_paths": [
+        "experiments/boundary/cases/bbb6e0fa3fbf3d54a9fb/summary.json"
+      ],
+      "methane_kg": {
+        "mean": 1163.6363636363637,
+        "min": 1163.6363636363637,
+        "max": 1163.6363636363637
+      },
+      "allocated_eur": {
+        "mean": 3476.058012832464,
+        "min": 3476.058012832464,
+        "max": 3476.058012832464
+      },
+      "decision_eur": {
+        "mean": 947.6333552982194,
+        "min": 947.6333552982194,
+        "max": 947.6333552982194
+      },
+      "contribution_eur": {
+        "mean": 216.00300833814435,
+        "min": 216.00300833814435,
+        "max": 216.00300833814435
+      },
+      "service_allocated_eur": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fault_hours": {
+        "mean": 234,
+        "min": 234,
+        "max": 234
+      },
+      "available_dc_kwh": {
+        "mean": 156000.0,
+        "min": 156000.0,
+        "max": 156000.0
+      },
+      "curtailment_kwh": {
+        "mean": 116545.18432559393,
+        "min": 116545.18432559393,
+        "max": 116545.18432559393
+      },
+      "human_visits": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "crew_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "travel_hours": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "unresolved": {
+        "mean": 0,
+        "min": 0,
+        "max": 0
+      },
+      "ending_battery_kwh": {
+        "mean": 800.0,
+        "min": 800.0,
+        "max": 800.0
+      },
+      "ending_h2_kg": {
+        "mean": 57.71695730837658,
+        "min": 57.71695730837658,
+        "max": 57.71695730837658
+      },
+      "ending_co2_kg": {
+        "mean": -3.552713678800501e-15,
+        "min": -3.552713678800501e-15,
+        "max": -3.552713678800501e-15
+      },
+      "ending_temperature_c": {
+        "mean": 255.0,
+        "min": 255.0,
+        "max": 255.0
+      }
+    }
+  ],
+  "matched_differences": [
+    {
+      "case": "experiments/primary/cases/c544781efecf1cb27eef/summary.json",
+      "baseline": "experiments/primary/cases/250c25fd38d177c9f0df/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2.2284868919086875e-06,
+      "delta_allocated_cost_eur": 38.219180310678894,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/5916bd0f263edd728915/summary.json",
+      "baseline": "experiments/primary/cases/435ed6c152a0993bbd83/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 10.895137965124889,
+      "delta_allocated_cost_eur": 47.05952152676866,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/5080cb90e45d2e10f157/summary.json",
+      "baseline": "experiments/primary/cases/4c4b9b78255c3042c81a/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 38.219178082191775,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/a54b86954764624a25d2/summary.json",
+      "baseline": "experiments/primary/cases/ff5674a861e4af372b73/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 19.375,
+      "delta_allocated_cost_eur": 55.53938356164383,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/9161d8e1f0a52fb9a616/summary.json",
+      "baseline": "experiments/primary/cases/2ae3f9a750cc785fd467/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0,
+      "delta_allocated_cost_eur": 1180.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/1bc9a6a5f78b8362abba/summary.json",
+      "baseline": "experiments/primary/cases/2ae3f9a750cc785fd467/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.038449864063068,
+      "delta_allocated_cost_eur": -18.928860822967522,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/03e2bf0150c1a8e26d77/summary.json",
+      "baseline": "experiments/primary/cases/2ae3f9a750cc785fd467/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -16.438449864063074,
+      "delta_allocated_cost_eur": 63.51360493045718,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/2c07fd56fdc0717d13c1/summary.json",
+      "baseline": "experiments/primary/cases/70486333326b348697e3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0,
+      "delta_allocated_cost_eur": 1180.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/52c778cc6b3e683fc836/summary.json",
+      "baseline": "experiments/primary/cases/70486333326b348697e3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0,
+      "delta_allocated_cost_eur": 1184.109589041096,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/557c2eb2717b5d8bf313/summary.json",
+      "baseline": "experiments/primary/cases/70486333326b348697e3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1184.5,
+      "delta_allocated_cost_eur": 1264.4520547945206,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/592f3ff468552f4295ca/summary.json",
+      "baseline": "experiments/primary/cases/c647ac5b60e1a63e05ba/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0,
+      "delta_allocated_cost_eur": 1180.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/73cc9feae47226cbcec7/summary.json",
+      "baseline": "experiments/primary/cases/c647ac5b60e1a63e05ba/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0,
+      "delta_allocated_cost_eur": 1182.7397260273972,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/f0bc647881d767890203/summary.json",
+      "baseline": "experiments/primary/cases/c647ac5b60e1a63e05ba/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1184.5,
+      "delta_allocated_cost_eur": 1263.0821917808219,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/3e3e67012f354aade1e1/summary.json",
+      "baseline": "experiments/primary/cases/d0f946c6c15e3dce62e2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/02c7f395d54952fb5a30/summary.json",
+      "baseline": "experiments/primary/cases/d0f946c6c15e3dce62e2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.038449864063068,
+      "delta_allocated_cost_eur": -18.928860822967522,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/d18b6987a3035e5d743f/summary.json",
+      "baseline": "experiments/primary/cases/d0f946c6c15e3dce62e2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -16.438449864063074,
+      "delta_allocated_cost_eur": 63.51360493045718,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/e04f83b86a2ca128f4e2/summary.json",
+      "baseline": "experiments/primary/cases/db2f260ecb8f99f0c0d3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1.535902015348256e-06,
+      "delta_allocated_cost_eur": 38.21917961809402,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/497d48eb367f3131e913/summary.json",
+      "baseline": "experiments/primary/cases/a517203c8f6d4a8bb3a5/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 10.89505852218258,
+      "delta_allocated_cost_eur": 47.0594420838263,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/168577917fbc132007b4/summary.json",
+      "baseline": "experiments/primary/cases/9b54bc158f0794e23a26/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 38.219178082191775,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/e583732963ec6cac7f6a/summary.json",
+      "baseline": "experiments/primary/cases/7d7a5c7ecf3b15acbb28/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 19.375,
+      "delta_allocated_cost_eur": 55.53938356164383,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/9ee461273bc40d68c875/summary.json",
+      "baseline": "experiments/primary/cases/9730bc3a7e317593c8a2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.856150788216,
+      "delta_allocated_cost_eur": 1154.8561507882155,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/ac989eb1da412486c4e8/summary.json",
+      "baseline": "experiments/primary/cases/9730bc3a7e317593c8a2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.043849211784107,
+      "delta_allocated_cost_eur": -18.934260170688503,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/5aa65dc313b029837dae/summary.json",
+      "baseline": "experiments/primary/cases/9730bc3a7e317593c8a2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -14.369926719935933,
+      "delta_allocated_cost_eur": 65.58212807458426,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/c5734e4738962e4f6a27/summary.json",
+      "baseline": "experiments/primary/cases/05f8491b846e227093e7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.856150788216,
+      "delta_allocated_cost_eur": 1154.8561507882155,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/1923cf87c757ce0b846f/summary.json",
+      "baseline": "experiments/primary/cases/05f8491b846e227093e7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.856150788216,
+      "delta_allocated_cost_eur": 1158.9657398293116,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/fc41d960c555ca480f12/summary.json",
+      "baseline": "experiments/primary/cases/05f8491b846e227093e7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1159.356150788216,
+      "delta_allocated_cost_eur": 1239.3082055827363,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/06d39ab5d27e5a6d304c/summary.json",
+      "baseline": "experiments/primary/cases/d1d8560cc679a3c9889e/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.856150788216,
+      "delta_allocated_cost_eur": 1154.8561507882155,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/563472f1af7347ede5f9/summary.json",
+      "baseline": "experiments/primary/cases/d1d8560cc679a3c9889e/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.856150788216,
+      "delta_allocated_cost_eur": 1157.5958768156129,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/175caa75070ceab18553/summary.json",
+      "baseline": "experiments/primary/cases/d1d8560cc679a3c9889e/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1159.356150788216,
+      "delta_allocated_cost_eur": 1237.9383425690376,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/67b61e71f16fda151f73/summary.json",
+      "baseline": "experiments/primary/cases/9cae592690eaef79bca7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/66ec04deb82f5bf9cd64/summary.json",
+      "baseline": "experiments/primary/cases/9cae592690eaef79bca7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.043849211784107,
+      "delta_allocated_cost_eur": -18.934260170688503,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/2410022932d8fbe6dd3a/summary.json",
+      "baseline": "experiments/primary/cases/9cae592690eaef79bca7/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -14.369926719935933,
+      "delta_allocated_cost_eur": 65.58212807458426,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/078e844b85dbdb333dc1/summary.json",
+      "baseline": "experiments/primary/cases/e4f2a0fcf353e87062a5/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 5.684341886080802e-14,
+      "delta_allocated_cost_eur": 38.219178082191775,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/11e7fadcf99d66948ec1/summary.json",
+      "baseline": "experiments/primary/cases/7861e82e28b2a70c64a1/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 8.697607974058371,
+      "delta_allocated_cost_eur": 44.86199153570226,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/bc39fcb1fe8eb6dd27cd/summary.json",
+      "baseline": "experiments/primary/cases/133b79aa80e907f7206c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 38.219178082191775,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/580ff708ec3a2b573054/summary.json",
+      "baseline": "experiments/primary/cases/ad0e57180da53a1ffeb2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 19.375,
+      "delta_allocated_cost_eur": 55.53938356164383,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/2a711e7d0a6a70c59e10/summary.json",
+      "baseline": "experiments/primary/cases/e7a4d8e01e967e875dab/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.8547503316724,
+      "delta_allocated_cost_eur": 1154.854750331672,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/328c7aa89b97e5b625ee/summary.json",
+      "baseline": "experiments/primary/cases/e7a4d8e01e967e875dab/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.0452496683277,
+      "delta_allocated_cost_eur": -18.935660627232096,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/34746a818407f0af6268/summary.json",
+      "baseline": "experiments/primary/cases/e7a4d8e01e967e875dab/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -16.445249668327676,
+      "delta_allocated_cost_eur": 63.5068051261926,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/514a18c3c04ae1bc49eb/summary.json",
+      "baseline": "experiments/primary/cases/57ed3c059748cf1a3a9c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.8547503316724,
+      "delta_allocated_cost_eur": 1154.854750331672,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/49d22f30dd67223d893f/summary.json",
+      "baseline": "experiments/primary/cases/57ed3c059748cf1a3a9c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.8547503316724,
+      "delta_allocated_cost_eur": 1158.9643393727679,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/5a7b2bcdb41a76e592f7/summary.json",
+      "baseline": "experiments/primary/cases/57ed3c059748cf1a3a9c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1159.3547503316724,
+      "delta_allocated_cost_eur": 1239.3068051261926,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/70a4bd83c4dff0c8042a/summary.json",
+      "baseline": "experiments/primary/cases/bb069e19e52c65f40063/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.8547503316724,
+      "delta_allocated_cost_eur": 1154.854750331672,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/c9c07ddf002cc596e0e3/summary.json",
+      "baseline": "experiments/primary/cases/bb069e19e52c65f40063/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1154.8547503316724,
+      "delta_allocated_cost_eur": 1157.5944763590692,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/c5207ec1a5f79e9501ca/summary.json",
+      "baseline": "experiments/primary/cases/bb069e19e52c65f40063/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1159.3547503316724,
+      "delta_allocated_cost_eur": 1237.9369421124939,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/f21239e50846916113c6/summary.json",
+      "baseline": "experiments/primary/cases/dba9a72191802e703b2d/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/1a7d25fc71e9887af67a/summary.json",
+      "baseline": "experiments/primary/cases/dba9a72191802e703b2d/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -23.0452496683277,
+      "delta_allocated_cost_eur": -18.935660627232096,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/primary/cases/9970473109578988e432/summary.json",
+      "baseline": "experiments/primary/cases/dba9a72191802e703b2d/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -16.445249668327676,
+      "delta_allocated_cost_eur": 63.5068051261926,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/f424dace590f3ad208c1/summary.json",
+      "baseline": "experiments/boundary/cases/a40d4688f2189ab13e64/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.018973665960515973,
+      "delta_allocated_cost_eur": 191.09589041095887,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/fd004882a79a1f55d816/summary.json",
+      "baseline": "experiments/boundary/cases/66140db825b2bdc5d6e3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -57.77848857518336,
+      "delta_allocated_cost_eur": 197.69589041095878,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/c918fb53be8ba6e7bcfb/summary.json",
+      "baseline": "experiments/boundary/cases/8a947458b2e159afa92c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 191.09589041095887,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/0bd1eb86ec7a5aaf581b/summary.json",
+      "baseline": "experiments/boundary/cases/12df21b6539cea4a670b/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 19.375,
+      "delta_allocated_cost_eur": 206.09589041095887,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/e1c9eb23d1a373cc8e8e/summary.json",
+      "baseline": "experiments/boundary/cases/bbb6e0fa3fbf3d54a9fb/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0000000000002,
+      "delta_allocated_cost_eur": 1179.9999999999995,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/81df39d3676a29f35b42/summary.json",
+      "baseline": "experiments/boundary/cases/bbb6e0fa3fbf3d54a9fb/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -67.0036583285239,
+      "delta_allocated_cost_eur": -46.45571312304128,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/1d1ab4259b598224ebe9/summary.json",
+      "baseline": "experiments/boundary/cases/bbb6e0fa3fbf3d54a9fb/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -60.40365832852399,
+      "delta_allocated_cost_eur": 357.356615644082,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/875dc5840249e878a3d9/summary.json",
+      "baseline": "experiments/boundary/cases/29d89fcbfc3a36b39265/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0000000000002,
+      "delta_allocated_cost_eur": 1179.9999999999995,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/451b85eb9e174cae1c52/summary.json",
+      "baseline": "experiments/boundary/cases/29d89fcbfc3a36b39265/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0000000000002,
+      "delta_allocated_cost_eur": 1200.5479452054792,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/078c5da90dcdbe59d1ff/summary.json",
+      "baseline": "experiments/boundary/cases/29d89fcbfc3a36b39265/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1184.5000000000002,
+      "delta_allocated_cost_eur": 1602.2602739726021,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/0d9ff8cf006b9ed7e3d8/summary.json",
+      "baseline": "experiments/boundary/cases/a03b8db011c0b2bcde2c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0000000000002,
+      "delta_allocated_cost_eur": 1179.9999999999995,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/6d1c4b30e7101f71c8b2/summary.json",
+      "baseline": "experiments/boundary/cases/a03b8db011c0b2bcde2c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1180.0000000000002,
+      "delta_allocated_cost_eur": 1193.6986301369857,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/07c39113ce95efdccdd0/summary.json",
+      "baseline": "experiments/boundary/cases/a03b8db011c0b2bcde2c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 1184.5000000000002,
+      "delta_allocated_cost_eur": 1595.4109589041095,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/c2d6e7aa8c3ddc55127d/summary.json",
+      "baseline": "experiments/boundary/cases/8efa7200fc7408d82eae/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.0,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/b322203f6ee4642a62e9/summary.json",
+      "baseline": "experiments/boundary/cases/8efa7200fc7408d82eae/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -67.0036583285239,
+      "delta_allocated_cost_eur": -46.45571312304128,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/boundary/cases/832f0a1811a229bcbfb0/summary.json",
+      "baseline": "experiments/boundary/cases/8efa7200fc7408d82eae/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": -60.40365832852399,
+      "delta_allocated_cost_eur": 357.356615644082,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/4fc83998d236847ea277/summary.json",
+      "baseline": "experiments/primary/cases/250c25fd38d177c9f0df/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/09e7d392f5d93008547b/summary.json",
+      "baseline": "experiments/primary/cases/435ed6c152a0993bbd83/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2228.776844452557,
+      "delta_allocated_cost_eur": 2229.1193102059815,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/889e029797ceaa26270e/summary.json",
+      "baseline": "experiments/primary/cases/4c4b9b78255c3042c81a/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/4b9037e0d2c369628a6c/summary.json",
+      "baseline": "experiments/primary/cases/ff5674a861e4af372b73/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2235.09,
+      "delta_allocated_cost_eur": 2235.4324657534244,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/42c129983c51d62144e1/summary.json",
+      "baseline": "experiments/primary/cases/db2f260ecb8f99f0c0d3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/e9d95c3402f9b3bbb5b0/summary.json",
+      "baseline": "experiments/primary/cases/a517203c8f6d4a8bb3a5/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2228.7900000000004,
+      "delta_allocated_cost_eur": 2229.1324657534246,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/628a2cd5e4e0f270f583/summary.json",
+      "baseline": "experiments/primary/cases/9b54bc158f0794e23a26/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/f22e23648f477292b75a/summary.json",
+      "baseline": "experiments/primary/cases/7d7a5c7ecf3b15acbb28/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2235.09,
+      "delta_allocated_cost_eur": 2235.4324657534244,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/f230b57929655f1236ea/summary.json",
+      "baseline": "experiments/primary/cases/e4f2a0fcf353e87062a5/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/1c9136a13a13eb1d6993/summary.json",
+      "baseline": "experiments/primary/cases/7861e82e28b2a70c64a1/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2920.078257701707,
+      "delta_allocated_cost_eur": 2920.4207234551313,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/edb853c29d983a0dd1bc/summary.json",
+      "baseline": "experiments/primary/cases/133b79aa80e907f7206c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 0.3424657534246762,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-correction/cases/71e11ea6d1f2ebeeebd6/summary.json",
+      "baseline": "experiments/primary/cases/ad0e57180da53a1ffeb2/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2926.3700000000003,
+      "delta_allocated_cost_eur": 2926.712465753425,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-boundary-correction/cases/467cd4ea383e62274a7f/summary.json",
+      "baseline": "experiments/boundary/cases/a40d4688f2189ab13e64/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 1.7123287671233811,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-boundary-correction/cases/32bbc43bd03bf36121e0/summary.json",
+      "baseline": "experiments/boundary/cases/66140db825b2bdc5d6e3/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2159.676011771558,
+      "delta_allocated_cost_eur": 2230.502328767123,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-boundary-correction/cases/33ced8fd82929a58ae3b/summary.json",
+      "baseline": "experiments/boundary/cases/8a947458b2e159afa92c/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 0.0,
+      "delta_allocated_cost_eur": 1.7123287671229264,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    },
+    {
+      "case": "experiments/portable-boundary-correction/cases/96ccc1fdabca4226e01c/summary.json",
+      "baseline": "experiments/boundary/cases/12df21b6539cea4a670b/summary.json",
+      "delta_methane_kg": 0.0,
+      "delta_decision_cost_eur": 2235.09,
+      "delta_allocated_cost_eur": 2236.802328767123,
+      "break_even_methane_eur_per_kg": null,
+      "interpretation": "No additional methane in this trace; no finite positive-output methane-price break-even"
+    }
+  ]
+}

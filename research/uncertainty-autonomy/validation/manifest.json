@@ -1,0 +1,28 @@
+{
+  "source": "27f2ae324b6647517cadcc4c44b015632e406fdf3bdb7e86879159b1684c6813",
+  "python_tests": 980,
+  "renderer_tests": 72,
+  "original_illustrations": "Plant and solar screenshot checks passed unchanged in the selected browser run; that run also exposed narrow-screen overflow. The recheck after the CSS fix passed five controls/workflow tests, with one fixture-dependent execution test skipped.",
+  "documentation": "Bindings, generated engineering documentation, component catalogue and taxonomy passed",
+  "lint": "methane, tests, app.py and the two authored report/design scripts passed. Legacy ad-hoc research scripts were not brought under this scope.",
+  "report_visual_review": "Browser URL policy blocked the local report preview. Local HTML/link validation was used; no rendered screenshot review is claimed.",
+  "files": {
+    "python-tests.txt": "83a3ebbeb6647bb739703d1d5565790c4f4bdd8250994775ebba704091d9cc22",
+    "pytest.xml": "29c14286e447130fb1649de93688e0d7db3973631cab3341d64b712ad27777f1",
+    "source-under-test.json": "210a0cee579f440de588537c8fdebc46b0f2080dc6acbfac55f6f36eaef07c4b",
+    "renderer-tests.txt": "9277e5a61a56cc41b8107d1f6033f96a858541fafb647774a71ee1b298c4c9ae",
+    "browser-before-overflow-fix.txt": "f7813ec97ff627a9379f9c7badc230a8058fac1ef05ed91105857075c27ca545",
+    "browser-recheck.txt": "59ef07aa6ba6dbd4f48ef5994926e1b31d8b54ae9dfb0612a97770816535244b",
+    "browser-recheck.json": "f3359eb5b816579496aea7b89639c41dc9af3442396e397efc78b02e61a31754",
+    "interaction-performance.json": "26b8c6048e07d9e78442cba52025c7ba351f7b92f192f98a727bafa12edb929e"
+  },
+  "prior_full_regression": "before-hardware-clock-correction/manifest.json",
+  "additional_regression": "Retrieval/self-test execution-clock check, including a tampered timing receipt; full regression includes the new case.",
+  "final_artifact_check": {
+    "report_links": 110,
+    "current_comparison_attempts": 48,
+    "source_unchanged_since_full_regression": true,
+    "local_application": "HTTP 200 on 127.0.0.1:7860; same saved example restored",
+    "report_preview": "Browser URL policy prevented rendered preview; local HTML and relative links checked."
+  }
+}

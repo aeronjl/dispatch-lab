@@ -1,0 +1,36 @@
+{
+  "as_of": "2026-09-10",
+  "sources": 31,
+  "hardware_classes": 14,
+  "sections": 12,
+  "report_words": 7317,
+  "html_sha256": "a489081894e7b6877312b824c5bbb6f626cafef6521d846e97b157e38dac18c9",
+  "checked": {
+    "source_ids_resolve": true,
+    "all_sources_referenced": true,
+    "no_unexpanded_markers": true
+  },
+  "scope": "Report rendering and reference identity checks; not physical validation or robot qualification.",
+  "local_review_sha256": {
+    "methane/config.py": "19418cc1753266a783cdae8a53e764413cb9560760fe3c3bb9241f7bebb98985",
+    "methane/simulation.py": "e1dbc6cdf58111f7da5375bfdb50f551190fcc8ebbd5bab2dcd2f01ae1954740",
+    "methane/sensing.py": "72b71114ed287ca7d56504ea2640fa0be63337fc882d02959dfb9336f049cd25",
+    "methane/costing.py": "09f4bb731f093a79f39240049b5023654250f92865e07f1fb3ea5850878d37ac",
+    "methane/solar.py": "5143a1cb0149e8a802537c1f0487a09766c8be1db2d7dd785930fe7a8764d28c",
+    "docs/studies.md": "6ca02c2a47d5e2c5591d516e14b0b6d299c1be82d34649d5cf6ce47b17824264"
+  },
+  "visual_review": {
+    "desktop": "Reviewed; readable prose, navigation and catalogue",
+    "architecture": "Reviewed; diagram labels and relationships visible",
+    "narrow_screen": "Reviewed at 390 px; no page-wide horizontal overflow",
+    "browser_checks": "browser-verification.json",
+    "scope": "Research report only; no simulation validation was run or implied"
+  },
+  "artifacts_sha256": {
+    "report-source.md": "d04cabc02ec42e2391c58ba19421949d0646e38b1594b8fedf37507b35da127c",
+    "report.md": "84ba54c354ce95425f6fdd3fd62d40f7ec75a9b361532e0ea723cbf4a5394a25",
+    "report.html": "a489081894e7b6877312b824c5bbb6f626cafef6521d846e97b157e38dac18c9",
+    "catalogue.json": "bf426f7ca339c1b31a19a54bf8249a7e0267eb4f24f5bda0b127292325b1d5a2",
+    "sources.json": "7aa60a7ee434fe748a00f2b8df78770b8eaa8e5981ca475f137b9aea41a108b6"
+  }
+}

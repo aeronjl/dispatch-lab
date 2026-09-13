@@ -1,0 +1,412 @@
+{
+  "seed": 41,
+  "profile": "fast-cooling",
+  "config": {
+    "rng_policy": "named-channels/1",
+    "plant": {
+      "solar_kw": 1000,
+      "battery_kwh": 800,
+      "battery_c_rate": 0.5,
+      "electrolyser_kw": 450,
+      "min_load_fraction": 0.3,
+      "start_energy_kwh": 40,
+      "specific_energy_kwh_per_kg": 55,
+      "roundtrip_efficiency": 0.9,
+      "initial_soc": 0.0,
+      "dt_hours": 1.0,
+      "h2_capacity_kg": 60,
+      "initial_h2_kg": 0,
+      "co2_capacity_kg": 1000,
+      "initial_co2_kg": 500,
+      "co2_delivery_kg": 300,
+      "co2_delivery_every_hours": 24,
+      "methane_max_kgph": 10,
+      "methane_min_kgph": 3,
+      "temperature_min_c": 250,
+      "temperature_max_c": 400,
+      "thermal_capacity_kwh_per_k": 0.15,
+      "heat_loss_kw_per_k": 0.16,
+      "heater_max_kw": 60,
+      "cooling_max_kw": 40,
+      "auxiliary_kw": 2,
+      "methane_electric_kwh_per_kg": 1,
+      "cooling_electric_fraction": 0.1,
+      "minimum_run_hours": 4
+    },
+    "costs": {
+      "solar_eur_per_kw": 500,
+      "solar_years": 25,
+      "battery_eur_per_kwh": 180,
+      "battery_power_eur_per_kw": 80,
+      "battery_calendar_years": 15,
+      "battery_cycles": 4000,
+      "electrolyser_eur_per_kw": 700,
+      "stack_share": 0.4,
+      "stack_calendar_years": 15,
+      "stack_operating_hours": 60000,
+      "start_equivalent_hours": 0,
+      "other_equipment_years": 20,
+      "installation_fraction": 0.25,
+      "site_setup_eur": 50000,
+      "fixed_opex_eur_per_year": 20000,
+      "water_litres_per_kg": 12,
+      "water_eur_per_m3": 3,
+      "consumables_eur_per_kg": 0.05,
+      "repair_eur_per_incident": 500,
+      "visit_eur_per_incident": 300,
+      "methanator_eur": 200000,
+      "hydrogen_storage_eur": 60000,
+      "co2_storage_eur": 40000,
+      "methane_assets_years": 20,
+      "reactor_replaceable_share": 0.2,
+      "reactor_operating_hours": 60000,
+      "reactor_start_equivalent_hours": 2,
+      "co2_eur_per_kg": 0.15,
+      "methane_eur_per_kg": 1,
+      "cleaner_eur": 15000,
+      "rover_eur": 80000,
+      "dock_eur": 5000,
+      "field_asset_years": 8,
+      "field_replaceable_share": 0.2,
+      "cleaner_wear_eur_per_hour": 0.5,
+      "rover_wear_eur_per_hour": 2,
+      "field_maintenance_eur_per_year": 3000,
+      "cleaning_kit_eur": 5,
+      "human_service_eur_per_hour": 80,
+      "fixed_reader_eur": 3000,
+      "reset_eur": 1500,
+      "calibration_kit_eur": 100
+    },
+    "sensors": {
+      "enabled": true,
+      "noise_fraction": 0.02,
+      "discrepancy_fraction": 0.1,
+      "confirmation_hours": 2,
+      "probe_fraction": 0.1
+    },
+    "scenario": {
+      "hours": 48,
+      "horizon_hours": 12,
+      "seed": 41,
+      "forecast_bias": 0,
+      "variability": 0.25,
+      "fault_start_hour": 34,
+      "fault_duration_hours": 12,
+      "capacity_fraction": 1,
+      "flow_bias_fraction": 0,
+      "delivery_delay_hours": 0,
+      "solver_seconds": 0.2
+    },
+    "weather": {
+      "mode": "synthetic",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timezone": "Europe/London",
+      "start": "2026-07-10",
+      "tilt": 30,
+      "azimuth": 0,
+      "loss_fraction": 0.14,
+      "noct_c": 45,
+      "temperature_coefficient": -0.004,
+      "publication_lag_hours": 6,
+      "offline": false
+    },
+    "solar": null,
+    "models": {
+      "battery": "affine/1",
+      "electrolyser": "specific-energy/1",
+      "hydrogen": "balance/1",
+      "co2": "balance/1",
+      "reactor": "analytic/1"
+    },
+    "faults": {
+      "hardware_model": "actuator-interlock/1",
+      "lifecycle": "persistent",
+      "capacity_cause": "equipment-damage",
+      "inspection_fault_start_hour": 0.0,
+      "contact_stuck": "none",
+      "fixed_reader_offset_v": 0.0,
+      "fixed_reader_drift_vph": 0.0,
+      "fixed_reader_dropout": false,
+      "mobile_reader_offset_v": 0.0,
+      "mobile_reader_drift_vph": 0.0,
+      "mobile_reader_dropout": false,
+      "service_fault_start_hour": 0,
+      "cleaner_service_fault": "none",
+      "rover_service_fault": "none",
+      "dock_service_fault": "none",
+      "portable_service_fault": "none"
+    },
+    "field_operations": {
+      "enabled": false,
+      "cleaner_enabled": true,
+      "rover_enabled": true,
+      "reset_enabled": true,
+      "human_fallback": true,
+      "route_open": true,
+      "dock_available": true,
+      "initial_soiling_fraction": 0.05,
+      "soiling_per_day": 0.005,
+      "cleaning_threshold": 0.04,
+      "cleaning_removal_fraction": 0.9,
+      "cleaner_battery_kwh": 2,
+      "rover_battery_kwh": 2,
+      "mission_power_kw": 0.2,
+      "return_reserve_kwh": 0.2,
+      "dock_kw": 1,
+      "charging_efficiency": 0.9,
+      "cleaning_hours": 2,
+      "inspection_hours": 1,
+      "human_lead_hours": 8,
+      "human_work_hours": 2,
+      "service_kits": 2,
+      "cleaning_kits": 12,
+      "mission_failure_probability": 0.05,
+      "repair_success_probability": 0.95
+    },
+    "service_system": null,
+    "service_economics": null
+  },
+  "weather_hash": "4d03bab05d4d36b8e784cfd05c5205eb5f05a98d6ed5b87f1810878010a9520c",
+  "source": "ee1f3922fd930be1f9799ee556d5a4ffef89b538eb409755db63e9b750d61a56",
+  "status": "complete",
+  "run_id": "a6f7d4ded2b3e221",
+  "audit_passed": true,
+  "metrics": {
+    "Greedy": {
+      "hours": 48,
+      "methane_kg": 239.55076950350684,
+      "curtailment_kwh": -1.6342482922482304e-13,
+      "reactor_starts": 2,
+      "electrolyser_starts": 2,
+      "ending_state": {
+        "battery_kwh": 0.0,
+        "h2_kg": 25.06375279122433,
+        "co2_kg": 141.2353838653562,
+        "temperature_c": 24.50752438194663,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "costs": {
+        "hours": 48,
+        "components": {
+          "solar": 109.58904109589041,
+          "battery": 69.08760184851897,
+          "electrolyser": 110.26438500677828,
+          "reactor": 63.1689497716895,
+          "hydrogen": 16.438356164383563,
+          "co2": 109.7735965297856,
+          "site": 211.71232876712327
+        },
+        "total_eur": 690.0342591841696,
+        "eur_per_kg_ch4": 2.880534513056816,
+        "water_input_m3": 1.7380696505157331,
+        "incidents": 0,
+        "charged_incidents": 0,
+        "field_operations": {
+          "components": {},
+          "quantities": {
+            "cleaner_hours": 0,
+            "rover_hours": 0,
+            "cleaning_kits_used": 0,
+            "service_kits_used": 0,
+            "calibration_kits_used": 0,
+            "human_visits": 0,
+            "human_hours": 0,
+            "charge_input_kwh": 0,
+            "robot_use_kwh": 0,
+            "portable_hours": 0,
+            "portable_kits_used": 0,
+            "water_used_l": 0
+          },
+          "terms": {},
+          "unpriced": [],
+          "variable_and_wear_eur": 0,
+          "total_eur": 0,
+          "basis": "Illustrative; electricity is physical bus demand, not purchased twice. Repair/visit charged on executed work, never on an alarm. Standing maintenance excludes recorded labour and kits."
+        },
+        "allowances": {
+          "battery": [
+            52.602739726027394,
+            60.32047856084773,
+            60.32047856084773
+          ],
+          "stack": [
+            46.02739726027397,
+            44.1,
+            46.02739726027397
+          ],
+          "reactor": [
+            10.95890410958904,
+            19.333333333333332,
+            19.333333333333332
+          ]
+        },
+        "variable_and_wear_eur": 235.02467014307362,
+        "assumed_value_eur": 239.55076950350684,
+        "assumed_contribution_eur": 4.526099360433221
+      },
+      "solver_limits": 0,
+      "fallback_count": 0,
+      "forced_downtime_hours": 0
+    },
+    "MPC \u00b7 methane": {
+      "hours": 48,
+      "methane_kg": 264.4892683310038,
+      "curtailment_kwh": 449.03714551911077,
+      "reactor_starts": 2,
+      "electrolyser_starts": 2,
+      "ending_state": {
+        "battery_kwh": 133.58338260787406,
+        "h2_kg": -7.283063041541027e-14,
+        "co2_kg": 72.65451208973943,
+        "temperature_c": 24.482215340921638,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "costs": {
+        "hours": 48,
+        "components": {
+          "solar": 109.58904109589041,
+          "battery": 61.36986301369863,
+          "electrolyser": 109.18125771631536,
+          "reactor": 65.83561643835617,
+          "hydrogen": 16.438356164383563,
+          "co2": 120.06072729612812,
+          "site": 211.71232876712327
+        },
+        "total_eur": 694.1871904918955,
+        "eur_per_kg_ch4": 2.624632730365196,
+        "water_input_m3": 1.5869356099860221,
+        "incidents": 0,
+        "charged_incidents": 0,
+        "field_operations": {
+          "components": {},
+          "quantities": {
+            "cleaner_hours": 0,
+            "rover_hours": 0,
+            "cleaning_kits_used": 0,
+            "service_kits_used": 0,
+            "calibration_kits_used": 0,
+            "human_visits": 0,
+            "human_hours": 0,
+            "charge_input_kwh": 0,
+            "robot_use_kwh": 0,
+            "portable_hours": 0,
+            "portable_kits_used": 0,
+            "water_used_l": 0
+          },
+          "terms": {},
+          "unpriced": [],
+          "variable_and_wear_eur": 0,
+          "total_eur": 0,
+          "basis": "Illustrative; electricity is physical bus demand, not purchased twice. Repair/visit charged on executed work, never on an alarm. Standing maintenance excludes recorded labour and kits."
+        },
+        "allowances": {
+          "battery": [
+            52.602739726027394,
+            41.61171671458353,
+            52.602739726027394
+          ],
+          "stack": [
+            46.02739726027397,
+            44.1,
+            46.02739726027397
+          ],
+          "reactor": [
+            10.95890410958904,
+            22.0,
+            22.0
+          ]
+        },
+        "variable_and_wear_eur": 228.18657843935569,
+        "assumed_value_eur": 264.4892683310038,
+        "assumed_contribution_eur": 36.30268989164813
+      },
+      "solver_limits": 17,
+      "fallback_count": 0,
+      "forced_downtime_hours": 0
+    },
+    "MPC \u00b7 economics": {
+      "hours": 48,
+      "methane_kg": 224.32184839817322,
+      "curtailment_kwh": 1782.1258156948186,
+      "reactor_starts": 2,
+      "electrolyser_starts": 2,
+      "ending_state": {
+        "battery_kwh": 26.346918248171736,
+        "h2_kg": 8.881784197001252e-16,
+        "co2_kg": 183.11491690502368,
+        "temperature_c": 16.187530446212257,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "costs": {
+        "hours": 48,
+        "components": {
+          "solar": 109.58904109589041,
+          "battery": 61.36986301369863,
+          "electrolyser": 107.45405865920364,
+          "reactor": 62.502283105022826,
+          "hydrogen": 16.438356164383563,
+          "co2": 103.49166657383547,
+          "site": 211.71232876712327
+        },
+        "total_eur": 672.5575973791578,
+        "eur_per_kg_ch4": 2.9981814173774204,
+        "water_input_m3": 1.3459310903890394,
+        "incidents": 0,
+        "charged_incidents": 0,
+        "field_operations": {
+          "components": {},
+          "quantities": {
+            "cleaner_hours": 0,
+            "rover_hours": 0,
+            "cleaning_kits_used": 0,
+            "service_kits_used": 0,
+            "calibration_kits_used": 0,
+            "human_visits": 0,
+            "human_hours": 0,
+            "charge_input_kwh": 0,
+            "robot_use_kwh": 0,
+            "portable_hours": 0,
+            "portable_kits_used": 0,
+            "water_used_l": 0
+          },
+          "terms": {},
+          "unpriced": [],
+          "variable_and_wear_eur": 0,
+          "total_eur": 0,
+          "basis": "Illustrative; electricity is physical bus demand, not purchased twice. Repair/visit charged on executed work, never on an alarm. Standing maintenance excludes recorded labour and kits."
+        },
+        "allowances": {
+          "battery": [
+            52.602739726027394,
+            2.014272885624215,
+            52.602739726027394
+          ],
+          "stack": [
+            46.02739726027397,
+            35.7,
+            46.02739726027397
+          ],
+          "reactor": [
+            10.95890410958904,
+            18.666666666666664,
+            18.666666666666664
+          ]
+        },
+        "variable_and_wear_eur": 158.55954149765876,
+        "assumed_value_eur": 224.32184839817322,
+        "assumed_contribution_eur": 65.76230690051446
+      },
+      "solver_limits": 5,
+      "fallback_count": 0,
+      "forced_downtime_hours": 0
+    }
+  },
+  "seconds": 13.06577125005424
+}

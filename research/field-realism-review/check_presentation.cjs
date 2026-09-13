@@ -1,0 +1,22 @@
+const { chromium } = require('/Users/aeron/sota/dispatch-lab/node_modules/@playwright/test');
+const fs = require('fs');
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ let requests=[];let errors=[];
+ page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url())});page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('file:///Users/aeron/sota/dispatch-lab/research/field-realism-review/report.html');await page.evaluate(()=>document.fonts.ready);
+ await page.screenshot({path:'/Users/aeron/sota/dispatch-lab/research/field-realism-review/desktop.png'});
+ const main=await page.evaluate(()=>({font:getComputedStyle(document.body).fontFamily,headings:document.querySelectorAll('h2').length,tables:document.querySelectorAll('table').length,overflow:document.documentElement.scrollWidth>innerWidth}));
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'/Users/aeron/sota/dispatch-lab/research/field-realism-review/mobile.png'});
+ await page.getByRole('button',{name:'Contents'}).click();await page.getByRole('navigation').getByRole('link',{name:'4. What the experiments establish',exact:true}).click();
+ const mobile=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,menuClosed:!document.querySelector('nav').classList.contains('open'),hash:location.hash}));
+ await page.getByRole('button',{name:'Contents'}).click();await page.keyboard.press('Escape');
+ const escape=await page.getByRole('button',{name:'Contents'}).getAttribute('aria-expanded');
+ await page.emulateMedia({reducedMotion:'reduce'});
+ const motion=await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior);
+ const output={main,mobile,escape,motion,externalRequests:requests,errors};
+ fs.writeFileSync('/Users/aeron/sota/dispatch-lab/research/field-realism-review/presentation-checks.json',JSON.stringify(output,null,2));console.log(output);
+ if(requests.length||errors.length||main.overflow||mobile.overflow||escape!=='false'||motion!=='auto')process.exitCode=1;
+ await browser.close();
+})();

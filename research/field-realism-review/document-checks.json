@@ -1,0 +1,11 @@
+{
+  "local_links_passed": true,
+  "source_references_passed": true,
+  "original_family_ids_preserved": true,
+  "sources": 28,
+  "families": 14,
+  "assumptions": 31,
+  "config_bindings": 66,
+  "report_links": 152,
+  "source_content_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd"
+}

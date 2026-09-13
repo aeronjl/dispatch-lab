@@ -1,0 +1,19 @@
+{
+  "source": "bb0d8fe9a2a2f2401ba4f677cecc5c60582600fe9d90cbcda3f5beacfe3a3298",
+  "python_tests": 979,
+  "renderer_tests": 72,
+  "original_illustrations": "Plant and solar screenshot checks passed unchanged in the selected browser run; that run also exposed narrow-screen overflow. The recheck after the CSS fix passed five controls/workflow tests, with one fixture-dependent execution test skipped.",
+  "documentation": "Bindings, generated engineering documentation, component catalogue and taxonomy passed",
+  "lint": "methane, tests, app.py and the two authored report/design scripts passed. Legacy ad-hoc research scripts were not brought under this scope.",
+  "report_visual_review": "Browser URL policy blocked the local report preview. Local HTML/link validation was used; no rendered screenshot review is claimed.",
+  "files": {
+    "python-tests.txt": "85c017b33af08c917b201806471801be9f8e890937bad7561f8c57bc6619debd",
+    "pytest.xml": "f468c3d644fa45f08fa75a1c11a022496ce8442ce7a316fc21816d17eab35e7e",
+    "source-under-test.json": "ad4ad2906b216383018b17dc10a6f02dbe0048a32aae7ce0f11dd534abb7281c",
+    "renderer-tests.txt": "9277e5a61a56cc41b8107d1f6033f96a858541fafb647774a71ee1b298c4c9ae",
+    "browser-before-overflow-fix.txt": "f7813ec97ff627a9379f9c7badc230a8058fac1ef05ed91105857075c27ca545",
+    "browser-recheck.txt": "59ef07aa6ba6dbd4f48ef5994926e1b31d8b54ae9dfb0612a97770816535244b",
+    "browser-recheck.json": "f3359eb5b816579496aea7b89639c41dc9af3442396e397efc78b02e61a31754",
+    "interaction-performance.json": "26b8c6048e07d9e78442cba52025c7ba351f7b92f192f98a727bafa12edb929e"
+  }
+}

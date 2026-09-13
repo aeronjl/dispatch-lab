@@ -1,0 +1,300 @@
+{
+  "samples": 15068,
+  "retained_plateaus": 8,
+  "units": "Power kW; flow kg/h; errors kg/h",
+  "scores": [
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "constant_55",
+      "n": 8,
+      "rmse": 0.11500562098346125,
+      "bias": 0.11181714099505041,
+      "mae": 0.11181714099505041
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "fitted_constant",
+      "n": 8,
+      "rmse": 0.019969150188665213,
+      "bias": 0.003943794072969232,
+      "mae": 0.01582958956191226
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "fitted_affine",
+      "n": 8,
+      "rmse": 0.013043429065412187,
+      "bias": -0.0011016986198816997,
+      "mae": 0.008601858570425475
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "parameters",
+      "fitted_kwh_per_kg": 66.93464103643439,
+      "affine_kg_per_kwh": 0.016106490914285995,
+      "affine_kg_per_h": -0.04386226810588922
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "constant_55",
+      "n": 8,
+      "rmse": 0.025967275062757193,
+      "bias": -0.005284486833403164,
+      "mae": 0.02336006593263621
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "fitted_constant",
+      "n": 8,
+      "rmse": 0.02581568561694822,
+      "bias": -0.009236490412822512,
+      "mae": 0.023249962603516888
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "fitted_affine",
+      "n": 8,
+      "rmse": 0.008557551082474146,
+      "bias": -0.00040242324875834623,
+      "mae": 0.007399816675584453
+    },
+    {
+      "power_boundary": "stack_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "parameters",
+      "fitted_kwh_per_kg": 55.36163504175924,
+      "affine_kg_per_kwh": 0.016020568743636367,
+      "affine_kg_per_h": 0.07679769766878404
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "constant_55",
+      "n": 8,
+      "rmse": 0.523953353766521,
+      "bias": 0.5222913565528156,
+      "mae": 0.5222913565528156
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "fitted_constant",
+      "n": 8,
+      "rmse": 0.07775533231111544,
+      "bias": 0.016838552675821752,
+      "mae": 0.06834110183020321
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "fitted_affine",
+      "n": 8,
+      "rmse": 0.011992736011982235,
+      "bias": -0.000718306882229288,
+      "mae": 0.008076267181976893
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow",
+      "model": "parameters",
+      "fitted_kwh_per_kg": 109.507274614268,
+      "affine_kg_per_kwh": 0.015057457386370935,
+      "affine_kg_per_h": -0.3485106475684506
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "constant_55",
+      "n": 8,
+      "rmse": 0.4072595309532207,
+      "bias": 0.40518972872436204,
+      "mae": 0.40518972872436204
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "fitted_constant",
+      "n": 8,
+      "rmse": 0.050938863779064945,
+      "bias": 0.011381416462549414,
+      "mae": 0.04270645280821169
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "fitted_affine",
+      "n": 8,
+      "rmse": 0.007115860067961535,
+      "bias": -2.121967081095827e-05,
+      "mae": 0.006426426881009313
+    },
+    {
+      "power_boundary": "system_power",
+      "hydrogen_channel": "hydrogen_flow_cs",
+      "model": "parameters",
+      "fitted_kwh_per_kg": 89.8409648301468,
+      "affine_kg_per_kwh": 0.014979301937287904,
+      "affine_kg_per_h": -0.22634686400977197
+    }
+  ],
+  "holdout_plateaus": [
+    {
+      "command_kw": 51.22000000000002,
+      "stack_kw": 51.27832142857144,
+      "system_kw": 75.02364675052381,
+      "flow_channel_kgph": 0.7731923462394047,
+      "cs_channel_kgph": 0.8887500000000003,
+      "stack_specific_measured_channel": 66.32026516813715,
+      "system_specific_measured_channel": 97.03102612877407,
+      "channel_difference": 0.11555765376059557
+    },
+    {
+      "command_kw": 46.08,
+      "stack_kw": 46.266777645659914,
+      "system_kw": 69.94917876667064,
+      "flow_channel_kgph": 0.6949182325944313,
+      "cs_channel_kgph": 0.8171581450653984,
+      "stack_specific_measured_channel": 66.57873613838848,
+      "system_specific_measured_channel": 100.65814290915927,
+      "channel_difference": 0.1222399124709671
+    },
+    {
+      "command_kw": 40.94999999999999,
+      "stack_kw": 40.95647630619684,
+      "system_kw": 64.10548930895504,
+      "flow_channel_kgph": 0.6183746234772175,
+      "cs_channel_kgph": 0.74,
+      "stack_specific_measured_channel": 66.23246613176354,
+      "system_specific_measured_channel": 103.66772321360767,
+      "channel_difference": 0.12162537652278249
+    },
+    {
+      "command_kw": 35.959999999999994,
+      "stack_kw": 35.78219976218787,
+      "system_kw": 58.702383645802605,
+      "flow_channel_kgph": 0.5648483704492133,
+      "cs_channel_kgph": 0.6599999999999999,
+      "stack_specific_measured_channel": 63.34832785961825,
+      "system_specific_measured_channel": 103.92591484174363,
+      "channel_difference": 0.0951516295507866
+    },
+    {
+      "command_kw": 30.734,
+      "stack_kw": 30.6303738317757,
+      "system_kw": 53.117743731542056,
+      "flow_channel_kgph": 0.4522460888799591,
+      "cs_channel_kgph": 0.5796845794392523,
+      "stack_specific_measured_channel": 67.7294388717334,
+      "system_specific_measured_channel": 117.45318541746691,
+      "channel_difference": 0.12743849055929324
+    },
+    {
+      "command_kw": 25.606,
+      "stack_kw": 25.52478571428571,
+      "system_kw": 47.518136786571425,
+      "flow_channel_kgph": 0.3657523505598459,
+      "cs_channel_kgph": 0.4877500000000002,
+      "stack_specific_measured_channel": 69.78707225043313,
+      "system_specific_measured_channel": 129.91888285567234,
+      "channel_difference": 0.12199764944015429
+    },
+    {
+      "command_kw": 20.470000000000002,
+      "stack_kw": 20.449523809523807,
+      "system_kw": 41.96894959395239,
+      "flow_channel_kgph": 0.28660476966330556,
+      "cs_channel_kgph": 0.4,
+      "stack_specific_measured_channel": 71.35095425504355,
+      "system_specific_measured_channel": 146.4349307349498,
+      "channel_difference": 0.11339523033669446
+    },
+    {
+      "command_kw": 15.232,
+      "stack_kw": 15.311759999999996,
+      "system_kw": 36.423344759600006,
+      "flow_channel_kgph": 0.18953006287078802,
+      "cs_channel_kgph": 0.3089371428571429,
+      "stack_specific_measured_channel": 80.78802786257069,
+      "system_specific_measured_channel": 192.17713648114807,
+      "channel_difference": 0.11940707998635489
+    }
+  ],
+  "authors_characterization": {
+    "stack_kw": [
+      15.6,
+      20.8,
+      26,
+      31.2,
+      36.4,
+      41.6,
+      46.8,
+      52
+    ],
+    "system_kw": [
+      36.4,
+      41.8,
+      47.3,
+      52.9,
+      58.4,
+      63.9,
+      69.4,
+      74.9
+    ],
+    "gross_kgph": [
+      0.32,
+      0.4,
+      0.49,
+      0.58,
+      0.66,
+      0.73,
+      0.82,
+      0.89
+    ],
+    "net_kgph": [
+      0.2,
+      0.28,
+      0.37,
+      0.46,
+      0.54,
+      0.61,
+      0.7,
+      0.77
+    ],
+    "gross_stack_kwh_per_kg": [
+      48.75,
+      52.0,
+      53.06122448979592,
+      53.793103448275865,
+      55.15151515151515,
+      56.986301369863014,
+      57.073170731707314,
+      58.42696629213483
+    ],
+    "net_system_kwh_per_kg": [
+      181.99999999999997,
+      149.28571428571425,
+      127.83783783783784,
+      114.99999999999999,
+      108.14814814814814,
+      104.75409836065573,
+      99.14285714285715,
+      97.27272727272728
+    ]
+  },
+  "caveats": [
+    "Experimental source is a recently published dataset with a July2026 preprint; peer-reviewed publication was not verified.",
+    "Eight long 30-minute plateaus; 120-second settling omitted then first/second halves separated. Short commissioning/startup plateaus excluded by a prespecified clarification before coefficient fitting.",
+    "Hydrogen channel names are preserved. Authors' published gross/net mapping is not assumed to prove two independent calibrated flow sensors.",
+    "Same-day plateau validation is internal repeatability; not independent equipment validation.",
+    "System power includes AC/DC supply plus chiller and subsystem channels; stack boundary is DC. Neither is directly interchangeable with the present plant bus without an explicit boundary adapter.",
+    "Authors' 0.12kg/h purification allowance is tabulated separately, not labelled a fitted purge measurement.",
+    "A pointwise fit does not establish startup energy, lifetime degradation or fault incidence."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "source": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+  "figure": "8, printed page7173 / PDF page8",
+  "image": "raw/reactor-slurry-page8.png",
+  "method": "Manual pixel picks of black reactor-temperature line after inspecting rendered original. Coordinates use 1290x1700 image. Left axis: (174,358)=0min/260C; right/top (539,134)=40min/340C. Gray line is conversion, not temperature. Step set to5min.",
+  "temperature_pixels": [[180,190],[210,190],[220,190],[242,185],[265,175],[288,167],[311,162],[357,157],[403,154],[449,152],[494,152],[537,151]],
+  "resolution": "Deliberately conservative +/-1K independent vertical digitization perturbations. Not sensor measurement uncertainty or new raw experimental data."
+}

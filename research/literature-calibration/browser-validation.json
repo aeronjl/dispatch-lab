@@ -1,0 +1,59 @@
+{
+  "scope": "Static research report only; does not test plant UI or physical accuracy.",
+  "checks": [
+    {
+      "name": "All five embedded figures render offline",
+      "outcome": "passed"
+    },
+    {
+      "name": "Departure font loaded",
+      "outcome": "passed"
+    },
+    {
+      "name": "Desktop document has no horizontal overflow",
+      "outcome": "passed"
+    },
+    {
+      "name": "Topic search isolates battery",
+      "outcome": "passed"
+    },
+    {
+      "name": "Keyboard topic navigation moves focus",
+      "outcome": "passed"
+    },
+    {
+      "name": "No-match state visible",
+      "outcome": "passed"
+    },
+    {
+      "name": "Search reset restores topics",
+      "outcome": "passed"
+    },
+    {
+      "name": "Narrow screen contains document width",
+      "outcome": "passed"
+    },
+    {
+      "name": "Wide tables scroll inside their containers",
+      "outcome": "passed"
+    },
+    {
+      "name": "Reduced motion disables smooth scrolling",
+      "outcome": "passed"
+    },
+    {
+      "name": "Mobile keyboard navigation reaches family taxonomy",
+      "outcome": "passed"
+    },
+    {
+      "name": "No external display requests",
+      "outcome": "passed"
+    },
+    {
+      "name": "No browser script errors",
+      "outcome": "passed"
+    }
+  ],
+  "errors": [],
+  "external_requests": []
+}

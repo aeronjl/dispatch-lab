@@ -1,0 +1,2618 @@
+{
+  "case_id": "e583732963ec6cac7f6a",
+  "case": {
+    "family": "cleaning",
+    "seed": 19,
+    "power": 1000,
+    "soil": 0.1,
+    "arm": "condition-cleaner"
+  },
+  "input_id": "67ecc9532b8e86d843f2240e39186bfa301525f889be9a4aaac48b28a4b9e014",
+  "source": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+  "status": "complete",
+  "failures": {},
+  "archive": "a8b6266ce5bdb3fa-8b7c886adf4f2fdabb9d166a0c264fb4a732d6451f7c56b63663a8fd6b820c6c.json.gz",
+  "archive_sha256": "d46cd197689bcf1998f2471f2ea56949d7dac31ce9ff8a52237ba00a062aa6f1",
+  "audit_passed": true,
+  "independent_checks": 7091,
+  "hours": 48,
+  "methane_kg": 290.0,
+  "available_dc_kwh": 46964.4,
+  "curtailment_kwh": 34478.094295703464,
+  "service_bus_kwh": 4.344444444444445,
+  "treated_m2": 4999.999999999998,
+  "ending_plant": {
+    "battery_kwh": 800.0,
+    "h2_kg": 60.0,
+    "co2_kg": 2.5,
+    "temperature_c": 255.0,
+    "electrolyser_on": false,
+    "reactor_on": false,
+    "commitment_hours": 0
+  },
+  "ending_service": {
+    "implementation_id": "plant-service-contracts/12",
+    "hardware": {
+      "implementation_id": "actuator-interlock/1",
+      "observations": {
+        "cleaner": {
+          "status": "unobserved",
+          "feedback": null,
+          "may_attempt": true
+        },
+        "dock": {
+          "status": "unobserved",
+          "feedback": null,
+          "may_attempt": true
+        }
+      },
+      "recovery_enabled": false
+    },
+    "inspection": {
+      "model": "referenced-contact/1",
+      "at_hour": 48,
+      "invalidated_through_hour": null,
+      "quality": "uncertain",
+      "value": null,
+      "reason": "Awaiting current reader evidence",
+      "channels": [],
+      "isolated_readers": [],
+      "scope": "Reader references test the acquisition path. Both readers share one contact; agreement cannot exclude a common stuck contact or establish module health."
+    },
+    "portable": null,
+    "support": {
+      "implementation_id": "logistics/1",
+      "calendar_basis": "Hours from simulation origin; declared repeating labour availability, not inferred local business hours",
+      "returned": {},
+      "crew_hours_remaining": 24,
+      "remote_hours_remaining": 1,
+      "upstream": {
+        "cleaning": 24,
+        "module": 24,
+        "calibration": 24,
+        "brush": 24
+      },
+      "upstream_units": {
+        "cleaning": "kit",
+        "module": "kit",
+        "calibration": "kit",
+        "brush": "kit"
+      },
+      "water_l": null,
+      "brush_spares": 2,
+      "limitation": "Mission-abort retrieval and bounded supervised drive test. This does not repair arbitrary mechanical damage. Crew visits are separate; enable combined visits to share eligible journeys. Failed support-equipment recovery remains programme work.",
+      "crew_return": {
+        "implementation_id": "interrupted-crew-return/1",
+        "scope": "Return follows the remaining accepted travel legs, skipping unfinished jobs. Active return labour is metered; waiting off-shift and vehicle fuel are not separately priced. No injury, rescue, vehicle damage or emergency routing model."
+      }
+    },
+    "surface": {
+      "model": "array-surface/1",
+      "sections": [
+        {
+          "id": "PV-01",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.016000000000000004,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.984,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 500.0,
+              "removable": 0.015999999999999983,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 500.0,
+              "end_m2": 1500.0,
+              "removable": 0.015999999999999983,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 1500.0,
+              "end_m2": 1666.666666666666,
+              "removable": 0.015999999999999983,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 1666.666666666666,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.1,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        },
+        {
+          "id": "PV-02",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.013000000000000025,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.987,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 500.0,
+              "removable": 0.013000000000000001,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 500.0,
+              "end_m2": 1500.0,
+              "removable": 0.013000000000000001,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 1500.0,
+              "end_m2": 1666.666666666666,
+              "removable": 0.013000000000000001,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 1666.666666666666,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.1,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        },
+        {
+          "id": "PV-03",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.009999999999999997,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.99,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 500.0,
+              "removable": 0.009999999999999998,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 500.0,
+              "end_m2": 1500.0,
+              "removable": 0.009999999999999998,
+              "adhered": 0,
+              "damaged": 0
+            },
+            {
+              "start_m2": 1500.0,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.009999999999999998,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        }
+      ],
+      "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture"
+    },
+    "robots": {
+      "cleaner": {
+        "asset_id": "PLANT-01/CLEAN-01",
+        "energy_kwh": 2.0,
+        "status": "available"
+      },
+      "rover": {
+        "asset_id": "PLANT-01/ROVER-01",
+        "energy_kwh": 0,
+        "status": "disabled"
+      }
+    },
+    "soiling_estimate": 0.013000000000000008,
+    "soiling_sensor": "ideal section surface monitor",
+    "orders": [
+      {
+        "id": "SVC-0001",
+        "kind": "cleaning",
+        "incident": 0,
+        "created_hour": 0,
+        "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+        "sequence": 1,
+        "section": "PV-03",
+        "cleaning_policy": "local-cleaning-policy/1",
+        "cleaning_rule": "condition",
+        "due_hour": null,
+        "measured_surface": {
+          "id": "PV-03",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.1,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.9000000000000001,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.1,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        },
+        "status": "completed",
+        "phase": "return",
+        "evidence": [
+          {
+            "channel": "route-open",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "communications",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "crew-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "calibration-reference",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-control-powered",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "dock-standby/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "contact-port-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "contact-access/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "ambient-c",
+            "value": 20,
+            "unit": "\u00b0C",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "current-ambient-sensor/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "row-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "declared-row-interface/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "wind-mps",
+            "value": 3,
+            "unit": "m/s",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "rain-mmph",
+            "value": 0,
+            "unit": "mm/h",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "capacity-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "process-diagnosis/1",
+            "quality": "uncertain"
+          },
+          {
+            "channel": "flow-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "process-diagnosis/1",
+            "quality": "uncertain"
+          },
+          {
+            "channel": "at-dock:cleaner",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "at-dock:rover",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "trip-contact",
+            "value": null,
+            "unit": "boolean",
+            "measured_at": 0,
+            "available_at": 0,
+            "source_id": "referenced-contact/1/evidence",
+            "quality": "uncertain"
+          }
+        ],
+        "stochastic_event": {
+          "target": "PV-03",
+          "action": "clean-section",
+          "request": 1,
+          "model": "target-action-request/1"
+        },
+        "started_hour": 0,
+        "asset_id": "PLANT-01/CLEAN-01",
+        "progress": 1,
+        "completed_hour": 2.9166666666666665,
+        "verified_at_hour": null,
+        "reported": {
+          "order_id": "SVC-0001",
+          "report": "Section pass completed; only compatible surface material treated",
+          "completed_at": 2.1666666666666665,
+          "available_at": 3
+        },
+        "execution_status": "completed",
+        "from_point": "solar",
+        "to_point": "dock",
+        "blocked": null,
+        "remaining": 0,
+        "robot": "cleaner"
+      },
+      {
+        "id": "SVC-0002",
+        "kind": "cleaning",
+        "incident": 0,
+        "created_hour": 3,
+        "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+        "sequence": 2,
+        "section": "PV-02",
+        "cleaning_policy": "local-cleaning-policy/1",
+        "cleaning_rule": "condition",
+        "due_hour": null,
+        "measured_surface": {
+          "id": "PV-02",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.1,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.9000000000000001,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.1,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        },
+        "status": "completed",
+        "phase": "return",
+        "evidence": [
+          {
+            "channel": "route-open",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "communications",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "crew-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "calibration-reference",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-control-powered",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "dock-standby/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "contact-port-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "contact-access/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "ambient-c",
+            "value": 20,
+            "unit": "\u00b0C",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "current-ambient-sensor/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "row-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "declared-row-interface/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "wind-mps",
+            "value": 3,
+            "unit": "m/s",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "rain-mmph",
+            "value": 0,
+            "unit": "mm/h",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "capacity-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 2,
+            "available_at": 3,
+            "source_id": "process-diagnosis/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "flow-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 2,
+            "available_at": 3,
+            "source_id": "process-diagnosis/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "at-dock:cleaner",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "at-dock:rover",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "trip-contact",
+            "value": null,
+            "unit": "boolean",
+            "measured_at": 3,
+            "available_at": 3,
+            "source_id": "referenced-contact/1/evidence",
+            "quality": "uncertain"
+          }
+        ],
+        "stochastic_event": {
+          "target": "PV-02",
+          "action": "clean-section",
+          "request": 1,
+          "model": "target-action-request/1"
+        },
+        "started_hour": 3,
+        "asset_id": "PLANT-01/CLEAN-01",
+        "progress": 1,
+        "completed_hour": 5.916666666666666,
+        "verified_at_hour": null,
+        "reported": {
+          "order_id": "SVC-0002",
+          "report": "Section pass completed; only compatible surface material treated",
+          "completed_at": 5.166666666666666,
+          "available_at": 6
+        },
+        "execution_status": "completed",
+        "from_point": "solar",
+        "to_point": "dock",
+        "blocked": null,
+        "remaining": 0,
+        "robot": "cleaner"
+      },
+      {
+        "id": "SVC-0003",
+        "kind": "cleaning",
+        "incident": 0,
+        "created_hour": 6,
+        "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+        "sequence": 3,
+        "section": "PV-01",
+        "cleaning_policy": "local-cleaning-policy/1",
+        "cleaning_rule": "condition",
+        "due_hour": null,
+        "measured_surface": {
+          "id": "PV-01",
+          "area_m2": 1666.6666666666665,
+          "removable_fraction": 0.1,
+          "adhered_fraction": 0.0,
+          "damage_fraction": 0.0,
+          "transmission": 0.9000000000000001,
+          "patches": [
+            {
+              "start_m2": 0,
+              "end_m2": 1666.6666666666665,
+              "removable": 0.1,
+              "adhered": 0,
+              "damaged": 0
+            }
+          ]
+        },
+        "status": "completed",
+        "phase": "return",
+        "evidence": [
+          {
+            "channel": "route-open",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "communications",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "crew-available",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "calibration-reference",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-support-fixture/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "dock-control-powered",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "dock-standby/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "contact-port-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "contact-access/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "ambient-c",
+            "value": 20,
+            "unit": "\u00b0C",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "current-ambient-sensor/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "row-accessible",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "declared-row-interface/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "wind-mps",
+            "value": 3,
+            "unit": "m/s",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "rain-mmph",
+            "value": 0,
+            "unit": "mm/h",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "assumed-service-weather/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "capacity-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 5,
+            "available_at": 6,
+            "source_id": "process-diagnosis/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "flow-restored",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 5,
+            "available_at": 6,
+            "source_id": "process-diagnosis/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "at-dock:cleaner",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "at-dock:rover",
+            "value": true,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "recorded-service-location/1",
+            "quality": "usable"
+          },
+          {
+            "channel": "trip-contact",
+            "value": null,
+            "unit": "boolean",
+            "measured_at": 6,
+            "available_at": 6,
+            "source_id": "referenced-contact/1/evidence",
+            "quality": "uncertain"
+          }
+        ],
+        "stochastic_event": {
+          "target": "PV-01",
+          "action": "clean-section",
+          "request": 1,
+          "model": "target-action-request/1"
+        },
+        "started_hour": 6,
+        "asset_id": "PLANT-01/CLEAN-01",
+        "progress": 1,
+        "completed_hour": 8.916666666666666,
+        "verified_at_hour": null,
+        "reported": {
+          "order_id": "SVC-0003",
+          "report": "Section pass completed; only compatible surface material treated",
+          "completed_at": 8.166666666666666,
+          "available_at": 9
+        },
+        "execution_status": "completed",
+        "from_point": "solar",
+        "to_point": "dock",
+        "blocked": null,
+        "remaining": 0,
+        "robot": "cleaner"
+      }
+    ],
+    "service_kits": 2,
+    "cleaning_kits": 9,
+    "calibration_kits": 2,
+    "executive": {
+      "version": "service-executive/1",
+      "at_hour": 48,
+      "orders": [
+        {
+          "order_id": "SVC-0001",
+          "asset_id": "PLANT-01/CLEAN-01",
+          "action": "clean-section",
+          "target": "PV-03",
+          "status": "completed",
+          "phase": "return",
+          "from_point": "solar",
+          "to_point": "dock",
+          "progress": 1,
+          "started_at": 0,
+          "completed_at": 2.9166666666666665,
+          "verified_at": null,
+          "reason": null,
+          "bus_kwh": 0.0,
+          "battery_kwh": 0.5833333333333334,
+          "reports": [
+            {
+              "order_id": "SVC-0001",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 1,
+              "available_at": 1
+            },
+            {
+              "order_id": "SVC-0001",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 2,
+              "available_at": 2
+            },
+            {
+              "order_id": "SVC-0001",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 2.1666666666666665,
+              "available_at": 3
+            },
+            {
+              "order_id": "SVC-0001",
+              "report": "Section pass completed; only compatible surface material treated",
+              "completed_at": 2.1666666666666665,
+              "available_at": 3
+            }
+          ]
+        },
+        {
+          "order_id": "SVC-0002",
+          "asset_id": "PLANT-01/CLEAN-01",
+          "action": "clean-section",
+          "target": "PV-02",
+          "status": "completed",
+          "phase": "return",
+          "from_point": "solar",
+          "to_point": "dock",
+          "progress": 1,
+          "started_at": 3,
+          "completed_at": 5.916666666666666,
+          "verified_at": null,
+          "reason": null,
+          "bus_kwh": 0.0,
+          "battery_kwh": 0.5833333333333333,
+          "reports": [
+            {
+              "order_id": "SVC-0002",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 4,
+              "available_at": 4
+            },
+            {
+              "order_id": "SVC-0002",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 5,
+              "available_at": 5
+            },
+            {
+              "order_id": "SVC-0002",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 5.166666666666666,
+              "available_at": 6
+            },
+            {
+              "order_id": "SVC-0002",
+              "report": "Section pass completed; only compatible surface material treated",
+              "completed_at": 5.166666666666666,
+              "available_at": 6
+            }
+          ]
+        },
+        {
+          "order_id": "SVC-0003",
+          "asset_id": "PLANT-01/CLEAN-01",
+          "action": "clean-section",
+          "target": "PV-01",
+          "status": "completed",
+          "phase": "return",
+          "from_point": "solar",
+          "to_point": "dock",
+          "progress": 1,
+          "started_at": 6,
+          "completed_at": 8.916666666666666,
+          "verified_at": null,
+          "reason": null,
+          "bus_kwh": 0.0,
+          "battery_kwh": 0.5833333333333333,
+          "reports": [
+            {
+              "order_id": "SVC-0003",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 7,
+              "available_at": 7
+            },
+            {
+              "order_id": "SVC-0003",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 8,
+              "available_at": 8
+            },
+            {
+              "order_id": "SVC-0003",
+              "report": "Partial treatment recorded; optical effect at next decision boundary",
+              "completed_at": 8.166666666666666,
+              "available_at": 9
+            },
+            {
+              "order_id": "SVC-0003",
+              "report": "Section pass completed; only compatible surface material treated",
+              "completed_at": 8.166666666666666,
+              "available_at": 9
+            }
+          ]
+        },
+        {
+          "order_id": "CHARGE-9-cleaner",
+          "asset_id": "PLANT-01/DOCK-01",
+          "action": "charge-cleaner",
+          "target": "PLANT-01/CLEAN-01",
+          "status": "completed",
+          "phase": "perform",
+          "from_point": "dock",
+          "to_point": "dock",
+          "progress": 1,
+          "started_at": 9,
+          "completed_at": 10,
+          "verified_at": null,
+          "reason": null,
+          "bus_kwh": 1,
+          "battery_kwh": 0,
+          "reports": [
+            {
+              "order_id": "CHARGE-9-cleaner",
+              "report": "Charging interval completed; energy posted at the hourly boundary",
+              "completed_at": 10,
+              "available_at": 10
+            }
+          ]
+        },
+        {
+          "order_id": "CHARGE-10-cleaner",
+          "asset_id": "PLANT-01/DOCK-01",
+          "action": "charge-cleaner",
+          "target": "PLANT-01/CLEAN-01",
+          "status": "completed",
+          "phase": "perform",
+          "from_point": "dock",
+          "to_point": "dock",
+          "progress": 1,
+          "started_at": 10,
+          "completed_at": 11,
+          "verified_at": null,
+          "reason": null,
+          "bus_kwh": 0.9444444444444445,
+          "battery_kwh": 0,
+          "reports": [
+            {
+              "order_id": "CHARGE-10-cleaner",
+              "report": "Charging interval completed; energy posted at the hourly boundary",
+              "completed_at": 11,
+              "available_at": 11
+            }
+          ]
+        }
+      ],
+      "observations": [],
+      "resources": [
+        {
+          "resource": "stock:cleaning",
+          "unit": "kit",
+          "initial": 12,
+          "received": 0,
+          "consumed": 3,
+          "ending": 9,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "stock:module",
+          "unit": "kit",
+          "initial": 2,
+          "received": 0,
+          "consumed": 0,
+          "ending": 2,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "stock:calibration",
+          "unit": "kit",
+          "initial": 2,
+          "received": 0,
+          "consumed": 0,
+          "ending": 2,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "energy:cleaner",
+          "unit": "kWh",
+          "initial": 2,
+          "received": 1.75,
+          "consumed": 1.7499999999999998,
+          "ending": 2.0,
+          "reserved": 0.0,
+          "residual": -2.220446049250313e-16,
+          "passed": true
+        },
+        {
+          "resource": "brush:cleaner",
+          "unit": "m2",
+          "initial": 50000,
+          "received": 0,
+          "consumed": 4999.999999999998,
+          "ending": 45000.00000000001,
+          "reserved": 0.0,
+          "residual": 5.4569682106375694e-12,
+          "passed": true
+        },
+        {
+          "resource": "crew-hours",
+          "unit": "h",
+          "initial": 24,
+          "received": 0,
+          "consumed": 0,
+          "ending": 24,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "remote-hours",
+          "unit": "h",
+          "initial": 1,
+          "received": 0,
+          "consumed": 0,
+          "ending": 1,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "stock:brush",
+          "unit": "kit",
+          "initial": 2,
+          "received": 0,
+          "consumed": 0,
+          "ending": 2,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "upstream:cleaning",
+          "unit": "kit",
+          "initial": 24,
+          "received": 0,
+          "consumed": 0,
+          "ending": 24,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "upstream:module",
+          "unit": "kit",
+          "initial": 24,
+          "received": 0,
+          "consumed": 0,
+          "ending": 24,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "upstream:calibration",
+          "unit": "kit",
+          "initial": 24,
+          "received": 0,
+          "consumed": 0,
+          "ending": 24,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        },
+        {
+          "resource": "upstream:brush",
+          "unit": "kit",
+          "initial": 24,
+          "received": 0,
+          "consumed": 0,
+          "ending": 24,
+          "reserved": 0,
+          "residual": 0,
+          "passed": true
+        }
+      ]
+    },
+    "cleaning_policy": {
+      "implementation_id": "local-cleaning-policy/1",
+      "mode": "condition",
+      "first_due_hour": 0.0,
+      "recurrence_hours": 168.0,
+      "schedules": [],
+      "scope": "Local rule using available ideal surface estimates or a declared recurrence. No future weather, price optimization or injected fault truth. Completed full passes reset recurrence; partial treatment remains in the physical surface but earns no full-pass credit."
+    },
+    "inspection_interface": {
+      "implementation_id": "contact-access/1",
+      "kind": "accessible-port",
+      "accessible": true,
+      "scope": "Known plant interface compatibility for the contact payload. Enclosed contacts require a different intervention; no visual diagnosis is inferred."
+    },
+    "standby": {
+      "implementation_id": "dock-standby/1",
+      "requested_kwh": 0.05,
+      "applied_kwh": 0.05,
+      "unserved_kwh": 0.0,
+      "pv_available_kw": 987.0,
+      "battery_available_kw": 400.0,
+      "installed": true,
+      "control_available": true,
+      "scope": "One-hour constant control-electronics load upstream of the charger power stage. Full-rate priority grant; active service remains solar-only. A failed charger can still consume control standby power."
+    }
+  },
+  "costs": {
+    "hours": 48,
+    "components": {
+      "solar": 109.58904109589041,
+      "battery": 61.36986301369863,
+      "electrolyser": 134.51082191780822,
+      "reactor": 65.83561643835617,
+      "hydrogen": 16.438356164383563,
+      "co2": 130.58390410958904,
+      "site": 211.71232876712327,
+      "cleaner": 19.30650684931507,
+      "service_materials": 15,
+      "dock": 21.232876712328768,
+      "portable": 0,
+      "rover": 0,
+      "human_service": 0
+    },
+    "total_eur": 785.5793150684931,
+    "eur_per_kg_ch4": 2.7088941898913554,
+    "water_input_m3": 2.46,
+    "incidents": 0,
+    "charged_incidents": 0,
+    "allowances": {
+      "battery": [
+        52.602739726027394,
+        0.0,
+        52.602739726027394
+      ],
+      "stack": [
+        46.02739726027397,
+        65.10000000000001,
+        65.10000000000001
+      ],
+      "reactor": [
+        10.95890410958904,
+        22.0,
+        22.0
+      ]
+    },
+    "variable_and_wear_eur": 243.72999999999988,
+    "assumed_value_eur": 290.0,
+    "assumed_contribution_eur": 46.270000000000124
+  },
+  "service_cost": {
+    "schema_version": "dispatch-lab/service-economics/1",
+    "assumption_id": "e7f58fe08813e2eb26a37daa0fa40e9b1ac768ff5eada244341bede040a94f29",
+    "components": {
+      "cleaner": 19.30650684931507,
+      "service_materials": 15,
+      "dock": 21.232876712328768,
+      "portable": 0,
+      "rover": 0,
+      "human_service": 0
+    },
+    "total_eur": 55.53938356164384,
+    "variable_and_wear_eur": 19.375,
+    "terms": {},
+    "quantities": {
+      "human_visits": 0,
+      "charge_input_kwh": 1.9444444444444446,
+      "fixed_service_kwh": 2.4,
+      "cleaner_hours": 8.749999999999998,
+      "rover_hours": 0,
+      "dock_hours": 2.0,
+      "fixed_reader_hours": 0,
+      "reset_hours": 0,
+      "portable_hours": 0,
+      "used:cleaning": 3
+    },
+    "unpriced": [],
+    "views": {
+      "allocated": {
+        "total_eur": 55.53938356164384,
+        "known_subtotal_eur": 55.53938356164384,
+        "unpriced": [],
+        "components": {
+          "cleaner": 19.30650684931507,
+          "service_materials": 15,
+          "dock": 21.232876712328768,
+          "portable": 0,
+          "rover": 0,
+          "human_service": 0
+        }
+      },
+      "decision": {
+        "total_eur": 19.375,
+        "known_subtotal_eur": 19.375,
+        "unpriced": [],
+        "components": {
+          "cleaner": 4.374999999999999,
+          "service_materials": 15,
+          "dock": 0.0,
+          "portable": 0,
+          "rover": 0,
+          "human_service": 0
+        }
+      },
+      "expenditure": {
+        "total_eur": 19.726027397260275,
+        "known_subtotal_eur": 19.726027397260275,
+        "unpriced": [],
+        "components": {
+          "cleaner": 3.287671232876712,
+          "service_materials": 0,
+          "dock": 16.438356164383563,
+          "portable": 0,
+          "rover": 0,
+          "human_service": 0
+        }
+      }
+    },
+    "inventories": {
+      "unit:cleaning": "kit",
+      "opening:cleaning": 12,
+      "ending:cleaning": 9,
+      "opening:module": 2,
+      "ending:module": 2,
+      "unit:module": "kit",
+      "opening:calibration": 2,
+      "ending:calibration": 2,
+      "unit:calibration": "kit",
+      "opening:brush": 2,
+      "ending:brush": 2,
+      "unit:brush": "kit"
+    },
+    "status": "complete",
+    "basis": "Illustrative EUR assumptions; procurement at upstream release, with no refund for rejected deliveries. No actual vendor invoices.",
+    "boundaries": [
+      "Expenditure means modelled billable events under these assumptions, not observed invoices or bank payments.",
+      "Pre-existing equipment and opening stocks are excluded from period expenditure unless their purchase switches are enabled; inventory remains explicit.",
+      "Contract/shared provision includes hardware, payload, references, replacement parts and scheduled maintenance; site preparation, external consumables and human/vehicle work are priced separately.",
+      "Replaceable capital is excluded from body ownership. Its allocation uses max(calendar, usage, used parts); decision cost uses max(usage, used parts). Procurement is a separate view, never added to allocation again.",
+      "Electricity is already withdrawn from the plant bus. Production effects are in the physical trace; neither is charged again as purchased electricity or lost methane.",
+      "Service charge prorating does not simulate a preventive maintenance visit. Shared provision does not by itself model another site's demand."
+    ]
+  },
+  "metrics": {
+    "capacity_restored_hour": null,
+    "capacity_confirmed_hour": null,
+    "recovery_confirmation_delay_hours": null,
+    "recovery_probe_hours": 0,
+    "recovery_deadline_misses": null,
+    "recovery_candidate_solves": null,
+    "methane_kg": 290.0,
+    "h2_produced_kg": 205.0,
+    "curtailed_kwh": 34478.094295703464,
+    "utilisation": 0.6041666666666666,
+    "reactor_starts": 2.0,
+    "electrolyser_starts": 2.0,
+    "forced_downtime_hours": 0,
+    "detection_delay_hours": null,
+    "false_alarms": 0,
+    "fault_active_hours": 0,
+    "field_energy_kwh": 4.344444444444445,
+    "soiling_loss_kwh": 1035.6,
+    "service_work": {
+      "implementation_id": "plant-service-contracts/12",
+      "hardware": {
+        "implementation_id": "actuator-interlock/1",
+        "observations": {
+          "cleaner": {
+            "status": "unobserved",
+            "feedback": null,
+            "may_attempt": true
+          },
+          "dock": {
+            "status": "unobserved",
+            "feedback": null,
+            "may_attempt": true
+          }
+        },
+        "recovery_enabled": false
+      },
+      "inspection": {
+        "model": "referenced-contact/1",
+        "at_hour": 48,
+        "invalidated_through_hour": null,
+        "quality": "uncertain",
+        "value": null,
+        "reason": "Awaiting current reader evidence",
+        "channels": [],
+        "isolated_readers": [],
+        "scope": "Reader references test the acquisition path. Both readers share one contact; agreement cannot exclude a common stuck contact or establish module health."
+      },
+      "portable": null,
+      "support": {
+        "implementation_id": "logistics/1",
+        "calendar_basis": "Hours from simulation origin; declared repeating labour availability, not inferred local business hours",
+        "returned": {},
+        "crew_hours_remaining": 24,
+        "remote_hours_remaining": 1,
+        "upstream": {
+          "cleaning": 24,
+          "module": 24,
+          "calibration": 24,
+          "brush": 24
+        },
+        "upstream_units": {
+          "cleaning": "kit",
+          "module": "kit",
+          "calibration": "kit",
+          "brush": "kit"
+        },
+        "water_l": null,
+        "brush_spares": 2,
+        "limitation": "Mission-abort retrieval and bounded supervised drive test. This does not repair arbitrary mechanical damage. Crew visits are separate; enable combined visits to share eligible journeys. Failed support-equipment recovery remains programme work.",
+        "crew_return": {
+          "implementation_id": "interrupted-crew-return/1",
+          "scope": "Return follows the remaining accepted travel legs, skipping unfinished jobs. Active return labour is metered; waiting off-shift and vehicle fuel are not separately priced. No injury, rescue, vehicle damage or emergency routing model."
+        }
+      },
+      "surface": {
+        "model": "array-surface/1",
+        "sections": [
+          {
+            "id": "PV-01",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.016000000000000004,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.984,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 500.0,
+                "removable": 0.015999999999999983,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 500.0,
+                "end_m2": 1500.0,
+                "removable": 0.015999999999999983,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 1500.0,
+                "end_m2": 1666.666666666666,
+                "removable": 0.015999999999999983,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 1666.666666666666,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          },
+          {
+            "id": "PV-02",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.013000000000000025,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.987,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 500.0,
+                "removable": 0.013000000000000001,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 500.0,
+                "end_m2": 1500.0,
+                "removable": 0.013000000000000001,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 1500.0,
+                "end_m2": 1666.666666666666,
+                "removable": 0.013000000000000001,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 1666.666666666666,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          },
+          {
+            "id": "PV-03",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.009999999999999997,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.99,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 500.0,
+                "removable": 0.009999999999999998,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 500.0,
+                "end_m2": 1500.0,
+                "removable": 0.009999999999999998,
+                "adhered": 0,
+                "damaged": 0
+              },
+              {
+                "start_m2": 1500.0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.009999999999999998,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          }
+        ],
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture"
+      },
+      "robots": {
+        "cleaner": {
+          "asset_id": "PLANT-01/CLEAN-01",
+          "energy_kwh": 2.0,
+          "status": "available"
+        },
+        "rover": {
+          "asset_id": "PLANT-01/ROVER-01",
+          "energy_kwh": 0,
+          "status": "disabled"
+        }
+      },
+      "soiling_estimate": 0.013000000000000008,
+      "soiling_sensor": "ideal section surface monitor",
+      "orders": [
+        {
+          "id": "SVC-0001",
+          "kind": "cleaning",
+          "incident": 0,
+          "created_hour": 0,
+          "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+          "sequence": 1,
+          "section": "PV-03",
+          "cleaning_policy": "local-cleaning-policy/1",
+          "cleaning_rule": "condition",
+          "due_hour": null,
+          "measured_surface": {
+            "id": "PV-03",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.1,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.9000000000000001,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          },
+          "status": "completed",
+          "phase": "return",
+          "evidence": [
+            {
+              "channel": "route-open",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "communications",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "crew-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "calibration-reference",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-control-powered",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "dock-standby/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "contact-port-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "contact-access/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "ambient-c",
+              "value": 20,
+              "unit": "\u00b0C",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "current-ambient-sensor/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "row-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "declared-row-interface/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "wind-mps",
+              "value": 3,
+              "unit": "m/s",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "rain-mmph",
+              "value": 0,
+              "unit": "mm/h",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "capacity-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "process-diagnosis/1",
+              "quality": "uncertain"
+            },
+            {
+              "channel": "flow-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "process-diagnosis/1",
+              "quality": "uncertain"
+            },
+            {
+              "channel": "at-dock:cleaner",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "at-dock:rover",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "trip-contact",
+              "value": null,
+              "unit": "boolean",
+              "measured_at": 0,
+              "available_at": 0,
+              "source_id": "referenced-contact/1/evidence",
+              "quality": "uncertain"
+            }
+          ],
+          "stochastic_event": {
+            "target": "PV-03",
+            "action": "clean-section",
+            "request": 1,
+            "model": "target-action-request/1"
+          },
+          "started_hour": 0,
+          "asset_id": "PLANT-01/CLEAN-01",
+          "progress": 1,
+          "completed_hour": 2.9166666666666665,
+          "verified_at_hour": null,
+          "reported": {
+            "order_id": "SVC-0001",
+            "report": "Section pass completed; only compatible surface material treated",
+            "completed_at": 2.1666666666666665,
+            "available_at": 3
+          },
+          "execution_status": "completed",
+          "from_point": "solar",
+          "to_point": "dock",
+          "blocked": null,
+          "remaining": 0,
+          "robot": "cleaner"
+        },
+        {
+          "id": "SVC-0002",
+          "kind": "cleaning",
+          "incident": 0,
+          "created_hour": 3,
+          "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+          "sequence": 2,
+          "section": "PV-02",
+          "cleaning_policy": "local-cleaning-policy/1",
+          "cleaning_rule": "condition",
+          "due_hour": null,
+          "measured_surface": {
+            "id": "PV-02",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.1,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.9000000000000001,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          },
+          "status": "completed",
+          "phase": "return",
+          "evidence": [
+            {
+              "channel": "route-open",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "communications",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "crew-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "calibration-reference",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-control-powered",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "dock-standby/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "contact-port-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "contact-access/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "ambient-c",
+              "value": 20,
+              "unit": "\u00b0C",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "current-ambient-sensor/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "row-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "declared-row-interface/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "wind-mps",
+              "value": 3,
+              "unit": "m/s",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "rain-mmph",
+              "value": 0,
+              "unit": "mm/h",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "capacity-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 2,
+              "available_at": 3,
+              "source_id": "process-diagnosis/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "flow-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 2,
+              "available_at": 3,
+              "source_id": "process-diagnosis/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "at-dock:cleaner",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "at-dock:rover",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "trip-contact",
+              "value": null,
+              "unit": "boolean",
+              "measured_at": 3,
+              "available_at": 3,
+              "source_id": "referenced-contact/1/evidence",
+              "quality": "uncertain"
+            }
+          ],
+          "stochastic_event": {
+            "target": "PV-02",
+            "action": "clean-section",
+            "request": 1,
+            "model": "target-action-request/1"
+          },
+          "started_hour": 3,
+          "asset_id": "PLANT-01/CLEAN-01",
+          "progress": 1,
+          "completed_hour": 5.916666666666666,
+          "verified_at_hour": null,
+          "reported": {
+            "order_id": "SVC-0002",
+            "report": "Section pass completed; only compatible surface material treated",
+            "completed_at": 5.166666666666666,
+            "available_at": 6
+          },
+          "execution_status": "completed",
+          "from_point": "solar",
+          "to_point": "dock",
+          "blocked": null,
+          "remaining": 0,
+          "robot": "cleaner"
+        },
+        {
+          "id": "SVC-0003",
+          "kind": "cleaning",
+          "incident": 0,
+          "created_hour": 6,
+          "reason": "Current ideal surface estimate exceeds the compatible treatment threshold; largest treatable loss first",
+          "sequence": 3,
+          "section": "PV-01",
+          "cleaning_policy": "local-cleaning-policy/1",
+          "cleaning_rule": "condition",
+          "due_hour": null,
+          "measured_surface": {
+            "id": "PV-01",
+            "area_m2": 1666.6666666666665,
+            "removable_fraction": 0.1,
+            "adhered_fraction": 0.0,
+            "damage_fraction": 0.0,
+            "transmission": 0.9000000000000001,
+            "patches": [
+              {
+                "start_m2": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0,
+                "damaged": 0
+              }
+            ]
+          },
+          "status": "completed",
+          "phase": "return",
+          "evidence": [
+            {
+              "channel": "route-open",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "communications",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "crew-available",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "calibration-reference",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-support-fixture/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "dock-control-powered",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "dock-standby/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "contact-port-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "contact-access/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "ambient-c",
+              "value": 20,
+              "unit": "\u00b0C",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "current-ambient-sensor/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "row-accessible",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "declared-row-interface/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "wind-mps",
+              "value": 3,
+              "unit": "m/s",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "rain-mmph",
+              "value": 0,
+              "unit": "mm/h",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "assumed-service-weather/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "capacity-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 5,
+              "available_at": 6,
+              "source_id": "process-diagnosis/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "flow-restored",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 5,
+              "available_at": 6,
+              "source_id": "process-diagnosis/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "at-dock:cleaner",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "at-dock:rover",
+              "value": true,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "recorded-service-location/1",
+              "quality": "usable"
+            },
+            {
+              "channel": "trip-contact",
+              "value": null,
+              "unit": "boolean",
+              "measured_at": 6,
+              "available_at": 6,
+              "source_id": "referenced-contact/1/evidence",
+              "quality": "uncertain"
+            }
+          ],
+          "stochastic_event": {
+            "target": "PV-01",
+            "action": "clean-section",
+            "request": 1,
+            "model": "target-action-request/1"
+          },
+          "started_hour": 6,
+          "asset_id": "PLANT-01/CLEAN-01",
+          "progress": 1,
+          "completed_hour": 8.916666666666666,
+          "verified_at_hour": null,
+          "reported": {
+            "order_id": "SVC-0003",
+            "report": "Section pass completed; only compatible surface material treated",
+            "completed_at": 8.166666666666666,
+            "available_at": 9
+          },
+          "execution_status": "completed",
+          "from_point": "solar",
+          "to_point": "dock",
+          "blocked": null,
+          "remaining": 0,
+          "robot": "cleaner"
+        }
+      ],
+      "service_kits": 2,
+      "cleaning_kits": 9,
+      "calibration_kits": 2,
+      "executive": {
+        "version": "service-executive/1",
+        "at_hour": 48,
+        "orders": [
+          {
+            "order_id": "SVC-0001",
+            "asset_id": "PLANT-01/CLEAN-01",
+            "action": "clean-section",
+            "target": "PV-03",
+            "status": "completed",
+            "phase": "return",
+            "from_point": "solar",
+            "to_point": "dock",
+            "progress": 1,
+            "started_at": 0,
+            "completed_at": 2.9166666666666665,
+            "verified_at": null,
+            "reason": null,
+            "bus_kwh": 0.0,
+            "battery_kwh": 0.5833333333333334,
+            "reports": [
+              {
+                "order_id": "SVC-0001",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 1,
+                "available_at": 1
+              },
+              {
+                "order_id": "SVC-0001",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 2,
+                "available_at": 2
+              },
+              {
+                "order_id": "SVC-0001",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 2.1666666666666665,
+                "available_at": 3
+              },
+              {
+                "order_id": "SVC-0001",
+                "report": "Section pass completed; only compatible surface material treated",
+                "completed_at": 2.1666666666666665,
+                "available_at": 3
+              }
+            ]
+          },
+          {
+            "order_id": "SVC-0002",
+            "asset_id": "PLANT-01/CLEAN-01",
+            "action": "clean-section",
+            "target": "PV-02",
+            "status": "completed",
+            "phase": "return",
+            "from_point": "solar",
+            "to_point": "dock",
+            "progress": 1,
+            "started_at": 3,
+            "completed_at": 5.916666666666666,
+            "verified_at": null,
+            "reason": null,
+            "bus_kwh": 0.0,
+            "battery_kwh": 0.5833333333333333,
+            "reports": [
+              {
+                "order_id": "SVC-0002",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 4,
+                "available_at": 4
+              },
+              {
+                "order_id": "SVC-0002",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 5,
+                "available_at": 5
+              },
+              {
+                "order_id": "SVC-0002",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 5.166666666666666,
+                "available_at": 6
+              },
+              {
+                "order_id": "SVC-0002",
+                "report": "Section pass completed; only compatible surface material treated",
+                "completed_at": 5.166666666666666,
+                "available_at": 6
+              }
+            ]
+          },
+          {
+            "order_id": "SVC-0003",
+            "asset_id": "PLANT-01/CLEAN-01",
+            "action": "clean-section",
+            "target": "PV-01",
+            "status": "completed",
+            "phase": "return",
+            "from_point": "solar",
+            "to_point": "dock",
+            "progress": 1,
+            "started_at": 6,
+            "completed_at": 8.916666666666666,
+            "verified_at": null,
+            "reason": null,
+            "bus_kwh": 0.0,
+            "battery_kwh": 0.5833333333333333,
+            "reports": [
+              {
+                "order_id": "SVC-0003",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 7,
+                "available_at": 7
+              },
+              {
+                "order_id": "SVC-0003",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 8,
+                "available_at": 8
+              },
+              {
+                "order_id": "SVC-0003",
+                "report": "Partial treatment recorded; optical effect at next decision boundary",
+                "completed_at": 8.166666666666666,
+                "available_at": 9
+              },
+              {
+                "order_id": "SVC-0003",
+                "report": "Section pass completed; only compatible surface material treated",
+                "completed_at": 8.166666666666666,
+                "available_at": 9
+              }
+            ]
+          },
+          {
+            "order_id": "CHARGE-9-cleaner",
+            "asset_id": "PLANT-01/DOCK-01",
+            "action": "charge-cleaner",
+            "target": "PLANT-01/CLEAN-01",
+            "status": "completed",
+            "phase": "perform",
+            "from_point": "dock",
+            "to_point": "dock",
+            "progress": 1,
+            "started_at": 9,
+            "completed_at": 10,
+            "verified_at": null,
+            "reason": null,
+            "bus_kwh": 1,
+            "battery_kwh": 0,
+            "reports": [
+              {
+                "order_id": "CHARGE-9-cleaner",
+                "report": "Charging interval completed; energy posted at the hourly boundary",
+                "completed_at": 10,
+                "available_at": 10
+              }
+            ]
+          },
+          {
+            "order_id": "CHARGE-10-cleaner",
+            "asset_id": "PLANT-01/DOCK-01",
+            "action": "charge-cleaner",
+            "target": "PLANT-01/CLEAN-01",
+            "status": "completed",
+            "phase": "perform",
+            "from_point": "dock",
+            "to_point": "dock",
+            "progress": 1,
+            "started_at": 10,
+            "completed_at": 11,
+            "verified_at": null,
+            "reason": null,
+            "bus_kwh": 0.9444444444444445,
+            "battery_kwh": 0,
+            "reports": [
+              {
+                "order_id": "CHARGE-10-cleaner",
+                "report": "Charging interval completed; energy posted at the hourly boundary",
+                "completed_at": 11,
+                "available_at": 11
+              }
+            ]
+          }
+        ],
+        "observations": [],
+        "resources": [
+          {
+            "resource": "stock:cleaning",
+            "unit": "kit",
+            "initial": 12,
+            "received": 0,
+            "consumed": 3,
+            "ending": 9,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "stock:module",
+            "unit": "kit",
+            "initial": 2,
+            "received": 0,
+            "consumed": 0,
+            "ending": 2,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "stock:calibration",
+            "unit": "kit",
+            "initial": 2,
+            "received": 0,
+            "consumed": 0,
+            "ending": 2,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "energy:cleaner",
+            "unit": "kWh",
+            "initial": 2,
+            "received": 1.75,
+            "consumed": 1.7499999999999998,
+            "ending": 2.0,
+            "reserved": 0.0,
+            "residual": -2.220446049250313e-16,
+            "passed": true
+          },
+          {
+            "resource": "brush:cleaner",
+            "unit": "m2",
+            "initial": 50000,
+            "received": 0,
+            "consumed": 4999.999999999998,
+            "ending": 45000.00000000001,
+            "reserved": 0.0,
+            "residual": 5.4569682106375694e-12,
+            "passed": true
+          },
+          {
+            "resource": "crew-hours",
+            "unit": "h",
+            "initial": 24,
+            "received": 0,
+            "consumed": 0,
+            "ending": 24,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "remote-hours",
+            "unit": "h",
+            "initial": 1,
+            "received": 0,
+            "consumed": 0,
+            "ending": 1,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "stock:brush",
+            "unit": "kit",
+            "initial": 2,
+            "received": 0,
+            "consumed": 0,
+            "ending": 2,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "upstream:cleaning",
+            "unit": "kit",
+            "initial": 24,
+            "received": 0,
+            "consumed": 0,
+            "ending": 24,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "upstream:module",
+            "unit": "kit",
+            "initial": 24,
+            "received": 0,
+            "consumed": 0,
+            "ending": 24,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "upstream:calibration",
+            "unit": "kit",
+            "initial": 24,
+            "received": 0,
+            "consumed": 0,
+            "ending": 24,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          },
+          {
+            "resource": "upstream:brush",
+            "unit": "kit",
+            "initial": 24,
+            "received": 0,
+            "consumed": 0,
+            "ending": 24,
+            "reserved": 0,
+            "residual": 0,
+            "passed": true
+          }
+        ]
+      },
+      "cleaning_policy": {
+        "implementation_id": "local-cleaning-policy/1",
+        "mode": "condition",
+        "first_due_hour": 0.0,
+        "recurrence_hours": 168.0,
+        "schedules": [],
+        "scope": "Local rule using available ideal surface estimates or a declared recurrence. No future weather, price optimization or injected fault truth. Completed full passes reset recurrence; partial treatment remains in the physical surface but earns no full-pass credit."
+      },
+      "inspection_interface": {
+        "implementation_id": "contact-access/1",
+        "kind": "accessible-port",
+        "accessible": true,
+        "scope": "Known plant interface compatibility for the contact payload. Enclosed contacts require a different intervention; no visual diagnosis is inferred."
+      },
+      "standby": {
+        "implementation_id": "dock-standby/1",
+        "requested_kwh": 0.05,
+        "applied_kwh": 0.05,
+        "unserved_kwh": 0.0,
+        "pv_available_kw": 987.0,
+        "battery_available_kw": 400.0,
+        "installed": true,
+        "control_available": true,
+        "scope": "One-hour constant control-electronics load upstream of the charger power stage. Full-rate priority grant; active service remains solar-only. A failed charger can still consume control standby power."
+      }
+    },
+    "service_outcomes": {
+      "implementation_id": "field-period-outcomes/1",
+      "cleaning_treated_m2": 4999.999999999998,
+      "cleaning_full_passes": 3,
+      "cleaning_water_l": 0,
+      "converter_clipped_kwh": 0,
+      "contact_usable_decision_hours": 0,
+      "contact_first_usable_hour": null,
+      "dock_unserved_kwh": 0.0,
+      "routine_completed": 0,
+      "scope": "Applied hourly totals. Contact hours count eligible decision evidence, not retrospective truth or unique samples. Missing optical, standby or referenced sensing mechanisms remain undefined; no annualization."
+    },
+    "uncertain_hours": 17,
+    "fallbacks": 0,
+    "limited_solves": 0,
+    "ending": {
+      "battery_kwh": 800.0,
+      "h2_kg": 60.0,
+      "co2_kg": 2.5,
+      "temperature_c": 255.0,
+      "electrolyser_on": false,
+      "reactor_on": false,
+      "commitment_hours": 0
+    },
+    "co2_rejected_kg": 0.0,
+    "max_balance_error": 2.842170943040401e-14,
+    "hours": 48,
+    "components": {
+      "solar": 109.58904109589041,
+      "battery": 61.36986301369863,
+      "electrolyser": 134.51082191780822,
+      "reactor": 65.83561643835617,
+      "hydrogen": 16.438356164383563,
+      "co2": 130.58390410958904,
+      "site": 211.71232876712327,
+      "cleaner": 19.30650684931507,
+      "service_materials": 15,
+      "dock": 21.232876712328768,
+      "portable": 0,
+      "rover": 0,
+      "human_service": 0
+    },
+    "total_eur": 785.5793150684931,
+    "eur_per_kg_ch4": 2.7088941898913554,
+    "water_input_m3": 2.46,
+    "incidents": 0,
+    "charged_incidents": 0,
+    "field_operations": {
+      "schema_version": "dispatch-lab/service-economics/1",
+      "assumption_id": "e7f58fe08813e2eb26a37daa0fa40e9b1ac768ff5eada244341bede040a94f29",
+      "components": {
+        "cleaner": 19.30650684931507,
+        "service_materials": 15,
+        "dock": 21.232876712328768,
+        "portable": 0,
+        "rover": 0,
+        "human_service": 0
+      },
+      "total_eur": 55.53938356164384,
+      "variable_and_wear_eur": 19.375,
+      "terms": {},
+      "quantities": {
+        "human_visits": 0,
+        "charge_input_kwh": 1.9444444444444446,
+        "fixed_service_kwh": 2.4,
+        "cleaner_hours": 8.749999999999998,
+        "rover_hours": 0,
+        "dock_hours": 2.0,
+        "fixed_reader_hours": 0,
+        "reset_hours": 0,
+        "portable_hours": 0,
+        "used:cleaning": 3
+      },
+      "unpriced": [],
+      "views": {
+        "allocated": {
+          "total_eur": 55.53938356164384,
+          "known_subtotal_eur": 55.53938356164384,
+          "unpriced": [],
+          "components": {
+            "cleaner": 19.30650684931507,
+            "service_materials": 15,
+            "dock": 21.232876712328768,
+            "portable": 0,
+            "rover": 0,
+            "human_service": 0
+          }
+        },
+        "decision": {
+          "total_eur": 19.375,
+          "known_subtotal_eur": 19.375,
+          "unpriced": [],
+          "components": {
+            "cleaner": 4.374999999999999,
+            "service_materials": 15,
+            "dock": 0.0,
+            "portable": 0,
+            "rover": 0,
+            "human_service": 0
+          }
+        },
+        "expenditure": {
+          "total_eur": 19.726027397260275,
+          "known_subtotal_eur": 19.726027397260275,
+          "unpriced": [],
+          "components": {
+            "cleaner": 3.287671232876712,
+            "service_materials": 0,
+            "dock": 16.438356164383563,
+            "portable": 0,
+            "rover": 0,
+            "human_service": 0
+          }
+        }
+      },
+      "inventories": {
+        "unit:cleaning": "kit",
+        "opening:cleaning": 12,
+        "ending:cleaning": 9,
+        "opening:module": 2,
+        "ending:module": 2,
+        "unit:module": "kit",
+        "opening:calibration": 2,
+        "ending:calibration": 2,
+        "unit:calibration": "kit",
+        "opening:brush": 2,
+        "ending:brush": 2,
+        "unit:brush": "kit"
+      },
+      "status": "complete",
+      "basis": "Illustrative EUR assumptions; procurement at upstream release, with no refund for rejected deliveries. No actual vendor invoices.",
+      "boundaries": [
+        "Expenditure means modelled billable events under these assumptions, not observed invoices or bank payments.",
+        "Pre-existing equipment and opening stocks are excluded from period expenditure unless their purchase switches are enabled; inventory remains explicit.",
+        "Contract/shared provision includes hardware, payload, references, replacement parts and scheduled maintenance; site preparation, external consumables and human/vehicle work are priced separately.",
+        "Replaceable capital is excluded from body ownership. Its allocation uses max(calendar, usage, used parts); decision cost uses max(usage, used parts). Procurement is a separate view, never added to allocation again.",
+        "Electricity is already withdrawn from the plant bus. Production effects are in the physical trace; neither is charged again as purchased electricity or lost methane.",
+        "Service charge prorating does not simulate a preventive maintenance visit. Shared provision does not by itself model another site's demand."
+      ]
+    },
+    "allowances": {
+      "battery": [
+        52.602739726027394,
+        0.0,
+        52.602739726027394
+      ],
+      "stack": [
+        46.02739726027397,
+        65.10000000000001,
+        65.10000000000001
+      ],
+      "reactor": [
+        10.95890410958904,
+        22.0,
+        22.0
+      ]
+    },
+    "variable_and_wear_eur": 243.72999999999988,
+    "assumed_value_eur": 290.0,
+    "assumed_contribution_eur": 46.270000000000124
+  },
+  "seconds": 1.5156788749154657
+}

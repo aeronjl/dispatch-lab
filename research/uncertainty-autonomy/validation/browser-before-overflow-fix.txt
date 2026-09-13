@@ -1,0 +1,115 @@
+
+> test:browser
+> playwright test autonomy.spec.cjs adaptation.spec.cjs platform.spec.cjs uncertainty.spec.cjs
+
+
+Running 18 tests using 1 worker
+
+(node:51850) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 tests/browser/adaptation.spec.cjs:2:1 › performance adaptation is explicit, source-defined and invalidates an earlier preview (2.4s)
+(node:51855) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 tests/browser/autonomy.spec.cjs:2:1 › autonomous service assumptions are explicit, resettable and invalidate a reviewed preview (2.0s)
+(node:51863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 tests/browser/platform.spec.cjs:16:1 › plant and solar artwork match the pre-refactor reference (1.8s)
+  ✓   4 tests/browser/platform.spec.cjs:26:1 › keyboard inspection, lazy plans and evidence remain usable (3.0s)
+  ✓   5 tests/browser/platform.spec.cjs:47:1 › narrow-screen solar access and changed geometry (3.3s)
+  ✓   6 tests/browser/platform.spec.cjs:56:1 › preview latency, render cost and immutable restored design (6.3s)
+  ✓   7 tests/browser/platform.spec.cjs:87:1 › playback, controller views, costs and event navigation (2.7s)
+  ✓   8 tests/browser/platform.spec.cjs:98:1 › superseded preview responses cannot replace the latest design (4.3s)
+  ✓   9 tests/browser/platform.spec.cjs:114:1 › quiet full viewport, retreat controls and discoverable recovery (2.0s)
+  ✓  10 tests/browser/platform.spec.cjs:130:1 › separate analysis and setup return to the same playhead (4.3s)
+  ✓  11 tests/browser/platform.spec.cjs:139:1 › battery trace is revealed on demand and follows the selected interval (4.2s)
+  ✓  12 tests/browser/platform.spec.cjs:168:1 › legacy archive restores editable setup without inventing battery lineage (8.9s)
+  -  13 tests/browser/platform.spec.cjs:183:1 › component and repriced cost lineage stay behind disclosures
+  -  14 tests/browser/platform.spec.cjs:210:1 › portable offline bundle plays without network access
+  ✓  15 tests/browser/uncertainty.spec.cjs:3:1 › uncertainty editor covers complete catalogue, previews worlds and restores context (2.0s)
+  ✓  16 tests/browser/uncertainty.spec.cjs:7:1 › invalid probability requests and late previews cannot enable execution (2.4s)
+  ✘  17 tests/browser/uncertainty.spec.cjs:11:1 › all observation channels and narrow-screen keyboard workflow (1.8s)
+(node:52099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  18 tests/browser/uncertainty.spec.cjs:14:1 › reviewed world executes in a frozen worker and produces traceable envelopes
+
+
+  1) tests/browser/adaptation.spec.cjs:2:1 › performance adaptation is explicit, source-defined and invalidates an earlier preview 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      19 |  await page.setViewportSize({width:390,height:844});await page.locator('[data-u=adaptation]').scrollIntoViewIfNeeded();
+      20 |  await page.screenshot({path:'build/observed-performance/controls-mobile.png'});
+    > 21 |  expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();
+         |                                                                                          ^
+      22 |  expect(errors).toEqual([]);
+      23 | });
+      24 |
+        at /Users/aeron/sota/dispatch-lab/tests/browser/adaptation.spec.cjs:21:90
+
+    Error Context: test-results/adaptation-performance-ada-b5b17-alidates-an-earlier-preview/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/adaptation-performance-ada-b5b17-alidates-an-earlier-preview/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/adaptation-performance-ada-b5b17-alidates-an-earlier-preview/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser/autonomy.spec.cjs:2:1 › autonomous service assumptions are explicit, resettable and invalidate a reviewed preview 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+       8 |  const sent=packets.find(p=>p.operation==='uncertainty-preview');expect(sent.uncertainty.autonomy.mode).toBe('risk-aware');expect(sent.uncertainty.autonomy.duration_bounds.cleaning).toEqual([.5,2]);expect(sent.uncertainty.autonomy.source).toContain('no site calibration');
+       9 |  await page.locator('[data-u=autonomy]').selectOption('fixed');await expect(page.locator('[data-u=start]')).toBeDisabled();
+    > 10 |  await page.locator('[data-u=autonomy]').selectOption('off');await expect(page.locator('[data-u=autonomy]')).toHaveValue('off');await page.setViewportSize({width:390,height:844});expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();await page.keyboard.press('Escape');
+         |                                                                                                                                                                                                                                                                            ^
+      11 | });
+      12 |
+        at /Users/aeron/sota/dispatch-lab/tests/browser/autonomy.spec.cjs:10:268
+
+    Error Context: test-results/autonomy-autonomous-servic-82786-validate-a-reviewed-preview/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/autonomy-autonomous-servic-82786-validate-a-reviewed-preview/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/autonomy-autonomous-servic-82786-validate-a-reviewed-preview/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/browser/uncertainty.spec.cjs:11:1 › all observation channels and narrow-screen keyboard workflow 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      10 | });
+      11 | test('all observation channels and narrow-screen keyboard workflow',async({page})=>{
+    > 12 |  await page.setViewportSize({width:390,height:844});await open(page);await page.locator('[data-u=channel]').selectOption('temperature_c');await page.locator('[data-u=noise]').fill('2');await page.locator('[data-u=bias]').fill('1');await page.locator('[data-u=measure]').focus();await page.keyboard.press('Enter');await expect(page.locator('.u-measurements')).toContainText('temperature_c');await page.screenshot({path:'build/uncertainty/editor-mobile.png'});expect(await page.locator('.st-workspace').evaluate(n=>n.scrollWidth<=n.clientWidth+1)).toBeTruthy();await page.locator('[data-u=unmeasure]').click();await expect(page.locator('.u-measurements')).not.toContainText('temperature_c');
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+      13 | });
+      14 | test('reviewed world executes in a frozen worker and produces traceable envelopes',async({page})=>{
+      15 |  test.skip(!process.env.DISPATCH_BROWSER_HOURS,'Dedicated short current-run fixture');test.setTimeout(120000);await open(page);await page.locator('[data-u=search]').fill('roundtrip_efficiency');await page.locator('[data-u=values]').fill('0.88');await page.locator('[data-u=add]').click();await page.locator('[data-u=worlds]').fill('1');await page.locator('[data-u=seeds]').fill('7');await page.locator('[data-u=preview]').click();await expect(page.locator('[data-u=start]')).toBeEnabled();await page.locator('[data-u=start]').click();await expect(page.locator('.st-article h1')).toContainText('assumptions');await expect(page.locator('.st-status')).toHaveText('Study write-up saved',{timeout:90000});await expect(page.locator('.st-article')).toContainText('1/1 world/event cases complete');await expect(page.locator('.u-envelope svg')).toHaveCount(3);await page.locator('[data-u=trajectory]').selectOption('temperature_c');await expect(page.locator('.u-envelope svg').first()).toHaveAttribute('aria-label',/temperature_c/);await page.screenshot({path:'build/uncertainty/report-browser.png'});await page.locator('.st-article button[data-case]').first().click();await expect(page.locator('.st-panel-body')).toContainText('Original uncertainty realization');await expect(page.locator('.st-panel-body')).toContainText('0.88');await expect(page.locator('.st-panel-body')).toContainText('0.9');await page.locator('[data-trace=methane_kg]').first().click();await expect(page.locator('.st-panel-body')).toContainText('uncertainty_world');await page.keyboard.press('Escape');await page.locator('[data-st=export]').click();await expect(page.locator('.st-download a')).toBeVisible({timeout:60000});
+        at /Users/aeron/sota/dispatch-lab/tests/browser/uncertainty.spec.cjs:12:547
+
+    Error Context: test-results/uncertainty-all-observatio-44ba8-ow-screen-keyboard-workflow/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/uncertainty-all-observatio-44ba8-ow-screen-keyboard-workflow/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/uncertainty-all-observatio-44ba8-ow-screen-keyboard-workflow/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    tests/browser/adaptation.spec.cjs:2:1 › performance adaptation is explicit, source-defined and invalidates an earlier preview 
+    tests/browser/autonomy.spec.cjs:2:1 › autonomous service assumptions are explicit, resettable and invalidate a reviewed preview 
+    tests/browser/uncertainty.spec.cjs:11:1 › all observation channels and narrow-screen keyboard workflow 
+  3 skipped
+  12 passed (1.1m)

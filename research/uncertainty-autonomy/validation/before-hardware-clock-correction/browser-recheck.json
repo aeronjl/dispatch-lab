@@ -1,0 +1,333 @@
+{
+  "config": {
+    "argv": [
+      "/Users/aeron/.local/share/fnm/node-versions/v24.14.0/installation/bin/node",
+      "/Users/aeron/sota/dispatch-lab/node_modules/.bin/playwright",
+      "test",
+      "autonomy.spec.cjs",
+      "adaptation.spec.cjs",
+      "uncertainty.spec.cjs"
+    ],
+    "configFile": "/Users/aeron/sota/dispatch-lab/playwright.config.cjs",
+    "rootDir": "/Users/aeron/sota/dispatch-lab/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/aeron/sota/dispatch-lab/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/aeron/sota/dispatch-lab/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "build/engineering/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": ".venv/bin/python tests/browser/server.py",
+      "url": "http://127.0.0.1:7861",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "adaptation.spec.cjs",
+      "file": "adaptation.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "performance adaptation is explicit, source-defined and invalidates an earlier preview",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2884,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:35.787Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b8f2c3a921a000f25a7c-d2052bf33ccc424b840b",
+          "file": "adaptation.spec.cjs",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "autonomy.spec.cjs",
+      "file": "autonomy.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "autonomous service assumptions are explicit, resettable and invalidate a reviewed preview",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1899,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:39.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b62eea4f5cadcc9b0349-9ad7c43f6060866eee43",
+          "file": "autonomy.spec.cjs",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "uncertainty.spec.cjs",
+      "file": "uncertainty.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "uncertainty editor covers complete catalogue, previews worlds and restores context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:41.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b5daa0954e02ac71e72-d7cf5792e16afdd18bbf",
+          "file": "uncertainty.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "invalid probability requests and late previews cannot enable execution",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3003,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:43.372Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b5daa0954e02ac71e72-8a4db4595ad1181ef80d",
+          "file": "uncertainty.spec.cjs",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "all observation channels and narrow-screen keyboard workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:46.386Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b5daa0954e02ac71e72-b51610704bda1bd289da",
+          "file": "uncertainty.spec.cjs",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "reviewed world executes in a frozen worker and produces traceable envelopes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Dedicated short current-run fixture",
+                  "location": {
+                    "file": "/Users/aeron/sota/dispatch-lab/tests/browser/uncertainty.spec.cjs",
+                    "line": 15,
+                    "column": 7
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 90,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-13T15:12:48.587Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Dedicated short current-run fixture",
+                      "location": {
+                        "file": "/Users/aeron/sota/dispatch-lab/tests/browser/uncertainty.spec.cjs",
+                        "line": 15,
+                        "column": 7
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "3b5daa0954e02ac71e72-238418a4c555214a8890",
+          "file": "uncertainty.spec.cjs",
+          "line": 14,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-13T15:12:16.418Z",
+    "duration": 32365.718,
+    "expected": 5,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "realism-review-decision/1",
+  "review_date": "2026-09-12",
+  "scope": "Existing illustrative fixture; London, Seville, Copenhagen; first service system and all 14 hardware families",
+  "review_status": "complete",
+  "credibility_gate": "open",
+  "production_source_hash": "76a41fc80ebe5e12f52b4a7c26d3b88a13825e065c9d9e5db47e84f83aaaecfd",
+  "production_changed": false,
+  "broader_programme": "paused; old study queue not resumed",
+  "permitted": [
+    "Conditional teaching and numerical mechanism/accounting studies with explicit original assumptions",
+    "Threshold and structural counterexample studies without calibration or deployment claims"
+  ],
+  "not_established": [
+    "Cause-specific real plant autonomous repair",
+    "Calibrated observation uncertainty and fault identifiability",
+    "European field-operation availability, failure incidence and service costs",
+    "Annual maintenance ROI or a preferred real fleet",
+    "Learned-policy transfer to actual or materially changed equipment"
+  ],
+  "recommended_next_configuration": "Fixed sensing plus a specifically engineered remote-recovery task, cause-specific human fallback including local reset, and compatible array/cleaning alternatives; mobile inspection only for useful distinct information or access.",
+  "guidance_required_before": "Changing production action/observation boundaries or resuming the wider implementation programme",
+  "evidence": {
+    "primary_sources": 28,
+    "hardware_families": 14,
+    "assumptions": 31,
+    "all_numerical_executions": 128,
+    "comparison_cases": 112,
+    "retained_setup_error_cases": 16,
+    "independent_run_audits_passed": 128,
+    "independent_thermal_examples": 864,
+    "targeted_tests_passed": 101
+  },
+  "limitations": [
+    "Constant-power stress inputs are not European weather or plausible-range samples",
+    "No new empirical hardware/plant trial",
+    "Three seeds at 48 hours; one seed at 240 hours",
+    "Unsupported generic replacement and ideal observations remain explicit conditional assumptions in these challenges",
+    "Portable zero-threshold setup error corrected with a recorded amendment, all affected cases retained",
+    "No universal realism score"
+  ]
+}

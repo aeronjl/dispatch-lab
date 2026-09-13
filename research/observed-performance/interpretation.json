@@ -1,0 +1,11 @@
+{
+  "matched_mismatch_mean_pv_mae_kw": {
+    "fixed": 45.88253773518086,
+    "adaptive": 23.240772555588592
+  },
+  "complete_controller_traces": 54,
+  "knowledge_arms": 3,
+  "physical_worlds": 3,
+  "seeds_per_world": 2,
+  "review": "Observed summaries under illustrative assumptions; solver variability prevents a causal production-benefit claim."
+}
