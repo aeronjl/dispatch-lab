@@ -59,6 +59,14 @@ def create(
         controller = item.get("controller", "Greedy")
         if controller not in ("Greedy", "MPC · methane", "MPC · economics"):
             raise ValueError("Unknown production controller")
+        policy = item.get("policy")
+        if policy is not None:
+            from methane.policy import Policy
+            from methane.simulation import STRATEGIES
+
+            policy = Policy(**policy).to_dict()
+            if policy["objective"] != STRATEGIES[controller]:
+                raise ValueError("Explicit policy objective must match the displayed controller")
         role = item.get("role", "evaluation")
         if role not in ("design", "evaluation", "held-out"):
             raise ValueError("Unknown comparison period role")
@@ -91,8 +99,12 @@ def create(
                 label=item.get("label", design["name"]),
             )
         )
+        if policy is not None:
+            frozen[-1]["policy"] = policy
     value = dict(
-        schema_version="site-yield-study/1",
+        schema_version="site-yield-study/2"
+        if any("policy" in c for c in frozen)
+        else "site-yield-study/1",
         edition_nonce=uuid.uuid4().hex,
         created_at=datetime.now(UTC).isoformat(),
         name=name,
@@ -259,6 +271,7 @@ def execute(store, study_id):
                     ),
                     cancelled=stop,
                     uncertainty=case["uncertainty"],
+                    policies={case["controller"]: case["policy"]} if "policy" in case else None,
                     continuation=cont,
                 )
                 rows = result["records"][case["controller"]]
