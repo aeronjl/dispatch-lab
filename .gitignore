@@ -14,3 +14,27 @@ runs/
 dist/
 build/
 *.egg-info/
+
+node_modules/
+playwright-report/
+test-results/
+.hypothesis/
+
+# Keep authored research, protocols, summaries and test fixtures in Git.
+# Large numerical evidence and downloaded source material remain local;
+# see research/README.md and research/local-artifacts.json for this boundary.
+/research/**/unpacked/
+/research/**/reproduction.zip
+/research/**/source-capsule.json
+/research/field-realism-review/experiments/**/cases/**/*.json.gz
+/research/field-realism-review/experiments/**/cases/**/audit.json
+/research/model-assumptions/experiments/**/result.json.gz
+/research/model-assumptions/experiments/**/audit.json
+/research/literature-calibration/raw/
+/research/uncertainty-autonomy/offline-example/*.json.gz
+
+# Browser checks regenerate these captures; reviewed UI baselines live in tests.
+/research/model-assumptions/ui-parameter.png
+/research/model-assumptions/ui-mobile.png
+/research/model-assumptions/report-desktop.png
+/research/model-assumptions/report-mobile.png
