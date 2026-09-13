@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-09-13T20:19:13.161Z",
+  "scope": "Isolated report interaction only. Not the application or proposed Sites feature.",
+  "checks": [
+    {
+      "name": "12 anchored report sections",
+      "passed": true
+    },
+    {
+      "name": "six proposed journey stages",
+      "passed": true
+    },
+    {
+      "name": "19 data families, search, empty state and reset",
+      "passed": true
+    },
+    {
+      "name": "all 36 monthly outputs and three annual outputs reconcile to saved data",
+      "passed": true
+    },
+    {
+      "name": "keyboard site selection",
+      "passed": true
+    },
+    {
+      "name": "section navigation",
+      "passed": true
+    },
+    {
+      "name": "390px layout, resource control and reduced motion",
+      "passed": true
+    },
+    {
+      "name": "no-script saved yield fallback",
+      "passed": true
+    },
+    {
+      "name": "no page errors or network requests during report use",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "external_requests": [],
+  "files": {
+    "report.html": "fe617e65b9e7a20a4bfa99899cac5402e88d0fbffb40083fe8645911b8addd05",
+    "report.css": "6c5726e6b18b2644860e6010be3de772e60130bcd8ce80ca7d0ac4649ceeeada",
+    "report.js": "2938cb6356eddad83daa56adf269bb68aefed198d7a1bac3af2592c13d658eb9",
+    "check-browser.cjs": "883a82ccac135d564cad1534702729f206b78ffce5598864ae04b05f296f23e6"
+  },
+  "screenshots": {
+    "../../build/siting-design/desktop.png": "667ca9f1fdc65aff96288e0f39a321e7009549cec16b0cd8d6fe29026f525e62",
+    "../../build/siting-design/resource.png": "74be9cb385fde1be2e0d0fdba024ac09caf371f85ea916e0535e20ed9f3e73b2",
+    "../../build/siting-design/mobile.png": "c8beac07512d9075073f34a8ea6fa10aa01e9fc604b78a2f7f21ab01440719cf",
+    "../../build/siting-design/resource-mobile.png": "ea404ec3f739fc305eb4788930a9ffc8f0a38bddcdfe340411a4dd13f4540a84"
+  }
+}

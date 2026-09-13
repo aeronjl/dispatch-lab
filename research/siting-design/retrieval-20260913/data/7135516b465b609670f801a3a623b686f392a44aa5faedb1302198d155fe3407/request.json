@@ -1,0 +1,23 @@
+{
+  "name": "Copenhagen",
+  "request_url": "https://re.jrc.ec.europa.eu/api/v5_3/PVcalc?lat=55.6761&lon=12.5683&peakpower=1&loss=14&angle=30&aspect=0&pvtechchoice=crystSi&mountingplace=free&usehorizon=1&raddatabase=PVGIS-SARAH3&outputformat=json",
+  "params": {
+    "lat": 55.6761,
+    "lon": 12.5683,
+    "peakpower": 1,
+    "loss": 14,
+    "angle": 30,
+    "aspect": 0,
+    "pvtechchoice": "crystSi",
+    "mountingplace": "free",
+    "usehorizon": 1,
+    "raddatabase": "PVGIS-SARAH3",
+    "outputformat": "json"
+  },
+  "retrieved_at": "2026-09-13T20:01:08.607277+00:00",
+  "publisher": "European Commission Joint Research Centre / PVGIS",
+  "attribution_url": "https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en",
+  "status": 200,
+  "content_type": "application/json",
+  "raw_sha256": "666d422f64f543d962e57838705a660559256b4e89df7d820dbd054c1d1b1069"
+}

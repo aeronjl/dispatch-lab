@@ -1,0 +1,159 @@
+{
+  "checked_at": "2026-09-13T20:18:56.976784+00:00",
+  "scope": "Design artifact integrity and public-data probe only. No GIS connector, annual simulator, investment model or controller is implemented or qualified by these checks.",
+  "files": {
+    "design.md": "cd5e817956458b216f8eddfe081e4e023ca0abecb20db23499b92b4e44841cea",
+    "report.html": "fe617e65b9e7a20a4bfa99899cac5402e88d0fbffb40083fe8645911b8addd05",
+    "report.css": "6c5726e6b18b2644860e6010be3de772e60130bcd8ce80ca7d0ac4649ceeeada",
+    "report.js": "2938cb6356eddad83daa56adf269bb68aefed198d7a1bac3af2592c13d658eb9",
+    "sources.json": "b3381f9a29820713eedcca54eab8b9d5f7d58b6e8518cf92a2c376f2d681bb4d",
+    "data-catalogue.json": "8bb28db4b10995f5015e480a4e94351feab74876b9c406a4cb1a48f375da6f91",
+    "integration-inventory.json": "e6c7e0aaba8e508549390a071111ef432db9399d88784d1f253b83da44b5a3f2",
+    "retrieval-20260913/resource-samples.json": "506e291a4bf070180b091e01fc90278f695a73c7804c14f65a7ad4ca19e70ae5",
+    "build_report.py": "3a2b162340235618e0da0e88b97d6bd8a533da067e77b97464680fda9c910e9b",
+    "validate.py": "0a3a9827a83e3b3910a46cd53d7a03ddafafa9a516bd0b9c9765aec9cf743192",
+    "check-browser.cjs": "883a82ccac135d564cad1534702729f206b78ffce5598864ae04b05f296f23e6"
+  },
+  "checks": [
+    {
+      "name": "source identities",
+      "passed": true,
+      "detail": 39
+    },
+    {
+      "name": "citation bindings",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "catalogue source bindings",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "source URL structure",
+      "passed": true,
+      "detail": "Structural check only; reviewed source pages are not snapshotted."
+    },
+    {
+      "name": "public probe complete",
+      "passed": true,
+      "detail": [
+        "London",
+        "Seville",
+        "Copenhagen"
+      ]
+    },
+    {
+      "name": "London raw integrity",
+      "passed": true,
+      "detail": "0979bc5af109171804107781693eabe5ecb3bade9100b103ebadff845643b46c"
+    },
+    {
+      "name": "London extraction",
+      "passed": true,
+      "detail": "Saved extraction equals provider payload exactly."
+    },
+    {
+      "name": "London monthly reconciliation",
+      "passed": true,
+      "detail": {
+        "difference_kwh": -0.029999999999972715,
+        "rounding_tolerance_kwh": 0.1
+      }
+    },
+    {
+      "name": "London calendar",
+      "passed": true,
+      "detail": "12 monthly means, not hourly chronology."
+    },
+    {
+      "name": "London reference fixture",
+      "passed": true,
+      "detail": "1 kWp / 14% / 30\u00b0 south"
+    },
+    {
+      "name": "Seville raw integrity",
+      "passed": true,
+      "detail": "1a331c6f43a99b12b64c40b665c0fde5400001fae2f44c2ab62421c83805535d"
+    },
+    {
+      "name": "Seville extraction",
+      "passed": true,
+      "detail": "Saved extraction equals provider payload exactly."
+    },
+    {
+      "name": "Seville monthly reconciliation",
+      "passed": true,
+      "detail": {
+        "difference_kwh": 0.009999999999990905,
+        "rounding_tolerance_kwh": 0.1
+      }
+    },
+    {
+      "name": "Seville calendar",
+      "passed": true,
+      "detail": "12 monthly means, not hourly chronology."
+    },
+    {
+      "name": "Seville reference fixture",
+      "passed": true,
+      "detail": "1 kWp / 14% / 30\u00b0 south"
+    },
+    {
+      "name": "Copenhagen raw integrity",
+      "passed": true,
+      "detail": "666d422f64f543d962e57838705a660559256b4e89df7d820dbd054c1d1b1069"
+    },
+    {
+      "name": "Copenhagen extraction",
+      "passed": true,
+      "detail": "Saved extraction equals provider payload exactly."
+    },
+    {
+      "name": "Copenhagen monthly reconciliation",
+      "passed": true,
+      "detail": {
+        "difference_kwh": -0.01999999999998181,
+        "rounding_tolerance_kwh": 0.1
+      }
+    },
+    {
+      "name": "Copenhagen calendar",
+      "passed": true,
+      "detail": "12 monthly means, not hourly chronology."
+    },
+    {
+      "name": "Copenhagen reference fixture",
+      "passed": true,
+      "detail": "1 kWp / 14% / 30\u00b0 south"
+    },
+    {
+      "name": "matched meteo editions",
+      "passed": true,
+      "detail": {
+        "radiation_db": "PVGIS-SARAH3",
+        "meteo_db": "ERA5",
+        "year_min": 2005,
+        "year_max": 2023,
+        "use_horizon": true,
+        "horizon_db": "DEM-calculated"
+      }
+    },
+    {
+      "name": "rendered citation tokens",
+      "passed": true,
+      "detail": "No unresolved authored tokens."
+    },
+    {
+      "name": "report local links",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "offline presentation",
+      "passed": true,
+      "detail": "External citations remain links; rendering has no external dependencies."
+    }
+  ]
+}

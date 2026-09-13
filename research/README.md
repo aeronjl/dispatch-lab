@@ -60,4 +60,5 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Literature calibration](literature-calibration/README.md)
 - [Observed performance](observed-performance/README.md)
 - [Recovery, uncertainty and the cost of waiting](recovery-comparison/report.html)
+- [Siting and production forecasting design](siting-design/README.md)
 - [Uncertainty and autonomy](uncertainty-autonomy/report.html)

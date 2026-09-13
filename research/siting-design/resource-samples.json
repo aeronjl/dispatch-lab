@@ -1,0 +1,30 @@
+{
+  "version": "siting-resource-probe/1",
+  "scope": "Three existing regional weather anchors. Coordinates are city reference points, not selected land or deployment recommendations. PVGIS modelled PV output for a 1 kWp reference system; no plant simulation or profitability calculation.",
+  "sites": [
+    {
+      "name": "London",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "request": "data/424cf45b7b003447b4bee4907da00f146da90cbb7ddc2ce2fd6f0707ea48bbfd/request.json",
+      "status": "unavailable",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "name": "Seville",
+      "latitude": 37.3891,
+      "longitude": -5.9845,
+      "request": "data/c7c4598d0ff1bb3d724435d389d9497ffc1fc45cd62caeedcbd859fcd491d9c1/request.json",
+      "status": "unavailable",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "name": "Copenhagen",
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "request": "data/7135516b465b609670f801a3a623b686f392a44aa5faedb1302198d155fe3407/request.json",
+      "status": "unavailable",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ]
+}

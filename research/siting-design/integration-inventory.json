@@ -1,0 +1,91 @@
+{
+  "reviewed_at": "2026-09-13",
+  "git_revision": "2d9f23e1e3133530752fc2272b2bb66e006f59e4",
+  "scope": "Read-only code inventory for a proposed feature, not implementation or new numerical qualification.",
+  "files": [
+    {
+      "path": "methane/config.py",
+      "present": true,
+      "sha256": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
+      "integration_note": "Scenario accepts 1\u2013240 hours; explicit European coordinates; typed plant, costs, models, service and recovery policies."
+    },
+    {
+      "path": "methane/weather.py",
+      "present": true,
+      "sha256": "9e96615f383685cc62d771746c6a37f4f7d6619909c65b56a02a1a10d4305f43",
+      "integration_note": "Cached retrieval, preceding-hour GTI normalisation, daily saved forecast vintages, explicit missing data."
+    },
+    {
+      "path": "methane/forecast.py",
+      "present": true,
+      "sha256": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
+      "integration_note": "Forecast provider and decision-time vintage selection."
+    },
+    {
+      "path": "methane/pv.py",
+      "present": true,
+      "sha256": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
+      "integration_note": "Existing irradiance-temperature-loss conversion; preserve model identity."
+    },
+    {
+      "path": "methane/physics.py",
+      "present": true,
+      "sha256": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
+      "integration_note": "Coupled execution and conservation; needs checkpointable continuation, not a second siting-specific plant."
+    },
+    {
+      "path": "methane/simulation.py",
+      "present": true,
+      "sha256": "62a7bec43a278114bd5c2e4740b99e682312ae41f607d675a18ece990555bea4",
+      "integration_note": "Current run orchestration, if present; full state continuation needs explicit new contract."
+    },
+    {
+      "path": "methane/studies.py",
+      "present": true,
+      "sha256": "77d5e78c552dae357879e22c209d8131e829b6048a200dffde6c4dbcd67396de",
+      "integration_note": "Frozen source editions, matched inputs, isolated execution, archive inspection and publication."
+    },
+    {
+      "path": "methane/study_presentation.py",
+      "present": true,
+      "sha256": "cd21d284483b28c78d895df0396e19d535b18e8deb86a119e77085bf189a82bf",
+      "integration_note": "Small immutable display projection rather than complete raw run props."
+    },
+    {
+      "path": "methane/uncertainty.py",
+      "present": true,
+      "sha256": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
+      "integration_note": "Knowledge boundaries and persistent-world/input uncertainty contracts."
+    },
+    {
+      "path": "methane/costing.py",
+      "present": true,
+      "sha256": "3901170fad4c817f7691b05ee3d100e6c780e0f0c8a26c683f85004aecaf7e24",
+      "integration_note": "Allocated period cost and decision economics; not a project NPV/payback implementation."
+    },
+    {
+      "path": "methane/service_economics.py",
+      "present": true,
+      "sha256": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
+      "integration_note": "Service capital, standing costs, recorded usage and wear attribution."
+    },
+    {
+      "path": "methane/taxonomy.py",
+      "present": true,
+      "sha256": "9ee6cbd58d1db419fdb15911d800c99d94585bf16bee84ed65e2b560994bf6d0",
+      "integration_note": "Site/environment, asset and external-service relationships, stable original IDs."
+    },
+    {
+      "path": "methane/documentation.py",
+      "present": true,
+      "sha256": "0100fed7680b2358bf8bee83a9fd14ca85a5762a42e97b01af0f6d23aeb443d1",
+      "integration_note": "Version-bound explanations and evidence."
+    },
+    {
+      "path": "methane/recovery.py",
+      "present": true,
+      "sha256": "268c71d3d0ecc5cf0af30b7c6bc0e6bea090de8492453e93e3b96bd82548cb40",
+      "integration_note": "Observed recovery, deadline/retry/escalation and separate report outcomes."
+    }
+  ]
+}
