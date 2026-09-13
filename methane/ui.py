@@ -106,6 +106,15 @@ def service_decision_view(control, path):
     return view
 
 
+def wire_payload(value):
+    """An immutable JSON scalar avoids Gradio deep-snapshotting a whole run.
+
+    The renderer decodes once per payload update. Numerical and archive APIs
+    retain their structured objects; no operand or provenance is omitted.
+    """
+    return json.dumps(value, separators=(",", ":"), allow_nan=False)
+
+
 def playback_value(result, register_contexts=True):
     from methane.model_service import register as register_model
     from methane.study_service import register as register_study
@@ -760,7 +769,10 @@ def build_app(default=None):
             result = run(config, progress=progress)
             return (
                 result,
-                gr.HTML(value=playback_value(result), economics=reprice(result)),
+                gr.HTML(
+                    value=wire_payload(playback_value(result)),
+                    economics=wire_payload(reprice(result)),
+                ),
                 report(result),
                 export(result),
                 gr.Tabs(selected="operation"),
@@ -861,7 +873,10 @@ def build_app(default=None):
             seal(result)
             return [
                 result,
-                gr.HTML(value=playback_value(result), economics=reprice(result)),
+                gr.HTML(
+                    value=wire_payload(playback_value(result)),
+                    economics=wire_payload(reprice(result)),
+                ),
                 report(result),
                 export(result),
                 config.to_dict(),
@@ -903,7 +918,7 @@ def build_app(default=None):
             },
         }
         return (
-            gr.HTML(economics=pricing),
+            gr.HTML(economics=wire_payload(pricing)),
             "Cost report repriced. Recorded actions and decision costs remain frozen; run again to change dispatch.",
             report(updated),
             export(result, costs, service_economics=service_prices),
@@ -933,8 +948,8 @@ def build_app(default=None):
         with gr.Tabs(selected="operation", elem_id="workspace-tabs") as screens:
             with gr.Tab("Plant simulation", id="operation"):
                 scene = gr.HTML(
-                    playback_value(default),
-                    economics=reprice(default),
+                    wire_payload(playback_value(default)),
+                    economics=wire_payload(reprice(default)),
                     answer=None,
                     decision_answer=None,
                     solar_answer=None,
@@ -1816,7 +1831,7 @@ def build_app(default=None):
                 )
             return (
                 r,
-                gr.HTML(value=playback_value(r), economics=reprice(r)),
+                gr.HTML(value=wire_payload(playback_value(r)), economics=wire_payload(reprice(r))),
                 report(r),
                 export(r),
                 r["config"],
@@ -1852,7 +1867,7 @@ def build_app(default=None):
             }
             return (
                 r,
-                gr.HTML(value=view, economics=reprice(r)),
+                gr.HTML(value=wire_payload(view), economics=wire_payload(reprice(r))),
                 report(r),
                 export(r),
                 r["config"],

@@ -1,4 +1,5 @@
 /* Rendering only: physics, economics, explanations and replanning live in Python. */
+function decodeMethanePayload(value) { return typeof value==='string'?JSON.parse(value):value; }
 function methaneSelectionKey(runId, controller, hour, alternative, revision = '') {
     return `${runId}|${controller}|${hour}|${alternative}|${revision}`;
 }
@@ -9,7 +10,7 @@ function methaneFrame(result, elapsed, controller) {
     return {hour, row, controller, decision: rows[Math.max(0, hour - 1)]?.decision, totals: result.frames[controller][hour]};
 }
 function mountMethane(element, props, watch, trigger) {
-    let result = props.value, costs = props.economics, selected = null, section = 'Now';
+    let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
     let solar, model, taxonomy, studies, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
@@ -290,7 +291,7 @@ function mountMethane(element, props, watch, trigger) {
         studies?.close();
         model?.close();
         taxonomy?.close();
-        result=props.value; costs=props.economics; invalidate();
+        result=decodeMethanePayload(props.value); costs=decodeMethanePayload(props.economics); invalidate();
         if(result.study_origin)controller=result.study_origin.controller;
         const names=Object.keys(result.records);if(!names.includes(controller))controller=names[0];
         $('[data-m="controller"]').innerHTML=names.map(name=>`<option ${name===controller?'selected':''}>${escape(name)}</option>`).join('');
@@ -376,7 +377,7 @@ function mountMethane(element, props, watch, trigger) {
     const visibility=()=>{if(document.hidden)clock.pause();}; document.addEventListener('visibilitychange',visibility);
     const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)clock.pause();});observer.observe(root);
     const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
-    watch('value',reset);watch('economics',()=>{costs=props.economics;costRevision++;render();});
+    watch('value',reset);watch('economics',()=>{costs=decodeMethanePayload(props.economics);costRevision++;render();});
     watch('decision_answer',()=>{
         const value=props.decision_answer;
         if(value?.key!==detailRequest||value.run_id!==result.run_id||value.controller!==controller)return;
@@ -387,4 +388,4 @@ function mountMethane(element, props, watch, trigger) {
     watch('answer',()=>{const value=props.answer;if(value?.key===pendingKey&&value.key===currentKey()){answer=value;pendingKey=null;inspect(current());}});
     reset();
 }
-if(typeof module!=='undefined')module.exports={methaneSelectionKey,methaneFrame};
+if(typeof module!=='undefined')module.exports={methaneSelectionKey,methaneFrame,decodeMethanePayload};
