@@ -1,0 +1,529 @@
+{
+  "schema_version": "dispatch-lab/documentation-evidence/1",
+  "source": "783a978c022c6af6edc056439fdfa0a169671441b4d8d74e48e024b7538c5010",
+  "source_matches": true,
+  "topics": {
+    "battery": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[battery]",
+        "tests.test_learning::test_battery_independent_balance_swap_and_round_trip"
+      ],
+      "duration_seconds": 0.053000000000000005,
+      "fixture_inputs": {
+        "charge": 100,
+        "discharge": 0,
+        "efficiency": 0.9,
+        "energy": 200,
+        "implementation": "affine/1"
+      },
+      "check_tolerances": [
+        {
+          "check": "battery_initial_bounds",
+          "tolerance": 1.8e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "battery_bounds",
+          "tolerance": 1.8e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "battery_charge_bounds",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "battery_discharge_bounds",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "battery_exclusive",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "battery_energy_balance",
+          "tolerance": 1.8e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "battery_loss_nonnegative",
+          "tolerance": 1.001e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "round_trip_empty",
+          "tolerance": 1.001e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "equivalent_implementation",
+          "tolerance": 1.001e-05,
+          "unit": "kWh"
+        }
+      ]
+    },
+    "solar": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_adaptation::test_solar_adaptation_preserves_legacy_services_without_claiming_service_learning",
+        "tests.test_boundaries::test_standalone_solar_reference_and_input_failures",
+        "tests.test_computation_studies::test_detailed_solar_cannot_silently_change_the_declared_dc_experiment[True]",
+        "tests.test_computation_studies::test_detailed_solar_cannot_silently_change_the_declared_dc_experiment[False]",
+        "tests.test_field_studies::test_solar_transforms_preserve_geometry_and_expose_converter_assumption",
+        "tests.test_joint_recovery::test_shared_energy_limits_cannot_be_evaded_by_a_delivery_branch[no-solar]",
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[solar]",
+        "tests.test_physics_and_control::test_solar_charge_discharge_accounts_for_roundtrip_losses",
+        "tests.test_uncertainty::test_weather_is_frozen_once_and_detailed_solar_is_archivable"
+      ],
+      "duration_seconds": 2.52,
+      "fixture_inputs": {
+        "ambient": 20,
+        "azimuth": 0,
+        "converter": 1000,
+        "noct": 45,
+        "shade": 0,
+        "soiling": 0,
+        "tilt": 30
+      },
+      "check_tolerances": [
+        {
+          "check": "converter_balance",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        }
+      ]
+    },
+    "electrolyser": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[electrolyser]",
+        "tests.test_learning::test_independent_gas_and_electrolysis_examples"
+      ],
+      "duration_seconds": 0.059,
+      "fixture_inputs": {
+        "initial_on": "no",
+        "load": 275,
+        "run_hours": 3,
+        "sec": 55
+      },
+      "check_tolerances": [
+        {
+          "check": "electrolyser_power",
+          "tolerance": 1.45e-05,
+          "unit": "kW"
+        }
+      ]
+    },
+    "hydrogen": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[hydrogen]",
+        "tests.test_learning::test_independent_gas_and_electrolysis_examples"
+      ],
+      "duration_seconds": 0.059,
+      "fixture_inputs": {
+        "implementation": "balance/1",
+        "inflow": 8,
+        "inventory": 20,
+        "outflow": 5
+      },
+      "check_tolerances": [
+        {
+          "check": "storage_initial_bounds",
+          "tolerance": 1.06e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_ending_bounds",
+          "tolerance": 1.06e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_inflow",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_outflow",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_mass_balance",
+          "tolerance": 1.06e-05,
+          "unit": "kg"
+        }
+      ]
+    },
+    "co2": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[co2]",
+        "tests.test_learning::test_independent_gas_and_electrolysis_examples"
+      ],
+      "duration_seconds": 0.059,
+      "fixture_inputs": {
+        "arrival": 2,
+        "delivery": 300,
+        "inventory": 100,
+        "outflow": 20
+      },
+      "check_tolerances": [
+        {
+          "check": "storage_initial_bounds",
+          "tolerance": 2e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_ending_bounds",
+          "tolerance": 2e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_inflow",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_outflow",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "storage_mass_balance",
+          "tolerance": 2e-05,
+          "unit": "kg"
+        }
+      ]
+    },
+    "reactor": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[reactor]",
+        "tests.test_learning::test_independent_thermal_first_interval_and_chemistry"
+      ],
+      "duration_seconds": 0.04,
+      "fixture_inputs": {
+        "ambient": 20,
+        "cutoff": 12,
+        "heater": 60,
+        "loss": 0.08,
+        "methane": 10
+      },
+      "check_tolerances": [
+        {
+          "check": "reactor_heater",
+          "tolerance": 1.06e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "reactor_cooling",
+          "tolerance": 1.04e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "reactor_methane",
+          "tolerance": 1.0100000000000002e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "reactor_exclusive_heat",
+          "tolerance": 1.06e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "reactor_minimum_output",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "production_temperature_begin",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "\u00b0C"
+        },
+        {
+          "check": "production_temperature_end",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "\u00b0C"
+        }
+      ]
+    },
+    "bus": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[bus]"
+      ],
+      "duration_seconds": 0.032,
+      "fixture_inputs": {
+        "load": 275,
+        "pv": 300,
+        "reserve": 300
+      },
+      "check_tolerances": [
+        {
+          "check": "service_power_bounds",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "electrical_residual_kwh",
+          "tolerance": 1.6276245833333336e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "thermal_residual_kwh",
+          "tolerance": 1.0572916666666668e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "h2_residual_kg",
+          "tolerance": 1.06e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "co2_residual_kg",
+          "tolerance": 2e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "reaction_mass_residual_kg",
+          "tolerance": 1.0325e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "battery_bounds",
+          "tolerance": 1.8e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "hydrogen_bounds",
+          "tolerance": 1.06e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "co2_bounds",
+          "tolerance": 2e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "curtailment_nonnegative",
+          "tolerance": 1.3000000000000001e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "battery_exclusive",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_electrolyser_kw",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_charge_kw",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_discharge_kw",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_heater_kw",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_cooling_kw",
+          "tolerance": 1.001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "action_methane_kg",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "operating_bounds_electrolyser_kw",
+          "tolerance": 1.45e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "operating_bounds_charge_kw",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "operating_bounds_discharge_kw",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "operating_bounds_heater_kw",
+          "tolerance": 1.06e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "operating_bounds_cooling_kw",
+          "tolerance": 1.04e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "operating_bounds_methane_kg",
+          "tolerance": 1.0100000000000002e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "thermal_exclusive",
+          "tolerance": 1.06e-05,
+          "unit": "kW"
+        },
+        {
+          "check": "commitment_transition",
+          "tolerance": 1.001e-05,
+          "unit": "h"
+        },
+        {
+          "check": "production_temperature_begin",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "\u00b0C"
+        },
+        {
+          "check": "production_temperature_end",
+          "tolerance": 1.4000000000000001e-05,
+          "unit": "\u00b0C"
+        },
+        {
+          "check": "explicit_trip",
+          "tolerance": 1.001e-05,
+          "unit": "boolean"
+        },
+        {
+          "check": "electrical_residual_kwh",
+          "tolerance": 1.5876245833333333e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "electrical_residual_kwh",
+          "tolerance": 1.256980406081821e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "thermal_residual_kwh",
+          "tolerance": 1.0518092694668012e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "curtailment_nonnegative",
+          "tolerance": 1.001e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "electrical_residual_kwh",
+          "tolerance": 1.001e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "thermal_residual_kwh",
+          "tolerance": 1.0209452933996871e-05,
+          "unit": "kWh"
+        },
+        {
+          "check": "reaction_mass_residual_kg",
+          "tolerance": 1.001e-05,
+          "unit": "kg"
+        },
+        {
+          "check": "thermal_residual_kwh",
+          "tolerance": 1.0160425937701824e-05,
+          "unit": "kWh"
+        }
+      ]
+    },
+    "weather": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[weather]",
+        "tests.test_learning::test_forecast_availability_missing_and_dst"
+      ],
+      "duration_seconds": 0.046,
+      "fixture_inputs": {
+        "hour": 11,
+        "lag": 6,
+        "missing": "no"
+      },
+      "check_tolerances": []
+    },
+    "diagnosis": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[diagnosis]",
+        "tests.test_learning::test_diagnosis_cases_and_future_isolation",
+        "tests.test_sensing_policy::test_ambiguity_at_minimum_load_does_not_prove_a_new_capacity_ceiling",
+        "tests.test_sensing_policy::test_unambiguous_evidence_keeps_existing_confirmation_semantics[capacity]",
+        "tests.test_sensing_policy::test_unambiguous_evidence_keeps_existing_confirmation_semantics[flow]",
+        "tests.test_sensing_policy::test_unambiguous_evidence_keeps_existing_confirmation_semantics[recovery]",
+        "tests.test_sensing_policy::test_unambiguous_evidence_keeps_existing_confirmation_semantics[normal]",
+        "tests.test_sensing_policy::test_unambiguous_evidence_keeps_existing_confirmation_semantics[disabled]",
+        "tests.test_sensing_policy::test_diagnosis_cases_offer_a_separate_learning_ablation_and_no_future_information",
+        "tests.test_sensing_policy::test_independent_hold_invariant_rejects_fabricated_capacity_or_confirmation"
+      ],
+      "duration_seconds": 0.083,
+      "fixture_inputs": {
+        "ambiguity_policy": "reduce-capacity/1",
+        "fault": "capacity",
+        "noise": 0.02,
+        "threshold": 0.1
+      },
+      "check_tolerances": []
+    },
+    "controllers": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[controllers]",
+        "tests.test_learning::test_comparison_boundaries_and_solver_scope"
+      ],
+      "duration_seconds": 0.243,
+      "fixture_inputs": {
+        "bias": 0,
+        "horizon": 12
+      },
+      "check_tolerances": []
+    },
+    "economics": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[economics]",
+        "tests.test_learning::test_repricing_keeps_trace_and_no_double_allowances"
+      ],
+      "duration_seconds": 0.075,
+      "fixture_inputs": {
+        "co2_price": 0.15,
+        "life": 20,
+        "output": "producing",
+        "price": 1,
+        "reactor_life": 60000
+      },
+      "check_tolerances": []
+    },
+    "experiments": {
+      "status": "passed",
+      "test_cases": [
+        "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[experiments]",
+        "tests.test_learning::test_comparison_boundaries_and_solver_scope"
+      ],
+      "duration_seconds": 0.154,
+      "fixture_inputs": {
+        "schedule": "produce",
+        "window": 3
+      },
+      "check_tolerances": []
+    }
+  },
+  "junit_sha256": "c407fd76f2e0fc7f9913c266ce135c48f64d22885a1d3b1852ada03010d85d15"
+}

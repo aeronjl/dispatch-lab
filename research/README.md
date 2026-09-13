@@ -59,4 +59,5 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Model assumptions](model-assumptions/report.html)
 - [Literature calibration](literature-calibration/README.md)
 - [Observed performance](observed-performance/README.md)
+- [Recovery, uncertainty and the cost of waiting](recovery-comparison/report.html)
 - [Uncertainty and autonomy](uncertainty-autonomy/report.html)

@@ -1,0 +1,34 @@
+{
+  "version": "recovery-comparison-programme/1",
+  "created_at": 1789320829.741869,
+  "basis": null,
+  "seeds": [
+    7,
+    17,
+    29
+  ],
+  "entries": [
+    {
+      "condition": "verification-window-24h",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "5fd1d31533764f509526ee63d313c154"
+    },
+    {
+      "condition": "verification-window-24h",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "0a3a49c0e3124067a25b93af30eb72eb"
+    },
+    {
+      "condition": "verification-window-24h",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "1eabad3509c941a49c2f674fa2aa5ee5"
+    }
+  ],
+  "protocol_scope": "Declared 24-hour verification-window sensitivity following the retained 12-hour seed-7 pilot. 48-hour physical horizon, three event seeds and three policy arms. Only the configured recovery wait changes; original service deadlines and physical inputs stay fixed. Not selected on favourable outcomes.",
+  "weather_scope": "Reproducible synthetic weather, identical to the persistent-damage comparison fixture.",
+  "original_programme": "d831e3e1a50b4983b14853c8401c1817",
+  "comparison_programme": "e33a469eb8264c89922d199ba7f2292c"
+}

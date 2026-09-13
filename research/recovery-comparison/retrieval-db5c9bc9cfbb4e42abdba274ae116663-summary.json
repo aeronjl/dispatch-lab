@@ -1,0 +1,3407 @@
+{
+  "version": "conditional-retrieval-example/1",
+  "source_unchanged": true,
+  "run_id": "e06c14e09f4b0ca6",
+  "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+  "archive": "/Users/aeron/sota/dispatch-lab/runs/retrieval-qualification/e06c14e09f4b0ca6-c9c590e59d76afa8b7957f38df7f679be6d075fb92cf22b8f17e323c27a86cf6.json.gz",
+  "original_hour": 1,
+  "snapshot_id": "fbab54f27588e532eb2177d7fbbb60578521f0bdc6a780ca00006baa394ab214",
+  "scope": "Counterfactual prediction from an executed observed stranding. Illustrative fixture prices; not a fleet-performance or hardware-capability claim.",
+  "full_artifact": "retrieval-db5c9bc9cfbb4e42abdba274ae116663.json",
+  "full_artifact_sha256": "9bf6cfda2a1d79da7451df4784d00c5298db45de04493dae8df237b06237dc45",
+  "outcomes": {
+    "qualified return": {
+      "state": "feasible",
+      "checks": [
+        {
+          "id": "retrieval.observed_abort",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.resource_projection",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.recorded_continuation",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.qualified_retrieval",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.whole_mission_boundary",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.combined_return_boundary",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.all_origins_covered",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.no_charge_before_return",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        }
+      ],
+      "conditional_returns": [
+        {
+          "version": "conditional-retrieval-charging/1",
+          "robot": "cleaner",
+          "status": "conditional",
+          "observed_stranded_orders": [
+            "SVC-0001"
+          ],
+          "continuations": [
+            {
+              "order_id": "SVC-0002",
+              "origin_order": "SVC-0001",
+              "starting_at": 1,
+              "complete_at": 4.5,
+              "available_at": 5,
+              "actor": "SERVICE/CREW-01",
+              "capability": "retrieve:cleaner"
+            }
+          ],
+          "available_at": 5,
+          "reason": "Charging can follow whole-mission return only if every nominated retrieval completes; the shared demand projection checks crew, route, power, stocks and prices. No robot-ready or repair-success credit."
+        }
+      ],
+      "constraints": [],
+      "current_requests": [],
+      "charging_plan": {
+        "actions": [
+          {
+            "electrolyser_kw": 135.0,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 32.65270479700251,
+            "cooling_kw": 0.0,
+            "methane_kg": 0.0
+          },
+          {
+            "electrolyser_kw": 344.19736754165865,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 0.0,
+            "cooling_kw": 0.0,
+            "methane_kg": 10.0
+          },
+          {
+            "electrolyser_kw": 450.0,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 0.0,
+            "cooling_kw": 0.0,
+            "methane_kg": 10.0
+          },
+          {
+            "electrolyser_kw": 0.0,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 0.0,
+            "cooling_kw": 0.0,
+            "methane_kg": 10.0
+          },
+          {
+            "electrolyser_kw": 0.0,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 0.0,
+            "cooling_kw": 0.0,
+            "methane_kg": 10.0
+          },
+          {
+            "electrolyser_kw": 0.0,
+            "charge_kw": 0.0,
+            "discharge_kw": 0.0,
+            "heater_kw": 0.0,
+            "cooling_kw": 0.0,
+            "methane_kg": 10.0
+          }
+        ],
+        "trajectory": [
+          {
+            "applied": {
+              "electrolyser_kw": 135.0,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 32.65270479700251,
+              "cooling_kw": 0.0,
+              "methane_kg": 0.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 10.560047862878935,
+              "co2_kg": 500.0,
+              "temperature_c": 250.0,
+              "electrolyser_on": true,
+              "reactor_on": false,
+              "commitment_hours": 0
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 167.6527047970025,
+            "process_demand_kw": 167.6527047970025,
+            "service_kw": 0.0,
+            "curtailed_kwh": 732.2572952029975,
+            "h2_produced_kg": 2.4545454545454546,
+            "h2_consumed_kg": 0.0,
+            "co2_consumed_kg": 0.0,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 0.0,
+            "electrolysis_stoichiometric_water_kg": 22.09090909090909,
+            "electrolyser_start": 0,
+            "reactor_start": 0,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": true
+                },
+                "inputs": {
+                  "productive_kw": 135.0,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": true
+                },
+                "flows": {
+                  "productive_kwh": 135.0,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 2.4545454545454546,
+                  "water_kg": 22.09090909090909,
+                  "electricity_kw": 135.0,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 8.10550240833348
+                },
+                "inputs": {
+                  "incoming_kg": 2.4545454545454546,
+                  "outgoing_kg": 0.0
+                },
+                "after": {
+                  "inventory_kg": 10.560047862878935
+                },
+                "flows": {
+                  "accepted_kg": 2.4545454545454546,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 4.440892098500626e-16,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 500.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 0.0
+                },
+                "after": {
+                  "inventory_kg": 500.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 195.55374622651348,
+                  "running": false,
+                  "commitment_hours": 0
+                },
+                "inputs": {
+                  "temperature_c": 195.55374622651348,
+                  "ambient_c": 20,
+                  "heater_kw": 32.65270479700251,
+                  "methane_kg": 0.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 250.0,
+                  "running": false,
+                  "commitment_hours": 0
+                },
+                "flows": {
+                  "reaction_heat_kwh": 0.0,
+                  "heat_loss_kwh": 16.318828664956555,
+                  "hydrogen_kg": 0.0,
+                  "co2_kg": 0.0,
+                  "water_kg": 0.0,
+                  "electricity_kw": 32.65270479700251,
+                  "start": 0.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "warming"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 0.0,
+            "heat_loss_kwh": 16.318828664956555,
+            "thermal_residual_kwh": 3.552713678800501e-15,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": 4.440892098500626e-16,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 25,
+              "total": 25
+            }
+          },
+          {
+            "applied": {
+              "electrolyser_kw": 344.19736754165865,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 0.0,
+              "cooling_kw": 0.0,
+              "methane_kg": 10.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 11.81818181818182,
+              "co2_kg": 472.5,
+              "temperature_c": 279.97824041465253,
+              "electrolyser_on": true,
+              "reactor_on": true,
+              "commitment_hours": 3
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 356.19736754165865,
+            "process_demand_kw": 356.19736754165865,
+            "service_kw": 0.0,
+            "curtailed_kwh": 543.7126324583413,
+            "h2_produced_kg": 6.258133955302885,
+            "h2_consumed_kg": 5.0,
+            "co2_consumed_kg": 27.5,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 22.5,
+            "electrolysis_stoichiometric_water_kg": 56.32320559772596,
+            "electrolyser_start": 0,
+            "reactor_start": 1,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": true
+                },
+                "inputs": {
+                  "productive_kw": 344.19736754165865,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": true
+                },
+                "flows": {
+                  "productive_kwh": 344.19736754165865,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 6.258133955302885,
+                  "water_kg": 56.32320559772596,
+                  "electricity_kw": 344.19736754165865,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 10.560047862878935
+                },
+                "inputs": {
+                  "incoming_kg": 6.258133955302885,
+                  "outgoing_kg": 5.0
+                },
+                "after": {
+                  "inventory_kg": 11.81818181818182
+                },
+                "flows": {
+                  "accepted_kg": 6.258133955302885,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 500.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "after": {
+                  "inventory_kg": 472.5
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 250.0,
+                  "running": false,
+                  "commitment_hours": 0
+                },
+                "inputs": {
+                  "temperature_c": 250.0,
+                  "ambient_c": 20,
+                  "heater_kw": 0.0,
+                  "methane_kg": 10.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 279.97824041465253,
+                  "running": true,
+                  "commitment_hours": 3
+                },
+                "flows": {
+                  "reaction_heat_kwh": 28.645833333333336,
+                  "heat_loss_kwh": 19.652361208937567,
+                  "hydrogen_kg": 5.0,
+                  "co2_kg": 27.5,
+                  "water_kg": 22.5,
+                  "electricity_kw": 12.0,
+                  "start": 1.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "running"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_minimum_output",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_begin",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_end",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 28.645833333333336,
+            "heat_loss_kwh": 19.652361208937567,
+            "thermal_residual_kwh": -8.881784197001252e-15,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": 0.0,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 27,
+              "total": 27
+            }
+          },
+          {
+            "applied": {
+              "electrolyser_kw": 450.0,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 0.0,
+              "cooling_kw": 0.0,
+              "methane_kg": 10.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 15.0,
+              "co2_kg": 445.0,
+              "temperature_c": 302.9394242825433,
+              "electrolyser_on": true,
+              "reactor_on": true,
+              "commitment_hours": 2
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 462.0,
+            "process_demand_kw": 462.0,
+            "service_kw": 0.0,
+            "curtailed_kwh": 437.90999999999997,
+            "h2_produced_kg": 8.181818181818182,
+            "h2_consumed_kg": 5.0,
+            "co2_consumed_kg": 27.5,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 22.5,
+            "electrolysis_stoichiometric_water_kg": 73.63636363636364,
+            "electrolyser_start": 0,
+            "reactor_start": 0,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": true
+                },
+                "inputs": {
+                  "productive_kw": 450.0,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": true
+                },
+                "flows": {
+                  "productive_kwh": 450.0,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 8.181818181818182,
+                  "water_kg": 73.63636363636364,
+                  "electricity_kw": 450.0,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 11.81818181818182
+                },
+                "inputs": {
+                  "incoming_kg": 8.181818181818182,
+                  "outgoing_kg": 5.0
+                },
+                "after": {
+                  "inventory_kg": 15.0
+                },
+                "flows": {
+                  "accepted_kg": 8.181818181818182,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": -1.7763568394002505e-15,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 472.5
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "after": {
+                  "inventory_kg": 445.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 279.97824041465253,
+                  "running": true,
+                  "commitment_hours": 3
+                },
+                "inputs": {
+                  "temperature_c": 279.97824041465253,
+                  "ambient_c": 20,
+                  "heater_kw": 0.0,
+                  "methane_kg": 10.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 302.9394242825433,
+                  "running": true,
+                  "commitment_hours": 2
+                },
+                "flows": {
+                  "reaction_heat_kwh": 28.645833333333336,
+                  "heat_loss_kwh": 21.757478172966096,
+                  "hydrogen_kg": 5.0,
+                  "co2_kg": 27.5,
+                  "water_kg": 22.5,
+                  "electricity_kw": 12.0,
+                  "start": 0.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "running"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_minimum_output",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_begin",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_end",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 28.645833333333336,
+            "heat_loss_kwh": 21.757478172966096,
+            "thermal_residual_kwh": -6.217248937900877e-15,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": -1.7763568394002505e-15,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 27,
+              "total": 27
+            }
+          },
+          {
+            "applied": {
+              "electrolyser_kw": 0.0,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 0.0,
+              "cooling_kw": 0.0,
+              "methane_kg": 10.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 10.0,
+              "co2_kg": 417.5,
+              "temperature_c": 320.5260456893621,
+              "electrolyser_on": false,
+              "reactor_on": true,
+              "commitment_hours": 1
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 12.0,
+            "process_demand_kw": 12.0,
+            "service_kw": 0.0,
+            "curtailed_kwh": 887.91,
+            "h2_produced_kg": 0.0,
+            "h2_consumed_kg": 5.0,
+            "co2_consumed_kg": 27.5,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 22.5,
+            "electrolysis_stoichiometric_water_kg": 0.0,
+            "electrolyser_start": 0,
+            "reactor_start": 0,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": true
+                },
+                "inputs": {
+                  "productive_kw": 0.0,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": false
+                },
+                "flows": {
+                  "productive_kwh": 0.0,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 0.0,
+                  "water_kg": 0.0,
+                  "electricity_kw": 0.0,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 15.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "after": {
+                  "inventory_kg": 10.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 445.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "after": {
+                  "inventory_kg": 417.5
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 302.9394242825433,
+                  "running": true,
+                  "commitment_hours": 2
+                },
+                "inputs": {
+                  "temperature_c": 302.9394242825433,
+                  "ambient_c": 20,
+                  "heater_kw": 0.0,
+                  "methane_kg": 10.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 320.5260456893621,
+                  "running": true,
+                  "commitment_hours": 1
+                },
+                "flows": {
+                  "reaction_heat_kwh": 28.645833333333336,
+                  "heat_loss_kwh": 23.369846911287702,
+                  "hydrogen_kg": 5.0,
+                  "co2_kg": 27.5,
+                  "water_kg": 22.5,
+                  "electricity_kw": 12.0,
+                  "start": 0.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "running"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_minimum_output",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_begin",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_end",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 28.645833333333336,
+            "heat_loss_kwh": 23.369846911287702,
+            "thermal_residual_kwh": 0.0,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": 0.0,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 27,
+              "total": 27
+            }
+          },
+          {
+            "applied": {
+              "electrolyser_kw": 0.0,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 0.0,
+              "cooling_kw": 0.0,
+              "methane_kg": 10.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 5.0,
+              "co2_kg": 390.0,
+              "temperature_c": 333.99613740093497,
+              "electrolyser_on": false,
+              "reactor_on": true,
+              "commitment_hours": 0
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 12.0,
+            "process_demand_kw": 12.0,
+            "service_kw": 0.0,
+            "curtailed_kwh": 887.91,
+            "h2_produced_kg": 0.0,
+            "h2_consumed_kg": 5.0,
+            "co2_consumed_kg": 27.5,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 22.5,
+            "electrolysis_stoichiometric_water_kg": 0.0,
+            "electrolyser_start": 0,
+            "reactor_start": 0,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": false
+                },
+                "inputs": {
+                  "productive_kw": 0.0,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": false
+                },
+                "flows": {
+                  "productive_kwh": 0.0,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 0.0,
+                  "water_kg": 0.0,
+                  "electricity_kw": 0.0,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 10.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "after": {
+                  "inventory_kg": 5.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 417.5
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "after": {
+                  "inventory_kg": 390.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 320.5260456893621,
+                  "running": true,
+                  "commitment_hours": 1
+                },
+                "inputs": {
+                  "temperature_c": 320.5260456893621,
+                  "ambient_c": 20,
+                  "heater_kw": 0.0,
+                  "methane_kg": 10.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 333.99613740093497,
+                  "running": true,
+                  "commitment_hours": 0
+                },
+                "flows": {
+                  "reaction_heat_kwh": 28.645833333333336,
+                  "heat_loss_kwh": 24.604805819861475,
+                  "hydrogen_kg": 5.0,
+                  "co2_kg": 27.5,
+                  "water_kg": 22.5,
+                  "electricity_kw": 12.0,
+                  "start": 0.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "running"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_minimum_output",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_begin",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_end",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 28.645833333333336,
+            "heat_loss_kwh": 24.604805819861475,
+            "thermal_residual_kwh": 2.6645352591003757e-15,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": 0.0,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 27,
+              "total": 27
+            }
+          },
+          {
+            "applied": {
+              "electrolyser_kw": 0.0,
+              "charge_kw": 0.0,
+              "discharge_kw": 0.0,
+              "heater_kw": 0.0,
+              "cooling_kw": 0.0,
+              "methane_kg": 10.0
+            },
+            "state": {
+              "battery_kwh": 323.5010046352252,
+              "h2_kg": 0.0,
+              "co2_kg": 362.5,
+              "temperature_c": 344.3132623631994,
+              "electrolyser_on": false,
+              "reactor_on": true,
+              "commitment_hours": 0
+            },
+            "pv_kw": 899.91,
+            "ambient_c": 20,
+            "demand_kw": 12.222222222222223,
+            "process_demand_kw": 12.0,
+            "service_kw": 0.2222222222222224,
+            "curtailed_kwh": 887.6877777777778,
+            "h2_produced_kg": 0.0,
+            "h2_consumed_kg": 5.0,
+            "co2_consumed_kg": 27.5,
+            "co2_delivered_kg": 0.0,
+            "co2_rejected_kg": 0.0,
+            "water_produced_kg": 22.5,
+            "electrolysis_stoichiometric_water_kg": 0.0,
+            "electrolyser_start": 0,
+            "reactor_start": 0,
+            "startup_kwh": 0.0,
+            "battery_loss_kwh": 0.0,
+            "battery_record": {
+              "schema_version": "dispatch-lab/battery-record/1",
+              "model_id": "dispatch-lab/dc-battery",
+              "model_version": "1",
+              "implementation_id": "affine/1",
+              "parameters": {
+                "capacity_kwh": 800,
+                "c_rate": 0.5,
+                "roundtrip_efficiency": 0.9
+              },
+              "before": {
+                "energy_kwh": 323.5010046352252
+              },
+              "inputs": {
+                "charge_kw": 0.0,
+                "discharge_kw": 0.0,
+                "duration_hours": 1.0
+              },
+              "after": {
+                "energy_kwh": 323.5010046352252
+              },
+              "flows": {
+                "charge_loss_kwh": 0.0,
+                "discharge_loss_kwh": 0.0,
+                "loss_kwh": 0.0
+              },
+              "audits": [
+                {
+                  "check_id": "battery_initial_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_charge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_discharge_bounds",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": -0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_exclusive",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kW",
+                  "tolerance": 1.4000000000000001e-05
+                },
+                {
+                  "check_id": "battery_energy_balance",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0.0,
+                  "unit": "kWh",
+                  "tolerance": 1.8e-05
+                },
+                {
+                  "check_id": "battery_loss_nonnegative",
+                  "component": "battery",
+                  "interval": null,
+                  "passed": true,
+                  "expected": "residual = 0",
+                  "residual": 0,
+                  "unit": "kWh",
+                  "tolerance": 1.001e-05
+                }
+              ]
+            },
+            "component_records": {
+              "electrolyser": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/electrolyser",
+                "model_version": "1",
+                "implementation_id": "specific-energy/1",
+                "parameters": {
+                  "capacity_kw": 450,
+                  "minimum_fraction": 0.3,
+                  "specific_energy_kwh_per_kg": 55,
+                  "start_energy_kwh": 40
+                },
+                "before": {
+                  "on": false
+                },
+                "inputs": {
+                  "productive_kw": 0.0,
+                  "available_kw": 450,
+                  "duration_hours": 1.0
+                },
+                "after": {
+                  "on": false
+                },
+                "flows": {
+                  "productive_kwh": 0.0,
+                  "startup_kwh": 0.0,
+                  "hydrogen_kg": 0.0,
+                  "water_kg": 0.0,
+                  "electricity_kw": 0.0,
+                  "start": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/electrolyser",
+                  "model_version": "1",
+                  "implementation_id": "specific-energy/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "electrolyser_power",
+                    "component": "electrolyser",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.45e-05
+                  }
+                ]
+              },
+              "hydrogen": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/hydrogen-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 60,
+                  "kind": "hydrogen"
+                },
+                "before": {
+                  "inventory_kg": 5.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "after": {
+                  "inventory_kg": 0.0
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 5.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/hydrogen-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": -0.0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "hydrogen",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 1.06e-05
+                  }
+                ]
+              },
+              "co2": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/co2-buffer",
+                "model_version": "1",
+                "implementation_id": "balance/1",
+                "parameters": {
+                  "capacity_kg": 1000,
+                  "kind": "co2"
+                },
+                "before": {
+                  "inventory_kg": 390.0
+                },
+                "inputs": {
+                  "incoming_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "after": {
+                  "inventory_kg": 362.5
+                },
+                "flows": {
+                  "accepted_kg": 0.0,
+                  "rejected_kg": 0.0,
+                  "outgoing_kg": 27.5
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/co2-buffer",
+                  "model_version": "1",
+                  "implementation_id": "balance/1"
+                },
+                "audits": [
+                  {
+                    "check_id": "storage_initial_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_ending_bounds",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  },
+                  {
+                    "check_id": "storage_inflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_outflow",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "storage_mass_balance",
+                    "component": "co2",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kg",
+                    "tolerance": 2e-05
+                  }
+                ]
+              },
+              "reactor": {
+                "schema_version": "dispatch-lab/component-record/1",
+                "model_id": "dispatch-lab/lumped-reactor",
+                "model_version": "1",
+                "implementation_id": "analytic/1",
+                "parameters": {
+                  "thermal_capacity_kwh_per_k": 0.3,
+                  "heat_loss_kw_per_k": 0.08,
+                  "temperature_min_c": 250,
+                  "temperature_max_c": 400,
+                  "heater_max_kw": 60,
+                  "cooling_max_kw": 40,
+                  "minimum_run_hours": 4,
+                  "methane_min_kgph": 3,
+                  "methane_max_kgph": 10,
+                  "auxiliary_kw": 2,
+                  "methane_electric_kwh_per_kg": 1,
+                  "cooling_electric_fraction": 0.1
+                },
+                "before": {
+                  "temperature_c": 333.99613740093497,
+                  "running": true,
+                  "commitment_hours": 0
+                },
+                "inputs": {
+                  "temperature_c": 333.99613740093497,
+                  "ambient_c": 20,
+                  "heater_kw": 0.0,
+                  "methane_kg": 10.0,
+                  "cooling_kw": 0.0,
+                  "duration_hours": 1
+                },
+                "after": {
+                  "temperature_c": 344.3132623631994,
+                  "running": true,
+                  "commitment_hours": 0
+                },
+                "flows": {
+                  "reaction_heat_kwh": 28.645833333333336,
+                  "heat_loss_kwh": 25.550695844654005,
+                  "hydrogen_kg": 5.0,
+                  "co2_kg": 27.5,
+                  "water_kg": 22.5,
+                  "electricity_kw": 12.0,
+                  "start": 0.0,
+                  "forced_trip": 0.0
+                },
+                "diagnostics": {
+                  "model_id": "dispatch-lab/lumped-reactor",
+                  "model_version": "1",
+                  "implementation_id": "analytic/1",
+                  "mode": "running"
+                },
+                "audits": [
+                  {
+                    "check_id": "reactor_heater",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_cooling",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kW",
+                    "tolerance": 1.04e-05
+                  },
+                  {
+                    "check_id": "reactor_methane",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.0100000000000002e-05
+                  },
+                  {
+                    "check_id": "reactor_exclusive_heat",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0.0,
+                    "unit": "kW",
+                    "tolerance": 1.06e-05
+                  },
+                  {
+                    "check_id": "reactor_minimum_output",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "kg",
+                    "tolerance": 1.001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_begin",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  },
+                  {
+                    "check_id": "production_temperature_end",
+                    "component": "reactor",
+                    "interval": null,
+                    "passed": true,
+                    "expected": "residual = 0",
+                    "residual": 0,
+                    "unit": "\u00b0C",
+                    "tolerance": 1.4000000000000001e-05
+                  }
+                ]
+              }
+            },
+            "reaction_heat_kwh": 28.645833333333336,
+            "heat_loss_kwh": 25.550695844654005,
+            "thermal_residual_kwh": -6.661338147750939e-15,
+            "electrical_residual_kwh": 0.0,
+            "h2_residual_kg": 0.0,
+            "co2_residual_kg": 0.0,
+            "reaction_mass_residual_kg": 0.0,
+            "audit_summary": {
+              "passed": 27,
+              "total": 27
+            }
+          }
+        ],
+        "predicted": {
+          "methane_kg": 50.0,
+          "reactor_starts": 1,
+          "ending": {
+            "battery_kwh": 323.5010046352252,
+            "h2_kg": 0.0,
+            "co2_kg": 362.5,
+            "temperature_c": 344.3132623631994,
+            "electrolyser_on": false,
+            "reactor_on": true,
+            "commitment_hours": 0
+          },
+          "temperature_c": [
+            250.0,
+            279.97824041465253,
+            302.9394242825433,
+            320.5260456893621,
+            333.99613740093497,
+            344.3132623631994
+          ],
+          "variable_and_wear_eur": 33.04459345954999,
+          "assumed_value_eur": 50.0,
+          "assumed_contribution_eur": 16.955406540450007
+        },
+        "comparison_economics": {
+          "process_decision_eur": 33.04459345954999,
+          "additional_dock_decision_eur": 3,
+          "assumed_contribution_after_additional_dock_eur": 13.955406540450007,
+          "scope": "Process prediction less incremental dock cost. Unchanged committed service costs and sunk prefix costs are excluded from this comparison; this is not an allocated whole-run cost report."
+        },
+        "solver": {
+          "status": "solved",
+          "termination": "optimal-within-tolerance",
+          "native_status_code": 0,
+          "objective_value": -49.96383991904775,
+          "objective_bound": -49.96580366466589,
+          "fallback_used": false,
+          "seconds": 0.007115041953511536,
+          "gap": 3.9303336599490386e-05,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "valid_incumbent": true
+        },
+        "forecast": {
+          "times": [
+            "2026-07-10T01:00:00+00:00",
+            "2026-07-10T02:00:00+00:00",
+            "2026-07-10T03:00:00+00:00",
+            "2026-07-10T04:00:00+00:00",
+            "2026-07-10T05:00:00+00:00",
+            "2026-07-10T06:00:00+00:00"
+          ],
+          "pv_kw": [
+            899.91,
+            899.91,
+            899.91,
+            899.91,
+            899.91,
+            899.91
+          ],
+          "ambient_c": [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          "source": {
+            "id": "synthetic-7-1",
+            "source": "Known synthetic template + current observation",
+            "initialized_at": "2026-07-10T01:00:00+00:00",
+            "available_at": "2026-07-10T01:00:00+00:00"
+          },
+          "current_forecast_error_kw": 0.0,
+          "abstraction": "Current hourly mean PV treated as measured; future reference samples excluded",
+          "current_prediction_sample": {
+            "ambient_c": 20,
+            "irradiance_wm2": 1000,
+            "pv_kw": 1000
+          },
+          "source_samples": [
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            },
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            },
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            },
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            },
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            },
+            {
+              "pv_kw": 1000,
+              "ambient_c": 20,
+              "irradiance_wm2": 1000,
+              "wind_mps": null,
+              "rain_mmph": null
+            }
+          ],
+          "deliveries_kg": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unserviced_pv_kw": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "source_forecast_error_kw": 0,
+          "forecast_error_basis": "Available DC through the same current surface and converter; source reference error retained separately",
+          "surface_before": {
+            "PV-01": [
+              {
+                "start_m2": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0.01,
+                "damaged": 0
+              }
+            ],
+            "PV-02": [
+              {
+                "start_m2": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0.01,
+                "damaged": 0
+              }
+            ],
+            "PV-03": [
+              {
+                "start_m2": 0,
+                "end_m2": 500.0,
+                "removable": 0.009999999999999998,
+                "adhered": 0.01,
+                "damaged": 0
+              },
+              {
+                "start_m2": 500.0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.1,
+                "adhered": 0.01,
+                "damaged": 0
+              }
+            ]
+          },
+          "surface_prediction": "Conditional uninterrupted continuation of declared cleaning. Ideal current surface observation; past pass efficacy must be recorded. No future repair, brush replacement, rain washing or successful-return evidence is assumed. Solar conversion includes temperature and clipping; plant curtailment and methane value require a separate coupled dispatch calculation. No probability or empirical efficacy validation is implied.",
+          "decision_hour": 1,
+          "service_kw": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.2222222222222224
+          ],
+          "electrolyser_isolated": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "field_assumption": "Conditional uninterrupted continuation of declared cleaning. Ideal current surface observation; past pass efficacy must be recorded. No future repair, brush replacement, rain washing or successful-return evidence is assumed. Solar conversion includes temperature and clipping; plant curtailment and methane value require a separate coupled dispatch calculation. No probability or empirical efficacy validation is implied."
+        },
+        "charging": [
+          {
+            "robot": "cleaner",
+            "offset": 0,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.0,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.0,
+            "after_kwh": 1.7999999999999998,
+            "passed": true
+          },
+          {
+            "robot": "cleaner",
+            "offset": 1,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.0,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.0,
+            "after_kwh": 1.7999999999999998,
+            "passed": true
+          },
+          {
+            "robot": "cleaner",
+            "offset": 2,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.0,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.0,
+            "after_kwh": 1.7999999999999998,
+            "passed": true
+          },
+          {
+            "robot": "cleaner",
+            "offset": 3,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.0,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.0,
+            "after_kwh": 1.7999999999999998,
+            "passed": true
+          },
+          {
+            "robot": "cleaner",
+            "offset": 4,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.0,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.0,
+            "after_kwh": 1.7999999999999998,
+            "passed": true
+          },
+          {
+            "robot": "cleaner",
+            "offset": 5,
+            "before_kwh": 1.7999999999999998,
+            "requested_kw": 0.2222222222222224,
+            "use_kwh": 0,
+            "charging_loss_kwh": 0.022222222222222237,
+            "after_kwh": 2.0,
+            "passed": true
+          }
+        ],
+        "numerical_adjustments": [],
+        "active_dock_hours": 1,
+        "solver_reserved_dock_hours": 1,
+        "released_zero_power_hours": 0,
+        "solver_service_cost_eur": 3,
+        "incremental_service_decision_eur": 3
+      }
+    },
+    "no retrieval": {
+      "state": "unresolved",
+      "checks": [
+        {
+          "id": "retrieval.observed_abort",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.resource_projection",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.no_charge_before_return",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        }
+      ],
+      "conditional_returns": [
+        {
+          "version": "conditional-retrieval-charging/1",
+          "robot": "cleaner",
+          "status": "unavailable",
+          "observed_stranded_orders": [
+            "SVC-0001"
+          ],
+          "continuations": [],
+          "available_at": null,
+          "reason": "No complete qualified retrieval commitment covers the observed stranded work; charging remains unavailable."
+        }
+      ],
+      "constraints": [
+        {
+          "condition": "joint dispatch and charging",
+          "reason": "infeasible"
+        }
+      ],
+      "current_requests": [],
+      "charging_plan": null
+    },
+    "premature charging": {
+      "state": "unresolved",
+      "checks": [
+        {
+          "id": "retrieval.observed_abort",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.resource_projection",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.recorded_continuation",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.qualified_retrieval",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.whole_mission_boundary",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.combined_return_boundary",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.all_origins_covered",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        },
+        {
+          "id": "retrieval.no_charge_before_return",
+          "passed": true,
+          "method": "Independent recorded-recipe and charging-boundary calculation"
+        }
+      ],
+      "conditional_returns": [
+        {
+          "version": "conditional-retrieval-charging/1",
+          "robot": "cleaner",
+          "status": "conditional",
+          "observed_stranded_orders": [
+            "SVC-0001"
+          ],
+          "continuations": [
+            {
+              "order_id": "SVC-0002",
+              "origin_order": "SVC-0001",
+              "starting_at": 1,
+              "complete_at": 4.5,
+              "available_at": 5,
+              "actor": "SERVICE/CREW-01",
+              "capability": "retrieve:cleaner"
+            }
+          ],
+          "available_at": 5,
+          "reason": "Charging can follow whole-mission return only if every nominated retrieval completes; the shared demand projection checks crew, route, power, stocks and prices. No robot-ready or repair-success credit."
+        }
+      ],
+      "constraints": [
+        {
+          "condition": "joint dispatch and charging",
+          "reason": "infeasible"
+        }
+      ],
+      "current_requests": [],
+      "charging_plan": null
+    }
+  }
+}

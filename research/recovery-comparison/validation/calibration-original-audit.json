@@ -1,0 +1,58 @@
+{
+  "checker": "dispatch-lab/reference/1",
+  "run_id": "eb49ea26be5f1158",
+  "status": "complete",
+  "passed": false,
+  "failures": [],
+  "scope": "Independent hourly physics, declared operating limits, weather availability and economic accounting. Version-3 scheduled recovery additionally checks necessary consecutive electrical/balance evidence and receipt availability. Opt-in retain-capacity diagnosis checks that an ambiguous informative interval holds capacity and creates no confirmed incident. Investigation version 3 additionally checks declared recovery-belief arithmetic, original observation/work bindings and admitted operating-test feasibility. These necessary conditions do not diagnose hidden faults, fully reconstruct the observer or empirically calibrate probabilities. Other diagnosis incident flags and service success outcomes remain input evidence, not independently diagnosed or empirically validated. Field energy, soiling, compatible repair boundaries and recorded service costs are checked.",
+  "total_checks": 92795,
+  "failed_checks": [
+    {
+      "check": "service.stock_bounds:brush:cleaner",
+      "controller": "Greedy",
+      "hour": 184,
+      "passed": false,
+      "residual": -1.0,
+      "expected": true,
+      "actual": false,
+      "unit": "",
+      "tolerance": 1.001e-05
+    }
+  ],
+  "artifact": "build/recovery-comparison/calibration-seed7-audit.json",
+  "artifact_sha256": "15621f5e58d19a9d346945137530cb98a903eb9823bbb90c4327e396c25e6587",
+  "original_checker_source_sha256": "6a5a8bff7b45d1d83d366c3fcc20bf8be8319036a5756f2f8d00683cc4429b0c",
+  "boundary_replay": {
+    "run_id": "eb49ea26be5f1158",
+    "events": [
+      {
+        "event": {
+          "kind": "consume",
+          "at_hour": 184.25643604405943,
+          "mission_id": "SVC-0041",
+          "phase": "perform",
+          "resource": "brush:cleaner",
+          "amount": 833.3333333333935,
+          "unit": "m2"
+        },
+        "independent_before": "833.333333333380961",
+        "independent_after": "-1.2539E-11"
+      },
+      {
+        "event": {
+          "kind": "replenish",
+          "at_hour": 185,
+          "source_id": "SVC-0041",
+          "resource": "brush:cleaner",
+          "unit": "m2",
+          "offered": 50000,
+          "accepted": 50000,
+          "rejected": 0
+        },
+        "independent_before": "-1.2539E-11",
+        "independent_after": "49999.999999999987461"
+      }
+    ]
+  },
+  "interpretation": "Original strict Boolean boundary check reports a failure for -1.2539e-11 m2 after replaying rounded consumptions. This original failure is retained. Any corrected numeric-overrun audit must be a separate, identified edition."
+}

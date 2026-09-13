@@ -1,0 +1,546 @@
+{
+  "version": "recovery-matched-input-check/1",
+  "scope": "Manifest and weather-operand comparisons, not outcome validation. The sensitivity changes only the declared recovery wait. Its full-configuration performance-boundary hashes differ; weather times, truth, templates, vintages, snapshots and other fields remain exactly equal. Numerical repeats retain identical complete envelopes.",
+  "checks": [
+    {
+      "kind": "window",
+      "arm": "fixed",
+      "seed": 7,
+      "parent_case": "646175b0d0005f2a2a984250",
+      "paired_case": "c65f555dfd13b5c73196e4e5",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+        "eae88661e6948fb863cbe7900689e2770ca71910464fe333f4c31713c9ea067e"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "025a9324ea0b6b90133c73c05e9a3d71e4b63d64c824012f8f80d85ca3fd27dc",
+          "execution": "9ba60886aa66433ba72279026b302802635c839115ec6a16d47b84dc59e95e65",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "70027bf2037bd7f7226fe6bd73172fec374efd2d2f51f52f12bbf902a5f163ae",
+          "execution": "a0641868dd4bdfa19fa8a07852e81e896eda4b5f01991a7d6ce65e7a3c43d2e6",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "fixed",
+      "seed": 17,
+      "parent_case": "f0bac02842aaf9156d05f136",
+      "paired_case": "0c040cc5113f89738288bd30",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "0faa79ca003f58a4bf0408fa2ec958699892899906e0e5a44a3f2821651fa359",
+        "4efe765aad4738a4fe319d78c1e4c06ed812278dad244b67735debe25f125df2"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "818707955597c01110faca37ef587deede9309e732d33b903efb4b8913c37361",
+          "execution": "e8431ac673c9355c1a2e0cd424f39f2dde4ccb4654572abaa3e4fe98ecf5834e",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "9133600692db9d53d2678860d5798eb56e0eea0ae1d1402ad2256468ba651335",
+          "execution": "6fd4ab714b4bcb6dd29637b4a20f875fcd667ebdeb26e7a7c096c6f86d6f1eea",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "fixed",
+      "seed": 29,
+      "parent_case": "c1d69fd46ef07fcd21d54437",
+      "paired_case": "6602faedee2366207c705ff1",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "8db40adad5a8ab0ecf695644faa38ea52d2fcb9f101b73c5a362751c4265a2e3",
+        "ee888f5fa1ec6a7017daf89e18e8b4f7105769b0614178d14a170af1e15b3984"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "a8e240330a6be3ea8eb3ce54fec46f2cd5e335ac898cacf3d840e650edcbe7fc",
+          "execution": "2e817f510f4168f2aa483e8471cbb78862cba542e74a5bd5906534d0535c1acf",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "a9c560b6e8fd59c2ae69fe463f5c6c9f4ccd37578bac02d663d4c322590dab9d",
+          "execution": "40d8d1e71b414f8476c016595746a7e448830f29fdf30a9bcdd42cda204dbdb3",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "adaptive",
+      "seed": 7,
+      "parent_case": "74573f4b8f0013235ff2241b",
+      "paired_case": "a5830e58275eec0b6f78d0dc",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+        "eae88661e6948fb863cbe7900689e2770ca71910464fe333f4c31713c9ea067e"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "025a9324ea0b6b90133c73c05e9a3d71e4b63d64c824012f8f80d85ca3fd27dc",
+          "execution": "9ba60886aa66433ba72279026b302802635c839115ec6a16d47b84dc59e95e65",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "70027bf2037bd7f7226fe6bd73172fec374efd2d2f51f52f12bbf902a5f163ae",
+          "execution": "a0641868dd4bdfa19fa8a07852e81e896eda4b5f01991a7d6ce65e7a3c43d2e6",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "adaptive",
+      "seed": 17,
+      "parent_case": "e3a0ba2a814890952b522c11",
+      "paired_case": "f220ae71727ec330287b02b6",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "0faa79ca003f58a4bf0408fa2ec958699892899906e0e5a44a3f2821651fa359",
+        "4efe765aad4738a4fe319d78c1e4c06ed812278dad244b67735debe25f125df2"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "818707955597c01110faca37ef587deede9309e732d33b903efb4b8913c37361",
+          "execution": "e8431ac673c9355c1a2e0cd424f39f2dde4ccb4654572abaa3e4fe98ecf5834e",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "9133600692db9d53d2678860d5798eb56e0eea0ae1d1402ad2256468ba651335",
+          "execution": "6fd4ab714b4bcb6dd29637b4a20f875fcd667ebdeb26e7a7c096c6f86d6f1eea",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "adaptive",
+      "seed": 29,
+      "parent_case": "0ecdd692fb0753ba777d3b94",
+      "paired_case": "78233c3d1e3f094547756c9f",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "8db40adad5a8ab0ecf695644faa38ea52d2fcb9f101b73c5a362751c4265a2e3",
+        "ee888f5fa1ec6a7017daf89e18e8b4f7105769b0614178d14a170af1e15b3984"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "a8e240330a6be3ea8eb3ce54fec46f2cd5e335ac898cacf3d840e650edcbe7fc",
+          "execution": "2e817f510f4168f2aa483e8471cbb78862cba542e74a5bd5906534d0535c1acf",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "a9c560b6e8fd59c2ae69fe463f5c6c9f4ccd37578bac02d663d4c322590dab9d",
+          "execution": "40d8d1e71b414f8476c016595746a7e448830f29fdf30a9bcdd42cda204dbdb3",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "risk-aware",
+      "seed": 7,
+      "parent_case": "83d3634876c81c62f2ac044e",
+      "paired_case": "f7032e80b9abdc0cf60f1cd8",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+        "eae88661e6948fb863cbe7900689e2770ca71910464fe333f4c31713c9ea067e"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "025a9324ea0b6b90133c73c05e9a3d71e4b63d64c824012f8f80d85ca3fd27dc",
+          "execution": "9ba60886aa66433ba72279026b302802635c839115ec6a16d47b84dc59e95e65",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "70027bf2037bd7f7226fe6bd73172fec374efd2d2f51f52f12bbf902a5f163ae",
+          "execution": "a0641868dd4bdfa19fa8a07852e81e896eda4b5f01991a7d6ce65e7a3c43d2e6",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "risk-aware",
+      "seed": 17,
+      "parent_case": "9691cf43e3d41eafe31ac3ac",
+      "paired_case": "02c283c31d0e685e16212cfc",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "0faa79ca003f58a4bf0408fa2ec958699892899906e0e5a44a3f2821651fa359",
+        "4efe765aad4738a4fe319d78c1e4c06ed812278dad244b67735debe25f125df2"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "818707955597c01110faca37ef587deede9309e732d33b903efb4b8913c37361",
+          "execution": "e8431ac673c9355c1a2e0cd424f39f2dde4ccb4654572abaa3e4fe98ecf5834e",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "9133600692db9d53d2678860d5798eb56e0eea0ae1d1402ad2256468ba651335",
+          "execution": "6fd4ab714b4bcb6dd29637b4a20f875fcd667ebdeb26e7a7c096c6f86d6f1eea",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "window",
+      "arm": "risk-aware",
+      "seed": 29,
+      "parent_case": "c8437695751baf0309341301",
+      "paired_case": "b95a8a872c16ab2c6c8116da",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [
+        "performance_boundary"
+      ],
+      "original_weather_envelopes": [
+        "8db40adad5a8ab0ecf695644faa38ea52d2fcb9f101b73c5a362751c4265a2e3",
+        "ee888f5fa1ec6a7017daf89e18e8b4f7105769b0614178d14a170af1e15b3984"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "a8e240330a6be3ea8eb3ce54fec46f2cd5e335ac898cacf3d840e650edcbe7fc",
+          "execution": "2e817f510f4168f2aa483e8471cbb78862cba542e74a5bd5906534d0535c1acf",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "a9c560b6e8fd59c2ae69fe463f5c6c9f4ccd37578bac02d663d4c322590dab9d",
+          "execution": "40d8d1e71b414f8476c016595746a7e448830f29fdf30a9bcdd42cda204dbdb3",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "fixed",
+      "seed": 7,
+      "parent_case": "acc90b7a4081fcf52423497d",
+      "paired_case": "c55c607247950ab9c76c1f1b",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "fixed",
+      "seed": 17,
+      "parent_case": "8fd302b25cac5104764355d3",
+      "paired_case": "8961e63b0752147584b7a631",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "fixed",
+      "seed": 29,
+      "parent_case": "7c014c7583f0cef5f0030845",
+      "paired_case": "886ed3cdb0b6828dc513ade8",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "adaptive",
+      "seed": 7,
+      "parent_case": "04b45907cad2bcc2f41845e0",
+      "paired_case": "e010780ad3c4e93bbbcdbda0",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "adaptive",
+      "seed": 17,
+      "parent_case": "44fdf2ea4d23899771e96afa",
+      "paired_case": "b729838d0422f828aaf2cc50",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "adaptive",
+      "seed": 29,
+      "parent_case": "ebfb64f1fd9f18ee3528b4cf",
+      "paired_case": "dc42eabdf1280150c63d4b40",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "risk-aware",
+      "seed": 7,
+      "parent_case": "901df4c4b111796918bc6dc4",
+      "paired_case": "06bb67188f113df2cb4facbf",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "62300d1869b04da6102b7e568944c26655c0d81d8b26227648d9ce3118053ca9",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+        "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "7532f7cbf5b5fe89048b7eb94796824eb5ff0fffb8a32fb5ddd5d04d5da72eb8",
+          "execution": "fb1ed34732546d9f96f09c3a396e16e17aa835cb634d50979706e3579c94dffd",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "risk-aware",
+      "seed": 17,
+      "parent_case": "6c1373877efae93a4d411833",
+      "paired_case": "478e3bcfc12f05b39e865594",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "23cf2e24197e7417d4a7801141c75a6432adeb0c920f9feab4af258d0069899b",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+        "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "39c42c1dbf1fec5ee4da8bf089ce50748d56b1dacfd870e90ccebc5d238dc509",
+          "execution": "16e0df8eb30700583dd01e4330dae5bcd4c1956c8b5357c6077d6faf49fc12c8",
+          "version": "observed-performance/1"
+        }
+      ]
+    },
+    {
+      "kind": "repeat",
+      "arm": "risk-aware",
+      "seed": 29,
+      "parent_case": "dc92de01e01dee0f316e42ad",
+      "paired_case": "10d45bfad47fe92bc6e7e668",
+      "config_match_except_declared_window": true,
+      "policy_match_except_declared_window": true,
+      "source_match": true,
+      "weather_operands_match": true,
+      "weather_operand_hash": "1e838c11dfecf08caa1ed80a0addb43ba22fe9beef372bbdd83d7852d78d10a6",
+      "weather_envelope_changed_keys": [],
+      "original_weather_envelopes": [
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+        "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7"
+      ],
+      "original_performance_boundaries": [
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        },
+        {
+          "controller": "c33dcc506f3fbdcaefcff4e23925a939555f79f7b6838752fe483299da6fb6f4",
+          "execution": "74c31464b37c0508b3c5927c643fa0867dbecaf8358a2b2eef520e0102fa281c",
+          "version": "observed-performance/1"
+        }
+      ]
+    }
+  ]
+}

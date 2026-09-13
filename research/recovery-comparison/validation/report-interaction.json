@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "conditions": 16,
+  "caseRows": 153,
+  "timelineCases": 2,
+  "keyboardRange": true,
+  "stocksToggle": true,
+  "localLinks": 42,
+  "localFont": true,
+  "narrowViewport": [
+    390,
+    844
+  ],
+  "reducedMotion": true,
+  "externalRequests": [],
+  "pageErrors": [],
+  "artifacts": {
+    "report.html": "e76aae2ae5e0d4f1f3ddd6979df8a94192ab6d890a00b756d6d409e2c3b65348",
+    "timeline.js": "c567518d1a27bdf1bd4ca74066b7b30a3708d221d5ba05ea9b29cc0e1786d615",
+    "check-report-interaction.cjs": "5644d479b129e611bea0a441bac453fc0cda4d7cda2c40fe805e0ce9d61ca447"
+  },
+  "scope": "Offline research report controls and links, separate from the application browser suite."
+}

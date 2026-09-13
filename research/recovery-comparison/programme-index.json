@@ -1,0 +1,13 @@
+{
+  "scope": "Programme history, including independently failed and unexecuted editions. No earlier numerical result is reassigned to corrected source.",
+  "entries": [
+    {"id":"d831e3e1a50b4983b14853c8401c1817","role":"Retained nine-case pilot; all independent checks passed on its original source"},
+    {"id":"e33a469eb8264c89922d199ba7f2292c","role":"Retained first full matrix; stopped after optical cleaning disagreed with the independent checker. Twenty complete cases, one invalid case, three cancelled cases and 129 unstarted cases"},
+    {"id":"a3cbfd62cd41467bae5663e652d00279","role":"Deadline sensitivity prepared before optical correction; never executed"},
+    {"id":"9b78bf164c0b4ff98df9d95710f88e32","role":"Main matrix prepared before the brush-disposal check correction; never executed"},
+    {"id":"4803dc18e8a546589aedcc591e784b3f","role":"Deadline sensitivity prepared before the brush-disposal check correction; never executed"},
+    {"id":"c03f2ebfebde491ea7ce927701f35bf2","role":"Release main matrix, created after the complete 1,005-test regression gate; see its immutable report for outcomes"},
+    {"id":"07c1a191609d4cf89ff694d2a33e67bb","role":"Release 24-hour deadline sensitivity; see its immutable report for outcomes"},
+    {"id":"621aec1013f54ddf867731447170cd24","role":"Predeclared second execution of normal-service conditions, three modes and three event seeds. Numerical repetition, not independent environmental replication"}
+  ]
+}

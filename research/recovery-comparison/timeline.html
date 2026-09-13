@@ -1,0 +1,8 @@
+<h3>Follow the recovery clock</h3>
+<p class="scope">Fixed mode, seed 7, selected before the sensitivity completed. Change the deadline case and move through its original hourly record. Power is an interval average; capacity estimates are the information available at the decision boundary.</p>
+<label for="trace-window">Recorded case</label><select id="trace-window"></select>
+<div id="trace-plot" aria-label="Saved recovery power and capacity trajectories"></div>
+<label for="trace-hour">Inspect interval <output id="trace-hour-label" for="trace-hour">H0</output></label>
+<input id="trace-hour" type="range" min="0" max="47" value="17" style="width:100%;accent-color:#ffad43">
+<p id="trace-values" class="note" aria-live="polite"></p>
+<p class="scope">Grey power: actual PV. Amber power: delivered electrolyser load. Dashed pale power: requested load. In the lower plot, amber is estimated capacity and dashed grey is retrospective physical capacity. That physical trace was not available to the controller. <a href="window-trace.json">Original operands and timing</a>.</p>

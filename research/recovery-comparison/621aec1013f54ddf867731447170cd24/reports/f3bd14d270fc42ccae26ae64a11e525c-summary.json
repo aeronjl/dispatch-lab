@@ -1,0 +1,3513 @@
+{
+  "report": "research/recovery-comparison/621aec1013f54ddf867731447170cd24/reports/f3bd14d270fc42ccae26ae64a11e525c.json",
+  "source_hashes": [
+    "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+  ],
+  "status_counts": {
+    "complete": 9
+  },
+  "independent_checks": {
+    "True": 9
+  },
+  "matching": [
+    {
+      "condition": "normal-service",
+      "seed": 7,
+      "physical_inputs_match": true,
+      "weather_inputs_match": true,
+      "complete": true
+    },
+    {
+      "condition": "normal-service",
+      "seed": 17,
+      "physical_inputs_match": true,
+      "weather_inputs_match": true,
+      "complete": true
+    },
+    {
+      "condition": "normal-service",
+      "seed": 29,
+      "physical_inputs_match": true,
+      "weather_inputs_match": true,
+      "complete": true
+    }
+  ],
+  "null": {
+    "7": false,
+    "17": false,
+    "29": false
+  },
+  "null_numerical_spread": {
+    "7": {
+      "status": "missing",
+      "traces": 0
+    },
+    "17": {
+      "status": "missing",
+      "traces": 0
+    },
+    "29": {
+      "status": "missing",
+      "traces": 0
+    }
+  },
+  "groups": [
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "cases": 3,
+      "complete": 3,
+      "methane_kg": {
+        "mean": 224.6799348915671,
+        "minimum": 220.42288268703004,
+        "maximum": 231.1124238135154
+      },
+      "service_fallback_intervals": {
+        "mean": 2.3333333333333335,
+        "minimum": 0,
+        "maximum": 7
+      },
+      "assumed_contribution_eur": {
+        "mean": -120.28775930815962,
+        "minimum": -485.08227473292214,
+        "maximum": 63.77858441242424
+      },
+      "total_eur": {
+        "mean": 960.4023173680876,
+        "minimum": 775.241209877232,
+        "maximum": 1321.1369555544038
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 18.333333333333332,
+        "minimum": 13,
+        "maximum": 24
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 0,
+      "missions": {
+        "clean-section": 2,
+        "charge-cleaner": 1,
+        "retrieve": 1,
+        "self-test": 1
+      }
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "cases": 3,
+      "complete": 3,
+      "methane_kg": {
+        "mean": 222.10034928473144,
+        "minimum": 219.93253662438923,
+        "maximum": 223.19121557820586
+      },
+      "service_fallback_intervals": {
+        "mean": 2.3333333333333335,
+        "minimum": 0,
+        "maximum": 7
+      },
+      "assumed_contribution_eur": {
+        "mean": -119.27078813840114,
+        "minimum": -485.3786396044441,
+        "maximum": 64.09386541297991
+      },
+      "total_eur": {
+        "mean": 957.5606494575073,
+        "minimum": 775.5476691282075,
+        "maximum": 1320.913602922871
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 10,
+        "minimum": 7,
+        "maximum": 14
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 0,
+      "missions": {
+        "charge-cleaner": 1,
+        "clean-section": 1,
+        "retrieve": 1,
+        "self-test": 1
+      }
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "cases": 3,
+      "complete": 3,
+      "methane_kg": {
+        "mean": 185.23591764540436,
+        "minimum": 109.43698671448058,
+        "maximum": 226.30684709333747
+      },
+      "service_fallback_intervals": {
+        "mean": 10.666666666666666,
+        "minimum": 2,
+        "maximum": 16
+      },
+      "assumed_contribution_eur": {
+        "mean": -132.74956725237175,
+        "minimum": -488.13221682589545,
+        "maximum": 63.07873470402353
+      },
+      "total_eur": {
+        "mean": 940.3107577712125,
+        "minimum": 721.697862516939,
+        "maximum": 1320.9278976534456
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 24.333333333333332,
+        "minimum": 11,
+        "maximum": 35
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 1,
+      "missions": {
+        "charge-cleaner": 2,
+        "clean-section": 2,
+        "retrieve": 1,
+        "self-test": 1
+      }
+    }
+  ],
+  "cases": [
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "6a5d36751ec04063beb7e5673ba9d7dd",
+      "case_id": "c55c607247950ab9c76c1f1b",
+      "run_id": "d80bd9c09cb7ae91",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/attempts/20260913T192437876997-030c5b14/archives/c55c607247950ab9c76c1f1b/d80bd9c09cb7ae91-4a56c3654d0edeb3ab1c6b77acc8f583392e03d3309cac37b099513b44f1e1cc.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192437876997-030c5b14/audit-c55c607247950ab9c76c1f1b.json.gz",
+        "artifact_sha256": "3ad788f5534c19c910c2b7b7006f86caf112522e7d947aa4b4ae12b2c5dce7e0",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+      "methane_kg": 222.50449817415583,
+      "ending": {
+        "battery_kwh": 2.913464731906659,
+        "h2_kg": 0.0,
+        "co2_kg": 188.1126300210715,
+        "temperature_c": 103.87676213046083,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 142,
+        "unresolved": 2
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 775.241209877232,
+        "assumed_contribution_eur": 63.77858441242424,
+        "eur_per_kg_ch4": 3.4841597191911386,
+        "curtailed_kwh": 670.8699956670027,
+        "utilisation": 0.46355103786282464,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 24,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 104.17808219178082,
+          "total_eur": 104.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 0,
+          "ending": 12,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 50000,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.19039375934333658,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.19039375934333658,
+            "transmission": 0.8015101782500967
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18481229409780628,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18481229409780628,
+            "transmission": 0.8070358288431718
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18265323760836233,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18265323760836233,
+            "transmission": 0.8091732947677214
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8059064339536632,
+      "study_report": "../../runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/reports/e6838e34a92e404d8d91bf5290a83c25.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "seed": 17,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "6a5d36751ec04063beb7e5673ba9d7dd",
+      "case_id": "8961e63b0752147584b7a631",
+      "run_id": "f9f5b0ea33fb369f",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/attempts/20260913T192437876997-030c5b14/archives/8961e63b0752147584b7a631/f9f5b0ea33fb369f-df729a74f7511131e512b58f0e7bd1f7c6b2a2602d3a54b3c33fa12ff02ae7b7.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192437876997-030c5b14/audit-8961e63b0752147584b7a631.json.gz",
+        "artifact_sha256": "ad9780366566ca3d03683e1d52a3eff10fbe3565e7a0fc1faf8e04eb88c7726f",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+      "methane_kg": 231.1124238135154,
+      "ending": {
+        "battery_kwh": 5.888049257194838,
+        "h2_kg": 2.6645352591003757e-15,
+        "co2_kg": 164.44083451283262,
+        "temperature_c": 139.00243437057784,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 11,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "clean-section": 1
+      },
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 131,
+        "unresolved": 1
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 784.828786672627,
+        "assumed_contribution_eur": 60.44041239601904,
+        "eur_per_kg_ch4": 3.3958745000481034,
+        "curtailed_kwh": 406.1550044183911,
+        "utilisation": 0.4814842162781571,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 18,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.0,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 109.17808219178082,
+          "total_eur": 109.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 1.9693593667068985,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 6.9693593667068985,
+          "total_eur": 6.9693593667068985,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 3.938718733413797,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0,
+        "used:cleaning": 1
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 1,
+          "ending": 11,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0.7877437466827595,
+          "ending": 9.212256253317243,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": 2.220446049250313e-15,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 1666.6666666666665,
+          "ending": 48333.33333333333,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": -5.002220859751105e-12,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18910435027529215,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18910435027529218,
+            "transmission": 0.8027866932274608
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 255.70413146569757,
+                "removable": 0.01975743789167863,
+                "start_m2": 0
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 967.4256513005514,
+                "removable": 0.019644937891678628,
+                "start_m2": 255.70413146569757
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.019532437891678626,
+                "start_m2": 967.4256513005514
+              }
+            ],
+            "removable_fraction": 0.01961499915201535,
+            "transmission": 0.9705811508395047
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18572521158814465,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18572521158814465,
+            "transmission": 0.8061320405277368
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8598332948649008,
+      "study_report": "../../runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/reports/e6838e34a92e404d8d91bf5290a83c25.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "seed": 29,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "6a5d36751ec04063beb7e5673ba9d7dd",
+      "case_id": "886ed3cdb0b6828dc513ade8",
+      "run_id": "1f8f74d554564265",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/attempts/20260913T192437876997-030c5b14/archives/886ed3cdb0b6828dc513ade8/1f8f74d554564265-6adaac865d34e7a1e9bdce1dca553a10438979852371b72078d5c29001a1f9fb.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192437876997-030c5b14/audit-886ed3cdb0b6828dc513ade8.json.gz",
+        "artifact_sha256": "3f2523a6e7dfe74393989ea79688f7fe880449a210b84a245019c530f4d0ee4b",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+      "methane_kg": 220.42288268703004,
+      "ending": {
+        "battery_kwh": 0.015064568208590146,
+        "h2_kg": -2.8865009835857496e-15,
+        "co2_kg": 193.83707261066735,
+        "temperature_c": 159.52768888879618,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 11,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-cleaner": 1,
+        "clean-section": 1,
+        "retrieve": 1,
+        "self-test": 1
+      },
+      "service_fallback_intervals": 7,
+      "candidate_states": {
+        "feasible": 116,
+        "unresolved": 22
+      },
+      "conditional_returns": 5,
+      "verification_ending": {
+        "hour": 47,
+        "status": "unresolved",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 53,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 1321.1369555544038,
+        "assumed_contribution_eur": -485.08227473292214,
+        "eur_per_kg_ch4": 5.993647027247326,
+        "curtailed_kwh": 582.7224786735907,
+        "utilisation": 0.4592143389313126,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 31,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 13,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.46264855165654,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 651.0220037233385,
+          "total_eur": 651.0220037233385,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 1.040959241227219,
+            "dock": 0.0,
+            "fixed_reader": 0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 547.8848807727849,
+          "total_eur": 547.8848807727849,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 564.8576201616946,
+          "total_eur": 564.8576201616946,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.46264855165654,
+        "cleaner_hours": 2.081918482454438,
+        "crew-hours": 2.487121103502865,
+        "crew-travel-hours": 1.133547909682882,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "remote-hours": 0.33672125096117966,
+        "reset_hours": 0,
+        "rover_hours": 0,
+        "used:cleaning": 1
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 1,
+          "ending": 11,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0.41638369649088747,
+          "ending": 10.0,
+          "initial": 10,
+          "passed": true,
+          "received": 0.416383696490886,
+          "reserved": 0.0,
+          "residual": 1.4432899320127035e-15,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 833.3333333333335,
+          "ending": 49166.666666666664,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": -2.2737367544323206e-12,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 2.487121103502865,
+          "ending": 24.0,
+          "initial": 24,
+          "passed": true,
+          "received": 2.487121103502865,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0.33672125096117966,
+          "ending": 1.0,
+          "initial": 1,
+          "passed": true,
+          "received": 0.33672125096117966,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 254.8647153145265,
+                "removable": 0.024240459809351085,
+                "start_m2": 0
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 833.3333333333335,
+                "removable": 0.024127959809351084,
+                "start_m2": 254.8647153145265
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18804045980935044,
+                "start_m2": 833.3333333333335
+              }
+            ],
+            "removable_fraction": 0.10610141317763447,
+            "transmission": 0.8849596009541418
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18770590445931204,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18770590445931204,
+            "transmission": 0.8041711545852811
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18461365638331495,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18461365638331495,
+            "transmission": 0.8072324801805182
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8321210785733135,
+      "study_report": "../../runs/studies/6a5d36751ec04063beb7e5673ba9d7dd/reports/e6838e34a92e404d8d91bf5290a83c25.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "306b2cc69800484280a86bcaa5a90264",
+      "case_id": "e010780ad3c4e93bbbcdbda0",
+      "run_id": "0ebda48142ba5a7a",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/306b2cc69800484280a86bcaa5a90264/attempts/20260913T192714387516-440004d7/archives/e010780ad3c4e93bbbcdbda0/0ebda48142ba5a7a-3d679b207f67b7224d5abe0fa3ea8ae0075f209cddff9129233afa3f76f3c6b4.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192714387516-440004d7/audit-e010780ad3c4e93bbbcdbda0.json.gz",
+        "artifact_sha256": "b09a5397343323fb9f2b303e55bc94d391b8cbac53e6469bbb4ce2aed5c1a65e",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+      "methane_kg": 223.17729565159922,
+      "ending": {
+        "battery_kwh": 0.9309405009195242,
+        "h2_kg": -2.533094201832487e-17,
+        "co2_kg": 186.26243695810214,
+        "temperature_c": 106.0748238945219,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 143,
+        "unresolved": 1
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 775.5476691282075,
+        "assumed_contribution_eur": 64.09386541297991,
+        "eur_per_kg_ch4": 3.475029423866263,
+        "curtailed_kwh": 653.6654337183732,
+        "utilisation": 0.46495269927416505,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 7,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 104.17808219178082,
+          "total_eur": 104.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 0,
+          "ending": 12,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 50000,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.19039375934333658,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.19039375934333658,
+            "transmission": 0.8015101782500967
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18481229409780628,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18481229409780628,
+            "transmission": 0.8070358288431718
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18265323760836233,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18265323760836233,
+            "transmission": 0.8091732947677214
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8059064339536632,
+      "study_report": "../../runs/studies/306b2cc69800484280a86bcaa5a90264/reports/68271f1ab33844dea4744dd5728fd5de.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "seed": 17,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "306b2cc69800484280a86bcaa5a90264",
+      "case_id": "b729838d0422f828aaf2cc50",
+      "run_id": "1428814f7dc6192e",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/306b2cc69800484280a86bcaa5a90264/attempts/20260913T192714387516-440004d7/archives/b729838d0422f828aaf2cc50/1428814f7dc6192e-fecd9d6cf4af6d90e3eaa55dfa6f3732467ee511556fc9d622005380787c9a70.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192714387516-440004d7/audit-b729838d0422f828aaf2cc50.json.gz",
+        "artifact_sha256": "cd52c945652a935ba6a7a340d992cfe26b3aca88705db385503a5e50faf41017",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+      "methane_kg": 223.19121557820586,
+      "ending": {
+        "battery_kwh": 7.174895212513944,
+        "h2_kg": 4.440892098500626e-15,
+        "co2_kg": 186.22415715993392,
+        "temperature_c": 124.46276851779929,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 142,
+        "unresolved": 2
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 776.2206763214435,
+        "assumed_contribution_eur": 63.472409776260776,
+        "eur_per_kg_ch4": 3.477828078092334,
+        "curtailed_kwh": 411.5822130689393,
+        "utilisation": 0.4649816991212622,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 14,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 104.17808219178082,
+          "total_eur": 104.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 0,
+          "ending": 12,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 50000,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18910435027529215,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18910435027529218,
+            "transmission": 0.8027866932274608
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18490743789167802,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18490743789167802,
+            "transmission": 0.8069416364872388
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18572521158814465,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18572521158814465,
+            "transmission": 0.8061320405277368
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.805286790080812,
+      "study_report": "../../runs/studies/306b2cc69800484280a86bcaa5a90264/reports/68271f1ab33844dea4744dd5728fd5de.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "seed": 29,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "306b2cc69800484280a86bcaa5a90264",
+      "case_id": "dc42eabdf1280150c63d4b40",
+      "run_id": "5e49560eb287c54e",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/306b2cc69800484280a86bcaa5a90264/attempts/20260913T192714387516-440004d7/archives/dc42eabdf1280150c63d4b40/5e49560eb287c54e-e01b1fb8632d16142e13a52acd4b6a02e06e6a77a257ff53598a02ab82313cf8.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192714387516-440004d7/audit-dc42eabdf1280150c63d4b40.json.gz",
+        "artifact_sha256": "05789735499bffd5a6e15582224e9cb431209a1e178d4af27139d6455455664f",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+      "methane_kg": 219.93253662438923,
+      "ending": {
+        "battery_kwh": 0.015064911911130352,
+        "h2_kg": 0.0,
+        "co2_kg": 195.18552428292966,
+        "temperature_c": 161.31379333232633,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 11,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-cleaner": 1,
+        "clean-section": 1,
+        "retrieve": 1,
+        "self-test": 1
+      },
+      "service_fallback_intervals": 7,
+      "candidate_states": {
+        "feasible": 116,
+        "unresolved": 22
+      },
+      "conditional_returns": 5,
+      "verification_ending": {
+        "hour": 47,
+        "status": "unresolved",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 53,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 1320.913602922871,
+        "assumed_contribution_eur": -485.3786396044441,
+        "eur_per_kg_ch4": 6.0059944890227275,
+        "curtailed_kwh": 596.1720936621791,
+        "utilisation": 0.4581927846341442,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 31,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 9,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.46264855165654,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 651.0220037233385,
+          "total_eur": 651.0220037233385,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 1.040959241227219,
+            "dock": 0.0,
+            "fixed_reader": 0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 547.8848807727849,
+          "total_eur": 547.8848807727849,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 564.8576201616946,
+          "total_eur": 564.8576201616946,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.46264855165654,
+        "cleaner_hours": 2.081918482454438,
+        "crew-hours": 2.487121103502865,
+        "crew-travel-hours": 1.133547909682882,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "remote-hours": 0.33672125096117966,
+        "reset_hours": 0,
+        "rover_hours": 0,
+        "used:cleaning": 1
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 1,
+          "ending": 11,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0.41638369649088747,
+          "ending": 10.0,
+          "initial": 10,
+          "passed": true,
+          "received": 0.416383696490886,
+          "reserved": 0.0,
+          "residual": 1.4432899320127035e-15,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 833.3333333333335,
+          "ending": 49166.666666666664,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": -2.2737367544323206e-12,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 2.487121103502865,
+          "ending": 24.0,
+          "initial": 24,
+          "passed": true,
+          "received": 2.487121103502865,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0.33672125096117966,
+          "ending": 1.0,
+          "initial": 1,
+          "passed": true,
+          "received": 0.33672125096117966,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 254.8647153145265,
+                "removable": 0.024127959809351084,
+                "start_m2": 0
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 833.3333333333335,
+                "removable": 0.024015459809351082,
+                "start_m2": 254.8647153145265
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18804045980935044,
+                "start_m2": 833.3333333333335
+              }
+            ],
+            "removable_fraction": 0.10604516317763446,
+            "transmission": 0.8850152884541418
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18770590445931204,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18770590445931204,
+            "transmission": 0.8041711545852811
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18461365638331495,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18461365638331495,
+            "transmission": 0.8072324801805182
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8321396410733136,
+      "study_report": "../../runs/studies/306b2cc69800484280a86bcaa5a90264/reports/68271f1ab33844dea4744dd5728fd5de.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "1abb560f025d430ea8f0a7bd301de086",
+      "case_id": "06bb67188f113df2cb4facbf",
+      "run_id": "46a0d4fb2f6e0875",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/1abb560f025d430ea8f0a7bd301de086/attempts/20260913T192923147318-4adbc097/archives/06bb67188f113df2cb4facbf/46a0d4fb2f6e0875-176d479ccc168e74f0bc85313c7b7d24166131ca4617f87cfa7d7253d5d109db.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192923147318-4adbc097/audit-06bb67188f113df2cb4facbf.json.gz",
+        "artifact_sha256": "8a8053b9b81875b17f8eadbe4a826d03a6c23115a87f8774c96d74b48684b9fb",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "4ee373072de2f626b97aea08de9101d1fee473e2db5dabd91884700ef1153253",
+      "methane_kg": 109.43698671448058,
+      "ending": {
+        "battery_kwh": 0.38015899276669707,
+        "h2_kg": 0.0,
+        "co2_kg": 499.04828653517836,
+        "temperature_c": 18.137344232091902,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 11,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-cleaner": 1,
+        "clean-section": 1
+      },
+      "service_fallback_intervals": 16,
+      "candidate_states": {
+        "feasible": 85,
+        "unresolved": 53
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "escalation-required",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 28,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": true,
+          "reason": "No observed recovery within the bounded window; obligation remains unresolved"
+        }
+      },
+      "metrics": {
+        "total_eur": 721.697862516939,
+        "assumed_contribution_eur": 26.80478036475668,
+        "eur_per_kg_ch4": 6.594643037822649,
+        "curtailed_kwh": 4362.053445495793,
+        "utilisation": 0.22799372232183454,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 41,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 11,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.7886614759149562,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 109.17808219178082,
+          "total_eur": 109.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 1.7744883208086535,
+            "dock": 0.0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 6.774488320808653,
+          "total_eur": 6.774488320808653,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.7886614759149562,
+        "cleaner_hours": 3.548976641617307,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0,
+        "used:cleaning": 1
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 20,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 1,
+          "ending": 11,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0.7097953283234614,
+          "ending": 10.0,
+          "initial": 10,
+          "passed": true,
+          "received": 0.7097953283234606,
+          "reserved": 0.0,
+          "residual": 7.771561172376096e-16,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 1666.666666666667,
+          "ending": 48333.333333333336,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": 2.7284841053187847e-12,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 368.57425922417497,
+                "removable": 0.02726875934333722,
+                "start_m2": 0
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1116.265171481442,
+                "removable": 0.02715625934333722,
+                "start_m2": 368.57425922417497
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.027043759343337217,
+                "start_m2": 1116.265171481442
+              }
+            ],
+            "removable_fraction": 0.02714398600490985,
+            "transmission": 0.9631274538551392
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18481229409780628,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18481229409780628,
+            "transmission": 0.8070358288431718
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18265323760836233,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18265323760836233,
+            "transmission": 0.8091732947677214
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.859778859155344,
+      "study_report": "../../runs/studies/1abb560f025d430ea8f0a7bd301de086/reports/25698e7a02864379965707c0461952d4.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "seed": 17,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "1abb560f025d430ea8f0a7bd301de086",
+      "case_id": "478e3bcfc12f05b39e865594",
+      "run_id": "61ac362dd48cbfc6",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/1abb560f025d430ea8f0a7bd301de086/attempts/20260913T192923147318-4adbc097/archives/478e3bcfc12f05b39e865594/61ac362dd48cbfc6-a70475f959f2ee670fc12c0a2c418619edb7f4e2c4d92d56ed6403a1d9c769ed.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192923147318-4adbc097/audit-478e3bcfc12f05b39e865594.json.gz",
+        "artifact_sha256": "c9817724c6b26586d789460ab2bae24c39c9363ec993c38149679ea5cd267110",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "0d29e8a88ea2385086189088eb1c4bdd86889c7ee10d91f26941c4935bfc0c5c",
+      "methane_kg": 226.30684709333747,
+      "ending": {
+        "battery_kwh": 3.3450451607206197,
+        "h2_kg": -1.7763568394002505e-15,
+        "co2_kg": 177.6561704933219,
+        "temperature_c": 128.58025025835616,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 2,
+      "candidate_states": {
+        "feasible": 93,
+        "unresolved": 51
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 778.3065131432527,
+        "assumed_contribution_eur": 63.07873470402353,
+        "eur_per_kg_ch4": 3.439164670180084,
+        "curtailed_kwh": 297.46587896783956,
+        "utilisation": 0.47147259811111975,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 35,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 104.17808219178082,
+          "total_eur": 104.17808219178082,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 23.013698630136986,
+          "total_eur": 23.013698630136986,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 0,
+          "ending": 12,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 50000,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 1,
+          "initial": 1,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18910435027529215,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18910435027529218,
+            "transmission": 0.8027866932274608
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18490743789167802,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18490743789167802,
+            "transmission": 0.8069416364872388
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18572521158814465,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18572521158814465,
+            "transmission": 0.8061320405277368
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.805286790080812,
+      "study_report": "../../runs/studies/1abb560f025d430ea8f0a7bd301de086/reports/25698e7a02864379965707c0461952d4.html"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "seed": 29,
+      "repeat": 2,
+      "status": "complete",
+      "edition_id": "1abb560f025d430ea8f0a7bd301de086",
+      "case_id": "10d45bfad47fe92bc6e7e668",
+      "run_id": "9bc1deb14246f8a0",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/1abb560f025d430ea8f0a7bd301de086/attempts/20260913T192923147318-4adbc097/archives/10d45bfad47fe92bc6e7e668/9bc1deb14246f8a0-dbbc61cb033823d33e40da1f9dd8d146c81c49553d5ef29871316e977335b31b.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T192923147318-4adbc097/audit-10d45bfad47fe92bc6e7e668.json.gz",
+        "artifact_sha256": "6dd9fe40bad56154556c09bc846c6560afd2ceab3721a32ef9df7e7d3165fd9b",
+        "passed": true,
+        "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+      },
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+      "weather_hash": "a01c665d0a3f632905c3d8066cce365c26e7c9f756e5644453084c6bed13e5a7",
+      "methane_kg": 219.96391912839505,
+      "ending": {
+        "battery_kwh": 0.015064911911196077,
+        "h2_kg": -1.6755488695393507e-14,
+        "co2_kg": 195.0992223969136,
+        "temperature_c": 171.925817706523,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 11,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-cleaner": 1,
+        "clean-section": 1,
+        "retrieve": 1,
+        "self-test": 1
+      },
+      "service_fallback_intervals": 14,
+      "candidate_states": {
+        "feasible": 71,
+        "unresolved": 67
+      },
+      "conditional_returns": 5,
+      "verification_ending": {
+        "hour": 47,
+        "status": "unresolved",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 53,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 1320.9278976534456,
+        "assumed_contribution_eur": -488.13221682589545,
+        "eur_per_kg_ch4": 6.005202593623581,
+        "curtailed_kwh": 577.4758293532396,
+        "utilisation": 0.458258164850823,
+        "electrolyser_starts": 2.0,
+        "reactor_starts": 2.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 30,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 27,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.46264855165654,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 16.986301369863014,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 651.0220037233385,
+          "total_eur": 651.0220037233385,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 1.040959241227219,
+            "dock": 0.0,
+            "fixed_reader": 0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 5
+          },
+          "known_subtotal_eur": 547.8848807727849,
+          "total_eur": 547.8848807727849,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 3.287671232876712,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 541.8439215315576,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 564.8576201616946,
+          "total_eur": 564.8576201616946,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.46264855165654,
+        "cleaner_hours": 2.081918482454438,
+        "crew-hours": 2.487121103502865,
+        "crew-travel-hours": 1.133547909682882,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "remote-hours": 0.33672125096117966,
+        "reset_hours": 0,
+        "rover_hours": 0,
+        "used:cleaning": 1
+      },
+      "verification_episode_metrics": {
+        "version": "recovery-report-episodes/1",
+        "applicable": true,
+        "windows_opened": 0,
+        "expired_windows": 0,
+        "observer_confirmed_windows": 0,
+        "original_deadline_already_missed_windows": 0,
+        "escalation_intervals": 0,
+        "outcomes": {},
+        "scope": "Derived from original episode snapshots. Distinct completed-mission windows and escalation intervals are separate. This does not rewrite the legacy recovery_deadline_misses metric."
+      },
+      "ending_service_resources": [
+        {
+          "consumed": 1,
+          "ending": 11,
+          "initial": 12,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 3,
+          "initial": 3,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0.41638369649088747,
+          "ending": 10.0,
+          "initial": 10,
+          "passed": true,
+          "received": 0.416383696490886,
+          "reserved": 0.0,
+          "residual": 1.4432899320127035e-15,
+          "resource": "energy:cleaner",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 0,
+          "ending": 10,
+          "initial": 10,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "energy:rover",
+          "unit": "kWh"
+        },
+        {
+          "consumed": 833.3333333333335,
+          "ending": 49166.666666666664,
+          "initial": 50000,
+          "passed": true,
+          "received": 0,
+          "reserved": 0.0,
+          "residual": -2.2737367544323206e-12,
+          "resource": "brush:cleaner",
+          "unit": "m2"
+        },
+        {
+          "consumed": 2.487121103502865,
+          "ending": 24.0,
+          "initial": 24,
+          "passed": true,
+          "received": 2.487121103502865,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "crew-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0.33672125096117966,
+          "ending": 1.0,
+          "initial": 1,
+          "passed": true,
+          "received": 0.33672125096117966,
+          "reserved": 0.0,
+          "residual": 0.0,
+          "resource": "remote-hours",
+          "unit": "h"
+        },
+        {
+          "consumed": 0,
+          "ending": 2,
+          "initial": 2,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "stock:brush",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:cleaning",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:module",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:calibration",
+          "unit": "kit"
+        },
+        {
+          "consumed": 0,
+          "ending": 24,
+          "initial": 24,
+          "passed": true,
+          "received": 0,
+          "reserved": 0,
+          "residual": 0,
+          "resource": "upstream:brush",
+          "unit": "kit"
+        }
+      ],
+      "ending_surface": {
+        "model": "array-surface/1",
+        "observation_basis": "Ideal section surface monitor; loose/adhered/damaged fractions are assumed observable in this fixture",
+        "sections": [
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-01",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 254.8647153145265,
+                "removable": 0.024127959809351084,
+                "start_m2": 0
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 833.3333333333335,
+                "removable": 0.024015459809351082,
+                "start_m2": 254.8647153145265
+              },
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18804045980935044,
+                "start_m2": 833.3333333333335
+              }
+            ],
+            "removable_fraction": 0.10604516317763446,
+            "transmission": 0.8850152884541418
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-02",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18770590445931204,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18770590445931204,
+            "transmission": 0.8041711545852811
+          },
+          {
+            "adhered_fraction": 0.01,
+            "area_m2": 1666.6666666666665,
+            "damage_fraction": 0.0,
+            "id": "PV-03",
+            "patches": [
+              {
+                "adhered": 0.01,
+                "damaged": 0,
+                "end_m2": 1666.6666666666665,
+                "removable": 0.18461365638331495,
+                "start_m2": 0
+              }
+            ],
+            "removable_fraction": 0.18461365638331495,
+            "transmission": 0.8072324801805182
+          }
+        ]
+      },
+      "ending_modelled_transmission": 0.8321396410733136,
+      "study_report": "../../runs/studies/1abb560f025d430ea8f0a7bd301de086/reports/25698e7a02864379965707c0461952d4.html"
+    }
+  ]
+}

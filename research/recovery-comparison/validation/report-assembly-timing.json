@@ -1,0 +1,10 @@
+{
+  "scope": "Main report-assembly timing starts at the last Completed attempt log write, after all 153 case attempts finished. It includes original archive/calculation verification and aggregation. No new optimisation is part of this report call.",
+  "start_timestamp": 1789326111.3469057,
+  "observed_at": 1789326454.440462,
+  "last_log_line": "Completed attempt in 103.3s",
+  "end_timestamp": 1789326592.7848802,
+  "elapsed_seconds": 481.4379744529724,
+  "cases": 153,
+  "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+}

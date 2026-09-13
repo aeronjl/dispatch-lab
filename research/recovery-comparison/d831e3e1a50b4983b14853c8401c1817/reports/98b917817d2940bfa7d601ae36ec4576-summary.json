@@ -1,0 +1,1700 @@
+{
+  "report": "research/recovery-comparison/d831e3e1a50b4983b14853c8401c1817/reports/98b917817d2940bfa7d601ae36ec4576.json",
+  "source_hashes": [
+    "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+  ],
+  "status_counts": {
+    "complete": 9
+  },
+  "independent_checks": {
+    "True": 9
+  },
+  "matching": [
+    {
+      "condition": "null",
+      "seed": 7,
+      "physical_inputs_match": true,
+      "weather_inputs_match": true,
+      "complete": true
+    },
+    {
+      "condition": "persistent-damage",
+      "seed": 7,
+      "physical_inputs_match": true,
+      "weather_inputs_match": true,
+      "complete": true
+    }
+  ],
+  "null": {
+    "7": true
+  },
+  "null_numerical_spread": {
+    "7": {
+      "status": "compared",
+      "traces": 6,
+      "operands": {
+        "requested.electrolyser_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "requested.charge_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "requested.discharge_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "requested.heater_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "requested.cooling_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "requested.methane_kg": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.electrolyser_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.charge_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.discharge_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.heater_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.cooling_kw": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "applied.methane_kg": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.battery_kwh": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.h2_kg": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.co2_kg": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.temperature_c": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.electrolyser_on": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.reactor_on": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        },
+        "state.commitment_hours": {
+          "maximum_difference": 0.0,
+          "hour": 0
+        }
+      }
+    }
+  },
+  "groups": [
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "cases": 2,
+      "complete": 2,
+      "methane_kg": {
+        "mean": 40.0,
+        "minimum": 40.0,
+        "maximum": 40.0
+      },
+      "service_fallback_intervals": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "assumed_contribution_eur": {
+        "mean": 8.598606351270853,
+        "minimum": 8.598606351270853,
+        "maximum": 8.598606351270853
+      },
+      "total_eur": {
+        "mean": 186.97399638845516,
+        "minimum": 186.97399638845516,
+        "maximum": 186.97399638845516
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 0,
+      "missions": {}
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "cases": 2,
+      "complete": 2,
+      "methane_kg": {
+        "mean": 40.0,
+        "minimum": 40.0,
+        "maximum": 40.0
+      },
+      "service_fallback_intervals": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "assumed_contribution_eur": {
+        "mean": 8.598606351270853,
+        "minimum": 8.598606351270853,
+        "maximum": 8.598606351270853
+      },
+      "total_eur": {
+        "mean": 186.97399638845516,
+        "minimum": 186.97399638845516,
+        "maximum": 186.97399638845516
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 0,
+      "missions": {}
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "cases": 2,
+      "complete": 2,
+      "methane_kg": {
+        "mean": 40.0,
+        "minimum": 40.0,
+        "maximum": 40.0
+      },
+      "service_fallback_intervals": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "assumed_contribution_eur": {
+        "mean": 8.598606351270853,
+        "minimum": 8.598606351270853,
+        "maximum": 8.598606351270853
+      },
+      "total_eur": {
+        "mean": 186.97399638845516,
+        "minimum": 186.97399638845516,
+        "maximum": 186.97399638845516
+      },
+      "forced_downtime_hours": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "limited_solves": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 0,
+      "missions": {}
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "fixed",
+      "cases": 1,
+      "complete": 1,
+      "methane_kg": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "service_fallback_intervals": {
+        "mean": 12,
+        "minimum": 12,
+        "maximum": 12
+      },
+      "assumed_contribution_eur": {
+        "mean": -1092.0953451048988,
+        "minimum": -1092.0953451048988,
+        "maximum": -1092.0953451048988
+      },
+      "total_eur": {
+        "mean": 1736.256970725369,
+        "minimum": 1736.256970725369,
+        "maximum": 1736.256970725369
+      },
+      "forced_downtime_hours": {
+        "mean": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "limited_solves": {
+        "mean": 4,
+        "minimum": 4,
+        "maximum": 4
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 1,
+      "missions": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      }
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "adaptive",
+      "cases": 1,
+      "complete": 1,
+      "methane_kg": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "service_fallback_intervals": {
+        "mean": 12,
+        "minimum": 12,
+        "maximum": 12
+      },
+      "assumed_contribution_eur": {
+        "mean": -1092.0953451048988,
+        "minimum": -1092.0953451048988,
+        "maximum": -1092.0953451048988
+      },
+      "total_eur": {
+        "mean": 1736.256970725369,
+        "minimum": 1736.256970725369,
+        "maximum": 1736.256970725369
+      },
+      "forced_downtime_hours": {
+        "mean": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "limited_solves": {
+        "mean": 4,
+        "minimum": 4,
+        "maximum": 4
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 1,
+      "missions": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      }
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "risk-aware",
+      "cases": 1,
+      "complete": 1,
+      "methane_kg": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "service_fallback_intervals": {
+        "mean": 25,
+        "minimum": 25,
+        "maximum": 25
+      },
+      "assumed_contribution_eur": {
+        "mean": -1091.9825278964818,
+        "minimum": -1091.9825278964818,
+        "maximum": -1091.9825278964818
+      },
+      "total_eur": {
+        "mean": 1736.256970725369,
+        "minimum": 1736.256970725369,
+        "maximum": 1736.256970725369
+      },
+      "forced_downtime_hours": {
+        "mean": 1,
+        "minimum": 1,
+        "maximum": 1
+      },
+      "limited_solves": {
+        "mean": 7,
+        "minimum": 7,
+        "maximum": 7
+      },
+      "fallbacks": {
+        "mean": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "confirmed_recovery_cases": 0,
+      "ending_escalations": 1,
+      "missions": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      }
+    }
+  ],
+  "cases": [
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "8c44725990aa9501",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/d8ad96596adb416e871bbbeae3cd5e65/attempts/20260913T172839930830-ac58c153/archives/2fc917f75d567732f5ee9d09/8c44725990aa9501-6ad0c637388afb411edd5fa5180d0e82d4dd7bfe658b01f595d22906e113392e.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172839930830-ac58c153/audit-2fc917f75d567732f5ee9d09.json.gz",
+        "artifact_sha256": "a5d2e5dd94e7928fa9dc14a905ac990d0b64282f71b1d853edc54755585f405d",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "3464cb28d292f8a1",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/fa788041980641719ea678d110cad91c/attempts/20260913T172851255300-41086030/archives/db8c2e298ff4c9a4a8aacae3/3464cb28d292f8a1-389578ee73d3be034100ea5e97ea39d33222f83818877bd5ca0f84973dd2e03c.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172851255300-41086030/audit-db8c2e298ff4c9a4a8aacae3.json.gz",
+        "artifact_sha256": "cb9f3912fe9a1522e6c3720be85ce3e4a7f97a09665c0ba895c2efb40eb6c92d",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "6af14db90e9aa9b0",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/fad86de317414827bcf75f6f5aa474db/attempts/20260913T172901774732-cd21289c/archives/50877e3ecc62d2e1fa09cb4f/6af14db90e9aa9b0-f17ceb744f8fe79a6c6b23d2f19cd6fd4d0bad09d7ed722635d9781ed2e4807f.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172901774732-cd21289c/audit-50877e3ecc62d2e1fa09cb4f.json.gz",
+        "artifact_sha256": "aa905edb966cb67703a5d040325ebb5ef95dd4b5c62a8b7ab8ac87dbd1f92e71",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "run_id": "8c44725990aa9501",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/6e0accc429f843a49a0784cea3ac2f6f/attempts/20260913T172913356089-eea2926f/archives/2fc917f75d567732f5ee9d09/8c44725990aa9501-468ba5267c786ccf0f3260f764cd982ef171c4cd2bfa5f13caad453aefe15c32.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172913356089-eea2926f/audit-2fc917f75d567732f5ee9d09.json.gz",
+        "artifact_sha256": "a5d2e5dd94e7928fa9dc14a905ac990d0b64282f71b1d853edc54755585f405d",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "run_id": "3464cb28d292f8a1",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/3920b25113ee464ca4f9a11c694916cd/attempts/20260913T172924158438-c74839d1/archives/db8c2e298ff4c9a4a8aacae3/3464cb28d292f8a1-493db40f62654addec18f9ad98e6bcb3f1c2716538c1f996dcd64581899057d1.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172924158438-c74839d1/audit-db8c2e298ff4c9a4a8aacae3.json.gz",
+        "artifact_sha256": "cb9f3912fe9a1522e6c3720be85ce3e4a7f97a09665c0ba895c2efb40eb6c92d",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "seed": 7,
+      "repeat": 2,
+      "status": "complete",
+      "run_id": "6af14db90e9aa9b0",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/6fb70f1a3cb54476af0b7429e4ce05bf/attempts/20260913T172936187176-63ca1aad/archives/50877e3ecc62d2e1fa09cb4f/6af14db90e9aa9b0-bbbaf7898d14c13acd430a377000141df8f5cf03a70c76da4785bf38c026812a.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172936187176-63ca1aad/audit-50877e3ecc62d2e1fa09cb4f.json.gz",
+        "artifact_sha256": "aa905edb966cb67703a5d040325ebb5ef95dd4b5c62a8b7ab8ac87dbd1f92e71",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "9a7a6a8b9ef55c4d8f71edf12dcc267025e91c454dc3f0079eacf23117a9b866",
+      "methane_kg": 40.0,
+      "ending": {
+        "battery_kwh": 32.87763703169997,
+        "h2_kg": 9.08597265964114,
+        "co2_kg": 390.0,
+        "temperature_c": 333.97622984807975,
+        "electrolyser_on": true,
+        "reactor_on": true,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 3,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {},
+      "service_fallback_intervals": 0,
+      "candidate_states": {
+        "feasible": 36
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 11,
+        "status": "inactive",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": null,
+          "episodes": [],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": false,
+          "reason": "Jointly reserve test power and charging within the recorded verification window"
+        }
+      },
+      "metrics": {
+        "total_eur": 186.97399638845516,
+        "assumed_contribution_eur": 8.598606351270853,
+        "eur_per_kg_ch4": 4.674349909711379,
+        "curtailed_kwh": 262.60725766043885,
+        "utilisation": 0.3333333333333333,
+        "electrolyser_starts": 1.0,
+        "reactor_starts": 1.0,
+        "forced_downtime_hours": 0,
+        "detection_delay_hours": null,
+        "false_alarms": 0,
+        "uncertain_hours": 8,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 0,
+        "fallbacks": 0,
+        "field_energy_kwh": 0,
+        "hours": 12
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 4.2465753424657535,
+            "dock": 5.308219178082192,
+            "fixed_reader": 0.6849315068493151,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.34246575342465757,
+            "rover": 15.462328767123285,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 26.044520547945204,
+          "total_eur": 26.044520547945204,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0,
+            "fixed_reader": 0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0,
+            "rover": 0,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 0,
+          "total_eur": 0,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0.821917808219178,
+            "dock": 4.109589041095891,
+            "fixed_reader": 0.0,
+            "human_service": 0,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 0.821917808219178,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 5.7534246575342465,
+          "total_eur": 5.7534246575342465,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.0,
+        "cleaner_hours": 0,
+        "dock_hours": 0,
+        "fixed_reader_hours": 0,
+        "fixed_service_kwh": 0.0,
+        "human_visits": 0,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 0
+      }
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "fixed",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "f22cbb9f090b9b17",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/7eb7680d02b44e459e35a38040b66fee/attempts/20260913T172948193546-2ee21c9d/archives/7e883f2a752b1e2c493273be/f22cbb9f090b9b17-0abc9444e4019ec230ba8c606cfc96c07978a7a514c61d6b5ef19a16a84f704a.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T172948193546-2ee21c9d/audit-7e883f2a752b1e2c493273be.json.gz",
+        "artifact_sha256": "44e36dbfa341e29f9532c90605cbcce15549e1165777b36b80613eefa066c551",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+      "methane_kg": 0.0,
+      "ending": {
+        "battery_kwh": 9.429580030407783,
+        "h2_kg": 9.769962616701378e-15,
+        "co2_kg": 800.0,
+        "temperature_c": 17.994736568415714,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 2,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      },
+      "service_fallback_intervals": 12,
+      "candidate_states": {
+        "feasible": 42,
+        "unresolved": 12
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "escalation-required",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 22,
+          "episodes": [
+            {
+              "receipt_ids": [
+                "SVC-0003"
+              ],
+              "opened_at": 17,
+              "available_boundary": 17,
+              "due_hour": 29,
+              "original_diagnosis_deadline": 22,
+              "original_deadline_missed": false,
+              "closed_at": 29,
+              "outcome": "verification deadline missed"
+            }
+          ],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": true,
+          "reason": "No observed recovery within the bounded window; obligation remains unresolved"
+        }
+      },
+      "metrics": {
+        "total_eur": 1736.256970725369,
+        "assumed_contribution_eur": -1092.0953451048988,
+        "eur_per_kg_ch4": null,
+        "curtailed_kwh": 7183.299075594425,
+        "utilisation": 0.0,
+        "electrolyser_starts": 0.0,
+        "reactor_starts": 0.0,
+        "forced_downtime_hours": 1,
+        "detection_delay_hours": 8,
+        "false_alarms": 0,
+        "uncertain_hours": 45,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 4,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.9432260888333533,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 0,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1173.5857378486567,
+          "total_eur": 1173.5857378486567,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0.0,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0,
+            "rover": 5.701388078159848,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1092.0953451048988,
+          "total_eur": 1092.0953451048988,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 606.1199844239993,
+          "total_eur": 606.1199844239993,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.6334875642399811,
+        "cleaner_hours": 0,
+        "crew-hours": 3.443588219678663,
+        "crew-travel-hours": 0.5453449726222956,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 1.5486926229668612,
+        "fixed_service_kwh": 0.30973852459337226,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 2.850694039079924,
+        "used:module": 1
+      }
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "adaptive",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "884fada82924ef20",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/1bc4b161e4014546bfeed4e5db613de8/attempts/20260913T173007049862-01bc43ec/archives/505eed571db7fad79056faf6/884fada82924ef20-06d85aa3fc72c5b5f6694e27256ff90fbe8284bc1b952ab1e6aa6a02ba95eac3.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T173007049862-01bc43ec/audit-505eed571db7fad79056faf6.json.gz",
+        "artifact_sha256": "c4b7237a79594328efb4e20c3993d21d9c2e2920686ac6bb633f6fd0eabd4e46",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+      "methane_kg": 0.0,
+      "ending": {
+        "battery_kwh": 9.546459186361181,
+        "h2_kg": 1.0103029524088925e-14,
+        "co2_kg": 800.0,
+        "temperature_c": 17.994736568415714,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 2,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      },
+      "service_fallback_intervals": 12,
+      "candidate_states": {
+        "feasible": 42,
+        "unresolved": 12
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "escalation-required",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 22,
+          "episodes": [
+            {
+              "receipt_ids": [
+                "SVC-0003"
+              ],
+              "opened_at": 17,
+              "available_boundary": 17,
+              "due_hour": 29,
+              "original_diagnosis_deadline": 22,
+              "original_deadline_missed": false,
+              "closed_at": 29,
+              "outcome": "verification deadline missed"
+            }
+          ],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": true,
+          "reason": "No observed recovery within the bounded window; obligation remains unresolved"
+        }
+      },
+      "metrics": {
+        "total_eur": 1736.256970725369,
+        "assumed_contribution_eur": -1092.0953451048988,
+        "eur_per_kg_ch4": null,
+        "curtailed_kwh": 7183.175874146487,
+        "utilisation": 0.0,
+        "electrolyser_starts": 0.0,
+        "reactor_starts": 0.0,
+        "forced_downtime_hours": 1,
+        "detection_delay_hours": 8,
+        "false_alarms": 0,
+        "uncertain_hours": 45,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 4,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.9432260888333533,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 0,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1173.5857378486567,
+          "total_eur": 1173.5857378486567,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0.0,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0,
+            "rover": 5.701388078159848,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1092.0953451048988,
+          "total_eur": 1092.0953451048988,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 606.1199844239993,
+          "total_eur": 606.1199844239993,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.6334875642399811,
+        "cleaner_hours": 0,
+        "crew-hours": 3.443588219678663,
+        "crew-travel-hours": 0.5453449726222956,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 1.5486926229668612,
+        "fixed_service_kwh": 0.30973852459337226,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 2.850694039079924,
+        "used:module": 1
+      }
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "risk-aware",
+      "seed": 7,
+      "repeat": 1,
+      "status": "complete",
+      "run_id": "7c761b99fec835e0",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/studies/7be8e28532b84a50be9d5d251eccb00d/attempts/20260913T173024370186-0e3de11e/archives/a15e974b72f80c9e86d6d772/7c761b99fec835e0-285cde4dd74f5cb2b503e5b0c53a650bf5ab9b8c699c29ab460533100e3ccee8.json.gz",
+      "error": null,
+      "audit": {
+        "artifact": "attempts/20260913T173024370186-0e3de11e/audit-a15e974b72f80c9e86d6d772.json.gz",
+        "artifact_sha256": "804ebef3d5319e6e3eed688ddad05dcbc0b3c9f091ca9d71d3434ff4ffbf9816",
+        "passed": true,
+        "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2"
+      },
+      "source_hash": "a6a2df7f1cd850124475f51f45b0b2c3b3090d2b43a97036f596624197525de2",
+      "weather_hash": "40497c44b715ce9ef547e4409986c609400054c7406e2e687bb35fb94d1f10dd",
+      "methane_kg": 0.0,
+      "ending": {
+        "battery_kwh": 6.541736365168263,
+        "h2_kg": 0.0,
+        "co2_kg": 800.0,
+        "temperature_c": 17.99095469406089,
+        "electrolyser_on": false,
+        "reactor_on": false,
+        "commitment_hours": 0
+      },
+      "service_inventories": {
+        "ending:brush": 2,
+        "ending:calibration": 2,
+        "ending:cleaning": 12,
+        "ending:module": 2,
+        "opening:brush": 2,
+        "opening:calibration": 2,
+        "opening:cleaning": 12,
+        "opening:module": 3,
+        "unit:brush": "kit",
+        "unit:calibration": "kit",
+        "unit:cleaning": "kit",
+        "unit:module": "kit"
+      },
+      "mission_counts": {
+        "charge-rover": 1,
+        "module-replacement": 1,
+        "read-trip-contact": 2
+      },
+      "service_fallback_intervals": 25,
+      "candidate_states": {
+        "feasible": 28,
+        "unresolved": 26
+      },
+      "conditional_returns": 0,
+      "verification_ending": {
+        "hour": 47,
+        "status": "escalation-required",
+        "loop": {
+          "version": "post-mission-verification-episodes/1",
+          "original_diagnosis_deadline": 21,
+          "episodes": [
+            {
+              "receipt_ids": [
+                "SVC-0003"
+              ],
+              "opened_at": 16,
+              "available_boundary": 16,
+              "due_hour": 28,
+              "original_diagnosis_deadline": 21,
+              "original_deadline_missed": false,
+              "closed_at": 28,
+              "outcome": "verification deadline missed"
+            }
+          ],
+          "shortfall_tests": [],
+          "pending_work": [],
+          "escalation_required": true,
+          "reason": "No observed recovery within the bounded window; obligation remains unresolved"
+        }
+      },
+      "metrics": {
+        "total_eur": 1736.256970725369,
+        "assumed_contribution_eur": -1091.9825278964818,
+        "eur_per_kg_ch4": null,
+        "curtailed_kwh": 7216.115305796419,
+        "utilisation": 0.0,
+        "electrolyser_starts": 0.0,
+        "reactor_starts": 0.0,
+        "forced_downtime_hours": 1,
+        "detection_delay_hours": 7,
+        "false_alarms": 0,
+        "uncertain_hours": 45,
+        "capacity_restored_hour": null,
+        "capacity_confirmed_hour": null,
+        "limited_solves": 7,
+        "fallbacks": 0,
+        "field_energy_kwh": 0.9180831033125528,
+        "hours": 48
+      },
+      "field_cost_views": {
+        "allocated": {
+          "components": {
+            "cleaner": 0,
+            "dock": 21.232876712328768,
+            "fixed_reader": 2.7397260273972606,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 1.3698630136986303,
+            "rover": 61.84931506849314,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1173.5857378486567,
+          "total_eur": 1173.5857378486567,
+          "unpriced": []
+        },
+        "decision": {
+          "components": {
+            "cleaner": 0,
+            "dock": 0.0,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0,
+            "rover": 5.588570869742736,
+            "service_materials": 500
+          },
+          "known_subtotal_eur": 1091.9825278964818,
+          "total_eur": 1091.9825278964818,
+          "unpriced": []
+        },
+        "expenditure": {
+          "components": {
+            "cleaner": 0,
+            "dock": 16.438356164383563,
+            "fixed_reader": 0.0,
+            "human_service": 586.3939570267389,
+            "portable": 0,
+            "reset": 0.0,
+            "rover": 3.287671232876712,
+            "service_materials": 0
+          },
+          "known_subtotal_eur": 606.1199844239993,
+          "total_eur": 606.1199844239993,
+          "unpriced": []
+        }
+      },
+      "field_quantities": {
+        "charge_input_kwh": 0.6209523188603011,
+        "cleaner_hours": 0,
+        "crew-hours": 3.443588219678663,
+        "crew-travel-hours": 0.5453449726222956,
+        "dock_hours": 1.0,
+        "fixed_reader_hours": 1.485653922261259,
+        "fixed_service_kwh": 0.2971307844522517,
+        "human_visits": 1,
+        "portable_hours": 0,
+        "reset_hours": 0,
+        "rover_hours": 2.794285434871368,
+        "used:module": 1
+      }
+    }
+  ]
+}

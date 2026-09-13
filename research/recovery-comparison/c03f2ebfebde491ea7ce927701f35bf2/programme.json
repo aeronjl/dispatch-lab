@@ -1,0 +1,320 @@
+{
+  "version": "recovery-comparison-programme/1",
+  "created_at": 1789322300.637928,
+  "basis": null,
+  "seeds": [
+    7,
+    17,
+    29
+  ],
+  "entries": [
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "42c300bc665a443786680992864b29c2"
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "b4e4a412dd3343469302aee04ce15ddd"
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "48903b2ff2954b9ebf29d2229974e154"
+    },
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "repeat": 2,
+      "edition_id": "9e5df22a86d4415cadc07feb58e8e52a"
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "repeat": 2,
+      "edition_id": "50abae9260c7491dbe918c8bf84ef0b6"
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "repeat": 2,
+      "edition_id": "e3a42b7acac44e5f9cf74be0609d214c"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "419a0c8cb7e2414a813cddbb6f18c3c0"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "f705b4f216264539b164cecfac243af8"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "2649f62bc10e4a23ba1430d90a7bb228"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "a0396d4fbfee45e5a46a82c19f4ca21f"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "c5194d0c916d41419ebd4c9185d7481f"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "593c803faa3541f097fc3ae40059b796"
+    },
+    {
+      "condition": "failed-remedy",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "8d7aa94bb46b4bbcb58ce1e7933a8518"
+    },
+    {
+      "condition": "failed-remedy",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "a592ce76fec44a4b89d08b89c5743dab"
+    },
+    {
+      "condition": "failed-remedy",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "c8e113caeb7f42ac9dfb0e5ec9b951df"
+    },
+    {
+      "condition": "interruption",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "6fe1dd0790684839a157a63ff406d39f"
+    },
+    {
+      "condition": "interruption",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "90f6a84ffcb0481187af541ad3c7e5c3"
+    },
+    {
+      "condition": "interruption",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "d29fef56424f4681ba49374b7c9ffde2"
+    },
+    {
+      "condition": "support-outage",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "776f129671dd40bab00c58945328df4d"
+    },
+    {
+      "condition": "support-outage",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "7aab315240344b9a802ee58afc86452e"
+    },
+    {
+      "condition": "support-outage",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "e89a6f412d004f079b4041a0ff791aeb"
+    },
+    {
+      "condition": "forecast-stress",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "8a397d7037e0439c9c529132f9a68ecb"
+    },
+    {
+      "condition": "forecast-stress",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "84f14d4b55ab4d35b7e08f18da76e587"
+    },
+    {
+      "condition": "forecast-stress",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "baa8d7915dcb4a9ca71a00002d41e780"
+    },
+    {
+      "condition": "London-01",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "f097fb5dc5d84b53b4fb61ab3d836a4d"
+    },
+    {
+      "condition": "London-01",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "c6abfd776d8c41079f21b55d3dcbcdfa"
+    },
+    {
+      "condition": "London-01",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "60f3788a9ae342e8af482a68310d7ca6"
+    },
+    {
+      "condition": "London-04",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "6ca6513485a14ddaa454f441f898d495"
+    },
+    {
+      "condition": "London-04",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "303bdb2d7bcc4427982bc87b23ce88e9"
+    },
+    {
+      "condition": "London-04",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "d0ad9d05d84343759a8a2f86a350323f"
+    },
+    {
+      "condition": "London-07",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "7f16a4678dd74e8b809ec16baf42ae01"
+    },
+    {
+      "condition": "London-07",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "b2fd52183a224208bd22e2f20528872d"
+    },
+    {
+      "condition": "London-07",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "b7ae16438696446790ccccb264eef29b"
+    },
+    {
+      "condition": "Seville-01",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "da4afa31a0c44fdf912e12f693e11089"
+    },
+    {
+      "condition": "Seville-01",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "90bdbdeb27e746ffaea078d7ec69cbc2"
+    },
+    {
+      "condition": "Seville-01",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "17ee71c575484c6bb1866d668784546c"
+    },
+    {
+      "condition": "Seville-04",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "db294e30a30642b4be13c146cff8cf52"
+    },
+    {
+      "condition": "Seville-04",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "f83334a08a714e4ebab4c39d9c99384f"
+    },
+    {
+      "condition": "Seville-04",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "4100c5530cc34d9586702a1a7cb9ae9b"
+    },
+    {
+      "condition": "Seville-07",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "f0f8757d506542428e4c3ebb717fc13a"
+    },
+    {
+      "condition": "Seville-07",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "1fd08fd7f3724f9e90322903af4cbf2a"
+    },
+    {
+      "condition": "Seville-07",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "d268726a24544189bd0366f55a1e2e9f"
+    },
+    {
+      "condition": "Copenhagen-01",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "d4acda860ace4388839e96fd667cda9b"
+    },
+    {
+      "condition": "Copenhagen-01",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "8be0bdc5f2ed42b88a50b19f05fd6ac1"
+    },
+    {
+      "condition": "Copenhagen-01",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "e444fa83a55541daaffbd5f60fbbab2f"
+    },
+    {
+      "condition": "Copenhagen-04",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "3575b3395b8647a7be22c120fc6073f3"
+    },
+    {
+      "condition": "Copenhagen-04",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "db29e1af75a8471db44107d799b14a1f"
+    },
+    {
+      "condition": "Copenhagen-04",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "f07ae61f25494ccb9e8b8db0e166e7da"
+    },
+    {
+      "condition": "Copenhagen-07",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "89823befa0b94f9ba1363885f761cb71"
+    },
+    {
+      "condition": "Copenhagen-07",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "962ae97e2158418396620d9f5dc93e9d"
+    },
+    {
+      "condition": "Copenhagen-07",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "72fbc49699c4474bbf40bddb198b6e32"
+    }
+  ],
+  "protocol_scope": "48-hour service exposure and seasonal windows; 12-hour null checks with two numerical repeats. Three fixed event seeds. These are controlled sensitivity cases, not annual costs, empirical event rates or field calibration. Failed, missing-data and unresolved cases remain in every report.",
+  "weather_scope": "Nine European 2026 windows start on 10 January, April and July. Use the first 48 UTC hours of a saved ten-day ERA5/archived ECMWF envelope, retaining original publication boundaries and raw attribution. ERA5 is reanalysis, not site measurements."
+}

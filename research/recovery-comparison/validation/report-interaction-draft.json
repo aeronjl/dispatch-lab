@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "conditions": 16,
+  "caseRows": 153,
+  "timelineCases": 2,
+  "keyboardRange": true,
+  "stocksToggle": true,
+  "localLinks": 41,
+  "localFont": true,
+  "narrowViewport": [
+    390,
+    844
+  ],
+  "reducedMotion": true,
+  "externalRequests": [],
+  "pageErrors": [],
+  "scope": "Offline research report controls and links, separate from the application browser suite."
+}

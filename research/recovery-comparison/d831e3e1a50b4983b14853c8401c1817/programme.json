@@ -1,0 +1,66 @@
+{
+  "version": "recovery-comparison-programme/1",
+  "created_at": 1789320503.428086,
+  "basis": null,
+  "seeds": [
+    7
+  ],
+  "entries": [
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "d8ad96596adb416e871bbbeae3cd5e65"
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "fa788041980641719ea678d110cad91c"
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "fad86de317414827bcf75f6f5aa474db"
+    },
+    {
+      "condition": "null",
+      "arm": "fixed",
+      "repeat": 2,
+      "edition_id": "6e0accc429f843a49a0784cea3ac2f6f"
+    },
+    {
+      "condition": "null",
+      "arm": "adaptive",
+      "repeat": 2,
+      "edition_id": "3920b25113ee464ca4f9a11c694916cd"
+    },
+    {
+      "condition": "null",
+      "arm": "risk-aware",
+      "repeat": 2,
+      "edition_id": "6fb70f1a3cb54476af0b7429e4ce05bf"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "fixed",
+      "repeat": 1,
+      "edition_id": "7eb7680d02b44e459e35a38040b66fee"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "adaptive",
+      "repeat": 1,
+      "edition_id": "1bc4b161e4014546bfeed4e5db613de8"
+    },
+    {
+      "condition": "persistent-damage",
+      "arm": "risk-aware",
+      "repeat": 1,
+      "edition_id": "7be8e28532b84a50be9d5d251eccb00d"
+    }
+  ],
+  "protocol_scope": "48-hour service exposure and seasonal windows; 12-hour null checks with two numerical repeats. Three fixed event seeds. These are controlled sensitivity cases, not annual costs, empirical event rates or field calibration. Failed, missing-data and unresolved cases remain in every report.",
+  "weather_scope": "Nine European 2026 windows start on 10 January, April and July. Use the first 48 UTC hours of a saved ten-day ERA5/archived ECMWF envelope, retaining original publication boundaries and raw attribution. ERA5 is reanalysis, not site measurements."
+}

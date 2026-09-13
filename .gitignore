@@ -38,3 +38,10 @@ test-results/
 /research/model-assumptions/ui-mobile.png
 /research/model-assumptions/report-desktop.png
 /research/model-assumptions/report-mobile.png
+
+# Keep compact qualification summaries; full numerical reports remain local.
+/research/recovery-comparison/*/reports/*.json
+!/research/recovery-comparison/*/reports/*-summary.json
+/research/recovery-comparison/retrieval-*.json
+!/research/recovery-comparison/retrieval-*-summary.json
+/research/recovery-comparison/*/calibration/*/protocol.json

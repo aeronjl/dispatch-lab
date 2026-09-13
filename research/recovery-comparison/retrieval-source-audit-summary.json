@@ -1,0 +1,9 @@
+{
+  "run_id": "e06c14e09f4b0ca6",
+  "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b",
+  "passed": true,
+  "checks": 2342,
+  "failed": [],
+  "artifact": "build/recovery-comparison/retrieval-source-audit.json",
+  "artifact_sha256": "235779485764b7ddc5e23165aed2c09191162925d02727e92f9db537acbed9a8"
+}

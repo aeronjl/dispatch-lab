@@ -1,0 +1,2428 @@
+{
+  "version": "service-duration-calibration/1",
+  "dataset_id": "6c2ad4e787d25bff0441d0052e47a6000170789396bc80d150db3014b87d4444",
+  "source": {
+    "id": "separate-simulated-clock-observations",
+    "kind": "simulated-observation",
+    "reference": "57bda6fe0b9832d067735cda05044b5c94829479e80eef07c18bd7ea4cfd6cf6"
+  },
+  "cutoff": 120,
+  "training_ids": [
+    "8a2474029790beb3/SVC-0001/0",
+    "8a2474029790beb3/SVC-0001/1",
+    "8a2474029790beb3/SVC-0001/2",
+    "8a2474029790beb3/SVC-0001/3",
+    "8a2474029790beb3/SVC-0002/0",
+    "8a2474029790beb3/SVC-0002/1",
+    "8a2474029790beb3/SVC-0002/2",
+    "8a2474029790beb3/SVC-0002/3",
+    "8a2474029790beb3/SVC-0003/0",
+    "8a2474029790beb3/SVC-0003/1",
+    "8a2474029790beb3/SVC-0003/2",
+    "8a2474029790beb3/SVC-0003/3",
+    "8a2474029790beb3/SVC-0004/0",
+    "8a2474029790beb3/SVC-0004/1",
+    "8a2474029790beb3/SVC-0004/2",
+    "8a2474029790beb3/SVC-0004/3",
+    "8a2474029790beb3/SVC-0005/0",
+    "8a2474029790beb3/SVC-0005/1",
+    "8a2474029790beb3/SVC-0005/2",
+    "8a2474029790beb3/SVC-0005/3",
+    "8a2474029790beb3/SVC-0006/0",
+    "8a2474029790beb3/SVC-0006/1",
+    "8a2474029790beb3/SVC-0006/2",
+    "8a2474029790beb3/SVC-0006/3",
+    "8a2474029790beb3/SVC-0007/0",
+    "8a2474029790beb3/SVC-0007/1",
+    "8a2474029790beb3/SVC-0007/2",
+    "8a2474029790beb3/SVC-0007/3",
+    "8a2474029790beb3/SVC-0008/0",
+    "8a2474029790beb3/SVC-0008/1",
+    "8a2474029790beb3/SVC-0008/2",
+    "8a2474029790beb3/SVC-0008/3",
+    "8a2474029790beb3/SVC-0009/0",
+    "8a2474029790beb3/SVC-0009/1",
+    "8a2474029790beb3/SVC-0009/2",
+    "8a2474029790beb3/SVC-0009/3",
+    "8a2474029790beb3/SVC-0010/0",
+    "8a2474029790beb3/SVC-0010/1",
+    "8a2474029790beb3/SVC-0010/2",
+    "8a2474029790beb3/SVC-0010/3",
+    "8a2474029790beb3/SVC-0011/0",
+    "8a2474029790beb3/SVC-0011/1",
+    "8a2474029790beb3/SVC-0011/2",
+    "8a2474029790beb3/SVC-0011/3",
+    "8a2474029790beb3/SVC-0012/0",
+    "8a2474029790beb3/SVC-0012/1",
+    "8a2474029790beb3/SVC-0012/2",
+    "8a2474029790beb3/SVC-0012/3",
+    "8a2474029790beb3/SVC-0013/0",
+    "8a2474029790beb3/SVC-0013/1",
+    "8a2474029790beb3/SVC-0013/2",
+    "8a2474029790beb3/SVC-0013/3",
+    "8a2474029790beb3/SVC-0014/0",
+    "8a2474029790beb3/SVC-0014/1",
+    "8a2474029790beb3/SVC-0014/2",
+    "8a2474029790beb3/SVC-0014/3",
+    "8a2474029790beb3/SVC-0015/0",
+    "8a2474029790beb3/SVC-0015/1",
+    "8a2474029790beb3/SVC-0015/2",
+    "8a2474029790beb3/SVC-0015/3",
+    "8a2474029790beb3/SVC-0016/0",
+    "8a2474029790beb3/SVC-0016/1",
+    "8a2474029790beb3/SVC-0016/2",
+    "8a2474029790beb3/SVC-0016/3",
+    "8a2474029790beb3/SVC-0017/0",
+    "8a2474029790beb3/SVC-0017/1",
+    "8a2474029790beb3/SVC-0017/2",
+    "8a2474029790beb3/SVC-0017/3",
+    "8a2474029790beb3/SVC-0018/0",
+    "8a2474029790beb3/SVC-0018/1",
+    "8a2474029790beb3/SVC-0018/2",
+    "8a2474029790beb3/SVC-0018/3",
+    "8a2474029790beb3/SVC-0019/0",
+    "8a2474029790beb3/SVC-0019/1",
+    "8a2474029790beb3/SVC-0019/2",
+    "8a2474029790beb3/SVC-0019/3",
+    "8a2474029790beb3/SVC-0020/0",
+    "8a2474029790beb3/SVC-0020/1",
+    "8a2474029790beb3/SVC-0021/0",
+    "8a2474029790beb3/SVC-0021/1",
+    "8a2474029790beb3/SVC-0021/2",
+    "8a2474029790beb3/SVC-0021/3",
+    "8a2474029790beb3/SVC-0021/4",
+    "8a2474029790beb3/SVC-0022/0",
+    "8a2474029790beb3/SVC-0022/1",
+    "8a2474029790beb3/SVC-0022/2",
+    "8a2474029790beb3/SVC-0022/3",
+    "8a2474029790beb3/SVC-0023/0",
+    "8a2474029790beb3/SVC-0024/0",
+    "8a2474029790beb3/SVC-0024/1",
+    "8a2474029790beb3/SVC-0024/2",
+    "8a2474029790beb3/SVC-0024/3",
+    "8a2474029790beb3/SVC-0025/0",
+    "8a2474029790beb3/SVC-0025/1",
+    "8a2474029790beb3/SVC-0025/2",
+    "8a2474029790beb3/SVC-0025/3",
+    "f525cf393ba5843e/SVC-0001/0",
+    "f525cf393ba5843e/SVC-0001/1",
+    "f525cf393ba5843e/SVC-0002/0",
+    "f525cf393ba5843e/SVC-0002/1",
+    "f525cf393ba5843e/SVC-0002/2",
+    "f525cf393ba5843e/SVC-0002/3",
+    "f525cf393ba5843e/SVC-0002/4",
+    "f525cf393ba5843e/SVC-0003/0",
+    "f525cf393ba5843e/SVC-0003/1",
+    "f525cf393ba5843e/SVC-0003/2",
+    "f525cf393ba5843e/SVC-0003/3",
+    "f525cf393ba5843e/SVC-0004/0",
+    "f525cf393ba5843e/SVC-0005/0",
+    "f525cf393ba5843e/SVC-0005/1",
+    "f525cf393ba5843e/SVC-0005/2",
+    "f525cf393ba5843e/SVC-0005/3",
+    "f525cf393ba5843e/SVC-0006/0",
+    "f525cf393ba5843e/SVC-0006/1",
+    "f525cf393ba5843e/SVC-0006/2",
+    "f525cf393ba5843e/SVC-0006/3",
+    "f525cf393ba5843e/SVC-0007/0",
+    "f525cf393ba5843e/SVC-0007/1",
+    "f525cf393ba5843e/SVC-0007/2",
+    "f525cf393ba5843e/SVC-0007/3",
+    "f525cf393ba5843e/SVC-0008/0",
+    "f525cf393ba5843e/SVC-0008/1",
+    "f525cf393ba5843e/SVC-0008/2",
+    "f525cf393ba5843e/SVC-0008/3",
+    "f525cf393ba5843e/SVC-0009/0",
+    "f525cf393ba5843e/SVC-0009/1",
+    "f525cf393ba5843e/SVC-0009/2",
+    "f525cf393ba5843e/SVC-0009/3",
+    "f525cf393ba5843e/SVC-0010/0",
+    "f525cf393ba5843e/SVC-0010/1",
+    "f525cf393ba5843e/SVC-0010/2",
+    "f525cf393ba5843e/SVC-0010/3",
+    "f525cf393ba5843e/SVC-0011/0",
+    "f525cf393ba5843e/SVC-0011/1",
+    "f525cf393ba5843e/SVC-0011/2",
+    "f525cf393ba5843e/SVC-0011/3",
+    "f525cf393ba5843e/SVC-0012/0",
+    "f525cf393ba5843e/SVC-0012/1",
+    "f525cf393ba5843e/SVC-0012/2",
+    "f525cf393ba5843e/SVC-0012/3",
+    "f525cf393ba5843e/SVC-0013/0",
+    "f525cf393ba5843e/SVC-0013/1",
+    "f525cf393ba5843e/SVC-0013/2",
+    "f525cf393ba5843e/SVC-0013/3",
+    "f525cf393ba5843e/SVC-0014/0",
+    "f525cf393ba5843e/SVC-0014/1",
+    "f525cf393ba5843e/SVC-0014/2",
+    "f525cf393ba5843e/SVC-0014/3",
+    "f525cf393ba5843e/SVC-0015/0",
+    "f525cf393ba5843e/SVC-0015/1",
+    "f525cf393ba5843e/SVC-0016/0",
+    "f525cf393ba5843e/SVC-0016/1",
+    "f525cf393ba5843e/SVC-0016/2",
+    "f525cf393ba5843e/SVC-0016/3",
+    "f525cf393ba5843e/SVC-0016/4",
+    "f525cf393ba5843e/SVC-0017/0",
+    "f525cf393ba5843e/SVC-0018/0",
+    "f525cf393ba5843e/SVC-0018/1",
+    "f525cf393ba5843e/SVC-0018/2",
+    "f525cf393ba5843e/SVC-0018/3",
+    "f525cf393ba5843e/SVC-0019/0",
+    "f525cf393ba5843e/SVC-0019/1",
+    "f525cf393ba5843e/SVC-0019/2",
+    "f525cf393ba5843e/SVC-0019/3",
+    "f525cf393ba5843e/SVC-0020/0",
+    "f525cf393ba5843e/SVC-0020/1",
+    "f525cf393ba5843e/SVC-0020/2",
+    "f525cf393ba5843e/SVC-0020/3",
+    "f525cf393ba5843e/SVC-0021/0",
+    "f525cf393ba5843e/SVC-0021/1",
+    "f525cf393ba5843e/SVC-0021/2",
+    "f525cf393ba5843e/SVC-0021/3",
+    "f525cf393ba5843e/SVC-0022/0",
+    "f525cf393ba5843e/SVC-0022/1",
+    "f525cf393ba5843e/SVC-0022/2",
+    "f525cf393ba5843e/SVC-0022/3",
+    "f525cf393ba5843e/SVC-0023/0",
+    "f525cf393ba5843e/SVC-0023/1",
+    "f525cf393ba5843e/SVC-0023/2",
+    "f525cf393ba5843e/SVC-0023/3",
+    "f525cf393ba5843e/SVC-0024/0",
+    "f525cf393ba5843e/SVC-0024/1",
+    "f525cf393ba5843e/SVC-0024/2",
+    "f525cf393ba5843e/SVC-0024/3",
+    "f525cf393ba5843e/SVC-0025/0",
+    "f525cf393ba5843e/SVC-0025/1",
+    "f525cf393ba5843e/SVC-0025/2",
+    "f525cf393ba5843e/SVC-0025/3",
+    "f525cf393ba5843e/SVC-0026/0",
+    "f525cf393ba5843e/SVC-0026/1",
+    "f525cf393ba5843e/SVC-0026/2",
+    "f525cf393ba5843e/SVC-0026/3",
+    "f525cf393ba5843e/SVC-0027/0",
+    "f525cf393ba5843e/SVC-0027/1",
+    "f525cf393ba5843e/SVC-0027/2",
+    "f525cf393ba5843e/SVC-0027/3",
+    "f525cf393ba5843e/SVC-0028/0",
+    "f525cf393ba5843e/SVC-0028/1",
+    "f525cf393ba5843e/SVC-0028/2",
+    "f525cf393ba5843e/SVC-0028/3",
+    "f525cf393ba5843e/SVC-0029/0",
+    "f525cf393ba5843e/SVC-0029/1",
+    "f525cf393ba5843e/SVC-0029/2"
+  ],
+  "heldout_ids": [
+    "8a2474029790beb3/SVC-0026/0",
+    "8a2474029790beb3/SVC-0026/1",
+    "8a2474029790beb3/SVC-0026/2",
+    "8a2474029790beb3/SVC-0026/3",
+    "8a2474029790beb3/SVC-0027/0",
+    "8a2474029790beb3/SVC-0027/1",
+    "8a2474029790beb3/SVC-0027/2",
+    "8a2474029790beb3/SVC-0028/0",
+    "8a2474029790beb3/SVC-0028/1",
+    "8a2474029790beb3/SVC-0028/2",
+    "8a2474029790beb3/SVC-0028/3",
+    "8a2474029790beb3/SVC-0029/0",
+    "8a2474029790beb3/SVC-0029/1",
+    "8a2474029790beb3/SVC-0030/0",
+    "8a2474029790beb3/SVC-0030/1",
+    "8a2474029790beb3/SVC-0030/2",
+    "8a2474029790beb3/SVC-0030/3",
+    "8a2474029790beb3/SVC-0030/4",
+    "8a2474029790beb3/SVC-0031/0",
+    "8a2474029790beb3/SVC-0031/1",
+    "8a2474029790beb3/SVC-0031/2",
+    "8a2474029790beb3/SVC-0031/3",
+    "8a2474029790beb3/SVC-0032/0",
+    "8a2474029790beb3/SVC-0033/0",
+    "8a2474029790beb3/SVC-0033/1",
+    "8a2474029790beb3/SVC-0033/2",
+    "8a2474029790beb3/SVC-0033/3",
+    "8a2474029790beb3/SVC-0034/0",
+    "8a2474029790beb3/SVC-0034/1",
+    "8a2474029790beb3/SVC-0034/2",
+    "8a2474029790beb3/SVC-0035/0",
+    "8a2474029790beb3/SVC-0035/1",
+    "8a2474029790beb3/SVC-0035/2",
+    "8a2474029790beb3/SVC-0035/3",
+    "8a2474029790beb3/SVC-0036/0",
+    "8a2474029790beb3/SVC-0036/1",
+    "8a2474029790beb3/SVC-0036/2",
+    "8a2474029790beb3/SVC-0036/3",
+    "8a2474029790beb3/SVC-0037/0",
+    "8a2474029790beb3/SVC-0037/1",
+    "8a2474029790beb3/SVC-0037/2",
+    "8a2474029790beb3/SVC-0037/3",
+    "8a2474029790beb3/SVC-0038/0",
+    "8a2474029790beb3/SVC-0038/1",
+    "8a2474029790beb3/SVC-0038/2",
+    "8a2474029790beb3/SVC-0038/3",
+    "8a2474029790beb3/SVC-0039/0",
+    "8a2474029790beb3/SVC-0039/1",
+    "8a2474029790beb3/SVC-0039/2",
+    "8a2474029790beb3/SVC-0040/0",
+    "8a2474029790beb3/SVC-0040/1",
+    "8a2474029790beb3/SVC-0040/2",
+    "8a2474029790beb3/SVC-0041/0",
+    "8a2474029790beb3/SVC-0041/1",
+    "8a2474029790beb3/SVC-0041/2",
+    "8a2474029790beb3/SVC-0041/3",
+    "8a2474029790beb3/SVC-0042/0",
+    "8a2474029790beb3/SVC-0042/1",
+    "8a2474029790beb3/SVC-0042/2",
+    "8a2474029790beb3/SVC-0042/3",
+    "8a2474029790beb3/SVC-0043/0",
+    "8a2474029790beb3/SVC-0043/1",
+    "8a2474029790beb3/SVC-0043/2",
+    "8a2474029790beb3/SVC-0043/3",
+    "8a2474029790beb3/SVC-0044/0",
+    "8a2474029790beb3/SVC-0044/1",
+    "8a2474029790beb3/SVC-0044/2",
+    "8a2474029790beb3/SVC-0044/3",
+    "8a2474029790beb3/SVC-0045/0",
+    "8a2474029790beb3/SVC-0045/1",
+    "8a2474029790beb3/SVC-0045/2",
+    "8a2474029790beb3/SVC-0046/0",
+    "8a2474029790beb3/SVC-0046/1",
+    "8a2474029790beb3/SVC-0046/2",
+    "8a2474029790beb3/SVC-0046/3",
+    "8a2474029790beb3/SVC-0047/0",
+    "8a2474029790beb3/SVC-0047/1",
+    "8a2474029790beb3/SVC-0047/2",
+    "8a2474029790beb3/SVC-0047/3",
+    "8a2474029790beb3/SVC-0048/0",
+    "8a2474029790beb3/SVC-0048/1",
+    "8a2474029790beb3/SVC-0048/2",
+    "8a2474029790beb3/SVC-0048/3",
+    "f525cf393ba5843e/SVC-0030/0",
+    "f525cf393ba5843e/SVC-0030/1",
+    "f525cf393ba5843e/SVC-0030/2",
+    "f525cf393ba5843e/SVC-0030/3",
+    "f525cf393ba5843e/SVC-0031/0",
+    "f525cf393ba5843e/SVC-0031/1",
+    "f525cf393ba5843e/SVC-0031/2",
+    "f525cf393ba5843e/SVC-0031/3",
+    "f525cf393ba5843e/SVC-0032/0",
+    "f525cf393ba5843e/SVC-0032/1",
+    "f525cf393ba5843e/SVC-0032/2",
+    "f525cf393ba5843e/SVC-0032/3",
+    "f525cf393ba5843e/SVC-0033/0",
+    "f525cf393ba5843e/SVC-0033/1",
+    "f525cf393ba5843e/SVC-0033/2",
+    "f525cf393ba5843e/SVC-0033/3",
+    "f525cf393ba5843e/SVC-0034/0",
+    "f525cf393ba5843e/SVC-0034/1",
+    "f525cf393ba5843e/SVC-0034/2",
+    "f525cf393ba5843e/SVC-0035/0",
+    "f525cf393ba5843e/SVC-0035/1",
+    "f525cf393ba5843e/SVC-0035/2",
+    "f525cf393ba5843e/SVC-0035/3",
+    "f525cf393ba5843e/SVC-0036/0",
+    "f525cf393ba5843e/SVC-0036/1",
+    "f525cf393ba5843e/SVC-0036/2",
+    "f525cf393ba5843e/SVC-0036/3",
+    "f525cf393ba5843e/SVC-0037/0",
+    "f525cf393ba5843e/SVC-0037/1",
+    "f525cf393ba5843e/SVC-0037/2",
+    "f525cf393ba5843e/SVC-0037/3",
+    "f525cf393ba5843e/SVC-0038/0",
+    "f525cf393ba5843e/SVC-0038/1",
+    "f525cf393ba5843e/SVC-0038/2",
+    "f525cf393ba5843e/SVC-0038/3",
+    "f525cf393ba5843e/SVC-0039/0",
+    "f525cf393ba5843e/SVC-0039/1",
+    "f525cf393ba5843e/SVC-0039/2",
+    "f525cf393ba5843e/SVC-0040/0",
+    "f525cf393ba5843e/SVC-0040/1",
+    "f525cf393ba5843e/SVC-0040/2",
+    "f525cf393ba5843e/SVC-0041/0",
+    "f525cf393ba5843e/SVC-0041/1",
+    "f525cf393ba5843e/SVC-0041/2",
+    "f525cf393ba5843e/SVC-0041/3",
+    "f525cf393ba5843e/SVC-0042/0",
+    "f525cf393ba5843e/SVC-0042/1",
+    "f525cf393ba5843e/SVC-0042/2",
+    "f525cf393ba5843e/SVC-0042/3",
+    "f525cf393ba5843e/SVC-0043/0",
+    "f525cf393ba5843e/SVC-0043/1",
+    "f525cf393ba5843e/SVC-0043/2",
+    "f525cf393ba5843e/SVC-0043/3",
+    "f525cf393ba5843e/SVC-0044/0",
+    "f525cf393ba5843e/SVC-0044/1",
+    "f525cf393ba5843e/SVC-0044/2",
+    "f525cf393ba5843e/SVC-0044/3",
+    "f525cf393ba5843e/SVC-0045/0",
+    "f525cf393ba5843e/SVC-0045/1",
+    "f525cf393ba5843e/SVC-0045/2",
+    "f525cf393ba5843e/SVC-0046/0",
+    "f525cf393ba5843e/SVC-0046/1",
+    "f525cf393ba5843e/SVC-0047/0",
+    "f525cf393ba5843e/SVC-0047/1",
+    "f525cf393ba5843e/SVC-0047/2",
+    "f525cf393ba5843e/SVC-0047/3",
+    "f525cf393ba5843e/SVC-0047/4",
+    "f525cf393ba5843e/SVC-0048/0",
+    "f525cf393ba5843e/SVC-0048/1",
+    "f525cf393ba5843e/SVC-0048/2",
+    "f525cf393ba5843e/SVC-0048/3",
+    "f525cf393ba5843e/SVC-0049/0"
+  ],
+  "candidates": [
+    {
+      "version": "equipment-job-duration/1",
+      "groups": {
+        "travel": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        },
+        "cleaning": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        },
+        "inspection": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        },
+        "repair": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        },
+        "supply": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        },
+        "support": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.9,
+            1.1
+          ]
+        }
+      },
+      "source": "Predeclared illustrative uniform job-width candidate \u00b10.1; persistent grid held fixed"
+    },
+    {
+      "version": "equipment-job-duration/1",
+      "groups": {
+        "travel": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        },
+        "cleaning": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        },
+        "inspection": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        },
+        "repair": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        },
+        "supply": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        },
+        "support": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.8,
+            1.2
+          ]
+        }
+      },
+      "source": "Predeclared illustrative uniform job-width candidate \u00b10.2; persistent grid held fixed"
+    },
+    {
+      "version": "equipment-job-duration/1",
+      "groups": {
+        "travel": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        },
+        "cleaning": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        },
+        "inspection": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        },
+        "repair": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        },
+        "supply": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        },
+        "support": {
+          "persistent_factors": [
+            0.75,
+            1.0,
+            1.25,
+            1.5
+          ],
+          "prior_weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "job_multiplier_bounds": [
+            0.7,
+            1.3
+          ]
+        }
+      },
+      "source": "Predeclared illustrative uniform job-width candidate \u00b10.3; persistent grid held fixed"
+    }
+  ],
+  "training_scores": [
+    {
+      "model_id": "a854bc5f1612498e03cdc0b611db9e2fd31d4ce24ad4ab3565c6631ea33138eb",
+      "training_negative_log_evidence": null,
+      "unsupported": [
+        [
+          "8a2474029790beb3/PLANT-01/CLEAN-01",
+          "travel"
+        ],
+        [
+          "8a2474029790beb3/PLANT-01/CLEAN-01",
+          "cleaning"
+        ],
+        [
+          "8a2474029790beb3/PLANT-01/CLEAN-01",
+          "support"
+        ],
+        [
+          "f525cf393ba5843e/PLANT-01/CLEAN-01",
+          "travel"
+        ],
+        [
+          "f525cf393ba5843e/PLANT-01/CLEAN-01",
+          "cleaning"
+        ],
+        [
+          "f525cf393ba5843e/SERVICE/CREW-01",
+          "travel"
+        ],
+        [
+          "f525cf393ba5843e/SERVICE/CREW-01",
+          "support"
+        ],
+        [
+          "f525cf393ba5843e/SERVICE/CREW-01",
+          "supply"
+        ],
+        [
+          "f525cf393ba5843e/PLANT-01/CLEAN-01",
+          "inspection"
+        ],
+        [
+          "f525cf393ba5843e/PLANT-01/CLEAN-01",
+          "support"
+        ]
+      ]
+    },
+    {
+      "model_id": "69e32e806fe91d8649af4166b16e781196f12c2c8ba7d0b24cb0cfe0272a94b0",
+      "training_negative_log_evidence": -86.29535206203464,
+      "unsupported": []
+    },
+    {
+      "model_id": "77b3c57be117862222bb532ce257ba97015cad3bf1ed8c7a7ea62a8fa2a29a1d",
+      "training_negative_log_evidence": -27.607147171871308,
+      "unsupported": []
+    }
+  ],
+  "selected_model": {
+    "version": "equipment-job-duration/1",
+    "groups": {
+      "travel": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      },
+      "cleaning": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      },
+      "inspection": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      },
+      "repair": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      },
+      "supply": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      },
+      "support": {
+        "persistent_factors": [
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "prior_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "job_multiplier_bounds": [
+          0.8,
+          1.2
+        ]
+      }
+    },
+    "source": "Predeclared illustrative uniform job-width candidate \u00b10.2; persistent grid held fixed"
+  },
+  "status": "fitted",
+  "scope": "Finite candidate selection under declared uniform job noise and persistent support. Held-out jobs do not select the model. Density scores are not event probabilities. Censored jobs use survival likelihoods. Simulator clocks verify the workflow; they do not establish field calibration or identifiability.",
+  "heldout": {
+    "negative_log_score": -73.89277730418435,
+    "jobs": 114,
+    "unsupported": [],
+    "outcomes": [
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0026",
+        "factor": 1.161620376078588,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0028",
+        "factor": 1.4199336087602887,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0029",
+        "factor": 1.122172724700988,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0031",
+        "factor": 1.182031458487188,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0033",
+        "factor": 1.1059547050530796,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0035",
+        "factor": 1.2454670755364532,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0036",
+        "factor": 1.2377895112876445,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0037",
+        "factor": 1.4291562080131257,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0038",
+        "factor": 1.188854256170373,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0041",
+        "factor": 1.4890030393849543,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0042",
+        "factor": 1.0185192809508976,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0043",
+        "factor": 1.4837114666870548,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0044",
+        "factor": 1.0323951056347482,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0046",
+        "factor": 1.2608169748444311,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0047",
+        "factor": 1.2527764020059635,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0048",
+        "factor": 1.1832864560325334,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0026",
+        "factor": 1.457287727977061,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0028",
+        "factor": 1.475224356456755,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0029",
+        "factor": null,
+        "censored_after_factor": 0.7217966768281543,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": null,
+        "density_or_survival": 1.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0031",
+        "factor": 1.1427748636143407,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0033",
+        "factor": 1.2758500178841077,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0035",
+        "factor": 1.172049362863527,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0036",
+        "factor": 1.4306232911421206,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0037",
+        "factor": 1.3558303960588889,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0038",
+        "factor": 1.1774323665525914,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0041",
+        "factor": 1.075384271747447,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0042",
+        "factor": 1.314533140749876,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0043",
+        "factor": 1.3748713627502527,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0044",
+        "factor": 1.2707675118811097,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0046",
+        "factor": 1.343739634278336,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0047",
+        "factor": 1.4937424273333308,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "8a2474029790beb3/SVC-0048",
+        "factor": 1.2061674033164707,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0027",
+        "factor": 1.403943325524665,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0030",
+        "factor": 1.1385972855952105,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.0909090909090906
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0034",
+        "factor": 1.2463146538900673,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0039",
+        "factor": 1.1421113733189259,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.0909090909090906
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0040",
+        "factor": 1.4264294867994067,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "8a2474029790beb3/SVC-0045",
+        "factor": 1.4436881732711981,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0027",
+        "factor": 1.2240384183245396,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0030",
+        "factor": 1.1713176154553366,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.0909090909090906
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0034",
+        "factor": 1.499234445238983,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0039",
+        "factor": 1.2883263298294878,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0040",
+        "factor": 1.0696028740753718,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.0909090909090906
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "8a2474029790beb3/SVC-0045",
+        "factor": 1.4660673414925327,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0026",
+        "factor": 1.3303388880875673,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0028",
+        "factor": 1.3697736183647748,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0031",
+        "factor": 1.1769297382257946,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0033",
+        "factor": 1.3972487050838254,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0035",
+        "factor": 1.0546326867843163,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0036",
+        "factor": 1.3727926477534993,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0037",
+        "factor": 1.3567938161208986,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0038",
+        "factor": 1.4942486962412431,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0041",
+        "factor": 1.159834662996559,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0042",
+        "factor": 1.3663354588766197,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0043",
+        "factor": 1.0494040272628808,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0044",
+        "factor": 1.3282803521236701,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0046",
+        "factor": 1.183530853150046,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0047",
+        "factor": 1.1956488714093894,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0048",
+        "factor": 1.0810625393844475,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "8a2474029790beb3/SERVICE/CREW-01",
+        "group": "support",
+        "order_id": "8a2474029790beb3/SVC-0030",
+        "factor": 1.3014708788960547,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": true,
+        "density_or_survival": 1.8484848484848486
+      },
+      {
+        "asset": "8a2474029790beb3/PLANT-01/CLEAN-01",
+        "group": "inspection",
+        "order_id": "8a2474029790beb3/SVC-0032",
+        "factor": 1.0088021404907295,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0458333333333334,
+          1.734
+        ],
+        "covered": false,
+        "density_or_survival": 1.0909090909090906
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0030",
+        "factor": 1.0200113106105277,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0031",
+        "factor": 1.4586793485306089,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0032",
+        "factor": 1.2131233768494667,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0033",
+        "factor": 1.4735093256662708,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0035",
+        "factor": 1.0874451017768934,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0036",
+        "factor": 1.2116615566427527,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0037",
+        "factor": 1.1322874487493664,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0038",
+        "factor": 1.403140969177855,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0041",
+        "factor": 1.0006013627273092,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0042",
+        "factor": 1.0057137066943937,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0043",
+        "factor": 1.2384362198504277,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0044",
+        "factor": 1.4754669681864243,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0046",
+        "factor": 1.2597113752403288,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0048",
+        "factor": 1.337516323412217,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0030",
+        "factor": 1.0359472241664407,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0031",
+        "factor": 1.2335764232237296,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0032",
+        "factor": 1.3475911472071518,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0033",
+        "factor": 1.4861099032476888,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0035",
+        "factor": 1.134339139234021,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0036",
+        "factor": 1.413818971081861,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0037",
+        "factor": 1.095793128186557,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0038",
+        "factor": 1.1162471319883025,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0041",
+        "factor": 1.4527496290228783,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0042",
+        "factor": 1.3558652108094464,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0043",
+        "factor": 1.3546589115052712,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0044",
+        "factor": 1.0120973258617427,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0046",
+        "factor": null,
+        "censored_after_factor": 0.5645324591073916,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": null,
+        "density_or_survival": 1.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "cleaning",
+        "order_id": "f525cf393ba5843e/SVC-0048",
+        "factor": 1.1808277143162969,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0030",
+        "factor": 1.269099659126823,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0031",
+        "factor": 1.3138436306159065,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0032",
+        "factor": 1.0532310247905343,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0033",
+        "factor": 1.3379322931192519,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0035",
+        "factor": 1.3949524616816689,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0036",
+        "factor": 1.3724902300616577,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0037",
+        "factor": 1.4245705116945828,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0038",
+        "factor": 1.257533631664728,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0041",
+        "factor": 1.419701678734441,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0042",
+        "factor": 1.4981603090064937,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0043",
+        "factor": 1.1453695104621602,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0044",
+        "factor": 1.1852494747198534,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0048",
+        "factor": 1.3711146264843137,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0034",
+        "factor": 1.1082602158572854,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0039",
+        "factor": 1.2814442851732792,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0040",
+        "factor": 1.1586141058913881,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0045",
+        "factor": 1.1551216858805446,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "travel",
+        "order_id": "f525cf393ba5843e/SVC-0047",
+        "factor": 1.2795585168498746,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "f525cf393ba5843e/SVC-0034",
+        "factor": 1.0450386767273585,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "f525cf393ba5843e/SVC-0039",
+        "factor": 1.2989373817767955,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "f525cf393ba5843e/SVC-0040",
+        "factor": 1.0629690279029091,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "f525cf393ba5843e/SVC-0045",
+        "factor": 1.006716644825417,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": false,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "supply",
+        "order_id": "f525cf393ba5843e/SVC-0047",
+        "factor": 1.2788742269914337,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/SERVICE/CREW-01",
+        "group": "support",
+        "order_id": "f525cf393ba5843e/SVC-0047",
+        "factor": 1.0546535747833445,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      },
+      {
+        "asset": "f525cf393ba5843e/PLANT-01/CLEAN-01",
+        "group": "inspection",
+        "order_id": "f525cf393ba5843e/SVC-0049",
+        "factor": 1.2033686713317593,
+        "censored_after_factor": 0,
+        "predictive_interval_90": [
+          1.0250000000000001,
+          1.475
+        ],
+        "covered": true,
+        "density_or_survival": 2.0
+      }
+    ]
+  },
+  "identification_gaps": [
+    [
+      "8a2474029790beb3/SERVICE/CREW-01",
+      "travel"
+    ],
+    [
+      "8a2474029790beb3/SERVICE/CREW-01",
+      "support"
+    ],
+    [
+      "8a2474029790beb3/SERVICE/CREW-01",
+      "supply"
+    ],
+    [
+      "8a2474029790beb3/PLANT-01/CLEAN-01",
+      "inspection"
+    ],
+    [
+      "f525cf393ba5843e/SERVICE/CREW-01",
+      "support"
+    ],
+    [
+      "f525cf393ba5843e/PLANT-01/CLEAN-01",
+      "inspection"
+    ]
+  ],
+  "source_runs": [
+    {
+      "run_id": "eb49ea26be5f1158",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/duration-calibration/c03f2ebfebde491ea7ce927701f35bf2/eb49ea26be5f1158-3faca215560a6276ebf2da2fef48dd823dda8601cbcf6ddd50bd18246dbaedb6.json.gz",
+      "status": "complete",
+      "independent_check_passed": false,
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+    },
+    {
+      "run_id": "8a2474029790beb3",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/duration-calibration/c03f2ebfebde491ea7ce927701f35bf2/8a2474029790beb3-1cebb20f3f7eadb7b8292e9629577990748262067e9509d8416e2c4199fde76e.json.gz",
+      "status": "complete",
+      "independent_check_passed": true,
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+    },
+    {
+      "run_id": "f525cf393ba5843e",
+      "archive": "/Users/aeron/sota/dispatch-lab/runs/duration-calibration/c03f2ebfebde491ea7ce927701f35bf2/f525cf393ba5843e-d56f9d3966179868f3c3d2f3bbcbb16ae9a2a5ab84a7cf0ceb590f05c21bbe06.json.gz",
+      "status": "complete",
+      "independent_check_passed": true,
+      "source_hash": "9e045c22f82542cef2334a8e8a4999611f57c9edfe1fbf2b8595de90eb82499b"
+    }
+  ]
+}

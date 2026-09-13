@@ -1,0 +1,33 @@
+{
+  "version": "recovery-comparison-programme/1",
+  "created_at": 1789322720.853975,
+  "basis": null,
+  "seeds": [
+    7,
+    17,
+    29
+  ],
+  "entries": [
+    {
+      "condition": "normal-service",
+      "arm": "fixed",
+      "repeat": 2,
+      "edition_id": "6a5d36751ec04063beb7e5673ba9d7dd"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "adaptive",
+      "repeat": 2,
+      "edition_id": "306b2cc69800484280a86bcaa5a90264"
+    },
+    {
+      "condition": "normal-service",
+      "arm": "risk-aware",
+      "repeat": 2,
+      "edition_id": "1abb560f025d430ea8f0a7bd301de086"
+    }
+  ],
+  "comparison_programme": "c03f2ebfebde491ea7ce927701f35bf2",
+  "protocol_scope": "Second numerical execution of the identical normal-service configuration and three fixed event seeds, across all three modes. Finite budgets and physics are unchanged. These repeats measure computation variation, not independent environmental replication. No null condition is included in this sensitivity.",
+  "weather_scope": "Identical reproducible synthetic input and forecast recipe to the parent normal-service cases."
+}
