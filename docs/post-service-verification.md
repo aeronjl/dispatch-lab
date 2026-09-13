@@ -1,5 +1,30 @@
 # A repair still needs an operating test
 
+## Coordinated verification episodes
+
+Recovery `scheduled-load-tests/3` is the opt-in completion of the bounded loop.
+It uses the existing joint electricity, dock charging and test-window solver. A
+whole-mission return and eligible receipt open a separate test window of
+`maximum_wait_hours`. The original diagnosis and service deadlines stay recorded;
+late repair does not retroactively satisfy either. A queued or active remedy
+precedes verification rather than competing for its own test power.
+
+Shortfalls and inconclusive tests consume the current window without imposing
+the version-2 24-hour delay between individual observations. Distinct same-load
+shortfalls must reach the sensor confirmation count before the loop waits for
+the existing finite repair-follow-up rule. Inconclusive or ambiguous tests do
+not justify another repair. No observed recovery by the verification deadline
+leaves an explicit escalation, with no automatic rolling deadline. A separate
+completed remedy may open a new recorded window. Ordinary service attempt limits
+and retry delays remain in force; physical capacity still changes only through
+the existing execution mechanism and observer.
+
+The standard-library archive checker separately verifies receipt availability,
+whole-return timing, window arithmetic, distinct evidence and immutable original
+boundaries. These checks do not establish an industrially appropriate
+deadline, empirical repair success, or real-plant safety. Versions 1 and 2 retain
+their prior behaviour for older configurations and archives.
+
 The opt-in `coordinated-services/3` policy extends the existing shared-visit controller with measured follow-up for completed, unverified electrolyser module substitutions. It is a usable part of stage 4; it does not complete the investigation supervisor or the six-stage field programme.
 
 ## Observed evidence and timing

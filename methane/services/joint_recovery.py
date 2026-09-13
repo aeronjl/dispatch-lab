@@ -7,7 +7,7 @@ Plans predict two delivery hypotheses; neither is a diagnosis or repair receipt.
 import copy
 from dataclasses import asdict, dataclass
 
-from methane.recovery import JOINT_VERSION, RecoveryPolicy, compare
+from methane.recovery import JOINT_VERSION, JOINT_VERSIONS, RecoveryPolicy, compare
 from methane.sensing import Diagnosis
 from methane.services.continuation import Continuation
 from methane.services.coupling import identity
@@ -25,7 +25,7 @@ class Request:
     continuation: Continuation | None = None
 
     def __post_init__(self):
-        if self.policy.version != JOINT_VERSION:
+        if self.policy.version not in JOINT_VERSIONS:
             raise ValueError("Joint recovery requests require the version-2 policy")
         if (
             any(type(v) is not int for v in (self.hour, self.required_hours, self.due_hour))
@@ -129,7 +129,7 @@ class Scheduler:
     """Preserve accepted windows and the original episode deadline on replanning."""
 
     def __init__(self, policy):
-        if policy.version != JOINT_VERSION:
+        if policy.version not in JOINT_VERSIONS:
             raise ValueError("Joint scheduler requires the version-2 recovery policy")
         self.policy = policy
         self.due_hour = None

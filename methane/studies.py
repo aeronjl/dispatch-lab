@@ -1234,6 +1234,13 @@ All coefficients are illustrative. Numerical checks are not empirical calibratio
                 "checker/recovery_belief_reference.py",
                 source["methane/recovery_belief_reference.py"],
             )
+        for companion in (
+            "recovery_loop_reference.py",
+            "autonomy_reference.py",
+            "performance_reference.py",
+        ):
+            if "methane/" + companion in source:
+                z.writestr("checker/" + companion, source["methane/" + companion])
         z.writestr("check_study.py", LOADED_FILES["methane/study_bundle_check.py"])
         inventory = {
             i.filename: hashlib.sha256(z.read(i.filename)).hexdigest() for i in z.infolist()

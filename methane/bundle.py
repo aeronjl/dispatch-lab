@@ -24,6 +24,7 @@ def make(result, path):
         json.dumps(result, allow_nan=False).encode(), mtime=0
     )
     files["checker/autonomy_reference.py"] = LOADED_FILES["methane/autonomy_reference.py"]
+    files["checker/recovery_loop_reference.py"] = LOADED_FILES["methane/recovery_loop_reference.py"]
     files["checker/performance_reference.py"] = LOADED_FILES["methane/performance_reference.py"]
     files["checker/reference.py"] = LOADED_FILES["methane/reference.py"]
     files["checker/recovery_belief_reference.py"] = LOADED_FILES[

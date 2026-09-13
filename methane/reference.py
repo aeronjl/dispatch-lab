@@ -2753,6 +2753,13 @@ def audit(result):
             companion = runpy.run_path(str(Path(__file__).with_name("autonomy_reference.py")))
             checks.extend(companion["audit_run"](result))
         recovery_tests(result, checks)
+        if any(
+            row["decision"].get("recovery_planning", {}).get("version") == "scheduled-load-tests/3"
+            for rows in result["records"].values()
+            for row in rows
+        ):
+            companion = runpy.run_path(str(Path(__file__).with_name("recovery_loop_reference.py")))
+            checks.extend(companion["audit_run"](result))
         ambiguous_capacity(result, checks)
         if any(
             (policy.get("investigation") or {}).get("version") == "observed-service-investigation/3"

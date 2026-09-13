@@ -311,7 +311,10 @@ class Config:
                 if isinstance(self.recovery_policy, RecoveryPolicy)
                 else RecoveryPolicy(**self.recovery_policy),
             )
-            if self.recovery_policy.version == "scheduled-load-tests/2" and (
+            if self.recovery_policy.version in (
+                "scheduled-load-tests/2",
+                "scheduled-load-tests/3",
+            ) and (
                 self.service_policy is None
                 or self.service_policy.version != "coordinated-services/3"
                 or not self.sensors.enabled
@@ -325,7 +328,8 @@ class Config:
             in ("observed-service-investigation/2", "observed-service-investigation/3")
             and (
                 self.recovery_policy is None
-                or self.recovery_policy.version != "scheduled-load-tests/2"
+                or self.recovery_policy.version
+                not in ("scheduled-load-tests/2", "scheduled-load-tests/3")
             )
         ):
             raise ValueError(

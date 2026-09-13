@@ -61,7 +61,10 @@ class Policy:
             )
             if self.service.version == VERIFICATION_VERSION and self.recovery is None:
                 raise ValueError("Post-service follow-up requires scheduled recovery tests")
-        if self.recovery is not None and self.recovery.version == "scheduled-load-tests/2":
+        if self.recovery is not None and self.recovery.version in (
+            "scheduled-load-tests/2",
+            "scheduled-load-tests/3",
+        ):
             if self.service is None or self.service.version != "coordinated-services/3":
                 raise ValueError("Joint recovery requires the version-3 service controller")
         if self.investigation is not None:
@@ -85,7 +88,10 @@ class Policy:
             if self.investigation.version in (
                 "observed-service-investigation/2",
                 "observed-service-investigation/3",
-            ) and (self.recovery is None or self.recovery.version != "scheduled-load-tests/2"):
+            ) and (
+                self.recovery is None
+                or self.recovery.version not in ("scheduled-load-tests/2", "scheduled-load-tests/3")
+            ):
                 raise ValueError(
                     "Observed investigation continuations require joint work and recovery tests"
                 )

@@ -14,6 +14,8 @@ from methane.cancellation import checkpoint
 from methane.services.scenario_planning import Branch, solve
 
 JOINT_VERSION = "scheduled-load-tests/2"
+LOOP_VERSION = "scheduled-load-tests/3"
+JOINT_VERSIONS = (JOINT_VERSION, LOOP_VERSION)
 
 
 @dataclass(frozen=True)
@@ -26,7 +28,7 @@ class RecoveryPolicy:
     risk_weight: float = 0.5
 
     def __post_init__(self):
-        if self.version not in ("scheduled-load-tests/1", JOINT_VERSION):
+        if self.version not in ("scheduled-load-tests/1", *JOINT_VERSIONS):
             raise ValueError("Unknown recovery planning policy")
         for name in ("maximum_wait_hours", "retry_after_hours"):
             v = getattr(self, name)

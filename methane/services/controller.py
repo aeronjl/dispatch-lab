@@ -467,8 +467,23 @@ class ServiceController:
                 hour=int(rt.executive.at_hour),
                 orders=rt.public()["orders"],
                 continuation=Continuation.from_dict(nominated) if nominated else None,
+                **(
+                    dict(evidence=self.verification["previous_test"] if self.verification else None)
+                    if recovery_scheduler.policy.version == "scheduled-load-tests/3"
+                    else {}
+                ),
             )
         self._work(rt)
+        if recovery_scheduler is not None and recovery_scheduler.pending.get(
+            "verification_loop", {}
+        ).get("escalation_required"):
+            for task in self.obligations.values():
+                if task["status"] == "awaiting verification":
+                    task.update(
+                        status="escalation-required",
+                        escalated_at=rt.executive.at_hour,
+                        latest_reason="The recorded verification window expired without observed recovery; no repair success is inferred",
+                    )
         targets = self._targets(rt, len(forecast["pv_kw"]))
         candidates, due, rejected, omitted = self._candidates(rt, forecast)
         required = investigation["required_current_request"] if investigation else None

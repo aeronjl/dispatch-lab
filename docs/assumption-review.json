@@ -22,7 +22,7 @@
     "sam-pv": {
       "title": "SAM / PVWatts model documentation",
       "url": "https://samrepo.nlr.gov/help/pvwatts.html",
-      "finding": "Version 8 uses NOCT reference temperatures of 45\u00b0C for open-rack and 49\u00b0C for roof-mount; listed crystalline-silicon power coefficients are \u22120.37 and \u22120.35 %/\u00b0C. Module and converter models have separate boundaries.",
+      "finding": "Version 8 uses NOCT reference temperatures of 45°C for open-rack and 49°C for roof-mount; listed crystalline-silicon power coefficients are −0.37 and −0.35 %/°C. Module and converter models have separate boundaries.",
       "applicability": "Reference model assumptions, not fitted site values. Dispatch Lab is not a PVWatts implementation; its simple NOCT and fixed diffuse fraction omit several mechanisms.",
       "access": "Read primary documentation on 2026-09-12"
     },
@@ -36,21 +36,21 @@
     "nist-co2": {
       "title": "NIST Chemistry WebBook: carbon dioxide",
       "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Mask=1",
-      "finding": "Molecular weight 44.0095; Chase gas formation enthalpy \u2212393.52 kJ/mol.",
+      "finding": "Molecular weight 44.0095; Chase gas formation enthalpy −393.52 kJ/mol.",
       "applicability": "Standard-state gas thermochemistry; pressure, kinetics and process conversion require additional models.",
       "access": "Read primary documentation on 2026-09-12"
     },
     "nist-ch4": {
       "title": "NIST Chemistry WebBook: methane",
       "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74828&Mask=1",
-      "finding": "Molecular weight 16.0425; Chase gas formation enthalpy \u221274.87 kJ/mol.",
+      "finding": "Molecular weight 16.0425; Chase gas formation enthalpy −74.87 kJ/mol.",
       "applicability": "Supports ideal stoichiometric and standard heat comparisons, not reactor thermal capacity or kinetics.",
       "access": "Read primary documentation on 2026-09-12"
     },
     "nist-water": {
       "title": "NIST Chemistry WebBook: water",
       "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=1",
-      "finding": "Molecular weight 18.01528; gas formation enthalpy \u2212241.8264 kJ/mol in Chase Shomate coefficients.",
+      "finding": "Molecular weight 18.01528; gas formation enthalpy −241.8264 kJ/mol in Chase Shomate coefficients.",
       "applicability": "Water vapour basis. Do not substitute liquid-water enthalpy without accounting for condensation and recovery.",
       "access": "Read primary documentation on 2026-09-12"
     },
@@ -111,9 +111,9 @@
       "access": "Read primary documentation on 2026-09-12"
     },
     "rsc": {
-      "title": "Monning et al.: three-phase CO\u2082 methanation kinetics",
+      "title": "Monning et al.: three-phase CO₂ methanation kinetics",
       "url": "https://pubs.rsc.org/en/content/articlepdf/2026/re/d5re00337g",
-      "finding": "Reports ideal Sabatier heat of \u2212165 kJ/mol and studies catalyst wetting, side reactions and deactivation in a three-phase slurry system.",
+      "finding": "Reports ideal Sabatier heat of −165 kJ/mol and studies catalyst wetting, side reactions and deactivation in a three-phase slurry system.",
       "applicability": "Supports exothermic chemistry and the importance of heat management; does not calibrate the fixture lumped thermal mass, heat loss or production envelope.",
       "access": "Primary abstract and indexed first-page PDF extract read; direct HTML returned 403, 2026-09-12"
     }
@@ -142,7 +142,7 @@
       "priority": 1,
       "evidence_status": "Design choice",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f"
@@ -171,7 +171,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
@@ -188,7 +188,7 @@
         "hydrogen",
         "co2"
       ],
-      "mechanism": "Ideal CO\u2082 + 4H\u2082 \u2192 CH\u2084 + 2H\u2082O. Rounded molecular weights 44, 2, 16 and 18; reaction heat 165 MJ/kmol. Electrolysis consumes 9 kg reaction water/kg hydrogen.",
+      "mechanism": "Ideal CO₂ + 4H₂ → CH₄ + 2H₂O. Rounded molecular weights 44, 2, 16 and 18; reaction heat 165 MJ/kmol. Electrolysis consumes 9 kg reaction water/kg hydrogen.",
       "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
       "next_data": "Specify feed composition, conversion and recycle/purge boundaries; measure gas composition and water before extending product or heating claims.",
       "sources": [
@@ -231,7 +231,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
@@ -257,7 +257,7 @@
       "priority": 1,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
@@ -271,7 +271,7 @@
         "hydrogen",
         "co2"
       ],
-      "mechanism": "Ideal mass inventories with capacity bounds. CO\u2082 delivery is accepted before withdrawal; concurrent hydrogen inflow/outflow follows the execution contract. Excess delivery is rejected explicitly.",
+      "mechanism": "Ideal mass inventories with capacity bounds. CO₂ delivery is accepted before withdrawal; concurrent hydrogen inflow/outflow follows the execution contract. Excess delivery is rejected explicitly.",
       "boundary": "No pressure, temperature, compressor consumption, usable heel, leakage, boil-off, delivery purity or unloading equipment. Supply quantities and timing are scenarios, not contracted logistics.",
       "next_data": "Specify storage technology and operating pressure/temperature, usable mass, compression/drying power, supplier delivery constraints and metering.",
       "sources": [
@@ -286,7 +286,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
@@ -316,7 +316,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
@@ -349,7 +349,7 @@
       "priority": 0,
       "evidence_status": "External reference with explicit assumptions",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/weather.py": "9e96615f383685cc62d771746c6a37f4f7d6619909c65b56a02a1a10d4305f43",
@@ -368,8 +368,8 @@
         "electrolyser",
         "hydrogen"
       ],
-      "mechanism": "Power and flow get seeded multiplicative noise. Tank noise scales with current production; battery, CO\u2082, temperature and hydrogen withdrawal are exact. Diagnosis compares tracking and mass-balance residuals.",
-      "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3\u03c3 threshold do not establish a field false-alarm rate.",
+      "mechanism": "Power and flow get seeded multiplicative noise. Tank noise scales with current production; battery, CO₂, temperature and hydrogen withdrawal are exact. Diagnosis compares tracking and mass-balance residuals.",
+      "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3σ threshold do not establish a field false-alarm rate.",
       "next_data": "Identify meters and independent reference channels; collect zero/span, drift, bias, covariance and time-synchronisation data over low and high flows. Validate diagnosis with blind held-out faults.",
       "sources": [
         "gum",
@@ -383,7 +383,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
@@ -412,7 +412,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
@@ -487,7 +487,7 @@
         "services",
         "diagnosis"
       ],
-      "mechanism": "Reset, calibration, module replacement and operating probes are distinct modeled activities; physical outcome is followed by operating verification.",
+      "mechanism": "Reset, calibration, module replacement and operating probes are distinct modeled activities; physical outcome is followed by operating verification. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity.",
       "boundary": "Generic module replacement and erasing a flow bias lack a named replaceable part, reference instrument, procedure and cause-clearance test. Remote release addresses only declared control holds. All capability conclusions are conditional.",
       "next_data": "Bind each action to a specific device, fault cause, interface, isolation procedure, tool, trained actor and verification result. Unsupported repair families remain concepts.",
       "sources": [
@@ -498,7 +498,8 @@
         "tests/test_service_procedures.py",
         "tests/test_post_service_verification.py",
         "tests/test_uncertainty.py",
-        "tests/test_adaptation.py"
+        "tests/test_adaptation.py",
+        "tests/test_recovery_loop.py"
       ],
       "priority": 0,
       "evidence_status": "Evidence gap",
@@ -506,10 +507,12 @@
         "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
         "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
         "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
-        "methane/recovery.py": "551480b774d1ffcb818e9379409254811d2f302b2bbf8ec8e20537d7a9aece77",
+        "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
         "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
-        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
+        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
+        "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+        "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455"
       }
     },
     "support": {
@@ -580,8 +583,8 @@
         "services"
       ],
       "mechanism": "Allocated ownership and max(calendar, usage) replacement allowances are separate from action-dependent inputs and wear. Repricing cannot change recorded actions.",
-      "boundary": "EUR defaults have no quotations, price year, location-specific tariffs or matched equipment scope. Purchased water is 12 L/kg H\u2082 versus 9 kg/kg reaction consumption; the additional treatment/handling allowance is not an independently tracked water process. Linear capacity scaling and wear proxies are scenario assumptions. No annual ROI can be inferred from short injected-fault windows.",
-      "next_data": "Matched installed quotes, utility/water/CO\u2082 contracts, service invoices and replacement records; explicit VAT, currency date, utilisation and equipment boundaries.",
+      "boundary": "EUR defaults have no quotations, price year, location-specific tariffs or matched equipment scope. Purchased water is 12 L/kg H₂ versus 9 kg/kg reaction consumption; the additional treatment/handling allowance is not an independently tracked water process. Linear capacity scaling and wear proxies are scenario assumptions. No annual ROI can be inferred from short injected-fault windows.",
+      "next_data": "Matched installed quotes, utility/water/CO₂ contracts, service invoices and replacement records; explicit VAT, currency date, utilisation and equipment boundaries.",
       "sources": [
         "doe-pem",
         "atb",
@@ -595,7 +598,7 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
@@ -612,7 +615,7 @@
         "services",
         "diagnosis"
       ],
-      "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs.",
+      "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity.",
       "boundary": "Weights, priors, probe size, retries and risk budgets are policy choices. Optimality is bounded by information, terminal inventory treatment, candidate coverage and solver termination; model mismatch is separate.",
       "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
       "sources": [
@@ -622,22 +625,25 @@
         "tests/test_service_planning.py",
         "tests/test_investigation_planning.py",
         "tests/test_uncertainty.py",
-        "tests/test_adaptation.py"
+        "tests/test_adaptation.py",
+        "tests/test_recovery_loop.py"
       ],
       "priority": 1,
       "evidence_status": "Policy choice and bounded approximation",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/policy.py": "cfcee0f79183859649688151efbf76f33034497d066bb03bb03598cd1ac6d733",
+        "methane/policy.py": "d35222df89f84c8f5f0ee4f376c55dedfd576539de248f54cda5fe1235a63fb2",
         "methane/dispatch.py": "70a3dd793428cb7f4944297a44f6cdb2b70b3acf0fb7c2a4b86ab80e4fb78a24",
-        "methane/recovery.py": "551480b774d1ffcb818e9379409254811d2f302b2bbf8ec8e20537d7a9aece77",
-        "methane/services/controller.py": "faeccaaef134d948143c531a5a1bd7e1c65666b9d5b7d662bf2d5dbdeb6a46bd",
+        "methane/recovery.py": "7f5608405313421b9770ea8c51f4732bc2994db9a2265b9e6035e843e4bcbc3e",
+        "methane/services/controller.py": "e2985683405c752d742b8322ef17f5fcb9fb3f64590355bcddcafb36ce4fb9d1",
         "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
         "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
-        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
+        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
+        "methane/services/recovery_loop.py": "3a112876414d8cc576059e09b4c2d5afe6b28b2dcaf84ea2b7c366b5f680cfcf",
+        "methane/recovery_loop_reference.py": "e510f254ad697633041bdc7221685b2f451252905fac85af4a6227b159c82455"
       }
     },
     "coupling": {
@@ -661,7 +667,7 @@
       "priority": 0,
       "evidence_status": "Conservation within reduced boundary",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
@@ -692,10 +698,10 @@
       "priority": 1,
       "evidence_status": "Experiment design",
       "bindings": {
-        "methane/config.py": "35850c94a2661e1420f35f285089c34c29dad919ba1de230efba11194198cdaa",
+        "methane/config.py": "76b5af4a6545db794ae68091a4ca0604937c775de46d2b0a783f821ec378b546",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/simulation.py": "a5bab0f4fef0e94a782e83bc0162d188d3f9fff1f06d5c289863c1ed2df4e45a",
+        "methane/simulation.py": "4b0265ae3d57e8d27113af2fc3afddf6f6630d1a70d35b066870bde81f52f924",
         "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
         "methane/uncertainty.py": "b44afd791e3403bca830bd08df2f17bc494b80e6e6126fde2d4d0f91c3f4169f",
@@ -801,7 +807,7 @@
       "label": "specific energy kwh per kg",
       "group": "electrolyser",
       "category": "equipment",
-      "unit": "kWh/kg H\u2082",
+      "unit": "kWh/kg H₂",
       "reference_default": 55,
       "evidence_status": "Literature benchmark; unmatched equipment",
       "applicable_range": null,
@@ -957,7 +963,7 @@
       "label": "temperature min c",
       "group": "thermal",
       "category": "equipment",
-      "unit": "\u00b0C",
+      "unit": "°C",
       "reference_default": 250,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -969,7 +975,7 @@
       "label": "temperature max c",
       "group": "thermal",
       "category": "equipment",
-      "unit": "\u00b0C",
+      "unit": "°C",
       "reference_default": 400,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -1053,7 +1059,7 @@
       "label": "methane electric kwh per kg",
       "group": "thermal",
       "category": "equipment",
-      "unit": "kWh/kg CH\u2084",
+      "unit": "kWh/kg CH₄",
       "reference_default": 1,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -1281,7 +1287,7 @@
       "label": "water eur per m3",
       "group": "economics",
       "category": "economic",
-      "unit": "EUR/m\u00b3",
+      "unit": "EUR/m³",
       "reference_default": 3,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -1899,7 +1905,7 @@
       "label": "noct c",
       "group": "solar",
       "category": "equipment",
-      "unit": "\u00b0C",
+      "unit": "°C",
       "reference_default": 45,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -2090,7 +2096,7 @@
       "label": "noct c",
       "group": "solar",
       "category": "equipment",
-      "unit": "\u00b0C",
+      "unit": "°C",
       "reference_default": 45,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -2834,7 +2840,7 @@
       "label": "area m2 per kw",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "m\u00b2/kW",
+      "unit": "m²/kW",
       "reference_default": 5,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -2846,7 +2852,7 @@
       "label": "cleaning area m2ph",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "m\u00b2/h",
+      "unit": "m²/h",
       "reference_default": 1000,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -2882,7 +2888,7 @@
       "label": "brush life m2",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "m\u00b2",
+      "unit": "m²",
       "reference_default": 50000,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -3254,7 +3260,7 @@
       "label": "portable area m2ph",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "m\u00b2/h",
+      "unit": "m²/h",
       "reference_default": 1000,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -3326,7 +3332,7 @@
       "label": "portable water l per m2",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "L/m\u00b2",
+      "unit": "L/m²",
       "reference_default": 0.5,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -3398,7 +3404,7 @@
       "label": "portable min ambient c",
       "group": "cleaning",
       "category": "equipment",
-      "unit": "\u00b0C",
+      "unit": "°C",
       "reference_default": 5,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
@@ -5783,7 +5789,7 @@
         "priority": 0,
         "claim": "A generic module replacement restores capacity damage",
         "binding": "methane/faults.py: service; FaultPolicy.capacity_cause",
-        "current": "equipment-damage \u2192 nominal capacity after successful module-replacement",
+        "current": "equipment-damage → nominal capacity after successful module-replacement",
         "units": "As specified in current",
         "role": "Feasibility/restoration",
         "sources": [
@@ -5889,7 +5895,7 @@
         "priority": 0,
         "claim": "Inventory provides independent high-quality H2 balance",
         "binding": "methane/sensing.py: observe",
-        "current": "Noise SD = hourly H2 production \u00d7 0.02; exact when production = 0",
+        "current": "Noise SD = hourly H2 production × 0.02; exact when production = 0",
         "units": "As specified in current",
         "role": "Observability",
         "sources": [
@@ -6037,14 +6043,14 @@
         "priority": 0,
         "claim": "The cleaner works on the chosen array layout",
         "binding": "ServiceSystem.cleaning_model, row_accessible; solar design",
-        "current": "Generic row access; area 5 m\u00b2/kW; 1,000 m\u00b2/h",
+        "current": "Generic row access; area 5 m²/kW; 1,000 m²/h",
         "units": "As specified in current",
         "role": "Feasibility/fleet size",
         "sources": [
           "S01",
           "S02"
         ],
-        "range_or_gap": "No installed cleaner/array pairing. T4 up to 400 m\u00b2/night on near-flat trackers is not this fixture.",
+        "range_or_gap": "No installed cleaner/array pairing. T4 up to 400 m²/night on near-flat trackers is not this fixture.",
         "consequence": "Single asset can become a distributed fleet with altered cost and downtime.",
         "required_change_or_evidence": "Bind task to geometry and measured cycle; separate dedicated-row and portable products.",
         "independent_check": "Numerical checks do not establish empirical validity",
@@ -6231,7 +6237,7 @@
         "priority": 1,
         "claim": "Treatments remove a fixed fraction and wear predictably",
         "binding": "FieldOperations.cleaning_removal_fraction; ServiceSystem.brush_life_m2",
-        "current": "Loose removal .9; brush life 50,000 m\u00b2; wet adhered .7",
+        "current": "Loose removal .9; brush life 50,000 m²; wet adhered .7",
         "units": "As specified in current",
         "role": "Restoration/wear",
         "sources": [
@@ -6554,7 +6560,7 @@
         ],
         "range_or_gap": "Pump fault, stack ageing, contamination and sensor fault have different effects.",
         "consequence": "Same derating can understate complete shutdown or efficiency loss.",
-        "required_change_or_evidence": "Create cause\u2192physics\u2192observations\u2192allowed remedies contract.",
+        "required_change_or_evidence": "Create cause→physics→observations→allowed remedies contract.",
         "independent_check": "Numerical checks do not establish empirical validity",
         "review": {
           "date": "2026-09-12",
@@ -6662,7 +6668,7 @@
         "priority": 1,
         "claim": "The reactor thermal response is representative",
         "binding": "Plant thermal_capacity/heat_loss/heater/cooling/band/minimum_run",
-        "current": "0.3 kWh/K; .08 kW/K; 60/40 kW; 250\u2013400\u00b0C; 4 h run",
+        "current": "0.3 kWh/K; .08 kW/K; 60/40 kW; 250–400°C; 4 h run",
         "units": "As specified in current",
         "role": "Delayed response",
         "sources": [
@@ -6671,7 +6677,7 @@
         "range_or_gap": "Reaction exotherm supported; C, UA, band and commitments are illustrative.",
         "consequence": "Warm-up, heat retention and capacity-repair value can change direction.",
         "required_change_or_evidence": "Obtain design/step-response envelope; continue analytic sensitivity as conditional evidence.",
-        "independent_check": "864 Decimal exponential cases reconcile within 1e-9\u00b0C; no empirical validation.",
+        "independent_check": "864 Decimal exponential cases reconcile within 1e-9°C; no empirical validation.",
         "review": {
           "date": "2026-09-12",
           "reviewer": "Codex source/code review; not a hardware qualification",
@@ -6827,7 +6833,7 @@
         "priority": 1,
         "claim": "Service prices are representative European costs",
         "binding": "HydrogenCosts field asset/human/maintenance defaults; service_economics.illustrative",
-        "current": "Cleaner \u20ac15k, rover \u20ac80k, dock \u20ac5k; 8-year life; human \u20ac80/h; other activity assumptions",
+        "current": "Cleaner €15k, rover €80k, dock €5k; 8-year life; human €80/h; other activity assumptions",
         "units": "As specified in current",
         "role": "Economics",
         "sources": [
@@ -6975,7 +6981,7 @@
         "id": "A31",
         "priority": 2,
         "claim": "Other hardware families are ready to add as interchangeable robots",
-        "binding": "F04\u2013F14 capability entries",
+        "binding": "F04–F14 capability entries",
         "current": "Uneven commercial maturity; most absent as full mechanisms",
         "units": "As specified in current",
         "role": "Architecture",

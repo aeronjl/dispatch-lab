@@ -597,6 +597,12 @@ TOPICS["diagnosis"]["fixture_id"] = "dispatch-lab/learning/diagnosis/2"
 
 TOPICS["controllers"]["passages"].append(
     P(
+        "Return, test and escalate",
+        "Recovery version 3 waits for the whole repair mission, including return, before opening a separate bounded verification window. The original diagnosis and service deadlines remain recorded, including misses. Joint planning allocates load-test and dock power from the same electrical balance. A resource-blocked test is inconclusive and consumes time within that window; it does not justify another repair. Repeated same-load measured shortfalls stop further probes and allow the existing finite service follow-up rule to consider a separate remedy. A missed verification deadline requires explicit escalation. A later completed remedy opens its own recorded window. Only actual observer confirmation supports restored operation. Earlier recovery policies retain their original retry semantics, and these policy windows are illustrative scheduling choices, not certified maintenance limits.",
+    )
+)
+TOPICS["controllers"]["passages"].append(
+    P(
         "Plan with uncertain service time",
         "The opt-in autonomy model keeps physical phase clocks private within explicit resource-reservation bounds. Completed phase boundaries and right-censored elapsed work update a finite duration model; completion is distinct from verified recovery. Fixed, adaptive and risk-aware modes share the original assumptions. Risk-aware candidates combine declared weather regimes and shared duration quantiles with process dispatch, robot charging, recovery-test windows and terminal reserves. Current actions agree across all outcomes; future differences require an eligible observation. Bounds, weights and dependence are assumptions, not calibration. Shared visits and stranded-robot charging use conservative envelopes, and unresolved candidates retain their reason and feasible fallback. The first service system supports explicit current-only support outages; it does not predict an unavailable future timetable or optimise an entire contingent retrieval fleet.",
     )

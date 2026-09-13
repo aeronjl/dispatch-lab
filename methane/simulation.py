@@ -301,7 +301,8 @@ def _run(
                 else "dispatch-lab/policy/2",
                 recovery=replace(c.recovery_policy, version="scheduled-load-tests/1")
                 if c.recovery_policy is not None
-                and c.recovery_policy.version == "scheduled-load-tests/2"
+                and c.recovery_policy.version
+                in ("scheduled-load-tests/2", "scheduled-load-tests/3")
                 and p.objective == "greedy"
                 else c.recovery_policy,
                 service=c.service_policy if p.objective != "greedy" else None,
@@ -320,7 +321,7 @@ def _run(
         if (
             policies is None
             and c.recovery_policy is not None
-            and c.recovery_policy.version == "scheduled-load-tests/2"
+            and c.recovery_policy.version in ("scheduled-load-tests/2", "scheduled-load-tests/3")
         ):
             provenance["recovery_configuration_scope"] = (
                 "Joint work/charging/tests apply to coordinated MPC strategies. Greedy retains the independent version-1 recovery scheduler and local service rule; this compares policy packages, not an isolated change in process objective. Exact per-controller policies are recorded."
@@ -366,10 +367,13 @@ def _run(
         recovery_scheduler = None
         joint_recovery_scheduler = None
         if policy.recovery is not None:
-            from methane.recovery import JOINT_VERSION, RecoveryScheduler
+            from methane.recovery import JOINT_VERSIONS, LOOP_VERSION, RecoveryScheduler
 
-            if policy.recovery.version == JOINT_VERSION:
+            if policy.recovery.version in JOINT_VERSIONS:
                 from methane.services.joint_recovery import Scheduler
+
+                if policy.recovery.version == LOOP_VERSION:
+                    from methane.services.recovery_loop import Scheduler
 
                 joint_recovery_scheduler = Scheduler(policy.recovery)
             else:
@@ -1259,7 +1263,7 @@ def what_if(result, controller, hour, alternative):
 
         original = recovery["inputs"]
         joint_inputs = {}
-        if original["policy"]["version"] == "scheduled-load-tests/2":
+        if original["policy"]["version"] in ("scheduled-load-tests/2", "scheduled-load-tests/3"):
             joint_inputs["accepted_start"] = recovery["commitment"]["start_hour"]
             if "not_before_hour" in original:
                 joint_inputs["not_before_hour"] = original["not_before_hour"]

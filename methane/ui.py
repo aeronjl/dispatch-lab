@@ -425,6 +425,10 @@ def build_app(default=None):
                         "Joint work, charging and tests for MPC (version 2)",
                         "scheduled-load-tests/2",
                     ),
+                    (
+                        "Bounded post-mission verification and escalation (version 3)",
+                        "scheduled-load-tests/3",
+                    ),
                 ],
                 value=value,
                 label=label,
