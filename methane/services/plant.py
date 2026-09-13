@@ -110,8 +110,13 @@ class IntervalEffects:
             raise ValueError("Continuous effects require the execution port")
         a, b, _ = next((a, b, s) for a, b, s in schedule(plan) if s.effect)
         portable = plan.order.action == "portable-clean-section"
-        rate = self.options.portable_area_m2ph if portable else self.options.cleaning_area_m2ph
-        rate /= self.options.cleaning_time_factor
+        # The private execution recipe already includes persistent and job
+        # clocks. A full pass covers its section once, however long it takes.
+        # Reusing only the configured persistent factor would disagree with
+        # scaled brush/water consumption when a fresh job multiplier differs.
+        rate = (
+            self.surface.section(plan.interface.target_asset_id)["area_m2"] / stage.duration_hours
+        )
         area = (completed - started) * rate
         key = plan.order.order_id
         if portable:
@@ -1738,6 +1743,21 @@ class PlantServices:
         record["audits"] = [
             check("field_energy_balance", "services", residual, "kWh", interval=hour)
         ]
+        if self.optical:
+            consumed = sum(
+                e["amount"]
+                for e in record["resource_events"]
+                if e["kind"] == "consume" and e["resource"] == "brush:cleaner"
+            )
+            record["audits"].append(
+                check(
+                    "field_brush_coverage",
+                    "services",
+                    record["brush_wear_m2"] - consumed,
+                    "m2",
+                    interval=hour,
+                )
+            )
         record["audits"].append(
             check(
                 "field_service_grant",

@@ -235,3 +235,47 @@ def test_equipment_job_bundle_has_independent_offline_checker(tmp_path):
         text=True,
     )
     assert process.returncode == 0, process.stdout + process.stderr
+
+
+@pytest.mark.parametrize("interruption", [0, 1])
+def test_job_clock_scales_optical_coverage_and_brush_use_together(interruption):
+    from test_surface_services import config, sunny
+    from test_uncertain_services import spec
+
+    from methane.config import Config
+    from methane.reference import audit
+    from methane.simulation import run
+    from methane.uncertainty import resolve
+
+    c = config(outcome_randomness="target-action-request/1", work_failure_fraction=0.3)
+    c = replace(
+        c,
+        field_operations=replace(
+            c.field_operations,
+            mission_failure_probability=interruption,
+            cleaning_kits=1,
+            cleaner_battery_kwh=10,
+        ),
+    )
+    s = spec(1.25)
+    s["autonomy"] = options()
+    world = resolve(s, c.to_dict())[0]
+    actual = Config.from_dict(world["config"])
+    result = run(actual, weather=sunny(actual), strategies=["Greedy"], uncertainty=world)
+    assert result["status"] == "complete", result["failures"]
+    fields = [r["field_operations"] for r in result["records"]["Greedy"]]
+    areas = sum(f["treated_area_m2"] for f in fields)
+    consumed = sum(
+        e["amount"]
+        for f in fields
+        for e in f["resource_events"]
+        if e["kind"] == "consume" and e["resource"] == "brush:cleaner"
+    )
+    # Reference section = 5,000 m² / three sections. A failed pass stops at 30%.
+    expected = 5000 / 3 * (0.3 if interruption else 1)
+    assert areas == pytest.approx(expected)
+    assert consumed == pytest.approx(expected)
+    events = [op for f in fields for op in f["surface_events"]]
+    assert events and all(op["efficacy_start"] == pytest.approx(1) for op in events)
+    checked = audit(result)
+    assert checked["passed"], [c for c in checked["checks"] if not c["passed"]][:5]

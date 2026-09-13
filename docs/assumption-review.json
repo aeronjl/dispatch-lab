@@ -1,6 +1,6 @@
 {
   "schema_version": "dispatch-lab/assumption-review/1",
-  "edition": "2026-09-13 / 6",
+  "edition": "2026-09-13 / 7",
   "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
   "categories": {
     "design": "Chosen capacity, geometry or initial condition; requires a matched design, not statistical calibration.",
@@ -427,7 +427,7 @@
         "solar",
         "services"
       ],
-      "mechanism": "Optional lumped-DC or section-surface cleaning; finite coverage, brush condition, water, power and work time.",
+      "mechanism": "Optional lumped-DC or section-surface cleaning; finite coverage, brush condition, water, power and work time. Optical coverage uses the actual job perform duration; completed-area brush consumption is checked directly against the resource ledger.",
       "boundary": "Uniform deposition, ideal soiling knowledge, efficacy and brush life are assumptions. Weather is often assumed rather than site data. Global annual soiling cannot calibrate 0.5 percentage points/day. Cleaning cannot remove module damage.",
       "next_data": "Paired clean/reference strings, local deposition/rain history, surface compatibility, before/after cleaning tests, abrasion and access records. Commission one complete cleaner/support configuration.",
       "sources": [
@@ -449,7 +449,9 @@
         "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
         "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
-        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
+        "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
+        "methane/services/plant.py": "bfedc36e89322e20bedab8b0ef9ba5458457d1fb480ea678599845c9e984e382",
+        "docs/job-clock-coverage.md": "7823773400b29effd1567dfce49d4510473354e46b20783e8d04c96acc1de4bc"
       }
     },
     "inspection": {
@@ -521,7 +523,7 @@
       "topics": [
         "services"
       ],
-      "mechanism": "Finite work time, shifts, inventory, transport, charging and returns can constrain service. Optional models declare which resources exist. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted.",
+      "mechanism": "Finite work time, shifts, inventory, transport, charging and returns can constrain service. Optional models declare which resources exist. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted. Optical coverage uses the actual job perform duration; completed-area brush consumption is checked directly against the resource ledger.",
       "boundary": "Route traversal and interlocks are ideal abstractions; no obstacles, terrain, hazardous-area qualification or physical isolation dynamics. Durations, travel and supplier capacity are illustrative. Opt-in bounded-clock factors are persistent world assumptions. Full-support reservations, actual consumption, current-only outages and right-censored observations are distinct; no job-independent empirical duration population is claimed.",
       "next_data": "Site layout and access survey, regional callout terms, task time/energy observations, stores policy, staffed support and communications availability. Do not combine incompatible hardware claims.",
       "sources": [
@@ -557,7 +559,9 @@
         "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
         "methane/services/pricing.py": "502b0a480997f1e998a1ab3ca2aff208a756f85db9dc2831f8d18ceceda21f96",
         "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
-        "docs/conditional-retrieval.md": "8bdfdc3b72569bf958d50583f081f6afa4090d8c48ead23f74f6b37faad56b14"
+        "docs/conditional-retrieval.md": "8bdfdc3b72569bf958d50583f081f6afa4090d8c48ead23f74f6b37faad56b14",
+        "methane/services/plant.py": "bfedc36e89322e20bedab8b0ef9ba5458457d1fb480ea678599845c9e984e382",
+        "docs/job-clock-coverage.md": "7823773400b29effd1567dfce49d4510473354e46b20783e8d04c96acc1de4bc"
       }
     },
     "maintenance": {

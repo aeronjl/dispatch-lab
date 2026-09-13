@@ -3264,6 +3264,23 @@ def audit(result):
                             controller=name,
                             hour=i,
                         )
+                        compare(
+                            checks,
+                            "surface.brush_ledger_coverage",
+                            sum(
+                                D(op["end_m2"]) - D(op["start_m2"])
+                                for op in service["surface_events"]
+                                if not op.get("method", "").startswith("portable-")
+                            ),
+                            sum(
+                                D(e["amount"])
+                                for e in service["resource_events"]
+                                if e["kind"] == "consume" and e["resource"] == "brush:cleaner"
+                            ),
+                            "m2",
+                            controller=name,
+                            hour=i,
+                        )
                     compare(
                         checks,
                         "service.soiling_before",
