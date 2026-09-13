@@ -62,3 +62,4 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Recovery, uncertainty and the cost of waiting](recovery-comparison/report.html)
 - [Siting and production forecasting design](siting-design/README.md)
 - [Uncertainty and autonomy](uncertainty-autonomy/report.html)
+- [Autonomous operation across sites: matched qualification](autonomy-qualification/report.html)

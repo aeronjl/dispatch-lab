@@ -1,0 +1,48 @@
+{
+  "schema_version": "qualification-execution-notes/1",
+  "programme": "af9eb7d1e04b464b8fff35db3245aeec",
+  "notes": [
+    {
+      "kind": "test-fixture correction",
+      "description": "An initial new unit test constructed recovery version 4 without its required service controller. The configuration validator correctly rejected it. The test now uses the complete service fixture; no physical implementation was changed by this correction.",
+      "evidence": "build/autonomy-qualification/foundation.xml"
+    },
+    {
+      "kind": "orchestration interruption",
+      "description": "After the local-service group committed completion, the programme tried to start the next worker before the previous interpreter finished exiting. The exclusive worker guard rejected it. The runner now waits for teardown; resumption reused both completed groups and their original source, without rerunning them.",
+      "evidence": "build/autonomy-qualification/programme-resume.log"
+    },
+    {
+      "kind": "inherited descriptive metadata",
+      "description": "The first frozen programme inherited an annual parent design's no-service-fleet scope note alongside its explicit service-enabled configuration. That parent description does not describe these service cases. The report uses the recorded configuration and mission ledger. New preparations author the derivative scope separately and use each seasonal site's own parent design. Original records are preserved.",
+      "scope": "Description/provenance correction; no physical trace or earlier assumption record is rewritten"
+    },
+    {
+      "kind": "documentation binding review",
+      "description": "The initial protocol froze the new explicit-policy production interface before the Sites narrative binding was reviewed. Earlier snapshots retain their original stale/missing teaching-example status. The unchanged Sites learning mechanics have now been reviewed and recalculated under their current binding; prepare now requires freshness. No original run is relabelled as carrying the later explanation.",
+      "evidence": "docs/sites/review-autonomy-20260913.md"
+    },
+    {
+      "kind": "browser-test environment",
+      "description": "The first browser-suite launch could not bind port 7861 inside the restricted sandbox; no listener occupied that port. The suite was rerun with permission to start its local server and passed. This was an environment failure before browser assertions, not a plant outcome."
+    },
+    {
+      "kind": "report CLI correction",
+      "description": "The first direct invocation of the new offline publisher could not import the repository package because Python placed only the script directory on its import path. The entry point now resolves the repository root explicitly. No output was published by the failed invocation; the documented direct command was then exercised successfully."
+    },
+    {
+      "kind": "pre-release report review",
+      "description": "The first rendered draft retained long provenance strings that overflowed a narrow viewport. Its native case selector also did not change selection through the tested macOS headless keyboard path. The reviewed edition wraps long text and provides explicit unmodified Arrow/Home/End selection handling. All 108 original/new trajectories had already reconciled during the check; the saved numerical records are unchanged. Unreviewed output bytes are retained separately.",
+      "preserved_drafts": [
+        {
+          "path": "build/autonomy-qualification/unreviewed-report.html",
+          "sha256": "d1397075c0f397cbc9dc555f2804acf5821f3c73fee8596e387a59d316b2e30e"
+        },
+        {
+          "path": "build/autonomy-qualification/unreviewed-report.json",
+          "sha256": "a7662992dd840b346e6b634b8e9c4babbb5ea7fd00c6a8256c4a43a8b01a310c"
+        }
+      ]
+    }
+  ]
+}

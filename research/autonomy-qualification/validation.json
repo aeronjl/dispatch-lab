@@ -1,0 +1,70 @@
+{
+  "schema_version": "autonomy-qualification-validation/1",
+  "date": "2026-09-14",
+  "scope": "Numerical, source-integrity and software checks on declared fixtures. Not calibration, empirical reliability or a participant comprehension study.",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "scipy": "1.18.1",
+    "numpy": "2.5.3",
+    "gradio": "6.26.0"
+  },
+  "numerical": {
+    "cases": 105,
+    "hours": 9288,
+    "independent_checks": 400489,
+    "all_passed": true,
+    "scope": "Independent 42-digit Decimal material/electrical/thermal integration, operating boundaries, checkpoint continuity and forecast publication. Does not establish calibration or independently verify every service mission mechanic.",
+    "full_operands_sha256": "7bccf4c08dcee04cbc53b5150633d8aac2fc79206f2aaa12b3e11cb821ada583",
+    "source_integrity": "Original operands and all authored publication-input hashes verified"
+  },
+  "python": {
+    "tests": 1058,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "artifact": "build/autonomy-qualification/regression.xml"
+  },
+  "javascript": {
+    "passed": 76,
+    "artifact": "build/autonomy-qualification/renderer-final.txt"
+  },
+  "browser": {
+    "passed": 89,
+    "failed": 0,
+    "skipped": 19,
+    "flaky": 0,
+    "additional_240h_checks_passed": 3,
+    "scope": "Default suite plus 240h idle preview, enabled Sites study integration and active-batch preview/cancellation. Nineteen default-suite cases require other specialised fixtures; they were skipped, not passed.",
+    "artwork": "Plant and solar screenshot checks passed without changing baselines.",
+    "artifact": "build/autonomy-qualification/browser-regression.json"
+  },
+  "report_browser": {
+    "scope": "Offline browser/keyboard consistency and presentation, not empirical comprehension or numerical validation.",
+    "declared_cases": 105,
+    "trace_options_checked": 108,
+    "local_links_checked": 17,
+    "errors": [],
+    "network": [],
+    "width": {
+      "viewport": 390,
+      "document": 390,
+      "overflow": []
+    },
+    "reduced_motion": true
+  },
+  "report_screenshots": {
+    "desktop.png": "4fb0ac0ebb930d8f80e6705c9f67a539b5e708628715692c34adce232b9e62b8",
+    "narrow.png": "d36dfa2b2c84c8e0118a1d071db98583824cae84854b676612a7148af3dd4dd4",
+    "trace.png": "b89c3d7affdfabfcf08c12c390935a30c1e0f64b1208f631501512a5a0e7403e"
+  },
+  "freshness": {
+    "model_documentation": "passed on current source",
+    "component_documentation": "passed on current source",
+    "original_study_snapshots": "Original stale Sites narrative/example status retained; later review not applied retroactively"
+  },
+  "performance": "performance.json",
+  "test_and_review_interruptions": "execution-notes.json",
+  "report_sha256": "18bbcc970c2967ea97955f19b367acc6fa92b24d0ec52e7a8cb17bde911b3c5d"
+}

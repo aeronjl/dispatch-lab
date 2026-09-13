@@ -77,6 +77,18 @@ def test_explicit_policy_frozen_executed_and_bound_to_continuation(tmp_path):
     for item in parts:
         saved = load_period(store, item["period_sha256"])
         assert saved["provenance"]["controller_policies"]["MPC · methane"] == expected
+    from methane.siting.reporting import bundle, publish, restore
+
+    publication = publish(store, "study", s["id"])
+    archive = bundle(store, publication["publication_id"])
+    restored = Store(tmp_path / "offline-restored")
+    outcome = restore(archive["path"], restored)
+    assert outcome["omissions"] == []
+    assert restored.get("study", s["id"])["cases"][0]["policy"] == expected
+    assert entries(restored, s["id"], "case-001") == parts
+    for item in entries(restored, s["id"], "case-001"):
+        saved = load_period(restored, item["period_sha256"])
+        assert saved["provenance"]["controller_policies"]["MPC · methane"] == expected
     with pytest.raises(ValueError, match="objective"):
         create(
             store,
@@ -98,3 +110,54 @@ def test_local_service_ablation_only_changes_process_objective():
     assert methane["recovery"]["version"] == "scheduled-load-tests/1"
     assert Policy(**methane).service is None
     assert c.recovery_policy.version == "scheduled-load-tests/4"
+
+
+def test_programme_waits_for_worker_teardown_between_groups(tmp_path, monkeypatch):
+    import json
+
+    from methane import autonomy_qualification as q
+
+    path = tmp_path / "programme"
+    path.mkdir()
+    (path / "programme.json").write_text(
+        json.dumps(
+            {
+                "store_root": str(tmp_path / "store"),
+                "groups": [
+                    {"name": "first", "study_id": "first"},
+                    {"name": "second", "study_id": "second"},
+                ],
+            }
+        )
+    )
+    active = set()
+    started = set()
+    sequence = []
+
+    class Worker:
+        def __init__(self, key):
+            self.key = key
+
+        def wait(self, timeout):
+            assert timeout <= 30
+            active.remove(self.key)
+            sequence.append("closed " + self.key)
+
+    workers = {}
+
+    def launch(store, key):
+        assert not active, "Previous solver process still owns the execution slot"
+        active.add(key)
+        started.add(key)
+        workers[key] = Worker(key)
+        sequence.append("started " + key)
+
+    monkeypatch.setattr(q.production, "WORKERS", workers)
+    monkeypatch.setattr(q.production, "launch", launch)
+    monkeypatch.setattr(
+        q.production,
+        "state",
+        lambda store, key: {"status": "complete" if key in started else "ready"},
+    )
+    q.run_programme(path)
+    assert sequence == ["started first", "closed first", "started second", "closed second"]

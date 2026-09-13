@@ -103,3 +103,19 @@ convention. This distinction is documented separately by the provider's
 [forecast](https://open-meteo.com/en/docs) and
 [historical](https://open-meteo.com/en/docs/historical-weather-api) variable tables.
 Initial null forecast accumulations are not fabricated as zero.
+
+## Matched controller qualification
+
+`site-yield-study/2` admits an optional, validated policy per case. Its objective
+must agree with the displayed controller, and its complete definition is frozen
+in the case, continuation binding and each period's provenance. Version-1 studies
+retain their original package resolution. A common local-service comparison can
+therefore change the process objective without silently enabling coordinated
+services in Greedy. Configured prices and physical inputs remain independent.
+
+The dated `research/autonomy-qualification/README.md` programme distinguishes
+policy-package comparisons, explicit local-service objective comparisons,
+observer/deadline ablations, numerical repeats and seasonal design exposure.
+Preparing a new programme requires current documentation bindings. The initial
+programme's original capsule is retained with its original documentation status;
+a later review never changes an earlier snapshot.

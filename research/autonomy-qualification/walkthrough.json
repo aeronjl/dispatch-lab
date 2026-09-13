@@ -1,0 +1,47 @@
+{
+  "schema_version": "qualification-comprehension-walkthrough/1",
+  "reviewer": "Implementing agent",
+  "participant_study": false,
+  "date": "2026-09-14",
+  "tasks": [
+    {
+      "task": "Explain the recovery failure",
+      "finding": "The report distinguishes the next test appointment from the full confirmation obligation. Its step-count screen uses the recorded estimate and test settings, and does not grant the controller future repair truth."
+    },
+    {
+      "task": "Identify an assumption that constrains the comparison",
+      "finding": "CO\u2082 quantity/cadence are chosen scenario inputs. The 400 kg three-day ceiling and 836.4 kg seven-day ceiling can hide operational differences; the evidence plan requests supplier capability and logistics."
+    },
+    {
+      "task": "Follow a numerical result",
+      "finding": "All 108 original/new selectable traces were checked against their embedded last-interval operands. The report records original run/source/period identities and links to immutable Sites group reports."
+    },
+    {
+      "task": "Recognise evidence limits",
+      "finding": "Physical checks can pass while a repair remains unconfirmed or capacity stays impaired. The report does not turn scoped checks or zero false alarms into empirical reliability."
+    },
+    {
+      "task": "Preserve the simulation context",
+      "finding": "Report controls operate entirely on saved local data. Existing Sites-to-simulation-and-back integration passed; the live application was reloaded with its original archive."
+    }
+  ],
+  "misunderstandings_and_corrections": [
+    {
+      "risk": "Equal output looks like equal controller quality",
+      "change": "Added the CO\u2082 inventory ceiling, ending inventories and exact-trace repeatability distinction."
+    },
+    {
+      "risk": "Physical restoration looks like autonomous repair and verified capability",
+      "change": "Separated restoration, diagnostic confirmation, human work and remaining impairment throughout the publication."
+    },
+    {
+      "risk": "A low plant-render time is treated as preview rendering performance",
+      "change": "Measured solar preview rendering separately and retained first-edit and active-batch timings."
+    },
+    {
+      "risk": "Keyboard focus and long provenance text impede inspection",
+      "change": "Added explicit selection keys and narrow-screen wrapping after the pre-release presentation review."
+    }
+  ],
+  "remaining": "Independent operator/user comprehension feedback has not been collected. Automated consistency and an agent review do not substitute for it."
+}

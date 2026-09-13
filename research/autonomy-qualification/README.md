@@ -31,6 +31,12 @@ Opening the report is offline; reproducing numerical results requires the saved
 source capsule and input bytes. Changed plant parameters create a new programme
 with `--basis`, never overwrite earlier cases.
 
+If the separate original-counterexample extraction is missing after restoring the
+Sites store, create it once with `python -m methane.autonomy_qualification original
+research/autonomy-qualification/original-seville.json`. This reads the original
+saved periods; it does not rerun them. The command refuses to replace an existing
+extraction. The full original extraction is intentionally outside Git.
+
 ## Reproduction commands
 
 ```sh
@@ -56,3 +62,34 @@ Explicit per-case policies use site-yield-study/2. The controller label must mat
 the policy objective. Older studies retain version 1 and their original default
 policy resolution. This allows the common-local-service comparison without
 changing Greedy into a coordinated-service controller or changing old runs.
+
+## First executed edition
+
+[The illustrated report](report.html) interprets programme
+`af9eb7d1e04b464b8fff35db3245aeec`. Its companion `report.json` contains compact
+case metrics, exact matching differences, numerical repeat spreads, ending
+inventories and service ledgers. The complete original per-interval operands are
+local, with their path and digest in that publication. `publications.json` links
+the immutable Sites group reports; these large study artifacts require the local
+store or its restored reproduction bundle.
+
+`evidence-plan.json` binds proposed measurements and quotations to the existing
+assumption registry and its sources. It is an acquisition plan, not a new field
+dataset or fitted calibration. `next-steps.md` states the controller gates that
+follow these findings. `execution-notes.json` preserves the worker interruption,
+inherited-description issue and original stale Sites narrative review.
+
+Report generation is read-only and never executes the optimiser:
+
+```sh
+.venv/bin/python research/autonomy-qualification/writeup.py \
+  research/autonomy-qualification/PROGRAMME/reports/REVISION/results.json \
+  research/autonomy-qualification/report-NEW-EDITION.html \
+  --performance research/autonomy-qualification/performance.json
+```
+
+A new destination is required; the publisher refuses to overwrite an existing
+report. Preserve the authored interpretation and source identity with each new
+edition. Tests and browser measurements are recorded in `validation.json` with
+explicit scope. The comprehension walkthrough is an agent review, not a user
+study or empirical validation of the plant.

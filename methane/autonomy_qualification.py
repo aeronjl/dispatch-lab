@@ -92,6 +92,9 @@ def local_policy(controller, c):
 
 
 def prepare(store, *, basis=None, seeds=(7, 17, 29), pilot=False, root=ROOT):
+    from methane.documentation import check_freshness
+
+    check_freshness()
     if not seeds or len(set(seeds)) != len(seeds):
         raise ValueError("Use distinct, nonempty event seeds")
     old = store.get("study", ORIGINAL)
@@ -121,17 +124,24 @@ def prepare(store, *, basis=None, seeds=(7, 17, 29), pilot=False, root=ROOT):
         pair="reference",
     ):
         c = replace(c, scenario=replace(c.scenario, seed=seed))
-        source = store.get("design", original_design)
         ed = store.get("environment", env)
+        parent_design = (
+            original_design
+            if ed["site_revision"] == store.get("design", original_design)["site_revision"]
+            else ed["design_id"]
+        )
+        source = store.get("design", parent_design)
         design = DeploymentDesign(
             **{
                 **source,
                 "name": f"Autonomy qualification / {group} / {arm}",
                 "site_revision": ed["site_revision"],
                 "config": c.to_dict(),
-                "parent_id": original_design,
+                "parent_id": parent_design,
                 "assumptions": [
-                    *source["assumptions"],
+                    "Regional coordinate, no parcel clearance or site service quotation",
+                    f"Derived configuration; parent design {parent_design} retains its own original scope notes",
+                    "This case uses the explicitly configured service system; parent annual no-fleet descriptions do not apply",
                     "Predeclared conditional simulation challenge; not measured failure or repair statistics",
                 ],
             }
@@ -347,18 +357,38 @@ def run_programme(path):
             if (Path(path) / "cancel").exists():
                 production.cancel(store, key)
             time.sleep(10)
+        # A committed 'complete' status can precede interpreter/solver teardown.
+        # Retain the exclusive worker boundary before starting the next group.
+        worker = production.WORKERS.get(key)
+        if worker is not None:
+            worker.wait(timeout=30)
         # Missing/invalid cases remain visible; do not suppress the remaining groups.
 
 
 def case_evidence(store, study_id, case_id):
+    from methane.provenance import LOADED_SOURCE
+
     manifest = store.get("study", study_id)
     case = next(x for x in manifest["cases"] if x["case_id"] == case_id)
     path = production.directory(store, study_id) / case_id / "summary.json"
     summary = json.loads(path.read_bytes()) if path.exists() else None
     rows, truth = [], []
     evidence = []
+    executed_policy = None
+    documentation_review = None
     for entry in production.entries(store, study_id, case_id):
         r = production.load_period(store, entry["period_sha256"])
+        actual_policy = r["provenance"].get("controller_policies", {}).get(case["controller"])
+        if evidence and actual_policy != executed_policy:
+            raise ValueError("Policy changed across a continuous case")
+        executed_policy = actual_policy
+        documentation_review = {
+            "siting_review": r.get("documentation", {})
+            .get("topics", {})
+            .get("siting", {})
+            .get("review_status", "missing"),
+            "saved_siting_example": "siting" in r.get("learning_examples", {}),
+        }
         rows.extend(r["records"][case["controller"]])
         truth.extend(r["retrospective_truth_by_controller"][case["controller"]])
         evidence.append(
@@ -381,6 +411,7 @@ def case_evidence(store, study_id, case_id):
                 state=row["state"],
                 diagnosis=row["diagnosis_after"],
                 truth_capacity_kw=physical["capacity_kw"],
+                truth_flow_bias_fraction=physical.get("flow_bias_fraction"),
                 solver=d["plan"]["solver"],
                 forecast_source=d["forecast"]["source"],
                 probe=d["probe"],
@@ -406,6 +437,9 @@ def case_evidence(store, study_id, case_id):
         controller=case["controller"],
         config=case["config"],
         policy=case.get("policy"),
+        executed_policy=executed_policy,
+        documentation_review=documentation_review,
+        extractor_source=LOADED_SOURCE["content_hash"],
         environment_id=case["environment_id"],
         summary=summary,
         hours=len(rows),
@@ -421,6 +455,7 @@ def case_evidence(store, study_id, case_id):
 
 
 def report(path):
+    from methane.provenance import LOADED_SOURCE
     from methane.siting.verification import verify_case
 
     path = Path(path)
@@ -432,8 +467,10 @@ def report(path):
         for case, label in zip(study["cases"], group["labels"], strict=True):
             record = case_evidence(store, group["study_id"], case["case_id"])
             check = verify_case(store, group["study_id"], case["case_id"])
+            check["checker_source"] = LOADED_SOURCE["content_hash"]
             record.update(group=group["name"], label=label, independent_check=check)
             rows.append(record)
+            print(group["name"], case["case_id"], check["status"], flush=True)
     revision = uuid4().hex
     out = path / "reports" / revision
     out.mkdir(parents=True)

@@ -1,0 +1,42 @@
+[
+  {
+    "publication_id": "adf7ad14be982deb9943c871f20417f639e9e3fed61ba9e260879b855a8058ec",
+    "title": "Autonomy qualification / counterexample",
+    "path": "/Users/aeron/sota/dispatch-lab/runs/sites/reports/adf7ad14be982deb9943c871f20417f639e9e3fed61ba9e260879b855a8058ec.html",
+    "group": "counterexample",
+    "study_id": "7950669449486eb6f0749b5d1110453ea53f974c7b8e313fc1ebff956989ed72",
+    "relative_path": "../../runs/sites/reports/adf7ad14be982deb9943c871f20417f639e9e3fed61ba9e260879b855a8058ec.html"
+  },
+  {
+    "publication_id": "ccbc8fc3472ef09859a61780233dde6b3174dd62a613e66e40dfe8862663d678",
+    "title": "Autonomy qualification / local-service",
+    "path": "/Users/aeron/sota/dispatch-lab/runs/sites/reports/ccbc8fc3472ef09859a61780233dde6b3174dd62a613e66e40dfe8862663d678.html",
+    "group": "local-service",
+    "study_id": "6b06e4970d7632608f2be541b1138c046779d1ab2160a0d8e7a072c626e5727e",
+    "relative_path": "../../runs/sites/reports/ccbc8fc3472ef09859a61780233dde6b3174dd62a613e66e40dfe8862663d678.html"
+  },
+  {
+    "publication_id": "12d1e3038a2d28163d0d42451fbd3abc7e57ee3fd9eb31d0ea4e200030dcd658",
+    "title": "Autonomy qualification / recovery",
+    "path": "/Users/aeron/sota/dispatch-lab/runs/sites/reports/12d1e3038a2d28163d0d42451fbd3abc7e57ee3fd9eb31d0ea4e200030dcd658.html",
+    "group": "recovery",
+    "study_id": "fd72df46272c4557cba9b4bf4504dc5f83112b7d33c4fb4c80d25c1873274de5",
+    "relative_path": "../../runs/sites/reports/12d1e3038a2d28163d0d42451fbd3abc7e57ee3fd9eb31d0ea4e200030dcd658.html"
+  },
+  {
+    "publication_id": "cbc79dd34f302dacf2e2ee378216689ffe5143cfce25ae8718f9925934d241be",
+    "title": "Autonomy qualification / sensitivity",
+    "path": "/Users/aeron/sota/dispatch-lab/runs/sites/reports/cbc79dd34f302dacf2e2ee378216689ffe5143cfce25ae8718f9925934d241be.html",
+    "group": "sensitivity",
+    "study_id": "fa787f54291d19610b10838c2c6c9e9aa0884ab5f28a8d887ca8b221e6b4a0b7",
+    "relative_path": "../../runs/sites/reports/cbc79dd34f302dacf2e2ee378216689ffe5143cfce25ae8718f9925934d241be.html"
+  },
+  {
+    "publication_id": "5e8b6903bed83efa3fefc36b5d5c7e50b9e6871342e6c255830a8728cda5e208",
+    "title": "Autonomy qualification / seasonal",
+    "path": "/Users/aeron/sota/dispatch-lab/runs/sites/reports/5e8b6903bed83efa3fefc36b5d5c7e50b9e6871342e6c255830a8728cda5e208.html",
+    "group": "seasonal",
+    "study_id": "6ab4a5562854d167ca43bf692943ccb8cc9fe965ad0de906267f490c9227398a",
+    "relative_path": "../../runs/sites/reports/5e8b6903bed83efa3fefc36b5d5c7e50b9e6871342e6c255830a8728cda5e208.html"
+  }
+]
