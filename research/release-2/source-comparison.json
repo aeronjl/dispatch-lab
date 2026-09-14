@@ -724,9 +724,19 @@
       "after": "ba3615d680a85b158cc8a0a7dc08b751260841d33fd64a4c1cabd0096f090311",
       "differences": [],
       "matched": true
+    },
+    {
+      "group": "annual",
+      "case_id": "case-001",
+      "hours": 1337,
+      "input_id": "a8ebccd77e0399e67b4405841f533040ab7bf14d9b34304ccd24bb5b3dde40f8",
+      "before": "c33d810ac12b5d06898549a142bc3b118199b5a34cace67461c600a81a7a1b93",
+      "after": "c33d810ac12b5d06898549a142bc3b118199b5a34cace67461c600a81a7a1b93",
+      "differences": [],
+      "matched": true
     }
   ],
-  "complete": false,
+  "complete": true,
   "passed": true,
   "scope": "All 72 original Greedy seasonal cases and the 1337-hour saved annual prefix, each rerun from its initial state. Complete physical, observation, service and lifecycle records are compared. This does not qualify unexecuted future intervals or assert deterministic time-limited MPC decisions."
 }

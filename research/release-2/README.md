@@ -26,8 +26,9 @@ not hidden additions to controller inputs. Run them from the repository root wit
   locked environment; recorded playback does not rerun decisions.
 - `preserve.py` compares the six original-source historical repetitions. `--export --compact`
   produces portable ZIPs through the separately captured compact reader; `export_all.py` uses three independent reading processes; it adds no numerical
-  solver worker. `restore_preservation.py` verifies full temporary
-  extractions with the captured standalone checker under `python -I -S`.
+  solver worker. The original ordered `restore_preservation.py` remains preserved;
+  `restore_ready.py` checks completed exports as they become available, one at a time.
+  Both verify full temporary extractions with the captured standalone checker under `python -I -S`.
 
 The final report's receipts distinguish source integrity, numerical checks,
 comparison evidence, UI checks and agent-authored comprehension review. No overall

@@ -1958,5 +1958,12 @@
       "events_match": true
     }
   ],
-  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states."
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states.",
+  "portable_bundle": {
+    "reader": "compact/1",
+    "path": "build/release-2/preservation/information-reproduction.zip",
+    "bytes": 3735926896,
+    "sha256": "c2e45e7f1a9103fc048a6be25efadd40547168012a4f07aa9619356440940555",
+    "scope": "Exported bytes; offline restore verification is a separate receipt"
+  }
 }
