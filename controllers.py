@@ -1,6 +1,7 @@
 """Controllers see measured capacity and a forecast, never the future realised weather."""
 
 import time
+import warnings
 from dataclasses import dataclass
 
 import numpy as np
@@ -92,13 +93,17 @@ def plan(plant: Plant, state: State, forecast_kw: np.ndarray, measured_capacity_
         matrix[r + 8, [discharge[t], direction[t]]] = [1, plant.battery_kw]
         bound[r + 8] = plant.battery_kw
     matrix = matrix.tocsc()
-    result = milp(
-        objective,
-        integrality=integer,
-        bounds=Bounds(np.zeros(7 * n), upper),
-        constraints=LinearConstraint(matrix, lower, bound),
-        options={"time_limit": 0.5, "mip_rel_gap": 0.001},
-    )
+    with warnings.catch_warnings():
+        warnings.filterwarnings(
+            "ignore", message="Unrecognized options detected.*threads.*", category=RuntimeWarning
+        )
+        result = milp(
+            objective,
+            integrality=integer,
+            bounds=Bounds(np.zeros(7 * n), upper),
+            constraints=LinearConstraint(matrix, lower, bound),
+            options={"time_limit": 0.5, "mip_rel_gap": 0.001, "threads": 1},
+        )
     elapsed = time.perf_counter() - started
     # A time-limited incumbent is usable only if it is actually feasible.
     x = result.x

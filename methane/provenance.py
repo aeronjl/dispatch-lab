@@ -3,7 +3,6 @@
 import copy
 import hashlib
 import json
-import os
 import platform
 import subprocess
 from importlib.metadata import version
@@ -80,7 +79,7 @@ def manifest(config, weather, strategies):
             "execution_seconds": 0.5,
             "relative_gap": 0.001,
             "integrality_tolerance": 1e-5,
-            "threads": 1 if os.environ.get("DISPATCH_BATCH_WORKER") == "1" else "solver default",
+            "threads": 1,
         },
         "audit_tolerances": {"absolute": ABSOLUTE, "relative": RELATIVE},
         "weather_content_hash": digest(weather),

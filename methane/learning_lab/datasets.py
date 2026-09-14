@@ -134,6 +134,7 @@ def freeze(store, selections, *, name, holdout_axes=()):
     if set(holdout_axes) - {"site", "design", "equipment"}:
         raise ValueError("Unknown holdout axis")
     episodes, samples, labels = [], [], []
+    observation_bytes = 0
     seen = set()
     for selection in selections:
         study = store.get("study", selection["study_id"])
@@ -152,6 +153,7 @@ def freeze(store, selections, *, name, holdout_axes=()):
                 "Incomplete episode: retain it as an incomplete study, not training data"
             )
         config = case["config"]
+        controller_config = (case.get("uncertainty") or {}).get("controller_config", config)
         episode = dict(
             id=digest(origin),
             study_id=origin[0],
@@ -176,6 +178,7 @@ def freeze(store, selections, *, name, holdout_axes=()):
             measurement_assumptions=config.get("sensors", {}),
             reference=env["reference"],
             config=config,
+            controller_config=controller_config,
         )
         episodes.append(episode)
         prior, expected = None, 0
@@ -186,13 +189,18 @@ def freeze(store, selections, *, name, holdout_axes=()):
                 if d["hour"] != expected:
                     raise ValueError("Episode has missing or duplicated decision hours")
                 expected += 1
-                p = packet(
+                p = copy.deepcopy(d.get("experimental_policy", {}).get("input")) or packet(
                     d,
                     time=row["time"],
-                    prices=config["costs"],
-                    plant=d.get("operating_plant", config["plant"]),
+                    prices=controller_config["costs"],
+                    plant=d.get("operating_plant", controller_config["plant"]),
                     prior_service=prior,
                 )
+                observation_bytes += len(encode(p))
+                if len(samples) >= 100000 or observation_bytes > 128 * 1024**2:
+                    raise ValueError(
+                        "Dataset budget exceeded: 100,000 observations or 128 MiB of policy packets; declare fewer complete episodes"
+                    )
                 sid = digest([episode["id"], d["hour"]])
                 samples.append(
                     dict(

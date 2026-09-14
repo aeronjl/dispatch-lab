@@ -1,6 +1,5 @@
 """Shared sparse MILP constraints for forecasts and feasible physical execution."""
 
-import os
 import time
 import warnings
 from dataclasses import asdict
@@ -122,9 +121,7 @@ class Model:
         ).tocsc()
         begin = time.perf_counter()
         try:
-            options = {"time_limit": seconds, "mip_rel_gap": 0.001}
-            if os.environ.get("DISPATCH_BATCH_WORKER") == "1":
-                options["threads"] = 1
+            options = {"time_limit": seconds, "mip_rel_gap": 0.001, "threads": 1}
             with warnings.catch_warnings():
                 warnings.filterwarnings(
                     "ignore",
@@ -404,6 +401,9 @@ def prepare_model(
 
             Policy(objective=objective, terminal_battery_value_kg_per_kwh=terminal_battery_value)
             m.objective[m.ids["battery_kwh"][-1]] -= terminal_battery_value
+        from methane.learning_lab.reserves import add_objective
+
+        add_objective(m, p, state, forecast)
     return m
 
 

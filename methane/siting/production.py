@@ -62,6 +62,10 @@ def create(
         if controller not in ("Greedy", "MPC · methane", "MPC · economics"):
             raise ValueError("Unknown production controller")
         policy = item.get("policy")
+        if item.get("deployment_id"):
+            from methane.learning_lab.workflow import deployed_policy
+
+            policy = deployed_policy(store, c, controller, item["deployment_id"], policy)
         if policy is not None:
             from methane.policy import Policy
             from methane.simulation import STRATEGIES
@@ -346,6 +350,12 @@ def summary_records(result):
             r.update({k: row[k] for k in ("state", "applied", "diagnosis_after")})
             d = row["decision"]
             r["decision"] = {"probe": d["probe"], "plan": {"solver": d["plan"]["solver"]}}
+            if "experimental_policy" in d:
+                r["decision"]["experimental_policy"] = {
+                    key: d["experimental_policy"][key]
+                    for key in ("status", "reason", "elapsed_ms", "reserve_accounting")
+                    if key in d["experimental_policy"]
+                }
             if "recovery_planning" in d:
                 r["decision"]["recovery_planning"] = d["recovery_planning"]
             if "field_operations" in row:

@@ -12,6 +12,7 @@ from collections import defaultdict
 import numpy as np
 
 from methane.learning_lab.datasets import PORT, validate_splits
+from methane.siting.store import digest
 
 VERSION = "bounded-estimator/1"
 TASKS = {
@@ -41,6 +42,8 @@ def reading(p, task):
 
 
 def features(p, task):
+    if task == "duration":
+        return [1.0, 0.0, 20.0, 0.0] if p.get("duration_observations") else None
     value, measured = reading(p, task)
     ambient = p["forecast"].get("ambient_c", [None])[0]
     activity = p["observations"].get("power_kw")
@@ -185,6 +188,17 @@ def fit(
     data = store.get("dataset", dataset_id)
     validate_splits(data["episodes"], data["holdout_axes"])
     samples = json.loads(store.read_raw(data["observations_sha256"]))
+    episodes = {e["id"]: e for e in data["episodes"]}
+    for sample in samples:
+        if (
+            sample["episode"] not in episodes
+            or sample["split"] != episodes[sample["episode"]]["split"]
+            or sample["packet"]["version"] != PORT
+            or sample["packet_id"] != digest(sample["packet"])
+        ):
+            raise ValueError(
+                "Observation input or split identity does not match its frozen registry"
+            )
     if len(samples) > 100000:
         raise ValueError("Training budget is 100,000 observations; use a declared smaller dataset")
     rows, excluded = examples(samples, task)

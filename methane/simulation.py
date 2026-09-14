@@ -63,6 +63,53 @@ def initial_observation(state):
     }
 
 
+def deployed_forecast(
+    policy,
+    hour,
+    time,
+    observation,
+    diagnosis,
+    plant,
+    costs,
+    forecast,
+    lifecycle,
+    services,
+    rows,
+    observer,
+    *,
+    optical_coordinated=False,
+):
+    from methane.learning_lab.datasets import packet
+    from methane.learning_lab.deployment import apply
+
+    public = packet(
+        dict(
+            hour=hour,
+            observations=observation,
+            estimate=asdict(estimated_state(observation, plant)),
+            diagnosis=asdict(diagnosis),
+            forecast=forecast,
+            lifecycle=lifecycle.public() if lifecycle else {},
+            field_operations=services.public() if services else {},
+            performance_estimates=observer.record() if observer else {},
+        ),
+        time=time,
+        prices=asdict(costs),
+        plant=asdict(plant),
+        prior_service=rows[-1].get("field_operations") if rows else None,
+    )
+    changed, trace = apply(policy.deployment, public, forecast)
+    if optical_coordinated and policy.deployment["mode"] == "forecast-aid":
+        changed = forecast
+        trace.update(
+            status="fallback",
+            applied=None,
+            reason="Optical service planning recomputes section forecasts; this scalar aid is unsupported at that interface",
+        )
+    trace["input"] = public
+    return changed, trace
+
+
 def evidence(p, state, forecast, planned, diagnosis, objective):
     a = planned["actions"][0]
     rows = planned["trajectory"]
@@ -158,6 +205,7 @@ def evidence(p, state, forecast, planned, diagnosis, objective):
 
 
 def summarise(rows, config, truth_rows=None, *, service_prefix=None):
+    from methane.learning_lab.outcomes import summary as policy_outcomes
     from methane.recovery import outcomes as recovery_outcomes
     from methane.services.outcomes import calculate as field_outcomes
 
@@ -171,6 +219,7 @@ def summarise(rows, config, truth_rows=None, *, service_prefix=None):
     detections = [h for h in confirmations if h in active_hours]
     return {
         **recovery_outcomes(rows, truth_rows, p.electrolyser_kw),
+        **policy_outcomes(rows),
         "methane_kg": sum(r["applied"]["methane_kg"] for r in rows),
         "h2_produced_kg": total("h2_produced_kg"),
         "curtailed_kwh": total("curtailed_kwh"),
@@ -538,6 +587,7 @@ def _run(
                 coordinated = None
                 service_planning_inputs = None
                 raw_forecast = None
+                deployment_record = None
                 if observer and services is not None and c.service_system is not None:
                     services.config = observer.field_estimate()
                     if services.optical:
@@ -768,6 +818,27 @@ def _run(
                             raw_forecast = supply_forecast(
                                 raw_forecast, p, c.costs, site_utilities, t
                             )
+                    if policy.deployment is not None:
+                        forecast, deployment_record = deployed_forecast(
+                            policy,
+                            t,
+                            weather["times"][t],
+                            observation,
+                            diagnosis,
+                            p,
+                            c.costs,
+                            forecast,
+                            lifecycle,
+                            services,
+                            rows,
+                            observer,
+                            optical_coordinated=raw_forecast is not None
+                            and service_controller is not None,
+                        )
+                        if raw_forecast is not None and "reserve_policy" in forecast:
+                            raw_forecast["reserve_policy"] = copy.deepcopy(
+                                forecast["reserve_policy"]
+                            )
                     if c.service_system is not None:
                         if getattr(services, "belief_record", None) and observer:
                             services.belief_record["performance"] = observer.record()
@@ -846,6 +917,21 @@ def _run(
                             "continuation remains conditional on actual power/access. No future "
                             "cleaning benefit, replenishment or unaccepted charge is credited."
                         )
+                if policy.deployment is not None and services is None:
+                    forecast, deployment_record = deployed_forecast(
+                        policy,
+                        t,
+                        weather["times"][t],
+                        observation,
+                        diagnosis,
+                        p,
+                        c.costs,
+                        forecast,
+                        lifecycle,
+                        services,
+                        rows,
+                        observer,
+                    )
                 estimate = estimated_state(observation, p)
                 policy = resolved_policies[name]
                 objective = policy.objective
@@ -953,6 +1039,14 @@ def _run(
                     "service_cost_version": service_cost_version,
                     "component_implementations": components.identities(),
                 }
+                if deployment_record is not None:
+                    from methane.learning_lab.reserves import account
+
+                    decision["experimental_policy"] = deployment_record
+                    decision["experimental_policy"]["reserve_accounting"] = account(
+                        p, estimate, forecast, planned["trajectory"]
+                    )
+                    decision["experimental_policy"]["solver"] = planned["solver"]
                 if observer:
                     decision["performance_estimates"] = observer.record()
                 if services is not None and getattr(services, "belief_record", None):

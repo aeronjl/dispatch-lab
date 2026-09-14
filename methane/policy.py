@@ -12,6 +12,7 @@ class Policy:
     recovery: object | None = None
     service: object | None = None
     investigation: object | None = None
+    deployment: dict | None = None
 
     def __post_init__(self):
         if self.version not in (
@@ -19,6 +20,7 @@ class Policy:
             "dispatch-lab/policy/2",
             "dispatch-lab/policy/3",
             "dispatch-lab/policy/4",
+            "dispatch-lab/policy/5",
         ):
             raise ValueError("Unsupported controller policy version")
         if self.objective not in ("greedy", "methane", "economics"):
@@ -35,6 +37,7 @@ class Policy:
                 "dispatch-lab/policy/2",
                 "dispatch-lab/policy/3",
                 "dispatch-lab/policy/4",
+                "dispatch-lab/policy/5",
             ):
                 raise ValueError("Scheduled recovery requires an explicit version-2 policy")
             object.__setattr__(
@@ -48,7 +51,8 @@ class Policy:
             from methane.services.controller import VERIFICATION_VERSION, ServicePolicy
 
             if (
-                self.version not in ("dispatch-lab/policy/3", "dispatch-lab/policy/4")
+                self.version
+                not in ("dispatch-lab/policy/3", "dispatch-lab/policy/4", "dispatch-lab/policy/5")
                 or self.objective == "greedy"
             ):
                 raise ValueError("Coordinated services require an explicit version-3 MPC policy")
@@ -73,7 +77,7 @@ class Policy:
             from methane.services.investigator import InvestigationPolicy
 
             if (
-                self.version != "dispatch-lab/policy/4"
+                self.version not in ("dispatch-lab/policy/4", "dispatch-lab/policy/5")
                 or self.service is None
                 or self.service.version != "coordinated-services/3"
             ):
@@ -104,14 +108,29 @@ class Policy:
                     "Observed investigation continuations require joint work and recovery tests"
                 )
 
+        if self.deployment is not None:
+            from methane.learning_lab.deployment import validate
+
+            if self.version != "dispatch-lab/policy/5":
+                raise ValueError("Registered deployments require version-5 policy")
+            object.__setattr__(self, "deployment", validate(self.deployment))
+            if self.deployment["mode"] == "homeostatic" and self.objective == "greedy":
+                raise ValueError("Soft reserve optimisation requires an MPC objective")
+
     def to_dict(self):
         result = asdict(self)
         if self.version == "dispatch-lab/policy/1":
             result.pop("recovery")
-        if self.version not in ("dispatch-lab/policy/3", "dispatch-lab/policy/4"):
+        if self.version not in (
+            "dispatch-lab/policy/3",
+            "dispatch-lab/policy/4",
+            "dispatch-lab/policy/5",
+        ):
             result.pop("service")
-        if self.version != "dispatch-lab/policy/4":
+        if self.version not in ("dispatch-lab/policy/4", "dispatch-lab/policy/5"):
             result.pop("investigation")
+        if self.deployment is None:
+            result.pop("deployment")
         return result
 
 

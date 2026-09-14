@@ -14,4 +14,16 @@ protocol, capture and issue tracking, but cannot supply their answers. No durabl
 off-machine backup destination has been supplied. These two external requirements
 will remain visible in the release accounting.
 
-Implementation and checks are in progress. This file is not evidence of completion.
+Checkpoint 1: observation datasets and fixed/adaptive/ridge comparisons are implemented.
+Six focused checks passed for split boundaries, future-information separation,
+missing/censored channels, fitted-domain rejection and cancellation.
+
+Checkpoint 2: data-only registered policies and saturating reserve preferences run
+through the original dispatch/execution constraints. Four policy checks and 67
+existing physics/control/service checks passed together (71 total). A mixed legacy /
+current HiGHS thread-initialisation failure was reproduced and fixed by consistently
+using one numerical solver thread. The current provenance records that choice;
+old recordings and source capsules retain their original solver assumptions.
+
+The Sites interface, portable artifacts and full release qualification remain in
+progress. These checkpoints are not evidence of field performance or completion.
