@@ -950,7 +950,7 @@
       "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
       "methane/costing.py": "b6055e7a0fdd5870c9557675541a7c9f7270db35a06dea3f6a32b9d599b10e2a",
       "methane/dispatch.py": "2d663a0168e000a952dcfc9723011f366504e8f119be4ddaf59097641ff260e0",
-      "methane/documentation.py": "a775382f240fdab6f3428c4450a4cffc3e33b6c5a4eebfa6d59ee0314338976b",
+      "methane/documentation.py": "c9bc26f26aba88e6082711e061375a511f6ccc43e107760b68ea3bb4b738f6f4",
       "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
       "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
       "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",

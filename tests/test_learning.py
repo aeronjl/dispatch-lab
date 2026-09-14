@@ -37,6 +37,23 @@ def test_battery_independent_balance_swap_and_round_trip():
     assert evaluate("battery", {"discharge": 100})["status"] == "infeasible"
 
 
+def test_recorded_decision_estimate_is_preserved_without_using_later_state():
+    from methane.config import Config, Scenario
+    from methane.simulation import run
+
+    source = run(Config(scenario=Scenario(hours=2)), strategies=("Greedy",))
+    row = source["records"]["Greedy"][0]
+    estimate = copy.deepcopy(row["decision"]["estimate"])
+    row["state"]["battery_kwh"] = 123456
+    for topic in ("battery", "controllers", "recovery"):
+        value = recorded(source, topic, "Greedy", 0)
+        assert value["estimated_before"] == estimate
+        if topic == "controllers":
+            assert value["calculation"]["estimated_state"] == estimate
+        value["estimated_before"]["battery_kwh"] = -1
+        assert row["decision"]["estimate"] == estimate
+
+
 def test_independent_gas_and_electrolysis_examples():
     x = evaluate("hydrogen", {"inventory": 10, "inflow": 8, "outflow": 5})
     assert x["metrics"][0]["value"] == 13

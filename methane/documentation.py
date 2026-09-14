@@ -281,7 +281,7 @@ def recorded(result, topic, controller, hour, prices=None, *, service_prices=_SA
         "time": row["time"],
         "source": result.get("provenance", {}).get("source", {}).get("content_hash"),
         "observations": row["observations_after"],
-        "estimated_before": d.get("estimated_state", d.get("state")),
+        "estimated_before": d.get("estimate", d.get("estimated_state", d.get("state"))),
         "requested": row["requested"],
         "applied": row["applied"],
         "original_decision_cost_version": result.get("decision_cost_version"),
@@ -418,7 +418,7 @@ def calculation(result, topic, controller, hour, prices=None, *, service_prices=
     elif topic == "controllers":
         value = {
             "policy": d["policy"],
-            "estimated_state": d.get("estimated_state"),
+            "estimated_state": d.get("estimate", d.get("estimated_state", d.get("state"))),
             "forecast": d.get("forecast"),
             "predicted": d["plan"].get("predicted"),
             "trajectory": d["plan"]["trajectory"],
