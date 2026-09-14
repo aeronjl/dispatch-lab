@@ -92,12 +92,12 @@ remain explicitly restricted; two construction families use declared assisted wo
 packages. This distinction is part of the release gate, not a claim of fourteen
 calibrated robots.
 
-Release 3 should start with observation and estimator datasets over these contracts,
-including the condition channel's limitations and the low-excitation diagnosis cases.
-Freeze train/validation/test boundaries before training. Compare simple fixed and
-adaptive estimators first; only proceed to learned scheduling or homeostatic reserves
-when the preceding evaluation supports it. Data acquisition and participant research
-remain necessary alongside that software work.
+Release 3 builds observation and estimator datasets over these contracts, retaining
+the condition channel's limitations and low-excitation exclusions. It freezes
+train/validation/test boundaries and compares fixed, adaptive and fitted estimates.
+Registered planning aids and reserve hypotheses are available for matched experiments;
+no result here establishes their general superiority. Data acquisition and actual
+participant research remain necessary alongside the delivered software.
 
 The [Release-3 delivery contract](release-3.md) makes the next sequence explicit:
 freeze observation datasets and held-out boundaries; qualify estimators; register

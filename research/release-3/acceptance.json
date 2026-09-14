@@ -1,0 +1,232 @@
+{
+  "source": {
+    "revision": "b7255f1667ecb72f95c883ceea5854d6e88b7cad",
+    "content_hash": "870f259af9485927311d814106c4830123a4fc56e580a7ff3b6381cd5e87f5aa",
+    "dirty": true
+  },
+  "scope": "Product acceptance: constructed observation channels and four synthetic operating hours. No field validation or policy ranking.",
+  "root": "build/release-3/acceptance-1de450791ecb",
+  "dataset_id": "45288bdee7eeadd0da7c6408602b1d487231c44b822fb40c8d40d4c7e9d17e28",
+  "evaluations": [
+    {
+      "id": "2e4a2272092103abb4db3c816fc9df5b8a55e81aacf9b99b54b1483f2daef50f",
+      "model_id": "224d1ffcc4b706b78269ffcd483b1362bc97524a7b7f67e354b31108f03faa3d",
+      "status": "complete",
+      "comparisons": {
+        "fixed": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.0,
+          "coverage": 1.0,
+          "mean_width": 0.0
+        },
+        "adaptive": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.0,
+          "coverage": 1.0,
+          "mean_width": 0.0
+        },
+        "ridge": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 51.278699308136645,
+          "coverage": 0.8695652173913043,
+          "mean_width": 232.59008661386827
+        }
+      },
+      "rows_per_split": {
+        "train": 23,
+        "validation": 23,
+        "test": 23
+      },
+      "reason": null
+    },
+    {
+      "id": "b9e471fae55e6ea0e9dd258a39d17eb15999770394eaaa099cf225521f14c41e",
+      "model_id": "6e28b92f82b150f1b2c52376b643885347d0749939f5dde3b7b16e71a79de07f",
+      "status": "complete",
+      "comparisons": {
+        "fixed": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.00777653620988879,
+          "coverage": 0.7391304347826086,
+          "mean_width": 0.02162312959198156
+        },
+        "adaptive": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.008439402569346232,
+          "coverage": 0.6521739130434783,
+          "mean_width": 0.020285413947996097
+        },
+        "ridge": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.006842610046461238,
+          "coverage": 0.9130434782608695,
+          "mean_width": 0.024042290435416266
+        }
+      },
+      "rows_per_split": {
+        "train": 23,
+        "validation": 23,
+        "test": 23
+      },
+      "reason": null
+    },
+    {
+      "id": "066bf5f04190a86e3cc0d85d35af62cfba2b0ae12b157b16154d4906993fe3bd",
+      "model_id": "5de3f35cafbb2c04e8c71b1d0ce3d4dad228d541813fa76d9180255f96caf841",
+      "status": "complete",
+      "comparisons": {
+        "fixed": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.00777653620988879,
+          "coverage": 0.7391304347826086,
+          "mean_width": 0.02162312959198156
+        },
+        "adaptive": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.008439402569346232,
+          "coverage": 0.6521739130434783,
+          "mean_width": 0.020285413947996097
+        },
+        "ridge": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.006842610046461238,
+          "coverage": 0.9130434782608695,
+          "mean_width": 0.024042290435416266
+        }
+      },
+      "rows_per_split": {
+        "train": 23,
+        "validation": 23,
+        "test": 23
+      },
+      "reason": null
+    },
+    {
+      "id": "480de5602d82d54b4c5157bb1bf329fed69f589dd9a2778a9a0f55248118b708",
+      "model_id": "501d7ac2934912ef8810205360cf205c80f5a2f75a54b38b81c60210891dde00",
+      "status": "complete",
+      "comparisons": {
+        "fixed": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.00777653620988879,
+          "coverage": 0.7391304347826086,
+          "mean_width": 0.02162312959198156
+        },
+        "adaptive": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.008439402569346232,
+          "coverage": 0.6521739130434783,
+          "mean_width": 0.020285413947996097
+        },
+        "ridge": {
+          "count": 23,
+          "predictions": 23,
+          "unavailable": 0,
+          "mae": 0.006842610046461238,
+          "coverage": 0.9130434782608695,
+          "mean_width": 0.024042290435416266
+        }
+      },
+      "rows_per_split": {
+        "train": 23,
+        "validation": 23,
+        "test": 23
+      },
+      "reason": null
+    },
+    {
+      "id": "8c0da248428fd1aad494cff406f70fe1a6c3334cbb0f1d981218234e041c6271",
+      "model_id": null,
+      "status": "incomplete",
+      "comparisons": null,
+      "rows_per_split": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "reason": "Each split needs at least two informative examples; unavailable channels are not synthesised"
+    }
+  ],
+  "study_id": "aeca8e163c7eb4c1e0eec359a93e16e66f58a17ec82ffd518ff4142624d4dd38",
+  "interrupted_hours": 2,
+  "resumed_hours": 4,
+  "unchanged_prefix": true,
+  "numerical_edition_id": "0524c6ad4ec9730ccc7c6f40d17c1489d67c63228e62f5f029620c3520de7b25",
+  "differences": {
+    "id": "978a0cd50cb0657ef4b902211c7b76016339308dd7691ffc4b3d84aeb31fd1d6",
+    "status": "matched within comparison scope",
+    "comparison": "Exact recorded operands; no tolerance hides differences. Timing, solver search logs, presentation and detailed audit operands are excluded. Original recordings remain available for those fields.",
+    "differences": [],
+    "missing_hours": [],
+    "input_comparison": [
+      {
+        "case_id": "case-001",
+        "input_differences": []
+      }
+    ]
+  },
+  "registered_summary": {
+    "decision_count": 4,
+    "fallback_reasons": {
+      "Features outside the registered training domain": 4
+    },
+    "mean_inference_ms": 0.14162505976855755,
+    "mean_planned_reserve_penalty": null,
+    "scope": "Machinery outcomes, not empirical policy value. Planned reserve penalties overlap in time and are not cash costs. Read methane, original decision costs, trips, service outcomes and ending inventories alongside this record.",
+    "statuses": {
+      "fallback": 4
+    }
+  },
+  "user_run_recipe": {
+    "study_id": "43759e6e000fc541e8eef45f9ff46393fb00f953e40cab77cc1aa314d824290f",
+    "template_id": "b98771eb444a4ad5b8c920cda98b50bfa2dbd6b2ca8e0a4ea31685611e4e9f24",
+    "case_labels": [
+      "Reference / Greedy",
+      "Reference / MPC \u00b7 methane",
+      "Reference / MPC \u00b7 economics",
+      "Reserve hypothesis / user-run template / MPC \u00b7 methane",
+      "Reserve hypothesis / user-run template / MPC \u00b7 economics"
+    ],
+    "boundary": "A reusable recipe, not a completed result. New editions use the current application; saved designs and weather retain their original identities."
+  },
+  "recipe_executed": false,
+  "portable_bundles": [
+    {
+      "path": "build/release-3/acceptance-1de450791ecb/original/exports/3097eb68a85d3093f4dbb665e97786276865886afc359c7247870f90c02172f7.zip",
+      "bytes": 33656904,
+      "uncompressed_bytes": 42191717,
+      "omissions": []
+    },
+    {
+      "path": "build/release-3/acceptance-1de450791ecb/original/exports/a7fdbea9e9f166ff5fae9439c4e8746f22d8ddae8b7ddf8ddb63bb2f63ab931e.zip",
+      "bytes": 16490256,
+      "uncompressed_bytes": 22241268,
+      "omissions": []
+    }
+  ],
+  "restored_original_model_and_observations": true,
+  "participant_sessions": 0,
+  "off_machine_restore": false
+}

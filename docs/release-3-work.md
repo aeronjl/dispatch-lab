@@ -38,3 +38,19 @@ an incomplete test enumeration of the existing Greedy status, a worker-release r
 and two source-identity assertions affected by editing during that run. The review
 bindings, test enumeration and release race are corrected. The two identity guards
 are retained; final qualification must run without changing captured source files.
+
+Final qualification: the fresh locked Python environment passed all 1,169 tests
+(three dependency deprecation warnings). JavaScript passed 89 tests. The browser
+suite passed 104 scenarios with 20 conditional skips and one Sites selector error;
+corrected named-record selectors then passed the three focused learning/Sites
+workflows together. The unchanged plant/solar screenshot checks passed. A 240-hour
+preview with an actual batch active passed at 102.6 ms p95 input-to-display and
+2.3 ms p95 rendering. The 72-hour playback measured 96.0 ms and 1.5 ms separately.
+
+The saved four-hour acceptance case preserves its two-hour interrupted prefix,
+restores original weights and observations offline, and produces a numerical
+edition with no differences in the declared comparison fields. Missing duration
+observations remain incomplete; unsupported shadow features fall back explicitly.
+The broad reserve study is saved as an unexecuted template. Exact identities,
+artifact sizes, check scope and open external gates are in the Release-3 report.
+Participant sessions and off-machine restoration have not been fabricated.

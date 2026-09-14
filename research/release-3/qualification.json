@@ -1,0 +1,144 @@
+{
+  "status": "Software qualification passed within the recorded scope. Participant comprehension and off-machine restore remain open.",
+  "source": {
+    "python": "3.12.13",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "implementation": {
+    "revision": "b7255f1667ecb72f95c883ceea5854d6e88b7cad",
+    "content_hash": "870f259af9485927311d814106c4830123a4fc56e580a7ff3b6381cd5e87f5aa",
+    "dirty": false
+  },
+  "checks": [
+    {
+      "name": "Fresh locked Python installation",
+      "outcome": "Passed",
+      "scope": "uv sync --locked in /tmp/dispatch-release3-env; Python 3.12.13"
+    },
+    {
+      "name": "Python application suite",
+      "outcome": "1169 passed; 0 skipped",
+      "scope": "Numerical bounds, observation separation, jobs, old archives, cancellation/resumption, sources, costs and portable restoration; source unchanged during execution."
+    },
+    {
+      "name": "Browser suite",
+      "outcome": "104 passed; 20 conditional skips; one test-selector error corrected and rerun",
+      "scope": "Main and solar screenshot baselines unchanged; new learning workspace and all essay controls included. Conditional historical/field-study fixtures are identified in the browser receipt."
+    },
+    {
+      "name": "JavaScript suite",
+      "outcome": "89 passed",
+      "scope": "Browser-side record rendering, selection and stale-response logic."
+    },
+    {
+      "name": "Code and documentation gates",
+      "outcome": "Passed",
+      "scope": "Ruff check and format; Model reviews/examples, parameter assumptions, catalogue, taxonomy and generated component documentation."
+    },
+    {
+      "name": "72-hour preview interaction",
+      "outcome": "p95 96.0 ms; render 1.5 ms",
+      "scope": "30 slider edits; playback/solar rendering on the Apple Silicon reference machine. No study batch in this measurement."
+    },
+    {
+      "name": "Saved product acceptance",
+      "outcome": "Passed, including explicit incomplete/fallback cases",
+      "scope": "Constructed readings, four synthetic operating hours, interrupted at hour two, unchanged resumed prefix, exact declared-scope numerical comparison, local offline restoration."
+    },
+    {
+      "name": "Report and workspace visual review",
+      "outcome": "Passed",
+      "scope": "Desktop 1440\u00d71000 and narrow 390\u00d7844; report makes zero HTTP requests. Real participants have not performed this walkthrough."
+    },
+    {
+      "name": "Focused browser workflow rerun",
+      "outcome": "3 passed",
+      "scope": "Learning, all new Model topics, named Sites study/comparison/template and asynchronous export. Study/template selectors now tolerate other saved records; an early connection attempt preceded server readiness and was not an application failure."
+    },
+    {
+      "name": "240-hour preview with an active batch",
+      "outcome": "p95 102.6 ms; render 2.3 ms; gate passed",
+      "scope": "30 slider edits with a real batch active; cancellation requested afterwards. Separate from training throughput and multi-year scaling."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "build/release-3-qualification/source-under-test.json",
+      "bytes": 37026,
+      "sha256": "543a0b95943eec59c40ca495e172036f209f1894f5520c69d11f9bd810b75871"
+    },
+    {
+      "path": "build/release-3-qualification/pytest.xml",
+      "bytes": 165619,
+      "sha256": "b8a56e2afc953b1072a9af98bb6d46129b1b71d31b5c3de9357586f20a111825"
+    },
+    {
+      "path": "build/release-3-qualification/browser-first-pass.json",
+      "bytes": 158878,
+      "sha256": "db78abb9ee0665197058cec7a240bbce6c97dbab7a9984a0a8fa886abcdd8530"
+    },
+    {
+      "path": "build/release-3-qualification/preview-72h.json",
+      "bytes": 983,
+      "sha256": "80a1dcfd51b8d115d08711af337dfcf61f4843dffe2c69116b5c90e4824e9c31"
+    },
+    {
+      "path": "build/release-3-qualification/browser-targeted.json",
+      "bytes": 5289,
+      "sha256": "648ffc85d2f18a3137a976295585fc0436039fede74d5c353a9357adf904012b"
+    },
+    {
+      "path": "build/release-3-qualification/browser-active.json",
+      "bytes": 2965,
+      "sha256": "0028d8e8d0b35179ec3254855d33a9eb224605f8d449d7f5deeed4eb82841a79"
+    },
+    {
+      "path": "build/release-3-qualification/preview-240h-batch.json",
+      "bytes": 1023,
+      "sha256": "bf20f4f1aa41d8ae935de2bd4afc299ff85ab0ba47fde2953cda2643eb654e77"
+    },
+    {
+      "path": "build/release-3-model-desktop.png",
+      "bytes": 112888,
+      "sha256": "5464acdd73b50b9caadd7291644739cd1c5a41b6f30f38179fbbb95be8c8a968",
+      "review": "Visual review; not a replacement for existing plant/solar baselines"
+    },
+    {
+      "path": "build/release-3-estimator-desktop.png",
+      "bytes": 59453,
+      "sha256": "a8da78e71a5864c22ddf2fe4dde40534b58b30a5d16ddc5dfa5f89ae110be16a",
+      "review": "Visual review; not a replacement for existing plant/solar baselines"
+    },
+    {
+      "path": "build/release-3-learning-mobile.png",
+      "bytes": 27822,
+      "sha256": "56db5e41bc86ca8201932bd25316457c9725b0f8d18b4c0afb2626ca64fbba46",
+      "review": "Visual review; not a replacement for existing plant/solar baselines"
+    },
+    {
+      "path": "build/release-3-report-desktop.png",
+      "bytes": 66672,
+      "sha256": "4ef3bcc01c085e2fecd8e1e236701a48ec8e041e28369800e8d09417bcd505a1",
+      "review": "Visual review; not a replacement for existing plant/solar baselines"
+    },
+    {
+      "path": "build/release-3-report-mobile.png",
+      "bytes": 42380,
+      "sha256": "9071e71cebf9480bf81c16cbe76e64f0349f02fc7626df72f57cab3f3a3ac267",
+      "review": "Visual review; not a replacement for existing plant/solar baselines"
+    }
+  ],
+  "python_counts": {
+    "tests": 1169,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "excluded": [
+    "No broad research sweep",
+    "No physical calibration or field validation",
+    "No actual participant session",
+    "No off-machine backup or restore",
+    "Prior formal and mutation artifacts were not rerun or promoted to this release source"
+  ]
+}

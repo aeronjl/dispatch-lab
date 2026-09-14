@@ -1,13 +1,13 @@
 const {test,expect}=require('@playwright/test');
 test('Sites runs a frozen case, opens its original interval and publishes a comparison',async({page})=>{
  test.skip(!process.env.DISPATCH_SITES_STUDIES,'Requires the isolated Sites teaching environment');
- test.setTimeout(90000);const errors=[];page.on('pageerror',err=>errors.push(err.message));
+ test.setTimeout(90000);const stamp=Date.now(),studyName=`Browser chronological study ${stamp}`,templateName=`Reusable browser recipe ${stamp}`;const errors=[];page.on('pageerror',err=>errors.push(err.message));
  await page.goto('/');await page.locator('.m-plant').waitFor();
  await page.locator('[data-do=menu]').click();await page.locator('[data-do=sites]').click();
  await page.locator('[data-si=model]').click();await expect(page.locator('.d-workspace')).toBeVisible();await expect(page.locator('.d-workspace')).toContainText('From a location to an operating case');await page.keyboard.press('Escape');await expect(page.locator('.si-workspace')).toBeVisible();
  await page.locator('[data-si=studies]').click();await page.locator('[data-si=study-new]').click();
- await page.locator('[data-study=name]').fill('Browser chronological study');
- await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
+ await page.locator('[data-study=name]').fill(studyName);
+ await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText(studyName);
  await expect(page.locator('[data-runtime-summary]')).toContainText('Runtime unavailable');
  await page.locator('[data-si=runtime-details]').click();await page.locator('[data-runtime-rate]').fill('2');await page.locator('[data-si=runtime-calculate]').click();await expect(page.locator('[data-runtime-result]')).toContainText('Supplied pilot assumption');await page.locator('[data-si=study-open]').click();
  await page.locator('[data-si=study-start]').click();
@@ -17,17 +17,17 @@ test('Sites runs a frozen case, opens its original interval and publishes a comp
  await page.locator('[data-si=period-play]').first().click();
  await expect(page.locator('.si-workspace')).toBeHidden();
  await page.locator('[data-do=menu]').click();await expect(page.locator('[data-do=study-origin]')).toBeVisible();await page.locator('[data-do=study-origin]').click();
- await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
+ await expect(page.locator('.si-page h1')).toHaveText(studyName);
  await page.locator('[data-si=publish-study]').click();
  await expect(page.locator('.si-page h1')).toHaveText('Edit write-up');
  await page.locator('[data-writeup=findings]').fill('A short workflow check, not a research conclusion.');
  await page.locator('[data-si=report-publish]').click();
  await expect(page.locator('.si-page')).toContainText('Write-up frozen');
- const url=await page.locator('.si-page a').first().getAttribute('href');const response=await page.request.get(url);expect(response.ok()).toBe(true);expect(await response.text()).toContain('Browser chronological study');
+ const url=await page.locator('.si-page a').first().getAttribute('href');const response=await page.request.get(url);expect(response.ok()).toBe(true);expect(await response.text()).toContain(studyName);
  await page.locator('[data-si=bundle]').click();await expect(page.locator('.si-export-result')).toContainText('Download ZIP');
  await page.locator('[data-si=report-revise]').click();await expect(page.locator('[data-writeup=findings]')).toHaveValue('A short workflow check, not a research conclusion.');await page.locator('[data-writeup=findings]').fill('Revised interpretation');await page.locator('[data-si=report-publish]').click();await expect(page.locator('.si-page')).toContainText('Write-up frozen');
- await page.locator('[data-si=studies]').click();await page.locator('[data-si=study-open]').filter({hasText:'Browser chronological study'}).click();await page.locator('[data-si=template-save-form]').click();await page.locator('[data-template=name]').fill('Reusable browser recipe');await page.locator('[data-si=template-save]').click();await page.locator('[data-si=template-use]').click();await expect(page.locator('[data-study=cases]')).toHaveValue(/environment_id/);await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText('Reusable browser recipe / new edition');await expect(page.locator('[data-si=period-play]')).toHaveCount(0);
- await page.locator('[data-si=compare]').click();for(const name of ['Browser chronological study','Reusable browser recipe / new edition'])await page.locator('.si-check').filter({hasText:name}).locator('[data-compare-study]').check();await expect(page.locator('[data-compare-study]:checked')).toHaveCount(2);
+ await page.locator('[data-si=studies]').click();await page.getByRole('row').filter({hasText:studyName}).locator('[data-si=study-open]').click();await page.locator('[data-si=template-save-form]').click();await page.locator('[data-template=name]').fill(templateName);await page.locator('[data-si=template-save]').click();await page.getByRole('button',{name:templateName,exact:true}).click();await expect(page.locator('[data-study=cases]')).toHaveValue(/environment_id/);await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText(templateName+' / new edition');await expect(page.locator('[data-si=period-play]')).toHaveCount(0);
+ await page.locator('[data-si=compare]').click();for(const name of [studyName,templateName+' / new edition'])await page.locator('.si-check').filter({hasText:name}).locator('[data-compare-study]').check();await expect(page.locator('[data-compare-study]:checked')).toHaveCount(2);
  await page.locator('[data-si=compare-build]').click();await expect(page.locator('.si-page')).toContainText('1 complete / 2 declared');
  await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'build/siting-comparison-mobile.png'});

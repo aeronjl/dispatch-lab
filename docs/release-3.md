@@ -1,6 +1,6 @@
 # Release 3: comparative autonomy research platform
 
-Status: implementation delivered; final software qualification in progress.
+Status: software implementation delivered and qualified within the recorded scope.
 The [implementation guide](learning-and-policies.md) describes the usable workflow,
 algorithm coverage and boundaries. The [release report](../research/release-3/report.html)
 records verification and the remaining external gates. The [roadmap](roadmap.md)
