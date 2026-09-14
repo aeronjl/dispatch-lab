@@ -1,0 +1,60 @@
+
+> test:browser
+> playwright test tests/browser/service-economics.spec.cjs --grep service cost|repricing keeps|price editor
+
+
+Running 3 tests using 1 worker
+
+(node:22085) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/service-economics.spec.cjs:6:1 › service cost views reveal original prices and return to the same service context (2.1s)
+  ✓  2 tests/browser/service-economics.spec.cjs:13:1 › repricing keeps actions and original service identity; blank rates stay unpriced (7.6s)
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/ui.py", line 943, in price_callback
+[WebServer]     service_prices = service_prices_from_values(values, result["config"])
+[WebServer]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/ui.py", line 707, in service_prices_from_values
+[WebServer]     return validate(data) if enabled else None
+[WebServer]            ^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/service_economics.py", line 167, in validate
+[WebServer]     AssetPrice(**item)
+[WebServer]   File "<string>", line 17, in __init__
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/service_economics.py", line 57, in __post_init__
+[WebServer]     amount(
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/service_economics.py", line 32, in amount
+[WebServer]     raise ValueError(f"{name} must be nonnegative")
+[WebServer] ValueError: capital_eur must be nonnegative
+[WebServer] 
+[WebServer] The above exception was the direct cause of the following exception:
+[WebServer] 
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/gradio/queueing.py", line 882, in process_events
+[WebServer]     response = await route_utils.call_process_api(
+[WebServer]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/gradio/route_utils.py", line 410, in call_process_api
+[WebServer]     output = await app.get_blocks().process_api(
+[WebServer]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/gradio/blocks.py", line 2330, in process_api
+[WebServer]     result = await self.call_function(
+[WebServer]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/gradio/blocks.py", line 1690, in call_function
+[WebServer]     prediction = await anyio.to_thread.run_sync(  # type: ignore
+[WebServer]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+[WebServer]     return await get_async_backend().run_sync_in_worker_thread(
+[WebServer]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+[WebServer]     return await future
+[WebServer]            ^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+[WebServer]     result = context.run(func, *args)
+[WebServer]              ^^^^^^^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/.venv/lib/python3.12/site-packages/gradio/utils.py", line 1114, in wrapper
+[WebServer]     response = f(*args, **kwargs)
+[WebServer]                ^^^^^^^^^^^^^^^^^^
+[WebServer]   File "/Users/aeron/sota/dispatch-lab/methane/ui.py", line 946, in price_callback
+[WebServer]     raise gr.Error(str(exc)) from exc
+[WebServer] gradio.exceptions.Error: 'capital_eur must be nonnegative'
+  ✓  3 tests/browser/service-economics.spec.cjs:21:1 › price editor reveals one asset at a time and provision excludes duplicate ownership (3.2s)
+
+  3 passed (27.5s)

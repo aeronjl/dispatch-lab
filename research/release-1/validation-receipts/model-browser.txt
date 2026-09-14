@@ -1,0 +1,35 @@
+
+> test:browser
+> playwright test tests/browser/service-model.spec.cjs tests/browser/model.spec.cjs
+
+
+Running 23 tests using 1 worker
+
+(node:8495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/model.spec.cjs:13:1 › model essay reconciles battery, resets, and returns to the same inspector (2.8s)
+  ✓   2 tests/browser/model.spec.cjs:23:1 › all twelve model topics calculate and expose their assumptions and evidence (13.0s)
+  ✓   3 tests/browser/model.spec.cjs:36:1 › model missing data and infeasible inputs retain labelled previous values (1.8s)
+  ✓   4 tests/browser/model.spec.cjs:41:1 › choosing a model topic keeps focus inside the workspace for immediate Escape (1.3s)
+  ✓   5 tests/browser/model.spec.cjs:49:1 › model reading on narrow screens keeps example inline and controls accessible (1.5s)
+  ✓   6 tests/browser/model.spec.cjs:57:1 › model response generation rejects late calculations after reset and topic changes (2.1s)
+  ✓   7 tests/browser/model.spec.cjs:63:1 › isolated model comparison cancels and can calculate again (3.9s)
+  ✓   8 tests/browser/model.spec.cjs:68:1 › model recorded trace distinguishes legacy explanation from current model (1.3s)
+  ✓   9 tests/browser/model.spec.cjs:73:1 › model simple examples meet the interaction budget (6.1s)
+  ✓  10 tests/browser/model.spec.cjs:83:1 › model essay artwork remains stable (1.5s)
+  -  11 tests/browser/model.spec.cjs:88:1 › model learning stays responsive while a comparative batch runs
+  ✓  12 tests/browser/model.spec.cjs:102:1 › every essay control has a calculated or explicit invalid result and resets (31.9s)
+  ✓  13 tests/browser/model.spec.cjs:116:1 › keyboard learning preserves the originating hour and controller (2.4s)
+  -  14 tests/browser/model.spec.cjs:121:1 › new archive exposes original model assumptions and calculation identities
+  -  15 tests/browser/model.spec.cjs:126:1 › saved model report opens from portable playback with the network disabled
+  ✓  16 tests/browser/service-model.spec.cjs:11:59 › service essay cleaning calculates, changes, resets and traces (2.0s)
+  ✓  17 tests/browser/service-model.spec.cjs:11:59 › service essay inspection calculates, changes, resets and traces (2.1s)
+  ✓  18 tests/browser/service-model.spec.cjs:11:59 › service essay recovery calculates, changes, resets and traces (21.8s)
+  ✓  19 tests/browser/service-model.spec.cjs:11:59 › service essay charging calculates, changes, resets and traces (7.3s)
+  ✓  20 tests/browser/service-model.spec.cjs:11:59 › service essay logistics calculates, changes, resets and traces (1.8s)
+  ✓  21 tests/browser/service-model.spec.cjs:11:59 › service essay service_costs calculates, changes, resets and traces (1.9s)
+  ✓  22 tests/browser/service-model.spec.cjs:11:59 › service essay service_uncertainty calculates, changes, resets and traces (1.7s)
+  ✓  23 tests/browser/service-model.spec.cjs:23:1 › service essays are accessible on narrow screens and reset supersedes late input (2.6s)
+
+  3 skipped
+  20 passed (2.2m)

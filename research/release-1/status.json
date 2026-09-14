@@ -1,0 +1,40 @@
+{
+  "version": "dispatch-lab/release-status/1",
+  "release": 1,
+  "status": "complete",
+  "completed_at": "2026-09-14T01:57:50.238473+00:00",
+  "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+  "implementation_commits": [
+    "919679dde7c8127853ffcc673a58e311bb5da68b",
+    "6d1bf958bf4da6fa1d5a161f9ac6daffcb22dde4"
+  ],
+  "gates": {
+    "recovery_contract": "Version 5 implemented, independently checked, versions 1\u20134 preserved",
+    "qualification": "104 completed cases / 8352 intervals; outcomes and numerical variation retained",
+    "living_model": "20 executable topics with seven new service essays and original calculation links",
+    "regression": "1089 final-source Python tests; scoped browser, JavaScript, documentation, mutation, formal and performance receipts",
+    "preservation": "Final-source 36-hour offline archive, 4270 independent checks, source rerun with no interval differences; offline release report",
+    "communication": "Guided investigation, agent-led comprehension record, evidence gaps and updated R2/R3 roadmap"
+  },
+  "next_release": 2,
+  "not_started": [
+    "Release 2 deployment and service lifecycle",
+    "Release 3 comparative learning and integrated product qualification"
+  ],
+  "material_findings": [
+    "18 of 40 original unconfirmed recovery cases now confirm; 20 remain unconfirmed and two end impaired.",
+    "Two January numerical executions yield less production; low-power observability and time-limited solving require further comparison.",
+    "Control seeds in the uncertainty-free fixture are not independent environmental samples.",
+    "Original frozen-study assumption bindings remain stale; dated review does not retroactively replace original evidence.",
+    "Full service-heavy repricing remains about eight seconds.",
+    "No new empirical calibration; unsupported hardware capabilities remain unavailable."
+  ],
+  "publication": {
+    "report.html": "470d0d7e1e091aecd34912dee2b2c9ae3e178e1446f0ac21285f80428a0c2420",
+    "report.json": "49c6a55d4d8ed54d92a28150a8dc9d071c4830994ffa27ed5c1c05a9158d12d0",
+    "validation.json": "d43141a912785790cc0945768aa3221e4d54c1614afc9a4262ad875575532576",
+    "publication-check.json": "8dfe3f0d17bd6d6c2e4bf8a655090f3b1c3dc1f50480a067245358bc318fdb84",
+    "frozen-source-review.json": "850ddfaf8ed9d3b2e514d4fcc371b40580418d8cdd9db469f650adaa44bedeed",
+    "recovery-audit.json": "0a42b913f307e61d10e909410b09e7bb0e703ed09b1fb8ca6579790210d055a4"
+  }
+}

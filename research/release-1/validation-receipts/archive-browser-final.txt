@@ -1,0 +1,16 @@
+
+> test:browser
+> playwright test --grep new archive exposes|saved model report|component and repriced|portable offline bundle|saved service snapshot
+
+
+Running 5 tests using 1 worker
+
+(node:28377) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/model.spec.cjs:121:1 › new archive exposes original model assumptions and calculation identities (723ms)
+  ✓  2 tests/browser/model.spec.cjs:126:1 › saved model report opens from portable playback with the network disabled (411ms)
+  ✓  3 tests/browser/platform.spec.cjs:185:1 › component and repriced cost lineage stay behind disclosures (2.9s)
+  ✓  4 tests/browser/platform.spec.cjs:212:1 › portable offline bundle plays without network access (376ms)
+  ✓  5 tests/browser/taxonomy.spec.cjs:28:1 › saved service snapshot connects target, interface, capability, actor and support offline (610ms)
+
+  5 passed (17.6s)

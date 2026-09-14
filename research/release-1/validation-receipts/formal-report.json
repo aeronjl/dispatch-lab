@@ -1,0 +1,88 @@
+{
+  "scope": "Finite-state abstraction only; not continuous/implementation proof",
+  "spec_sha256": "a42ff399a51db40c711fa8604fe896e941c3e62e67579a308902a9fb747e688e",
+  "tlc_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "java": "openjdk version \"17.0.16\" 2025-07-15\nOpenJDK Runtime Environment Temurin-17.0.16+8 (build 17.0.16+8)\nOpenJDK 64-Bit Server VM Temurin-17.0.16+8 (build 17.0.16+8, mixed mode, sharing)\n",
+  "cases": [
+    {
+      "minimum_run": 1,
+      "passed": true,
+      "seconds": 1.1396612919634208,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-1.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-1",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 122 and seed -2108767385245503089 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 16003] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:04:39)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-09-14 02:04:39.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 1.1E-13\n16385 states generated, 128 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 3.\nThe average outdegree of the complete state graph is 0 (minimum is 0, the maximum 31 and the 95th percentile is 0).\nFinished in 00s at (2026-09-14 02:04:39)\n"
+    },
+    {
+      "minimum_run": 2,
+      "passed": true,
+      "seconds": 0.9826215839711949,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-2.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-2",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 99 and seed 2244082666130811233 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 16006] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:04:40)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-09-14 02:04:40.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 1.8E-13\n20481 states generated, 160 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 4.\nThe average outdegree of the complete state graph is 1 (minimum is 0, the maximum 31 and the 95th percentile is 0).\nFinished in 00s at (2026-09-14 02:04:40)\n"
+    },
+    {
+      "minimum_run": 3,
+      "passed": true,
+      "seconds": 0.994471792015247,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-3.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-3",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 107 and seed -5164683416337295888 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 16008] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:04:41)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-09-14 02:04:41.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 2.5E-13\n24577 states generated, 192 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 5.\nThe average outdegree of the complete state graph is 1 (minimum is 0, the maximum 31 and the 95th percentile is 0).\nFinished in 00s at (2026-09-14 02:04:41)\n"
+    },
+    {
+      "minimum_run": 4,
+      "passed": true,
+      "seconds": 0.9917421670397744,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-4.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-4",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 48 and seed -7943555888017522246 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 16010] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:04:42)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-09-14 02:04:42.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 3.5E-13\n28673 states generated, 224 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 6.\nThe average outdegree of the complete state graph is 1 (minimum is 0, the maximum 31 and the 95th percentile is 0).\nFinished in 00s at (2026-09-14 02:04:42)\n"
+    }
+  ]
+}

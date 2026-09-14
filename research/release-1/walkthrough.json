@@ -1,0 +1,37 @@
+{
+  "version": "release-one-comprehension/1",
+  "method": "Agent-led mechanism and browser walkthrough; not participant or operator research",
+  "checks": [
+    {
+      "question": "Does a completed repair mean recovered capacity?",
+      "observation": "No. The recovery example shows the whole mission receipt, separate appointment, remaining increments, observed capacity and escalation."
+    },
+    {
+      "question": "Does cleaning all drawn cells repair a damaged panel?",
+      "observation": "No. Treated loose/adhered optical material changes; permanent damage remains. Full mission support is separately explained."
+    },
+    {
+      "question": "Can a late inspection affect an earlier decision?",
+      "observation": "No. The decision clock hides ineligible measurement values; retrospective fixture details are explicitly separate."
+    },
+    {
+      "question": "Can a rover spend electricity before charging completes?",
+      "observation": "No. The charging example uses beginning inventory for use and credits bus input at interval end."
+    },
+    {
+      "question": "Should the three service cost totals be added?",
+      "observation": "No. Allocation, decision economics and expenditure are distinct views. The fixed-quantity repricing check preserves actions."
+    },
+    {
+      "question": "Does numerical reproducibility imply field reliability?",
+      "observation": "No. Source identities, repeated solves, uncertainty assumptions and absent equipment measurements have separate scopes."
+    }
+  ],
+  "misunderstandings_found": [
+    "Initial context switch left focus on a hidden control, so Escape could miss the workspace. Fixed and browser-tested.",
+    "A generic chart labelled sensor channels as first/last intervals. Service charts now name their actual channels/categories.",
+    "An ineligible inspection initially retained future raw readings in its chart. Fixed: public charts show no eligible readings; retrospective fixture inputs remain explicitly separate.",
+    "At an inactive recovery boundary, the schematic initially printed an undefined deadline. It now states that no recovery obligation is active."
+  ],
+  "remaining": "Actual participant comprehension research remains for Release 3; these findings are engineering review observations."
+}

@@ -1,0 +1,263 @@
+{
+  "version": "release-one-validation/1",
+  "assembled_at": "2026-09-14T01:52:03.950444+00:00",
+  "release_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+  "release_revision": "6d1bf958bf4da6fa1d5a161f9ac6daffcb22dde4",
+  "records": [
+    {
+      "name": "Final Python regression",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "1,089 passed; three warnings. Stable captured application content throughout the suite. Dirty Git flag includes the uncommitted research directory.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/pytest.xml",
+          "sha256": "5f516d9eb4d494c61aaf5ad35ed8dedbc42de2aca230738d5d3668d9127e00e9",
+          "bytes": 154438
+        },
+        {
+          "path": "validation-receipts/python-final.txt",
+          "sha256": "94441e97e9ad3d474016f815eb84920af9984f9be3da87758b37484d40375d4f",
+          "bytes": 2712
+        },
+        {
+          "path": "validation-receipts/source-under-test.json",
+          "sha256": "3de6c84a6dc78bb33d6c31d90cfd472eb371ffbf7f09087873533c114ac076ea",
+          "bytes": 32930
+        }
+      ]
+    },
+    {
+      "name": "Documentation evidence",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "All twenty topics passed with source_matches true. This does not calibrate assumptions.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/documentation-evidence.json",
+          "sha256": "fa7653a68cadad0900108fd7656efe3675f647b4cf3fcd17494bb4288adc43da",
+          "bytes": 19376
+        }
+      ]
+    },
+    {
+      "name": "Final JavaScript regression",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "85 passed. No skipped checks.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/javascript.txt",
+          "sha256": "7b8b2bcf74467d4d5c2c7f911b4fc5d6c5005f5faa44473cd794fb9e5894b5f1",
+          "bytes": 7643
+        }
+      ]
+    },
+    {
+      "name": "Full browser regression",
+      "execution_source": "8486b4546cbc692df21f7f47acee0b0910dc4133d6769f85423fdbf43d833751",
+      "outcome": "passed",
+      "scope": "97 passed, 19 fixture-specific skips. Original plant, solar and existing Model screenshot baselines unchanged. Subsequent reader estimate fix has targeted current-source coverage; this is not labelled as a second full final-source run.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/browser-full.txt",
+          "sha256": "fbc5b9d78cd4e1b0f2286fa1ee0a04d5e60b1e3f5ff28512b1b5b42d9dc646e4",
+          "bytes": 16036
+        }
+      ]
+    },
+    {
+      "name": "New service Model interactions",
+      "execution_source": "8486b4546cbc692df21f7f47acee0b0910dc4133d6769f85423fdbf43d833751",
+      "outcome": "passed",
+      "scope": "All 29 controls exercised; reset, error, request supersession, context, keyboard and narrow views checked separately by browser cases. Five simple topics have twenty measured interactions each.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/service-interaction.json",
+          "sha256": "859dc0d2ae03bb52553e28368c916065f0af13216c914df79799e89fe2b533e9",
+          "bytes": 11595
+        },
+        {
+          "path": "validation-receipts/model-browser.txt",
+          "sha256": "328122fa3c8656da07256f3166ce9ac29acad35c06143ab52b825844d98f7f69",
+          "bytes": 3204
+        }
+      ]
+    },
+    {
+      "name": "Current archive and offline UI",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "Five passed: original snapshot, component/cost lineage, offline Model, playback, and the original taxonomy service fixture. The taxonomy fixture deliberately keeps its historical identity.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/archive-browser-final.txt",
+          "sha256": "4bcade67ffe330514c94611edce828dff95b10f8d13d201073911f5abd757540",
+          "bytes": 1005
+        }
+      ]
+    },
+    {
+      "name": "Original decision estimate and repricing",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "Current reader of the earlier 8486 archive: boundary 20 means decision interval 19. Original estimate reconciles; repricing preserves physical display. About 8 seconds for the whole cost report, outside the simple-example latency claim.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/recorded-service-ui.json",
+          "sha256": "e3d9c518deb0f20eed5e00bb0fc5b2df2a824cbb8734fda43126ba7543bb72b1",
+          "bytes": 617
+        }
+      ]
+    },
+    {
+      "name": "Specialised study browser fixtures",
+      "execution_source": "8486b4546cbc692df21f7f47acee0b0910dc4133d6769f85423fdbf43d833751",
+      "outcome": "passed",
+      "scope": "12 field/Sites/uncertainty checks, two computation checks and three original service-accounting checks. Each uses its declared fixture; these counts are not additional numerical research cases.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/study-browser.txt",
+          "sha256": "424e1bc69fb012f1c22e5238005384cc22f9b6e25b11a22188075508245b5676",
+          "bytes": 2100
+        },
+        {
+          "path": "validation-receipts/computation-browser.txt",
+          "sha256": "bc47da9fe3d1cd1b563d1774589559bbd54e59e694fed180f461d9d75519450a",
+          "bytes": 606
+        },
+        {
+          "path": "validation-receipts/service-price-browser.txt",
+          "sha256": "899345bf6c606e1ac6fda561fbfe96f07424ba20fb70a5cc210b67c5ed92cda0",
+          "bytes": 4220
+        }
+      ]
+    },
+    {
+      "name": "Interactive and backend performance",
+      "execution_source": "8486b4546cbc692df21f7f47acee0b0910dc4133d6769f85423fdbf43d833751",
+      "outcome": "passed",
+      "scope": "240-hour active-batch reference: solar preview p95 147.8 ms/render 2.2 ms; battery learning p95 117.8 ms/render 0.6 ms. Backend payload, cached preview and lineage pass their separate budgets. Current release retains the same browser assets; source identity is not relabelled.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/solar-performance.json",
+          "sha256": "3dc5ac6878aa771753e6868e08bae39fe0ea39cf29d78ff0f11bc81c4825919e",
+          "bytes": 1077
+        },
+        {
+          "path": "validation-receipts/battery-performance.json",
+          "sha256": "22fe5f8463025b85f0add47329a4f632e47d78b0022ea62afd0d180e86ebe4d9",
+          "bytes": 778
+        },
+        {
+          "path": "validation-receipts/performance-gates.json",
+          "sha256": "b932d223d48f0e3433a71648006251854d788d98392cb9b8807be53482584bfd",
+          "bytes": 3627
+        },
+        {
+          "path": "validation-receipts/performance-browser.txt",
+          "sha256": "42bc7dbeeb7dcc54ff1d49e430a47e6480a823f5188593138365850c2834205f",
+          "bytes": 539
+        }
+      ]
+    },
+    {
+      "name": "Mutation sensitivity",
+      "execution_source": "Applicable file versions retained in the mutation outputs; not a whole-source proof",
+      "outcome": "passed",
+      "scope": "Six of six deliberate defects detected: chemistry, battery loss, planning efficiency, thermal sign, minimum run and forecast look-ahead.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/mutations.json",
+          "sha256": "e37995f3b621c172494f67e4594cfc0d6bbbb1a4cc90fe88e9614e2c2a711abf",
+          "bytes": 11233
+        }
+      ]
+    },
+    {
+      "name": "Bounded formal verification",
+      "execution_source": "TLA specification SHA256 recorded in receipt",
+      "outcome": "passed",
+      "scope": "All four finite minimum-run abstractions passed. This does not prove the continuous implementation or physical realism.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/formal-report.json",
+          "sha256": "ad58bac8b4ae4f998d4010887ad1d57d73a27b60bb21991bd8c6427965b56b10",
+          "bytes": 9443
+        }
+      ]
+    },
+    {
+      "name": "Final source offline reproduction",
+      "execution_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+      "outcome": "passed",
+      "scope": "36-hour version-5 archive: inventory integrity and 4,270 independent checks passed without the application environment. Restored original-source numerical run has zero differing intervals and zero methane/cost delta in this execution.",
+      "artifacts": [
+        {
+          "path": "validation-receipts/offline-check.json",
+          "sha256": "03568956116c03c00d795b9bed0d929b8a91e2b5c53840d0e375c3493883df84",
+          "bytes": 478
+        },
+        {
+          "path": "validation-receipts/recomputation.json",
+          "sha256": "00119a49d9134fb1d7356b2dea7642d8298b3c9c36745d114619509211f59cb6",
+          "bytes": 1183
+        }
+      ]
+    }
+  ],
+  "retained_attempts": [
+    {
+      "explanation": "Five passed, three failed. Wrong-era service/taxonomy fixtures and a five-second full-repricing expectation; correct fixtures and the explicitly measured full-report path subsequently passed.",
+      "artifact": {
+        "path": "validation-receipts/initial-mixed-archive-browser.txt",
+        "sha256": "ba67b766585b1e4ea209382a74d8507618c33b9e34d8d671ef82072348a481d4",
+        "bytes": 384466
+      }
+    },
+    {
+      "explanation": "Initial sandbox disallowed the local Java RMI socket. Same scoped checker passed with authorised local execution.",
+      "artifact": {
+        "path": "validation-receipts/formal-sandbox-attempt.json",
+        "sha256": "af5d5a6c22898bac5261f9b96515f60df7464f5ad3ad5f3a706f959e7b1ded61",
+        "bytes": 8550
+      }
+    },
+    {
+      "explanation": "Initial receipt labelled a playhead boundary as its interval index; corrected receipt explicitly preserves boundary 20 and interval 19.",
+      "artifact": {
+        "path": "validation-receipts/recorded-service-ui-initial.json",
+        "sha256": "9ec222e12cd713e9fcebeb8856d12638f32e623b523db905de8b17c3be63a852",
+        "bytes": 590
+      }
+    }
+  ],
+  "other_initial_findings": [
+    "Initial full regression: 1,081 passed and four freshness/source failures while edits were still active. Stable-source reruns passed 1,086, then 1,088 after probe bounds, then 1,089 after original-estimate tracing.",
+    "Review found future raw inspection readings in a teaching chart, categorical channels labelled as intervals, a hidden focused control and an undefined inactive deadline; fixed and verified.",
+    "First targeted original-estimate regression used a teaching list instead of a run fixture; corrected to an actual recorded two-hour execution before final regression."
+  ],
+  "numerical_programme": {
+    "cases": 104,
+    "hours": 8352,
+    "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+    "chronological_checks": "All 104 passed independent Decimal physical/causal chronology checks",
+    "recovery_checks": 57247,
+    "full_single_period_reference_checks": 778718,
+    "full_single_period_cases": 95,
+    "continuous_cases": 9,
+    "audit": "recovery-audit.json"
+  },
+  "limits": [
+    "The frozen numerical programme retains stale original assumption-review bindings. Its separately dated source review is not original evidence; final application metadata is fresh.",
+    "No new empirical calibration, capability certification, annual return or unseen-weather reliability claim.",
+    "Actual participant comprehension remains Release 3. Current walkthrough is agent-led.",
+    "Simple-input performance is fixture-specific. Full report repricing remains about eight seconds; optimiser examples use separate progress/cancellation.",
+    "Large source capsules, runs and bundles remain local and require durable backup separately from Git."
+  ],
+  "lint": {
+    "status": "passed",
+    "formatted_files": 346,
+    "command": ".venv/bin/ruff check .; .venv/bin/ruff format --check .; git diff --check"
+  }
+}

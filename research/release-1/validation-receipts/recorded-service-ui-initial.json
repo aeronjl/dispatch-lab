@@ -1,0 +1,10 @@
+{
+  "version": "release-recorded-service-ui/1",
+  "recorded_estimate": "battery_kwh\t400\nh2_kg\t3.182\nco2_kg\t155.5\ntemperature_c\t329.219\nelectrolyser_on\ttrue\nreactor_on\ttrue\ncommitment_hours\t0",
+  "interval": 20,
+  "original_policy": "scheduled-load-tests/5",
+  "repricing_ms": 9193,
+  "physical_display_preserved": true,
+  "errors": [],
+  "scope": "Original version-5 archive rendered by current reader; repricing waits for the full report and retains its physical display and original price identity. Full-report repricing is measured separately from simple example latency."
+}

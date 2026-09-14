@@ -63,3 +63,4 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Siting and production forecasting design](siting-design/README.md)
 - [Uncertainty and autonomy](uncertainty-autonomy/report.html)
 - [Autonomous operation across sites: matched qualification](autonomy-qualification/report.html)
+- [Release 1: qualified reference autonomy](release-1/report.html)

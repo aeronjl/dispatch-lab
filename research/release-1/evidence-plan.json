@@ -1,0 +1,594 @@
+{
+  "schema_version": "autonomy-evidence-acquisition/1",
+  "scope": "Conditional simulation sensitivities prioritise evidence; they do not fit real equipment or establish realistic probability distributions.",
+  "items": [
+    {
+      "title": "Recovery is an operating test, not just a completed repair",
+      "parameters": [
+        "sensors.confirmation_hours",
+        "sensors.noise_fraction",
+        "recovery_policy.maximum_wait_hours"
+      ],
+      "reason": "The original case restored physical capacity long before the controller confirmed it. A successful procedure and verified production capability require different evidence.",
+      "collect": "Time-aligned commanded and delivered electrical power, independently metered hydrogen inventory/flow, isolation state, calibration/reference checks, intervention start/end, and observed post-service tests. Retain failed and censored tests.",
+      "boundary": "Independent numerical agreement is not validation of this sensor chain. Inactive operation remains insufficient evidence."
+    },
+    {
+      "title": "Compatible remedies and their failure modes",
+      "parameters": [
+        "field_operations.repair_success_probability",
+        "faults.capacity_cause"
+      ],
+      "reason": "Changing remedy effectiveness can change whether continued autonomous scheduling is useful. A scalar probability cannot establish hardware compatibility.",
+      "collect": "A cause-specific fault/remedy matrix from the equipment provider; operating and isolation prerequisites; actual attempts with outcomes, replacement identities, post-repair observations and unresolved cases.",
+      "boundary": "Zero-success and certain-success runs bracket declared scenarios. They are not a confidence interval or a measured reliability range."
+    },
+    {
+      "title": "Crew access, spares and response time",
+      "parameters": [
+        "service_system.crew_response_lead_hours",
+        "service_system.crew_travel_hours",
+        "field_operations.service_kits"
+      ],
+      "reason": "The original fixture assumes immediate crew response, a short journey and readily available module kits. Those assumptions strongly condition the value of recovery planning.",
+      "collect": "For one candidate site per region: provider quotations, service hours and callout rules; travel and mobilisation logs; spare availability, lead times, delivery costs and access restrictions. Separate dispatch delay, travel, work and verification.",
+      "boundary": "Regional anchor coordinates are not accessible deployment parcels. No vendor service-level commitment has been supplied."
+    },
+    {
+      "title": "CO\u2082 logistics set a production ceiling",
+      "parameters": [
+        "plant.initial_co2_kg",
+        "plant.co2_delivery_kg",
+        "plant.co2_delivery_every_hours"
+      ],
+      "reason": "The 72-hour fixture supplies at most 1,100 kg CO\u2082, enough for 400 kg methane; the seven-day fixture supplies 2,300 kg, enough for about 836.4 kg methane. Several cases reach these ceilings, hiding the value of additional power or faster recovery.",
+      "collect": "A site-specific delivered CO\u2082 specification, usable batch size, cadence, supply interruptions, minimum order and logistics cost; distinguish contracted delivery capability from the current chosen scenario. Compare changed supply scenarios with the original plant and controller policies held fixed.",
+      "boundary": "The fixture is externally supplied CO\u2082, not direct-air capture. This is an inventory/material constraint, not a measured vendor supply limit."
+    },
+    {
+      "title": "Reactor heat retention and starting requirements",
+      "parameters": [
+        "plant.thermal_capacity_kwh_per_k",
+        "plant.heat_loss_kw_per_k"
+      ],
+      "reason": "Thermal inertia changes the value of looking ahead and the timing of energy reserves. The doubled thermal-capacity sensitivity is explicitly exploratory.",
+      "collect": "Instrumented warm-up and cool-down sequences across ambient temperatures and operating modes, with heater/cooling input, reactor temperature and methane rate. Fit on one sequence and evaluate on independent sequences.",
+      "boundary": "The existing 0.3 kWh/K reference and its sensitivity values are unmeasured assumptions, not a calibrated reactor range."
+    },
+    {
+      "title": "Forecast error and actual array output",
+      "parameters": [
+        "weather.loss_fraction",
+        "weather.noct_c",
+        "weather.temperature_coefficient"
+      ],
+      "reason": "An irradiance forecast does not directly establish usable DC or recovery-test power. The programme keeps archive issues, publication times and forecast stress separate.",
+      "collect": "Independent irradiance, ambient/module temperature and DC power with clipping/curtailment flags; local issue-time forecasts and observations across seasons. Preserve gap/quality flags and calibration periods before choosing held-out windows.",
+      "boundary": "ERA5 is reanalysis. One previously used year and an assumed +50% forecast challenge do not identify error-tail probabilities or interannual uncertainty."
+    },
+    {
+      "title": "Economic value and site feasibility",
+      "parameters": [
+        "costs.methane_eur_per_kg",
+        "costs.co2_eur_per_kg",
+        "service_economics"
+      ],
+      "reason": "Changing prices can change the preferred operating objective even with an unchanged physical trace. Short conditional repair cases cannot identify annual ownership value.",
+      "collect": "Dated asset and service quotations, land/access evidence, permitted water/CO2 supply terms, and an explicit acceptance/offtake scenario. Preserve whether each cost is fixed, usage-related or paid per event.",
+      "boundary": "Gross methane is not certified delivered product. No income, lifetime fault rate or site rights are inferred from public map layers."
+    }
+  ],
+  "registry": {
+    "path": "docs/assumption-review.json",
+    "sha256": "cd2b9a95f7c846feec537c016dce894b5b2121f0fb6397c01d9aa5b6852059f2",
+    "edition": "2026-09-13 / 9"
+  },
+  "parameter_records": [
+    {
+      "id": "parameter:plant.thermal_capacity_kwh_per_k",
+      "path": "plant.thermal_capacity_kwh_per_k",
+      "label": "thermal capacity kwh per k",
+      "group": "thermal",
+      "category": "equipment",
+      "unit": "kWh/K",
+      "reference_default": 0.3,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        0.15,
+        0.3,
+        0.6
+      ],
+      "sensitivity_scope": "Exploratory half/double thermal inertia; no measured range."
+    },
+    {
+      "id": "parameter:plant.heat_loss_kw_per_k",
+      "path": "plant.heat_loss_kw_per_k",
+      "label": "heat loss kw per k",
+      "group": "thermal",
+      "category": "equipment",
+      "unit": "kW/K",
+      "reference_default": 0.08,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        0.04,
+        0.08,
+        0.16
+      ],
+      "sensitivity_scope": "Exploratory half/double heat loss; no measured range."
+    },
+    {
+      "id": "parameter:costs.co2_eur_per_kg",
+      "path": "costs.co2_eur_per_kg",
+      "label": "co2 eur per kg",
+      "group": "economics",
+      "category": "economic",
+      "unit": "EUR/kg",
+      "reference_default": 0.15,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        0.05,
+        0.15,
+        0.3
+      ],
+      "sensitivity_scope": "Delivered-feedstock price stress; no supplier quotation."
+    },
+    {
+      "id": "parameter:costs.methane_eur_per_kg",
+      "path": "costs.methane_eur_per_kg",
+      "label": "methane eur per kg",
+      "group": "economics",
+      "category": "economic",
+      "unit": "EUR/kg",
+      "reference_default": 1,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        0.5,
+        1,
+        2
+      ],
+      "sensitivity_scope": "Decision-price stress, not a market forecast."
+    },
+    {
+      "id": "parameter:sensors.noise_fraction",
+      "path": "sensors.noise_fraction",
+      "label": "noise fraction",
+      "group": "sensing",
+      "category": "equipment",
+      "unit": "fraction",
+      "reference_default": 0.02,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        0.01,
+        0.02,
+        0.05
+      ],
+      "sensitivity_scope": "Exploratory scale only; does not repair the inventory metrology model."
+    },
+    {
+      "id": "parameter:sensors.confirmation_hours",
+      "path": "sensors.confirmation_hours",
+      "label": "confirmation hours",
+      "group": "sensing",
+      "category": "policy",
+      "unit": "h",
+      "reference_default": 2,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:weather.loss_fraction",
+      "path": "weather.loss_fraction",
+      "label": "loss fraction",
+      "group": "solar",
+      "category": "equipment",
+      "unit": "fraction",
+      "reference_default": 0.14,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:weather.noct_c",
+      "path": "weather.noct_c",
+      "label": "noct c",
+      "group": "solar",
+      "category": "equipment",
+      "unit": "\u00b0C",
+      "reference_default": 45,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        45,
+        49
+      ],
+      "sensitivity_scope": "Two SAM mounting reference assumptions; not a fitted interval for this array."
+    },
+    {
+      "id": "parameter:weather.temperature_coefficient",
+      "path": "weather.temperature_coefficient",
+      "label": "temperature coefficient",
+      "group": "solar",
+      "category": "equipment",
+      "unit": "1/K",
+      "reference_default": -0.004,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance.",
+      "sensitivity_values": [
+        -0.0047,
+        -0.004,
+        -0.0035
+      ],
+      "sensitivity_scope": "Exploratory coefficient values spanning old/reference module assumptions; choose a single matched module in a real design."
+    },
+    {
+      "id": "parameter:faults.capacity_cause",
+      "path": "faults.capacity_cause",
+      "label": "capacity cause",
+      "group": "faults",
+      "category": "scenario",
+      "unit": "configuration",
+      "reference_default": "equipment-damage",
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:field_operations.service_kits",
+      "path": "field_operations.service_kits",
+      "label": "service kits",
+      "group": "support",
+      "category": "design",
+      "unit": "count or declared dimensionless value",
+      "reference_default": 2,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:field_operations.repair_success_probability",
+      "path": "field_operations.repair_success_probability",
+      "label": "repair success probability",
+      "group": "maintenance",
+      "category": "equipment",
+      "unit": "fraction",
+      "reference_default": 0.95,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:service_system.crew_travel_hours",
+      "path": "service_system.crew_travel_hours",
+      "label": "crew travel hours",
+      "group": "support",
+      "category": "equipment",
+      "unit": "h",
+      "reference_default": 1,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:service_system.crew_response_lead_hours",
+      "path": "service_system.crew_response_lead_hours",
+      "label": "crew response lead hours",
+      "group": "support",
+      "category": "equipment",
+      "unit": "h",
+      "reference_default": 2,
+      "evidence_status": "Unmeasured assumption",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:recovery_policy.maximum_wait_hours",
+      "path": "recovery_policy.maximum_wait_hours",
+      "label": "maximum wait hours",
+      "group": "control",
+      "category": "policy",
+      "unit": "h",
+      "reference_default": 12,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:plant.initial_co2_kg",
+      "path": "plant.initial_co2_kg",
+      "label": "initial co2 kg",
+      "group": "layout",
+      "category": "design",
+      "unit": "kg",
+      "reference_default": 500,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:plant.co2_delivery_kg",
+      "path": "plant.co2_delivery_kg",
+      "label": "co2 delivery kg",
+      "group": "gas-storage",
+      "category": "scenario",
+      "unit": "kg",
+      "reference_default": 300,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    },
+    {
+      "id": "parameter:plant.co2_delivery_every_hours",
+      "path": "plant.co2_delivery_every_hours",
+      "label": "co2 delivery every hours",
+      "group": "gas-storage",
+      "category": "scenario",
+      "unit": "h",
+      "reference_default": 24,
+      "evidence_status": "Chosen input",
+      "applicable_range": null,
+      "range_note": "Validation bounds only constrain accepted input; they are not evidence of plausible equipment performance."
+    }
+  ],
+  "unbound_paths": [
+    "service_economics"
+  ],
+  "group_evidence": {
+    "control": {
+      "title": "Objectives and planning approximations",
+      "mechanism": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted.",
+      "boundary": "Weights, priors, probe size, retries and risk budgets are policy choices. Optimality is bounded by information, terminal inventory treatment, candidate coverage and solver termination; model mismatch is separate.",
+      "next_data": "Choose service/production objectives and acceptable uncertainty; evaluate with frozen matched information, terminal inventories and held-out stress cases. Do not infer event probabilities from illustrative belief priors.",
+      "sources": [
+        "field-review"
+      ],
+      "evidence_status": "Policy choice and bounded approximation"
+    },
+    "economics": {
+      "title": "Prices, allocations and decision economics",
+      "mechanism": "Allocated ownership and max(calendar, usage) replacement allowances are separate from action-dependent inputs and wear. Repricing cannot change recorded actions.",
+      "boundary": "EUR defaults have no quotations, price year, location-specific tariffs or matched equipment scope. Purchased water is 12 L/kg H\u2082 versus 9 kg/kg reaction consumption; the additional treatment/handling allowance is not an independently tracked water process. Linear capacity scaling and wear proxies are scenario assumptions. No annual ROI can be inferred from short injected-fault windows.",
+      "next_data": "Matched installed quotes, utility/water/CO\u2082 contracts, service invoices and replacement records; explicit VAT, currency date, utilisation and equipment boundaries.",
+      "sources": [
+        "doe-pem",
+        "atb",
+        "field-review"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "faults": {
+      "title": "Fault lifecycle and incidence",
+      "mechanism": "Scheduled disturbances have declared causes; persistent faults remain until a compatible accepted intervention. Transient timing is explicit.",
+      "boundary": "Fault schedules and categorical causes are test scenarios, not estimated incidence, MTBF or a complete failure-mode analysis. A contact cannot uniquely diagnose all equipment faults.",
+      "next_data": "Cause-coded fleet/site logs with exposure hours, censored healthy intervals, downtime and repair outcomes. Preserve common-cause failures and seasonal effects.",
+      "sources": [
+        "field-review"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "maintenance": {
+      "title": "Reliability and routine maintenance",
+      "mechanism": "Routine work, replaceable stock and duty-related wear can be accounted for; hardware failures have explicit recovery paths.",
+      "boundary": "Fixed intervals, success probabilities and calendar lives are assumptions. Preventive maintenance is not a measured hazard reduction or a physical degradation model.",
+      "next_data": "Exposure-based failure histories and maintenance manuals for the selected equipment; separate scheduled maintenance, breakdown repair and capacity ageing.",
+      "sources": [
+        "field-review"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "sensing": {
+      "title": "Measurement uncertainty and diagnosis",
+      "mechanism": "Power and flow get seeded multiplicative noise. Tank noise scales with current production; battery, CO\u2082, temperature and hydrogen withdrawal are exact. Diagnosis compares tracking and mass-balance residuals.",
+      "boundary": "Tank noise becomes zero at zero production. Differencing inventory measurements needs an uncertainty/covariance budget; two samples and a 10%/3\u03c3 threshold do not establish a field false-alarm rate.",
+      "next_data": "Identify meters and independent reference channels; collect zero/span, drift, bias, covariance and time-synchronisation data over low and high flows. Validate diagnosis with blind held-out faults.",
+      "sources": [
+        "gum",
+        "uncertainty"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "solar": {
+      "title": "PV conversion and clipping",
+      "mechanism": "Hourly tilted irradiance drives a simple NOCT temperature relation and linear power coefficient. Reference PV caps at nameplate. Detailed sections use fixed 30% diffuse contribution, uniform shade and a separate converter.",
+      "boundary": "Nameplate is a reference rating, not by itself a physical output ceiling. Sections have no string mismatch, diode, wind or snow model. Generic losses, section soiling and service soiling need non-overlapping definitions.",
+      "next_data": "Select module, mounting, converter and loss ledger together. Obtain measured POA irradiance, cell/ambient temperature, wind and unclipped DC power; validate on different seasons.",
+      "sources": [
+        "sam-pv",
+        "pv-validation",
+        "soiling"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "support": {
+      "title": "Support system and access",
+      "mechanism": "Finite work time, shifts, inventory, transport, charging and returns can constrain service. Optional models declare which resources exist. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted. Optical coverage uses the actual job perform duration; completed-area brush consumption is checked directly against the resource ledger.",
+      "boundary": "Route traversal and interlocks are ideal abstractions; no obstacles, terrain, hazardous-area qualification or physical isolation dynamics. Durations, travel and supplier capacity are illustrative. Opt-in bounded-clock factors are persistent world assumptions. Full-support reservations, actual consumption, current-only outages and right-censored observations are distinct; no job-independent empirical duration population is claimed.",
+      "next_data": "Site layout and access survey, regional callout terms, task time/energy observations, stores policy, staffed support and communications availability. Do not combine incompatible hardware claims.",
+      "sources": [
+        "field-review"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "thermal": {
+      "title": "Reactor heat and operating envelope",
+      "mechanism": "One perfectly mixed temperature; constant inputs per hour; analytic heating, reaction heat, ambient heat loss and cooling. Production requires beginning and ending temperatures in band.",
+      "boundary": "C=0.3 kWh/K and UA=0.08 kW/K are unmeasured. No spatial hot spots, catalyst kinetics, feed sensible heat, pressure, conversion efficiency, condensation or purge. The 4-hour commitment is a scheduling assumption.",
+      "next_data": "Obtain reactor geometry/material masses, insulation and catalyst specifications; log heater power, ambient and multiple temperatures through controlled warm-up, soak and cool-down, then separate load-step validation.",
+      "sources": [
+        "nist-ch4",
+        "nist-co2",
+        "nist-water",
+        "rsc"
+      ],
+      "evidence_status": "Evidence gap"
+    },
+    "layout": {
+      "id": "layout",
+      "title": "Capacities and initial conditions",
+      "topics": [
+        "solar",
+        "battery",
+        "hydrogen",
+        "co2",
+        "electrolyser",
+        "reactor",
+        "experiments"
+      ],
+      "mechanism": "Installed capacities and starting inventories define the test plant. They are choices, not population estimates.",
+      "boundary": "The fixture is not a named, coherent equipment package. Changing capacity alone does not resize vessels, converters, pumps, access or thermal mass.",
+      "next_data": "Choose a bill of materials and electrical/material boundaries; record working versus nominal capacity and starting-state measurements.",
+      "sources": [],
+      "checks": [
+        "tests/test_boundaries.py",
+        "tests/test_uncertainty.py"
+      ],
+      "priority": 1,
+      "evidence_status": "Design choice",
+      "bindings": {
+        "methane/config.py": "90f9a6cdeaf999d0db24ca3a4008580b1a936176d87b13143295f5c00abd3710",
+        "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
+        "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+        "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
+      }
+    },
+    "gas-storage": {
+      "id": "gas-storage",
+      "title": "Gas buffers and deliveries",
+      "topics": [
+        "hydrogen",
+        "co2"
+      ],
+      "mechanism": "Ideal mass inventories with capacity bounds. CO\u2082 delivery is accepted before withdrawal; concurrent hydrogen inflow/outflow follows the execution contract. Excess delivery is rejected explicitly.",
+      "boundary": "No pressure, temperature, compressor consumption, usable heel, leakage, boil-off, delivery purity or unloading equipment. Supply quantities and timing are scenarios, not contracted logistics.",
+      "next_data": "Specify storage technology and operating pressure/temperature, usable mass, compression/drying power, supplier delivery constraints and metering.",
+      "sources": [
+        "nist-h2",
+        "nist-co2"
+      ],
+      "checks": [
+        "tests/test_components.py",
+        "tests/test_boundaries.py",
+        "tests/test_uncertainty.py"
+      ],
+      "priority": 0,
+      "evidence_status": "Evidence gap",
+      "bindings": {
+        "methane/config.py": "90f9a6cdeaf999d0db24ca3a4008580b1a936176d87b13143295f5c00abd3710",
+        "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
+        "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+        "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
+        "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e"
+      }
+    }
+  },
+  "source_records": {
+    "atb": {
+      "title": "2024 ATB utility PV plus battery",
+      "url": "https://atb.nrel.gov/electricity/2024/utility-scale_pv-plus-battery",
+      "finding": "Assumes 85% grid-charge and 87% coupled-PV round-trip efficiency for a utility-scale reference design.",
+      "applicability": "Planning assumptions at a different scale and electrical boundary, not evidence that the fixture 90% is measured. Do not transplant US cost estimates.",
+      "access": "Official search-index extract; direct page fetch failed (502), 2026-09-12"
+    },
+    "doe-pem": {
+      "title": "DOE technical targets for PEM electrolysis",
+      "url": "https://www.energy.gov/cmei/fuels/technical-targets-proton-exchange-membrane-electrolysis",
+      "finding": "The 2022 status table distinguishes stack electricity (51 kWh/kg) from system electricity (55 kWh/kg); later columns are targets. Performance, lifetime and cost must be considered together.",
+      "applicability": "Technology benchmark, not a matched 450 kW device. No support for the fixture startup energy, minimum load, fixed efficiency curve or European installed cost.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "field-review": {
+      "title": "Existing field realism review and sources",
+      "url": "research/field-realism-review/report.html",
+      "finding": "Fourteen families reviewed; cause-specific repair, sensor identifiability and support requirements remain open.",
+      "applicability": "Retained historical review, not current-run validation. Relevant current source files were reviewed again for this edition. The 31 prior findings are retained separately.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "gum": {
+      "title": "JCGM VIM: calibration",
+      "url": "https://jcgm.bipm.org/vim/en/2.39.html",
+      "finding": "Calibration establishes a measurement relationship with uncertainties under specified conditions; it differs from adjustment and verification.",
+      "applicability": "Terminology and measurement practice. Simulation parameter fitting additionally needs an identifiable model and held-out validation.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "nist-ch4": {
+      "title": "NIST Chemistry WebBook: methane",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74828&Mask=1",
+      "finding": "Molecular weight 16.0425; Chase gas formation enthalpy \u221274.87 kJ/mol.",
+      "applicability": "Supports ideal stoichiometric and standard heat comparisons, not reactor thermal capacity or kinetics.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "nist-co2": {
+      "title": "NIST Chemistry WebBook: carbon dioxide",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Mask=1",
+      "finding": "Molecular weight 44.0095; Chase gas formation enthalpy \u2212393.52 kJ/mol.",
+      "applicability": "Standard-state gas thermochemistry; pressure, kinetics and process conversion require additional models.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "nist-water": {
+      "title": "NIST Chemistry WebBook: water",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=1",
+      "finding": "Molecular weight 18.01528; gas formation enthalpy \u2212241.8264 kJ/mol in Chase Shomate coefficients.",
+      "applicability": "Water vapour basis. Do not substitute liquid-water enthalpy without accounting for condensation and recovery.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "pv-validation": {
+      "title": "Sandia PV performance modelling and validation",
+      "url": "https://www.sandia.gov/research/publications/details/pv-performance-modeling-and-stakeholder-engagement-final-technical-report-2024-09-30/",
+      "finding": "Reports public quality-controlled PV/weather datasets and independent blind model comparisons.",
+      "applicability": "Useful candidate for testing a generic PV model. These observations do not describe our unnamed European array.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "rsc": {
+      "title": "Monning et al.: three-phase CO\u2082 methanation kinetics",
+      "url": "https://pubs.rsc.org/en/content/articlepdf/2026/re/d5re00337g",
+      "finding": "Reports ideal Sabatier heat of \u2212165 kJ/mol and studies catalyst wetting, side reactions and deactivation in a three-phase slurry system.",
+      "applicability": "Supports exothermic chemistry and the importance of heat management; does not calibrate the fixture lumped thermal mass, heat loss or production envelope.",
+      "access": "Primary abstract and indexed first-page PDF extract read; direct HTML returned 403, 2026-09-12"
+    },
+    "sam-pv": {
+      "title": "SAM / PVWatts model documentation",
+      "url": "https://samrepo.nlr.gov/help/pvwatts.html",
+      "finding": "Version 8 uses NOCT reference temperatures of 45\u00b0C for open-rack and 49\u00b0C for roof-mount; listed crystalline-silicon power coefficients are \u22120.37 and \u22120.35 %/\u00b0C. Module and converter models have separate boundaries.",
+      "applicability": "Reference model assumptions, not fitted site values. Dispatch Lab is not a PVWatts implementation; its simple NOCT and fixed diffuse fraction omit several mechanisms.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "soiling": {
+      "title": "IEA PVPS: soiling losses",
+      "url": "https://iea-pvps.org/key-topics/soiling-losses-impact-on-the-performance-of-photovoltaic-power-plants/",
+      "finding": "Soiling is spatially heterogeneous and requires local measurement; snow is a separate concern at higher latitudes.",
+      "applicability": "Global annual loss estimates cannot establish a constant European daily deposition rate or a robot cleaning efficacy.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "uncertainty": {
+      "title": "JCGM VIM: metrological compatibility",
+      "url": "https://jcgm.bipm.org/vim/en/2.47.html",
+      "finding": "Uncertainty of a difference depends on both uncertainties and their covariance.",
+      "applicability": "Independent inventory differences do not inherit a percentage-of-flow uncertainty without an explicit measurement model.",
+      "access": "Read primary documentation on 2026-09-12"
+    },
+    "nist-h2": {
+      "title": "NIST Chemistry WebBook: hydrogen",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C1333740&Mask=1",
+      "finding": "Molecular weight 2.01588; standard elemental reference enthalpy zero.",
+      "applicability": "Reference chemistry only, not an electrolyser conversion or purity guarantee.",
+      "access": "Read primary documentation on 2026-09-12"
+    }
+  },
+  "unbound_path_notes": {
+    "service_economics": "Structured service price ledger, not one scalar catalogue parameter. Actual quotation lines require their own source and validity period."
+  },
+  "release_scope": "Release 1 qualifies numerical reference autonomy. These consequential empirical gaps remain open and feed Release 2 equipment-specific modelling. No new field measurements or quotations were obtained during this software release.",
+  "parent_sha256": "232871e3af8e65751e7a3daf6147a58da90ef8059b96b20a82f694da68bfd5bf"
+}

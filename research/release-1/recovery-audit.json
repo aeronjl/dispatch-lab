@@ -1,0 +1,1965 @@
+{
+  "version": "release-recovery-audit/1",
+  "checker_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+  "programme_sha256": "4022210163a567d0aa77706f635bbe284ad41594998ba556f81ed2de2bbaf0e8",
+  "cases": [
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-001",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "30fc0c8609d21f5171883370628ffadf376d191802b3f1d5d52c35499e24be78"
+      ],
+      "status": "passed",
+      "recovery_checks": 542,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8219,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-002",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "185032bc6df8fdbe44bdd5873706523418f213088677c2f12c3d5b4b1e1401a9"
+      ],
+      "status": "passed",
+      "recovery_checks": 538,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8191,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-003",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "aad1b7367d53b7b66753b136fb144965a5ff7146748ee270e861bb40be3ce49d"
+      ],
+      "status": "passed",
+      "recovery_checks": 542,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8219,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-004",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "d4264d4846e6fdc9956bd1ce6938540f1e940ee44736bec4027cb781156aae2a"
+      ],
+      "status": "passed",
+      "recovery_checks": 764,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8484,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-005",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c1e135e08f4dfd87d719b9e4b75f304d1ebae24d4a45c7598d87833b6f737235"
+      ],
+      "status": "passed",
+      "recovery_checks": 772,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8524,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-006",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "d4bb9961247339e66aba142917c3bc5419b577bdb5df7391d88e6b1fddf238a3"
+      ],
+      "status": "passed",
+      "recovery_checks": 542,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8219,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-007",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "588372bb63aca80e5f6abfc00e76791edb6f9fc754a8a4f3cb5650860a441723"
+      ],
+      "status": "passed",
+      "recovery_checks": 538,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8191,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-008",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "1631cb995437174f4542f6fe2b991da8e19162c4771447b977703df08e8de42b"
+      ],
+      "status": "passed",
+      "recovery_checks": 542,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8219,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-009",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "5be6099e0c196834131efe0e5580d552c2a1c5e824079e8f76524d50ee2e7199"
+      ],
+      "status": "passed",
+      "recovery_checks": 760,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8506,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-010",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b89f685bff2eb5e8758758d8fc5d18fb9a581f236d4bd2b666abb7a57f86bf6b"
+      ],
+      "status": "passed",
+      "recovery_checks": 772,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8516,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-011",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "bf8c5cb508b87ba8f8fb9a51bd1cc9c2f972e22abaf6ee3cfc4155a1e3912c9d"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8467,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-012",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "72495db6495acf75257eb8d70e9e146f9176ff960e5e9ef277109d96698a75b4"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8475,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-013",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "4b9d9134bf16839ff7b1d6253deb3ce4e159478729a96994cf48aa4297d261e2"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8475,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-014",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "502c64962fb3ae02d89c377740c04eec06d9bd9d29ece0790aff9418fd4c6a2a"
+      ],
+      "status": "passed",
+      "recovery_checks": 722,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8489,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-015",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "92a4e77151b3f40b6d932462397b32d7492bcfd9736ff6eb86be60066abf0e71"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8471,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-016",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "e53e5a8804a754d306ed1df87334d0d99bbf2bcfc40d5fbeca0ecbcff037f48d"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8481,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-017",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "7cdc2004728dc07ab19a4da8a5f79f2fd2b94777877a0124beb4ad437e1275b7"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8459,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-018",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f6778bb9a07dff4c77d2a99097f3c93ef35ef09fb4775dc4f1bf972c58035467"
+      ],
+      "status": "passed",
+      "recovery_checks": 730,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8456,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-019",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "8697b89ec5ba2cad554a5a9e34e442af2813544685549d4be27bb2b3c89a122c"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8459,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-020",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "49732c861c5e8c606881008f28db5d41514fadcd25a034f47b8724f9631e9b55"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8459,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-021",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "7d7e43e87328718453bef83d12b85968670b7de8d3b84d81e754c5a7c4a43043"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8461,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-022",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "17200337ecfe0703fe9e9c91e8d067ffca1fca4adecb7fc6a6f85da46929ec7c"
+      ],
+      "status": "passed",
+      "recovery_checks": 730,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8448,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-023",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "684c19b8eb73c4336144fdb1fdbddef560ce6e3ef6dc5d924d59582d8f265212"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8034,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-024",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b0f814cf4b9a36d30d129918aac3a45ccdf07c28147618215c21894e40726964"
+      ],
+      "status": "passed",
+      "recovery_checks": 658,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8553,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-025",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "bc62cbc8062f032c786a04df95508a9107fcd45c709dabbdf789b2aa56af0825"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8046,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-026",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "2cd4dcb3d159cf22b14e8eb60dfe6094f40a1bdddee0dcc5985e0a4929194fd0"
+      ],
+      "status": "passed",
+      "recovery_checks": 298,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8052,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-027",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f564bd8ec90ca862e54ffb5768a0ce0abd7496ca952970e8c88b9ae43ecdce3c"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8036,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-028",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "001f9a4cbbae6be559d54e07e17028d6e9a1a518685956e4bcf3714cb560353a"
+      ],
+      "status": "passed",
+      "recovery_checks": 664,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8577,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-029",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "20973df74e5042f305bf0f7e16c8fc711b04a151ae954c067c9f0a9bfd452239"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7874,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-030",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c1b93e5be1d1cafb9733b2d7c9df86c81ba101fd0adb7770f6e96ceec94ca6ec"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7872,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-031",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "db915534d6572d9cb8e56736f084806da51f22a17c877ee11f1b7fab2b56734a"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7868,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-032",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "d3458843b05d02ccc70b7737bda850a62a0e73b1a5916a7a519c05da1c6c99c1"
+      ],
+      "status": "passed",
+      "recovery_checks": 288,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7872,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-033",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "aa1c9b3e8a34c565e6f4d16ab3198124cd014fda482bb1a51ddf2a2ff18d1a3a"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8473,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-034",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b6072e741222bd97a26506ca8c135a8f1f4612fff1fdd87f61180b6c67b9c858"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8473,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-035",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "231fece40b76f9b77e2f6322a8b11e2b650dee5ea1184fc51d003e517cbe9bbd"
+      ],
+      "status": "passed",
+      "recovery_checks": 708,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8466,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-036",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "19cda3d9b7037ce24271f83fd1b46d614968047135bb1dd81b52d4d90f21fa8e"
+      ],
+      "status": "passed",
+      "recovery_checks": 622,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8366,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-037",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "eaf5f33a7477b23154c256918051d8461caedd997342ed8d8007e045e8ec9a4b"
+      ],
+      "status": "passed",
+      "recovery_checks": 730,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8454,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-038",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "a92d13248767461f8466fb0d7cdd3566958ab734550959ab4c5b83fe069b852a"
+      ],
+      "status": "passed",
+      "recovery_checks": 695,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8449,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-039",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "16bcefbe793bfa5f6a0e3f0bf15b27b4730c0e024dcc7cd088dc7d2e112d027e"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8474,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-040",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "82f3c1918fc2292daccd06f1b6fed3f8271bfcb28f72082e4b9a4255373efb72"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-041",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c5ad425f27d5a76731dc1dbb9a088447a1504431eb5f162042670c16240fbbda"
+      ],
+      "status": "passed",
+      "recovery_checks": 708,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8461,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-042",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "66821f72e37c77912475a9bc4f28abc4867cd426ce38f8f5da27990d04eadb31"
+      ],
+      "status": "passed",
+      "recovery_checks": 620,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8358,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-043",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "751ce9bf094289bfb94ad51be3cb99c7515a46e4a9a106a5fc16374c143b222f"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8459,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-044",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b8e2812531fcce7297fe7108c95449355b46d04acd422959add4be20be4c550f"
+      ],
+      "status": "passed",
+      "recovery_checks": 699,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8454,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-045",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "aee6b8e7424b5b6ccc5389f13cde7d03f38d2dcec4cfc5016f86205053848686"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8481,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-046",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "6a8267483e847d6f39244dea2bd09d2e1bb7e96fbddf131740f00760e0e56e5b"
+      ],
+      "status": "passed",
+      "recovery_checks": 710,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8475,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-047",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "97ae34050b7b52baa7ba3468b94c3bd9f512b4862f9c71e51c79d95933bcf925"
+      ],
+      "status": "passed",
+      "recovery_checks": 720,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8466,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-048",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "2846fbe8f6550b8869d96d79805dec7d8689d0672005228065e11a8c4cc95c07"
+      ],
+      "status": "passed",
+      "recovery_checks": 620,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8361,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-049",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "085c6353e699b05148e3cdd7f5b38fbc5c84aff71ab603fb0bc82dd36b3754b2"
+      ],
+      "status": "passed",
+      "recovery_checks": 731,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-050",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "784df4d0c066c20485e7b075bb89e468634fe1460b73f8300d0c9f4bce21aa10"
+      ],
+      "status": "passed",
+      "recovery_checks": 701,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8447,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-051",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "4f4a3f5bcbb71a4fbe63db8521a0b674d88d480fbda7957a4703a1d70ee74e55",
+        "0702399d83c2698313b66d439429759034bcfe2681fbf3368a316c13c13a251b",
+        "5925b99656d32e9f4f120d7d733a2bd3252b035cada883d78befe5338e249aa4"
+      ],
+      "status": "passed",
+      "recovery_checks": 672,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-052",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "244f01bac354e59a6ed22e31e25aef753b1a6ffb0ca42dc073b756376fa07bc5",
+        "16f4a8508a1d2e45727f480daac590d5856e43e4ef7793af2e112042da9c2ffd",
+        "2ff359141dd2c65a93e5be501a76355eeb75e9bda79034468a886fca63256d9b"
+      ],
+      "status": "passed",
+      "recovery_checks": 1734,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-053",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "fcfb9324aea4b270e97e3292e1ab1f4e154440717e306ec94b05263862361e24",
+        "f093952cafac391eaa83c5c5b6da96bd4e89a147984db9c192ff7dc3ad529ac4",
+        "6172beb32e9252b46acf9051c5838376f3c264dfb96527f4895651ac30327ddb"
+      ],
+      "status": "passed",
+      "recovery_checks": 1732,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-054",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "2af9749b93fc8586392d71c7073cbac0922bd088c44b207a6f64cb031b14f042",
+        "9177dc18f597d2ac3f40b75575580a0b95c1c684ba2f895b89d2dbbeb056ea43",
+        "3eb9e7d080157583e31fcc440eabde6a2affb4f2d034f61099244e1f2f12e5c4"
+      ],
+      "status": "passed",
+      "recovery_checks": 1690,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-055",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "2d6040a4ad45359be24f597c24e52b9e28724c92b44a587f7cdd40fea413a2af",
+        "2acd8691e86d67f001a4b1b4515317f62045e80db6f85f817cc33ecb1833b941",
+        "fb5bfbe25ae53b11b7bfdd326a31221565a535fb45f622cb7ae0a7849ec7056e"
+      ],
+      "status": "passed",
+      "recovery_checks": 1712,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-056",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "a210cbcff59d1af4bd228c9933c5f21a1cbc65efc1c3d52b82bd5f512b4635ea",
+        "080f1cb09ddd7c7aa2a36e1bccd3d50011bd034bb3bfdae972fe15eb72d44e1d",
+        "6ca3bae2b434dbe167dc5261cc049f49d50dc0fe2c2f92d6280fc9f7744d33f8"
+      ],
+      "status": "passed",
+      "recovery_checks": 1716,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-057",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "53cf1f35ccb5b89c677a3fce4f8bc177e59b7dee36f1aaccf327327173987a7b",
+        "e6090c634da952c936f4f8c1f983cea4890c843229a9dbe24bbdb04fa6f62b2b",
+        "1438d84d48e8fa6921f163e737748464082c259cea25532ce9745b744f2efd53"
+      ],
+      "status": "passed",
+      "recovery_checks": 672,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-058",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "4c23f67adb6859ec3b0a05c548cf64579726c1cf004f89248c4c3d596602fa2c",
+        "4464d6e575f9a516ba914dbafc314eb218ea195e538f4652bb96f27acd7e437d",
+        "46cf78fca088ed54b48d68a85bc87fe5a48dcecf53bd96c30501361d8af492ef"
+      ],
+      "status": "passed",
+      "recovery_checks": 1746,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "15105060fb082c20f5499be4401d2f8d4cad2af4b66da7f84c4de8ec2d4abc08",
+      "case": "case-059",
+      "group": "saved-failures",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 168,
+      "periods": [
+        "da62fbc0e981acfbe82d1ed457faffb26f748527aa09bc1cb9c1a1d67bdb8b63",
+        "7f55b9f6a4e36481428de440d16539dba16b8e685ffdc8e2809fbf3a6136ab93",
+        "3e54f13b66a225ab3bbe4e44bfb044aed3d7ec4061d18d0e4d3ad800c375001f"
+      ],
+      "status": "passed",
+      "recovery_checks": 1738,
+      "recovery_failures": [],
+      "full_single_period_reference": null,
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-001",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "dd559f275aa79719ac5d73b6323da3d92799cdf18b1a6313ddb9c97a90400183"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-002",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "09a4cb94c302a23848249ef319433f05cb50636cb5d597114ca4516653ad7b97"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-003",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "4fd0da0fcbaa968f6b4d6fb8c361b5833e7ab2d7f2629a59ed9df2e3703136fc"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-004",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f459ce1a06a4340964c7f9a60f4991c049e0eca108c3f93c02f43d4c67aad2a2"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-005",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "beb371be75d9735d7611707878624f89bccb02a18d3a42512e62977150eea38f"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-006",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "fd6564c133622fefd1d6f65b9c9389d9d4bb2b3a530cd1bad5ddab7805b74d9d"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-007",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f2b8666e2d5aa74550f4318ba02d1575c58a6795c27025a2aa61eabb48b32d28"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-008",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "a3f897c361cac222a4fb363861af350f0b495807b6c33845f1f5a5b7b27ac289"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-009",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "5fb7a14197413a1c416539a6ab6d6ab37043c6822cb6e763b4fe28c90d776cf0"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-010",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "d5f64beaa795432dbf043392ad02ae2ee9676e851041d7d082345be29fd5e594"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-011",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f6730c6a3a68e6b93f5105c46766c365200271860ea563408b531c124a10d8d3"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-012",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "2ccecb60337cb065574770be07da2232bea16480bc9d5fb8beb8bbf7af6682e6"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-013",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "12342c2f8b56cdc32036b26fdab0c4d1ac0b223244b6853550f3f6682ca37d7a"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-014",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "0e9d4f362dd8f486335573824735904188ec8013695e3eb33ef1180feb6e92c7"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-015",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "1d714148567750b4639d26c30e46ac06a10da715f1d4657f5aa08cfcec396542"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-016",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c21d89bddae0ba5a39d595a094de6289ad43a8aa0744900374728652d80e8115"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-017",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "80bea23dc4330be695a25d61ca144b9cec20ad16d36df15f8fe9fc3ed2ef9f7b"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-018",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c2981ed4a8ea6f30972ab522dadb549b5f498fcb401acdc4c3d4359b347dd126"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-019",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "7f6f2af3fc0aaa4738297d379ce91040adb18a601a88efa6531f9bd6d4493b23"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-020",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "5da462239ef7ca0f703618301f61303f416ff25b6256eb0887c782c87f18bc90"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-021",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "cb0fdad7fcee16adc2464622a3866fbe0a273ee7ed2a85b4d10aad2e778a3be5"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-022",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "bbafef45a80c4998a16d00d0622037e3ea5b5b2828498eb5a596efe2488dfa92"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-023",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "0049564122bdd1fe11b5570775f9f6dd6677d30303a3cf3333bace350654ddca"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-024",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b02308e12fb4e14a42c42e786f374b1650bf93fb5f11d0ac30b6e10583f90804"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-025",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "46e34ff7e7289c197a5c569f8f3d6e6733e4d5fc64be146ec6412b91123d8b7d"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7738,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-026",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "b05604b402a341797f974897063168e9b6faf28b958c2d816426952c05ca9629"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7746,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "145bb707eb84f80b57b506f0f49096ffcdb1701c950cccee57570299882e5e4f",
+      "case": "case-027",
+      "group": "matched-local",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "84e303caf4ca70aa41a2400c6bb8cbf286886d282dff587cef3b45f3142d4df4"
+      ],
+      "status": "passed",
+      "recovery_checks": 0,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 7724,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-001",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "23a19a07994d5f6696c8cf0d9564452bd89a0ed2eacc646b3a710dee8a8c081c"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8465,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-002",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "0df6acfc25f91cfbd3ce03e36412321ae41a7f51497cc932de922070df9e4cb8"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-003",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "8bbb32a714a6cd3a4c4facf5735a58764b316ece12a121d2782e25ffba294cfa"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-004",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "61bc54673f4bebcb1b245678efad20e148a72af1eb6139d956aefc9ef26915e9"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-005",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "41d1ee6c0cdc00795c78e4941d4e8d341eae2f02f9080ac12fd1e5ca702b3af5"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-006",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "71452b4bb33af8be376a149498a71f6f2a10b7e733701e120df75b0abc4115c5"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-007",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "1e73bdcacacee8b7eee63267212f1fbafb36a7950ded4b728c5afd569d7de952"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8465,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-008",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "6496821e82732a7c3c059d2e5880c923ffaaaf8d4336e28005325c3572de0248"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-009",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "772bcf5804b00cd9499fe24a3d93b68450d3370f9dc6ea9f8b802361d3d8849b"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8461,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-010",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "c9e3c6a3a016fa9d8f6546293463ebb1fe5bf2c7252c0014370925d5ae2bc228"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-011",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "2e0aeb92caf585ce93f2d88f876c7c6cc8095f9133975b9ee75de4db172e9c73"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-012",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "7972acbecb3cbbb2302388028ad79f854e4aa1649abf75f2743547984909d9b1"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-013",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "a3f47537184bc09db865986f30337e4170972ed47d11bb423af401e62ed35883"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8469,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-014",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "aa654e0a9c0856b6f2256a6a7585aee1ce4bc8cf86c78ff9d17bfe28a5c2c705"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-015",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "d1261176ecaa6be1d15d14b141ef7c9458c2a1daebd936a1f67ca526880a0dbb"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8459,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-016",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "1a52f402b1ea70b42e03ec25490a9ee9ac8cab62b36f1b47af5be08516ba9399"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-017",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "27bae187f5e5a157512e24db6ec08ed162c29a981bf063d222cdf6262335a46b"
+      ],
+      "status": "passed",
+      "recovery_checks": 706,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8463,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    },
+    {
+      "study": "4dd84fa8f3cef778f57d17b73f81d596fc1562975e32bca0a4aaf1d9de14f2a6",
+      "case": "case-018",
+      "group": "matched-joint",
+      "source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+      "hours": 72,
+      "periods": [
+        "f2c91e1e95a611259518d84fe3e1ad39ac15c6b2ba4272f8f001c09e7ad4fc3c"
+      ],
+      "status": "passed",
+      "recovery_checks": 704,
+      "recovery_failures": [],
+      "full_single_period_reference": {
+        "passed": true,
+        "checks": 8440,
+        "failures": []
+      },
+      "scope": "Original public receipts, required test increments, immutable outer deadlines, appointment boundaries and blocked/escalated requests across the full chronology. Version-1 local recovery has no version-3/4/5 loop claim. Single-period archives additionally receive the complete independent physical/service/cost reference; continuous physical states have their separate Decimal chronology check."
+    }
+  ]
+}

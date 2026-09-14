@@ -1,0 +1,380 @@
+{
+  "version": "release-one-historical-source-review/1",
+  "reviewed_at": "2026-09-14T01:49:52.211799+00:00",
+  "reviewer": "Engineering agent; source-diff and record review, not empirical validation",
+  "frozen_source": "55aa6d80fd4462f04cb5095cdff6a9ae28bc15fb67c074f7d980592a749c3b44",
+  "frozen_capsule_sha256": "7d6e24e4a74c193262a228a2e06889a1c270389ed4ae29420be79b7bc1b6d0b8",
+  "current_source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+  "original_assumption_freshness": {
+    "layout": "stale",
+    "thermal": "stale",
+    "chemistry": "reviewed",
+    "electrolyser": "stale",
+    "battery": "stale",
+    "gas-storage": "stale",
+    "solar": "stale",
+    "weather": "stale",
+    "sensing": "stale",
+    "faults": "stale",
+    "cleaning": "reviewed",
+    "inspection": "reviewed",
+    "recovery": "stale",
+    "support": "reviewed",
+    "maintenance": "reviewed",
+    "economics": "stale",
+    "control": "stale",
+    "coupling": "stale",
+    "experiment": "stale"
+  },
+  "original_registry_edition": "2026-09-13 / 9",
+  "current_registry_edition": "2026-09-14 / 10",
+  "parameter_evidence_unchanged": true,
+  "source_registry_unchanged": true,
+  "capability_boundaries_and_evidence_needs_unchanged": true,
+  "narrative_changes": [
+    {
+      "group": "faults",
+      "field": "topics",
+      "original": [
+        "diagnosis",
+        "services",
+        "experiments"
+      ],
+      "release": [
+        "diagnosis",
+        "services",
+        "experiments",
+        "recovery",
+        "inspection"
+      ]
+    },
+    {
+      "group": "cleaning",
+      "field": "topics",
+      "original": [
+        "solar",
+        "services"
+      ],
+      "release": [
+        "solar",
+        "services",
+        "cleaning"
+      ]
+    },
+    {
+      "group": "inspection",
+      "field": "topics",
+      "original": [
+        "diagnosis",
+        "services"
+      ],
+      "release": [
+        "diagnosis",
+        "services",
+        "inspection"
+      ]
+    },
+    {
+      "group": "recovery",
+      "field": "topics",
+      "original": [
+        "services",
+        "diagnosis"
+      ],
+      "release": [
+        "services",
+        "diagnosis",
+        "recovery"
+      ]
+    },
+    {
+      "group": "recovery",
+      "field": "mechanism",
+      "original": "Reset, calibration, module replacement and operating probes are distinct modeled activities; physical outcome is followed by operating verification. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity.",
+      "release": "Reset, calibration, module replacement and operating probes are distinct modeled activities; physical outcome is followed by operating verification. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Version 5 separates each forecast-selected test appointment from its immutable diagnosis/post-mission outer deadline; remaining successful increments are recorded as a necessary-time bound, not a recovery guarantee."
+    },
+    {
+      "group": "recovery",
+      "field": "checks",
+      "original": [
+        "tests/test_service_procedures.py",
+        "tests/test_post_service_verification.py",
+        "tests/test_uncertainty.py",
+        "tests/test_adaptation.py",
+        "tests/test_recovery_loop.py"
+      ],
+      "release": [
+        "tests/test_service_procedures.py",
+        "tests/test_post_service_verification.py",
+        "tests/test_uncertainty.py",
+        "tests/test_adaptation.py",
+        "tests/test_recovery_loop.py",
+        "tests/test_obligation_recovery.py"
+      ]
+    },
+    {
+      "group": "support",
+      "field": "topics",
+      "original": [
+        "services"
+      ],
+      "release": [
+        "services",
+        "charging",
+        "logistics"
+      ]
+    },
+    {
+      "group": "maintenance",
+      "field": "topics",
+      "original": [
+        "services",
+        "economics"
+      ],
+      "release": [
+        "services",
+        "economics",
+        "logistics",
+        "service_costs"
+      ]
+    },
+    {
+      "group": "economics",
+      "field": "topics",
+      "original": [
+        "economics",
+        "experiments",
+        "services"
+      ],
+      "release": [
+        "economics",
+        "experiments",
+        "services",
+        "service_costs"
+      ]
+    },
+    {
+      "group": "control",
+      "field": "topics",
+      "original": [
+        "controllers",
+        "services",
+        "diagnosis"
+      ],
+      "release": [
+        "controllers",
+        "services",
+        "diagnosis",
+        "recovery",
+        "service_uncertainty"
+      ]
+    },
+    {
+      "group": "control",
+      "field": "mechanism",
+      "original": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted.",
+      "release": "Greedy, methane MPC and economic MPC operate on declared horizons and information. Service policies use finite candidate sets and subjective recovery/inspection beliefs. Recovery policy version 3 records a separate post-mission verification window, retains original deadlines, and escalates unresolved testing; receipt completion never confirms capacity. Opt-in autonomy version 2 separates finite persistent equipment factors from independent bounded job multipliers, learns only from observed clocks, and preserves per-job phase correlation. Finite-model selection uses a predeclared observation-time holdout; synthetic observation fitting is not field calibration. Conditional retrieval charging can follow a qualified nominated whole-mission return for an already observed stranding; no repair or drive-readiness credit is granted. Recovery version 5 separates forecast-selected test appointments from immutable outer recovery deadlines and records necessary remaining informative intervals."
+    }
+  ],
+  "narrative_review": "Final review adds the implemented version-5 deadline mechanism, its checks and new topic bindings. It does not add calibration, repair capabilities or change parameter evidence.",
+  "changes": [
+    {
+      "path": "methane/documentation.py",
+      "frozen_sha256": "5117389bad2f96ceff9a5aed9a86f0657c73e4c1e1f76d99cb00642ae117bcf3",
+      "release_sha256": "c9bc26f26aba88e6082711e061375a511f6ccc43e107760b68ea3bb4b738f6f4",
+      "review": "Current reader exposes topic-specific operands and relevant parameter references; reads the original decision estimate. Changes display/report projection only."
+    },
+    {
+      "path": "methane/release_qualification.py",
+      "frozen_sha256": "776187d264cbd070813ad2d3b7313486be1a15819a6035a75b2e95806086a6ca",
+      "release_sha256": "be2471dc1bb2368f064d32b60851beef03f0411221a3b93228b7b5c5aa0fb5e0",
+      "review": "Future programme preparation now also rejects stale assumption mechanism bindings. Original frozen studies are preserved."
+    },
+    {
+      "path": "methane/service_learning.py",
+      "frozen_sha256": "5544a493a517546f9c477d70c38deada582951fba605d5222a5fdfc6884bd543",
+      "release_sha256": "97580ed71412435f1b5bd2769499444dacb2daf89f625c3827c6b8ec4a02b9b0",
+      "review": "Teaching inspection charts hide ineligible raw values until the clock reaches availability. No simulation observation kernel change."
+    },
+    {
+      "path": "methane/services/obligation_recovery.py",
+      "frozen_sha256": "db7a45725a621760711cf358e8196a30ae343bdba4251e0f9392a86d5e7ad04a",
+      "release_sha256": "a8781d1564fbf9845e42e0177325b0e1e733530e168d06d35ee888e78d1ea4a1",
+      "review": "Rejects non-advancing or greater-than-1000-increment probe schedules. None of the declared qualification parameters reaches this guard; ordinary target calculation is unchanged."
+    }
+  ],
+  "unchanged_numerical_files": {
+    "methane/__init__.py": "22523e040fbd1d393197ebbdb1264ad849afc02567c16b1a1d5258bbf037c05a",
+    "methane/acceptance.py": "e915bbce728c40c20d2f3464df25b9c66d67d9d599321a9883d76bb80b4fadfc",
+    "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
+    "methane/assumptions.py": "d710ea5843ee980414850da138368293f3d9b314a34496e7ca71606a1bec2af9",
+    "methane/audit.py": "a9ef91009669b1d21bb30d360321034728db12207d7d72c2a266bad7dd525605",
+    "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
+    "methane/autonomy_qualification.py": "904dc193995baf8fd6f959621d3858f87431a251f8120b336f1df1ed0a5765d2",
+    "methane/autonomy_reference.py": "4f75aec4b49fc780eac60e85582847b8542ede147c10fd3825c14f10b80a306c",
+    "methane/autonomy_report.py": "a9c37ce26bf64ba07bdf812c6d8731aff94be872919c84ac5b4c769314a65c56",
+    "methane/autonomy_studies.py": "8a935b19d6cd98f4b7916d9399dc7668b59a3d67a280750b361e9d904a615cda",
+    "methane/batch_worker.py": "2199eb4976884359696ae2f5928343644aec506112e8039313675eebeeb60f03",
+    "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
+    "methane/battery_trace.py": "dae4009a5907a36a5b10758936aeeaa683994c8019a7c66a66abfc2aff98ef9d",
+    "methane/bundle.py": "c13c63e23b78f42f035f6a1bb2c8572a9f5da5a3949df095b659e7a2eb6397dd",
+    "methane/bundle_runtime.py": "2e8edeb7512b9ede22bf4e92594214f05c250803061cc9d3aaab8935b18c732d",
+    "methane/cancellation.py": "95a9aebe86e29b1b17056c2aa6226c87d6ff3c9e7e0f711764bac7ee109d0c4d",
+    "methane/catalogue.py": "1ef1964f1f12ccf9e66b26d2a851e47887ceee122d0bfe3d5b6c8a405e8d4730",
+    "methane/components.py": "58069492b8e9881839c2ceacfff46076255e57da53ccba992617d0e41e3c7d8d",
+    "methane/computation_studies.py": "640fff1e6f3d058049cb8b7dc3e3142d610e385aa63c3ce1b32213409b15af5e",
+    "methane/config.py": "a0e09a4e7aa708410983cc03d9aacc570f3aea683c20af9f822c67b05c3362ec",
+    "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
+    "methane/costing.py": "b6055e7a0fdd5870c9557675541a7c9f7270db35a06dea3f6a32b9d599b10e2a",
+    "methane/dispatch.py": "2d663a0168e000a952dcfc9723011f366504e8f119be4ddaf59097641ff260e0",
+    "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
+    "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
+    "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
+    "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
+    "methane/engineering.py": "944b1880b0b326905b0fe61fb280a3ae16d5d6ecded6296f9363c2852a9e4d1c",
+    "methane/evidence.py": "5962057e6253e1cb2b14aab2c1efb086163850bc1a1260594236e3eea6629f4e",
+    "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
+    "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
+    "methane/field_studies.py": "750bc2e56840cdb1dd98513408b207ccb39fac3b207f52b6e60502b6fe1e51d6",
+    "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
+    "methane/jobs.py": "8fba15108db5ed2236ba6edde3285586e68f80cb34b32b9a742f3efee44097cc",
+    "methane/learning.py": "b26ef1353203e29f9ac6366b42d0a543ced0fce6cdb317956416463557b05351",
+    "methane/learning_worker.py": "652d188775479f0fd6333abfbe641d35115c2fc6640754d2c40f2d0efbc2416b",
+    "methane/lineage.py": "447e5a412a27094ef55c22bfa5fc5f1588e60d456e0978e5ef459982572dbaa9",
+    "methane/model_service.py": "61ca36257fd7331e7e3a0262fa9fdbab45ea6c2371533aedee9ca2d26e57c058",
+    "methane/model_topics.py": "984f453f1bb07d5d263d65383f1c2480c7668fee579531999775a565d33ca89b",
+    "methane/mutations.py": "8030f5c1d1d98d9074923eab9ce26b74fc8e9ead1e45f1bbac0b57f8c8b9a1d2",
+    "methane/offline_model.py": "cb4688574241ddd7f5fdf1992d5e3a331d5ada2412ecb7a5c685aedbe6256072",
+    "methane/performance.py": "dc8387b58f0e7492e8b4ec4506f8edec957c0de57604194d569747a53e037733",
+    "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
+    "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
+    "methane/policy.py": "2e83a51c93c70479440f3e9bcc8ad85a5a7575991828053503af16bd85493d29",
+    "methane/ports.py": "a4263fa6e13ec5e821c4481ec43365af928f586d79cbb4246fbf1377cf2817b0",
+    "methane/preview_service.py": "87e9aac7fa71e16ed0f6424406f266e7437a4bec42ba2aa7d77c5477cf0090d5",
+    "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
+    "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
+    "methane/qualification_analysis.py": "7f6b858c7e74595e3c0e89f7bea8f00853a6cb276533cb85fee6ab9252c27b10",
+    "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
+    "methane/recovery.py": "a5f8505826fc1f7a9f851527bf2f0b733226945688f4914275655ce163f07390",
+    "methane/recovery_belief_reference.py": "4f56152bd3a54c8f42c79aea2d4712bd2ad1b26e45fcb07b68d0c03c58dd1e93",
+    "methane/recovery_comparison.py": "f986810a373b6032ea36e71d8b7f70c95902132c8d6b06d988f4d71b6ba0c159",
+    "methane/recovery_loop_reference.py": "4038712edc197662076baba16ab3ebc8cbca0c83ba9a12f76d17ebabeef8bec1",
+    "methane/reference.py": "428e523e1390ae80b5242eec0f9a6b728fc9c13554a20f36c0479fee8d2fca75",
+    "methane/release_check.py": "c0bcd94adb0568d5380fb5f6109e590ce105f1ba2266ff715d5141aeab2e48f3",
+    "methane/retrieval_reference.py": "3577f785bc4c4eae8bb1bd771c5fbba12d5a06b7554a6b5bbcf7c6760ae4aa84",
+    "methane/sensing.py": "943b3c775b21cffab3c833519a954f62b561d2a1c05a0628e7a174f89bb0ce3d",
+    "methane/service_alternatives_service.py": "d346a6e089a9d83b266877053cc1407cbae8e66365b69779071f266c553843db",
+    "methane/service_alternatives_worker.py": "be741bf021979806853913b075a388c4acff5e69c0c94077a2ba67d3d70558d2",
+    "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
+    "methane/service_topics.py": "2a621f4fb7d396834ef94f9b63f9f67a908450555fe1af9e9f88f6d73364ac1f",
+    "methane/services/__init__.py": "3b4736fcab3bb7debd18466eeb1d9fcffb3d55b99a424a96993cc4f02f2ea2e8",
+    "methane/services/access.py": "ce1724e8192c74fdae5d3bd08bee9ad0ccaad938386f19a97e3ca1d196a227db",
+    "methane/services/activity.py": "506ded11415586a5bf428091756ea91b4cbb3582030e715d31e1fc5b65555c10",
+    "methane/services/adapters.py": "d1403b2e6a9b23430bef7d2886ebf479a670ae930cd5d62e8c13be10de11c43f",
+    "methane/services/alternatives.py": "397a313cb486a09aca4ba140e9ac02085360a596c520a37664fc94ef5583d5d0",
+    "methane/services/charge_control.py": "d7cd26d66effead21bc034902bb7754566c8436cd975a097fc2b2bcc58abace5",
+    "methane/services/charging.py": "042d4f24e3205e191844fdada34d5aac955986699a356a559d3c555f336ebe12",
+    "methane/services/cleaning_demo.py": "d1798991abc52950fe32ebe7578d5522c4edd88e95c5d738452e46c6df4a57e7",
+    "methane/services/cleaning_forecast.py": "3ae9face548d9cf51610eb07bfae29a8d2ddca54a2a073db8992e20a84a17f9e",
+    "methane/services/conditional_work.py": "b0aa7cfbd3c5eb50983a0ceeb6578aa2d53cb762184f453f9b98ebb131d446f0",
+    "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
+    "methane/services/continuation.py": "4b30bcfdf822f5fb9248ed4fbf9fdfdd1ef863e5e1aada9b84d026a1df282412",
+    "methane/services/continuation_examples.py": "a511ba0d075f3e7a3efaec71a92b1e28dc74dd7a2c0352e96db5d5262c0a1977",
+    "methane/services/contracts.py": "66af426bb1f6035cb3acbfbc556ea578376475729f356106e12e56b929a182b8",
+    "methane/services/controller.py": "a093313bcc5da0eae02cd4d5e73e780e8880fd7bbb7163ef47a07eabaea4309f",
+    "methane/services/core.py": "12f313623ae738139476bd055be0896b0d038f556522e49fde1c23a18bf5b7eb",
+    "methane/services/coupling.py": "2f465778fc52778899d1fe2b103fc11e599e8db6c77bec8eb3b29fc83f16e1f1",
+    "methane/services/crew_return.py": "18581b2a6beca67656dfbad52b879ee66a31f7629f4b013a6797c33c32da78fe",
+    "methane/services/demo.py": "fab5031d6e56a61d1139c513541494df2dfe9c0874e7ac4e301db43af3f2cbc0",
+    "methane/services/example.py": "9d85f7f98385effdd1f7a7f3ac4d3c4d84c3aecc15c9452eb9bb83043aff5855",
+    "methane/services/executive.py": "e672920a0c313601eb7f3143ea1e433f2f6b6232ca773717925209562c48c54d",
+    "methane/services/hardware.py": "dc378147f988249980c0322bbdacf3eff01a1af580480c46bc4c2a25cb579ccc",
+    "methane/services/hardware_demo.py": "f50060b2f22eeedf6ca8752e24465845ecec6242ec3ad41207eab3a33ef1204d",
+    "methane/services/inspection.py": "ae777006f3d17e3bc0156baeb50ba26944bc4ad74997ac9fde278935c77729a7",
+    "methane/services/inspection_demo.py": "dfcef546f6479be9593727b7b9562c1ff675e60341788caa1c2a2dee89971e39",
+    "methane/services/investigation_alternatives.py": "e2a3911e0c59cca57aaafeacf5cbd450186b4aa0ec6f59b99f72d0b63b107cb7",
+    "methane/services/investigation_belief.py": "7d9ffa0fd412d261fb3fa6714046c4f60694b2e8fa6f824f2024b9a9a9de7faa",
+    "methane/services/investigation_examples.py": "69e1b1b5e990d40b7f1251bf686f7c9f61e45801f1594a008d71c6a6fdcb5e3a",
+    "methane/services/investigation_planning.py": "a57d7b36e5ed6ffa9861e79a11e505e2c8c109ce16358748a4f803b57fa3d62a",
+    "methane/services/investigation_runs.py": "b915c48750f77a8d13603ba4c2627dc15103c84338549acdf30b68ca28146106",
+    "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
+    "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
+    "methane/services/joint_recovery.py": "025c48d12583805302f09dbc5ad2eef321f66a0b4b810667c6277538db179d92",
+    "methane/services/joint_recovery_examples.py": "41bb80bba00c4911e0385d8ec625773b4a7bdee085020be21bd87180507b7e80",
+    "methane/services/local_demo.py": "6696d64d8f04d6b50e22a27adb61b14a943508e889ea51e3e477d7151b83902e",
+    "methane/services/local_policy.py": "8ef408e80d9a2565f10bcec8765ecc31746e681244929487b8a65cd9429a08bf",
+    "methane/services/maintenance.py": "5e43715f03cdacb5cc82bd144bbffcd0ce5729d00ba7a8367c84a42c05438e00",
+    "methane/services/optical.py": "1ee3f53becfec2b068f7a184426e780ca4ec5357afc43a9fb58d864e62dd2d7c",
+    "methane/services/outcomes.py": "f648bbe9af5fe8c8d8ee0f5ef6f1779d8672c6bc47b184b2251ddd955f9f6228",
+    "methane/services/planning.py": "a1b3e9af2fb1a9e7b42963e5ed31b032b4d6f80f115dd43d13a6271e3d54e5e7",
+    "methane/services/plant.py": "bdd8ec91d540f4c792d3b2aca351f081ae74467eafeb9ce7d2678d2e521d754a",
+    "methane/services/portable.py": "d7557db58458328cdf19b94125e6bc7ba704b00304623ae83c8e3c01a6cafed3",
+    "methane/services/portable_demo.py": "4e1d656b60de218eed64cbb50b8655fb52bd6ad4ad4568b39efcbb07fcabae0c",
+    "methane/services/pricing.py": "49e6de5c4d516e5f688686279485952174f7295ac88e3b0822e1db8b623b886b",
+    "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
+    "methane/services/randomness.py": "8b21239aa5f70ecc6d24cd7ebfd43dee80a5edab18494a0adf215ebb987af3d0",
+    "methane/services/randomness_demo.py": "a7101806b4ddc9dd0cd2715d8b51500771096bdfd37b03f097f323b4e0d2a3d9",
+    "methane/services/recovery_belief.py": "7765f6dc70a60911c6fc779fd970fd14a46075a002ac74cbe4165388c374229f",
+    "methane/services/recovery_loop.py": "fa1709214d69ce24e3ee169f8210afb37169fc013ab3d8e2bc31679c7eb7726f",
+    "methane/services/registry.py": "b1065c149709865586f25a6067546d605bf31b122a312ea03491330c2c867d2b",
+    "methane/services/resources.py": "a43ca4cbfc4229be4373571cd42c62a99fb3c93614e11b133bb3c031cf17db6d",
+    "methane/services/retrieval_planning.py": "eb22a25c7757153337b5602d167c107b2c076f50c96b127801aa29c1a845cf1b",
+    "methane/services/routine_demo.py": "62bae7777838584ffc20d472ccb45a9b7506390492c3d84c0ed00b6ecbd4dfd7",
+    "methane/services/scenario_planning.py": "0e734e9769338cbb7667a0912dff4a0acd56d30cae123490155fc5d5403cb293",
+    "methane/services/snapshot.py": "7dca28f8b04e9cde77e1b8b9bfe01eedfa6b0ba734c6524165167e2b17fbe740",
+    "methane/services/standby.py": "c11cdfddbc6a5297cabd8a9aef9ea3501e4a1a53291afe118bf8bac51f109878",
+    "methane/services/supervisor.py": "9603667f2d424e349f8c04cb06081630f8a4702703376283ea0c313fc1d6ecf5",
+    "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
+    "methane/services/support_demo.py": "baa601856d8a7bd5f927acf4453ff8951d5a07473e6cffa817e7459b3528c51c",
+    "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
+    "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
+    "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
+    "methane/services/verification.py": "e297339a21f643811e553588365dc653d94e68d7ec471d63ddb09cc740cf3a12",
+    "methane/services/verification_examples.py": "132e0fe1a373cd8aff945eb65af2eb17cc2470c935891e4f0ff4813a55a41afd",
+    "methane/services/visit_planning.py": "291cd2592f75964e39588b3300a3e9f9fc3c67983981b28101eb21482484428b",
+    "methane/services/visits.py": "8422e98e23949069012a073da463c8ad2566e5cdf8a4676ed8bf6663b0e6aa0d",
+    "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
+    "methane/services/weather_recovery.py": "2423d0a25ea9bb4657703c72a9f8078cc933fc401495903a30bd21d0f17d9db3",
+    "methane/simulation.py": "1fd5cb6e651aa92e170ee99cd306972f141c9d87bc108d8e7b896d12c20db105",
+    "methane/siting/__init__.py": "5833e17c42994743bb5216d9953064d60b2787063a415118ebae25325fab4833",
+    "methane/siting/cashflow.py": "74bc1094cb62630872028c7ef0d4e8755545def934f64ca2e6ae4da62ec2791e",
+    "methane/siting/catalogue.py": "ab7386fbd10920f4dadb14be6c510c76432a07fd7fbfdf6cf7fa6d726f887e79",
+    "methane/siting/checkpoint.py": "646ca914f55137a976a871cc29ca1fa3d7e699f45431ba735b6c22619993b332",
+    "methane/siting/comparison.py": "9c127c34dc136dd13f42beb3f1dfbc10a84a296047e4bc101e8ff63844c0a120",
+    "methane/siting/contracts.py": "ba3befc5b594b739ef9090493549f484793aec1828cd7b8a6aed72179ca754cc",
+    "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
+    "methane/siting/geometry.py": "4d617c67bcbbb2ceb0524487e0941dc5a0f81f4aaab044be1c4650e8c3e6294e",
+    "methane/siting/jobs.py": "b0f073e810818c1e61343e6dd5af32f359b60117661ceb524f4b1d518ad1d1a3",
+    "methane/siting/layout.py": "50a9aca9a8c0538b6607195f140048777685d84fd30c22d56fb5dbd0fa642e66",
+    "methane/siting/period_costs.py": "ae92caa193397619de9cb03eaed3d790bb66d76597d84270f4b30470c6a5d92f",
+    "methane/siting/production.py": "bc78cade2d06d9b65db3bc1936f0e436930b1aa3426abf7179b2a14065baf531",
+    "methane/siting/raster.py": "9d7f2619f1d85ed9bec6b5c71ca52dafd4a750e7bb2a080febc15d0a8031ff32",
+    "methane/siting/reporting.py": "cec05ce4c8351ba815befb9e112a24d3330cb0137e79948792ebd082b3ba857e",
+    "methane/siting/service.py": "05f362fdd39dfb54274ab5e29d5636f26c1e2684440d080aa62a59251f9d5c73",
+    "methane/siting/sources.py": "c32740988336f8a24afa1fd92d507e6c2001052e336d5355f6f65c1361127901",
+    "methane/siting/store.py": "92fd9ffac9a517d9dc3a724fb374ed6132d3dfa3b9aab5b92a3290e0d88178a5",
+    "methane/siting/utilities.py": "04f46f6ff9a684581e67edf28dd84bebc37bef3bcadf08f9583db47e588e250a",
+    "methane/siting/verification.py": "ca74e07a0de69cb5e8df9689fb714d15df9c61fb6fd282bf26b5715a2289e655",
+    "methane/solar.py": "5143a1cb0149e8a802537c1f0487a09766c8be1db2d7dd785930fe7a8764d28c",
+    "methane/solar_model.py": "49ecbff12813952cf70696621f9eef9b36f2ed63605e916b2471c3931ffbb64c",
+    "methane/solver_study.py": "40156ddf1b9f094efb35e9968065ca52e5593903fdff001bb5616e91cdc4ec51",
+    "methane/source_capsule.py": "4dd534ad39c63862d938b7a3068dfc5ebb1da37d7555c127127417ce15ecf79b",
+    "methane/startup.py": "3561f39206fb64e268b3d68afedaaa9fe142e836bcadb8a9548337c5c0a466a0",
+    "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
+    "methane/studies.py": "77d5e78c552dae357879e22c209d8131e829b6048a200dffde6c4dbcd67396de",
+    "methane/study_bundle_check.py": "35a2cafbf3e65041576df86c268319b598a40986ea52357c680ed746beb41242",
+    "methane/study_presentation.py": "cd21d284483b28c78d895df0396e19d535b18e8deb86a119e77085bf189a82bf",
+    "methane/study_service.py": "f8f71960e060f6f70dec8df2fa43c4070b7915ce9dbfc90bee69403baf5c9adf",
+    "methane/study_worker.py": "63e92123dd03d5dd7594ce9709c9b5556a99de9f52c2982f9f6748dd483b92c2",
+    "methane/taxonomy.py": "9ee6cbd58d1db419fdb15911d800c99d94585bf16bee84ed65e2b560994bf6d0",
+    "methane/taxonomy_definitions.py": "6a7e54578a25791b2799c0328a8b5b8b3422c1a8152ad2db65b2ad114da73c8a",
+    "methane/taxonomy_service.py": "667681c34dade4966b65943f136254d0bb19a3991e68b96beb8830551cfdf96b",
+    "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
+    "methane/ui.py": "2ee6c53e947e6b3977a03087819b81ed12cbda7fa22d7c002666c679ce32ee2c",
+    "methane/uncertainty.py": "d446eda61399a6135c3c054e93878e5ee19289bcf581fb510d57d9412e684e0e",
+    "methane/uncertainty_studies.py": "2d3096ab88f3578e432bc7286bcda0c5bec583f402e5fcaf17ff92553267f1ea",
+    "methane/weather.py": "9e96615f383685cc62d771746c6a37f4f7d6619909c65b56a02a1a10d4305f43"
+  },
+  "outcome": "Reviewed for the declared numerical fixture; original stale documentation remains stale. No new calibration or retroactive original review is asserted.",
+  "scope": "All 104 cases retain the frozen source and independent audits. The final source has a separate full regression and 36-hour numerical reproduction. Teaching and reader corrections do not relabel the frozen study as a final-source execution."
+}

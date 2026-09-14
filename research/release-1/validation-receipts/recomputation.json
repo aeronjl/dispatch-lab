@@ -1,0 +1,36 @@
+{
+  "schema_version": "dispatch-lab/recomputation-comparison/1",
+  "recorded_run_id": "71fd13ba49689ad2",
+  "recomputed_run_id": "56c5987eec79420f",
+  "source_matches": true,
+  "recorded_environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "gradio": "6.26.0",
+    "python": "3.12.14",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "recomputed_environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "gradio": "6.26.0",
+    "python": "3.12.14",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "status": "complete",
+  "independent_reference_passed": true,
+  "controllers": {
+    "MPC \u00b7 methane": {
+      "first_different_interval": null,
+      "different_intervals": 0,
+      "recorded_intervals": 36,
+      "recomputed_intervals": 36,
+      "methane_delta_kg": 0.0,
+      "cost_delta_eur": 0.0
+    }
+  },
+  "archive": "build/release-1/release-source/recomputed-runs/56c5987eec79420f-6c3e9531e4fd556574021f0e2f09a540278ca33f6c9c8cefabd5932f15d280d9.json.gz",
+  "note": "Numerical recomputation, distinct from recorded playback. Time-limited optimization can choose different feasible schedules."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "release-publication-browser/1",
+  "status": "passed",
+  "cases": 104,
+  "keyboard": true,
+  "narrow_screen": true,
+  "local_links": 15,
+  "saved_topics": 20,
+  "network_requests": [],
+  "errors": [],
+  "scope": "Read-only report/recorded Model outputs, offline Chromium. No claim of participant comprehension or remote artifact backup."
+}

@@ -1,0 +1,88 @@
+{
+  "scope": "Finite-state abstraction only; not continuous/implementation proof",
+  "spec_sha256": "a42ff399a51db40c711fa8604fe896e941c3e62e67579a308902a9fb747e688e",
+  "tlc_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "java": "openjdk version \"17.0.16\" 2025-07-15\nOpenJDK Runtime Environment Temurin-17.0.16+8 (build 17.0.16+8)\nOpenJDK 64-Bit Server VM Temurin-17.0.16+8 (build 17.0.16+8, mixed mode, sharing)\n",
+  "cases": [
+    {
+      "minimum_run": 1,
+      "passed": false,
+      "seconds": 0.7520890830783173,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-1.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-1",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 55 and seed -2767272915890690970 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 15603] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:03:03)\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a java.util.concurrent.ExecutionException\n: java.rmi.server.ExportException: Listen failed on port: 0; nested exception is: \n\tjava.net.SocketException: Operation not permitted\nFinished in 00s at (2026-09-14 02:03:03)\n"
+    },
+    {
+      "minimum_run": 2,
+      "passed": false,
+      "seconds": 0.47388020798098296,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-2.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-2",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 55 and seed -8349631050483070342 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 15605] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:03:03)\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a java.util.concurrent.ExecutionException\n: java.rmi.server.ExportException: Listen failed on port: 0; nested exception is: \n\tjava.net.SocketException: Operation not permitted\nFinished in 00s at (2026-09-14 02:03:03)\n"
+    },
+    {
+      "minimum_run": 3,
+      "passed": false,
+      "seconds": 0.6126174170058221,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-3.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-3",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 62 and seed -8344872311104203774 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 15608] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:03:04)\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a java.util.concurrent.ExecutionException\n: java.rmi.server.ExportException: Listen failed on port: 0; nested exception is: \n\tjava.net.SocketException: Operation not permitted\nFinished in 00s at (2026-09-14 02:03:04)\n"
+    },
+    {
+      "minimum_run": 4,
+      "passed": false,
+      "seconds": 0.5198351249564439,
+      "command": [
+        "/private/tmp/dispatch-tools/jdk-17.0.16+8-jre/Contents/Home/bin/java",
+        "-XX:+UseParallelGC",
+        "-cp",
+        "/private/tmp/dispatch-tools/tla2tools.jar",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "Reactor-4.cfg",
+        "-metadir",
+        "/Users/aeron/sota/dispatch-lab/build/engineering/formal/states-4",
+        "Reactor"
+      ],
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 58 and seed 332133505048806845 with 1 worker on 10 cores with 7282MB heap and 64MB offheap memory [pid: 15609] (Mac OS X 26.5.2 aarch64, Eclipse Adoptium 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /Users/aeron/sota/dispatch-lab/build/engineering/formal/Reactor.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Integers.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/TLC.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Naturals.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/Sequences.tla\nParsing file /private/var/folders/s2/jzjpbmv14ws68r6_vcdt6npr0000gn/T/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Integers\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Reactor\nStarting... (2026-09-14 02:03:04)\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a java.util.concurrent.ExecutionException\n: java.rmi.server.ExportException: Listen failed on port: 0; nested exception is: \n\tjava.net.SocketException: Operation not permitted\nFinished in 00s at (2026-09-14 02:03:05)\n"
+    }
+  ]
+}

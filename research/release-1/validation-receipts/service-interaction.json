@@ -1,0 +1,428 @@
+{
+  "version": "release-service-interaction/1",
+  "scope": "All new service controls, followed by 20 simple interactions per topic; frozen numerical qualification and Python regression active separately.",
+  "controls": [
+    {
+      "topic": "cleaning",
+      "key": "coverage",
+      "value": 0.65,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "cleaning",
+      "key": "loose",
+      "value": 0.13,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "cleaning",
+      "key": "efficacy",
+      "value": 0.8500000000000001,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "cleaning",
+      "key": "method",
+      "value": "wet",
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "signal",
+      "value": 23,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "offset",
+      "value": 0.25,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "noise",
+      "value": 0.2,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "delay",
+      "value": 2,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "clock",
+      "value": 2,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "inspection",
+      "key": "dropout",
+      "value": "yes",
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "recovery",
+      "key": "case",
+      "value": "failed-procedure",
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "recovery",
+      "key": "deadline",
+      "value": 25,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "charging",
+      "key": "power",
+      "value": 11,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "charging",
+      "key": "initial",
+      "value": 0.5,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "charging",
+      "key": "use",
+      "value": 6.5,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "charging",
+      "key": "efficiency",
+      "value": 0.8500000000000001,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "logistics",
+      "key": "stock",
+      "value": 2,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "logistics",
+      "key": "delivery",
+      "value": 3,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "logistics",
+      "key": "arrival",
+      "value": 3,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "logistics",
+      "key": "duration",
+      "value": 3,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_costs",
+      "key": "crew_price",
+      "value": 85,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_costs",
+      "key": "part_price",
+      "value": 2600,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_costs",
+      "key": "wear",
+      "value": 3,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_costs",
+      "key": "life",
+      "value": 9,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_costs",
+      "key": "purchase",
+      "value": "yes",
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_uncertainty",
+      "key": "duration",
+      "value": 1.3,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_uncertainty",
+      "key": "jobs",
+      "value": 4,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_uncertainty",
+      "key": "censored",
+      "value": "yes",
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    },
+    {
+      "topic": "service_uncertainty",
+      "key": "clock",
+      "value": 4,
+      "status": "Learning example · changed assumptions · calculated with the current model"
+    }
+  ],
+  "performance": {
+    "cleaning": {
+      "samples_ms": [
+        111.80000007152557,
+        118.70000004768372,
+        109.69999992847443,
+        112,
+        110.20000004768372,
+        116.59999990463257,
+        122.60000002384186,
+        138.70000004768372,
+        107.69999992847443,
+        102.69999992847443,
+        101.5,
+        103.69999992847443,
+        101.89999997615814,
+        98.69999992847443,
+        108.5,
+        100.79999995231628,
+        99,
+        100.5,
+        99,
+        98
+      ],
+      "input_p95_ms": 138.70000004768372,
+      "render_p95_ms": 1.100000023841858,
+      "render_samples_ms": [
+        0.9000000953674316,
+        1,
+        1.100000023841858,
+        1,
+        0.7999999523162842,
+        1.0999999046325684,
+        0.8999999761581421,
+        0.9000000953674316,
+        0.7999999523162842,
+        0.8000000715255737,
+        0.8000000715255737,
+        0.7999999523162842,
+        0.6999999284744263,
+        0.6999999284744263,
+        0.7999999523162842,
+        0.9000000953674316,
+        0.7999999523162842,
+        0.8999999761581421,
+        0.5999999046325684,
+        0.9000000953674316
+      ],
+      "passes": true
+    },
+    "inspection": {
+      "samples_ms": [
+        102.60000002384186,
+        198.20000004768372,
+        102.89999997615814,
+        102.10000002384186,
+        105,
+        103.60000002384186,
+        105.89999997615814,
+        102.69999992847443,
+        102,
+        102.5,
+        104.20000004768372,
+        107.60000002384186,
+        105,
+        102.5,
+        100.19999992847443,
+        100.79999995231628,
+        108,
+        103,
+        99,
+        100.29999995231628
+      ],
+      "input_p95_ms": 198.20000004768372,
+      "render_p95_ms": 0.7999999523162842,
+      "render_samples_ms": [
+        0.7000000476837158,
+        0.6000000238418579,
+        0.5999999046325684,
+        0.6000000238418579,
+        0.7000000476837158,
+        0.7000000476837158,
+        0.6999999284744263,
+        0.5999999046325684,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.7999999523162842,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6999999284744263,
+        0.5999999046325684,
+        0.5999999046325684,
+        0.5999999046325684,
+        0.7000000476837158,
+        0.6000000238418579,
+        0.6999999284744263
+      ],
+      "passes": true
+    },
+    "logistics": {
+      "samples_ms": [
+        108.19999992847443,
+        114.29999995231628,
+        107.79999995231628,
+        113,
+        101.79999995231628,
+        106.79999995231628,
+        108.10000002384186,
+        103.20000004768372,
+        106.5,
+        109.69999992847443,
+        109.80000007152557,
+        111.80000007152557,
+        116.60000002384186,
+        106.29999995231628,
+        105.09999990463257,
+        102,
+        102.89999997615814,
+        102.10000002384186,
+        103.5,
+        101.60000002384186
+      ],
+      "input_p95_ms": 116.60000002384186,
+      "render_p95_ms": 0.8000000715255737,
+      "render_samples_ms": [
+        0.6999999284744263,
+        0.7999999523162842,
+        0.6000000238418579,
+        0.5999999046325684,
+        0.7000000476837158,
+        0.6000000238418579,
+        0.7000000476837158,
+        0.7000000476837158,
+        0.5,
+        0.5999999046325684,
+        0.7000000476837158,
+        0.6000000238418579,
+        0.8000000715255737,
+        0.5999999046325684,
+        0.5999999046325684,
+        0.6000000238418579,
+        0.5,
+        0.7000000476837158,
+        0.5999999046325684,
+        0.7000000476837158
+      ],
+      "passes": true
+    },
+    "service_costs": {
+      "samples_ms": [
+        108.30000007152557,
+        105.09999990463257,
+        104.39999997615814,
+        111.39999997615814,
+        112,
+        114.89999997615814,
+        113.70000004768372,
+        114.5,
+        112.79999995231628,
+        111,
+        121.20000004768372,
+        111,
+        112.10000002384186,
+        109,
+        108.20000004768372,
+        108.89999997615814,
+        111.89999997615814,
+        107.79999995231628,
+        103.09999990463257,
+        112.70000004768372
+      ],
+      "input_p95_ms": 121.20000004768372,
+      "render_p95_ms": 0.7000000476837158,
+      "render_samples_ms": [
+        0.7000000476837158,
+        0.5,
+        0.6000000238418579,
+        0.6999999284744263,
+        0.6000000238418579,
+        0.5,
+        0.7000000476837158,
+        0.6000000238418579,
+        0.6999999284744263,
+        0.6999999284744263,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6999999284744263,
+        0.7000000476837158,
+        0.5999999046325684,
+        0.5,
+        0.7000000476837158
+      ],
+      "passes": true
+    },
+    "service_uncertainty": {
+      "samples_ms": [
+        115.5,
+        103.5,
+        104.10000002384186,
+        102.79999995231628,
+        98,
+        97.39999997615814,
+        97.30000007152557,
+        99,
+        95.19999992847443,
+        99.20000004768372,
+        99.20000004768372,
+        94.90000009536743,
+        98.19999992847443,
+        98.69999992847443,
+        98.69999992847443,
+        97.39999997615814,
+        99,
+        102.69999992847443,
+        102,
+        101.80000007152557
+      ],
+      "input_p95_ms": 115.5,
+      "render_p95_ms": 0.7999999523162842,
+      "render_samples_ms": [
+        0.7000000476837158,
+        0.7999999523162842,
+        0.6000000238418579,
+        0.7999999523162842,
+        0.5999999046325684,
+        0.7000000476837158,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.5999999046325684,
+        0.6000000238418579,
+        0.7000000476837158,
+        0.3999999761581421,
+        0.6000000238418579,
+        0.5999999046325684,
+        0.5999999046325684,
+        0.6000000238418579,
+        0.7000000476837158,
+        0.6999999284744263,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "passes": true
+    }
+  },
+  "errors": []
+}

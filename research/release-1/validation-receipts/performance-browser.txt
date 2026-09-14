@@ -1,0 +1,13 @@
+
+> test:browser
+> playwright test --grep preview latency|model learning stays responsive
+
+
+Running 2 tests using 1 worker
+
+(node:20270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/model.spec.cjs:88:1 › model learning stays responsive while a comparative batch runs (6.1s)
+  ✓  2 tests/browser/platform.spec.cjs:56:1 › preview latency, render cost and immutable restored design (6.7s)
+
+  2 passed (1.2m)

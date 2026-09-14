@@ -1,0 +1,128 @@
+
+> test:browser
+> playwright test
+
+
+Running 116 tests using 1 worker
+
+(node:15439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 tests/browser/adaptation.spec.cjs:2:1 › performance adaptation is explicit, source-defined and invalidates an earlier preview (1.9s)
+  ✓    2 tests/browser/assumptions.spec.cjs:3:1 › parameter evidence reveals basis and uncertainty without changing playback (2.1s)
+  ✓    3 tests/browser/assumptions.spec.cjs:10:1 › assumption catalogue supports keyboard navigation and narrow screens (1.9s)
+  ✓    4 tests/browser/assumptions.spec.cjs:14:1 › current Model essay includes scoped parameter review (2.1s)
+  ✓    5 tests/browser/assumptions.spec.cjs:17:1 › review report reads offline on desktop and narrow screens (350ms)
+  ✓    6 tests/browser/assumptions.spec.cjs:22:1 › new offline archive retains its original review without network access (441ms)
+  ✓    7 tests/browser/autonomy.spec.cjs:2:1 › autonomous service assumptions are explicit, resettable and invalidate a reviewed preview (1.3s)
+  ✓    8 tests/browser/computation-studies.spec.cjs:4:1 › computation preview exposes separate budgets and distinguishes repetitions from seeds (1.2s)
+  -    9 tests/browser/computation-studies.spec.cjs:8:1 › recorded computation qualification links to its cases and remains usable on narrow screens
+  ✓   10 tests/browser/field-operations.spec.cjs:9:1 › site services are revealed, keyboard accessible and preserve the playhead (881ms)
+  ✓   11 tests/browser/field-operations.spec.cjs:20:1 › matched field presets keep environment enabled and select intervention capability (1.9s)
+  ✓   12 tests/browser/field-operations.spec.cjs:35:1 › saved field playback shows executed work, costs and calculation offline (904ms)
+  ✓   13 tests/browser/field-scene.spec.cjs:23:1 › motion follows playback speed, pause, seek and controller without network requests (2.2s)
+  ✓   14 tests/browser/field-scene.spec.cjs:49:1 › hardware inspection pauses, returns keyboard focus and is reachable on narrow screens (833ms)
+  ✓   15 tests/browser/field-scene.spec.cjs:64:1 › reduced motion changes poses only at hourly boundaries (749ms)
+  ✓   16 tests/browser/field-scene.spec.cjs:72:1 › reviewed dock, cleaning, inspection and repair poses preserve the equipment composition (1.2s)
+  ✓   17 tests/browser/field-scene.spec.cjs:80:1 › service renderer stays within the frame budget (420ms)
+  -   18 tests/browser/field-studies.spec.cjs:4:1 › field write-up retains separate packages, service accounting and original calculation identities
+  -   19 tests/browser/field-studies.spec.cjs:12:1 › new study chooses a protocol without inheriting the previous edition and rejects late previews
+  -   20 tests/browser/field-studies.spec.cjs:17:1 › field editions cancel, resume, retain publications and return from playback
+  -   21 tests/browser/field-studies.spec.cjs:27:1 › matched configurations remain accessible on narrow screens with a reviewed write-up
+  -   22 tests/browser/field-studies.spec.cjs:31:1 › loading another publication removes the previous report actions until the selected response arrives
+  -   23 tests/browser/field-studies.spec.cjs:41:1 › service histories load on demand and late records cannot replace a different selection
+  -   24 tests/browser/field-studies.spec.cjs:66:1 › unavailable service history preserves navigation and never shows another record
+  ✓   25 tests/browser/fractional-services.spec.cjs:15:1 › fixed reader uses recorded evidence and returns inspection focus offline (622ms)
+  ✓   26 tests/browser/fractional-services.spec.cjs:31:1 › fractional overlay follows supplied subhour spans and freezes under reduced motion (612ms)
+  ✓   27 tests/browser/hardware-services.spec.cjs:17:1 › hardware evidence is revealed on demand and retains failed release after repair offline (906ms)
+  ✓   28 tests/browser/hardware-services.spec.cjs:30:1 › recorded assistance, return, packing and module work preserve illustrated poses (4.3s)
+  ✓   29 tests/browser/hardware-services.spec.cjs:42:1 › hardware setup exposes bounded persistent faults and finite remote support (1.3s)
+  ✓   30 tests/browser/inspection-services.spec.cjs:17:1 › paired inspection reveals reference failures and preserves keyboard return offline (868ms)
+  ✓   31 tests/browser/inspection-services.spec.cjs:36:1 › late acquisition remains unavailable and shared-contact agreement keeps its limits (778ms)
+  ✓   32 tests/browser/inspection-services.spec.cjs:48:1 › inspection scenario exposes numeric reader faults separately from contact-state choices (1.5s)
+  ✓   33 tests/browser/investigation.spec.cjs:3:1 › investigation controls reveal prerequisites, retain edits and return to the quiet plant (5.3s)
+  ✓   34 tests/browser/local-policy.spec.cjs:17:1 › periodic inspector records cadence and interrupted treatment offline (847ms)
+  ✓   35 tests/browser/local-policy.spec.cjs:27:1 › prepared and enclosed fittings preserve keyboard inspection and narrow access (1.2s)
+  ✓   36 tests/browser/local-policy.spec.cjs:44:1 › setup exposes explicit rules and fractional recurrence (1.2s)
+  ✓   37 tests/browser/model.spec.cjs:13:1 › model essay reconciles battery, resets, and returns to the same inspector (2.2s)
+  ✓   38 tests/browser/model.spec.cjs:23:1 › all twelve model topics calculate and expose their assumptions and evidence (11.1s)
+  ✓   39 tests/browser/model.spec.cjs:36:1 › model missing data and infeasible inputs retain labelled previous values (1.6s)
+  ✓   40 tests/browser/model.spec.cjs:41:1 › choosing a model topic keeps focus inside the workspace for immediate Escape (1.0s)
+  ✓   41 tests/browser/model.spec.cjs:49:1 › model reading on narrow screens keeps example inline and controls accessible (1.2s)
+  ✓   42 tests/browser/model.spec.cjs:57:1 › model response generation rejects late calculations after reset and topic changes (1.7s)
+  ✓   43 tests/browser/model.spec.cjs:63:1 › isolated model comparison cancels and can calculate again (3.5s)
+  ✓   44 tests/browser/model.spec.cjs:68:1 › model recorded trace distinguishes legacy explanation from current model (1.0s)
+  ✓   45 tests/browser/model.spec.cjs:73:1 › model simple examples meet the interaction budget (5.6s)
+  ✓   46 tests/browser/model.spec.cjs:83:1 › model essay artwork remains stable (1.2s)
+  -   47 tests/browser/model.spec.cjs:88:1 › model learning stays responsive while a comparative batch runs
+  ✓   48 tests/browser/model.spec.cjs:102:1 › every essay control has a calculated or explicit invalid result and resets (25.9s)
+  ✓   49 tests/browser/model.spec.cjs:116:1 › keyboard learning preserves the originating hour and controller (2.0s)
+  -   50 tests/browser/model.spec.cjs:121:1 › new archive exposes original model assumptions and calculation identities
+  -   51 tests/browser/model.spec.cjs:126:1 › saved model report opens from portable playback with the network disabled
+  ✓   52 tests/browser/optical-services.spec.cjs:18:1 › recorded optical results and surface inventory stay separate from design editing offline (685ms)
+  ✓   53 tests/browser/optical-services.spec.cjs:49:1 › failed brushing retains its partial effect and working position without animation (393ms)
+  ✓   54 tests/browser/platform.spec.cjs:16:1 › plant and solar artwork match the pre-refactor reference (1.1s)
+  ✓   55 tests/browser/platform.spec.cjs:26:1 › keyboard inspection, lazy plans and evidence remain usable (1.5s)
+  ✓   56 tests/browser/platform.spec.cjs:47:1 › narrow-screen solar access and changed geometry (1.2s)
+  ✓   57 tests/browser/platform.spec.cjs:56:1 › preview latency, render cost and immutable restored design (4.4s)
+  ✓   58 tests/browser/platform.spec.cjs:89:1 › playback, controller views, costs and event navigation (1.6s)
+  ✓   59 tests/browser/platform.spec.cjs:100:1 › superseded preview responses cannot replace the latest design (2.1s)
+  ✓   60 tests/browser/platform.spec.cjs:116:1 › quiet full viewport, retreat controls and discoverable recovery (1.1s)
+  ✓   61 tests/browser/platform.spec.cjs:132:1 › separate analysis and setup return to the same playhead (1.5s)
+  ✓   62 tests/browser/platform.spec.cjs:141:1 › battery trace is revealed on demand and follows the selected interval (2.1s)
+  ✓   63 tests/browser/platform.spec.cjs:170:1 › legacy archive restores editable setup without inventing battery lineage (3.2s)
+  -   64 tests/browser/platform.spec.cjs:185:1 › component and repriced cost lineage stay behind disclosures
+  -   65 tests/browser/platform.spec.cjs:212:1 › portable offline bundle plays without network access
+  ✓   66 tests/browser/platform.spec.cjs:227:1 › solar defers recorded lineage until its disclosure is opened (1.9s)
+  ✓   67 tests/browser/portable-services.spec.cjs:17:1 › portable tool is keyboard inspectable and water remains separate from kit stock offline (539ms)
+  ✓   68 tests/browser/portable-services.spec.cjs:32:1 › wet spray follows treatment only; dry, failed and reduced-motion examples stay static (1.1s)
+  ✓   69 tests/browser/recovery.spec.cjs:10:1 › scheduled tests are opt-in and reveal their assumptions only in setup (3.1s)
+  ✓   70 tests/browser/routine-services.spec.cjs:17:1 › routine inspector exposes completed work and unserved dock power offline, then restores focus (546ms)
+  ✓   71 tests/browser/routine-services.spec.cjs:32:1 › routine technician phases and reduced motion keep the same recorded completion (1.0s)
+  ✓   72 tests/browser/routine-services.spec.cjs:42:1 › setup retains fractional routine durations and dock rates (1.2s)
+  ✓   73 tests/browser/service-alternatives.spec.cjs:13:1 › older decisions explicitly lack original service context and return by keyboard (983ms)
+  ✓   74 tests/browser/service-alternatives.spec.cjs:21:1 › an older menu render cannot steal focus from the next keyboard interaction (814ms)
+  ✓   75 tests/browser/service-alternatives.spec.cjs:39:1 › paired response renders, changed inputs stay labelled, and a late response is ignored (1.3s)
+  ✓   76 tests/browser/service-alternatives.spec.cjs:69:1 › closing a pending comparison cancels its generation and reopening ignores it (1.0s)
+  ✓   77 tests/browser/service-alternatives.spec.cjs:84:1 › compatible procedures retain original identities, reveal restrictions, and preserve infeasible outcomes (1.2s)
+  ✓   78 tests/browser/service-alternatives.spec.cjs:117:1 › investigation choice reveals branch predictions, original assumptions and incomplete outcomes (1.3s)
+  ✓   79 tests/browser/service-alternatives.spec.cjs:154:1 › a later service interval returns to the recorded investigation selection before replanning (1.1s)
+  -   80 tests/browser/service-economics.spec.cjs:6:1 › service cost views reveal original prices and return to the same service context
+  -   81 tests/browser/service-economics.spec.cjs:13:1 › repricing keeps actions and original service identity; blank rates stay unpriced
+  -   82 tests/browser/service-economics.spec.cjs:21:1 › price editor reveals one asset at a time and provision excludes duplicate ownership
+  ✓   83 tests/browser/service-model.spec.cjs:11:59 › service essay cleaning calculates, changes, resets and traces (1.7s)
+  ✓   84 tests/browser/service-model.spec.cjs:11:59 › service essay inspection calculates, changes, resets and traces (1.8s)
+  ✓   85 tests/browser/service-model.spec.cjs:11:59 › service essay recovery calculates, changes, resets and traces (20.6s)
+  ✓   86 tests/browser/service-model.spec.cjs:11:59 › service essay charging calculates, changes, resets and traces (8.3s)
+  ✓   87 tests/browser/service-model.spec.cjs:11:59 › service essay logistics calculates, changes, resets and traces (2.0s)
+  ✓   88 tests/browser/service-model.spec.cjs:11:59 › service essay service_costs calculates, changes, resets and traces (2.2s)
+  ✓   89 tests/browser/service-model.spec.cjs:11:59 › service essay service_uncertainty calculates, changes, resets and traces (2.0s)
+  ✓   90 tests/browser/service-model.spec.cjs:23:1 › service essays are accessible on narrow screens and reset supersedes late input (2.7s)
+  ✓   91 tests/browser/service-planning.spec.cjs:3:1 › shared visit planning is opt-in, keyboard selectable and retreats from the simulation (2.2s)
+  -   92 tests/browser/sites-studies.spec.cjs:2:1 › Sites runs a frozen case, opens its original interval and publishes a comparison
+  ✓   93 tests/browser/sites.spec.cjs:2:1 › Sites preserves the simulation while saving a sourced regional design (4.9s)
+  ✓   94 tests/browser/studies.spec.cjs:4:1 › study write-up traces a metric and returns to its originating hour and focus (1.5s)
+  ✓   95 tests/browser/studies.spec.cjs:10:1 › study resolves parameter variants and rejects late selection responses (1.8s)
+  ✓   96 tests/browser/studies.spec.cjs:16:1 › recorded study case opens the requested controller and returns to the same report (5.0s)
+  ✓   97 tests/browser/studies.spec.cjs:20:1 › Model links to Studies and returns to the essay without changing its controls (1.2s)
+  ✓   98 tests/browser/studies.spec.cjs:24:1 › study index, configuration and keyboard charts remain usable on a narrow screen (1.3s)
+  ✓   99 tests/browser/studies.spec.cjs:28:1 › study worker can cancel, resume, publish and download its preserved evidence (28.7s)
+  ✓  100 tests/browser/studies.spec.cjs:32:1 › study workspace has a reviewed visual reference (1.9s)
+  ✓  101 tests/browser/support-services.spec.cjs:16:1 › support inspector retains failed work, separate acceptance and unpriced quantities offline (669ms)
+  ✓  102 tests/browser/support-services.spec.cjs:38:1 › retrieval drawings show preparation, transport and dock testing; reduced motion uses boundaries (959ms)
+  ✓  103 tests/browser/taxonomy.spec.cjs:3:1 › explorer preserves the component, controller, hour and focus through nested Model navigation (1.7s)
+  ✓  104 tests/browser/taxonomy.spec.cjs:10:1 › dependencies lead to shared resources, overview and scoped hardware families (2.1s)
+  ✓  105 tests/browser/taxonomy.spec.cjs:17:1 › search keeps future concepts optional and works on a narrow screen (2.5s)
+  ✓  106 tests/browser/taxonomy.spec.cjs:21:1 › late catalogue responses do not replace a newer context (3.1s)
+  ✓  107 tests/browser/taxonomy.spec.cjs:25:1 › failed catalogue request has a visible recovery path (1.4s)
+  -  108 tests/browser/taxonomy.spec.cjs:28:1 › saved service snapshot connects target, interface, capability, actor and support offline
+  ✓  109 tests/browser/taxonomy.spec.cjs:33:1 › solar and service entry points return to their original workspace (1.7s)
+  ✓  110 tests/browser/uncertainty.spec.cjs:3:1 › uncertainty editor covers complete catalogue, previews worlds and restores context (1.8s)
+  ✓  111 tests/browser/uncertainty.spec.cjs:7:1 › invalid probability requests and late previews cannot enable execution (2.2s)
+  ✓  112 tests/browser/uncertainty.spec.cjs:11:1 › all observation channels and narrow-screen keyboard workflow (1.3s)
+  -  113 tests/browser/uncertainty.spec.cjs:14:1 › reviewed world executes in a frozen worker and produces traceable envelopes
+  ✓  114 tests/browser/visit-services.spec.cjs:17:1 › visit evidence stays behind inspection and separates planned jobs from return offline (632ms)
+  ✓  115 tests/browser/visit-services.spec.cjs:32:1 › visit transfers and interrupted work retain recorded poses and reduced-motion boundaries (1.7s)
+  ✓  116 tests/browser/visit-services.spec.cjs:53:1 › combined-visit setup exposes the limit and declared on-site transfer time (1.2s)
+
+  19 skipped
+  97 passed (4.2m)

@@ -1,0 +1,23 @@
+
+> test:browser
+> playwright test tests/browser/field-studies.spec.cjs tests/browser/sites-studies.spec.cjs tests/browser/uncertainty.spec.cjs
+
+
+Running 12 tests using 1 worker
+
+(node:17391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/field-studies.spec.cjs:4:1 › field write-up retains separate packages, service accounting and original calculation identities (2.5s)
+  ✓   2 tests/browser/field-studies.spec.cjs:12:1 › new study chooses a protocol without inheriting the previous edition and rejects late previews (1.8s)
+  ✓   3 tests/browser/field-studies.spec.cjs:17:1 › field editions cancel, resume, retain publications and return from playback (29.4s)
+  ✓   4 tests/browser/field-studies.spec.cjs:27:1 › matched configurations remain accessible on narrow screens with a reviewed write-up (1.4s)
+  ✓   5 tests/browser/field-studies.spec.cjs:31:1 › loading another publication removes the previous report actions until the selected response arrives (1.3s)
+  ✓   6 tests/browser/field-studies.spec.cjs:41:1 › service histories load on demand and late records cannot replace a different selection (1.8s)
+  ✓   7 tests/browser/field-studies.spec.cjs:66:1 › unavailable service history preserves navigation and never shows another record (1.2s)
+  ✓   8 tests/browser/sites-studies.spec.cjs:2:1 › Sites runs a frozen case, opens its original interval and publishes a comparison (12.9s)
+  ✓   9 tests/browser/uncertainty.spec.cjs:3:1 › uncertainty editor covers complete catalogue, previews worlds and restores context (1.7s)
+  ✓  10 tests/browser/uncertainty.spec.cjs:7:1 › invalid probability requests and late previews cannot enable execution (2.0s)
+  ✓  11 tests/browser/uncertainty.spec.cjs:11:1 › all observation channels and narrow-screen keyboard workflow (1.3s)
+  ✓  12 tests/browser/uncertainty.spec.cjs:14:1 › reviewed world executes in a frozen worker and produces traceable envelopes (18.5s)
+
+  12 passed (1.9m)

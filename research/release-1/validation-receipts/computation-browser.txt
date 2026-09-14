@@ -1,0 +1,13 @@
+
+> test:browser
+> playwright test tests/browser/computation-studies.spec.cjs
+
+
+Running 2 tests using 1 worker
+
+(node:18618) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/computation-studies.spec.cjs:4:1 › computation preview exposes separate budgets and distinguishes repetitions from seeds (1.3s)
+  ✓  2 tests/browser/computation-studies.spec.cjs:8:1 › recorded computation qualification links to its cases and remains usable on narrow screens (1.6s)
+
+  2 passed (26.4s)

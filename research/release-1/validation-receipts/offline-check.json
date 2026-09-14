@@ -1,0 +1,12 @@
+{
+  "schema_version": "dispatch-lab/offline-verification/1",
+  "run_id": "71fd13ba49689ad2",
+  "bundle_inventory_hash": "9cdc56efef878aff253a5fff2080c494c78f4bfe016d502c2c110504d4d1657c",
+  "source_status": "captured",
+  "integrity_passed": true,
+  "reference_passed": true,
+  "reference_checks": 4270,
+  "failures": [],
+  "status": "passed",
+  "scope": "Recorded actions checked offline with an independent reference. No optimization rerun or claim of empirical calibration."
+}
