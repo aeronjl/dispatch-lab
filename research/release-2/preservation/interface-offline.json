@@ -1,0 +1,16 @@
+{
+  "version": "release-2-preservation-restore/1",
+  "edition_id": "690b51568b6c4702883cd6c9c7064cbc",
+  "source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "bundle": "build/release-2/preservation/interface-reproduction.zip",
+  "sha256": "d0435a6452f5b216a849d532ab3740e23bb5a763bb2fb796d1f29a6a0d42d580",
+  "uncompressed_bytes": 19146184505,
+  "process_exit": 0,
+  "archives": 72,
+  "integrity_passed": true,
+  "complete_archives_passed": true,
+  "failed_runs": [],
+  "method": "Full temporary extraction; captured standalone checker run under python -I -S. No third-party packages or network. Duplicate extraction removed after verification; original ZIP retained.",
+  "detail": "research/release-2/preservation/interface-offline-archives.json",
+  "orchestrator": "research/release-2/restore_ready.py"
+}

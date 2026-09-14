@@ -1321,5 +1321,12 @@
       "checked": 72,
       "scope": "Sealed recording identity, applicable study context, and referenced audit/service artifact identities at publication. Not empirical validation."
     }
+  },
+  "portable_bundle": {
+    "reader": "compact/1",
+    "path": "build/release-2/preservation/interface-reproduction.zip",
+    "bytes": 2505311079,
+    "sha256": "d0435a6452f5b216a849d532ab3740e23bb5a763bb2fb796d1f29a6a0d42d580",
+    "scope": "Exported bytes; offline restore verification is a separate receipt"
   }
 }

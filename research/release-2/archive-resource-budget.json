@@ -14,10 +14,6 @@
   "parent_pid": 48746,
   "paused": [
     {
-      "name": "corrected-support",
-      "pid": 64402
-    },
-    {
       "name": "provision",
       "pid": 68488
     }
@@ -40,5 +36,12 @@
     "Pageouts": 0,
     "scope": "One host sample after reducing active exporters; not a controlled performance experiment or a guarantee of future latency."
   },
-  "measurement": "Difference between vm_stat cumulative page counters over two seconds; host page size 16384 bytes. Compression counts are churn, not resident memory."
+  "measurement": "Difference between vm_stat cumulative page counters over two seconds; host page size 16384 bytes. Compression counts are churn, not resident memory.",
+  "resumptions": [
+    {
+      "name": "corrected-support",
+      "pid": 64402,
+      "at": "2026-09-14T14:37:00.780033+00:00"
+    }
+  ]
 }
