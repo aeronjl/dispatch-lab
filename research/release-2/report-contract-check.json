@@ -32,6 +32,8 @@
     "preservation/offline/sha256": true,
     "preservation/offline/integrity_passed": true,
     "preservation/offline/complete_archives_passed": true,
+    "preservation/offline/archives": true,
+    "preservation/offline/process_exit": true,
     "publication/valid": true,
     "publication/source": true,
     "publication/study_id": true,

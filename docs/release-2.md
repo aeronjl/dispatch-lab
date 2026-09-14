@@ -28,16 +28,30 @@ matched European environments, policy comparisons and uncertainty challenges.
 
 ## Completion gates
 
+Scope revised on 14 September 2026 at the user's request: the experiment platform
+is the deliverable. The research matrix is an optional use of the platform, not
+a release gate. The original protocol and incomplete studies remain preserved.
+
 1. Preserve original source editions without relabelling old validation as current.
 2. Give every family an implemented or evidence-restricted disposition with mechanism,
    prerequisites, observations, costs and evidence scope. No generic invented repair.
 3. Reconcile commissioning capacity, labour, energy, acceptance, departure and invoices.
 4. Reconcile condition, stock and work across continuous execution and checkpoints;
    observations never receive future outage ends or private procedure outcomes.
-5. Publish matched comparisons with terminal energy, feedstock, thermal state,
-   condition, stock and unresolved obligations. Retain failed/incomplete cases.
+5. Qualify a small matched-comparison workflow with terminal energy, feedstock,
+   thermal state, condition, stock and unresolved obligations. Finish one representative
+   continuous annual case for long-duration reliability. Retain failed/incomplete
+   cases. Seasonal/policy/uncertainty matrices become reusable experiment templates;
+   completing every policy-year or historical export is optional research work.
 6. Qualify the Sites → design → operation → Model/trace → comparison → write-up path,
    original artwork, legacy/offline behaviour and input-to-display performance.
+7. Make study recipes reusable, show scoped runtime estimates, and let users edit
+   interpretations as new immutable report editions. Check that no template starts
+   itself and no narrative edit changes a physical trace. New source versions need
+   relevant regression checks, not an automatic rerun of a scientific study.
+
+See [the product acceptance contract](../research/release-2/product-acceptance.md)
+for named cases and the [study workflow](study-workflow.md) for user instructions.
 
 ## Boundaries
 

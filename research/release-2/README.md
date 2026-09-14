@@ -4,6 +4,24 @@ The [release report](report.html) is the user-facing completion record. Its nume
 claims refer to the published programme identities, not automatically to a future
 application version. [Protocol](protocol.md) · [narrative review](narrative-review.md).
 
+## Product acceptance, not a research queue
+
+The [scope revision](product-acceptance.md) makes the platform the release criterion.
+The larger matrix and unfinished redundant exports are optional. Completed and partial
+records remain preserved. Do not run the commands below as a release checklist.
+
+Use **Sites → Production studies → Experiment templates** for the four saved recipes.
+Review the question, comparison method, assumptions and cases before creating a new
+edition; execution is explicit. [Workflow guide](../../docs/study-workflow.md).
+`register_templates.py` exposes the existing frozen recipes without executing them;
+`templates.json` preserves their metadata and original input references. A fresh clone
+needs the referenced saved data restored; no silent weather substitute is supplied.
+
+`finish_annual_acceptance.py` stops the original four-case study after its first
+8,760-hour case. `analyse_annual_acceptance.py` checks only that completed case with
+the already-loaded original checker. Their receipts do not mark all four cases complete.
+`research-scope-change.json` records stopped workers and retained partial exports.
+
 ## Repeat the work
 
 Use the repository's locked Python environment. The scripts are research tools,

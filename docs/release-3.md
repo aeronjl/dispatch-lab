@@ -4,6 +4,13 @@ Status: not started. Release 2 must finish its source-bound qualification gates
 before this programme starts. The [roadmap](roadmap.md) remains the scope authority;
 this document makes its sequence and acceptance criteria explicit.
 
+Completion means delivering the machinery users need to train, evaluate and compare
+policies. Verify it with small, named acceptance examples. Large training campaigns,
+policy/season sweeps and claims of superior control are optional studies run using
+the platform; they are not release gates. This supersedes any reading of the gates
+below as requiring an exhaustive research programme. Participant work requires real
+participants and must remain explicitly outstanding until they take part.
+
 ## 1. Observation datasets and frozen evaluation boundaries
 
 Build datasets from recorded decisions, eligible forecasts, actions, service reports,

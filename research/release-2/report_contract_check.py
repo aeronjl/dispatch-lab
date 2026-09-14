@@ -20,7 +20,7 @@ for key in ('after_programme','before_programme','after_source','before_source',
 value=next(v for v in data['preservation'] if rd.preservation_matches(v));checks['preservation/valid']=True
 for key in ('source_matches','case_set_matches','completed','matched_inputs','matched_traces','matched_outcomes','matched_events'):
     changed=copy.deepcopy(value);changed[key]=False if isinstance(value[key],bool) else value[key]-1;checks['preservation/'+key]=not rd.preservation_matches(changed)
-for key in ('edition_id','source','sha256','integrity_passed','complete_archives_passed'):
+for key in ('edition_id','source','sha256','integrity_passed','complete_archives_passed','archives','process_exit'):
     changed=copy.deepcopy(value);changed['offline'][key]=False if isinstance(value['offline'][key],bool) else 'different';checks['preservation/offline/'+key]=not rd.preservation_matches(changed)
 group=next(g for g in data['studies'] if g['publication']);value=group['publication'];checks['publication/valid']=rd.publication_matches(value,group,manifest)
 for key in ('source','study_id'):

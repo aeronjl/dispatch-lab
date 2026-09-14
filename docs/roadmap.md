@@ -5,6 +5,12 @@ configure a plant and support system, compare operation under uncertainty, inspe
 its decisions and publish a traceable assessment. This is separate from field
 validation, live plant control, safety certification and eventual DePIN deployment.
 
+The September 2026 scope correction makes product usability the release criterion.
+Small named checks verify mechanisms and the complete workflow; large policy/site/
+season matrices are reusable study templates for users, not a mandatory research
+queue. One representative annual case checks long-duration operation. See the
+[product acceptance revision](../research/release-2/product-acceptance.md).
+
 ## Release 1 — qualified reference autonomy
 
 Acceptance and current work: [release-1.md](release-1.md).
@@ -19,8 +25,8 @@ comprehension walkthrough. Numerical qualification is not empirical calibration.
 
 ## Release 2 — complete deployment and service lifecycle
 
-Resume the remaining [field programme](field-operations-roadmap.md) explicitly from
-its saved records; do not relaunch completed publications or erase its paused queue.
+Preserve the [field programme](field-operations-roadmap.md) and expose its reusable
+recipes; do not relaunch optional studies or erase their incomplete records.
 
 1. Complete capability/prerequisite coverage for all fourteen families. Each family
    needs executable mechanisms, qualified boundaries, support, costs, observations,
@@ -28,7 +34,8 @@ its saved records; do not relaunch completed publications or erase its paused qu
    unsupported capabilities unavailable or explicitly speculative.
 2. Complete service infrastructure and design comparisons: docks, access, references,
    tools, communications, consumables, remote assistance, crews and common failures.
-   Finish outstanding preservation obligations and service/plant terminal-risk studies.
+   Verify restoration on representative artifacts; retain broader terminal-risk
+   studies as user-run templates.
 3. Model commissioning and progressive plant availability, installation access and
    temporary construction hardware. Tie capacity and expenditure dates to Sites.
 4. Add credible degradation, replacement and replenishment mechanisms. Carry condition,
@@ -37,8 +44,9 @@ its saved records; do not relaunch completed publications or erase its paused qu
 5. Develop condition-based and preventive maintenance comparisons. Only claim remaining
    useful life where the mechanism and observations support it. Coordinate work,
    isolation, production, charging, visits and failed interventions.
-6. Qualify site/design/lifecycle comparisons across plausible uncertainty and collect
-   equipment-specific observations, logistics evidence and quotations in parallel.
+6. Qualify the workflow for site/design/lifecycle comparisons and uncertainty.
+   Equipment-specific observations, logistics evidence and quotations remain a
+   separate evidence programme; missing inputs stay visible.
 
 Gate: every agreed family has an explicit implemented or evidence-restricted disposition;
 a continuous deployment-to-maintenance example reconciles capacities, condition,
@@ -53,8 +61,9 @@ with an arbitrary probability simply to complete the catalogue.
    homeostatic approaches against the reference controllers. Preserve hard execution
    bounds, fallback and explicit objectives/reserves.
 3. Separate training from held-out weather, equipment and plant configurations. Keep
-   numerical repeats, scenario seeds and environmental samples distinct. Publish
-   failures, reversals, data/runtime cost and circumstances where learning adds no value.
+   numerical repeats, scenario seeds and environmental samples distinct. Provide
+   reports for failures, reversals and data/runtime cost, using small integration
+   examples to verify the machinery. Users choose the research questions to execute.
 4. Finish the unified Sites → design → operation → investigation → comparison →
    write-up workflow and complete service/lifecycle/learning explanations and lineage.
 5. Qualify installation, runtime limits, resumption, old archives, offline recovery,

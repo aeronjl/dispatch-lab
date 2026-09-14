@@ -1,0 +1,39 @@
+{
+  "version": "release-2-product-scope/1",
+  "at": "2026-09-14T15:34:52.889235+00:00",
+  "reason": "User prioritises a usable experiment platform over execution of the research matrix.",
+  "stopped": {
+    "programme": 57649,
+    "analysis": 57710,
+    "publisher": 57712,
+    "exports": [
+      48746,
+      64402,
+      68488
+    ],
+    "export_scheduler": 73227,
+    "offline_waiter": 64538
+  },
+  "worker_disposition": "Optional workers terminated. Previously suspended provision exporter exited; no paused worker left behind. Annual worker 61951 continues only until the first complete case.",
+  "partial_exports": [
+    {
+      "path": "build/release-2/preservation/.recovery-reproduction.zipkfj1wm09",
+      "bytes": 2911851494
+    },
+    {
+      "path": "build/release-2/preservation/.provision-reproduction.zip5rwd0vt7",
+      "bytes": 1695937853
+    },
+    {
+      "path": "build/release-2/preservation/.corrected-support-reproduction.zipyb6ow4o0",
+      "bytes": 4133448119
+    }
+  ],
+  "deleted_artifacts": [],
+  "optional_studies": [
+    "annual policies after case-001",
+    "uncertainty",
+    "forecast"
+  ],
+  "original_programme": "5ab09634cfb544e19153ae6f532af662"
+}

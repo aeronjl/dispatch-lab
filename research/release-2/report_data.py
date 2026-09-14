@@ -11,6 +11,7 @@ def preservation_matches(value):
     return bool(total and value.get('source_matches') and value.get('case_set_matches')
         and all(value.get(k)==total for k in ('completed','matched_inputs','matched_traces','matched_outcomes','matched_events'))
         and offline.get('complete_archives_passed') and offline.get('integrity_passed')
+        and offline.get('archives')==total and offline.get('process_exit')==0
         and offline.get('edition_id')==value.get('edition_id')
         and offline.get('source')==value.get('original_source')
         and offline.get('sha256')==bundle.get('sha256') and bool(bundle.get('sha256')))
@@ -75,16 +76,23 @@ def build(*,write=True):
         p=read(ROOT/'preservation'/(name+'.json'),{});p.pop('cases',None);preservation.append(dict(name=name,**p,offline=read(ROOT/'preservation'/(name+'-offline.json'))))
     qualification=read(ROOT/'qualification.json',{})
     cases=[c for g in studies for c in g['case_records']]
+    from methane.provenance import LOADED_SOURCE
+    annual=next(g for g in studies if g['key']=='annual')
+    annual_case=next((c for c in annual['case_records'] if c['case_id']=='case-001'),None)
+    templates=read(ROOT/'templates.json',{})
+    workflow=read(ROOT/'product-workflow.json',{})
     gates=dict(
         source_comparison=comparison_matches(read(ROOT/'source-comparison.json',{}),manifest),
         complete_record_comparison=comparison_matches(read(ROOT/'complete-record-comparison.json',{}),manifest),
-        numerical_cases=len(cases)==116 and all(c['independent']['status']=='passed' for c in cases),
-        preservation=len(preservation)==6 and all(preservation_matches(v) for v in preservation),
-        site_bundles=all(publication_matches(g['publication'],g,manifest) for g in studies),
+        representative_annual=bool(annual_case and annual_case['independent']['status']=='passed' and annual_case['prefixes'][-1]['boundary_hour']==8760),
+        representative_preservation=any(preservation_matches(v) for v in preservation),
+        representative_site_bundle=any(publication_matches(g['publication'],g,manifest) for g in studies),
+        reusable_templates=templates.get('programme')==manifest['id'] and {t['key']:t['original_study_id'] for t in templates.get('templates',[])}=={g['key']:g['id'] for g in studies} and templates.get('executed_by_registration') is False,
+        product_workflow=workflow.get('passed') is True and workflow.get('source')==LOADED_SOURCE['content_hash'],
         qualification=qualification.get('passed',False) and qualification.get('source')==manifest['source']['content_hash'],
         new_offline=read(ROOT/'offline.json',{}).get('offline_passed',False) and read(ROOT/'offline.json',{}).get('source',{}).get('content_hash')==manifest['source']['content_hash'],
         observability=read(ROOT/'observability.json',{}).get('passed',False) and read(ROOT/'observability.json',{}).get('source',{}).get('content_hash')==manifest['source']['content_hash'])
-    data=dict(version='release-2-report/1',programme=manifest['id'],source=manifest['source']['content_hash'],studies=studies,preservation=preservation,qualification=qualification,offline=read(ROOT/'offline.json'),observability=dict(passed=read(ROOT/'observability.json',{}).get('passed',False),cases=len(read(ROOT/'observability.json',{}).get('cases',[]))),gates=gates,complete=all(gates.values()),totals=dict(cases=len(cases),expected_cases=116,hours=sum(c['prefixes'][-1]['boundary_hour'] for c in cases),expected_hours=sum(g['hours'] for g in studies),independent_checks=sum(c['independent']['checks'] for c in cases)),annual_cash=read(folder/'annual-cash.json',[]),checkpoint_comparison=read(ROOT/'checkpoint-comparison.json'),predecessor=manifest.get('predecessor_programme'))
+    data=dict(version='release-2-report/2',acceptance='product-acceptance.md',product_workflow=workflow,programme=manifest['id'],source=manifest['source']['content_hash'],studies=studies,preservation=preservation,qualification=qualification,offline=read(ROOT/'offline.json'),observability=dict(passed=read(ROOT/'observability.json',{}).get('passed',False),cases=len(read(ROOT/'observability.json',{}).get('cases',[]))),gates=gates,complete=all(gates.values()),totals=dict(cases=len(cases),expected_cases=116,hours=sum(c['prefixes'][-1]['boundary_hour'] for c in cases),expected_hours=sum(g['hours'] for g in studies),independent_checks=sum(c['independent']['checks'] for c in cases)),annual_cash=read(folder/'annual-cash.json',[]),checkpoint_comparison=read(ROOT/'checkpoint-comparison.json'),predecessor=manifest.get('predecessor_programme'))
     if write:(ROOT/'summary.json').write_text(json.dumps(data,indent=2,allow_nan=False))
     return data
 
