@@ -359,6 +359,17 @@ def _run(
     if continuation is not None and len(names) != 1:
         raise ValueError("Continuous partitions execute one named controller at a time")
     for k, name in enumerate(names):
+        p = c.plant
+        physical_p = execution_config.plant
+        lifecycle = None
+        if c.lifecycle is not None:
+            from methane.lifecycle.runtime import Runtime
+
+            if uncertainty and execution_config.lifecycle != c.lifecycle:
+                raise ValueError(
+                    "Hidden lifecycle parameter variation needs a separately registered observation model"
+                )
+            lifecycle = Runtime(c.lifecycle, s.seed)
         policy = resolved_policies[name]
         service_controller = None
         if policy.service is not None:
@@ -492,6 +503,7 @@ def _run(
             restored = continuation.restore()
             start_hour, stop_hour = continuation.start_hour, continuation.stop_hour
             if restored is not None:
+                lifecycle = restored.get("lifecycle")
                 service_cost_rows = restored["service_cost_rows"]
                 state, observation, diagnosis = (
                     restored[n] for n in ("state", "observation", "diagnosis")
@@ -547,6 +559,17 @@ def _run(
                     )
                     services.surface_observation = packet
                 forecast = forecast_at(weather, c, t, provider)
+                if lifecycle is not None:
+                    from methane.lifecycle import ports as lifecycle_ports
+
+                    lifecycle.begin(t, forecast)
+                    p = lifecycle.plant(c.plant)
+                    physical_p = lifecycle.plant(execution_config.plant, physical=True)
+                    components = assemble(p, c.models)
+                    battery = components.battery
+                    physical_components = assemble(physical_p, execution_config.models)
+                    forecast = lifecycle_ports.forecast(lifecycle, forecast)
+                    lifecycle_ports.apply_support(lifecycle, services, t)
                 if site_utilities is not None:
                     from methane.siting.utilities import forecast as supply_forecast
 
@@ -586,6 +609,8 @@ def _run(
                     )
                 if site_utilities is not None:
                     forecast = supply_forecast(forecast, p, c.costs, site_utilities, t)
+                if lifecycle is not None:
+                    forecast = lifecycle_ports.forecast(lifecycle, forecast)
                 base_pv = forecast["pv_kw"][0]
                 if services:
                     n = len(forecast["pv_kw"])
@@ -610,6 +635,10 @@ def _run(
                                 current_irradiance_wm2=current.get("irradiance_wm2"),
                             )
                         )
+                        if lifecycle is not None:
+                            raw_forecast = lifecycle_ports.forecast(
+                                lifecycle, lifecycle_ports.solar_samples(lifecycle, raw_forecast)
+                            )
                         optical_rows = services.optical.convert(raw_forecast)
                         forecast = {
                             **raw_forecast,
@@ -639,6 +668,8 @@ def _run(
                             from methane.adaptation import nominal_sample
 
                             sample = nominal_sample(current, raw_config, execution_config)
+                            if lifecycle is not None:
+                                sample["lifecycle_factor"] = lifecycle.solar_factor(physical=True)
                             actual_forecast["source_samples"][0] = sample
                             actual_forecast["pv_kw"][0] = sample["pv_kw"]
                             physical_row = physical_optical.convert(
@@ -951,6 +982,9 @@ def _run(
                     decision["field_operations"] = copy.deepcopy(services.interval["decision"])
                 if service_planning_inputs is not None:
                     decision["service_planning_inputs"] = service_planning_inputs
+                if lifecycle is not None:
+                    decision["lifecycle"] = lifecycle.public()
+                    decision["operating_plant"] = asdict(p)
                 before = state
                 interval_truth = physical_faults.truth(t)
                 service_kw = forecast.get("service_kw", [0])[0]
@@ -958,7 +992,7 @@ def _run(
                     service_kw = services.execute_interval(t, physical_faults)
                 try:
                     state, row = execute(
-                        execution_config.plant,
+                        physical_p,
                         state,
                         planned["actions"][0],
                         forecast["pv_kw"][0],
@@ -974,6 +1008,9 @@ def _run(
                         battery=physical_components.battery,
                         components=physical_components,
                         service_kw=service_kw,
+                        component_availability=lifecycle.available()
+                        if lifecycle is not None
+                        else None,
                     )
                 except PhysicalAuditError as exc:
                     failures[name] = {"hour": t, "audits": exc.audits, "context": exc.context}
@@ -981,7 +1018,7 @@ def _run(
                 for audit in row["audits"]:
                     audit["interval"] = t
                 observed = observe(
-                    execution_config.plant,
+                    physical_p,
                     execution_config.sensors,
                     before,
                     row,
@@ -1095,11 +1132,23 @@ def _run(
                     row["site_utilities"] = supply_applied(
                         row, execution_config.plant, execution_config.costs, site_utilities
                     )
+                if lifecycle is not None:
+                    life_record = lifecycle.finish(row)
+                    interval_truth["lifecycle_condition"] = life_record.pop(
+                        "retrospective_condition"
+                    )
+                    interval_truth["lifecycle_work"] = life_record.pop("retrospective_work")
+                    life_record["physical_plant"] = asdict(physical_p)
+                    row["lifecycle"] = life_record
                 controller_truth.append(interval_truth)
                 rows.append(row)
 
                 def event(component, label, event_list=event_list, t=t):
                     event_list.append({"hour": t, "component": component, "label": label})
+
+                if lifecycle is not None:
+                    for receipt in row["lifecycle"]["events"]:
+                        event(receipt.get("asset", "services"), "Lifecycle: " + receipt["kind"])
 
                 if observer and observer.solar_record["status"] == "outside model support":
                     event("solar", "Solar observation outside performance-model support")
@@ -1350,6 +1399,10 @@ def what_if(result, controller, hour, alternative):
     c = Config.from_dict(result.get("controller_config", result["config"]))
     row = result["records"][controller][int(hour)]
     d = row["decision"]
+    if d.get("operating_plant"):
+        from methane.config import Plant
+
+        c = replace(c, plant=Plant(**d["operating_plant"]))
     forecast = copy.deepcopy(d["forecast"])
     note = (
         "Predicted from original observations, forecast and frozen costs; realised future excluded."

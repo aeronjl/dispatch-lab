@@ -142,7 +142,10 @@ def _interval(design, sample, time, p, w):
     # irradiance. Preserve that exogenous stress in both baseline and draft.
     reference_power = dc_power(radiation, ambient, p, w)
     stress = sample["pv_kw"] / reference_power if reference_power > 1e-8 else 1
-    stressed = available * stress
+    factor = sample.get("lifecycle_factor", 1)
+    if isinstance(factor, bool) or not math.isfinite(factor) or not 0 <= factor <= 1:
+        raise ValueError("Lifecycle PV factor must be a finite fraction")
+    stressed = available * stress * factor
     converted = stressed * design["efficiency"]
     output = min(design["converter_kw"], converted)
     return {
@@ -150,7 +153,12 @@ def _interval(design, sample, time, p, w):
         "available_kw": available,
         "conversion_loss_kw": stressed - converted,
         "clipped_kw": max(0, converted - design["converter_kw"]),
-        "scenario_adjustment_kw": stressed - available,
+        "scenario_adjustment_kw": available * stress - available,
+        **(
+            {"lifecycle_loss_kw": available * stress * (1 - factor), "lifecycle_factor": factor}
+            if "lifecycle_factor" in sample
+            else {}
+        ),
         "output_kw": output,
         "reference_irradiance_wm2": radiation,
         "ambient_c": ambient,
@@ -214,6 +222,7 @@ def _cached_interval(inputs):
             "solar",
             row["available_kw"]
             + row["scenario_adjustment_kw"]
+            - row.get("lifecycle_loss_kw", 0)
             - row["conversion_loss_kw"]
             - row["clipped_kw"]
             - row["output_kw"],

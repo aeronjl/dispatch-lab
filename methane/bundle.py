@@ -28,6 +28,7 @@ def make(result, path):
     files["checker/retrieval_reference.py"] = LOADED_FILES["methane/retrieval_reference.py"]
     files["checker/recovery_loop_reference.py"] = LOADED_FILES["methane/recovery_loop_reference.py"]
     files["checker/performance_reference.py"] = LOADED_FILES["methane/performance_reference.py"]
+    files["checker/lifecycle_reference.py"] = LOADED_FILES["methane/lifecycle_reference.py"]
     files["checker/reference.py"] = LOADED_FILES["methane/reference.py"]
     files["checker/recovery_belief_reference.py"] = LOADED_FILES[
         "methane/recovery_belief_reference.py"

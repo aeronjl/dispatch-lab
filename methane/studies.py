@@ -1259,6 +1259,7 @@ All coefficients are illustrative. Numerical checks are not empirical calibratio
                 source["methane/recovery_belief_reference.py"],
             )
         for companion in (
+            "lifecycle_reference.py",
             "recovery_loop_reference.py",
             "autonomy_reference.py",
             "duration_reference.py",

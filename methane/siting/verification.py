@@ -14,6 +14,7 @@ def verify_case(store, study_id, case_id):
     checks = 0
     errors = []
     maxima = {}
+    lifecycle_reference = None
 
     def equal(key, a, b, hour):
         nonlocal checks
@@ -27,6 +28,10 @@ def verify_case(store, study_id, case_id):
         result = load_period(store, entry["period_sha256"])
         rows = result["records"][case["controller"]]
         p = result["config"]["plant"]
+        if result["config"].get("lifecycle") and lifecycle_reference is None:
+            from methane.lifecycle_reference import Reference
+
+            lifecycle_reference = Reference(result["config"])
         if previous is None:
             previous = initial(p, rows[0]["ambient_c"])
         for key, value in previous.items():
@@ -41,6 +46,12 @@ def verify_case(store, study_id, case_id):
         ):
             if row["hour"] != next_hour:
                 raise ValueError("Missing or duplicated chronological interval")
+            if lifecycle_reference is not None:
+                for check in lifecycle_reference.interval(row, truth, case["controller"]):
+                    checks += 1
+                    if not check["passed"] and len(errors) < 100:
+                        errors.append(check)
+                p = row["lifecycle"]["physical_plant"]
             supplied = row["co2_delivered_kg"] + row["co2_rejected_kg"]
             expected = interval(
                 p,

@@ -277,6 +277,20 @@ def build(p, state, forecast, capacity, enforce_commitment=True, *, battery=None
     )
     for t, pv in enumerate(forecast["pv_kw"]):
         m.upper[m.ids["electrolyser_kw"][t]] = capacities[t]
+        availability = forecast.get("component_availability", {})
+        for component, keys in {
+            "battery": ("charge_kw", "discharge_kw"),
+            "electrolyser": ("electrolyser_kw",),
+            "reactor": ("methane_kg", "heater_kw"),
+        }.items():
+            if component in availability:
+                values = availability[component]
+                if len(values) != n or any(
+                    isinstance(v, bool) or not np.isfinite(v) or not 0 <= v <= 1 for v in values
+                ):
+                    raise ValueError("Availability needs one finite fraction per interval")
+                for key in keys:
+                    m.upper[m.ids[key][t]] *= values[t]
         if forecast.get("electrolyser_isolated", [False] * n)[t]:
             m.upper[m.ids["electrolyser_kw"][t]] = 0
         m.bus_rows.append(len(m.lo))
@@ -355,6 +369,7 @@ def prepare_model(
         m.lower[m.ids["electrolyser_kw"][0]] = minimum_ely
     if dependable_capacity is not None:
         m.upper[m.ids["methane_kg"][0]] = min(
+            m.upper[m.ids["methane_kg"][0]],
             p.methane_max_kgph,
             max(0, (state.h2_kg + dependable_capacity / p.specific_energy_kwh_per_kg) / H2_PER_CH4),
         )
@@ -458,6 +473,7 @@ def greedy_action(
     components=None,
     service_kw=0,
     electrolyser_isolated=False,
+    component_availability=None,
 ):
     """Local priority: maintain/produce methane, warm to Tmin+5, make H2, store surplus.
 
@@ -469,6 +485,7 @@ def greedy_action(
         "deliveries_kg": [delivery],
         "service_kw": [service_kw],
         "electrolyser_isolated": [electrolyser_isolated],
+        "component_availability": {k: [v] for k, v in (component_availability or {}).items()},
     }
     m = build(
         p,
@@ -484,13 +501,16 @@ def greedy_action(
         m.lower[m.ids["electrolyser_kw"][0]] = minimum_ely
     if dependable_capacity is not None:
         m.upper[m.ids["methane_kg"][0]] = min(
+            m.upper[m.ids["methane_kg"][0]],
             p.methane_max_kgph,
             max(0, (state.h2_kg + dependable_capacity / p.specific_energy_kwh_per_kg) / H2_PER_CH4),
         )
     target = min(p.temperature_max_c, p.temperature_min_c + 5)
     passive = temperature_after(p, state.temperature_c, ambient)
     _, b = thermal_coefficients(p)
-    m.upper[m.ids["heater_kw"]] = min(p.heater_max_kw, max(0, (target - passive) / b))
+    m.upper[m.ids["heater_kw"]] = min(
+        m.upper[m.ids["heater_kw"][0]], p.heater_max_kw, max(0, (target - passive) / b)
+    )
     heat_need = max(0, (target - passive) / b)
     big_heat = p.heater_max_kw + p.methane_max_kgph * REACTION_KWH_PER_KG
     m.add(
@@ -569,6 +589,9 @@ def rollout_greedy(
                 "electrolyser_isolated", [False] * len(forecast["pv_kw"])
             )[t],
             service_kw=forecast.get("service_kw", [0] * len(forecast["pv_kw"]))[t],
+            component_availability={
+                k: v[t] for k, v in forecast.get("component_availability", {}).items()
+            },
         )
         if info["status"] == "safe-off":
             failures.append({"offset": t, **info})
@@ -696,12 +719,14 @@ def execute(
     battery=None,
     components=None,
     service_kw=0,
+    component_availability=None,
 ):
     forecast = {
         "pv_kw": [pv],
         "ambient_c": [ambient],
         "deliveries_kg": [delivery],
         "service_kw": [service_kw],
+        "component_availability": {k: [v] for k, v in (component_availability or {}).items()},
     }
     actions, info = solve(
         p,

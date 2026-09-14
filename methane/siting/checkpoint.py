@@ -14,7 +14,7 @@ from methane.siting.store import digest
 VERSION = "dispatch-lab/simulation-checkpoint/1"
 MODULES = (
     "plant methane.config methane.physics methane.sensing methane.faults "
-    "methane.field_operations methane.adaptation methane.autonomy methane.recovery "
+    "methane.field_operations methane.adaptation methane.autonomy methane.recovery methane.lifecycle.runtime "
     "methane.battery methane.electrolyser methane.storage methane.reactor "
     "methane.services.plant methane.services.configuration methane.services.contracts "
     "methane.services.resources methane.services.executive methane.services.access "
@@ -28,7 +28,7 @@ MODULES = (
 ).split()
 FIELDS = (
     "state observation diagnosis physical_faults services physical_optical observer "
-    "service_controller recovery_scheduler joint_recovery_scheduler previous_recovery previous_issue service_cost_rows"
+    "service_controller recovery_scheduler joint_recovery_scheduler previous_recovery previous_issue service_cost_rows lifecycle"
 ).split()
 
 

@@ -240,8 +240,24 @@ class Config:
     recovery_policy: object | None = None
     service_policy: object | None = None
     investigation_policy: object | None = None
+    lifecycle: dict | None = None
 
     def __post_init__(self):
+        if self.lifecycle is not None:
+            from methane.lifecycle.configuration import validate
+
+            object.__setattr__(self, "lifecycle", validate(self.lifecycle))
+            solar_lifecycle = any(p["asset"] == "solar" for p in self.lifecycle["packages"]) or any(
+                p["asset"] == "solar" for p in self.lifecycle["conditions"]
+            )
+            if solar_lifecycle and not (
+                self.field_operations.enabled
+                and self.service_system
+                and self.service_system.cleaning_model == "section-optical/1"
+            ):
+                raise ValueError(
+                    "Solar commissioning/condition requires enabled section-optical services so conversion and clipping remain explicit"
+                )
         if self.investigation_policy is not None:
             from methane.services.investigator import InvestigationPolicy
 
@@ -404,6 +420,8 @@ class Config:
 
     def to_dict(self):
         value = asdict(self)
+        if self.lifecycle is None:
+            value.pop("lifecycle")
         timing = tuple(
             k + "_time_factor"
             for k in ("travel", "cleaning", "inspection", "repair", "supply", "support")
@@ -439,6 +457,7 @@ class Config:
     @classmethod
     def from_dict(cls, value):
         return cls(
+            lifecycle=value.get("lifecycle"),
             recovery_policy=value.get("recovery_policy"),
             service_policy=value.get("service_policy"),
             investigation_policy=value.get("investigation_policy"),

@@ -66,6 +66,24 @@ class CashScenario(Record):
 def defaults(config):
     c = Config.from_dict(config)
     cap = capital(c.plant, c.costs)
+    construction_basis = 0
+    if c.lifecycle:
+        fractions = {
+            a: sum(x["fraction"] for x in c.lifecycle["packages"] if x["asset"] == a)
+            for a in ("solar", "battery", "electrolyser", "reactor")
+        }
+        construction_basis = (
+            sum(
+                fractions[a] * v
+                for a, v in (
+                    ("solar", cap["solar"]),
+                    ("battery", cap["battery_cells"] + cap["battery_power"]),
+                    ("electrolyser", cap["electrolyser"]),
+                    ("reactor", cap["reactor"]),
+                )
+            )
+            * c.costs.installation_fraction
+        )
     items = [
         CashItem(
             name=k,
@@ -79,8 +97,12 @@ def defaults(config):
         CashItem(
             name="Installation and site setup",
             category="initial",
-            eur=sum(cap.values()) * c.costs.installation_fraction + c.costs.site_setup_eur,
-            assumption="Existing illustrative installation/setup assumption",
+            eur=sum(cap.values()) * c.costs.installation_fraction
+            + c.costs.site_setup_eur
+            - construction_basis,
+            assumption="Existing illustrative installation/setup, minus the work-package asset share booked through recorded lifecycle invoices"
+            if c.lifecycle
+            else "Existing illustrative installation/setup assumption",
         ),
         CashItem(
             name="Initial CO2 stock",
@@ -134,6 +156,12 @@ def defaults(config):
             c.costs.stack_calendar_years,
         ),
     ):
+        if (
+            c.lifecycle
+            and name == "Electrolyser stack"
+            and any(s["asset"] == "electrolyser" for s in c.lifecycle["conditions"])
+        ):
+            continue  # Recorded purchases replace this hypothetical calendar schedule.
         year = int(interval)
         while year > 0 and year < 20:
             items.append(
@@ -234,9 +262,25 @@ def report(store, study_id, case_id, assumptions):
     for r in rows:
         year = int(r["time"][:4])
         a = observed.setdefault(
-            year, dict(hours=0, gross_kg=0, accepted_kg=0, co2_kg=0, water_m3=0, consumables_eur=0)
+            year,
+            dict(
+                hours=0,
+                gross_kg=0,
+                accepted_kg=0,
+                co2_kg=0,
+                water_m3=0,
+                consumables_eur=0,
+                lifecycle_cash_eur=0,
+                lifecycle_opening_eur=0,
+            ),
         )
         a["hours"] += 1
+        if r.get("lifecycle"):
+            expense = r["lifecycle"]["expenditure"]
+            a["lifecycle_opening_eur"] += expense["opening_stock_eur"]
+            a["lifecycle_cash_eur"] += sum(
+                v for k, v in expense.items() if k.endswith("_eur") and k != "opening_stock_eur"
+            )
         gross = r["applied"]["methane_kg"]
         a["gross_kg"] += gross
         a["accepted_kg"] += min(
@@ -259,6 +303,10 @@ def report(store, study_id, case_id, assumptions):
     partial = [
         y for y, v in observed.items() if v["hours"] != (8784 if calendar.isleap(y) else 8760)
     ]
+    if config.lifecycle and (partial or scenario.life_years > len(observed)):
+        raise ValueError(
+            "Lifecycle cash projection requires a continuous recorded path covering every complete project year. Ageing, commissioning and replacement cannot be extrapolated by repeating a partial period or an earlier lifecycle year. Use the dated period expenditure report or simulate the requested chronology."
+        )
     if partial and not scenario.repeat_partial_period:
         raise ValueError(
             "A partial calendar year cannot silently become annual yield. Run full years or explicitly enable a partial-period extrapolation scenario."
@@ -283,7 +331,9 @@ def report(store, study_id, case_id, assumptions):
                     "Opening service procurement must be booked once in project initial items; disable period opening-purchase switches for this ledger"
                 )
             service_cash = expense["total_eur"]
-    initial = sum(i.eur or 0 for i in scenario.items if i.category == "initial")
+    initial = sum(i.eur or 0 for i in scenario.items if i.category == "initial") + sum(
+        a["lifecycle_opening_eur"] for a in observed.values()
+    )
     years = []
     reference = list(sorted(observed))
     for y in range(1, scenario.life_years + 1):
@@ -299,6 +349,16 @@ def report(store, study_id, case_id, assumptions):
         # Service cash is allocated over the observed reference span, separately disclosed.
         field = service_cash / len(rows) * (8784 if calendar.isleap(original) else 8760)
         lines = [
+            *(
+                [
+                    dict(
+                        name="Recorded lifecycle invoices in this chronological year",
+                        eur=a["lifecycle_cash_eur"],
+                    )
+                ]
+                if config.lifecycle
+                else []
+            ),
             dict(name="CO2, water, consumables and recorded interventions", eur=variable),
             dict(name="Recorded service expenditure, annual span average", eur=field),
         ]
@@ -330,6 +390,7 @@ def report(store, study_id, case_id, assumptions):
                     a["accepted_kg"] * scale * (scenario.methane_eur_per_kg or 0)
                     - variable
                     - field
+                    - (a["lifecycle_cash_eur"] if config.lifecycle else 0)
                     - sum(i.eur or 0 for i in scenario.items if i.category == "annual")
                 )
                 * inflation,
@@ -363,7 +424,9 @@ def report(store, study_id, case_id, assumptions):
             "Physical actions and original dispatch prices are unchanged",
             "Residual value reduces the levelised-cost numerator only when explicitly entered",
             "Zero accepted output has undefined unit cost",
-            "Repeating observed years does not simulate lifetime degradation or new faults",
+            "Lifecycle cases use a fully recorded chronological path; recycling a lifecycle year is rejected"
+            if config.lifecycle
+            else "Repeating observed years does not simulate lifetime degradation or new faults",
         ],
     )
     return {"id": store.put("cashflow", result), **result}

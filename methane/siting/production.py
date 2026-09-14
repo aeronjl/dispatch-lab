@@ -337,6 +337,8 @@ def summary_records(result):
                 r["decision"]["recovery_planning"] = d["recovery_planning"]
             if "field_operations" in row:
                 r["field_operations"] = row["field_operations"]
+            if "lifecycle" in row:
+                r["lifecycle"] = row["lifecycle"]
             detail = (
                 row.get("component_records", {})
                 .get("solar", {})

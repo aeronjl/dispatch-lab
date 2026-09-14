@@ -47,6 +47,11 @@ def decision_cost(p, c, rows, *, service_economics=None, service_report=None):
     for r in rows:
         a = r["applied"]
         total += sum(a.get(k, 0) * v for k, v in rates.items())
+        if r.get("lifecycle"):
+            total -= a["electrolyser_kw"] * rates["electrolyser_kw"]
+            total += r["h2_produced_kg"] * (
+                c.water_litres_per_kg / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg
+            )
         total += rates["electrolyser_on"] * r["state"]["electrolyser_on"]
         total += rates["reactor_on"] * r["state"]["reactor_on"]
         total += rates["electrolyser_start"] * r["electrolyser_start"]
@@ -55,6 +60,10 @@ def decision_cost(p, c, rows, *, service_economics=None, service_report=None):
         service_report = service_costs(c, rows, service_economics)
     service_total = service_report["variable_and_wear_eur"]
     total = None if service_total is None else total + service_total
+    if total is not None and any(r.get("lifecycle") for r in rows):
+        from methane.lifecycle.accounting import decision_adjustment
+
+        total += decision_adjustment(p, c, rows)
     methane = sum(r["applied"]["methane_kg"] for r in rows)
     return {
         "variable_and_wear_eur": total,
@@ -131,10 +140,24 @@ def allocation(p, c, rows, *, with_lineage=False, service_economics=None, servic
         + c.fixed_opex_eur_per_year * y,
     }
     components.update(field["components"])
+    lifecycle = None
+    if any(r.get("lifecycle") for r in rows):
+        from methane.lifecycle.accounting import allocation_adjustments
+
+        adjustment, lifecycle = allocation_adjustments(
+            p,
+            c,
+            cap,
+            rows,
+            {"stack": [stack_calendar, stack_usage, max(stack_calendar, stack_usage)]},
+        )
+        for key, amount in adjustment.items():
+            components[key] = components.get(key, 0) + amount
     value = None if any(v is None for v in components.values()) else sum(components.values())
     methane = sum(r["applied"]["methane_kg"] for r in rows)
     result = {
         "hours": hours,
+        **({"lifecycle": lifecycle} if lifecycle else {}),
         "components": components,
         "total_eur": value,
         "eur_per_kg_ch4": value / methane if value is not None and methane > 1e-8 else None,
@@ -479,6 +502,20 @@ def allocation_lineage(p, c, rows, cap, result):
                 "after − before; cumulative wear pool retained",
                 tuple(parents),
             )
+    if result.get("lifecycle"):
+        for key, amount in result["lifecycle"]["allocation_adjustments"].items():
+            identity = "lifecycle.adjustment." + key
+            add(
+                identity,
+                amount,
+                "EUR",
+                "/rows/*/lifecycle/accounting",
+                (),
+                "Difference of cumulative allocation pools; max(wear, calendar, consumed parts), never their sum. Construction invoices replace the declared installation share and accrue allocation from their date.",
+            )
+            nodes[-1]["operands"] = result["lifecycle"]["allocation_boundary"]
+            formula, parents = component_formulas.get(key, ("0", ()))
+            component_formulas[key] = (formula + " + " + identity, (*parents, identity))
     for key, value in result["components"].items():
         formula, parents = component_formulas[key]
         add("allocation." + key, value, "EUR", "derived", parents, formula)
@@ -557,6 +594,25 @@ def allocation_lineage(p, c, rows, cap, result):
             else "Robot usage wear + cleaning consumables + actual human visit, labour and kits; excludes ownership and standing maintenance",
         )
         contributions.append("decision_cost.services")
+    if result.get("lifecycle"):
+        from methane.lifecycle.accounting import decision_adjustment
+
+        correction = sum(
+            r["h2_produced_kg"]
+            * (c.water_litres_per_kg / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg)
+            - r["applied"]["electrolyser_kw"] * rates["electrolyser_kw"]
+            for r in rows
+            if r.get("lifecycle")
+        )
+        add(
+            "decision_cost.lifecycle",
+            decision_adjustment(p, c, rows) + correction,
+            "EUR",
+            "/rows/*/lifecycle/accounting and h2_produced_kg",
+            (),
+            "Use actual hydrogen input consumption; replace wear with max(wear, consumed parts); add project maintenance resources. Excludes construction capital and opening stock cash.",
+        )
+        contributions.append("decision_cost.lifecycle")
     add(
         "decision_cost",
         result["variable_and_wear_eur"],

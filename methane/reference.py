@@ -380,6 +380,75 @@ def economics(p, c, rows, service_economics=None):
                 if service_views["decision"] is None
                 else process_variable + service_views["decision"]
             )
+        life = [r["lifecycle"]["accounting"] for r in rows if r.get("lifecycle")]
+        if life:
+            a, b = life[0]["before"], life[-1]["after"]
+
+            def period_fraction(s):
+                return D(s["hours"]) / 8760
+
+            def wear(s):
+                return (
+                    stack
+                    / c["stack_operating_hours"]
+                    * (
+                        D(s["electrolyser_hours"])
+                        + D(s["electrolyser_starts"]) * c["start_equivalent_hours"]
+                    )
+                )
+
+            def pool(s, asset, calendar):
+                return max(
+                    calendar * period_fraction(s),
+                    wear(s) if asset == "electrolyser" else D(0),
+                    D(s["consumed_parts"].get(asset, 0)),
+                )
+
+            if "solar" in life[0]["condition_assets"]:
+                parts["solar"] += (
+                    pool(b, "solar", solar / c["solar_years"])
+                    - pool(a, "solar", solar / c["solar_years"])
+                    - solar * fraction / c["solar_years"]
+                )
+            if "electrolyser" in life[0]["condition_assets"]:
+                parts["electrolyser"] += (
+                    pool(b, "electrolyser", stack / c["stack_calendar_years"])
+                    - pool(a, "electrolyser", stack / c["stack_calendar_years"])
+                    - max(stack * fraction / c["stack_calendar_years"], stack_wear)
+                )
+            parts["project_service"] = D(b["maintenance_eur"]) - D(a["maintenance_eur"])
+            scope = life[0]["construction_fractions"]
+            basis = (
+                sum(
+                    D(scope[k]) * v
+                    for k, v in (
+                        ("solar", solar),
+                        ("battery", cells + converter),
+                        ("electrolyser", ely),
+                        ("reactor", reactor),
+                    )
+                )
+                * c["installation_fraction"]
+            )
+            parts["site"] += (
+                (
+                    D(b["construction_eur_hours"])
+                    - D(a["construction_eur_hours"])
+                    - basis * D(len(rows))
+                )
+                / c["other_equipment_years"]
+                / 8760
+            )
+
+            def dependent(s):
+                return (
+                    D(s["maintenance_eur"])
+                    + D(s["consumed_parts"].get("solar", 0))
+                    + max(wear(s), D(s["consumed_parts"].get("electrolyser", 0)))
+                )
+
+            if variable is not None:
+                variable += dependent(b) - dependent(a) - wear(b) + wear(a)
         methane = sum((D(r["applied"]["methane_kg"]) for r in rows), D(0))
         value = methane * c["methane_eur_per_kg"]
         allocated = None if any(v is None for v in parts.values()) else sum(parts.values())
@@ -472,7 +541,12 @@ def optical_reference(parameters, sample, timestamp):
             * max(0, 1 + parameters["temperature_coefficient"] * (ref_temp - 25)),
         ),
     )
-    stressed = total * (sample["pv_kw"] / ref if ref > 1e-8 else 1) * design["efficiency"]
+    stressed = (
+        total
+        * (sample["pv_kw"] / ref if ref > 1e-8 else 1)
+        * sample.get("lifecycle_factor", 1)
+        * design["efficiency"]
+    )
     return min(design["converter_kw"], stressed), max(0, stressed - design["converter_kw"])
 
 
@@ -2765,6 +2839,9 @@ def audit(result):
     p, scenario = result["config"]["plant"], result["config"]["scenario"]
     checks, failures = [], []
     try:
+        if result["config"].get("lifecycle"):
+            companion = runpy.run_path(str(Path(__file__).with_name("lifecycle_reference.py")))
+            checks.extend(companion["audit_run"](result))
         if any(
             c.get("evaluation", {}).get("conditional_returns")
             for rows in result["records"].values()
@@ -2859,6 +2936,7 @@ def audit(result):
         "count",
     )
     for name, rows in result["records"].items():
+        p = result["config"]["plant"]
         if result["status"] == "complete":
             compare(
                 checks, "interval_count", len(rows), scenario["hours"], "count", controller=name
@@ -2961,6 +3039,7 @@ def audit(result):
         capacity_cleared = flow_cleared = False
         for i, row in enumerate(rows):
             try:
+                p = row.get("lifecycle", {}).get("physical_plant", result["config"]["plant"])
                 sample = weather["truth"][weather["times"][i]]
                 delayed = i - scenario["delivery_delay_hours"]
                 delivery = (
@@ -3544,7 +3623,7 @@ def audit(result):
                         "incident": row.get("incident", False),
                         **{
                             k: row[k]
-                            for k in ("intervention_accounting", "field_operations")
+                            for k in ("intervention_accounting", "field_operations", "lifecycle")
                             if k in row
                         },
                     }
@@ -3555,7 +3634,7 @@ def audit(result):
                 break
         try:
             costs = economics(
-                p,
+                result["config"]["plant"],
                 result["config"]["costs"],
                 independent_rows,
                 result["config"].get("service_economics"),

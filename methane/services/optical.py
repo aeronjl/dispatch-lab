@@ -103,6 +103,11 @@ class OpticalArray:
                 irradiance_wm2=source["irradiance_wm2"],
                 ambient_c=source["ambient_c"],
                 scenario_pv_kw=source["pv_kw"],
+                **(
+                    {"lifecycle_factor": source["lifecycle_factor"]}
+                    if "lifecycle_factor" in source
+                    else {}
+                ),
             ),
             flows=dict(
                 output_kw=detail["output_kw"],
