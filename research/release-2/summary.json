@@ -52536,6 +52536,7 @@
   },
   "gates": {
     "source_comparison": true,
+    "complete_record_comparison": true,
     "numerical_cases": false,
     "preservation": false,
     "site_bundles": false,

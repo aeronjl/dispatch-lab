@@ -68,10 +68,12 @@ The initial programme `4f06ad527fdd4457a540614fa35ab1ac` completed its 72 season
 cases and stopped at annual hour 1,337 after checkpoint profiling. Its study,
 publication, qualification receipts and first-edition report remain preserved.
 The active programme starts all 116 cases again under the corrected source;
-`compare_editions.py` checks the seasonal traces and the available annual prefix.
+`compare_editions.py` checks eleven declared field groups in the seasonal traces
+and the available annual prefix; `compare_complete_rows.py` extends this to every
+record field and retrospective truth, excluding only separately retained solver
+wall-clock duration. [Comparison scope](comparison-scope.md) distinguishes the checks.
 `checkpoint_comparison.py` separately executes 24 hours from the same saved old
-checkpoint under each source and reports complete physical/observation/service/
-lifecycle record differences and timing. Neither comparison promotes old checks
+checkpoint under each source and reports the eleven declared field-group differences and timing. Neither comparison promotes old checks
 as qualification of a new implementation. The current report's gates require
 matching source identities, including its numerical, offline and observability
 receipts. Build evidence directories are rolling aliases; the first-edition
@@ -82,7 +84,8 @@ interface deliberately omits requested actions and observation dictionaries. The
 retained correction receipt limits the earlier comparison to the fields it actually
 read; the version-2 helper reads full period records, requires every compared field
 and reruns the available cases. The separate 24-hour compatibility experiment already
-used complete run records. Summary projections are never evidence for omitted operands.
+read original run records and selected the eleven declared groups. Summary projections
+are never evidence for omitted operands.
 
 The export driver initially used three reading processes. After observed memory
 compression on this host, their scheduling priority was lowered and two workers
@@ -90,3 +93,7 @@ were paused. `archive_budget.py` verifies their process identities and resumes
 them sequentially after the active exports finish. `archive-resource-budget.json`
 records the intervention and resumptions. This changes orchestration only; export
 elapsed time includes pauses, and no numerical source or original recording changes.
+
+Report gates bind receipts to the actual programme, source, case inputs and bundle
+identities. `report_contract_check.py` checks these predicates using altered in-memory
+receipts without modifying runs, archives or generated summaries.
