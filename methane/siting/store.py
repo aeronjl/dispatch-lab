@@ -24,6 +24,12 @@ KINDS = {
     "publication",
     "discovery",
     "template",
+    "dataset",
+    "training",
+    "model",
+    "deployment",
+    "evaluation",
+    "walkthrough",
 }
 
 
