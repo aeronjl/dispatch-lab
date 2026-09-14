@@ -1,0 +1,8 @@
+{
+  "source": "d8e355ae1a7f925c79c2372b605441ec00620f58fb77645443dd7710df21a910",
+  "topics": [
+    "siting"
+  ],
+  "review": "Sites spatial/resource/cash explanations remain accurate. Production changes only add a template snapshot and partition wall-time metadata, outside physical dispatch. Teaching mechanics and equations are unchanged. New workflow instructions are authored in docs/study-workflow.md; report revisions keep the frozen numerical snapshot.",
+  "example_status": "complete"
+}

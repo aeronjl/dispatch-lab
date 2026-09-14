@@ -2484,7 +2484,7 @@
       "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
       "methane/siting/geometry.py": "4d617c67bcbbb2ceb0524487e0941dc5a0f81f4aaab044be1c4650e8c3e6294e",
       "methane/siting/layout.py": "50a9aca9a8c0538b6607195f140048777685d84fd30c22d56fb5dbd0fa642e66",
-      "methane/siting/production.py": "11119126e1991a514b2999e1c42d51f64c94fe14fb8ec4d12b182749263d94eb",
+      "methane/siting/production.py": "6383a6548669f0e193119112481faaeb19db7a4bc50297b519617f87e0c9b588",
       "methane/siting/utilities.py": "04f46f6ff9a684581e67edf28dd84bebc37bef3bcadf08f9583db47e588e250a",
       "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
       "methane/uncertainty.py": "75acc69389e827a74198c40d7d4e97f98674239b2f771bf424383bc3d5752b60",

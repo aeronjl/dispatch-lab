@@ -10,6 +10,7 @@ from pathlib import Path
 from methane.provenance import LOADED_FILES
 from methane.siting.production import directory, inspect
 from methane.siting.store import atomic, digest, encode
+from methane.siting.workflow import REPORT_SECTIONS
 
 
 def document(value, title):
@@ -36,11 +37,25 @@ def document(value, title):
             )
             + "</tr>"
         )
+    narrative = "".join(
+        f"<section><h2>{esc(k.replace('_', ' ').capitalize())}</h2><p style='white-space:pre-wrap'>{esc(value.get('writeup', {}).get(k, ''))}</p></section>"
+        for k in REPORT_SECTIONS
+        if value.get("writeup", {}).get(k)
+    )
     encoded = json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False)
-    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p><div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
+    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p>{narrative}<div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
 
 
-def publish(store, kind, key):
+def report_record(store, kind, key, previous_publication_id=None):
+    if previous_publication_id is not None:
+        previous = store.get("publication", previous_publication_id)
+        if previous["kind"] != kind or previous["source_id"] != key:
+            raise ValueError("The previous publication belongs to a different result")
+        value = previous["record"]
+        return value, previous.get("title") or value.get("writeup", {}).get(
+            "title"
+        ) or "Recorded study"
+
     if kind == "study":
         value = inspect(store, key)
         title = value["manifest"]["name"]
@@ -52,7 +67,51 @@ def publish(store, kind, key):
         title = value["scenario"]["name"]
     else:
         raise ValueError("Unknown report type")
-    publication = dict(schema_version="site-publication/1", kind=kind, source_id=key, record=value)
+    return value, title
+
+
+def draft(store, kind, key, publication_id=None):
+    value, title = report_record(store, kind, key, publication_id)
+    saved = value.get("writeup")
+    template = value.get("manifest", {}).get("template", {}).get("record", {}).get("writeup", {})
+    writeup = saved or dict(
+        title=title,
+        question=value.get("manifest", {}).get("purpose", ""),
+        method=template.get(
+            "method",
+            "Compare matched inputs, time boundaries and ending inventories. Record excluded and incomplete cases.",
+        ),
+        findings=value.get("authored_conclusion", ""),
+        limitations=template.get(
+            "limitations",
+            "Illustrative model assumptions; numerical verification does not establish field realism.",
+        ),
+        next_questions="",
+    )
+    return dict(kind=kind, source_id=key, previous_publication_id=publication_id, writeup=writeup)
+
+
+def publish(store, kind, key, *, writeup=None, previous_publication_id=None):
+    value, title = report_record(store, kind, key, previous_publication_id)
+    if writeup is not None:
+        if set(writeup) != {"title", *REPORT_SECTIONS} or not all(
+            isinstance(v, str) and len(v) <= 50000 for v in writeup.values()
+        ):
+            raise ValueError(
+                "Write-up requires a title and the five narrative sections (text only, at most 50,000 characters each)"
+            )
+        if not writeup["title"].strip():
+            raise ValueError("Give the write-up a title")
+        value = {**value, "writeup": writeup}
+        title = writeup["title"]
+    publication = dict(
+        schema_version="site-publication/2" if writeup is not None else "site-publication/1",
+        kind=kind,
+        source_id=key,
+        record=value,
+    )
+    if writeup is not None:
+        publication.update(title=title, previous_publication_id=previous_publication_id)
     rid = store.put("publication", publication)
     target = store.root / "reports" / (rid + ".html")
     atomic(target, document(value, title).encode())

@@ -23,6 +23,7 @@ KINDS = {
     "measurement",
     "publication",
     "discovery",
+    "template",
 }
 
 

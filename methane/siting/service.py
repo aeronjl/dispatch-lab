@@ -275,7 +275,15 @@ def perform(request, store, current_config):
             "design": design,
             "layout": calculate(store.get("site", design["site_revision"]), design["layout"]),
         }
-    from methane.siting import cashflow, comparison, environment, jobs, production, reporting
+    from methane.siting import (
+        cashflow,
+        comparison,
+        environment,
+        jobs,
+        production,
+        reporting,
+        workflow,
+    )
 
     if request.operation == "studies-index":
         return dict(
@@ -286,7 +294,18 @@ def perform(request, store, current_config):
                 for s in store.list("study")
             ],
             recommendations=store.list("recommendation"),
-            publications=store.list("publication"),
+            publications=[
+                dict(
+                    id=p["id"],
+                    kind=p["kind"],
+                    source_id=p["source_id"],
+                    title=p.get("title")
+                    or p["record"].get("manifest", {}).get("name")
+                    or p["record"].get("title", "Recorded report"),
+                )
+                for p in store.list("publication")
+            ],
+            templates=store.list("template"),
         )
     if request.operation == "prepare-environment":
         return jobs.launch(store, request.token, d, request.offline)
@@ -299,7 +318,17 @@ def perform(request, store, current_config):
     if request.operation == "create-study":
         return production.create(store, **d)
     if request.operation == "study":
-        return production.inspect(store, request.id)
+        value = production.inspect(store, request.id)
+        value["runtime_estimate"] = workflow.runtime_estimate(value)
+        return value
+    if request.operation == "estimate-study":
+        return workflow.runtime_estimate(
+            production.inspect(store, request.id), d.get("seconds_per_hour")
+        )
+    if request.operation == "save-template":
+        return workflow.save_template(store, request.id, **d)
+    if request.operation == "report-draft":
+        return reporting.draft(store, d["kind"], request.id, d.get("publication_id"))
     if request.operation == "start-study":
         return production.launch(store, request.id)
     if request.operation == "cancel-study":
@@ -313,7 +342,13 @@ def perform(request, store, current_config):
     if request.operation == "recommend":
         return comparison.recommend(store, **d)
     if request.operation == "publish":
-        return reporting.publish(store, d["kind"], request.id)
+        return reporting.publish(
+            store,
+            d["kind"],
+            request.id,
+            writeup=d.get("writeup"),
+            previous_publication_id=d.get("previous_publication_id"),
+        )
     if request.operation == "export":
         return reporting.bundle(store, request.id)
     raise ValueError("Unknown Sites operation")

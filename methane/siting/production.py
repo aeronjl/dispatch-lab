@@ -13,6 +13,7 @@ import os
 import subprocess
 import sys
 import threading
+import time
 import uuid
 from collections import OrderedDict
 from datetime import UTC, datetime
@@ -41,6 +42,7 @@ def create(
     partition_hours=168,
     purpose="Declared comparison",
     search=None,
+    template_id=None,
 ):
     if mode not in ("resource", "design", "autonomous") or not 1 <= partition_hours <= 168:
         raise ValueError("Invalid study mode or partition size")
@@ -120,6 +122,8 @@ def create(
         qualification="Hourly scheduling and bounded observation/service model. Not validated annual autonomy or certified delivered fuel.",
         uncertainty_scope="Cases/worlds are disclosed scenarios unless a separately supported probability model is attached; numerical repeats are not independent weather samples",
     )
+    if template_id is not None:
+        value["template"] = dict(id=template_id, record=store.get("template", template_id))
     key = store.put("study", value)
     d = directory(store, key)
     atomic(d / "source-capsule.json", encode(LOADED_CAPSULE))
@@ -253,6 +257,7 @@ def execute(store, study_id):
             )
             checkpoint = read_blob(store, previous[-1]["checkpoint_sha256"]) if previous else None
             while start < case["hours"] and not stop():
+                started = time.perf_counter()
                 end = min(case["hours"], start + manifest["partition_hours"])
                 cont = Continuation(
                     case["hours"],
@@ -291,6 +296,7 @@ def execute(store, study_id):
                         last_time=rows[-1]["time"],
                         metrics=result["metrics"][case["controller"]],
                     )
+                    entry["elapsed_seconds"] = time.perf_counter() - started
                     atomic(d / case["case_id"] / f"entry-{start:08}.json", encode(entry))
                     checkpoint = cont.output
                     completed += next_hour - start

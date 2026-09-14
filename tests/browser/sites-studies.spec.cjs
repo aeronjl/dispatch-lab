@@ -8,6 +8,8 @@ test('Sites runs a frozen case, opens its original interval and publishes a comp
  await page.locator('[data-si=studies]').click();await page.locator('[data-si=study-new]').click();
  await page.locator('[data-study=name]').fill('Browser chronological study');
  await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
+ await expect(page.locator('[data-runtime-summary]')).toContainText('Runtime unavailable');
+ await page.locator('[data-si=runtime-details]').click();await page.locator('[data-runtime-rate]').fill('2');await page.locator('[data-si=runtime-calculate]').click();await expect(page.locator('[data-runtime-result]')).toContainText('Supplied pilot assumption');await page.locator('[data-si=study-open]').click();
  await page.locator('[data-si=study-start]').click();
  await expect(page.locator('[data-si=period-play]')).toBeVisible({timeout:60000});
  await expect(page.locator('.si-page')).toContainText('6 / 6 hours');
@@ -17,11 +19,16 @@ test('Sites runs a frozen case, opens its original interval and publishes a comp
  await page.locator('[data-do=menu]').click();await expect(page.locator('[data-do=study-origin]')).toBeVisible();await page.locator('[data-do=study-origin]').click();
  await expect(page.locator('.si-page h1')).toHaveText('Browser chronological study');
  await page.locator('[data-si=publish-study]').click();
+ await expect(page.locator('.si-page h1')).toHaveText('Edit write-up');
+ await page.locator('[data-writeup=findings]').fill('A short workflow check, not a research conclusion.');
+ await page.locator('[data-si=report-publish]').click();
  await expect(page.locator('.si-page')).toContainText('Write-up frozen');
  const url=await page.locator('.si-page a').first().getAttribute('href');const response=await page.request.get(url);expect(response.ok()).toBe(true);expect(await response.text()).toContain('Browser chronological study');
  await page.locator('[data-si=bundle]').click();await expect(page.locator('.si-export-result')).toContainText('Download ZIP');
- await page.locator('[data-si=compare]').click();await page.locator('[data-compare-study]').first().check();
- await page.locator('[data-si=compare-build]').click();await expect(page.locator('.si-page')).toContainText('1 complete / 1 declared');
+ await page.locator('[data-si=report-revise]').click();await expect(page.locator('[data-writeup=findings]')).toHaveValue('A short workflow check, not a research conclusion.');await page.locator('[data-writeup=findings]').fill('Revised interpretation');await page.locator('[data-si=report-publish]').click();await expect(page.locator('.si-page')).toContainText('Write-up frozen');
+ await page.locator('[data-si=studies]').click();await page.locator('[data-si=study-open]').first().click();await page.locator('[data-si=template-save-form]').click();await page.locator('[data-template=name]').fill('Reusable browser recipe');await page.locator('[data-si=template-save]').click();await page.locator('[data-si=template-use]').click();await expect(page.locator('[data-study=cases]')).toHaveValue(/environment_id/);await page.locator('[data-si=study-create]').click();await expect(page.locator('.si-page h1')).toHaveText('Reusable browser recipe / new edition');await expect(page.locator('[data-si=period-play]')).toHaveCount(0);
+ await page.locator('[data-si=compare]').click();await expect(page.locator('[data-compare-study]')).toHaveCount(2);for(const box of await page.locator('[data-compare-study]').all())await box.check();
+ await page.locator('[data-si=compare-build]').click();await expect(page.locator('.si-page')).toContainText('1 complete / 2 declared');
  await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'build/siting-comparison-mobile.png'});
  expect(errors).toEqual([]);

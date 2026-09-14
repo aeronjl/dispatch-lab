@@ -12,6 +12,14 @@ from methane.siting.store import digest
 from methane.weather import prepare
 
 
+@pytest.fixture(autouse=True)
+def site_worker_profile(monkeypatch):
+    # production.launch uses this bounded solver profile. Comparing two fresh
+    # multithreaded solves can differ before the checkpoint is even reached.
+    # Keep exact physical assertions; isolate the continuation mechanism.
+    monkeypatch.setenv("DISPATCH_BATCH_WORKER", "1")
+
+
 def physical(rows):
     return [
         {
