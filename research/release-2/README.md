@@ -17,9 +17,9 @@ edition; execution is explicit. [Workflow guide](../../docs/study-workflow.md).
 `templates.json` preserves their metadata and original input references. A fresh clone
 needs the referenced saved data restored; no silent weather substitute is supplied.
 
-`finish_annual_acceptance.py` stops the original four-case study after its first
+The initial `finish_annual_acceptance.py` monitor was intended to stop the original four-case study after its first
 8,760-hour case. `analyse_annual_acceptance.py` checks only that completed case with
-the already-loaded original checker. Their receipts do not mark all four cases complete.
+the already-loaded original checker. The original reporting pass was stopped after all hours were committed because it repeatedly decoded large histories. `reconcile_annual.py` uses the new report projection and saves a separate reporting-source capsule; `analyse_annual_report.py` then checks the original records using their original checker source. `annual-reconciliation.json` records that derivation. None of these marks all four cases complete.
 `research-scope-change.json` records stopped workers and retained partial exports.
 
 ## Repeat the work

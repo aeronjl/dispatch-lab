@@ -35,5 +35,16 @@
     "uncertainty",
     "forecast"
   ],
-  "original_programme": "5ab09634cfb544e19153ae6f532af662"
+  "original_programme": "5ab09634cfb544e19153ae6f532af662",
+  "annual_disposition": {
+    "recorded_hours": 8760,
+    "policy_cases_completed": 1,
+    "policy_cases_declared": 4,
+    "status": "Remaining cases cancelled; one annual acceptance case complete",
+    "execution_source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+    "summary_derivation": "annual-reconciliation.json",
+    "independent_checks": 1205504,
+    "independent_status": "passed",
+    "note": "The original reporting pass and stop monitor were terminated after all hourly records were committed. A separately identified reporting derivation completed the missing summary. No further plant simulation was performed."
+  }
 }

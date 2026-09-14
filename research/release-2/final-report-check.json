@@ -1,0 +1,14 @@
+{
+  "source": "edaf5234791f40cf02f41c0d165d2c1939e2cf13c3aafac0fb6ed1d5817bfe75",
+  "report_sha256": "5fa69c81b7195a893d09fd22c3e98e4bfa3d0438a08201a034737aee49d89426",
+  "browser": {
+    "cases": 73,
+    "windows": 217,
+    "errors": [],
+    "network_requests": [],
+    "mobile_fits": true,
+    "font": true,
+    "scope": "Offline report rendering and all available recorded case/window selectors. Does not rerun numerical models or establish participant comprehension."
+  },
+  "visual_review": "Desktop and narrow layout inspected; Departure Mono, amber styling and readable hierarchy retained. The plant and solar screenshot baselines were unchanged and passed their separate browser check."
+}

@@ -42,3 +42,12 @@ The subsequent workflow changes add recipes, authored report editions and elapse
 partition timing; they do not change the physics or dispatch model. New focused
 tests qualify those changes under their new identity. Prior qualification is never
 presented as having run against the later source.
+
+## Completion record
+
+The representative annual case contains all 8,760 hours and passed 1,205,504
+original-source independent checks. Its original reporting attempt exposed repeated
+record decoding. A separately identified reporting derivation completed the summary
+in about 156 seconds without changing any hourly decision. All remaining policy
+cases stay optional. The final release report distinguishes the original numerical
+qualification, later workflow tests and the focused reporting fix.

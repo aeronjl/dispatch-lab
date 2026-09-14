@@ -51,7 +51,7 @@ def build(*,write=True):
                 w['terminal_service']={k:service.get(k) for k in ('robots','support','portable','cleaning_kits','calibration_kits','service_kits')}
                 w['terminal_service']['open_orders']=[{k:o.get(k) for k in ('order_id','action','target','status','phase','reason','started_at')} for o in executive.get('orders',[]) if o['status'] not in ('completed','cancelled','failed')]
                 prefixes.append(w)
-            cases.append(dict(case_id=c['case_id'],label=c['label'],policy=c['policy'],seed=c['seed'],controller=c['controller'],pair=pair,environment_id=c['environment_id'],design_id=c['design_id'],independent=dict(status=c['independent']['status'],checks=c['independent']['checks'],failures=c['independent']['failures']),prefixes=prefixes,original_detail=str(path.relative_to(ROOT))))
+            cases.append(dict(case_id=c['case_id'],label=c['label'],policy=c['policy'],seed=c['seed'],controller=c['controller'],pair=pair,environment_id=c['environment_id'],design_id=c['design_id'],independent=dict(status=c['independent']['status'],checks=c['independent']['checks'],failures=c['independent']['failures']),prefixes=prefixes,summary_calculation=c.get('summary_calculation'),original_detail=str(path.relative_to(ROOT))))
         pairs={}
         for c in cases:pairs.setdefault(c['pair'],{})[c['policy']]=c
         deltas=[]
@@ -81,6 +81,7 @@ def build(*,write=True):
     annual_case=next((c for c in annual['case_records'] if c['case_id']=='case-001'),None)
     templates=read(ROOT/'templates.json',{})
     workflow=read(ROOT/'product-workflow.json',{})
+    reconciliation=read(ROOT/'reconciliation-checks.json',{})
     gates=dict(
         source_comparison=comparison_matches(read(ROOT/'source-comparison.json',{}),manifest),
         complete_record_comparison=comparison_matches(read(ROOT/'complete-record-comparison.json',{}),manifest),
@@ -88,11 +89,11 @@ def build(*,write=True):
         representative_preservation=any(preservation_matches(v) for v in preservation),
         representative_site_bundle=any(publication_matches(g['publication'],g,manifest) for g in studies),
         reusable_templates=templates.get('programme')==manifest['id'] and {t['key']:t['original_study_id'] for t in templates.get('templates',[])}=={g['key']:g['id'] for g in studies} and templates.get('executed_by_registration') is False,
-        product_workflow=workflow.get('passed') is True and workflow.get('source')==LOADED_SOURCE['content_hash'],
+        product_workflow=workflow.get('passed') is True and (workflow.get('source')==LOADED_SOURCE['content_hash'] or (reconciliation.get('passed') is True and reconciliation.get('source')==LOADED_SOURCE['content_hash'] and reconciliation.get('base_workflow_source')==workflow.get('source') and reconciliation.get('unchanged_ui_assets') is True)),
         qualification=qualification.get('passed',False) and qualification.get('source')==manifest['source']['content_hash'],
         new_offline=read(ROOT/'offline.json',{}).get('offline_passed',False) and read(ROOT/'offline.json',{}).get('source',{}).get('content_hash')==manifest['source']['content_hash'],
         observability=read(ROOT/'observability.json',{}).get('passed',False) and read(ROOT/'observability.json',{}).get('source',{}).get('content_hash')==manifest['source']['content_hash'])
-    data=dict(version='release-2-report/2',acceptance='product-acceptance.md',product_workflow=workflow,programme=manifest['id'],source=manifest['source']['content_hash'],studies=studies,preservation=preservation,qualification=qualification,offline=read(ROOT/'offline.json'),observability=dict(passed=read(ROOT/'observability.json',{}).get('passed',False),cases=len(read(ROOT/'observability.json',{}).get('cases',[]))),gates=gates,complete=all(gates.values()),totals=dict(cases=len(cases),expected_cases=116,hours=sum(c['prefixes'][-1]['boundary_hour'] for c in cases),expected_hours=sum(g['hours'] for g in studies),independent_checks=sum(c['independent']['checks'] for c in cases)),annual_cash=read(folder/'annual-cash.json',[]),checkpoint_comparison=read(ROOT/'checkpoint-comparison.json'),predecessor=manifest.get('predecessor_programme'))
+    data=dict(version='release-2-report/2',acceptance='product-acceptance.md',product_workflow=workflow,reconciliation=reconciliation,programme=manifest['id'],source=manifest['source']['content_hash'],studies=studies,preservation=preservation,qualification=qualification,offline=read(ROOT/'offline.json'),observability=dict(passed=read(ROOT/'observability.json',{}).get('passed',False),cases=len(read(ROOT/'observability.json',{}).get('cases',[]))),gates=gates,complete=all(gates.values()),totals=dict(cases=len(cases),expected_cases=116,hours=sum(c['prefixes'][-1]['boundary_hour'] for c in cases),expected_hours=sum(g['hours'] for g in studies),independent_checks=sum(c['independent']['checks'] for c in cases)),annual_cash=read(folder/'annual-cash.json',[]),checkpoint_comparison=read(ROOT/'checkpoint-comparison.json'),predecessor=manifest.get('predecessor_programme'))
     if write:(ROOT/'summary.json').write_text(json.dumps(data,indent=2,allow_nan=False))
     return data
 

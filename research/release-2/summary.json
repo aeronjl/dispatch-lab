@@ -394,6 +394,31 @@
       }
     ]
   },
+  "reconciliation": {
+    "version": "release-2-reporting-qualification/1",
+    "source": "edaf5234791f40cf02f41c0d165d2c1939e2cf13c3aafac0fb6ed1d5817bfe75",
+    "base_workflow_source": "d8e355ae1a7f925c79c2372b605441ec00620f58fb77645443dd7710df21a910",
+    "changed_files": [
+      "methane/documentation.py",
+      "methane/siting/production.py",
+      "methane/siting/summary.py",
+      "tests/test_siting_summary.py"
+    ],
+    "unchanged_ui_assets": true,
+    "passed": true,
+    "python": {
+      "passed": 23,
+      "failed": 0,
+      "profile": "Bounded Sites solver worker"
+    },
+    "scope": "Exact equality of every summary field against full recorded operands for legacy and finite service pricing, including deployment/condition, ending work, costs and inventories. One decode per partition; incomplete hours rejected; reconciliation cancellation checked. Existing Sites execution, checkpoint, report and template regressions included.",
+    "documentation": "Sites now binds the report projection source; Sites and experiment narrative remain accurate. Their unchanged teaching calculations were regenerated after explicit review. No physical kernel or dispatch objective changed.",
+    "limits": [
+      "Legacy service records without the finite-pricing contract retain their complete reporting objects.",
+      "A whole-year summary is a new reporting derivation over original-source hourly records. It is not new numerical execution or empirical validation."
+    ],
+    "log": "build/release-2/product-acceptance/r2-reconciliation-final-qualified.log"
+  },
   "programme": "5ab09634cfb544e19153ae6f532af662",
   "source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
   "studies": [
@@ -1050,6 +1075,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-001.json"
         },
         {
@@ -1698,6 +1724,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-002.json"
         },
         {
@@ -2346,6 +2373,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-003.json"
         },
         {
@@ -2994,6 +3022,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-004.json"
         },
         {
@@ -3738,6 +3767,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-005.json"
         },
         {
@@ -4455,6 +4485,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-006.json"
         },
         {
@@ -5204,6 +5235,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-007.json"
         },
         {
@@ -5928,6 +5960,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-008.json"
         },
         {
@@ -6576,6 +6609,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-009.json"
         },
         {
@@ -7224,6 +7258,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-010.json"
         },
         {
@@ -7872,6 +7907,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-011.json"
         },
         {
@@ -8520,6 +8556,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-012.json"
         },
         {
@@ -9264,6 +9301,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-013.json"
         },
         {
@@ -9981,6 +10019,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-014.json"
         },
         {
@@ -10730,6 +10769,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-015.json"
         },
         {
@@ -11454,6 +11494,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-016.json"
         },
         {
@@ -12102,6 +12143,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-017.json"
         },
         {
@@ -12750,6 +12792,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-018.json"
         },
         {
@@ -13398,6 +13441,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-019.json"
         },
         {
@@ -14046,6 +14090,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-020.json"
         },
         {
@@ -14790,6 +14835,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-021.json"
         },
         {
@@ -15507,6 +15553,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-022.json"
         },
         {
@@ -16256,6 +16303,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-023.json"
         },
         {
@@ -16980,6 +17028,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-024.json"
         },
         {
@@ -17628,6 +17677,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-025.json"
         },
         {
@@ -18276,6 +18326,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-026.json"
         },
         {
@@ -18924,6 +18975,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-027.json"
         },
         {
@@ -19572,6 +19624,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-028.json"
         },
         {
@@ -20316,6 +20369,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-029.json"
         },
         {
@@ -21033,6 +21087,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-030.json"
         },
         {
@@ -21782,6 +21837,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-031.json"
         },
         {
@@ -22506,6 +22562,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-032.json"
         },
         {
@@ -23154,6 +23211,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-033.json"
         },
         {
@@ -23802,6 +23860,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-034.json"
         },
         {
@@ -24450,6 +24509,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-035.json"
         },
         {
@@ -25098,6 +25158,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-036.json"
         },
         {
@@ -25842,6 +25903,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-037.json"
         },
         {
@@ -26559,6 +26621,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-038.json"
         },
         {
@@ -27308,6 +27371,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-039.json"
         },
         {
@@ -28032,6 +28096,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-040.json"
         },
         {
@@ -28690,6 +28755,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-041.json"
         },
         {
@@ -29348,6 +29414,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-042.json"
         },
         {
@@ -30006,6 +30073,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-043.json"
         },
         {
@@ -30664,6 +30732,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-044.json"
         },
         {
@@ -31418,6 +31487,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-045.json"
         },
         {
@@ -32145,6 +32215,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-046.json"
         },
         {
@@ -32921,6 +32992,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-047.json"
         },
         {
@@ -33669,6 +33741,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-048.json"
         },
         {
@@ -34317,6 +34390,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-049.json"
         },
         {
@@ -34965,6 +35039,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-050.json"
         },
         {
@@ -35613,6 +35688,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-051.json"
         },
         {
@@ -36261,6 +36337,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-052.json"
         },
         {
@@ -37005,6 +37082,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-053.json"
         },
         {
@@ -37722,6 +37800,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-054.json"
         },
         {
@@ -38471,6 +38550,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-055.json"
         },
         {
@@ -39195,6 +39275,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-056.json"
         },
         {
@@ -39843,6 +39924,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-057.json"
         },
         {
@@ -40491,6 +40573,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-058.json"
         },
         {
@@ -41139,6 +41222,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-059.json"
         },
         {
@@ -41787,6 +41871,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-060.json"
         },
         {
@@ -42531,6 +42616,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-061.json"
         },
         {
@@ -43248,6 +43334,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-062.json"
         },
         {
@@ -43997,6 +44084,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-063.json"
         },
         {
@@ -44721,6 +44809,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-064.json"
         },
         {
@@ -45369,6 +45458,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-065.json"
         },
         {
@@ -46017,6 +46107,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-066.json"
         },
         {
@@ -46665,6 +46756,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-067.json"
         },
         {
@@ -47313,6 +47405,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-068.json"
         },
         {
@@ -48057,6 +48150,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-069.json"
         },
         {
@@ -48774,6 +48868,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-070.json"
         },
         {
@@ -49523,6 +49618,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-071.json"
         },
         {
@@ -50247,6 +50343,7 @@
               }
             }
           ],
+          "summary_calculation": null,
           "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/seasonal-case-072.json"
         }
       ],
@@ -51565,7 +51662,449 @@
       "id": "eb104280b3cbe4bf0dec35384108891b91025799b25c93f76a07da0edc9e4635",
       "key": "annual",
       "cases_expected": 4,
-      "case_records": [],
+      "case_records": [
+        {
+          "case_id": "case-001",
+          "label": "London continuous 2025 / previously used plant deployment / none",
+          "policy": "none",
+          "seed": 7,
+          "controller": "Greedy",
+          "pair": "e23fe2103a7819566c36e34a15c97fb3eb3bd7a7f92b767d293a91cb992cc738",
+          "environment_id": "3a8fb2b6a138f53361ef548c3e757b48ff1c469faf47662240ca950b9c8a07e2",
+          "design_id": "ef72a8b1a33020384bea99a5d1d036f6fcbd7c305ab7f3242043d195ce89c6e1",
+          "independent": {
+            "status": "passed",
+            "checks": 1205504,
+            "failures": []
+          },
+          "prefixes": [
+            {
+              "assumed_contribution_eur": -27278.312572790186,
+              "boundary_hour": 8760,
+              "co2_rejected_kg": 48232.21065792194,
+              "curtailed_kwh": 13066.925134991448,
+              "electrolyser_starts": 430.0,
+              "ending": {
+                "battery_kwh": 1.2434497875801753e-14,
+                "co2_kg": 870.6873116802575,
+                "commitment_hours": 0,
+                "electrolyser_on": false,
+                "h2_kg": 0.06446122036090429,
+                "reactor_on": false,
+                "temperature_c": 62.78935416856002
+              },
+              "eur_per_kg_ch4": 6.618372164436787,
+              "fallbacks": 0,
+              "false_alarms": 1,
+              "field_energy_kwh": 21.555555555555443,
+              "forced_downtime_hours": 227,
+              "h2_produced_kg": 11017.719375838144,
+              "hours": 8760,
+              "lifecycle": {
+                "accepted_capacity": {
+                  "battery": 1.0,
+                  "electrolyser": 1.0,
+                  "reactor": 1.0,
+                  "solar": 1.0
+                },
+                "cash_eur": 634217.5,
+                "construction_capital_eur": 8217.5,
+                "consumed_parts_eur": {},
+                "ending_condition": {
+                  "electrolyser": {
+                    "deliveries": [],
+                    "estimate": 0.10010226388340512,
+                    "measurement": {
+                      "available_at": 8737,
+                      "epoch": 0,
+                      "measured_at": 8736,
+                      "noise_bound": 0.002,
+                      "source": "declared-condition-channel/1",
+                      "unit": "fraction",
+                      "value": 0.10010226388340512
+                    },
+                    "stock": 1,
+                    "supplier": 4
+                  },
+                  "solar": {
+                    "deliveries": [],
+                    "estimate": 0.01691850277647742,
+                    "measurement": {
+                      "available_at": 8737,
+                      "epoch": 0,
+                      "measured_at": 8736,
+                      "noise_bound": 0.002,
+                      "source": "declared-condition-channel/1",
+                      "unit": "fraction",
+                      "value": 0.01691850277647742
+                    },
+                    "stock": 1,
+                    "supplier": 4
+                  }
+                },
+                "expenditure": {
+                  "callout_eur": 1500.0,
+                  "crew_eur": 2800.0,
+                  "equipment_eur": 1400.0,
+                  "external_energy_eur": 17.5,
+                  "external_energy_kwh": 70.0,
+                  "materials_eur": 2500.0,
+                  "opening_stock_eur": 626000.0
+                },
+                "maintenance_resource_eur": 0.0,
+                "packages": {
+                  "array-first": {
+                    "accepted_at": 14,
+                    "departed_at": 15,
+                    "phase": "departure",
+                    "remaining": 0.0,
+                    "status": "departed"
+                  },
+                  "array-rest": {
+                    "accepted_at": 106,
+                    "departed_at": 107,
+                    "phase": "departure",
+                    "remaining": 0.0,
+                    "status": "departed"
+                  },
+                  "battery-install": {
+                    "accepted_at": 37,
+                    "departed_at": 38,
+                    "phase": "departure",
+                    "remaining": 0.0,
+                    "status": "departed"
+                  },
+                  "electrolyser-install": {
+                    "accepted_at": 60,
+                    "departed_at": 61,
+                    "phase": "departure",
+                    "remaining": 0.0,
+                    "status": "departed"
+                  },
+                  "reactor-install": {
+                    "accepted_at": 83,
+                    "departed_at": 84,
+                    "phase": "departure",
+                    "remaining": 0.0,
+                    "status": "departed"
+                  }
+                },
+                "project_crew_hours": 35.0,
+                "unresolved_jobs": [],
+                "verified_replacements": 0
+              },
+              "limited_solves": 0,
+              "max_balance_error": 5.684341886080802e-14,
+              "methane_kg": 22035.309829235564,
+              "reactor_starts": 435.0,
+              "retrospective_condition": {
+                "electrolyser": {
+                  "after": 0.10188884210526315,
+                  "before": 0.10188884210526315,
+                  "calendar_hours": 8760.0,
+                  "operating_hours": 40331.0,
+                  "replacements": 0
+                },
+                "solar": {
+                  "after": 0.014996577686516086,
+                  "before": 0.014996007300935433,
+                  "calendar_hours": 26292.0,
+                  "operating_hours": 0.0,
+                  "replacements": 0
+                }
+              },
+              "service_inventories": {
+                "ending:brush": 1,
+                "ending:calibration": 1,
+                "ending:cleaning": 0,
+                "ending:maintenance": 0,
+                "ending:module": 2,
+                "opening:brush": 2,
+                "opening:calibration": 2,
+                "opening:cleaning": 12,
+                "opening:maintenance": 2,
+                "opening:module": 2,
+                "unit:brush": "kit",
+                "unit:calibration": "kit",
+                "unit:cleaning": "kit",
+                "unit:maintenance": "kit",
+                "unit:module": "kit"
+              },
+              "service_outcomes": {
+                "cleaning_full_passes": 29,
+                "cleaning_treated_m2": 55499.99999999915,
+                "cleaning_water_l": 0,
+                "contact_first_usable_hour": null,
+                "contact_usable_decision_hours": null,
+                "converter_clipped_kwh": 0,
+                "dock_unserved_kwh": null,
+                "implementation_id": "field-period-outcomes/1",
+                "routine_completed": 26,
+                "scope": "Applied hourly totals. Contact hours count eligible decision evidence, not retrospective truth or unique samples. Missing optical, standby or referenced sensing mechanisms remain undefined; no annualization."
+              },
+              "total_eur": 145837.88120855298,
+              "uncertain_hours": 6441,
+              "utilisation": 0.25154463275383065,
+              "variable_and_wear_eur": 49313.62240202575,
+              "terminal_service": {
+                "robots": {
+                  "cleaner": {
+                    "asset_id": "PLANT-01/CLEAN-01",
+                    "energy_kwh": 2.0,
+                    "status": "available"
+                  },
+                  "rover": {
+                    "asset_id": "PLANT-01/ROVER-01",
+                    "energy_kwh": 2,
+                    "status": "available"
+                  }
+                },
+                "support": {
+                  "brush_spares": 1,
+                  "calendar_basis": "Hours from simulation origin; declared repeating labour availability, not inferred local business hours",
+                  "crew_hours_remaining": 12.0,
+                  "implementation_id": "logistics/1",
+                  "limitation": "Mission-abort retrieval and bounded supervised drive test. This does not repair arbitrary mechanical damage. Crew visits are separate; enable combined visits to share eligible journeys. Failed support-equipment recovery remains programme work.",
+                  "maintenance": {
+                    "implementation_id": "routine-service/1",
+                    "schedules": [
+                      {
+                        "completed_count": 7,
+                        "last_completed_hour": 5094,
+                        "next_due_hour": 5814.0,
+                        "overdue_hours": 2946.0,
+                        "target": "cleaner"
+                      },
+                      {
+                        "completed_count": 7,
+                        "last_completed_hour": 5098,
+                        "next_due_hour": 5818.0,
+                        "overdue_hours": 2942.0,
+                        "target": "rover"
+                      },
+                      {
+                        "completed_count": 6,
+                        "last_completed_hour": 4394,
+                        "next_due_hour": 5114.0,
+                        "overdue_hours": 3646.0,
+                        "target": "dock"
+                      },
+                      {
+                        "completed_count": 6,
+                        "last_completed_hour": 4398,
+                        "next_due_hour": 5118.0,
+                        "overdue_hours": 3642.0,
+                        "target": "reset"
+                      }
+                    ],
+                    "scope": "Completion records the declared routine procedure. Faults, brush life, sensor drift and hardware health remain unchanged; no quantified avoided-failure benefit."
+                  },
+                  "remote_hours_remaining": 1.0,
+                  "returned": {
+                    "SVC-0002": {
+                      "completed_at": 122.5,
+                      "effective_at": 123,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.8999999999999975,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0003",
+                      "origin_order": "SVC-0002",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0016": {
+                      "completed_at": 674.5,
+                      "effective_at": 675,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.9000000000000205,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0017",
+                      "origin_order": "SVC-0016",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0028": {
+                      "completed_at": 771.5,
+                      "effective_at": 772,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.4999999999999659,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0029",
+                      "origin_order": "SVC-0028",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0037": {
+                      "completed_at": 922.5,
+                      "effective_at": 923,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.9000000000000205,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0038",
+                      "origin_order": "SVC-0037",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0043": {
+                      "completed_at": 962.5,
+                      "effective_at": 963,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.3000000000000068,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0044",
+                      "origin_order": "SVC-0043",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0049": {
+                      "completed_at": 993.5,
+                      "effective_at": 994,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.4999999999999659,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0050",
+                      "origin_order": "SVC-0049",
+                      "robot": "cleaner"
+                    },
+                    "SVC-0060": {
+                      "completed_at": 1205.5,
+                      "effective_at": 1206,
+                      "kind": "retrieve",
+                      "location": {
+                        "from_point": "solar",
+                        "phase": "perform",
+                        "progress": 0.29999999999998633,
+                        "to_point": "solar"
+                      },
+                      "order_id": "SVC-0062",
+                      "origin_order": "SVC-0060",
+                      "robot": "cleaner"
+                    }
+                  },
+                  "upstream": {
+                    "brush": 24,
+                    "calibration": 24,
+                    "cleaning": 0,
+                    "maintenance": 0,
+                    "module": 24
+                  },
+                  "upstream_units": {
+                    "brush": "kit",
+                    "calibration": "kit",
+                    "cleaning": "kit",
+                    "maintenance": "kit",
+                    "module": "kit"
+                  },
+                  "water_l": null
+                },
+                "portable": null,
+                "cleaning_kits": 0,
+                "calibration_kits": 1,
+                "service_kits": 2,
+                "open_orders": [
+                  {
+                    "order_id": "SVC-0002",
+                    "action": "clean-section",
+                    "target": "PV-02",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "rain-mmph: requires at_most 0.1",
+                    "started_at": 113
+                  },
+                  {
+                    "order_id": "SVC-0016",
+                    "action": "clean-section",
+                    "target": "PV-02",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "rain-mmph: requires at_most 0.1",
+                    "started_at": 653
+                  },
+                  {
+                    "order_id": "SVC-0028",
+                    "action": "clean-section",
+                    "target": "PV-01",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "Cleaning interrupted; covered area remains treated; asset requires retrieval",
+                    "started_at": 765
+                  },
+                  {
+                    "order_id": "SVC-0037",
+                    "action": "clean-section",
+                    "target": "PV-02",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "rain-mmph: requires at_most 0.1",
+                    "started_at": 915
+                  },
+                  {
+                    "order_id": "SVC-0043",
+                    "action": "clean-section",
+                    "target": "PV-02",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "rain-mmph: requires at_most 0.1",
+                    "started_at": 949
+                  },
+                  {
+                    "order_id": "SVC-0049",
+                    "action": "clean-section",
+                    "target": "PV-01",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "Cleaning interrupted; covered area remains treated; asset requires retrieval",
+                    "started_at": 987
+                  },
+                  {
+                    "order_id": "SVC-0060",
+                    "action": "clean-section",
+                    "target": "PV-01",
+                    "status": "stranded",
+                    "phase": "perform",
+                    "reason": "rain-mmph: requires at_most 0.1",
+                    "started_at": 1199
+                  }
+                ]
+              }
+            }
+          ],
+          "summary_calculation": {
+            "at": "2026-09-14T16:05:30.790752+00:00",
+            "case_id": "case-001",
+            "decoded_partitions": 53,
+            "execution_source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+            "recorded_hours": 8760,
+            "report_capsule_sha256": "aab56268c3d4b1a426168e0fd4c018df1c553d986e3dbd34408800a76d6a96e4",
+            "report_source": "a12209d1d31d65cffd81b0f8960576bc5836ce1489df6a64e53b0a9fb8a6fb14",
+            "schema_version": "site-case-summary-derivation/1",
+            "scope": "Whole-case reporting over unchanged committed hours. Cost assumptions are the original case assumptions. The original final summary was never published. No hourly decision, weather, fault or checkpoint is changed; remaining policy cases are unexecuted.",
+            "script_sha256": "7b907e41c7e4afadd4f1058e2fd001b4c7d6205f526f16a0aaa860eb25dc7cf8",
+            "seconds": 155.81819341587834,
+            "study_id": "eb104280b3cbe4bf0dec35384108891b91025799b25c93f76a07da0edc9e4635"
+          },
+          "original_detail": "5ab09634cfb544e19153ae6f532af662/analysis/annual-case-001.json"
+        }
+      ],
       "paired_deltas": [],
       "publication": null
     },
@@ -52931,7 +53470,7 @@
   "gates": {
     "source_comparison": true,
     "complete_record_comparison": true,
-    "representative_annual": false,
+    "representative_annual": true,
     "representative_preservation": true,
     "representative_site_bundle": true,
     "reusable_templates": true,
@@ -52940,13 +53479,13 @@
     "new_offline": true,
     "observability": true
   },
-  "complete": false,
+  "complete": true,
   "totals": {
-    "cases": 72,
+    "cases": 73,
     "expected_cases": 116,
-    "hours": 12096,
+    "hours": 20856,
     "expected_hours": 52704,
-    "independent_checks": 1626033
+    "independent_checks": 2831537
   },
   "annual_cash": [],
   "checkpoint_comparison": {

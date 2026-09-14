@@ -3,7 +3,7 @@
 Authorised in full on 14 September 2026. Release 1 remains an immutable publication.
 The release result, qualification receipts and updated research priorities are in
 [the Release-2 report](../research/release-2/report.html). That publication is the
-completion record; this document defines the implemented scope and its gates.
+completion record. The revised product acceptance gates are complete; this document defines the implemented scope and its gates.
 
 ## Scope
 
