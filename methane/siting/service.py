@@ -53,6 +53,10 @@ def view(store, key):
 
 def perform(request, store, current_config):
     d = request.data
+    if request.operation.startswith("project-"):
+        from methane.siting.projects import perform as project_operation
+
+        return project_operation(store, request.operation, request.id, d)
     if request.operation.startswith("lab-"):
         from methane.learning_lab.service import perform as learning_operation
 
