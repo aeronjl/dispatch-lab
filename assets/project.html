@@ -1,0 +1,10 @@
+<section class="pj-workspace" role="dialog" aria-modal="true" aria-label="Plant project" hidden>
+ <header class="pj-header"><button data-pj="close" aria-label="Return to recorded simulation">←</button><button data-pj="projects" class="pj-name">Plant project</button><nav aria-label="Project mode"><button data-pj="site" aria-current="step">Site</button><button data-pj="build">Build</button><button data-pj="operate">Operate</button></nav><button data-pj="tools" aria-label="Project tools">⋯</button></header>
+ <div class="pj-map" aria-label="Choose a European site"></div>
+ <section class="pj-site-panel" aria-label="Choose a site"><h1>Where would you build?</h1><label>Find a location<input data-pj-search type="search" placeholder="Search saved sites or a place"></label><div class="pj-search-actions"><button data-pj="search">Search places</button><button data-pj="site-details">Coordinates & land</button></div><div class="pj-sites"></div></section>
+ <aside class="pj-site-card" aria-label="Selected location" hidden></aside>
+ <div class="pj-build" hidden><div class="pj-build-top"><span data-pj-design-label>Editable design · reference assumptions</span><div><button data-pj="equipment">Add equipment</button><button data-pj="overlay" aria-pressed="false">Costs</button></div></div><div class="pj-drawing" tabindex="0" role="region" aria-label="Editable plant diagram. Select equipment; scroll on narrow screens."></div><div class="pj-equipment-strip"></div><div class="pj-build-bottom"><button data-pj="settings">All project settings</button><span data-pj-save-state>Saved</span><button data-pj="operate" class="pj-primary">Run plant →</button></div></div>
+ <section class="pj-run" hidden></section>
+ <aside class="pj-inspector" aria-label="Project inspector" hidden><button data-pj="dismiss" class="pj-dismiss" aria-label="Close project inspector">×</button><div class="pj-inspector-body"></div></aside>
+ <div class="pj-status" role="status" aria-live="polite"></div>
+</section>

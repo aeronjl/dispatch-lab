@@ -1,6 +1,6 @@
 # Dispatch Lab — autonomous plant experiments
 
-An hourly, local scheduling sandbox for a solar-powered methane plant. The illustrated plant is the main workspace: play, pause, step or change speed; select equipment to inspect **Now → Why → Next → Costs → What if**. Experiment setup is a separate screen.
+An hourly, local scheduling sandbox for a solar-powered methane plant. Begin with **Site → Build → Operate**: select a location, configure the illustrated equipment, then calculate and watch operation. The simulation remains a quiet full-screen workspace: play, pause, step or change speed; select equipment to inspect **Now → Why → Next → Costs → What if**. Experiment setup is a separate screen.
 
 ```sh
 uv sync --locked
@@ -8,7 +8,9 @@ uv run python app.py
 # http://127.0.0.1:7860
 ```
 
-The default 72-hour experiment compares **Greedy**, **MPC · methane** and **MPC · economics**. Setup includes an **Autonomy story / four days** preset, a flow-sensor fault and delayed feedstock. Results include methane, ending hydrogen/CO₂/battery inventories, curtailment, starts, forced trips, diagnosis performance, solver limitations and illustrative costs.
+The saved reference 72-hour experiment compares **Greedy**, **MPC · methane** and **MPC · economics**. Setup includes an **Autonomy story / four days** preset, a flow-sensor fault and delayed feedstock. Results include methane, ending hydrogen/CO₂/battery inventories, curtailment, starts, forced trips, diagnosis performance, solver limitations and illustrative costs.
+
+The [plant project guide](docs/plant-projects.md) covers common controls, complete expert settings, saved design revisions, weather retrieval and matched comparisons. From recorded playback, open **Menu → Site · Build · Operate** to return to your project.
 
 **Sites → Production studies → Learning & policies** adds frozen observation datasets,
 held-out estimator comparisons, registered planning aids and homeostatic reserve

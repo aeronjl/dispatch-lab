@@ -783,7 +783,7 @@ def build_app():
     """Build the current methane UI; build_legacy_app preserves the v0.1 interface."""
     from methane.ui import build_app as build_methane_app
 
-    return build_methane_app()
+    return build_methane_app(start_project=True)
 
 
 if __name__ == "__main__":

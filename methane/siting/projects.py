@@ -228,11 +228,43 @@ def fields(value, path=""):
             rows.extend(fields(v, f"{path}.{i}"))
     elif value is not None:
         key = path.split(".")[-1]
-        label = key.replace("_", " ")
+        label = {
+            "plant.solar_kw": "Installed capacity",
+            "sensors.enabled": "Sensor diagnosis enabled",
+            "field_operations.enabled": "Site services enabled",
+            "field_operations.dock_kw": "Shared charging power",
+            "field_operations.human_fallback": "Human service fallback",
+            "costs.methane_eur_per_kg": "Assumed methane value",
+            "costs.co2_eur_per_kg": "CO₂ price",
+            "plant.battery_kwh": "Energy capacity",
+            "plant.battery_c_rate": "Charge and discharge rate",
+            "plant.electrolyser_kw": "Rated power",
+            "plant.specific_energy_kwh_per_kg": "Electricity per kg of hydrogen",
+            "plant.h2_capacity_kg": "Storage capacity",
+            "plant.co2_capacity_kg": "Storage capacity",
+            "plant.initial_h2_kg": "Starting hydrogen",
+            "plant.initial_co2_kg": "Starting CO₂",
+            "plant.co2_delivery_kg": "Scheduled delivery",
+            "plant.methane_max_kgph": "Maximum production",
+            "plant.methane_min_kgph": "Minimum stable production",
+            "plant.roundtrip_efficiency": "Round-trip efficiency",
+            "plant.initial_soc": "Starting state of charge",
+            "weather.tilt": "Panel tilt",
+            "weather.azimuth": "Azimuth from south",
+            "scenario.horizon_hours": "Planning horizon",
+        }.get(path, key.replace("_", " "))
         unit = next(
             (
                 u
                 for suffix, u in (
+                    ("eur_per_kwh", "EUR/kWh"),
+                    ("eur_per_kw", "EUR/kW"),
+                    ("eur_per_kg", "EUR/kg"),
+                    ("eur_per_m3", "EUR/m³"),
+                    ("eur_per_year", "EUR/year"),
+                    ("eur_per_hour", "EUR/h"),
+                    ("kwh_per_k", "kWh/K"),
+                    ("kw_per_k", "kW/K"),
                     ("kwh_per_kg", "kWh/kg"),
                     ("kgph", "kg/h"),
                     ("kwh", "kWh"),
@@ -251,7 +283,11 @@ def fields(value, path=""):
             dict(
                 path=path,
                 label=label,
-                unit=unit,
+                unit={
+                    "plant.battery_c_rate": "1/h",
+                    "weather.tilt": "degrees",
+                    "weather.azimuth": "degrees",
+                }.get(path, unit),
                 value=value,
                 kind="boolean"
                 if isinstance(value, bool)
@@ -318,7 +354,13 @@ def preview(config, baseline=None):
         equipment=EQUIPMENT,
         notes=notes,
         visual=dict(
+            battery_fraction=p.initial_soc,
+            h2_fraction=p.initial_h2_kg / p.h2_capacity_kg if p.h2_capacity_kg else 0,
+            co2_fraction=p.initial_co2_kg / p.co2_capacity_kg if p.co2_capacity_kg else 0,
             solar=f"{p.solar_kw:g} kW",
+            solar_value=f"{p.solar_kw:g}",
+            electrolyser_value=f"{p.electrolyser_kw:g}",
+            initial_soc_value=f"{p.initial_soc * 100:g}",
             battery=f"{p.battery_kwh:g} kWh",
             electrolyser=f"{p.electrolyser_kw:g} kW",
             hydrogen=f"{p.h2_capacity_kg:g} kg",

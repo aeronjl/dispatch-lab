@@ -1,0 +1,5 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');
+const {projectEdit,projectEscape,projectAccept}=require('../assets/project.js');
+test('editing a nested design does not mutate the original or create unknown keys',()=>{const original={plant:{battery_kwh:800},solar:[{tilt:30}]};const changed=projectEdit(original,'solar.0.tilt',45);assert.equal(changed.solar[0].tilt,45);assert.equal(original.solar[0].tilt,30);assert.throws(()=>projectEdit(original,'plant.unknown',5));assert.throws(()=>projectEdit(original,'__proto__.polluted',1));assert.equal({}.polluted,undefined);});
+test('navigation generation and echoed identity reject stale results',()=>{assert.equal(projectAccept(true,5,5,'5'),true);assert.equal(projectAccept(false,5,5,'5'),false);assert.equal(projectAccept(true,6,5,'5'),false);assert.equal(projectAccept(true,5,5,'4'),false);});
+test('project evidence and names render as text',()=>{assert.equal(projectEscape('<script>"&'), '&lt;script&gt;&quot;&amp;');});

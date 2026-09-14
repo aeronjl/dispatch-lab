@@ -81,7 +81,9 @@ if os.environ.get("DISPATCH_SITES_STUDIES"):
     site_fixture(SiteStore(), hours=6)
 
 launch_local(
-    build_app(fixture).queue(max_size=8),
+    build_app(fixture, start_project=os.environ.get("DISPATCH_PROJECT_START") == "1").queue(
+        max_size=8
+    ),
     app_kwargs={"lifespan": lifespan},
     server_name="127.0.0.1",
     server_port=7861,

@@ -39,6 +39,10 @@ def test_all_present_parameters_reachable_primary_units_and_validation(workspace
     store, value = workspace
     view = value["preview"]
     paths = {f["path"] for f in view["fields"]}
+    units = {f["path"]: f["unit"] for f in view["fields"]}
+    assert units["costs.co2_eur_per_kg"] == "EUR/kg"
+    assert units["plant.thermal_capacity_kwh_per_k"] == "kWh/K"
+    assert view["visual"]["co2_fraction"] == 0.5
     assert all(set(group) <= paths for group in view["primary"].values())
     assert "plant.roundtrip_efficiency" in [
         f["path"] for f in view["fields"] if "battery" in f["groups"]

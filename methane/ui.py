@@ -312,7 +312,7 @@ def default_result():
     return result
 
 
-def build_app(default=None):
+def build_app(default=None, *, start_project=False):
     default = default or default_result()
     initial = Config.from_dict(default["config"])
     if "faults" not in default["config"]:
@@ -994,6 +994,7 @@ def build_app(default=None):
                 scene = gr.HTML(
                     wire_payload(playback_value(default)),
                     economics=wire_payload(reprice(default)),
+                    project_start=start_project,
                     answer=None,
                     decision_answer=None,
                     solar_answer=None,
@@ -1003,7 +1004,8 @@ def build_app(default=None):
                     .replace("<!-- MODEL WORKSPACE -->", (ASSETS / "model.html").read_text())
                     .replace("<!-- TAXONOMY WORKSPACE -->", (ASSETS / "taxonomy.html").read_text())
                     .replace("<!-- STUDIES WORKSPACE -->", (ASSETS / "studies.html").read_text())
-                    .replace("<!-- SITES WORKSPACE -->", (ASSETS / "sites.html").read_text()),
+                    .replace("<!-- SITES WORKSPACE -->", (ASSETS / "sites.html").read_text())
+                    .replace("<!-- PROJECT WORKSPACE -->", (ASSETS / "project.html").read_text()),
                     css_template=(ASSETS / "plant-scene.css").read_text()
                     + (ASSETS / "methane.css").read_text()
                     + (ASSETS / "field-scene.css").read_text()
@@ -1013,6 +1015,7 @@ def build_app(default=None):
                     + (ASSETS / "taxonomy.css").read_text()
                     + (ASSETS / "studies.css").read_text()
                     + (ASSETS / "sites.css").read_text()
+                    + (ASSETS / "project.css").read_text()
                     + (ASSETS / "vendor/maplibre/maplibre-gl.css").read_text(),
                     js_on_load=(ASSETS / "playback.js").read_text().split("function frameAt")[0]
                     + (ASSETS / "field-operations.js").read_text()
@@ -1027,6 +1030,7 @@ def build_app(default=None):
                     + (ASSETS / "learning-lab.js").read_text()
                     + (ASSETS / "sites-studies.js").read_text()
                     + (ASSETS / "sites.js").read_text()
+                    + (ASSETS / "project.js").read_text()
                     + "\nmountMethane(element, props, watch, trigger);",
                     apply_default_css=False,
                     elem_id="methane-playback",

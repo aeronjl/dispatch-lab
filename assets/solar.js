@@ -156,6 +156,7 @@ function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCo
         performance.measure('dispatch-solar-render',{start:renderStart});
     }
     workspace.addEventListener('click',event=>{
+        if(event.target.closest('[data-s=project-revise]')){root.dispatchEvent(new CustomEvent('revise-plant-design'));return;}
         const bank=event.target.closest('[data-bank]');
         if(bank){selected=Number(bank.dataset.bank);inputValues();drawn='';render(getFrame());if(bank.closest('.s-section-picker'))q('.s-scroll').scrollTo({left:Math.max(0,selected*300+157-q('.s-scroll').clientWidth/2),behavior:motion()?'smooth':'instant'});return;}
         const tab=event.target.closest('[data-s-tab]');
@@ -177,6 +178,6 @@ function createSolarWorkspace({root,props,watch,trigger,getResult,getFrame,getCo
         const bank=event.target.closest('.s-bank');if(bank&&['Enter',' '].includes(event.key)){event.preventDefault();event.stopPropagation();selected=Number(bank.dataset.bank);drawn='';inputValues();render(getFrame());}
     });
     watch('solar_answer',()=>{const value=props.solar_answer;if(value?.key!==pending)return;pending=null;applying=false;response=value;render(getFrame());});
-    return {open:()=>changeView(true),close:()=>changeView(false),isOpen:()=>open,needsDetail,render,reset};
+    return {open:()=>{q('[data-s=project-revise]').hidden=getResult().study_origin?.kind!=='site-study';changeView(true);},close:()=>changeView(false),isOpen:()=>open,needsDetail,render,reset};
 }
 if(typeof module!=='undefined')module.exports={solarPanelGeometry};

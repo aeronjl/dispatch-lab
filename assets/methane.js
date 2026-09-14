@@ -12,7 +12,7 @@ function methaneFrame(result, elapsed, controller) {
 function mountMethane(element, props, watch, trigger) {
     let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
-    let solar, model, taxonomy, studies, sites, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
+    let solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
     const root = element.querySelector('.methane-console');
     const $ = selector => root.querySelector(selector);
@@ -190,6 +190,7 @@ function mountMethane(element, props, watch, trigger) {
             body+=`<details class="m-cost-trace"><summary>TRACE COSTS AND TOTALS</summary><pre>${escape(trace?JSON.stringify({economics:trace,physical_totals:row.derived_trace},null,2):'Loading the recorded cost basis…')}</pre></details>`;
         }
         body+=`<nav class="d-inspector-links"><button data-explore="${selected}">Explore component</button><button data-model-topic="${selected}">How it is modelled</button><button data-model-topic="${section==='Costs'?'economics':selected}" data-model-context="This run">Trace calculation</button></nav>`;
+        if(result.study_origin?.kind==='site-study')body+='<nav class="d-inspector-links"><button data-do="project-revise">Revise this design</button></nav>';
         if(row?.lifecycle&&['solar','battery','electrolyser','reactor'].includes(selected))body+=`<nav class="d-inspector-links"><button data-model-topic="deployment" data-model-context="This run">Commissioning record</button>${['solar','electrolyser'].includes(selected)?'<button data-model-topic="condition" data-model-context="This run">Condition & maintenance</button>':''}</nav>`;
         $('.m-inspector-content').innerHTML=body;
     }
@@ -293,14 +294,16 @@ function mountMethane(element, props, watch, trigger) {
         sites?.close();
         model?.close();
         taxonomy?.close();
+        project?.close();
         result=decodeMethanePayload(props.value); costs=decodeMethanePayload(props.economics); invalidate();
         if(result.study_origin)controller=result.study_origin.controller;
         const names=Object.keys(result.records);if(!names.includes(controller))controller=names[0];
         $('[data-m="controller"]').innerHTML=names.map(name=>`<option ${name===controller?'selected':''}>${escape(name)}</option>`).join('');
         $('[data-m="scrubber"]').max=result.records[controller].length;
-        refreshEvents();clock.reset(result.records[controller].length);solar?.reset(result);render();
+        refreshEvents();clock.reset(result.records[controller].length);solar?.reset(result);render();project?.sync();
         $('[data-do="studies"]').hidden=!!result.offline_mode;
         $('[data-do="sites"]').hidden=!!result.offline_mode;
+        $('[data-do="project"]').hidden=!!result.offline_mode;
         $('[data-do="study-origin"]').hidden=!result.study_origin||!!result.offline_mode;
         if(result.study_origin){clock.seek(result.study_origin.hour+1);selectComponent(result.study_origin.component);section='Why';inspect(current());}
     }
@@ -316,9 +319,12 @@ function mountMethane(element, props, watch, trigger) {
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:(topic='siting',context='Current model')=>model?.open(topic,context),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
+    project=typeof createProjectWorkspace==='function'?createProjectWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id}),openModel:topic=>model?.open(topic,'Current model'),openSites:(id,page)=>sites?.openSite(id,page),openStudy:id=>sites?.openStudy(id),openTaxonomy:()=>taxonomy?.open('services'),openSetup:()=>trigger('edit')}):null;
+    root.addEventListener('revise-plant-design',()=>{solar?.close();project?.open({study:result.study_origin?.edition_id,component:'solar'});});
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
         if(event.target.closest('[data-service-alternatives]'))return;
+        if(event.target.closest('.pj-workspace'))return;
         if(event.target.closest('.st-workspace'))return;
         if(event.target.closest('.si-workspace'))return;
         const documentation=event.target.closest('[data-model-topic]');if(documentation){if(result.offline_mode){window.location.href='model-report.html#'+encodeURIComponent(documentation.dataset.modelTopic);return;}model?.open(documentation.dataset.modelTopic,documentation.dataset.modelContext||'Current model',documentation);return;}
@@ -341,6 +347,8 @@ function mountMethane(element, props, watch, trigger) {
         if(action==='hide-ui')hideControls();
         if(action==='studies')studies?.open();
         if(action==='sites')sites?.open();
+        if(action==='project')project?.open();
+        if(action==='project-revise')project?.open({study:result.study_origin?.edition_id,component:selected});
         if(action==='study-origin'){if(result.study_origin?.kind==='site-study')sites?.openStudy(result.study_origin.edition_id);else studies?.open(result.study_origin?.edition_id,result.study_origin?.report_id);}
         if(action==='timeline'){
             const opening=$('.m-timeline').hidden;closePanels(false);
@@ -367,6 +375,7 @@ function mountMethane(element, props, watch, trigger) {
     $('[data-m="speed"]').addEventListener('change',e=>clock.setSpeed(Number(e.target.value)));
     $('[data-m="scrubber"]').addEventListener('input',e=>{invalidate();clock.seek(Number(e.target.value));});
     root.addEventListener('keydown',e=>{
+        if(project?.isOpen())return;
         if(studies?.isOpen())return;
         if(sites?.isOpen())return;
         if(model?.isOpen())return;
@@ -384,7 +393,7 @@ function mountMethane(element, props, watch, trigger) {
     });
     const visibility=()=>{if(document.hidden)clock.pause();}; document.addEventListener('visibilitychange',visibility);
     const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)clock.pause();});observer.observe(root);
-    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
+    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();project?.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
     watch('value',reset);watch('economics',()=>{costs=decodeMethanePayload(props.economics);costRevision++;render();});
     watch('decision_answer',()=>{
         const value=props.decision_answer;
@@ -395,5 +404,6 @@ function mountMethane(element, props, watch, trigger) {
     });
     watch('answer',()=>{const value=props.answer;if(value?.key===pendingKey&&value.key===currentKey()){answer=value;pendingKey=null;inspect(current());}});
     reset();
+    if(props.project_start&&!result.offline_mode)project?.open();
 }
 if(typeof module!=='undefined')module.exports={methaneSelectionKey,methaneFrame,decodeMethanePayload};
