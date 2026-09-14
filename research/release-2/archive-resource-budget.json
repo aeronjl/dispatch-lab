@@ -1,0 +1,44 @@
+{
+  "version": "release-2-archive-resource-budget/1",
+  "at": "2026-09-14T13:25:02.080626+00:00",
+  "reason": "Concurrent export formatting coincided with high memory compression; lower scheduling priority and one active exporter protect the live app and numerical worker.",
+  "observed_two_second_vm_delta": {
+    "Compressions": 313286,
+    "Decompressions": 194002,
+    "Swapins": 60,
+    "Swapouts": 0,
+    "Pageins": 841,
+    "Pageouts": 397
+  },
+  "priority": 10,
+  "parent_pid": 48746,
+  "paused": [
+    {
+      "name": "corrected-support",
+      "pid": 64402
+    },
+    {
+      "name": "provision",
+      "pid": 68488
+    }
+  ],
+  "sequence": [
+    "cleaning",
+    "interface",
+    "corrected-support",
+    "provision"
+  ],
+  "resume_requirement": "The active cleaning exporter may be followed automatically by interface in the original driver. After interface completes, resume corrected-support, then provision. Do not finish or leave the workers paused. No original source, numerical inputs or recorded trace is changed.",
+  "scope": "Operational resource scheduling of derived archive formatting only. Timing of export jobs includes these pauses; it is not a calibrated throughput estimate.",
+  "follow_up": {
+    "at": "2026-09-14T13:27:24.105886+00:00",
+    "sample_seconds": 2,
+    "Compressions": 0,
+    "Decompressions": 4493,
+    "Swapins": 0,
+    "Swapouts": 0,
+    "Pageouts": 0,
+    "scope": "One host sample after reducing active exporters; not a controlled performance experiment or a guarantee of future latency."
+  },
+  "measurement": "Difference between vm_stat cumulative page counters over two seconds; host page size 16384 bytes. Compression counts are churn, not resident memory."
+}

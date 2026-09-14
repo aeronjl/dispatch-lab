@@ -83,3 +83,10 @@ retained correction receipt limits the earlier comparison to the fields it actua
 read; the version-2 helper reads full period records, requires every compared field
 and reruns the available cases. The separate 24-hour compatibility experiment already
 used complete run records. Summary projections are never evidence for omitted operands.
+
+The export driver initially used three reading processes. After observed memory
+compression on this host, their scheduling priority was lowered and two workers
+were paused. `archive_budget.py` verifies their process identities and resumes
+them sequentially after the active exports finish. `archive-resource-budget.json`
+records the intervention and resumptions. This changes orchestration only; export
+elapsed time includes pauses, and no numerical source or original recording changes.
