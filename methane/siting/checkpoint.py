@@ -24,7 +24,7 @@ MODULES = (
     "methane.services.controller methane.services.verification methane.services.investigator "
     "methane.services.investigation_belief methane.services.recovery_belief "
     "methane.services.joint_recovery methane.services.recovery_loop "
-    "methane.services.charging methane.services.charge_control methane.services.registry methane.services.weather_recovery methane.services.continuation"
+    "methane.services.charging methane.services.charge_control methane.services.registry methane.services.weather_recovery methane.services.obligation_recovery methane.services.continuation"
 ).split()
 FIELDS = (
     "state observation diagnosis physical_faults services physical_optical observer "

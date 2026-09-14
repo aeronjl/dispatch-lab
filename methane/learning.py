@@ -632,6 +632,10 @@ def _digest(value):
 @lru_cache(maxsize=128)
 def _evaluate(topic, encoded):
     v = json.loads(encoded)
+    from methane.service_learning import ADAPTERS
+
+    if topic in ADAPTERS:
+        return ADAPTERS[topic](v)
     if topic in ("hydrogen", "co2"):
         return _storage(topic, v)
     return globals()["_" + topic](v)
@@ -667,6 +671,16 @@ def evaluate(topic, inputs=None):
 
 
 def learning_summary(topic, inputs, payload):
+    if topic in (
+        "cleaning",
+        "inspection",
+        "logistics",
+        "service_costs",
+        "service_uncertainty",
+        "charging",
+        "recovery",
+    ):
+        return payload["scope"]
     m = {x["label"]: x["value"] for x in payload["metrics"]}
     if topic == "siting":
         return f"The declared area screen supports {m['Coarse PV capacity']:.1f} kW. The fixed teaching production yields an assumed NPV of €{m['Project NPV']:.0f}; this is independent of resource power and is not an operating simulation."

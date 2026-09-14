@@ -25,6 +25,7 @@ def bindings():
         paths = ["methane/" + f for f in t["files"]] + [
             "methane/learning.py",
             "methane/model_topics.py",
+            "methane/service_topics.py",
             "methane/config.py",
             "methane/contracts.py",
             "methane/physics.py",
@@ -182,7 +183,24 @@ def _catalogue():
             "evidence": evidence_claims(key),
             "assumption_review": for_topic(assumption_review, key),
         }
-        if not specs:
+        if key in (
+            "cleaning",
+            "inspection",
+            "recovery",
+            "charging",
+            "logistics",
+            "service_costs",
+            "service_uncertainty",
+        ):
+            pages[key]["configuration_reference"] = {
+                p["path"]: {
+                    "reference_default": p["reference_default"],
+                    "unit": p.get("unit"),
+                    "evidence_status": p["evidence_status"],
+                }
+                for p in pages[key]["assumption_review"]["parameters"]
+            }
+        elif not specs:
             pages[key]["configuration_reference"] = asdict(
                 Sensors() if key == "diagnosis" else Costs() if key == "economics" else Scenario()
             )
@@ -313,6 +331,90 @@ def calculation(result, topic, controller, hour, prices=None, *, service_prices=
         }
     elif topic == "weather":
         value = d.get("forecast", d.get("evidence", {}).get("solar", {}))
+    elif topic in (
+        "cleaning",
+        "inspection",
+        "recovery",
+        "charging",
+        "logistics",
+        "service_costs",
+        "service_uncertainty",
+    ):
+        field = row.get("field_operations") or {}
+        state = field.get("state", {})
+        decision = field.get("decision", {})
+        value = {
+            "original_policy": d.get("policy"),
+            "recorded_path": f"/records/{controller}/{hour}/field_operations",
+            "scope": "Original recorded service work, observations, plans and resources. Absent fields were not recorded; no current fixture is substituted.",
+        }
+        fields = {
+            "cleaning": (
+                "surface_events",
+                "soiling_before",
+                "soiling_after",
+                "soiling_loss_kw",
+                "available_pv_kw",
+                "unserviced_pv_kw",
+                "robot_use_kwh",
+            ),
+            "inspection": ("fixed_service_kwh", "mission_events"),
+            "charging": (
+                "energy_before_kwh",
+                "charge_input_kwh",
+                "charging_loss_kwh",
+                "robot_use_kwh",
+                "energy_after_kwh",
+                "requested_service_kwh",
+                "applied_service_kwh",
+            ),
+            "logistics": (
+                "resource_events",
+                "support_effects",
+                "human_hours",
+                "human_visits",
+                "remote_hours",
+            ),
+        }.get(topic, ())
+        value["operands"] = {k: field.get(k) for k in fields}
+        if topic == "cleaning":
+            value["surface"] = state.get("surface")
+        elif topic == "inspection":
+            value["available_inspection"] = decision.get("inspection")
+        elif topic == "logistics":
+            value["orders"] = state.get("orders")
+            value["support"] = state.get("support")
+        elif topic == "service_uncertainty":
+            value["observed_beliefs"] = decision.get("uncertainty_beliefs")
+        elif topic == "recovery":
+            recovery = d.get("recovery_planning") or {}
+            value["recovery"] = {
+                k: recovery.get(k)
+                for k in (
+                    "version",
+                    "status",
+                    "request",
+                    "test_appointment",
+                    "recovery_obligation",
+                    "verification_loop",
+                    "commitment_changes",
+                    "due_hour",
+                    "next_eligible_hour",
+                    "reason",
+                )
+            }
+            value["service_obligations"] = (d.get("service_control") or {}).get("obligations")
+            value["mission_events"] = field.get("mission_events")
+        if topic == "service_costs" and result["config"].get("service_economics"):
+            from methane.service_economics import report
+
+            value["calculation_source"] = LOADED_SOURCE["content_hash"]
+            value["price_basis"] = (
+                "Original recorded service assumptions, recalculated with the identified report implementation"
+            )
+            value["cost_calculation"] = report(
+                result["records"][controller][: hour + 1], result["config"]["service_economics"]
+            )
     elif topic == "controllers":
         value = {
             "policy": d["policy"],
@@ -533,7 +635,7 @@ def collect_evidence():
             c
             for c in suites.iter("testcase")
             if c.get("name", "").endswith("[" + topic + "]")
-            or any(token in c.get("name", "") for token in relevant[topic])
+            or any(token in c.get("name", "") for token in relevant.get(topic, []))
         ]
         topics[topic] = {
             "status": "missing"
@@ -552,6 +654,7 @@ def collect_evidence():
                         "unit": a["unit"],
                     }
                     for a in examples.get(topic, {}).get("checks", [])
+                    if all(k in a for k in ("check_id", "tolerance", "unit"))
                 }.values()
             ),
         }

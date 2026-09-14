@@ -2799,7 +2799,7 @@ def audit(result):
         recovery_tests(result, checks)
         if any(
             row["decision"].get("recovery_planning", {}).get("version")
-            in ("scheduled-load-tests/3", "scheduled-load-tests/4")
+            in ("scheduled-load-tests/3", "scheduled-load-tests/4", "scheduled-load-tests/5")
             for rows in result["records"].values()
             for row in rows
         ):

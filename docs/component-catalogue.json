@@ -775,6 +775,16 @@
       "title": "Several machines share one bus",
       "version": "1"
     },
+    "charging": {
+      "fixture_id": "dispatch-lab/learning/charging/1",
+      "title": "Reserve energy for work and return",
+      "version": "1"
+    },
+    "cleaning": {
+      "fixture_id": "dispatch-lab/learning/cleaning/1",
+      "title": "Cleaning changes a surface, not a fault",
+      "version": "1"
+    },
     "co2": {
       "fixture_id": "dispatch-lab/learning/co2/1",
       "title": "Deliveries arrive before withdrawal",
@@ -810,9 +820,34 @@
       "title": "A buffer is a balance over time",
       "version": "1"
     },
+    "inspection": {
+      "fixture_id": "dispatch-lab/learning/inspection/1",
+      "title": "What an inspection can actually reveal",
+      "version": "1"
+    },
+    "logistics": {
+      "fixture_id": "dispatch-lab/learning/logistics/1",
+      "title": "A service system has finite resources",
+      "version": "1"
+    },
     "reactor": {
       "fixture_id": "dispatch-lab/learning/reactor/1",
       "title": "Keeping the reactor ready",
+      "version": "1"
+    },
+    "recovery": {
+      "fixture_id": "dispatch-lab/learning/recovery/1",
+      "title": "Repair is followed by evidence",
+      "version": "1"
+    },
+    "service_costs": {
+      "fixture_id": "dispatch-lab/learning/service_costs/1",
+      "title": "Three views of the same service work",
+      "version": "1"
+    },
+    "service_uncertainty": {
+      "fixture_id": "dispatch-lab/learning/service_uncertainty/1",
+      "title": "Learn from elapsed work without seeing the outcome",
       "version": "1"
     },
     "siting": {

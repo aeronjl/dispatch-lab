@@ -65,6 +65,7 @@ class Policy:
             "scheduled-load-tests/2",
             "scheduled-load-tests/3",
             "scheduled-load-tests/4",
+            "scheduled-load-tests/5",
         ):
             if self.service is None or self.service.version != "coordinated-services/3":
                 raise ValueError("Joint recovery requires the version-3 service controller")
@@ -96,6 +97,7 @@ class Policy:
                     "scheduled-load-tests/2",
                     "scheduled-load-tests/3",
                     "scheduled-load-tests/4",
+                    "scheduled-load-tests/5",
                 )
             ):
                 raise ValueError(

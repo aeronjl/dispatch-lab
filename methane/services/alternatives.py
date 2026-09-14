@@ -93,7 +93,12 @@ def prepare(result, controller, hour):
     joint_request = (
         recovery.get("request")
         if recovery.get("version")
-        in ("scheduled-load-tests/2", "scheduled-load-tests/3", "scheduled-load-tests/4")
+        in (
+            "scheduled-load-tests/2",
+            "scheduled-load-tests/3",
+            "scheduled-load-tests/4",
+            "scheduled-load-tests/5",
+        )
         else None
     )
     if (decision.get("probe") or recovery.get("status") == "scheduled") and joint_request is None:

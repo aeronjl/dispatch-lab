@@ -475,13 +475,18 @@ class ServiceController:
                         seconds=seconds,
                         components=components,
                     )
-                    if recovery_scheduler.policy.version == "scheduled-load-tests/4"
+                    if recovery_scheduler.policy.version
+                    in ("scheduled-load-tests/4", "scheduled-load-tests/5")
                     else {}
                 ),
                 **(
                     dict(evidence=self.verification["previous_test"] if self.verification else None)
                     if recovery_scheduler.policy.version
-                    in ("scheduled-load-tests/3", "scheduled-load-tests/4")
+                    in (
+                        "scheduled-load-tests/3",
+                        "scheduled-load-tests/4",
+                        "scheduled-load-tests/5",
+                    )
                     else {}
                 ),
             )

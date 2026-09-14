@@ -2,13 +2,13 @@
 
 Open **Model** in the simulation menu, **How it is modelled** in an inspector, or
 **Trace calculation** beside inspector results. The full-screen reading workspace
-contains twelve continuous illustrated essays. Reading, changing a learning example
+contains twenty continuous illustrated essays. Reading, changing a learning example
 and inspecting a recorded result are separate activities. Back/Escape restores the
 originating view. No learning edit changes experiment setup or a source run.
 
 The searchable index covers solar, battery, electrolysis, hydrogen, supplied CO₂,
 thermal methanation, electrical coupling, forecasts, sensors/diagnosis, controllers,
-economics and experiment interpretation. Each essay combines authored explanation,
+economics, experiment interpretation, Sites and seven service topics: cleaning, referenced inspection, recovery, robot charging, finite logistics, service costs and observed duration uncertainty. Each essay combines authored explanation,
 interactive inputs, Python-calculated output, assumptions and evidence. The original
 plant artwork remains unchanged. Mobile readers get the example inline with its
 active passage; reduced motion suppresses transitions and decorative motion.
@@ -84,3 +84,9 @@ The interactive performance budget is p95 200 ms for simple changes and 10 ms re
 on the reference fixture. Solver comparisons have explicit progress/cancellation rather
 than an instantaneous-response claim. Comprehension walkthrough observations are kept
 separately from automated test results; a developer walkthrough is not user research.
+
+The service essays reuse production optical, acquisition, resource, pricing, duration,
+charging and recovery interfaces. Charging and recovery use cancellable isolated
+workers. Recorded service traces contain topic-specific operands and original record
+paths; learning fixtures remain independent. Model-context changes preserve keyboard
+focus. Original artwork files are unchanged.

@@ -315,6 +315,7 @@ class Config:
                 "scheduled-load-tests/2",
                 "scheduled-load-tests/3",
                 "scheduled-load-tests/4",
+                "scheduled-load-tests/5",
             ) and (
                 self.service_policy is None
                 or self.service_policy.version != "coordinated-services/3"
@@ -334,6 +335,7 @@ class Config:
                     "scheduled-load-tests/2",
                     "scheduled-load-tests/3",
                     "scheduled-load-tests/4",
+                    "scheduled-load-tests/5",
                 )
             )
         ):

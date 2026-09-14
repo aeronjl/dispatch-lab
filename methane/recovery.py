@@ -16,7 +16,8 @@ from methane.services.scenario_planning import Branch, solve
 JOINT_VERSION = "scheduled-load-tests/2"
 LOOP_VERSION = "scheduled-load-tests/3"
 WEATHER_VERSION = "scheduled-load-tests/4"
-LOOP_VERSIONS = (LOOP_VERSION, WEATHER_VERSION)
+OBLIGATION_VERSION = "scheduled-load-tests/5"
+LOOP_VERSIONS = (LOOP_VERSION, WEATHER_VERSION, OBLIGATION_VERSION)
 JOINT_VERSIONS = (JOINT_VERSION, *LOOP_VERSIONS)
 
 

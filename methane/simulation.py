@@ -314,7 +314,12 @@ def _run(
                 recovery=replace(c.recovery_policy, version="scheduled-load-tests/1")
                 if c.recovery_policy is not None
                 and c.recovery_policy.version
-                in ("scheduled-load-tests/2", "scheduled-load-tests/3", "scheduled-load-tests/4")
+                in (
+                    "scheduled-load-tests/2",
+                    "scheduled-load-tests/3",
+                    "scheduled-load-tests/4",
+                    "scheduled-load-tests/5",
+                )
                 and p.objective == "greedy"
                 else c.recovery_policy,
                 service=c.service_policy if p.objective != "greedy" else None,
@@ -334,7 +339,12 @@ def _run(
             policies is None
             and c.recovery_policy is not None
             and c.recovery_policy.version
-            in ("scheduled-load-tests/2", "scheduled-load-tests/3", "scheduled-load-tests/4")
+            in (
+                "scheduled-load-tests/2",
+                "scheduled-load-tests/3",
+                "scheduled-load-tests/4",
+                "scheduled-load-tests/5",
+            )
         ):
             provenance["recovery_configuration_scope"] = (
                 "Joint work/charging/tests apply to coordinated MPC strategies. Greedy retains the independent version-1 recovery scheduler and local service rule; this compares policy packages, not an isolated change in process objective. Exact per-controller policies are recorded."
@@ -392,6 +402,8 @@ def _run(
 
                 if policy.recovery.version == "scheduled-load-tests/4":
                     from methane.services.weather_recovery import Scheduler
+                if policy.recovery.version == "scheduled-load-tests/5":
+                    from methane.services.obligation_recovery import Scheduler
                 joint_recovery_scheduler = Scheduler(policy.recovery)
             else:
                 recovery_scheduler = RecoveryScheduler(policy.recovery)
@@ -1367,6 +1379,7 @@ def what_if(result, controller, hour, alternative):
             "scheduled-load-tests/2",
             "scheduled-load-tests/3",
             "scheduled-load-tests/4",
+            "scheduled-load-tests/5",
         ):
             joint_inputs["accepted_start"] = recovery["commitment"]["start_hour"]
             if "not_before_hour" in original:

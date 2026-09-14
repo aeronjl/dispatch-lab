@@ -14,7 +14,11 @@ def audit_run(result):
         prior = {}
         for row in rows:
             record = row["decision"].get("recovery_planning", {})
-            if record.get("version") not in ("scheduled-load-tests/3", "scheduled-load-tests/4"):
+            if record.get("version") not in (
+                "scheduled-load-tests/3",
+                "scheduled-load-tests/4",
+                "scheduled-load-tests/5",
+            ):
                 continue
             loop = record["verification_loop"]
             policy = result["provenance"]["controller_policies"][controller]["recovery"]
@@ -71,4 +75,41 @@ def audit_run(result):
                 "eligible-shortfalls",
                 all(t["available_at"] <= row["hour"] for t in loop["shortfall_tests"]),
             )
+            if record["version"] == "scheduled-load-tests/5":
+                for opening in record["deadline_openings"]:
+                    check(
+                        "whole-obligation-deadline",
+                        opening["due_hour"]
+                        == opening["available_boundary"] + policy["maximum_wait_hours"],
+                    )
+                progress = record["recovery_obligation"]
+                r = progress["remaining"]
+                # Independent forward arithmetic, separate from the scheduling implementation.
+                capacity, count = r["capacity_estimate_kw"], 0
+                while capacity < r["nameplate_kw"] * 0.999 and count <= 1000:
+                    capacity = min(
+                        r["nameplate_kw"],
+                        max(
+                            result["config"]["plant"]["electrolyser_kw"]
+                            * result["config"]["plant"]["min_load_fraction"],
+                            capacity + r["increment_kw"],
+                        ),
+                    )
+                    count += 1
+                check("remaining-increases", count == r["increases_remaining"])
+                check(
+                    "remaining-informative-intervals",
+                    r["minimum_informative_intervals"]
+                    == count * r["confirmation_hours"] - r["consecutive_prefix"],
+                )
+                appointment = record.get("test_appointment")
+                if appointment:
+                    check(
+                        "appointment-within-obligation",
+                        appointment["end_hour"] <= appointment["due_hour"],
+                    )
+                    check(
+                        "appointment-is-commitment",
+                        all(appointment[k] == v for k, v in record["commitment"].items()),
+                    )
     return checks

@@ -47,3 +47,4 @@ test-results/
 /research/recovery-comparison/*/calibration/*/protocol.json
 /research/autonomy-qualification/original-seville.json
 /research/autonomy-qualification/*/reports/*/results.json
+/research/release-1/*/reports/*/results.json

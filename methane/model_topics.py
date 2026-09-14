@@ -1,5 +1,7 @@
 """Authored explanations and explicit bindings; facts come from component contracts."""
 
+from methane.service_topics import topics as service_topics
+
 
 def control(key, label, default, lower=0, upper=1, step=0.01, unit="", options=None):
     return dict(
@@ -646,11 +648,14 @@ TOPICS["siting"] = topic(
     ],
 )
 
+
+TOPICS.update(service_topics(C, P, topic))
+
 for key, item in TOPICS.items():
     item["id"] = key
     item["fixture_id"] = "dispatch-lab/learning/" + key + "/1"
     item["assumptions"] = [dict(id=key + "/scope/1", text=item["limitations"])]
-    item["explicit_calculation"] = key in ("controllers", "bus")
+    item["explicit_calculation"] = key in ("controllers", "bus", "recovery", "charging")
 
 # New editable observer choice; archives retain their saved version-1 examples.
 TOPICS["diagnosis"]["version"] = "2"
@@ -685,5 +690,12 @@ TOPICS["controllers"]["passages"].append(
     P(
         "Weather-aware verification windows",
         "Opt-in recovery version 4 sets a finite deadline when the verification episode opens. It uses the currently eligible forecast, estimated inventories and operating limits to find a feasible load-test window. Later forecast changes cannot roll that deadline forward. If no feasible window is found within the bounded search, the original maximum wait remains. A missed deadline escalates; only actual observation tracking restores estimated capacity. This is an illustrative supervisory policy, not evidence that a repair succeeded.",
+    )
+)
+
+TOPICS["controllers"]["passages"].append(
+    P(
+        "Separate appointments from recovery",
+        "Recovery version 5 keeps the finite outer diagnosis or post-mission obligation intact. The joint planner chooses individual appointments within it; each successful measured increment reduces the remaining tests. Resource interruptions, failed tracking, later forecasts and numerical limitations never silently extend the deadline. A separate completed remedy opens a separately recorded verification episode. The recovery essay executes this mechanism.",
     )
 )

@@ -148,6 +148,7 @@ def resolve_cases(spec, basis, tier):
                         "scheduled-load-tests/2",
                         "scheduled-load-tests/3",
                         "scheduled-load-tests/4",
+                        "scheduled-load-tests/5",
                     )
                     and fields["objective"] == "greedy"
                 ):

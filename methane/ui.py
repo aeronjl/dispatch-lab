@@ -468,7 +468,14 @@ def build_app(default=None):
                         "Bounded post-mission verification and escalation (version 3)",
                         "scheduled-load-tests/3",
                     ),
-                    ("Forecast-aware bounded verification (version 4)", "scheduled-load-tests/4"),
+                    (
+                        "Forecast-aware bounded verification (legacy version 4)",
+                        "scheduled-load-tests/4",
+                    ),
+                    (
+                        "Separate recovery deadline and test appointments (version 5)",
+                        "scheduled-load-tests/5",
+                    ),
                 ],
                 value=value,
                 label=label,
