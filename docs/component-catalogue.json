@@ -790,9 +790,19 @@
       "title": "Deliveries arrive before withdrawal",
       "version": "1"
     },
+    "condition": {
+      "fixture_id": "dispatch-lab/learning/condition/1",
+      "title": "Condition is observed, then acted on",
+      "version": "1"
+    },
     "controllers": {
       "fixture_id": "dispatch-lab/learning/controllers/1",
       "title": "Planning with the same information",
+      "version": "1"
+    },
+    "deployment": {
+      "fixture_id": "dispatch-lab/learning/deployment/1",
+      "title": "Capacity arrives after acceptance",
       "version": "1"
     },
     "diagnosis": {
@@ -815,6 +825,11 @@
       "title": "Read a comparison through to its boundary",
       "version": "1"
     },
+    "hardware": {
+      "fixture_id": "dispatch-lab/learning/hardware/1",
+      "title": "What each hardware family can do",
+      "version": "1"
+    },
     "hydrogen": {
       "fixture_id": "dispatch-lab/learning/hydrogen/1",
       "title": "A buffer is a balance over time",
@@ -828,6 +843,11 @@
     "logistics": {
       "fixture_id": "dispatch-lab/learning/logistics/1",
       "title": "A service system has finite resources",
+      "version": "1"
+    },
+    "maintenance": {
+      "fixture_id": "dispatch-lab/learning/maintenance/1",
+      "title": "Compare work across the same operating window",
       "version": "1"
     },
     "reactor": {

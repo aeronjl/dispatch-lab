@@ -48,3 +48,8 @@ test-results/
 /research/autonomy-qualification/original-seville.json
 /research/autonomy-qualification/*/reports/*/results.json
 /research/release-1/*/reports/*/results.json
+
+# Release-2 readers preserve full prefix/period details locally and commit summaries.
+/research/release-2/*/analysis/*-case-*.json
+/research/release-2/*/*-result.json
+/research/release-2/*/*-progress.json
