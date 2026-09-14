@@ -135,3 +135,20 @@ non-executable checkpoint format remains readable without migration. The Release
 compatibility experiment resumes the same saved boundary with each source and
 compares physical, observation, service and lifecycle records; it does not relabel
 the old annual study as a result of the new implementation.
+
+### Whole-case reporting
+
+Long Sites cases now decode each committed summary partition once. The report view
+uses the existing finite-service cost projection, adds the descriptive outcome
+operands and retains the complete final service state. Scalar totals, allocation,
+calendar and products reuse that view instead of repeatedly decoding historical
+decision trees. Full hourly recordings remain unchanged. Legacy records outside
+that finite-pricing contract retain their original reporting objects.
+
+`tests/test_siting_summary.py` checks exact equality of every summary field against
+full operands, including costs, terminal work and condition, and rejects missing
+hours. Cancellation is checked between partitions; resumption can finish reporting
+without resimulating committed hours. Reporting progress is separate from simulated
+hours and from export work. The first annual acceptance derivation is recorded in
+`research/release-2/annual-reconciliation.json`, with its reporting source separate
+from the original execution source.

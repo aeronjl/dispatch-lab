@@ -1,0 +1,25 @@
+{
+  "version": "release-2-reporting-qualification/1",
+  "source": "edaf5234791f40cf02f41c0d165d2c1939e2cf13c3aafac0fb6ed1d5817bfe75",
+  "base_workflow_source": "d8e355ae1a7f925c79c2372b605441ec00620f58fb77645443dd7710df21a910",
+  "changed_files": [
+    "methane/documentation.py",
+    "methane/siting/production.py",
+    "methane/siting/summary.py",
+    "tests/test_siting_summary.py"
+  ],
+  "unchanged_ui_assets": true,
+  "passed": true,
+  "python": {
+    "passed": 23,
+    "failed": 0,
+    "profile": "Bounded Sites solver worker"
+  },
+  "scope": "Exact equality of every summary field against full recorded operands for legacy and finite service pricing, including deployment/condition, ending work, costs and inventories. One decode per partition; incomplete hours rejected; reconciliation cancellation checked. Existing Sites execution, checkpoint, report and template regressions included.",
+  "documentation": "Sites now binds the report projection source; Sites and experiment narrative remain accurate. Their unchanged teaching calculations were regenerated after explicit review. No physical kernel or dispatch objective changed.",
+  "limits": [
+    "Legacy service records without the finite-pricing contract retain their complete reporting objects.",
+    "A whole-year summary is a new reporting derivation over original-source hourly records. It is not new numerical execution or empirical validation."
+  ],
+  "log": "build/release-2/product-acceptance/r2-reconciliation-final-qualified.log"
+}

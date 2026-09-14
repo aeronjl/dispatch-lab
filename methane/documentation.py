@@ -56,6 +56,8 @@ def bindings():
             for p in LOADED_FILES
             if p.startswith(("methane/services/", "methane/lifecycle/")) and p.endswith(".py")
         ]
+        if key == "siting":
+            paths.append("methane/siting/summary.py")
         result[key] = dict(
             contracts={s: digest(SPECS[s].to_dict()) for s in t["specs"]},
             implementations={p: hashlib.sha256(LOADED_FILES[p]).hexdigest() for p in paths},

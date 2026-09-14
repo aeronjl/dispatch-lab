@@ -194,7 +194,7 @@ def cancel(store, study_id):
 
 
 def execute(store, study_id):
-    from methane.simulation import run, summarise
+    from methane.simulation import run
 
     manifest = store.get("study", study_id)
     d = directory(store, study_id)
@@ -310,15 +310,22 @@ def execute(store, study_id):
                     break
             if start == case["hours"]:
                 progress("running", f"{case['label']} · reconciling the complete chronology")
-                sequence = PeriodRows(
-                    store, entries(store, study_id, case["case_id"]), case["controller"]
-                )
-                summary = summarise(sequence, config, sequence.truth())
-                summary.update(
-                    products=products(sequence),
-                    calendar=calendar(sequence),
-                    scope="Entire continuous case; allocation evaluated once, not added from partition allowances",
-                )
+                from methane.cancellation import CancelledOperation
+                from methane.siting.summary import calculate
+
+                try:
+                    summary = calculate(
+                        store,
+                        study_id,
+                        case,
+                        progress=lambda done, total, label=case["label"]: progress(
+                            "running", f"{label} · reconciling recorded hours {done}/{total}"
+                        ),
+                        cancelled=stop,
+                    )
+                except CancelledOperation:
+                    progress("cancelled", "Recorded hours saved; resume to finish reconciliation")
+                    return
                 atomic(d / case["case_id"] / "summary.json", encode(summary))
         progress(
             "cancelled" if stop() else "complete",
