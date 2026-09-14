@@ -1,0 +1,871 @@
+{
+  "integrity_passed": true,
+  "archives": [
+    {
+      "run_id": "3a04ee56b3d6d520",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "08570b5d5cb3e23f",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5146158ad84cd5e2",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2093d4fc2ff3bb65",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "69a8c5b7b136ead7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "c1434b5c0ca416cf",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "8354326e380c2037",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "51bf55a20e1d3f08",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a9dc338a0cdaf687",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e2b9249554086814",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "70f46b9d1550d62b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "b30a82630aeff984",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "32484ab541710551",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "15fba6ab6a8c7370",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1521848de1039736",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "61f1a5964b6f0253",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f489850787d2635b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5aa00b67856ec3b0",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "858026214bf94f3c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5b7ffff33a5a21e1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "edd7d38f9e88a094",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a92cac8f81065750",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f37c01640e16ef3e",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "119a039ad797bed4",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "beff2049b788e162",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1b04e7cfb33b092c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "6fbe344ce347bd5a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d72fc6010f4473a7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ed9a1d6f2ba37e98",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a2568773c5adb7b0",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "0c73efeaa62b78ef",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f4452d540cfa9e0c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ebba8b563ebb7121",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "b116d83deead4720",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "6093eb0e43a714fa",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "0d88e67b7799788a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "94058e6be8b9d0ae",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "cc308174fe0ec4e3",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d94f42ffba458fc4",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a46081a87935c096",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a9b9ba5a9b36b0c9",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "7ce6bbcc7966d87c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "0993277fc643036f",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "996939bba649f2df",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "9ddc15fb83c95a8f",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d31ea4b329ada010",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "06a57b8b82675ff6",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "35cbd8bc540dfc37",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "9e24f1563dceec0a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "8ce55aa1aeea8528",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "30e72e83fc977ee9",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e299b94a165615b5",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5b23d9939b318395",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "116c7423fb8685cf",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "afa81b7871b2fc24",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "63ed761bbe866907",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1bc580b1837c83a8",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ce7ade036accf094",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "8537e4411782f4ac",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ae064b02518300ad",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "c88f365d0ebce122",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "64a3de83684290d8",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "62ddbd538abb2085",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2052da05f4246674",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "cae5ab7555f17d4e",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "33346b4db3d59204",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "51970247892e45b5",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "7e9503d0719aa40d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "c5dcf36aa09c61eb",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e9564baa473da172",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5db44ceb873b9f21",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1d7e5ac9f9aea957",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "69acde53798da347",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d0314cdcb9a06985",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "c3ac9138a6cac0ef",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "a3041eab92b6fb7e",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "169065d21c4f6c5b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "64afaac682de6332",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "3f2b52844ea282c7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "6ee5fdbd79957697",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "3049b51495b33812",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5071cc17a6e9cedf",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "02584bf54294ef60",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "0fdda13b6b73ba6d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "cbf305abb67ce37c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "b2e0d86afc771b2a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "70776a90cd3a1c8c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "545cde31d2fefd31",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2116c1d0bf56fc1d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "224d55e1e0830f32",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "bd64fc83686b1ad1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e969602e48c0ed12",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "28757b3b626c6aa1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5ad48d382445d587",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e0abd42df6b4716b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f18c8b38525ea9bb",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "581a960280fada59",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f0326200d91c1841",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "76f9ddaa7d172607",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "590e43b6cefdca6c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d6e431f4603dbbd7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "6e0528e8dcd323bc",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "63ddfb5d399ff59b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1e9a05f04438362d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "96ec5f2c781a5909",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "00eebdc89f4bf4e6",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1b9a552253144696",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2be6465360c5d967",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "848c5d4ea4c993fc",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "de8afbe679eb257d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "856caf40db534177",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ff01bd03725b2109",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "1de970fbde17e04c",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5d3c28b90200226d",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "17e8d637ba999399",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "90c64b379285c22e",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "fa22bf7cee12d78f",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "88d71df87836c30e",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "7adb24587630aa63",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "33efad2c9388fe97",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "46389552fd0c51d7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d3187c23233f8486",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5861f908d6af957a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "035a24e46bea741b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "3c0fd4658f3339ff",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "ad785e23477b0730",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "58b725fe60fb0163",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "5f175f91287379fb",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "678ec3e5ebd953f3",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "b1e7619391863a04",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "38b3c7a0a13e60d1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2614ef04f9ef5cc4",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e807284d8aa43c1a",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "14a58b9eece6bde7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f7bc29e43f44f1bc",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "7717f8cb0f63567b",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "b013a1484f47d0d0",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "cbe4a2992afbd2f0",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "d89abecc7c9a0727",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "fe9a524315160db1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "e5d13d82cf9732f7",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "9c5fa5f0779ec983",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "2cbb947f0fb007b2",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    },
+    {
+      "run_id": "f9cb7d5b705505f1",
+      "status": "complete",
+      "reference_passed": true,
+      "computation_summary": "not applicable"
+    }
+  ],
+  "complete_archives_passed": true,
+  "note": "Hashes establish integrity, not authenticity. Reference checks do not establish plant calibration. Incomplete runs remain explicit."
+}
