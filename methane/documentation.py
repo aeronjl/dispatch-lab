@@ -52,7 +52,9 @@ def bindings():
             "economics.py",
         ]
         paths += [
-            p for p in LOADED_FILES if p.startswith("methane/services/") and p.endswith(".py")
+            p
+            for p in LOADED_FILES
+            if p.startswith(("methane/services/", "methane/lifecycle/")) and p.endswith(".py")
         ]
         result[key] = dict(
             contracts={s: digest(SPECS[s].to_dict()) for s in t["specs"]},
@@ -200,6 +202,14 @@ def _catalogue():
                 }
                 for p in pages[key]["assumption_review"]["parameters"]
             }
+        elif key in ("deployment", "condition", "maintenance"):
+            from methane.lifecycle.configuration import Lifecycle
+
+            pages[key]["configuration_reference"] = Lifecycle.model_json_schema()
+        elif key == "hardware":
+            from methane.lifecycle.families import catalogue as family_catalogue
+
+            pages[key]["configuration_reference"] = family_catalogue()
         elif not specs:
             pages[key]["configuration_reference"] = asdict(
                 Sensors() if key == "diagnosis" else Costs() if key == "economics" else Scenario()
@@ -309,7 +319,21 @@ def calculation(result, topic, controller, hour, prices=None, *, service_prices=
         raise ValueError("Recorded interval unavailable")
     row = result["records"][controller][hour]
     d = row["decision"]
-    if topic == "battery":
+    if topic in ("deployment", "condition", "maintenance"):
+        value = dict(
+            original_decision=d.get("lifecycle"),
+            recorded_interval=row.get("lifecycle"),
+            retrospective_condition=result.get("retrospective_truth_by_controller", {})
+            .get(controller, [{}] * (hour + 1))[hour]
+            .get("lifecycle_condition"),
+            scope="Original lifecycle decision, recorded costs/work, and explicitly retrospective physical condition; unavailable on archives without lifecycle records",
+        )
+    elif topic == "hardware":
+        value = result.get("hardware_families") or {
+            "status": "missing original capability catalogue",
+            "scope": "Current documentation is available through an explicit context switch",
+        }
+    elif topic == "battery":
         value = battery_trace(result, controller, hour)
     elif topic in ("solar", "electrolyser", "hydrogen", "co2", "reactor"):
         value = trace(result, controller, hour, topic)

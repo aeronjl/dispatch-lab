@@ -210,7 +210,18 @@ def build(result):
         nodes[key]["status"] = "configured"
         link(aliases["solar"], "contains", key)
     review = family_review()
+    recorded_families = {
+        f["id"]: f for f in result.get("hardware_families", {}).get("families", [])
+    }
     for f in review["families"]:
+        f = {
+            **f,
+            **(
+                {"recorded_capability_disposition": recorded_families[f["id"]]}
+                if f["id"] in recorded_families
+                else {}
+            ),
+        }
         domain = (
             "instrumentation"
             if f["id"] in ("fixed-sensor", "sampler", "calibration", "remote-actuator")
@@ -226,12 +237,64 @@ def build(result):
             "declared",
             summary=f["permitted_scope"],
             metadata=f,
+            topic=recorded_families.get(f["id"], {}).get("topic", "hardware"),
             boundary=f["unavailable_scope"],
             sources=f["sources"],
             evidence_scope="Feasibility review, not permission to execute or empirical validation.",
             review_applies_to_execution=source == review["reviewed_execution_source"],
         )
         link(aliases["services"], "documents", key)
+    life = config.get("lifecycle")
+    if life:
+        crew = add(
+            "LIFECYCLE/CREW-01",
+            "Project crew",
+            "people",
+            "asset",
+            "implemented",
+            topic="deployment",
+            metadata={
+                k: life[k]
+                for k in (
+                    "crew_hours_per_day",
+                    "crew_shift_start",
+                    "crew_eur_per_hour",
+                    "labour_basis",
+                    "scope",
+                )
+            },
+            summary="Additional project crew, shared by installation and condition replacement",
+        )
+        link(site, "contains", crew)
+        for package in life["packages"]:
+            key = add(
+                "LIFECYCLE/WORK/" + package["id"],
+                package["id"],
+                "support",
+                "model",
+                "implemented",
+                topic="deployment",
+                metadata=package,
+                summary="Declared commissioning work and acceptance; temporary equipment departs",
+            )
+            link(site, "contains", key)
+            link(key, "depends_on", crew)
+            link(key, "depends_on", aliases[package["asset"]])
+            for prerequisite in package["depends_on"]:
+                link(key, "depends_on", "LIFECYCLE/WORK/" + prerequisite)
+        for condition in life["conditions"]:
+            key = add(
+                "LIFECYCLE/CONDITION/" + condition["asset"],
+                condition["asset"] + " condition and replacement",
+                "evidence",
+                "model",
+                "implemented",
+                topic="condition",
+                metadata=condition,
+                summary="Reduced ageing hypothesis and declared observation chain; no universal remaining-life estimate",
+            )
+            link(aliases[condition["asset"]], "implements", key)
+            link(key, "depends_on", crew)
     manifest = result.get("field_operations_model") or {}
     definitions = manifest.get("definitions") or {}
     has_registry = bool(definitions)

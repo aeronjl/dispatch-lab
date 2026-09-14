@@ -190,6 +190,7 @@ function mountMethane(element, props, watch, trigger) {
             body+=`<details class="m-cost-trace"><summary>TRACE COSTS AND TOTALS</summary><pre>${escape(trace?JSON.stringify({economics:trace,physical_totals:row.derived_trace},null,2):'Loading the recorded cost basis…')}</pre></details>`;
         }
         body+=`<nav class="d-inspector-links"><button data-explore="${selected}">Explore component</button><button data-model-topic="${selected}">How it is modelled</button><button data-model-topic="${section==='Costs'?'economics':selected}" data-model-context="This run">Trace calculation</button></nav>`;
+        if(row?.lifecycle&&['solar','battery','electrolyser','reactor'].includes(selected))body+=`<nav class="d-inspector-links"><button data-model-topic="deployment" data-model-context="This run">Commissioning record</button>${['solar','electrolyser'].includes(selected)?'<button data-model-topic="condition" data-model-context="This run">Condition & maintenance</button>':''}</nav>`;
         $('.m-inspector-content').innerHTML=body;
     }
     function render() {
@@ -314,7 +315,7 @@ function mountMethane(element, props, watch, trigger) {
     taxonomy=typeof createTaxonomyWorkspace==='function'?createTaxonomyWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,pause:()=>clock.pause()}):null;
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
-    sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:()=>model?.open('siting'),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
+    sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:(topic='siting',context='Current model')=>model?.open(topic,context),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
         if(event.target.closest('[data-service-alternatives]'))return;

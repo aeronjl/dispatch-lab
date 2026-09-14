@@ -37,6 +37,7 @@ class Reference:
         self.started = set()
         self.jobs = {}
         self.readings, self.measurements = {}, {}
+        self.estimates = {s["asset"]: None for s in self.c["conditions"]}
         self.accounts = dict(
             hours=0,
             electrolyser_hours=0,
@@ -76,6 +77,28 @@ class Reference:
 
         r = row["lifecycle"]
         view, after = r["decision"], r["after"]
+        check(
+            "accounting.condition_assets",
+            r["accounting"]["condition_assets"],
+            [s["asset"] for s in self.c["conditions"]],
+        )
+        check(
+            "accounting.construction_fractions",
+            r["accounting"]["construction_fractions"],
+            {
+                a: sum(s["fraction"] for s in self.c["packages"] if s["asset"] == a)
+                for a in ("solar", "battery", "electrolyser", "reactor")
+            },
+        )
+        check(
+            "accounting.work_kind",
+            r["accounting"]["work_kind"],
+            "replacement"
+            if view["selected"] and view["selected"].startswith("replacement:")
+            else "construction"
+            if view["selected"]
+            else None,
+        )
         check("boundary", after["hour"], h + 1)
         check("completed_boundary_has_no_pending_decision", after["current"], {})
         check("controller_copy", row["decision"]["lifecycle"]["current"], view)
@@ -158,6 +181,9 @@ class Reference:
                         )
                 self.jobs[work] -= crew
                 check("replacement_work_budget", self.jobs[work] >= 0)
+        if crew:
+            target = public_jobs[work]["asset"] if is_replacement else package["asset"]
+            check("exclusive_target", target not in view.get("occupied_assets", []))
         if package and crew:
             state = self.packages[work]
             check(
@@ -269,6 +295,7 @@ class Reference:
             ]
             if eligible and states["communications"]:
                 self.measurements[asset] = max(eligible, key=lambda k: k[1])
+                self.estimates[asset] = self.readings[self.measurements[asset]]
             packet = view["observations"][asset]
             expected_packet = self.measurements.get(asset)
             check("observation_presence." + asset, packet is not None, expected_packet is not None)
@@ -283,6 +310,7 @@ class Reference:
                     == packet["measured_at"] + spec["sensor_delay_hours"],
                 )
             estimate = view["estimates"][asset]
+            check("estimate.observation_binding." + asset, estimate, self.estimates[asset])
             if asset == "electrolyser":
                 check(
                     "controller_energy_estimate",

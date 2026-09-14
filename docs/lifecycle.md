@@ -123,3 +123,18 @@ The first implementation checkpoint passed 62 targeted tests, covering the new
 mechanisms, independent balances, resumption, existing optical services and economic
 regressions. The full Release-2 UI, documentation catalogue, historical comparisons
 and release verification remain separate delivery work.
+
+## Equipment access shared with field work
+
+An accepted field mission conservatively holds its target through return. Project
+work waits for that target to clear; this can expire an obligation under sustained
+inspection activity. Current project availability is an explicit service-interface
+interlock: new work on an uncommissioned or replacement-isolated target is rejected.
+The solar interlock applies to the whole array until all declared capacity is
+accepted, not to a fictitious geometrically separate construction zone. Project
+and service crews remain distinct resources. This is conservative exclusion, not
+an optimum site-wide crew or routing plan. Target holds and blocked work are recorded.
+
+Lifecycle invoices retain the actual UTC interval and work phase. Complete-year
+cash scenarios group service and lifecycle expenditure by their chronological year;
+they do not spread a costly first year evenly across later years.

@@ -2682,9 +2682,12 @@ def ambiguous_capacity(result, checks):
         return
     p = result.get("controller_config", result["config"])["plant"]
     minimum = D(p["electrolyser_kw"]) * D(p["min_load_fraction"])
-    specific = D(p["specific_energy_kwh_per_kg"])
     for name, rows in result["records"].items():
         for row in rows:
+            p = row["decision"].get(
+                "operating_plant", result.get("controller_config", result["config"])["plant"]
+            )
+            specific = D(p["specific_energy_kwh_per_kg"])
             if D(row["requested"]["electrolyser_kw"]) < minimum - D("0.00001"):
                 continue
             decision, observed = row["decision"], row["observations_after"]
@@ -2750,6 +2753,9 @@ def recovery_tests(result, checks):
         count = 0
         for row in rows:
             decision = row["decision"]
+            p = decision.get(
+                "operating_plant", result.get("controller_config", result["config"])["plant"]
+            )
             if decision.get("probe_policy_revision") not in (3, 4):
                 last_power = None
                 count = 0

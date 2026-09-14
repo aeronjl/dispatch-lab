@@ -50,15 +50,15 @@ def test_complete_catalogue_covers_optional_families_and_scalar_paths():
     from methane.assumptions import reference_configuration
 
     c = catalogue(reference_configuration())
-    assert len(c["parameters"]) == 413
+    assert len(c["parameters"]) == 467
     assert not c["unregistered"]
-    assert len(c["groups"]) == 19
+    assert len(c["groups"]) == 21
     assert all(
         p["representation"] and p["mechanism_scope"] and p["evidence_needed"]
         for p in c["parameters"]
     )
     assert not any(p["representation"] == "known-exact" for p in c["parameters"])
-    assert len(catalogue(basis())["parameters"]) == 413
+    assert len(catalogue(basis())["parameters"]) == 467
     assert any(not p["active"] for p in catalogue(basis())["parameters"])
 
 

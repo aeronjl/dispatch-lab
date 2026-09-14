@@ -213,6 +213,30 @@ def perform(request, store, current_config):
         result = catalogue.assessment_identity(site, result)
         key = store.put("assessment", result)
         return {"assessment_id": key, "assessment": result, **view(store, request.id)}
+    if request.operation in ("lifecycle-preset", "lifecycle-check"):
+        from dataclasses import replace
+
+        from methane.lifecycle.fixtures import illustrative
+
+        data = dict(d["config"])
+        if request.operation == "lifecycle-preset":
+            data.pop("lifecycle", None)
+        config = Config.from_dict(data)
+        if request.operation == "lifecycle-preset":
+            if d["preset"] not in ("commissioning", "maintenance", "none"):
+                raise ValueError("Unknown lifecycle fixture")
+            config = (
+                replace(config, lifecycle=None)
+                if d["preset"] == "none"
+                else illustrative(config, commission=d["preset"] == "commissioning")
+            )
+        life = config.lifecycle
+        return dict(
+            config=config.to_dict(),
+            summary="Lifecycle disabled in this draft"
+            if life is None
+            else f"Validated draft: {len(life['packages'])} work packages, {len(life['conditions'])} condition mechanisms, {life['crew_hours_per_day']:g} project-crew hours per day. Explicit assumptions; save the design to use them in a new study.",
+        )
     if request.operation == "save-design":
         record = DeploymentDesign(**d)
         site = store.get("site", record.site_revision)

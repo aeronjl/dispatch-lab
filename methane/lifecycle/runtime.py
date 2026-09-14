@@ -266,7 +266,7 @@ class Runtime:
             < self.options["crew_shift_start"] + self.options["crew_hours_per_day"]
         )
 
-    def begin(self, hour, forecast):
+    def begin(self, hour, forecast, occupied_assets=()):
         if hour != self.hour or self.current is not None:
             raise ValueError("Lifecycle decisions require the preceding committed boundary")
         event_start = len(self.events)
@@ -295,16 +295,29 @@ class Runtime:
                 if selected.startswith("replacement:")
                 else self.packages[selected]
             )
+            target = (
+                self.job(selected)["asset"]
+                if selected.startswith("replacement:")
+                else next(p["asset"] for p in self.options["packages"] if p["id"] == selected)
+            )
             possible = (
-                resources["access"]
+                target not in occupied_assets
+                and resources["access"]
                 and resources["project-crew"]
                 and resources["communications"]
                 and self.on_shift(hour)
+                and (
+                    not selected.startswith("replacement:")
+                    or work["status"] != "waiting"
+                    or resources["reference"]
+                )
             )
             if possible:
                 crew = min(1.0, self.crew_remaining, work["remaining"])
             reason = (
-                "Work allocated" if crew else "Waiting for access, communications or project crew"
+                "Work allocated"
+                if crew
+                else "Waiting for access, communications, project crew, starting reference or an exclusive equipment window"
             )
             if crew and selected.startswith("replacement:") and work["status"] == "waiting":
                 state = self.conditions[work["asset"]]
@@ -341,6 +354,7 @@ class Runtime:
             crew_hours=crew,
             phase=work.get("phase", "replacement") if work else None,
             resources=resources,
+            occupied_assets=sorted(occupied_assets),
             reason=reason,
             arrivals=arrivals,
             purchases=purchase,

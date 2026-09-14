@@ -23,6 +23,9 @@ class Registry:
         self.access = access
         self.builders = dict(BUILDERS if builders is None else builders)
         for asset in self.assets.values():
+            from methane.lifecycle.families import guard_service_asset
+
+            guard_service_asset(asset)
             if not set(asset.capabilities) <= self.capabilities.keys():
                 raise ValueError(f"{asset.asset_id}: unknown capability")
             self._resource("asset:" + asset.asset_id, "slot", "capacity")

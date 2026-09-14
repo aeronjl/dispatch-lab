@@ -1,5 +1,6 @@
 """Authored explanations and explicit bindings; facts come from component contracts."""
 
+from methane.lifecycle.topics import topics as lifecycle_topics
 from methane.service_topics import topics as service_topics
 
 
@@ -650,12 +651,19 @@ TOPICS["siting"] = topic(
 
 
 TOPICS.update(service_topics(C, P, topic))
+TOPICS.update(lifecycle_topics(C, P, topic))
 
 for key, item in TOPICS.items():
     item["id"] = key
     item["fixture_id"] = "dispatch-lab/learning/" + key + "/1"
     item["assumptions"] = [dict(id=key + "/scope/1", text=item["limitations"])]
-    item["explicit_calculation"] = key in ("controllers", "bus", "recovery", "charging")
+    item["explicit_calculation"] = key in (
+        "controllers",
+        "bus",
+        "recovery",
+        "charging",
+        "maintenance",
+    )
 
 # New editable observer choice; archives retain their saved version-1 examples.
 TOPICS["diagnosis"]["version"] = "2"

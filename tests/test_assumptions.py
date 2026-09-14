@@ -27,7 +27,7 @@ def test_inventory_covers_optional_contracts_and_has_no_calibration_claim():
     assert validate()
     r = registry()
     assert {p["path"] for p in r["parameters"]} == set(flatten(reference_configuration()))
-    assert len(r["groups"]) == 19
+    assert len(r["groups"]) == 21
     assert all(p["applicable_range"] is None for p in r["parameters"])
     assert not any(p["evidence_status"] == "Calibrated" for p in r["parameters"])
     assert set(r["categories"]) >= {"design", "equipment", "policy", "economic", "scenario"}

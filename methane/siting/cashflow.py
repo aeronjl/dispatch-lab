@@ -316,6 +316,7 @@ def report(store, study_id, case_id, assumptions):
         if getattr(scenario, field) is None:
             missing.append(field)
     service_cash = 0
+    service_by_year = {}
     if config.service_economics:
         from methane.service_economics import report as service_report
 
@@ -331,6 +332,12 @@ def report(store, study_id, case_id, assumptions):
                     "Opening service procurement must be booked once in project initial items; disable period opening-purchase switches for this ledger"
                 )
             service_cash = expense["total_eur"]
+            if config.lifecycle:
+                for year in observed:
+                    subset = [r for r in rows if int(r["time"][:4]) == year]
+                    service_by_year[year] = service_report(subset, config.service_economics)[
+                        "views"
+                    ]["expenditure"]["total_eur"]
     initial = sum(i.eur or 0 for i in scenario.items if i.category == "initial") + sum(
         a["lifecycle_opening_eur"] for a in observed.values()
     )
@@ -347,7 +354,11 @@ def report(store, study_id, case_id, assumptions):
             + a["consumables_eur"]
         ) * scale
         # Service cash is allocated over the observed reference span, separately disclosed.
-        field = service_cash / len(rows) * (8784 if calendar.isleap(original) else 8760)
+        field = (
+            service_by_year.get(original, 0)
+            if config.lifecycle
+            else service_cash / len(rows) * (8784 if calendar.isleap(original) else 8760)
+        )
         lines = [
             *(
                 [
@@ -360,7 +371,12 @@ def report(store, study_id, case_id, assumptions):
                 else []
             ),
             dict(name="CO2, water, consumables and recorded interventions", eur=variable),
-            dict(name="Recorded service expenditure, annual span average", eur=field),
+            dict(
+                name="Recorded service expenditure in this chronological year"
+                if config.lifecycle
+                else "Recorded service expenditure, annual span average",
+                eur=field,
+            ),
         ]
         for item in scenario.items:
             if (

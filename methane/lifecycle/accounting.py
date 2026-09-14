@@ -33,6 +33,17 @@ def ledger(rows):
         version="lifecycle-accounting/1",
         hours=len(entries),
         expenditure=cash,
+        dated_expenditure=[
+            dict(
+                hour=row["hour"],
+                time=row.get("time"),
+                work=row["lifecycle"]["decision"]["selected"],
+                phase=row["lifecycle"]["decision"]["phase"],
+                amounts=row["lifecycle"]["expenditure"],
+            )
+            for row in entries
+            if any(v for k, v in row["lifecycle"]["expenditure"].items() if k.endswith("_eur"))
+        ],
         cash_eur=sum(v for k, v in cash.items() if k.endswith("_eur")),
         construction_capital_eur=construction,
         maintenance_resource_eur=maintenance,

@@ -73,3 +73,19 @@ weather/soiling conversion; failure/degradation exposure; access, isolation and 
 crew/spares/CO2/water logistics; dated commercial inputs. Existing literature supplies
 scoped priors and gaps. New measurements need identity, timing, coverage and uncertainty.
 Sensitivity and independent numerical checks cannot substitute for empirical evidence.
+
+## Release 2 implementation and evidence
+
+Implementation contract: [release-2.md](release-2.md). Numerical findings, verified
+scope, preservation receipts and the remaining evidence gaps belong to the
+[Release-2 publication](../research/release-2/report.html). Six unsupported families
+remain explicitly restricted; two construction families use declared assisted work
+packages. This distinction is part of the release gate, not a claim of fourteen
+calibrated robots.
+
+Release 3 should start with observation and estimator datasets over these contracts,
+including the condition channel's limitations and the low-excitation diagnosis cases.
+Freeze train/validation/test boundaries before training. Compare simple fixed and
+adaptive estimators first; only proceed to learned scheduling or homeostatic reserves
+when the preceding evaluation supports it. Data acquisition and participant research
+remain necessary alongside that software work.

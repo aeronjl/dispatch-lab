@@ -1,0 +1,7 @@
+.lc-diagram{width:100%;height:auto;color:var(--amber,#ff9f32);font-family:"Departure Mono",monospace}
+.lc-work-light{opacity:0}.lc-machine[data-working="true"] .lc-work-light{animation:lc-work 1.6s steps(3,end) infinite}
+@keyframes lc-work{0%,100%{opacity:.15}50%{opacity:1}}
+.lc-design{border-top:1px solid #5b4429;margin-top:1.5rem;padding-top:1rem}.lc-design textarea{min-height:220px}.lc-validation{min-height:1.5em}.lc-period table{width:100%;font-size:11px;border-collapse:collapse}.lc-period td,.lc-period th{text-align:left;padding:.5em;border-bottom:1px solid #5b4429}
+@media(prefers-reduced-motion:reduce){.lc-work-light{animation:none!important;opacity:.6}}
+@media(max-width:600px){.lc-period{overflow-x:auto}.lc-design textarea{min-height:180px}}
+.d-companion:has(.lc-diagram) .d-metric{min-width:0}.d-companion:has(.lc-diagram) .d-metric strong{display:block;white-space:normal;overflow-wrap:anywhere}

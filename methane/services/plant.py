@@ -509,6 +509,18 @@ class PlantServices:
                 ("calibration-reference", o.calibration_reference_available),
             )
         ]
+        if hasattr(self, "lifecycle_availability"):
+            readings.extend(
+                Reading(
+                    "project-free:" + a,
+                    v >= 1 - 1e-12,
+                    "boolean",
+                    hour,
+                    hour,
+                    "accepted-lifecycle-availability/1",
+                )
+                for a, v in self.lifecycle_availability.items()
+            )
         if self._support_observations is not None:
             readings = self._support_observations.at(hour, readings)
         if self._standby is not None:

@@ -562,7 +562,7 @@ def _run(
                 if lifecycle is not None:
                     from methane.lifecycle import ports as lifecycle_ports
 
-                    lifecycle.begin(t, forecast)
+                    lifecycle.begin(t, forecast, lifecycle_ports.field_busy(services))
                     p = lifecycle.plant(c.plant)
                     physical_p = lifecycle.plant(execution_config.plant, physical=True)
                     components = assemble(p, c.models)
@@ -1359,6 +1359,9 @@ def _run(
             "initial_state": continuation.initial,
             "scope": "Original recorded global intervals; initial state carried from checkpoint",
         }
+    from methane.lifecycle.families import snapshot as family_snapshot
+
+    result["hardware_families"] = family_snapshot()
     if uncertainty is not None:
         result["controller_config"] = c.to_dict()
     from methane.uncertainty import snapshot as uncertainty_snapshot

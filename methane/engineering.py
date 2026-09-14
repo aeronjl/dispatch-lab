@@ -45,6 +45,19 @@ def field_unit(key):
 
 def audit_archive(result):
     """Recompute from actions and independent before-state, never trusting stored residuals."""
+    if result["config"].get("lifecycle"):
+        from methane.reference import audit
+
+        checked = audit(result)
+        return dict(
+            run_id=result["run_id"],
+            provenance="recorded" if "provenance" in result else "unavailable (legacy)",
+            passed=checked["passed"],
+            audits=checked["checks"],
+            checker=checked["checker"],
+            failures=checked["failures"],
+            scope=checked["scope"],
+        )
     c = Config.from_dict(result["config"])
     components = assemble(c.plant, c.models)
     reports = []

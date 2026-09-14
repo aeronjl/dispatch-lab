@@ -30,6 +30,13 @@ def reference_configuration():
         solar=default_design(c.plant, c.weather),
         service_economics=illustrative(c.costs, version=ACTIVITY_VERSION),
     )
+    from methane.lifecycle.configuration import Outage
+    from methane.lifecycle.fixtures import illustrative as lifecycle_fixture
+
+    value["lifecycle"] = lifecycle_fixture(c).lifecycle
+    value["lifecycle"]["outages"] = [
+        Outage(resource="access", start_hour=12, end_hour=18).model_dump(mode="json")
+    ]
     return value
 
 

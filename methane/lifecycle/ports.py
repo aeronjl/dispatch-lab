@@ -30,6 +30,20 @@ def apply_support(runtime, services, hour):
     if services is None:
         return
     states = runtime.resources(hour)
+    from methane.services.contracts import Requirement
+
+    for key, interface in list(services.registry.interfaces.items()):
+        if interface.point in ("solar", "electrolyser"):
+            channel = "project-free:" + interface.point
+            if not any(r.channel == channel for r in interface.requirements):
+                services.registry.interfaces[key] = replace(
+                    interface,
+                    requirements=(
+                        *interface.requirements,
+                        Requirement(channel, "equals", True, "boolean", 1),
+                    ),
+                )
+    services.lifecycle_availability = runtime.available()
     base = getattr(services, "lifecycle_support_baseline", None)
     if base is None:
         base = services.lifecycle_support_baseline = dict(
@@ -48,4 +62,18 @@ def apply_support(runtime, services, hour):
         communications_available=base["communications_available"] and states["communications"],
         calibration_reference_available=base["calibration_reference_available"]
         and states["reference"],
+    )
+
+
+def field_busy(services):
+    """Committed missions, including return, hold their target; no private outcome."""
+    if services is None:
+        return ()
+    return sorted(
+        {
+            m.plan.interface.point
+            for m in services.executive.missions.values()
+            if m.status in ("scheduled", "active")
+            and m.plan.interface.point in ("solar", "electrolyser")
+        }
     )

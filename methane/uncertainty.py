@@ -50,6 +50,8 @@ CHANNELS = {
     "temperature_c": "°C",
 }
 SCOPE = {
+    "commissioning": "Work quantities, acceptance challenges, access, support and invoicing use disclosed assumptions. Accepted capacity changes execution only after a receipt; no measured robot construction rate is inferred.",
+    "lifecycle-condition": "PV calendar loss and PEM usage growth are reduced literature hypotheses. Observation noise, reporting delay, spare price and replacement outcomes need equipment evidence; model uncertainty is not removed by repeatable seeds.",
     "layout": "Design alternatives; geometry and support compatibility must remain consistent.",
     "thermal": "Persistent plant properties; heat capacity and heat loss may be dependent. A fit under controlled coolant does not identify ambient heat loss.",
     "chemistry": "Implemented ideal stoichiometry is fixed. Real conversion, gas quality and kinetics remain structural gaps, not perturbed molecular weights.",

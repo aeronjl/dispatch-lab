@@ -3,6 +3,7 @@
 import copy
 import json
 import math
+from contextvars import ContextVar
 from dataclasses import asdict
 from datetime import timedelta
 from functools import lru_cache
@@ -27,6 +28,14 @@ from methane.storage import Parameters as GasParameters
 from methane.storage import State as GasState
 from methane.storage import Storage
 from methane.timebase import stamp, utc
+
+progress_callback = ContextVar("learning_progress", default=None)
+
+
+def report_progress(message):
+    callback = progress_callback.get()
+    if callback:
+        callback(message)
 
 
 def defaults(topic):
@@ -632,8 +641,11 @@ def _digest(value):
 @lru_cache(maxsize=128)
 def _evaluate(topic, encoded):
     v = json.loads(encoded)
+    from methane.lifecycle.learning import ADAPTERS as LIFECYCLE_ADAPTERS
     from methane.service_learning import ADAPTERS
 
+    if topic in LIFECYCLE_ADAPTERS:
+        return LIFECYCLE_ADAPTERS[topic](v)
     if topic in ADAPTERS:
         return ADAPTERS[topic](v)
     if topic in ("hydrogen", "co2"):
@@ -672,6 +684,10 @@ def evaluate(topic, inputs=None):
 
 def learning_summary(topic, inputs, payload):
     if topic in (
+        "deployment",
+        "condition",
+        "hardware",
+        "maintenance",
         "cleaning",
         "inspection",
         "logistics",
