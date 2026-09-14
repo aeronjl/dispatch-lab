@@ -1,0 +1,736 @@
+{
+  "version": "release-2-compact-calculation-check/1",
+  "original_run": "3a04ee56b3d6d520",
+  "original_source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "reader_source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+  "adapter_sha256": "13c1bb71b2fb9fdbff751dc4b4caed8ef16f0aa72e716e821c30cb26c805e729",
+  "checks": 3000,
+  "interval_count": 120,
+  "failures": [],
+  "source_record_unchanged": true,
+  "elapsed_seconds": 60.14211925002746,
+  "passed": true,
+  "intervals": [
+    {
+      "controller": "Greedy",
+      "hour": 0,
+      "topics": 25,
+      "saved_packet_sha256": "4136f823727a19f16d3923ce4dd75205b620a8ea514239b598094e48135aa07d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 1,
+      "topics": 25,
+      "saved_packet_sha256": "626b0916db45841402bb53ee9bcdbb0e9b506f7e1465c81fb681d56bc757bf51"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 2,
+      "topics": 25,
+      "saved_packet_sha256": "b9da7c2f1d085464f1c0b4044d80db7fa659db3f335fc88d8b5cdcba95c979d6"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 3,
+      "topics": 25,
+      "saved_packet_sha256": "33acdd6838bde3b62de8c369fc05a3c3bcd42f6e7016c21a9bf0e745623584b4"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 4,
+      "topics": 25,
+      "saved_packet_sha256": "a266f25384b15cbd86ee87157959325f863067f5b5223136d21d33dbe6c91f34"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 5,
+      "topics": 25,
+      "saved_packet_sha256": "a7ad30e283375b954a3f5db02663b919a3472d6b37b07906c0575728a7b71e98"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 6,
+      "topics": 25,
+      "saved_packet_sha256": "9ca803b1acf62099bcb3559456a594f30c8bc1b337fed79e1ea5aff6d65dded3"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 7,
+      "topics": 25,
+      "saved_packet_sha256": "45d9a58a0874e086eb5aced435f5efe6447e938a9ab72eb443163f7fecbd9baa"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 8,
+      "topics": 25,
+      "saved_packet_sha256": "45332665e2b2af98a1f93d64b74f02880737c3d21d6f5b9341cf084828bf8ec0"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 9,
+      "topics": 25,
+      "saved_packet_sha256": "ba1f19a9b61bf313fd4b5efb06b1a2fa5a325be6ffea02285fe22525852b150e"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 10,
+      "topics": 25,
+      "saved_packet_sha256": "3ed057ec5e89a701ed7f0f68db92622fd4beb0349cb8dcf714c1cbfae3146fe0"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 11,
+      "topics": 25,
+      "saved_packet_sha256": "c21f8fe3e211e388305f41fd3bf80c22674c75d6a00b62ab969dff6902c821d2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 12,
+      "topics": 25,
+      "saved_packet_sha256": "2b24df624cdaa7205026ad1f1108d2142ce491b0c0dae8411f0e5c9c0d2206d1"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 13,
+      "topics": 25,
+      "saved_packet_sha256": "e948a7dfbf1716a814f8fc7e540ac1864b084ef21bb6c6c3bed83a4f2af86caf"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 14,
+      "topics": 25,
+      "saved_packet_sha256": "ec391b14ed2846b954b09b08dcd2f5dfef98496f2238f5f37fb19d8a98c2dc8b"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 15,
+      "topics": 25,
+      "saved_packet_sha256": "a70c88075c925608ff5736d2b5356d68c0c1b4e28482ad7e280dc9c000ff121c"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 16,
+      "topics": 25,
+      "saved_packet_sha256": "1f4ba2f5413bb9f2d458ee43dcadaaabf5147b483915d17ab2fca276bcb50b87"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 17,
+      "topics": 25,
+      "saved_packet_sha256": "e3104120367879e69b4c3d28dc039fff8ca8e116d42285fd73bd44db036c5b11"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 18,
+      "topics": 25,
+      "saved_packet_sha256": "7613fcf27667a2284a7f55a102bfa1508d892a10b3076f059366916be26b61dc"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 19,
+      "topics": 25,
+      "saved_packet_sha256": "3057596818036b481c32011d64b51a365bc9e45f6d02374931d8b6ee81c6d19a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 20,
+      "topics": 25,
+      "saved_packet_sha256": "cb49bb1e7c68fea9677464f17387c8b491a547d58ea33225a36ada22ed2169c3"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 21,
+      "topics": 25,
+      "saved_packet_sha256": "4b1fce25ea1ff92de7150d47be0bc4c12dd38f315160093f59e298eb52a946ad"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 22,
+      "topics": 25,
+      "saved_packet_sha256": "4a4279625f333cd35c0e4ab31013372998ede8b05e3424455f10738f8caef4ad"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 23,
+      "topics": 25,
+      "saved_packet_sha256": "8bca5f7da7e2565f30e3cb2baba25032ec74a78df384381e3aa3309f368f860f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 24,
+      "topics": 25,
+      "saved_packet_sha256": "e294df38eeb28dc58da288773704d674549c194d296c559f38a080dbac781f61"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 25,
+      "topics": 25,
+      "saved_packet_sha256": "ebabbc590efca84b9d21579c529730b12403bdc16b9b0e70ce8d12f1873ca6bf"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 26,
+      "topics": 25,
+      "saved_packet_sha256": "a48461765697a1185f6e1bbfb592e079bded2ccd254ea8a5e4b94b6c536c994f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 27,
+      "topics": 25,
+      "saved_packet_sha256": "295172baed7e1de48fec70c75e7f2883a80e7e19c4667c31affa51bcb3a5d34c"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 28,
+      "topics": 25,
+      "saved_packet_sha256": "ad266b92765b3ec3cdce24cb9c5535fd20d1cdc4996b13c2d33d13b08004537d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 29,
+      "topics": 25,
+      "saved_packet_sha256": "4e5eb977952a41ccd05aa4ec948668266755d37179f9c9250174c21b9ea5dd1d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 30,
+      "topics": 25,
+      "saved_packet_sha256": "9cabdd7f14b80800abb5409b4658023a33c37e5ad1a8bfc0af5efd1049bc3f2a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 31,
+      "topics": 25,
+      "saved_packet_sha256": "cc89bcb1cedb91b7b0c5d577c1faaa35bcf0f8377de278c2030042649d35fed0"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 32,
+      "topics": 25,
+      "saved_packet_sha256": "dd34256576aab832efe810848aaa783509d9bee6b8b80fd8bb4c49d99f05eac2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 33,
+      "topics": 25,
+      "saved_packet_sha256": "e51249d714c3cf63a281171bd4738e30d9b043e9be7be4ac81551ec95809eef2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 34,
+      "topics": 25,
+      "saved_packet_sha256": "d6494f807ef30c8a3840f985d960bfb996c623d31aae41ba517f95467fdfd142"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 35,
+      "topics": 25,
+      "saved_packet_sha256": "14e4c975c8971674adc8743160759007737a91cfa519d29f4a9da7773802613b"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 36,
+      "topics": 25,
+      "saved_packet_sha256": "b0e6ee0461c3115f81b5d055edbdeb1b273c5aae96bee4732f5a1f7da5c5acbd"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 37,
+      "topics": 25,
+      "saved_packet_sha256": "bb59ba71816c815399a07b304e625216ec03b7019ae10f635eaabe1ab9de4906"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 38,
+      "topics": 25,
+      "saved_packet_sha256": "0f9e8760e5c847a3ca036716ce4da13b8cb4f6dc4d0877d3b5309d43587cc60f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 39,
+      "topics": 25,
+      "saved_packet_sha256": "1f8ba6857d83fe755e418f5729d58b0e37458e64677c2fad0a4cbff9b2849b7b"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 40,
+      "topics": 25,
+      "saved_packet_sha256": "9d7672c6146e8f34d5429305dfd183e520d9c6dd7c00270335fd57b2027f934e"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 41,
+      "topics": 25,
+      "saved_packet_sha256": "761b638accbeff64dcddd6b1abeecdfd35bd7e86dd057078d0e851f601f86176"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 42,
+      "topics": 25,
+      "saved_packet_sha256": "408fda29feeb4ba180bdab592869c8f8c1747728e3638d9d4ace587898c21e17"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 43,
+      "topics": 25,
+      "saved_packet_sha256": "d4115b36094061fa784cbf03369c1a8d5c4763c2b9e10862493cf8283148a1af"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 44,
+      "topics": 25,
+      "saved_packet_sha256": "2cbcf01c0dead3fbfa75167468aaeb6250d8949341f14447ce01b8babbf94311"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 45,
+      "topics": 25,
+      "saved_packet_sha256": "7ed192ba5685427f82794f170e86b1973f3e77182112ff33b41c7a6689828aa2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 46,
+      "topics": 25,
+      "saved_packet_sha256": "a3e0c1f3a17aed787b0f4b6d7dbdb8ae62b2e3c6512c04fc8a3bb183281cc053"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 47,
+      "topics": 25,
+      "saved_packet_sha256": "b75f8a30c2bc6a18776bb9c42dc25faa4eb90654d65127d25f3e587f9aa58720"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 48,
+      "topics": 25,
+      "saved_packet_sha256": "ef2be55f88e0055548cfece63bfd4f7d56002b1b8c3c1613e8039b51c7b0d3bf"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 49,
+      "topics": 25,
+      "saved_packet_sha256": "ddb07b577a5065b04f986abb7a9d868f838a0ffb878aaf2215da7511a968f19b"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 50,
+      "topics": 25,
+      "saved_packet_sha256": "0fce09b36ab66b6c3067e17e2fbe78a5b866767a7f419b56f0a0ec60bc5a4c4f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 51,
+      "topics": 25,
+      "saved_packet_sha256": "644e3cdec11cefded6332232ef09f9d99977bbd43cf746b2aeedb1df305ad5ce"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 52,
+      "topics": 25,
+      "saved_packet_sha256": "8d9b6098d771b9d7284d4957ad5b7551a355172c8b55416c47f79b0bcf400f3d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 53,
+      "topics": 25,
+      "saved_packet_sha256": "5fce2b16fd9d1962ed39b1080d0ac66f237f3a4c8d99f2db2c60e8309ca6208a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 54,
+      "topics": 25,
+      "saved_packet_sha256": "4f8b1b23be78f84190d38f338eb198c00e7ade0c0ba39cd092ca08c3ce749cfd"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 55,
+      "topics": 25,
+      "saved_packet_sha256": "cdfd5d28c135e7e964e86731266352e873b2e30da30654bb20c66f89144e7b0a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 56,
+      "topics": 25,
+      "saved_packet_sha256": "c02c8aeb192cf1ee8be76ad46f30dd37548336adf9681e406f55a142b75df05e"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 57,
+      "topics": 25,
+      "saved_packet_sha256": "3cba779fe497f3940581dfd526138708e31911e97ffd4f801e60a7d862b4416d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 58,
+      "topics": 25,
+      "saved_packet_sha256": "4c1b9cc90ac7d807a6385986fcefa31da8af870e2ab82884ab8cfcec515e6631"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 59,
+      "topics": 25,
+      "saved_packet_sha256": "2ef1d9d5175874b4dfbf12de56d779ec1b6b291c3d5f0e2321f70cff8509d3b8"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 60,
+      "topics": 25,
+      "saved_packet_sha256": "ae260f1fffc8154512c92692cfbe16e9296bb9cdf1aa4461d015b993ea6d906f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 61,
+      "topics": 25,
+      "saved_packet_sha256": "223a9564b94e4709cea240f3c164e4868ef02cb455d9bbc76ed048aa484fbfa1"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 62,
+      "topics": 25,
+      "saved_packet_sha256": "fb5b763a2a6cc03786d9837af0076cafc89385d269ad31e9a06ba21063fcbd9d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 63,
+      "topics": 25,
+      "saved_packet_sha256": "ab4b265bd8d33fd829c83688b609251483d82d5394074f6366b44ea81fe35aec"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 64,
+      "topics": 25,
+      "saved_packet_sha256": "4436d4c63367d40ad6cf4077e0b471ca7f8b5b0e80e84f7c77dd03bae814b88d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 65,
+      "topics": 25,
+      "saved_packet_sha256": "b209fe82f2f060eab4c972c715898256efc9e65c4197b2210595581244158578"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 66,
+      "topics": 25,
+      "saved_packet_sha256": "87877e4f274c20a782a4aac117b8480ef0ec59d69b48f46ba282dbbc1840cb04"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 67,
+      "topics": 25,
+      "saved_packet_sha256": "676160b31564429c0718da0153c15b84f2d0870e0d5efae4eb5e9bb4072938fd"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 68,
+      "topics": 25,
+      "saved_packet_sha256": "fb4b0c8206b15cf666fc171e420dc4d5af04a261543ba3eeec7e2a37518ef58a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 69,
+      "topics": 25,
+      "saved_packet_sha256": "be3ee93c785a3266079d3d80e70802a6f881c57e5d23d43c5bd23145af24c7bb"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 70,
+      "topics": 25,
+      "saved_packet_sha256": "2d8d6bb6e57e9845592d12e0068cac448d288fa46e298b3e986826014ae3a23b"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 71,
+      "topics": 25,
+      "saved_packet_sha256": "169b479cbde0c0189761e2063dd18df4aaed7a8432da20f329190c651885ab67"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 72,
+      "topics": 25,
+      "saved_packet_sha256": "112d8da7635f08208c59e8e957e4cde9c018c73bf84cc7a46716069c68c7fa05"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 73,
+      "topics": 25,
+      "saved_packet_sha256": "5f54dc1c295fb837c089b73b1a819e2bbcd025c2c8277a9cd3e077ee5af6cae3"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 74,
+      "topics": 25,
+      "saved_packet_sha256": "07f012cc34796303d81eebbd419757851e15059edf3ba833962ad9941de7c0e4"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 75,
+      "topics": 25,
+      "saved_packet_sha256": "9a584b1c492c6b048237cb8a35ff6e3d7e3aee55cceb518e16155eea14fccf64"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 76,
+      "topics": 25,
+      "saved_packet_sha256": "cf01a126a5d032c67657fba22635d78c0a13520d116e0f94a2462081489a170d"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 77,
+      "topics": 25,
+      "saved_packet_sha256": "79bd0d52b2ef48a54c3700b727a62d71cd77faaecfa5ac86ee339a26913eeffb"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 78,
+      "topics": 25,
+      "saved_packet_sha256": "daf64ff59b9951f04da5a13bd56b629a66771f56f298107c10635f4befe34c02"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 79,
+      "topics": 25,
+      "saved_packet_sha256": "059dd8a5b055c77f097190fa19b3651786d10444a39c0d1f637ec183e65ae1f3"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 80,
+      "topics": 25,
+      "saved_packet_sha256": "5896a457d87bd8fbb92f3b398b87a3a9f7ef5b71c418928f6d1080e4f3e293a7"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 81,
+      "topics": 25,
+      "saved_packet_sha256": "b16012f347c27c6f9f05dc13c7a72b259e8306a37fc840da55b5a8ca7db38f3a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 82,
+      "topics": 25,
+      "saved_packet_sha256": "ef5f7557f376ea527d5867b7c03fede9c5f7492b390ba5d716774da86a4a9424"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 83,
+      "topics": 25,
+      "saved_packet_sha256": "017e966dfc7340f65471e0c8ca70a18aac22e6a7f6caf69810c9827fcfa24d90"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 84,
+      "topics": 25,
+      "saved_packet_sha256": "ee4211b5e659181246424d307467f1df8f61b0dfaf8690459a3ec8afffda1ec5"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 85,
+      "topics": 25,
+      "saved_packet_sha256": "a3b20fc523776c02dfd1c5d31ee6681456e3607e7e467e8d9578dccb37718f3f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 86,
+      "topics": 25,
+      "saved_packet_sha256": "38f9fb95b074bf432fd19b2e8ed2dde12566137d29669f6b562b55847def1979"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 87,
+      "topics": 25,
+      "saved_packet_sha256": "c52bf33216b0c951848c10305213aae0d12a3d4354816138669e3964be177d56"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 88,
+      "topics": 25,
+      "saved_packet_sha256": "53917dcff5a0be9cc9223ac4d20807cc3c46d774b7d4509298c4633933da877a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 89,
+      "topics": 25,
+      "saved_packet_sha256": "cbe62f63e235fa3b4ac7a82f22980c239f09cf0dc8b5b08d12c7947cc1a33d41"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 90,
+      "topics": 25,
+      "saved_packet_sha256": "6e47b4dc7b83dc4548bdf1f56e8baedf9e2937c6f7b6111461aa54ef9263d0de"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 91,
+      "topics": 25,
+      "saved_packet_sha256": "c408574c2a81f72f1cda7d27b7f02516833017550160ba1a26f41698ada728e1"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 92,
+      "topics": 25,
+      "saved_packet_sha256": "37f1ba3ae80ca8b73554adf37af72702365abbd3fc9882e236cf61f77ede4fef"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 93,
+      "topics": 25,
+      "saved_packet_sha256": "4244e44e009a1ba6d4ed172ea448b837b9e9f09149e360dbf09f1dcc60d94890"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 94,
+      "topics": 25,
+      "saved_packet_sha256": "a1b4a3c92cf544689129331ee57bb77a5de3dbe0492dd2d2be31d5dbe4200ff4"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 95,
+      "topics": 25,
+      "saved_packet_sha256": "4d126f4114ad5253ac30b68fd2a4efb0850a0fee807abd8ddfce8d2b3b228846"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 96,
+      "topics": 25,
+      "saved_packet_sha256": "920e2e7ffc4757f6bd6ac0df8ae0eef7ee17d14df4433e1a1a10f73cdea27f9a"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 97,
+      "topics": 25,
+      "saved_packet_sha256": "add071487cf6fe0bfa931743059231b38d508c9bdb13faeb355a9e3da47b6343"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 98,
+      "topics": 25,
+      "saved_packet_sha256": "286ff1a249ee9cd77e284ffa19781df01bbb7c5245615a5ad0954d1cc9634a41"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 99,
+      "topics": 25,
+      "saved_packet_sha256": "d877c41949a02be3d3fecce6c46c9766e5d24314df41feb83362bbae393ce213"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 100,
+      "topics": 25,
+      "saved_packet_sha256": "5443337510d8559d42f747a7a9bbec04e84cd03a0c8a6fc288d7701d8d29c658"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 101,
+      "topics": 25,
+      "saved_packet_sha256": "d3443a4507c1070aa9c8f79d8ca72cdc371bd36a931b783d676d5751bd31b6b9"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 102,
+      "topics": 25,
+      "saved_packet_sha256": "0bb9aaff4cc44b4cc70c89b38a9fe80953c877eaf5d71d90adcb3d2f56452b8f"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 103,
+      "topics": 25,
+      "saved_packet_sha256": "31637189829c974d9b5e045412716b7c5d69267d68a249da9887ec0056ec3c5c"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 104,
+      "topics": 25,
+      "saved_packet_sha256": "fab2ee9defa61b8e96123ae56f1e84951b06bedf13898ea9c0f961e1e8b3fa23"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 105,
+      "topics": 25,
+      "saved_packet_sha256": "2340f8391df8ecf52caaeeaa46a009e6ebe36d4d0cd1dd54af5caabe47f85d32"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 106,
+      "topics": 25,
+      "saved_packet_sha256": "790962db6a1c380e9aafa1664c4c85b0fdd5aec5ebe68a31c8c1aa7ed0c18fa2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 107,
+      "topics": 25,
+      "saved_packet_sha256": "e203155b3b13f38287a9d90303f3daccc90293ac9e8cfd470fb3585aa0a65896"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 108,
+      "topics": 25,
+      "saved_packet_sha256": "be6da76f954ea4273c5c7af69c6cf89ec68639c5c531a872a83664f9309076c6"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 109,
+      "topics": 25,
+      "saved_packet_sha256": "743611ec41563e9ec3754bd073312649ba50bc0b65d7bb284487f79c31dcb0ec"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 110,
+      "topics": 25,
+      "saved_packet_sha256": "c4ad475d9b3d7511230105f28e308890c9670e46165c50db20af868b53ffcca2"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 111,
+      "topics": 25,
+      "saved_packet_sha256": "851af0705129b9b4343eee46e6b8175708d88d54997bdf804b0e1312322cfb38"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 112,
+      "topics": 25,
+      "saved_packet_sha256": "53da10b8138de11a512cb23ec4006ffdecc705d448674316717e16d544c0ce61"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 113,
+      "topics": 25,
+      "saved_packet_sha256": "56f8fdc1f0c838d4178d28ea8178fe2320e1c3005629181653f13b761076c947"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 114,
+      "topics": 25,
+      "saved_packet_sha256": "9f9e52a08a3de55bd27911be7b8d2ab39786780d8d51e328b5736a1cae3c1993"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 115,
+      "topics": 25,
+      "saved_packet_sha256": "d2e6812a41105c09f90e0144ba8765bc01362cfd19839cbe0f19842843b0e29e"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 116,
+      "topics": 25,
+      "saved_packet_sha256": "3fb8a56006be426e7d1cc2f7410c2fc042027c453575eb994ce68f3ee00291fd"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 117,
+      "topics": 25,
+      "saved_packet_sha256": "35ae199c831b052456bbf36f050122e453dfac87d683af873f110a59fd59f822"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 118,
+      "topics": 25,
+      "saved_packet_sha256": "879b62def4d21b5262cc540c59354534557d73ec56d404c6153cafe878a53334"
+    },
+    {
+      "controller": "Greedy",
+      "hour": 119,
+      "topics": 25,
+      "saved_packet_sha256": "200370d2fa771577df8e341cc7e6956c73a9888c90e8bb8ad0ef99d25dc38b4f"
+    }
+  ],
+  "scope": "Every stored topic object at every interval in the preserved 120-hour reader fixture matches the identified production calculation function, including accumulated costs, original forecast plans, observations and complete service-work snapshots. This checks the reading adapter; independent physics and whole-bundle integrity remain separate claims."
+}

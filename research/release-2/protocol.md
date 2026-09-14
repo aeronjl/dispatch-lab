@@ -8,6 +8,9 @@ repetitions are separate from these new experiments.
 
 - Nine preserved ERA5 weeks: London, Seville and Copenhagen, starting 10 January,
   10 April and 10 July 2025. Four maintenance rules, two sensor seeds: 72 cases.
+  The periodic rule is due at H168; the short windows end before its first work
+  interval. That rule is an unexposed control in the weekly cases, not an active
+  preventive-maintenance comparison. The annual and teaching cases exercise due dates.
   The forecast is explicitly previous-complete-day persistence. Reanalysis is
   not site measurement and persistence is not an archived operational forecast.
 - One full continuous London 2025 environment: four rules, commissioning of a

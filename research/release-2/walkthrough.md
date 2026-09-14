@@ -80,3 +80,9 @@ assertion expired. The comparison-control test now allows 60 seconds for that
 explicit worker; the simple-example performance limits were not changed. Its first
 failed attempt and the complete rerun are separate receipts. This is a test timing
 finding, not a participant observation or a claim that long calculations are instant.
+
+The weekly comparisons expose a reporting trap: the periodic rule first becomes
+due at H168, exactly after the short run ends. Its baseline-identical totals do not
+establish that preventive maintenance is ineffective. The report now states this
+exposure boundary beside the findings; the annual and teaching cases exercise work
+after a due date. The original protocol inputs and completed results are unchanged.

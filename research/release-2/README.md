@@ -55,7 +55,11 @@ calculation topics into one selectable page per controller/interval. It does not
 run a model in the browser. The reader adapter is included in each bundle alongside
 the separately identified production calculation source and original execution
 source. `compact-preflight.json` compares calculation objects;
-`compact-browser.json` records offline/narrow-screen interaction checks.
+`compact-browser.json` records offline/narrow-screen interaction checks. The
+corrected-source reader also has `compact-calculations.json`: all 3,000 topic
+objects across its 120-hour saved fixture match the identified calculation functions;
+the original recording is unchanged. This is adapter reconciliation, separate from
+independent physics and whole-bundle integrity.
 
 ## Execution editions
 
