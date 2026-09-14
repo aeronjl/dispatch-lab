@@ -1,8 +1,15 @@
 # Release 3: comparative autonomy research platform
 
-Status: not started. Release 2 must finish its source-bound qualification gates
-before this programme starts. The [roadmap](roadmap.md) remains the scope authority;
-this document makes its sequence and acceptance criteria explicit.
+Status: implementation delivered; final software qualification in progress.
+The [implementation guide](learning-and-policies.md) describes the usable workflow,
+algorithm coverage and boundaries. The [release report](../research/release-3/report.html)
+records verification and the remaining external gates. The [roadmap](roadmap.md)
+remains the scope authority; this document retains the agreed acceptance criteria.
+
+Actual participant comprehension and an independently restored off-machine backup
+remain outstanding. Neither is represented as completed by automated tests or local
+ZIP exports. The first fitted models are inspectable observed-channel ridge models
+and a PV planning aid; neural/RL policy training is a subsequent algorithm extension.
 
 Completion means delivering the machinery users need to train, evaluate and compare
 policies. Verify it with small, named acceptance examples. Large training campaigns,

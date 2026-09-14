@@ -184,6 +184,12 @@ def freeze(store, selections, *, name, holdout_axes=()):
         prior, expected = None, 0
         for key in episode["partitions"]:
             result = read_blob(store, key)["value"]
+            truth = {
+                r["hour"]: r
+                for r in result.get("retrospective_truth_by_controller", {}).get(
+                    case["controller"], []
+                )
+            }
             for row in result["records"][case["controller"]]:
                 d = row["decision"]
                 if d["hour"] != expected:
@@ -218,7 +224,7 @@ def freeze(store, selections, *, name, holdout_axes=()):
                     dict(
                         id=sid,
                         basis="Retrospective simulated outcomes; scoring only",
-                        lifecycle=row.get("lifecycle", {}).get("retrospective_condition"),
+                        truth=copy.deepcopy(truth.get(d["hour"])),
                         methane_kg=row["applied"]["methane_kg"],
                     )
                 )
@@ -242,6 +248,8 @@ def validate_splits(episodes, axes=()):
 
 
 def save(store, name, episodes, samples, labels, axes=()):
+    from methane.provenance import LOADED_CAPSULE, LOADED_SOURCE
+
     observations = store.raw(encode(samples))
     scoring = store.raw(encode(labels))
     value = dict(
@@ -253,6 +261,8 @@ def save(store, name, episodes, samples, labels, axes=()):
         labels_sha256=scoring,
         holdout_axes=list(axes),
         sample_count=len(samples),
+        adapter_source=LOADED_SOURCE["content_hash"],
+        capsule_raw_sha256=store.raw(encode(LOADED_CAPSULE)),
         scope="Episode-disjoint simulated observation dataset. Labels are separate scoring artifacts, never policy inputs. Seeds and numerical repeats are not independent weather samples.",
     )
     return dict(id=store.put("dataset", value), **value)

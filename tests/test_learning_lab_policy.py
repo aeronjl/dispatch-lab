@@ -29,6 +29,10 @@ def test_registered_inference_preserves_present_and_reports_missing_domain_timeo
     assert candidate["pv_kw"][0] == original["pv_kw"][0]
     assert candidate["pv_kw"][1] != original["pv_kw"][1]
     assert packet["forecast"] == original
+    outside = copy.deepcopy(packet)
+    outside["plant"]["solar_kw"] *= 2
+    _, rejected = apply(d, outside, original)
+    assert "Plant outside" in rejected["reason"]
     d["budget_ms"] = 1e-12
     candidate, trace = apply(d, packet, original)
     assert candidate == original and trace["status"] == "fallback"

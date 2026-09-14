@@ -53,6 +53,10 @@ def view(store, key):
 
 def perform(request, store, current_config):
     d = request.data
+    if request.operation.startswith("lab-"):
+        from methane.learning_lab.service import perform as learning_operation
+
+        return learning_operation(store, request.operation, request.id, d)
     if request.operation == "index":
         reference = catalogue.bootstrap(store)
         return dict(
@@ -306,6 +310,9 @@ def perform(request, store, current_config):
                 for p in store.list("publication")
             ],
             templates=store.list("template"),
+            deployments=[
+                {k: v.get(k) for k in ("id", "name", "mode")} for v in store.list("deployment")
+            ],
         )
     if request.operation == "prepare-environment":
         return jobs.launch(store, request.token, d, request.offline)
@@ -317,6 +324,10 @@ def perform(request, store, current_config):
         return environment.calibration(store, request.id, d["training_end"])
     if request.operation == "create-study":
         return production.create(store, **d)
+    if request.operation == "repeat-study":
+        from methane.learning_lab.editions import repeat
+
+        return repeat(store, request.id)
     if request.operation == "study":
         value = production.inspect(store, request.id)
         value["runtime_estimate"] = workflow.runtime_estimate(value)
@@ -360,10 +371,19 @@ def handle(request: Request):
     current = context(request.token, request.run_id)
     try:
         answer = perform(request, Store(), current["config"])
-        if request.operation in ("publish", "export"):
+        bundle_ready = (
+            request.operation == "lab-job"
+            and answer.get("result_kind") == "bundle"
+            and answer.get("status") == "complete"
+        )
+        if request.operation in ("publish", "export") or bundle_ready:
             from urllib.parse import urlencode
 
-            key = answer.get("publication_id", request.id)
+            key = (
+                answer["result"]["publication_id"]
+                if bundle_ready
+                else answer.get("publication_id", request.id)
+            )
             answer["download_url"] = (
                 "/dispatch/site-download/"
                 + key

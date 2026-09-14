@@ -1,5 +1,6 @@
 """Authored explanations and explicit bindings; facts come from component contracts."""
 
+from methane.learning_lab.topics import topics as learning_topics
 from methane.lifecycle.topics import topics as lifecycle_topics
 from methane.service_topics import topics as service_topics
 
@@ -652,6 +653,7 @@ TOPICS["siting"] = topic(
 
 TOPICS.update(service_topics(C, P, topic))
 TOPICS.update(lifecycle_topics(C, P, topic))
+TOPICS.update(learning_topics(C, P, topic))
 
 for key, item in TOPICS.items():
     item["id"] = key
@@ -659,6 +661,8 @@ for key, item in TOPICS.items():
     item["assumptions"] = [dict(id=key + "/scope/1", text=item["limitations"])]
     item["explicit_calculation"] = key in (
         "controllers",
+        "estimators",
+        "policies",
         "bus",
         "recovery",
         "charging",

@@ -25,5 +25,16 @@ current HiGHS thread-initialisation failure was reproduced and fixed by consiste
 using one numerical solver thread. The current provenance records that choice;
 old recordings and source capsules retain their original solver assumptions.
 
-The Sites interface, portable artifacts and full release qualification remain in
-progress. These checkpoints are not evidence of field performance or completion.
+Checkpoint 3: Sites learning/policy forms, three interactive Model topics, immutable
+evaluation publications, source/data/model restoration, worker cancellation and
+numerical-edition differences are implemented. A combined 62-case focused suite
+passes, including real recorded episode export, a registered run interrupted and
+resumed, separate unavailable-data results and restored original weights/records.
+The first browser pass covers fit/register/template workflow and Model navigation;
+final visual and source-stable qualification follows.
+
+The first full Python run found six failures: two stale assumption-review gates,
+an incomplete test enumeration of the existing Greedy status, a worker-release race,
+and two source-identity assertions affected by editing during that run. The review
+bindings, test enumeration and release race are corrected. The two identity guards
+are retained; final qualification must run without changing captured source files.

@@ -1,0 +1,42 @@
+const {test,expect}=require('@playwright/test');
+test('Learning workspace fits, registers and freezes a matched policy study',async({page})=>{
+ test.skip(!process.env.DISPATCH_SITES_STUDIES,'Requires disposable Sites environment');
+ test.setTimeout(90000);const errors=[];page.on('pageerror',err=>errors.push(err.message));
+ await page.goto('/');await page.locator('.m-plant').waitFor();
+ await page.locator('[data-do=menu]').click();await page.locator('[data-do=sites]').click();
+ await page.locator('[data-si=studies]').click();await page.locator('[data-si=lab-open]').click();
+ await expect(page.locator('.si-page h1')).toHaveText('Learning & policies');
+ await page.locator('[data-si=lab-teach]').click();await expect(page.locator('[data-lab-progress]')).toContainText('Saved dataset',{timeout:30000});
+ await page.locator('[data-si=lab-open]').first().click();await page.locator('[data-si=lab-fit]').click();
+ await page.locator('[data-lab=task]').selectOption('solar_condition');await page.locator('[data-si=lab-train]').click();
+ await expect(page.locator('[data-lab-progress]')).toContainText('Saved evaluation',{timeout:30000});
+ await page.locator('[data-si=lab-evaluation]').click();await expect(page.locator('.si-page')).toContainText('Absolute error');
+ await page.screenshot({path:'build/release-3-estimator-desktop.png'});
+ await page.locator('[data-si=lab-deploy]').click();await page.locator('[data-lab=mode]').selectOption('homeostatic');
+ await page.locator('[data-lab=name]').fill('Browser reserve hypothesis');await page.locator('[data-si=lab-reserves]').click();
+ await page.locator('[data-reserve=battery_fraction]').fill('0.4');await page.locator('[data-si=lab-register]').click();
+ await expect(page.locator('.si-page')).toContainText('Browser reserve hypothesis');
+ await page.locator('[data-si=lab-compare]').click();await page.locator('[data-deployment]').first().check();
+ await page.locator('[data-si=lab-template]').click();await expect(page.locator('.si-page h1')).toHaveText('Policy and reserve comparison');
+ await expect(page.locator('[data-si=period-play]')).toHaveCount(0);
+ await expect(page.locator('.si-page')).toContainText('Browser reserve hypothesis');
+ await page.locator('[data-si=studies]').click();await page.locator('[data-si=lab-open]').click();
+ await page.locator('[data-si=lab-session-form]').click();await expect(page.locator('.si-page')).toContainText('No participant evidence recorded');
+ await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:'build/release-3-learning-mobile.png'});expect(errors).toEqual([]);
+});
+
+test('New Model lessons expose input boundaries and return to the same simulation',async({page})=>{
+ const errors=[];page.on('pageerror',err=>errors.push(err.message));
+ await page.goto('/');await page.locator('.m-plant').waitFor();
+ await page.locator('[data-do=menu]').click();await page.locator('.m-utility [data-model-topic=battery]').click();
+ await page.locator('[data-d=index]').click();
+ await page.locator('[data-topic=learning_data]').click();
+ await expect(page.locator('.d-essay')).toContainText('What the policy could know');
+ await expect(page.locator('.d-result-status')).toContainText('Learning example');await expect(page.locator('.d-metrics')).not.toContainText('Ending energy');
+ await page.screenshot({path:'build/release-3-model-desktop.png'});
+ await page.locator('[data-d=index]').click();await page.locator('[data-topic=estimators]').click();await expect(page.locator('.d-essay')).toContainText('Estimate a channel');await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example');
+ await page.locator('[data-d=index]').click();await page.locator('[data-topic=policies]').click();await expect(page.locator('.d-essay')).toContainText('Give reserves');await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example');
+ await page.keyboard.press('Escape');await expect(page.locator('.d-workspace')).toBeHidden();await expect(page.locator('.m-plant')).toBeVisible();
+ expect(errors).toEqual([]);
+});

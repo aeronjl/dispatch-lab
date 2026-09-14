@@ -1024,6 +1024,7 @@ def build_app(default=None):
                     + (ASSETS / "model.js").read_text()
                     + (ASSETS / "taxonomy.js").read_text()
                     + (ASSETS / "studies.js").read_text()
+                    + (ASSETS / "learning-lab.js").read_text()
                     + (ASSETS / "sites-studies.js").read_text()
                     + (ASSETS / "sites.js").read_text()
                     + "\nmountMethane(element, props, watch, trigger);",

@@ -266,6 +266,21 @@ def fit(
         units=TASKS[task][1],
         training_examples=len(train),
     )
+    configurations = [
+        e.get("controller_config", e["config"])["plant"]
+        for e in data["episodes"]
+        if e["split"] == "train"
+    ]
+    model["plant_domain"] = {
+        key: [min(c[key] for c in configurations), max(c[key] for c in configurations)]
+        for key in (
+            "solar_kw",
+            "battery_kwh",
+            "electrolyser_kw",
+            "h2_capacity_kg",
+            "co2_capacity_kg",
+        )
+    }
     bands, outcomes = {}, {}
     for strategy in ("fixed", "adaptive", "ridge"):
         errors = []

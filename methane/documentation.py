@@ -449,7 +449,15 @@ def calculation(result, topic, controller, hour, prices=None, *, service_prices=
             "predicted": d["plan"].get("predicted"),
             "trajectory": d["plan"]["trajectory"],
             "evidence": d.get("evidence"),
+            "registered_policy": d.get("experimental_policy"),
         }
+    elif topic in ("learning_data", "estimators", "policies"):
+        value = dict(
+            registered_policy=d.get("experimental_policy"),
+            controller_policy=d.get("controller_policy"),
+            source=result.get("provenance", {}).get("source"),
+            scope="Original recorded policy inputs and operands; absent on older archives. Current explanations are not reconstructed as original evidence.",
+        )
     else:
         value = {
             "pv_kw": row["pv_kw"],

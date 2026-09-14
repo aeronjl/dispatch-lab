@@ -103,5 +103,26 @@ The [Release-3 delivery contract](release-3.md) makes the next sequence explicit
 freeze observation datasets and held-out boundaries; qualify estimators; register
 bounded deployments; compare scheduling/reserve objectives; complete the user-facing
 research workflow and participant work; then qualify fresh installation and recovery.
-It has not been started as part of Release 2. Chronological throughput, storage and
-export budgets belong in that final qualification as well as interactive latency.
+It is now implemented through the [learning and policy workflow](learning-and-policies.md).
+Current qualification, source identities and remaining gates are recorded in the
+[Release-3 report](../research/release-3/report.html). Chronological throughput,
+storage and export budgets remain separate from interactive latency.
+
+## After the Release 3 implementation
+
+The platform now provides frozen datasets, fixed/adaptive/fitted estimator
+comparisons, registered observation-only planning aids, soft reserve objectives,
+matched study templates, original calculation traces and portable result editions.
+More extensive policy/season/uncertainty studies are available for users to conduct;
+they are not an unfinished release research queue.
+
+The remaining external release gates are real participant walkthroughs, resolution
+of any material misunderstandings, and a durable off-machine storage/restore
+arrangement. The software supplies session capture and integrity-checked exports;
+it cannot invent participant responses or a backup destination.
+
+Subsequent engineering should be driven by those users and by evidence that changes
+the mechanisms: better observed condition/reference channels, identifiable duration
+models, additional reviewed estimator/policy adapters and—when justified—RL or
+neuroscience-inspired training. The delivered reserve policy is a transparent
+homeostatic planning hypothesis, not an RL-trained agent or field-qualified autonomy.

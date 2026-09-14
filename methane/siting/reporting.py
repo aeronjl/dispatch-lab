@@ -4,6 +4,9 @@ import base64
 import hashlib
 import html
 import json
+import os
+import shutil
+import uuid
 import zipfile
 from pathlib import Path
 
@@ -14,6 +17,10 @@ from methane.siting.workflow import REPORT_SECTIONS
 
 
 def document(value, title):
+    if value.get("version") == "estimator-evaluation/1":
+        from methane.learning_lab.reports import document as estimator_document
+
+        return estimator_document(value, title)
     esc = html.escape
     font = base64.b64encode(LOADED_FILES["assets/fonts/DepartureMono-Regular.woff2"]).decode()
     candidates = value.get("candidates", value.get("cases", []))
@@ -65,6 +72,12 @@ def report_record(store, kind, key, previous_publication_id=None):
     elif kind == "cashflow":
         value = store.get(kind, key)
         title = value["scenario"]["name"]
+    elif kind == "evaluation":
+        value = store.get(kind, key)
+        title = value["name"]
+    elif kind == "difference":
+        value = store.get(kind, key)
+        title = value["title"]
     else:
         raise ValueError("Unknown report type")
     return value, title
@@ -74,6 +87,11 @@ def draft(store, kind, key, publication_id=None):
     value, title = report_record(store, kind, key, publication_id)
     saved = value.get("writeup")
     template = value.get("manifest", {}).get("template", {}).get("record", {}).get("writeup", {})
+    if kind == "evaluation" and not template:
+        template = dict(
+            method="Fit only training episodes; use validation for error bands and test for reporting. Compare fixed, adaptive and fitted estimates alongside missing/censored or unsupported cases. Numerical prediction accuracy is separate from operating value.",
+            limitations=value.get("scope", "Observed-channel prediction only"),
+        )
     writeup = saved or dict(
         title=title,
         question=value.get("manifest", {}).get("purpose", ""),
@@ -118,7 +136,18 @@ def publish(store, kind, key, *, writeup=None, previous_publication_id=None):
     return dict(publication_id=rid, title=title, path=str(target))
 
 
-def bundle(store, publication_id):
+def bundle(store, publication_id, *, max_input_bytes=8 * 1024**3):
+    from methane.siting.production import worker_lease
+
+    if type(max_input_bytes) is not int or not 1024**2 <= max_input_bytes <= 64 * 1024**3:
+        raise ValueError("Export input budget must be 1 MiB–64 GiB")
+    if os.environ.get("DISPATCH_HEAVY_WORKER") == "1":
+        return _bundle(store, publication_id, max_input_bytes)
+    with worker_lease(store):
+        return _bundle(store, publication_id, max_input_bytes)
+
+
+def _bundle(store, publication_id, max_input_bytes):
     publication = store.get("publication", publication_id)
     value = publication["record"]
     study_ids = (
@@ -143,11 +172,70 @@ def bundle(store, publication_id):
     def raw(key):
         files["raw/" + key] = store.root / "raw" / key
 
+    learning_seen = set()
+
+    def learning(kind, key):
+        if not key or (kind, key) in learning_seen:
+            return
+        learning_seen.add((kind, key))
+        try:
+            item = add(kind, key)
+        except FileNotFoundError:
+            omissions.append(
+                dict(
+                    kind=kind,
+                    id=key,
+                    reason="Related learning artifact is unavailable; original provenance is not reconstructed",
+                )
+            )
+            return
+        if item.get("capsule_raw_sha256"):
+            raw(item["capsule_raw_sha256"])
+        if kind in ("model", "evaluation"):
+            learning(
+                "dataset", item.get("dataset_id") or item.get("protocol", {}).get("dataset_id")
+            )
+        if kind == "evaluation":
+            learning("model", item.get("model_id"))
+        if kind == "deployment":
+            learning("model", item.get("model_id"))
+        if kind == "dataset":
+            permitted = True
+            for episode in item["episodes"]:
+                sid = episode.get("study_id")
+                if sid and sid not in study_ids:
+                    study_ids.append(sid)
+                if episode.get("environment"):
+                    env = store.get("environment", episode["environment"])
+                    permitted &= all(
+                        store.get("source", s)["redistribution"] == "permitted"
+                        for s in env["source_ids"]
+                    )
+            if permitted:
+                raw(item["observations_sha256"])
+                raw(item["labels_sha256"])
+            else:
+                omissions.append(
+                    dict(
+                        kind="training observations and labels",
+                        id=key,
+                        reason="Source redistribution unresolved; restore the original dataset separately",
+                    )
+                )
+
+    if publication["kind"] == "evaluation":
+        learning("evaluation", publication["source_id"])
+    if publication["kind"] == "difference":
+        add("difference", publication["source_id"])
+
     for sid in filter(None, study_ids):
         study = add("study", sid)
         d = directory(store, sid)
         files[f"studies/{sid}/source-capsule.json"] = d / "source-capsule.json"
         for case in study["cases"]:
+            deployment = case.get("policy", {}).get("deployment")
+            if deployment:
+                learning("deployment", store.put("deployment", deployment))
             design = add("design", case["design_id"])
             add("site", design["site_revision"])
             assessment = add("assessment", design.get("assessment_id"))
@@ -240,9 +328,28 @@ def bundle(store, publication_id):
         instructions="Restore with python -m methane.siting.reporting restore BUNDLE.zip --root NEW_STORE. Use the saved source capsule with uv sync --locked. Recorded playback uses partitions; a numerical rerun creates a new study edition. No network is needed to read this report.",
     )
     files["manifest.json"] = encode(manifest)
+    size = sum(v.stat().st_size if isinstance(v, Path) else len(v) for v in files.values())
+    if size > max_input_bytes:
+        raise ValueError(
+            f"Export needs {size} uncompressed bytes; declared budget is {max_input_bytes}. Publish a narrower study or explicitly increase the export budget"
+        )
+    if shutil.disk_usage(store.root).free < size * 1.05 + 512 * 1024**2:
+        raise ValueError(
+            "Insufficient free disk for a conservatively sized portable bundle; existing evidence is preserved"
+        )
     destination = store.root / "exports" / (publication_id + ".zip")
     destination.parent.mkdir(parents=True, exist_ok=True)
-    temporary = destination.with_suffix(".tmp")
+    if destination.exists():
+        with zipfile.ZipFile(destination) as previous:
+            saved = json.loads(previous.read("manifest.json"))
+        if saved == manifest:
+            return dict(
+                path=str(destination), manifest=manifest, uncompressed_bytes=size, reused=True
+            )
+        raise ValueError(
+            "An existing export contains a different frozen inventory. Publish a new edition; the existing bundle is preserved"
+        )
+    temporary = destination.with_suffix("." + uuid.uuid4().hex + ".tmp")
     with zipfile.ZipFile(temporary, "w", zipfile.ZIP_DEFLATED) as z:
         for name, content in files.items():
             if isinstance(content, Path):
@@ -250,7 +357,7 @@ def bundle(store, publication_id):
             else:
                 z.writestr(name, content)
     temporary.replace(destination)
-    return dict(path=str(destination), manifest=manifest)
+    return dict(path=str(destination), manifest=manifest, uncompressed_bytes=size, reused=False)
 
 
 def file_hash(value):

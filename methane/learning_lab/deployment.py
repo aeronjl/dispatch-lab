@@ -89,6 +89,12 @@ def apply(value, packet, forecast):
         candidate = copy.deepcopy(original)
         if value.get("model"):
             model = value["model"]
+            if not model.get("plant_domain"):
+                raise ValueError("Original plant applicability is unavailable")
+            for key, (lower, upper) in model["plant_domain"].items():
+                current = packet["plant"].get(key)
+                if current is None or not lower <= current <= upper:
+                    raise ValueError("Plant outside training applicability: " + key)
             x = features(packet, model["task"])
             if x is None:
                 raise ValueError("Required observed channel is unavailable")

@@ -641,9 +641,12 @@ def _digest(value):
 @lru_cache(maxsize=128)
 def _evaluate(topic, encoded):
     v = json.loads(encoded)
+    from methane.learning_lab.teaching import ADAPTERS as LAB_ADAPTERS
     from methane.lifecycle.learning import ADAPTERS as LIFECYCLE_ADAPTERS
     from methane.service_learning import ADAPTERS
 
+    if topic in LAB_ADAPTERS:
+        return LAB_ADAPTERS[topic](v)
     if topic in LIFECYCLE_ADAPTERS:
         return LIFECYCLE_ADAPTERS[topic](v)
     if topic in ADAPTERS:
@@ -684,6 +687,9 @@ def evaluate(topic, inputs=None):
 
 def learning_summary(topic, inputs, payload):
     if topic in (
+        "learning_data",
+        "estimators",
+        "policies",
         "deployment",
         "condition",
         "hardware",

@@ -1,6 +1,6 @@
 {
   "schema_version": "dispatch-lab/assumption-review/1",
-  "edition": "2026-09-14 / 11",
+  "edition": "2026-09-14 / 12",
   "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
   "categories": {
     "design": "Chosen capacity, geometry or initial condition; requires a matched design, not statistical calibration.",
@@ -680,8 +680,8 @@
         "methane/config.py": "c1f8ac74efc69d9f8af7fb315918bd5bb03ed934fe12330ceb8945c8be65ae7c",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/policy.py": "2e83a51c93c70479440f3e9bcc8ad85a5a7575991828053503af16bd85493d29",
-        "methane/dispatch.py": "b8ee2885c94c5572dfdd6d5ab09036f999b722c7684cfb89ef11d4b920b54b76",
+        "methane/policy.py": "6bc4f41e50048ef45f399de472f6b97a177aa546012d5d45e8fa9e72c11ce12c",
+        "methane/dispatch.py": "2cc73d20e3bb01854b1d924b86c75c2d32e774ba98042556e29dd9a4e3afc43b",
         "methane/recovery.py": "a5f8505826fc1f7a9f851527bf2f0b733226945688f4914275655ce163f07390",
         "methane/services/controller.py": "a093313bcc5da0eae02cd4d5e73e780e8880fd7bbb7163ef47a07eabaea4309f",
         "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
@@ -727,7 +727,7 @@
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/physics.py": "ad8392d412d9df2a9c17baffb311841ced96ad412520b7f18ac7d1631c7cc7ad",
-        "methane/dispatch.py": "b8ee2885c94c5572dfdd6d5ab09036f999b722c7684cfb89ef11d4b920b54b76",
+        "methane/dispatch.py": "2cc73d20e3bb01854b1d924b86c75c2d32e774ba98042556e29dd9a4e3afc43b",
         "methane/uncertainty.py": "75acc69389e827a74198c40d7d4e97f98674239b2f771bf424383bc3d5752b60",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
@@ -758,8 +758,8 @@
         "methane/config.py": "c1f8ac74efc69d9f8af7fb315918bd5bb03ed934fe12330ceb8945c8be65ae7c",
         "plant.py": "56d73a00237d0bdc908e4bf9e4cd42397476650192cb18f9205fd3133d71f56a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/simulation.py": "28084c69a5e1ed43267db357b1828b919d305507d7756234c28f279c9209417f",
-        "methane/provenance.py": "f9c4dbdabbf8c5f52592c7e3d1a1bd11c37e4963c5106ef18cb3a77c9af53318",
+        "methane/simulation.py": "4b0b345ede868dec1e3abf579885b1f6c0e030c8fd94f97b73992a5b37ed1fb0",
+        "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
         "methane/uncertainty.py": "75acc69389e827a74198c40d7d4e97f98674239b2f771bf424383bc3d5752b60",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",

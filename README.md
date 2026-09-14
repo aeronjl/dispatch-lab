@@ -1,4 +1,4 @@
-# Dispatch Lab v0.2 — explainable autonomous methane
+# Dispatch Lab — autonomous plant experiments
 
 An hourly, local scheduling sandbox for a solar-powered methane plant. The illustrated plant is the main workspace: play, pause, step or change speed; select equipment to inspect **Now → Why → Next → Costs → What if**. Experiment setup is a separate screen.
 
@@ -9,6 +9,13 @@ uv run python app.py
 ```
 
 The default 72-hour experiment compares **Greedy**, **MPC · methane** and **MPC · economics**. Setup includes an **Autonomy story / four days** preset, a flow-sensor fault and delayed feedstock. Results include methane, ending hydrogen/CO₂/battery inventories, curtailment, starts, forced trips, diagnosis performance, solver limitations and illustrative costs.
+
+**Sites → Production studies → Learning & policies** adds frozen observation datasets,
+held-out estimator comparisons, registered planning aids and homeostatic reserve
+experiments. Training, operation, cancellation/resumption, write-ups and portable
+exports share the existing study workflow. Start with the
+[learning guide](docs/learning-and-policies.md); broader research campaigns are
+optional uses of the platform, not a required setup step.
 
 ### What the model includes
 

@@ -30,6 +30,7 @@ KINDS = {
     "deployment",
     "evaluation",
     "walkthrough",
+    "difference",
 }
 
 
