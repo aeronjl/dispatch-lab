@@ -124,3 +124,14 @@ This starts a separate local test app, executes a real batch while measuring
 previews, and requests cancellation afterwards. The release matrix uses cached
 weather offline; missing historical snapshots are reported as incomplete.
 See [verification results](engineering-results.md).
+
+### Chronological checkpoint cost
+
+Sites retains an independent transaction image after every completed hour, including
+shared service ledgers and optical state. Portable graph encoding and integrity
+hashing happen when that image is exported at the partition/cancellation boundary.
+A failed following interval cannot mutate the saved image. The allowlisted,
+non-executable checkpoint format remains readable without migration. The Release-2
+compatibility experiment resumes the same saved boundary with each source and
+compares physical, observation, service and lifecycle records; it does not relabel
+the old annual study as a result of the new implementation.

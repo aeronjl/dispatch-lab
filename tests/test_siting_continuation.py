@@ -7,7 +7,7 @@ import pytest
 
 from methane.config import Config, Scenario
 from methane.simulation import run
-from methane.siting.checkpoint import Continuation, pack, unpack
+from methane.siting.checkpoint import FIELDS, Continuation, freeze, pack, unpack
 from methane.siting.store import digest
 from methane.weather import prepare
 
@@ -133,3 +133,69 @@ def test_weather_recovery_and_shared_runtime_continue_without_reset():
         unpack(second.output["graph"])["joint_recovery_scheduler"].policy.version
         == "scheduled-load-tests/4"
     )
+
+
+def test_transaction_image_survives_later_mutation_and_preserves_wire_format():
+    from methane.services.contracts import Quantity
+
+    ledger = {"stock": [Quantity("stock:module", 2, "module")]}
+    ledger["self"] = ledger
+    row = {"nested": ledger}
+    scope = dict.fromkeys(FIELDS)
+    scope.update(services=ledger, physical_optical=ledger, rows=[row])
+    expected = pack({**{k: scope[k] for k in FIELDS}, "previous_row": row})
+    cont = Continuation(3, 3, "transaction-test")
+    cont.capture(1, scope)
+    # A cancelled/failing next interval can mutate several aliased runtime paths.
+    ledger["stock"].clear()
+    ledger["failed_interval"] = True
+    saved = cont.output
+    assert saved["graph"] == expected
+    restored = unpack(saved["graph"])
+    assert restored["services"] is restored["physical_optical"]
+    assert restored["services"]["self"] is restored["services"]
+    assert restored["previous_row"]["nested"] is restored["services"]
+    cont.capture(2, scope)
+    assert cont.output["next_hour"] == 2
+    assert saved["next_hour"] == 1 and saved["graph"] == expected
+    with pytest.raises(ValueError, match="Unsupported checkpoint"):
+        freeze(object())
+    with pytest.raises(ValueError, match="Nonfinite checkpoint"):
+        freeze({"value": float("nan")})
+
+
+@pytest.mark.parametrize("failure", ["cancel", "physical"])
+def test_resumption_after_mid_interval_failure_matches_whole_run(monkeypatch, failure):
+    import methane.simulation as simulation
+    from methane.audit import PhysicalAuditError
+    from methane.cancellation import CancelledOperation
+    from methane.lifecycle.fixtures import illustrative
+
+    c = illustrative(Config(), commission=True, aged=True, policy="condition")
+    c = replace(c, scenario=replace(c.scenario, hours=20, horizon_hours=6))
+    weather = prepare(c)
+    whole = run(c, weather, ["Greedy"])
+    execute = simulation.execute
+    calls = 0
+
+    def interrupt(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 12:
+            # Service preparation and lifecycle.begin already changed the runtime.
+            if failure == "cancel":
+                raise CancelledOperation()
+            raise PhysicalAuditError([], {"test": "interrupted after preparation"})
+        return execute(*args, **kwargs)
+
+    first = Continuation(20, 20, "mid-interval-failure")
+    monkeypatch.setattr(simulation, "execute", interrupt)
+    a = run(c, weather, ["Greedy"], continuation=first)
+    assert first.output["next_hour"] == 11
+    monkeypatch.setattr(simulation, "execute", execute)
+    second = Continuation(20, 20, "mid-interval-failure", checkpoint=first.output)
+    b = run(c, weather, ["Greedy"], continuation=second)
+    combined = a["records"]["Greedy"] + b["records"]["Greedy"]
+    assert physical(combined) == physical(whole["records"]["Greedy"])
+    for key in ("field_operations", "lifecycle"):
+        assert [r.get(key) for r in combined] == [r.get(key) for r in whole["records"]["Greedy"]]

@@ -7,7 +7,7 @@ references (notably the optical surface and service ledger) are retained.
 
 import importlib
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from methane.siting.store import digest
 
@@ -43,7 +43,12 @@ def classes():
 
 
 def pack(value):
+    import numpy as np
+
+    from methane.services.adapters import BUILDERS
+
     nodes, seen, allowed = [], {}, classes()
+    builders = {id(v): k for k, v in BUILDERS.items()}
 
     def visit(item):
         if item is None or type(item) in (str, int, bool):
@@ -52,13 +57,9 @@ def pack(value):
             if not math.isfinite(item):
                 raise ValueError("Nonfinite checkpoint value")
             return item
-        import numpy as np
-
         if isinstance(item, np.generic):
             return visit(item.item())
-        from methane.services.adapters import BUILDERS
-
-        builder = next((k for k, v in BUILDERS.items() if item is v), None)
+        builder = builders.get(id(item))
         if builder is not None:
             return {"builder": builder}
         key = id(item)
@@ -137,6 +138,59 @@ def unpack(graph):
     return visit(graph["root"])
 
 
+def freeze(value):
+    """Copy the same allowlisted data graph without constructing wire-format nodes.
+
+    Primitive values are immutable. Containers and runtime instances retain shared
+    references, including the service ledger/optical surface cycles. This is a
+    transaction image, not a general-purpose object copier or executable pickle.
+    """
+    import numpy as np
+
+    from methane.services.adapters import BUILDERS
+
+    allowed, memo = classes(), {}
+    builders = {id(v) for v in BUILDERS.values()}
+
+    def visit(item):
+        kind = type(item)
+        if item is None or kind in (str, int, bool):
+            return item
+        if isinstance(item, float):
+            if not math.isfinite(item):
+                raise ValueError("Nonfinite checkpoint value")
+            return item
+        key = id(item)
+        if key in memo:
+            return memo[key]
+        if key in builders:
+            return item
+        if isinstance(item, dict):
+            result = memo[key] = {}
+            result.update((visit(k), visit(v)) for k, v in item.items())
+        elif kind in (list, tuple, set, frozenset):
+            result = memo[key] = []
+            result.extend(visit(v) for v in item)
+            if kind is not list:
+                result = memo[key] = kind(result)
+        elif isinstance(item, np.generic):
+            return visit(item.item())
+        elif isinstance(item, np.ndarray):
+            # Apply the same finite-value check as the portable representation.
+            if not np.isfinite(item).all():
+                raise ValueError("Nonfinite checkpoint value")
+            result = memo[key] = item.copy()
+        else:
+            name = kind.__module__ + ":" + kind.__name__
+            if name not in allowed or not hasattr(item, "__dict__"):
+                raise ValueError(f"Unsupported checkpoint type: {name}")
+            result = memo[key] = object.__new__(kind)
+            result.__dict__.update((k, visit(v)) for k, v in vars(item).items())
+        return result
+
+    return visit(value)
+
+
 @dataclass
 class Continuation:
     total_hours: int
@@ -144,8 +198,10 @@ class Continuation:
     binding: str
     checkpoint: dict | None = None
     initial: dict | None = None
-    output: dict | None = None
     utilities: dict | None = None
+    _snapshot: dict | None = field(default=None, init=False, repr=False)
+    _next_hour: int | None = field(default=None, init=False, repr=False)
+    _output: dict | None = field(default=None, init=False, repr=False)
 
     @property
     def start_hour(self):
@@ -164,12 +220,27 @@ class Continuation:
         return unpack(value["graph"])
 
     def capture(self, next_hour, scope):
-        graph = pack({**{k: scope[k] for k in FIELDS}, "previous_row": scope["rows"][-1]})
-        self.output = dict(
+        # Keep an independent transaction image after *every* successful hour.
+        # Encoding and hashing the whole history every hour is unnecessary:
+        # only the last committed image is exported at a partition/cancel boundary.
+        # A reference to the live runtime would be unsafe if the next hour fails
+        # after mutating the service executive or resource ledger.
+        self._snapshot = freeze(
+            {**{k: scope[k] for k in FIELDS}, "previous_row": scope["rows"][-1]}
+        )
+        self._next_hour, self._output = next_hour, None
+
+    @property
+    def output(self):
+        if self._output is not None or self._snapshot is None:
+            return self._output
+        graph = pack(self._snapshot)
+        self._output = dict(
             schema_version=VERSION,
             binding=self.binding,
-            next_hour=next_hour,
+            next_hour=self._next_hour,
             graph=graph,
             graph_sha256=digest(graph),
             scope="Retrospective execution runtime; never supplied to dispatch or diagnosis",
         )
+        return self._output

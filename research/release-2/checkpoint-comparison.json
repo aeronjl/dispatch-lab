@@ -1,0 +1,32 @@
+{
+  "version": "release-2-checkpoint-compatibility/1",
+  "before_source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+  "after_source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+  "original_checkpoint": "5dd0d861aca5bbe0bd69d55234ea5e3a53c0ac35e5a44c704d3939f6379bd000",
+  "start_hour": 1337,
+  "end_hour": 1361,
+  "same_interval_records": true,
+  "record_sha256": "a4e796dc94e4f667e6c1e1ac7d145822fe6ea5a396617232baf86471464b61d7",
+  "before_seconds": 50.137507708976045,
+  "after_seconds": 24.425871249986812,
+  "aliases": {
+    "ledger": true,
+    "effect_port": true,
+    "surface": true
+  },
+  "tests": {
+    "passed": 10,
+    "scope": "Partition continuity, cyclic/shared graph identity, old wire format, cancellation and physical failure after runtime preparation"
+  },
+  "scope": "Explicit compatibility experiment from an old checkpoint, not a resumed original study or qualification inherited from old source. Complete physical, observation, service and lifecycle interval records are compared; chronology starts at the same committed boundary.",
+  "artifacts": [
+    {
+      "path": "build/release-2/checkpoint-before.json",
+      "sha256": "9e697ec849cfc6a999cca1b6edacfaacf65aa19dc9a995d7fcb490f5c9846fc2"
+    },
+    {
+      "path": "build/release-2/checkpoint-after.json",
+      "sha256": "cb2fa1943b8018b949d4c86d9fc0dc93476305b04e2bd95b22d3f8264ed3021e"
+    }
+  ]
+}
