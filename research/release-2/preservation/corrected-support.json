@@ -1,0 +1,2286 @@
+{
+  "parent_edition_id": "af3946f506274c748b921ca6b601ad90",
+  "edition_id": "df24fcd3a621402e9519ceced06b64b9",
+  "parent_report": "e8606ab062224cc892541e10f5a48cf7",
+  "report_id": "8109383253704fedbab9757dce90ea8f",
+  "original_source": "cfdbca13648e8e2cdc2b553c1f1b7378f9e70b4a876eecdb2c31ef0ea5377fa1",
+  "source_matches": true,
+  "case_set_matches": true,
+  "completed": 126,
+  "total": 126,
+  "matched_inputs": 126,
+  "matched_traces": 126,
+  "matched_outcomes": 126,
+  "matched_events": 126,
+  "cases": [
+    {
+      "case_id": "d1d7b1ecf7001794aa29523c",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "234f2f4cfffdf55fadd1c21f",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d532a1cfb27429f205d89d6e",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "219a96cf6c8f6424317b280c",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3e0d558b1b65e79cf3adfc51",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "38898b916b860e3afa41bdce",
+      "label": "Declared support available \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4b5c744ff84b146d0f457d80",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9497fe09b495f6769fda4e1e",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "99ab157711e2d264ffd69449",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5a82639cbb29984d9932e66a",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "62e308e1dea807ae70d05859",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "17c8681a519a34f48c71b3b7",
+      "label": "Closed access route \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "77e0089cd2925e0a1243b2dd",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9d159a8dc02c1453c9926dcf",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4d91245dddadaaa7912f8d44",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f36f3cc3ddcbaa9f38b4d9d2",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6ee5fd5c88eed983894ade87",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "09e3336b4552ad4eabe160c5",
+      "label": "Charger power-stage failure \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f87f6644fe8684e551fe206c",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7c03e86eafb9a835436c4717",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f0acc54f8b7179f320e67d55",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6687657fbbb5e2a04d51ee81",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "630fbd8e70116a63cccfcedb",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cc11580bbe4e00a9366de299",
+      "label": "Communications unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b16c992f25f76f7f479f803b",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "23d41cf95c83a4a58a155192",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b278884180b63e1f1aeb8841",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fd32b024bb921315eec240f7",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "97ff9bd2adf9fca52395b79f",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "98edcc29e7cc4ee087ccb39d",
+      "label": "Crew unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "56a465004ddceb7a1dec8c09",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "506ef16a12b88fa9084020c7",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4c28402cbb87d89ab250fd3e",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5ac3c73f829b97725c3df9be",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "231043c3c8173f50226dafa6",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "322f425aa26384e6977ac8aa",
+      "label": "Flow reference unavailable \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1243d5fc1a8a1f50395a63b7",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f1bbc043957736c197accb91",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2e4e07899c22f1af57691baa",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "15b278b6c5e99b64b5f35fef",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "427da16971e96aafef8c949b",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6afc508c2605e378ad36e2b2",
+      "label": "No local or upstream repair kits \u00b7 Reference plant \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e23ff4aa0e23b6259739721b",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7fa6e07e83dea7f401e31600",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e4a52b7b1a78eec9190ed055",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7608cdb2c35b0b57442a2e33",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "89f0d1b0c79d23d1e3a695c2",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7fabd3b1e4728c3f1ae8a2fa",
+      "label": "Declared support available \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7be1da7b3ba0b9ed94a6b165",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7c8e062099012ac3dc08b673",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6d30195323a043a239b58970",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d3bf533cd5e506d9c76bbb66",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "df0aea4116ec4a0cbd5515cf",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d9ffbb6691944a0684f0717b",
+      "label": "Closed access route \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7ab06896f1ecfc7aa3bd21a9",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "331899d257a7c725a30b8cce",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3a1d053a109e2c17c50caea1",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9476b5b35ec79fa77972cf06",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5d751bfc0207985bffba6aef",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "285bedab4c3e68d193013c56",
+      "label": "Charger power-stage failure \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "814757ae0224c69baed4b068",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7a0e281d6eccf29cba3a6826",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "23a25c100754af02c2faf6df",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7a405cb4d84a58399e6d40fe",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d87667db39ab7aed5d75bdf3",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ceecff130d2aa65bff1c246d",
+      "label": "Communications unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8c8700526c92d0decf55515a",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7f60fb07f60568d034c8ef21",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c9e384ffe955152481e83ee5",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dae4058c9049f43396f121bc",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c13fdee4878d75e7946933ee",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5b716ff6924c1274136471c7",
+      "label": "Crew unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "30472e7089c6e7aa47dd9f18",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "880530cce922be5d7a73c95a",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f2a2301c7ec97ce6d924f268",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5f71a0d69c279c796c12d5c6",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "be2a791c20a2017c8ada51da",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dd57be878c61842bd0f9a641",
+      "label": "Flow reference unavailable \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b41cf377b4eef31c9b5bc1ea",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e7d50ab332f46c577054afb4",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "896592f7d5391365faf1db9a",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5ac39fe0fde76745a8acd00a",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0d107067ccb4d1f7b0031067",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "27d47e5526f5247424fee1b4",
+      "label": "No local or upstream repair kits \u00b7 Long crew response \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d21e0e6faeedcce444694167",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e1e64939b35fe6a208a5e6b5",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6af9131ac886805779fa08d7",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "08c83651ab9ff5d51280991a",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3f110ca6da1f27f5d73acf44",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "29f422946b332372bd580c3c",
+      "label": "Declared support available \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "46cd471f5d170e1ceeeec886",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "87dead91167a49830be3babd",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "79a58ed724feb0d2d32faab0",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0bb062aeef32414c1c284aad",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0d8cf93b88e3602cb5acbc79",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0bb742a758581cc11ab23ec2",
+      "label": "Closed access route \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1badf86c284e7fdeb7480cef",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "508f68e9bda6914bf569e3d8",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2435fec6ceb41ad31d17f492",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "205c91676b8656dad93f2d7f",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "abaa0dc026e3efe403a1e282",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2ffd39739f5774f03c9eacbf",
+      "label": "Charger power-stage failure \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fda46407674ae1e36dfeb685",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0b9a961a466a99cb8b87a61e",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c93d7968dbac100c7193d279",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2ca1f1083741952a39b9eacc",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "da8c01d0e4df35083f961717",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "45ba31fd839299d9d672e090",
+      "label": "Communications unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ecb72a9911d892e5e571b743",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3692a0551e789b626c4ecccf",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f3aee2ebb90363cc349ad547",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1259a8e2bb3920458cef00dd",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "924679e4276bf82d3aee43fc",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8b980db142ee645252f3f767",
+      "label": "Crew unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5d7a576b99ef7307eb78c758",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1ae7e422e8a99a4a8edcb28d",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d255942450f2fa30713222e9",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bbdb714f2242440df2f1987a",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6b5e3aae8497ff0b0e9ff690",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "497a1a3a647f5e83dc93fae2",
+      "label": "Flow reference unavailable \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9ad1681da0c381bf4f0f073d",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6d6fd5293e53becb8c37aab9",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9daeacae2f6f3f67931538cb",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3cfc28a9090127ef4560d961",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a7341d187585169633b4e9c8",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No recovery or restocking",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0527557f88a73293db2af808",
+      "label": "No local or upstream repair kits \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Finite recovery and bundled support",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    }
+  ],
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states."
+}

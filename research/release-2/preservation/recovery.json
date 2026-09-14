@@ -1,0 +1,2610 @@
+{
+  "parent_edition_id": "8df6f25193064012bfa41e8a6bb2407c",
+  "edition_id": "fdadbcf49fff4e18841a4c9aa0a6a9d1",
+  "parent_report": "191ba94cff3a43b389bc2ccf8b8d75b0",
+  "report_id": "18ce6d7f58604cf8b1c6c5a775161204",
+  "original_source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "source_matches": true,
+  "case_set_matches": true,
+  "completed": 144,
+  "total": 144,
+  "matched_inputs": 144,
+  "matched_traces": 144,
+  "matched_outcomes": 144,
+  "matched_events": 144,
+  "cases": [
+    {
+      "case_id": "cbda0712beede3fa5643c2fb",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "676202c66f1d018057523da9",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4a1437524485136184a6b535",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ff71691658a0d4b40ee6250a",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e61d8e4455fe0865682d75ca",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a816cef864645b039218b242",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "545a8587e9ae2ad776ef1b46",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6047769bd3616ff8a4a7c6f0",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5716d37ee2cc40f8ed14dcc2",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7ccc27966f636af4c0ce4f1b",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9d27b434195743cb38a8136c",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "74b45d145e162c816135cef0",
+      "label": "No injected process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5f4f561847c20a424b72c8c6",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "02d7559064e9d75e3123de65",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a305ed26d43257e06b5c9ad3",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f831cf9125f3f3cf96567ae1",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c360c3ae16c9f8b90a824b17",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c6a01815f9fec0e0f2d5fdad",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6284c6f5a5f6b5b904a3694a",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "536d64cac9e52738a012bdc6",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5434fbb7af7d3c98126a3b05",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a322d9d245841282269c094d",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "28b12a9b55b9d990b91a2eb1",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e3b3253bb92ba9992ad358d2",
+      "label": "Latched module trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "667391d122baf37b37097460",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "35c9375dbb3444f46fe500ab",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8cf76bdde99fcd4c7c2291eb",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c694657883c95a0e276964a9",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "feea1cb1f4f42197c4611b1e",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0baca0ec7e241f30c48876a8",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e793722474e1f1afe303b66a",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2ef1ccacf2acd1f3e54a4079",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3eeb5a341bf331c69020b67c",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6c6d0e91d5338da204c73e18",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "458bafcd2366b3393673cd26",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c39a6690b04fe659aa0f1fa7",
+      "label": "Persistent module damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ef7f220a038b53c52425551d",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7fb2bcbb288fbdd44bc312f1",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7633cf6b4241d91edfd64c02",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a313020684b273f0bf408e7b",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c79db3dc0f8a4df6847967da",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "32b08d4b137b14486be44f5e",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e0b552ec3cd3cf84918d3010",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2b239855409e5b601c4f1c09",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "90639c0dedf5167eafb797c1",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bb32d69f1a70cf10e3419486",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d740bd3e2568c74879c4b284",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1e2cc69d20d7dc8d87bea368",
+      "label": "Persistent flow-sensor bias \u00b7 Reference plant \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1579c8bf372839d6d113c867",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "be5bfa1b02d47100a3b8c525",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "577c9d9f89a5d7d84f74e2d8",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0975aa6be1fd3b9c82365d5a",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e7c077d3235d7fb42603ab01",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9a648ebbf58fc9eb8e4347b6",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bf68fd4545085b6a91eaef05",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "73890f1b10677e531e4f23fe",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5104f1972756fe8abb317e46",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "44b9b59e1da5a93106f501d9",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3e67243dda14d53893d31b50",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2400fb807419345971976c3d",
+      "label": "No injected process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ad2e8cee9806a9856f441192",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3f2f75f0af9aa11f98fffc8e",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "82e58898094fe2981bce9fc2",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f2b96be302db0fa4353b14ca",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6773ef4aea6cb33c63ced44e",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "855a31c22c0d99a0431d5d26",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "442ff145c418409f8e9fe838",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9fc93aa7fb09b0652a668046",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3a6b494ac63f04a6e21735ed",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3bd86e475b17e28c126f144c",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "36d327faee3d2cd62ab27a89",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "652933d8794e1038bc7a33c4",
+      "label": "Latched module trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "929a4e0cb7712c42dd23af22",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "38df145e882cb008d2a397a5",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8aa519ce3ef91053933a6de7",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "53c558c7838a11b427ca24cd",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dc61837109c630ec658a6b11",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8eca997d57485e514852b9c9",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b71e7e97251c47623af987f0",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "34b0ea3a8542a7c1267d047d",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "15719b50ac5937a3f105ee90",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "abd73f9c52ed72cec7ea65cc",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cfe2923f56b5dbd1ea757e86",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "27dd9f5747fac4383c71508d",
+      "label": "Persistent module damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "48770eadf832dc3938cf541f",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dee70593519d2add85eff02d",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "42d5564908989b725866ebe2",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ff723498ff6af8027be3bdc1",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "84a8ea017eb3713f105baf50",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bab97f99685657a1f0624cb1",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ce0ad902d236efb3e9c4f44f",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "38cdfd19c837176ef7feee11",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c5b1333b1b3b4147eecd85d7",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "10844b4064064fdf850be38d",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0e33223838845686a2812905",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "02f20f0d5df6f6069657d9ce",
+      "label": "Persistent flow-sensor bias \u00b7 Long crew response \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "547a7f656af1be4ed158b075",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2d511f9040bc5c95d51f0029",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e10b7e1e29ba64c91c5aaf84",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4dab62d05bf7c15ac6743d55",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2a06be5b08ecd80c7a55ecdf",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6879324b5a0462bb8f08bde6",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dc8743ba7f94cd9c0c458b6b",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "08920b09b43ebc14cf8591c3",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "28557a5b2888271c55234bb6",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ca59f2626da34c2ad3d5ff1e",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a5a54c61b76e218a18c25c34",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "79be92c46acda2364c30d13c",
+      "label": "No injected process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1199542409424d0fa590022d",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "746c11915ac66ae81c0d5da8",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e2af0475aa5531e2b4a58978",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b0eb09504cc367ae5bdc7467",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e9b697d7ab0135a2484dbc9c",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f674d6ae6af71789e7e533c7",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "121accc42cb585107ff430a5",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2cb0bd64cbb0b904200c3001",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e8291cd39c00e2a22ee47b91",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6255ec96f3a91715d2fa66bb",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "40b9d2923220640ea93b1f94",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "be7a0548aea3a5034515edad",
+      "label": "Latched module trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "eaf2cfcf99e6a35b872342c3",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c3c873c721a3cfbb87e3e070",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a1156c977646f78d7600d219",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "87e3cb1028ea8791ef766eec",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ad5a70c0b4ed374eb16e0c97",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "46831b16e50d760c6a4132cd",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f40e9c4b1dad714c2a78ac5c",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ee8257c0aaaeeef71f8c07c4",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "82ec990cbf5b9ce5c41bbabb",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "08bdcc54e95629f63a5bc854",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5702bf2951c0e7ff7d133715",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7de3e659b749a9ba143d5b25",
+      "label": "Persistent module damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "70c25fc4467ae47632d4fa33",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "36396028bcd52c8c8b7269a2",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a433f5fb48694739c7cf7c54",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cc295f4f24276e56c3531ed9",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f5cf1a23290791d799f3e1ef",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e86e54a76d71e7dd1998cfe5",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7495878c9b89426aae5e3d51",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "684c6c547d45c03c5c7d5f64",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5ae9e683ae0281bdfd48a7c3",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Diagnosis only",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ccbbb42de8d8f75a74f4b1cd",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Fixed reader and reset",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "356c710ca8ec58c2646bc4eb",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "65c7903f6332c5fae77837af",
+      "label": "Persistent flow-sensor bias \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Rover-assisted service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    }
+  ],
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states."
+}

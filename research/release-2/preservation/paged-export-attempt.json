@@ -1,0 +1,8 @@
+{
+  "version": "release-2-export-attempt/1",
+  "status": "stopped-incomplete",
+  "path": "build/release-2/preservation/.recovery-reproduction.zipkfj1wm09",
+  "bytes": 2911851494,
+  "sha256": "27e7d6dc290fda7373a7dff620bd052bdb6ac2d0b5c9ff1a26eb2d0f5903fe06",
+  "reason": "The existing paged reader multiplied a 144-case study into more than one million HTML/JSON members. Stopped before export completion; this file is not a portable or validated bundle. Original source, archives and comparison receipts remain untouched. A separately identified compact reader will preserve all calculated values with far fewer repeated pages."
+}

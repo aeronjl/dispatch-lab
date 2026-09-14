@@ -64,3 +64,5 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Uncertainty and autonomy](uncertainty-autonomy/report.html)
 - [Autonomous operation across sites: matched qualification](autonomy-qualification/report.html)
 - [Release 1: qualified reference autonomy](release-1/report.html)
+
+- [Release 2: deployment and the service lifecycle](release-2/report.html)

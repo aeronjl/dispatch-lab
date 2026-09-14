@@ -1,0 +1,1973 @@
+{
+  "parent_edition_id": "75ba0416010b48d2804a0511a41632ae",
+  "edition_id": "685e25a6475c434786f7c9cf66d9ff0d",
+  "parent_report": "8aa992cb3d2b41ea905e4ecf54241171",
+  "report_id": "b2c51133c4db4f74993673aaf21b4139",
+  "original_source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "source_matches": true,
+  "case_set_matches": true,
+  "completed": 108,
+  "total": 108,
+  "matched_inputs": 108,
+  "matched_traces": 108,
+  "matched_outcomes": 108,
+  "matched_events": 108,
+  "cases": [
+    {
+      "case_id": "69ce6674c596a6802bb4aead",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d6ed9501892c79cb9ca578e5",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8aa5b9c32d434f8a8ff084ed",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1439eeb8b9feda4fefbbc75e",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0b7b21fcb302808a293dd0dd",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6422072875815b86db4a7d06",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8d487c43cd5bf1dcf6d46ac3",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e5ff73f2b2e478e2958b6fee",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "71d90e0d2a727ff1eb14a926",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "21cd6203266674efee0f693c",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "35ee9bbd47464b13529209b3",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "401dd59245bef55ab4807cdd",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "60d81a7beea91db5a0b422fb",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "13bcc2533d541624b12754b3",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e312f9bab4e912c8ffd75188",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4b30ba9c7ab301a2b50235b0",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c44772db0d2702971aa52f81",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "90a73e983445abb60ce06185",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "50826ed02d43cb98bd2e1abc",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c93e247ed01bafa727072a69",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f3d0928dc9bd9c0f1bff779e",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7169da989ebe994fd98f4391",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "af7f2bde91ad8360e1d0b0d1",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ef07dd77a774d2b541bfd3a3",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6c765fc12b7ae6d0b4861a54",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "89d7255247108e30a5623f7a",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "88bfa233cd28adac0f0077a2",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "470200c7484affff40f50674",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b887e2bdbf4ebbba998f969d",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "229f96aca92497c843335a3a",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8e688335f750ff1a46d508c3",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "483dbe588f71c47721be4427",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "baaa2a2fa270abc7c970fe34",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "454b8faf4b85612a0501f741",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b431fccf7c65b752f9fee252",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1bf149cbec462411c86ba59f",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c11e2eacdd73b3f960ca8376",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "799ac5ee1f77914b98c19542",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a260d12f0db2059e4d893d44",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6987b09930a0235a5a7ece2d",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2bba3107dd157face12699df",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "54346de5ee634f8e63b83d98",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "29d8c05c01b06debac05c13b",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "80cba3f04335a7f0ebcee8e4",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2f24ed8018e08c798bfb8041",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8633ca534de608da6503fea3",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a77c7aad1ee4bc3e4467054f",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3542ec4706a7d7850046214e",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e9aa9ac2b947fe9e77e965e6",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "15ea5c3b1445209862a55819",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "efd58e7e11b86c0dda3447b8",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5179c2063dc00c8e81fe6799",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cd7bd483e28601914b96067f",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2e2ae71e21c7aac7d9797c50",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c6bddfc6fb30965694766eb5",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "71badf52ce262dab5b837822",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9ea56f5ecf8232cf0768a5c0",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "aa13411973a9c5c227d56bc6",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3b74c2dbaf1c83977797864b",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "90e4aa8a7b94efbbd5b3f86c",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c1c408d204be556f6333f180",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0c1b933c62b629c6a8743beb",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5462e2b9625c991356001e46",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fd5ee239593c571cc5f1c278",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6e1236610637e2f979c2b7e5",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "736b42c362d1ae50ad4f6221",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "27102f4d39e808f89da4ac87",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a0b4661e486fc50e32555e55",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "04a4137a18cda7b4d80b54d5",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "51d694012e0ecee0dd3b43cd",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0d01e9c8ab433914d9ae53ef",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fa31127f236b2277c14e8089",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e826ab104622e704d2d40563",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b8d673b5873af38f00ee1089",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "eefb45abad4932730ee0fed7",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e51795ea0b23563621c45cc9",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7738308904e3ff4508288d99",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f257ab46ad345cd595f9ed5f",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "67c15346bc3fcc39fada72d5",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "32bebd6ba7af87a5a4420150",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9f21864ca6a529b9e0afa38f",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1c26bb43105543d6a8372906",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "57e3ae224b4f5bbd30a71c70",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b58639ec7f656f0dccb4c914",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6adf062970562e66e5ab0952",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "46cb2d1bac5ae2ce4b9f74f2",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3a2061210eaced14848162de",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0e17f2ef3c71c9bf3c733ff5",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a654726b438ae4be94f8d9ea",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "79003c34d5eff18f79db60b3",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "16a50149d472a75b55c51148",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a94ad84871b3fe482fb822cb",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "162db57d4dbdeef87e13fa56",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "73af24b2f02fdb2f26e7970a",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "46a6a3d1faee0ac463dd0b04",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b0fa01f18f9db464cf050ac3",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d1539c1e27fce53670d37213",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d7d0838243b69ff8c657c133",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "28e1d986b5a295a01f3418fd",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dfde8214ffe6b00bdd669d89",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ed1ea60fd012acd038252e3e",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "94421c99a105dd3d77360ee4",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d3d5ba4cc47294fb4a450444",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f090d58db8ef1f2c474e4a89",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0724201bf9cf9ced82a47be5",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Owned resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9231764e0ca8ded8523e3f16",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Shared resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c18b65e308b6e0d485a4f4bf",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Contracted resident hardware",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8eb04742d32efabf1fa1ff1e",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 On-call portable and human service",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    }
+  ],
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states.",
+  "publication": {
+    "edition_id": "685e25a6475c434786f7c9cf66d9ff0d",
+    "report_id": "c1da7a75989446569c2ee879b61763b9",
+    "status": "complete",
+    "archive_verification": {
+      "schema_version": "dispatch-lab/study-archive-verification/1",
+      "status": "passed",
+      "checked": 108,
+      "scope": "Sealed recording identity, applicable study context, and referenced audit/service artifact identities at publication. Not empirical validation."
+    }
+  }
+}

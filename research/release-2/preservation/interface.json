@@ -1,0 +1,1325 @@
+{
+  "parent_edition_id": "1b349bb0f14649dda92f69739d2568e6",
+  "edition_id": "690b51568b6c4702883cd6c9c7064cbc",
+  "parent_report": "113760c723234797bf2a2e0f9311619f",
+  "report_id": "b15128b2122b421fa0b777793ec14800",
+  "original_source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "source_matches": true,
+  "case_set_matches": true,
+  "completed": 72,
+  "total": 72,
+  "matched_inputs": 72,
+  "matched_traces": 72,
+  "matched_outcomes": 72,
+  "matched_events": 72,
+  "cases": [
+    {
+      "case_id": "bb3d5a3c468be7d77df67375",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e54bd3b79ef92ad1dc376c0d",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1c2a6deb974edaed67a228e2",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "23d19d1f7bf19211722f0051",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "84574000e7d6225e1d657738",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1a524b3d6309651a25cf558e",
+      "label": "No process fault \u00b7 Reference plant \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "15532889e83f9df6782fd3d5",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "95da92d30057666d6bc3cb96",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6a06f1d62b8a86d3e7261177",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ca15cd14a8930d2f2b95918a",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "94fbe465a9e61a344c1011e4",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "67ff17fb64ca49bd9f97fc0c",
+      "label": "Latched trip \u00b7 Reference plant \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d3e7d01ba6dfbc96a6d25f90",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b65d1370b28b086b1dcffa41",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "42d761209832d0254e35b617",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1715ceacbfd455fa054dec2a",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cf6a9a58e5cfe1632af03026",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bca76bee30ed48394ab60167",
+      "label": "Persistent damage \u00b7 Reference plant \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "efffbc3f7f7328ebab77cd8e",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "43141c5c709078ddbca44d77",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1e79609cb4b27abe0cdc527a",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "397ebf7cd808b9b9aebd8383",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2db8c1aaa20cefc2f72e4aed",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8c79dcff60b4962821d42239",
+      "label": "Trip with mobile reader drift \u00b7 Reference plant \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c257b6071cfe687a7aa0bdae",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "38fb2486b5e067e60b4787e6",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "97a1f3ea813982409e3e4c72",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ddd3dd1e267a31c8250c4a10",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "084b3a07543b08021c88d731",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dea3623dc6a7f4747287bf95",
+      "label": "No process fault \u00b7 Long crew response \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "75025a8be4d86c375451a0d0",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ed7043f1f15fd8b8f0f6e70f",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "db25b8be4ee6a91b9cc74a15",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "800cddf4bf41ce423a37bf55",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ba2df35befac67e7be850b21",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a51f6326bc5952f1bbde378f",
+      "label": "Latched trip \u00b7 Long crew response \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "680d5f2828c2cc9ce4fea664",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bdd04fc130448c47bc04b3fe",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a8baadb17b8db99f2d20bd54",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "37386063a5190998edbc510f",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b5f42e497e8a22e3aca4d517",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "61eb0abf3d85def76805e0d3",
+      "label": "Persistent damage \u00b7 Long crew response \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0e3cbaca151137b0d0d1a129",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f835a49f32877b2bbdcf24c8",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1a31de6aca891be565c5c609",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e2a75ea524e540fc0e701f2b",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9d543269ac8a23fa10aa62a0",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b3cdd01bb7c50d09ad482fe1",
+      "label": "Trip with mobile reader drift \u00b7 Long crew response \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "aac47af9063d39f8a62674f6",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b3b1e734749d7530d70d61a3",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "648af19dca80b997f5004906",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8a20b2c12638fc673364ef1e",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c09f9864c84e95cc7d421f3d",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b4aa339b5deda92a15404f53",
+      "label": "No process fault \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c555646bc9360326dd8a95da",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "935824e239b0d6ddbae392f4",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3f41ed859021e2882f217dfb",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b8aedbe670612e419b9a0803",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3b590146279eaa3a2d7129e2",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b18eeb74f5e2cd43ef463f2f",
+      "label": "Latched trip \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e2855ae1d0704fd8993071a9",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "de59bd8e1431e7015548ff7e",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f5cbd56da7be60507cbbf38c",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d5e0ade65450c755dc1a0b74",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e107a28707ca1fb21e36e737",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d0d3fbdfb27c87a09cd02b66",
+      "label": "Persistent damage \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e9160e0b4f4758235ad21185",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f4e24678e0b669a055c925a3",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7159b2f0d1362bea6c04349a",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "40a93591a16a9574e7c2555d",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fb4f8579846872f40ad637c3",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Enclosed contact",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3e4a3586029a559484418dcd",
+      "label": "Trip with mobile reader drift \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Prepared contact test port",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    }
+  ],
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states.",
+  "publication": {
+    "edition_id": "690b51568b6c4702883cd6c9c7064cbc",
+    "report_id": "bd493e6167cf49bd8c4e4b50971240ca",
+    "status": "complete",
+    "archive_verification": {
+      "schema_version": "dispatch-lab/study-archive-verification/1",
+      "status": "passed",
+      "checked": 72,
+      "scope": "Sealed recording identity, applicable study context, and referenced audit/service artifact identities at publication. Not empirical validation."
+    }
+  }
+}

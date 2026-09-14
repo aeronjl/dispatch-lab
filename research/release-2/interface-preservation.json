@@ -1,0 +1,12 @@
+{
+  "question": "interface",
+  "parent_edition_id": "1b349bb0f14649dda92f69739d2568e6",
+  "edition_id": "690b51568b6c4702883cd6c9c7064cbc",
+  "source_hash": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "source_capsule_sha256": "df016e43645819de38e1b091cf689b15ed0afa2af49740576fea05a4c631fefd",
+  "cases": 72,
+  "status": "finished",
+  "scope": "Explicit Release-2 resumption of the saved preservation obligation; original frozen source and protocol, no new environmental samples.",
+  "worker_pid": 26902,
+  "worker_exit": 0
+}

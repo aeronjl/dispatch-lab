@@ -1,0 +1,2610 @@
+{
+  "parent_edition_id": "1f03b27c105240ca9fb48c37a194bb8d",
+  "edition_id": "fedd20db32574d18907db8ec4309b0c4",
+  "parent_report": "829318c466004804ac33d3e84e5725fa",
+  "report_id": "9839d5a9931c4d7481310a90517cfed9",
+  "original_source": "c24c58302b9954757870bdc4cbdc119c81826fae986cc61aa2c2a6626507d78e",
+  "source_matches": true,
+  "case_set_matches": true,
+  "completed": 144,
+  "total": 144,
+  "matched_inputs": 144,
+  "matched_traces": 144,
+  "matched_outcomes": 144,
+  "matched_events": 144,
+  "cases": [
+    {
+      "case_id": "2370715ab1414da239a2118c",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c91a8f47e5e52e6d78eaaefe",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8bb4a75db284120e3c723c4e",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8dbc8cdd8573235844ab69a3",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "04c993eb70c4b8d3fe5358b3",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7ffd003fa50aded988a562dd",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ff017125684b14c95695f692",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4f648c8fa34ab804d2a3e247",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "abd7a3933408af54f9f7d514",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5559866de2574cc97df8477c",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1825a8d315e20163d4dc245f",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6ad0f5a2684cdd076e1847fa",
+      "label": "Reference process and converter \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "017be157e2920e5c18c89c02",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0ea0bc566a33abc3f13581e1",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ab5cee78188dce54ab28aeec",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "57f0dbf8421ca5f53997cb5d",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0c9e2f34be6b1d83430aa869",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b58179aeee431f751d996b46",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "68c0a4d4dae33f7b508bae17",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "94b23fda02b2e085bf24d3fe",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6b78865bf58eed608022d287",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a54c9ff12fc9fd6f645bb471",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4c3c005314d2ba01561770ca",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d112fe0d988188c5016c6930",
+      "label": "Converter at 35% of array rating \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "254fc070acb89a70ccc3c350",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "95fcada204eaeac74fd5cd6a",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "22512538a8db54f78fbb3c77",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c668c988f6f85069531f7fe6",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3d61073d9519e7e2c4b21098",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "dcad7fa4af9e777611c44c51",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b5c0ea5e666188af31795019",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "edafc0817146d107c59c0266",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a904f0147354bc89f192413b",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7f3a1b7bc6d3621b9bd6fdcb",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9a7ee48836f2e8650507ab89",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e67e3d9854dc57ff69a1fc58",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a51abce6873124f906140516",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "372b748d933668acacbf78f4",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "911e958c790826f9e835c06b",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "633f096b0e77505dd8176fb5",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a5e87b8478a558b915b22d1a",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "691a446bfd7c233289709d4f",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7516200c5f80abe1d69b4500",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6615a4973aef575329062a13",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8ea7cc7b0a256114c25b01fb",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6cc226b6f4791d49e10ad5ad",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5f3f3cc1be52e6b22823cba3",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "deefcefa4c23f57282f09739",
+      "label": "Methanator limited to 3 kg/h \u00b7 Reference plant \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7b00ca18b8a334831829cc9f",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "41e67953b9fb8e435f448d8f",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "491e59d6442662c2324ee07d",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3d372046e92e1d1c1b8f9e0f",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "91d3db93722105a8bbe3ba17",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c9121b6b889e966d15531ad5",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "35bb2cb6e4b679cc51daaa52",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c65eaf04d1011067f03fc8bf",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6382aa92073634071eac553f",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "73eee3b2b10d6447b40e0cb5",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4992238393c7d778a82b375a",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "80cd67065155d6ba7e4ba1b8",
+      "label": "Reference process and converter \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1ef1a713b11ee69575db5068",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8bf76d4730765103cbcd5131",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7e3db59633ac73972d03ef5b",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c4472c5cf4dae1ca391af601",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2229a0aa2cbe986dd6902e46",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "035b480f7c120a27a54bdc1a",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ccab9fce7b41723a9b5a96b2",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8172d921f3e15e2f4810b039",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "71e3d6025a04a8ded9366045",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5418b6180d1bbd3f04ed9fab",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6727bae29b3e0713182f4fcb",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b0ba3dc64291637251ba71c0",
+      "label": "Converter at 35% of array rating \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d3037a2b4d7535c5b9f75e23",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "42d4089563953f1ac6551f6e",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "732c7dbe1d8910e098cc49d4",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e01c3d78634af8e9e39eada1",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2edf5efe8e15e7006bf02e52",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "597b46656ce5ea5103a11c96",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b60e3b79a8b3b0bb75d5b258",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "be357bbebe7b5bedc3e2c1f4",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f79e9a392a0a939d702608e1",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "5ba5940fbc83831cc5774547",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "71a3447df13f3cd5fe94d4f4",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "93bb89d475850c53b76b8be0",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "93d98ad347da8d0f3aec1631",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3583596840a12b4aa4f55dc3",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0b803584f33514c551ae0c0a",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "f63fda416c014b4704850188",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "8628e77ca188114236f8b9d4",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "53c0b9b0d514f99f1c3dec34",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6812a112b0bb26b0234491c7",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "52d7ed0585e88b74da9d7458",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "21d1192e14921c58292e62f0",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "c24d4278523481f8e121c646",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "22ba6ab6d8ace08b4637feb4",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "50460d33176cf1789037d5b3",
+      "label": "Methanator limited to 3 kg/h \u00b7 Long crew response \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "95d1a1552b3179a6016bd62c",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4ab3f448ca0e440bb9788f9e",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "abfb0c51a5a9e0ea59c7e632",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "21d2c0d5cd475a920f76dbb9",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "79af6336fc2401dc487bf9c5",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "109783f8851031f455ed2172",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1c431a534db23d66d4ade029",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "041959f3660a0315b2210815",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "da610632baf2a04f42a90d29",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1761082c3ba030b0af88b14f",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d8b29759956edb41707a212d",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "35ff39df31523811c77d4230",
+      "label": "Reference process and converter \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "bfab1ff6be822d050a6fba17",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "155e2ebc0d8597ee8bfd3014",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7650d4dec5ce23906a05b6e3",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "063fa9d1b3255ed20ffe50bf",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e03cabd4ec5d1c528a29c0bb",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "fe570884f8231fa6c61679d8",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1e7bbf9dcf0386c47a3eccb6",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "6c547fa24caa239b1e64492d",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "a5b9996b95b6294ce1398e75",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "de8839ce7e93e9ee5eb2faa3",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "51abaa16c12564f52cabcd6b",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d689a9e4646eae5a36e7e576",
+      "label": "Converter at 35% of array rating \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "550351ae0a3e027933baf7ff",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "935d48ab083e8e04d3b0eddb",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "7d82aa50a69c0400faf50385",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "d29d0a7fdbd6efeacf4f6085",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "38507db20b682031b6f00243",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ece6f1c52c713cf0d9b3aa42",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0390a42c1b6e2275ffde8a5a",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3787d6cda1df08942b9e1374",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "9febc8c66ba2c12d739ff2ae",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "4249d94c7e117a13df7c8d26",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "91473744aa15fd5ec6c29047",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ed07f6d7b2121dadc0c061e0",
+      "label": "Limited initial CO\u2082; no replenishment \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "cbf8a999f855c732df3342c7",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "e43c1b4af24bc9b33e99ac20",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "da3ebd688aca2d712dfa9ccd",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "b40c3f99a2d37f7f04a57b64",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 7 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "893c657545348ee689aa6aa6",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "59578fb50cdb08857b583289",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "2cc4e5e328e527fed0f8a01b",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "ab93888213b37c9b13c9be07",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 19 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "0b8b93679cfe294c4ec5ea27",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 No cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "3dcad92faf263c4630f22490",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Recurring dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "1aae4f273da9cc9dba21e6f7",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based dry passes",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    },
+    {
+      "case_id": "057041cec328bd7d966041e5",
+      "label": "Methanator limited to 3 kg/h \u00b7 Half solar and electrolyser \u00b7 seed 31 \u00b7 Condition-based portable wet cleaning",
+      "complete": true,
+      "inputs_match": true,
+      "applied_trace_matches": true,
+      "numerical_comparison": {
+        "Greedy": {
+          "different_intervals": 0,
+          "first_different_interval": null,
+          "methane_delta_kg": 0.0,
+          "recomputed_intervals": 120,
+          "recorded_intervals": 120
+        }
+      },
+      "outcome_differences": {},
+      "events_match": true
+    }
+  ],
+  "scope": "Original-source numerical repetition. No new environment, seed, calibrated equipment or corrected policy. Applied dispatch, reported outcomes and event summaries checked separately; not a claim of byte-identical plans or complete intermediate states."
+}
