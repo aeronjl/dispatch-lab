@@ -1,7 +1,7 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "48ef591214c4d609338483dfaf0e9ddd96df7598c9dccf9af001d1c0a9663903",
+  "source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
   "topics": {
     "battery": {
       "assumption_review": {
@@ -484,7 +484,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.13799999999999998,
+          "duration_seconds": 0.184,
           "fixture_inputs": {
             "charge": 100,
             "discharge": 0,
@@ -495,7 +495,7 @@
           "id": "battery/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[battery]",
@@ -1334,7 +1334,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.069,
+          "duration_seconds": 0.092,
           "fixture_inputs": {
             "load": 275,
             "pv": 300,
@@ -1343,7 +1343,7 @@
           "id": "bus/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[bus]"
@@ -2604,7 +2604,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.068,
+          "duration_seconds": 0.087,
           "fixture_inputs": {
             "efficiency": 0.8,
             "initial": 0,
@@ -2614,7 +2614,7 @@
           "id": "charging/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[charging]",
@@ -3588,7 +3588,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.062,
+          "duration_seconds": 0.089,
           "fixture_inputs": {
             "coverage": 0.6,
             "efficacy": 0.8,
@@ -3598,7 +3598,7 @@
           "id": "cleaning/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[cleaning]",
@@ -4156,7 +4156,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.159,
+          "duration_seconds": 0.20700000000000002,
           "fixture_inputs": {
             "arrival": 2,
             "delivery": 300,
@@ -4166,7 +4166,7 @@
           "id": "co2/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[co2]",
@@ -5269,14 +5269,29 @@
       },
       "evidence": [
         {
-          "applies_to": "48ef591214c4d609338483dfaf0e9ddd96df7598c9dccf9af001d1c0a9663903",
-          "artifact": "build/engineering/current/evidence-catalogue.json",
-          "claim": "Numerical and boundary checks for this implementation",
-          "id": "condition/numerical/1",
-          "method": "Component tests and independent reference cases; see linked artifacts for tested domains.",
-          "scope": "Suite-level outcome; this does not imply every parameter combination is verified.",
-          "source": "8e617d4d59b812fe9cca0a7488236b4866448744ef1a77255a8f70cbc2656f74",
-          "status": "stale"
+          "artifact": "build/model/evidence.json",
+          "check_tolerances": [],
+          "claim": "Executable teaching fixture and linked independent checks",
+          "duration_seconds": 2.114,
+          "fixture_inputs": {
+            "age": 40000,
+            "asset": "electrolyser",
+            "delay": 1,
+            "noise": 0.002,
+            "rate": 1,
+            "success": "succeeds",
+            "threshold": 0.1
+          },
+          "id": "condition/teaching-checks/1",
+          "method": "Executed pytest cases listed below; the fixture checks its production audits",
+          "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+          "status": "stale",
+          "test_cases": [
+            "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[condition]",
+            "tests.test_lifecycle_workflows::test_lifecycle_essay_executes_current_model_without_mutating_defaults[condition]",
+            "tests.test_local_service_policy::test_rules_share_optical_mechanics_and_record_original_inputs[condition]"
+          ]
         },
         {
           "claim": "Calibrated against an operating plant",
@@ -6254,7 +6269,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.44,
+          "duration_seconds": 0.492,
           "fixture_inputs": {
             "bias": 0,
             "horizon": 12
@@ -6262,7 +6277,7 @@
           "id": "controllers/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[controllers]",
@@ -7629,14 +7644,25 @@
       },
       "evidence": [
         {
-          "applies_to": "48ef591214c4d609338483dfaf0e9ddd96df7598c9dccf9af001d1c0a9663903",
-          "artifact": "build/engineering/current/evidence-catalogue.json",
-          "claim": "Numerical and boundary checks for this implementation",
-          "id": "deployment/numerical/1",
-          "method": "Component tests and independent reference cases; see linked artifacts for tested domains.",
-          "scope": "Suite-level outcome; this does not imply every parameter combination is verified.",
-          "source": "8e617d4d59b812fe9cca0a7488236b4866448744ef1a77255a8f70cbc2656f74",
-          "status": "stale"
+          "artifact": "build/model/evidence.json",
+          "check_tolerances": [],
+          "claim": "Executable teaching fixture and linked independent checks",
+          "duration_seconds": 0.117,
+          "fixture_inputs": {
+            "blocked": 0,
+            "crew": 8,
+            "failed": 1,
+            "work": 4
+          },
+          "id": "deployment/teaching-checks/1",
+          "method": "Executed pytest cases listed below; the fixture checks its production audits",
+          "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+          "status": "stale",
+          "test_cases": [
+            "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[deployment]",
+            "tests.test_lifecycle_workflows::test_lifecycle_essay_executes_current_model_without_mutating_defaults[deployment]"
+          ]
         },
         {
           "claim": "Calibrated against an operating plant",
@@ -9175,7 +9201,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.196,
+          "duration_seconds": 0.265,
           "fixture_inputs": {
             "ambiguity_policy": "reduce-capacity/1",
             "fault": "capacity",
@@ -9185,7 +9211,7 @@
           "id": "diagnosis/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[diagnosis]",
@@ -12103,7 +12129,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.176,
+          "duration_seconds": 0.22599999999999998,
           "fixture_inputs": {
             "co2_price": 0.15,
             "life": 20,
@@ -12114,11 +12140,12 @@
           "id": "economics/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[economics]",
-            "tests.test_learning::test_repricing_keeps_trace_and_no_double_allowances"
+            "tests.test_learning::test_repricing_keeps_trace_and_no_double_allowances",
+            "tests.test_lifecycle::test_planner_respects_uncommissioned_equipment[economics]"
           ]
         },
         {
@@ -13282,7 +13309,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.157,
+          "duration_seconds": 0.203,
           "fixture_inputs": {
             "initial_on": "no",
             "load": 275,
@@ -13292,7 +13319,7 @@
           "id": "electrolyser/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[electrolyser]",
@@ -16370,7 +16397,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.294,
+          "duration_seconds": 0.332,
           "fixture_inputs": {
             "schedule": "produce",
             "window": 3
@@ -16378,7 +16405,7 @@
           "id": "experiments/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[experiments]",
@@ -17485,14 +17512,24 @@
       },
       "evidence": [
         {
-          "applies_to": "48ef591214c4d609338483dfaf0e9ddd96df7598c9dccf9af001d1c0a9663903",
-          "artifact": "build/engineering/current/evidence-catalogue.json",
-          "claim": "Numerical and boundary checks for this implementation",
-          "id": "hardware/numerical/1",
-          "method": "Component tests and independent reference cases; see linked artifacts for tested domains.",
-          "scope": "Suite-level outcome; this does not imply every parameter combination is verified.",
-          "source": "8e617d4d59b812fe9cca0a7488236b4866448744ef1a77255a8f70cbc2656f74",
-          "status": "stale"
+          "artifact": "build/model/evidence.json",
+          "check_tolerances": [],
+          "claim": "Executable teaching fixture and linked independent checks",
+          "duration_seconds": 0.10600000000000001,
+          "fixture_inputs": {
+            "automation": "declared",
+            "family": "row-cleaner",
+            "support": "present"
+          },
+          "id": "hardware/teaching-checks/1",
+          "method": "Executed pytest cases listed below; the fixture checks its production audits",
+          "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+          "status": "stale",
+          "test_cases": [
+            "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[hardware]",
+            "tests.test_lifecycle_workflows::test_lifecycle_essay_executes_current_model_without_mutating_defaults[hardware]"
+          ]
         },
         {
           "claim": "Calibrated against an operating plant",
@@ -18171,7 +18208,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.158,
+          "duration_seconds": 0.201,
           "fixture_inputs": {
             "implementation": "balance/1",
             "inflow": 8,
@@ -18181,7 +18218,7 @@
           "id": "hydrogen/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[hydrogen]",
@@ -19114,7 +19151,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.062,
+          "duration_seconds": 0.089,
           "fixture_inputs": {
             "clock": 1,
             "delay": 1,
@@ -19126,7 +19163,7 @@
           "id": "inspection/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[inspection]",
@@ -20605,7 +20642,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.066,
+          "duration_seconds": 0.081,
           "fixture_inputs": {
             "arrival": 2,
             "delivery": 2,
@@ -20615,7 +20652,7 @@
           "id": "logistics/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[logistics]",
@@ -22329,14 +22366,25 @@
       },
       "evidence": [
         {
-          "applies_to": "48ef591214c4d609338483dfaf0e9ddd96df7598c9dccf9af001d1c0a9663903",
-          "artifact": "build/engineering/current/evidence-catalogue.json",
-          "claim": "Numerical and boundary checks for this implementation",
-          "id": "maintenance/numerical/1",
-          "method": "Component tests and independent reference cases; see linked artifacts for tested domains.",
-          "scope": "Suite-level outcome; this does not imply every parameter combination is verified.",
-          "source": "8e617d4d59b812fe9cca0a7488236b4866448744ef1a77255a8f70cbc2656f74",
-          "status": "stale"
+          "artifact": "build/model/evidence.json",
+          "check_tolerances": [],
+          "claim": "Executable teaching fixture and linked independent checks",
+          "duration_seconds": 9.922,
+          "fixture_inputs": {
+            "age": 40000,
+            "hours": 48,
+            "part": 120000,
+            "stress": 0
+          },
+          "id": "maintenance/teaching-checks/1",
+          "method": "Executed pytest cases listed below; the fixture checks its production audits",
+          "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+          "status": "stale",
+          "test_cases": [
+            "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[maintenance]",
+            "tests.test_lifecycle_workflows::test_lifecycle_essay_executes_current_model_without_mutating_defaults[maintenance]"
+          ]
         },
         {
           "claim": "Calibrated against an operating plant",
@@ -23159,7 +23207,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.106,
+          "duration_seconds": 0.136,
           "fixture_inputs": {
             "ambient": 20,
             "cutoff": 12,
@@ -23170,7 +23218,7 @@
           "id": "reactor/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[reactor]",
@@ -24657,7 +24705,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 3.8419999999999996,
+          "duration_seconds": 4.43,
           "fixture_inputs": {
             "case": "successful-procedure",
             "deadline": 24
@@ -24665,7 +24713,7 @@
           "id": "recovery/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[recovery]",
@@ -27948,7 +27996,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.069,
+          "duration_seconds": 0.08399999999999999,
           "fixture_inputs": {
             "crew_price": 80,
             "life": 8,
@@ -27959,7 +28007,7 @@
           "id": "service_costs/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[service_costs]",
@@ -28890,7 +28938,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.066,
+          "duration_seconds": 0.08299999999999999,
           "fixture_inputs": {
             "censored": "no",
             "clock": 3,
@@ -28900,7 +28948,7 @@
           "id": "service_uncertainty/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[service_uncertainty]",
@@ -29754,7 +29802,7 @@
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/services/weather_recovery.py": "2423d0a25ea9bb4657703c72a9f8078cc933fc401495903a30bd21d0f17d9db3",
           "methane/siting/cashflow.py": "3a0817d98d35f34ccfb121d938b5838aa1a86bef1d35414954ad53cb805370b8",
-          "methane/siting/checkpoint.py": "e8c23eac6a483046549eb8dba6b0ac7fcd05d42eeee4a21dce0faaf874178cfc",
+          "methane/siting/checkpoint.py": "3d944ce6f9cea573dc0881e6d4b74ac9af341adb32e31f63fbda0d52d96e028d",
           "methane/siting/comparison.py": "9c127c34dc136dd13f42beb3f1dfbc10a84a296047e4bc101e8ff63844c0a120",
           "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
           "methane/siting/geometry.py": "4d617c67bcbbb2ceb0524487e0941dc5a0f81f4aaab044be1c4650e8c3e6294e",
@@ -29795,7 +29843,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.047,
+          "duration_seconds": 0.069,
           "fixture_inputs": {
             "acceptance": 0.8,
             "ambient": 20,
@@ -29808,7 +29856,7 @@
           "id": "siting/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[siting]"
@@ -31640,7 +31688,7 @@
             }
           ],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 3.873,
+          "duration_seconds": 5.433,
           "fixture_inputs": {
             "ambient": 20,
             "azimuth": 0,
@@ -31653,7 +31701,7 @@
           "id": "solar/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_adaptation::test_solar_adaptation_preserves_legacy_services_without_claiming_service_learning",
@@ -32590,7 +32638,7 @@
           "artifact": "build/model/evidence.json",
           "check_tolerances": [],
           "claim": "Executable teaching fixture and linked independent checks",
-          "duration_seconds": 0.118,
+          "duration_seconds": 0.16,
           "fixture_inputs": {
             "hour": 11,
             "lag": 6,
@@ -32599,7 +32647,7 @@
           "id": "weather/teaching-checks/1",
           "method": "Executed pytest cases listed below; the fixture checks its production audits",
           "scope": "The named cases and their tested inputs; not empirical plant calibration or exhaustive parameter coverage.",
-          "source": "a81a0aec58f143583ac800b8d7c2b0fbb591bea93739dad0f3d21dc9d806737d",
+          "source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
           "status": "stale",
           "test_cases": [
             "tests.test_learning::test_each_essay_has_executable_default_and_bound_controls[weather]",

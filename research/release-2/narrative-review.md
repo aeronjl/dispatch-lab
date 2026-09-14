@@ -56,3 +56,13 @@ SEC is separately derived from exposure. The generic archive audit selects this
 version-aware independent checker for lifecycle records. The commissioning essay
 now displays beginning-of-interval package state alongside its ending state, so
 acceptance and available capacity are not shifted a clock boundary in the diagram.
+
+The annual chronology exposed repeated graph encoding and hashing of a growing
+service history. The corrected checkpoint implementation retains an independent,
+allowlisted transaction image after every committed hour and encodes its portable
+graph at the export boundary. The Sites narrative remains accurate: inventories,
+heat, beliefs, service work and economic usage cross partitions without reset.
+Its review binding and resource-conversion teaching fixture were refreshed for this
+source. Cancellation/failure tests exercise mutations in the uncommitted following
+interval. A separate two-source experiment compares the same saved 24-hour
+continuation; it is not a resumed old study or inherited qualification.

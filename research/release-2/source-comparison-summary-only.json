@@ -1,0 +1,382 @@
+{
+  "version": "release-2-source-comparison/1",
+  "before_programme": "4f06ad527fdd4457a540614fa35ab1ac",
+  "after_programme": "5ab09634cfb544e19153ae6f532af662",
+  "before_source": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+  "after_source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+  "cases": [
+    {
+      "group": "seasonal",
+      "case_id": "case-001",
+      "hours": 168,
+      "input_id": "cf90f1c14078a56a8e8c79c6e828038a0c89e03e35bf1f5b14a2c2397902907f",
+      "before": "c1037da58b77fc9bbe5f9287f6b33f3ac79ecb9623c8c93b2b11d6477025d621",
+      "after": "c1037da58b77fc9bbe5f9287f6b33f3ac79ecb9623c8c93b2b11d6477025d621",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-002",
+      "hours": 168,
+      "input_id": "026c374319d15ddf8d2fb84e273fa32f3070e4cd9b46605b9ec81a4c469bad0a",
+      "before": "32962a8235e05df6856022e227093b5538713f39d73f6721f0a89946cced6dc8",
+      "after": "32962a8235e05df6856022e227093b5538713f39d73f6721f0a89946cced6dc8",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-003",
+      "hours": 168,
+      "input_id": "5424ca457a60c49f778b3b5d0648576f47323f6798eeadf23a98a5e91e43353e",
+      "before": "c1037da58b77fc9bbe5f9287f6b33f3ac79ecb9623c8c93b2b11d6477025d621",
+      "after": "c1037da58b77fc9bbe5f9287f6b33f3ac79ecb9623c8c93b2b11d6477025d621",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-004",
+      "hours": 168,
+      "input_id": "c8f58fa3bcb63a6ad9b6f50985ca8b5dc4b0b007ac3500d25b0e6d7168e8fed5",
+      "before": "32962a8235e05df6856022e227093b5538713f39d73f6721f0a89946cced6dc8",
+      "after": "32962a8235e05df6856022e227093b5538713f39d73f6721f0a89946cced6dc8",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-005",
+      "hours": 168,
+      "input_id": "42860d35c5761c2c719433d0f88709221f7ad5749cc14738d8eb615ee36cc206",
+      "before": "d1cb3b34f92597b35814cc6e179ac5f8919e57296dbf53a134ff6bbe52daa913",
+      "after": "d1cb3b34f92597b35814cc6e179ac5f8919e57296dbf53a134ff6bbe52daa913",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-006",
+      "hours": 168,
+      "input_id": "ed4d7fab1bcee9c1cc33b342396184a46d62610272cfb2e1358d77eba64df1bf",
+      "before": "cf316161aec5bc020499ab14d3f0332e550dfca28fcb5c7bbe15ede365b6bfe1",
+      "after": "cf316161aec5bc020499ab14d3f0332e550dfca28fcb5c7bbe15ede365b6bfe1",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-007",
+      "hours": 168,
+      "input_id": "61e373c45e7afd9611db366c57266e5ae68b275851cf6c3bfc393c8a94e51eb3",
+      "before": "6e3a7fd74ebcee804ee1c70003faabf625650ecd506ae7bbad272e3674616653",
+      "after": "6e3a7fd74ebcee804ee1c70003faabf625650ecd506ae7bbad272e3674616653",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-008",
+      "hours": 168,
+      "input_id": "df934b7d19c12362326c956d8199e7d696deb4410ed0003cbe0c1787e0fea25b",
+      "before": "c815b9f02798f687c7b09dd2df55d11a802e1dd50a9be9ba17f2b60a5d8d1d54",
+      "after": "c815b9f02798f687c7b09dd2df55d11a802e1dd50a9be9ba17f2b60a5d8d1d54",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-009",
+      "hours": 168,
+      "input_id": "1f25d3e2c20b316dbf65525fd674e44ae1c2ea62a36f515700f9bc9b2606dea1",
+      "before": "cfcdb4c3c0b4ab67dbd0f3b7cd25f8c00f08a34d9ff371d934ec213b8d0f49fd",
+      "after": "cfcdb4c3c0b4ab67dbd0f3b7cd25f8c00f08a34d9ff371d934ec213b8d0f49fd",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-010",
+      "hours": 168,
+      "input_id": "a6f7759fe026ae8449c2ba69356b2eb3a5aed6b9cc3f4fdced89d663d2615583",
+      "before": "b502b4a4db0f279dffcc4fedf07cc92d3a5f48dba0a64d9a9d2154c7fedee9f0",
+      "after": "b502b4a4db0f279dffcc4fedf07cc92d3a5f48dba0a64d9a9d2154c7fedee9f0",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-011",
+      "hours": 168,
+      "input_id": "8beae31ac7cc6b94680b3f78a5f1536b22a9f33501f9cc286ed8be7e18b5c322",
+      "before": "cfcdb4c3c0b4ab67dbd0f3b7cd25f8c00f08a34d9ff371d934ec213b8d0f49fd",
+      "after": "cfcdb4c3c0b4ab67dbd0f3b7cd25f8c00f08a34d9ff371d934ec213b8d0f49fd",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-012",
+      "hours": 168,
+      "input_id": "6bca02bc7dc6fd3fbbabd3ab38f2b5d210f049c0ccfa157cc59f1b87d28438cd",
+      "before": "b502b4a4db0f279dffcc4fedf07cc92d3a5f48dba0a64d9a9d2154c7fedee9f0",
+      "after": "b502b4a4db0f279dffcc4fedf07cc92d3a5f48dba0a64d9a9d2154c7fedee9f0",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-013",
+      "hours": 168,
+      "input_id": "ef76a013ba2c97a4b865868f16c11f93edba56faa276cd8e4f61ad58b6d25594",
+      "before": "e1e555536fa0fcf6fa6d444b88324bd395525afad02ea97f05053d3df6c750c6",
+      "after": "e1e555536fa0fcf6fa6d444b88324bd395525afad02ea97f05053d3df6c750c6",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-014",
+      "hours": 168,
+      "input_id": "bb9cd56f646b50c0e8a38fd3ccb0d015e87308d93644459851a8bb926a2e1674",
+      "before": "a02219ac6c4ea8d4ce1b99264912aea12c7cffa5765d45a55912350e978ebebe",
+      "after": "a02219ac6c4ea8d4ce1b99264912aea12c7cffa5765d45a55912350e978ebebe",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-015",
+      "hours": 168,
+      "input_id": "c3032a57abb1fb65b6bd95c2bafbd954e7330cdc5ec817d4d9ecf1199db7d640",
+      "before": "6acd5a4ccd0f1ee42f62f70f80d1c5e164c9074250bf93e80aaefc8ff69f6233",
+      "after": "6acd5a4ccd0f1ee42f62f70f80d1c5e164c9074250bf93e80aaefc8ff69f6233",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-016",
+      "hours": 168,
+      "input_id": "6fca14c130e3bf917c7d7fa13a269a2613629d5ee4d1b5ea92ae3dc361b1f26f",
+      "before": "61434766c41e4a3f7895917488f0733a96441b963d62bd18f762d29504621038",
+      "after": "61434766c41e4a3f7895917488f0733a96441b963d62bd18f762d29504621038",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-017",
+      "hours": 168,
+      "input_id": "e5b1de2c37aa88ec7bb80be76493299fbbd10e1ccb794df2d94bb1287092b4db",
+      "before": "f65df5d6b4fee54a4be6fcde33752f81d86fdaac38d8eea1a79af1a7423c945c",
+      "after": "f65df5d6b4fee54a4be6fcde33752f81d86fdaac38d8eea1a79af1a7423c945c",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-018",
+      "hours": 168,
+      "input_id": "92de9cc65f594cdc2ae68738a240437ed05841df427b01adab66aef72301a89c",
+      "before": "17720bb0c2133b16ef4351042ee319c134eba4149e946389146959b630c77ecb",
+      "after": "17720bb0c2133b16ef4351042ee319c134eba4149e946389146959b630c77ecb",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-019",
+      "hours": 168,
+      "input_id": "6cdb984989d01da4fc76898920267f88797baeb9decdb91d47c091f06e42c6f4",
+      "before": "f65df5d6b4fee54a4be6fcde33752f81d86fdaac38d8eea1a79af1a7423c945c",
+      "after": "f65df5d6b4fee54a4be6fcde33752f81d86fdaac38d8eea1a79af1a7423c945c",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-020",
+      "hours": 168,
+      "input_id": "d7c2d265df61d879fa61ec507179cbd97d6d07a3aecf4ecde606877de8dba424",
+      "before": "17720bb0c2133b16ef4351042ee319c134eba4149e946389146959b630c77ecb",
+      "after": "17720bb0c2133b16ef4351042ee319c134eba4149e946389146959b630c77ecb",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-021",
+      "hours": 168,
+      "input_id": "0f7c46fccbbbdb7b5f7ad2703a017d6ff5328fa5b161c83409b2c18b82c979d4",
+      "before": "b0ff685e3bced97e7dfeedfe714626578b8ca3ad72a6d5e0ec828b1aa16ee6d6",
+      "after": "b0ff685e3bced97e7dfeedfe714626578b8ca3ad72a6d5e0ec828b1aa16ee6d6",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-022",
+      "hours": 168,
+      "input_id": "5996b27177c9768c5c26739285ad341f7d9f4d9daf605ceb0c07f70348390633",
+      "before": "3526bd88b8f9aac9a25264d111ab618af5b47b3743e2d679a9c78e61a45786ac",
+      "after": "3526bd88b8f9aac9a25264d111ab618af5b47b3743e2d679a9c78e61a45786ac",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-023",
+      "hours": 168,
+      "input_id": "e471e5c1b2c42ca5723970d12a077aa5421019707eeae9386651aad471c305b3",
+      "before": "db8f80e669a13d845c3668c2708dd158a38512e94f393251ec37dd555177091c",
+      "after": "db8f80e669a13d845c3668c2708dd158a38512e94f393251ec37dd555177091c",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-024",
+      "hours": 168,
+      "input_id": "933d26a00e3ff1172c5b9317704463d97d745ac08320dbdb413553873e707583",
+      "before": "21dc908e6f26a21db0179e817b83116cfa0ac176a716d6207b07b2b4ccb5b647",
+      "after": "21dc908e6f26a21db0179e817b83116cfa0ac176a716d6207b07b2b4ccb5b647",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-025",
+      "hours": 168,
+      "input_id": "a79fcc42ddc19d4d75d089b7582fd58e70416a225e65aa562ad4f12cf4fab804",
+      "before": "169dc462d5593e5245bbc50fc0f46ad1fdee7b4eba5f21da139dc5bc1fb267b0",
+      "after": "169dc462d5593e5245bbc50fc0f46ad1fdee7b4eba5f21da139dc5bc1fb267b0",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-026",
+      "hours": 168,
+      "input_id": "2548119eab793c98aa7ad122d61256dcdeb16642fbba520c050cdfbe446d60b3",
+      "before": "cce14c390226ce4e0707f28343ee24314c67d39ae60e9552c07c1924446948a9",
+      "after": "cce14c390226ce4e0707f28343ee24314c67d39ae60e9552c07c1924446948a9",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-027",
+      "hours": 168,
+      "input_id": "cd2e3b21eab98431be3120b7a5633d10908583fc05f09373efa78d7660d6372f",
+      "before": "169dc462d5593e5245bbc50fc0f46ad1fdee7b4eba5f21da139dc5bc1fb267b0",
+      "after": "169dc462d5593e5245bbc50fc0f46ad1fdee7b4eba5f21da139dc5bc1fb267b0",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-028",
+      "hours": 168,
+      "input_id": "a434cd19a9632699eb5bfef04e59b9ec28f95b8ef3e5e6a5709e0b9bb2770330",
+      "before": "cce14c390226ce4e0707f28343ee24314c67d39ae60e9552c07c1924446948a9",
+      "after": "cce14c390226ce4e0707f28343ee24314c67d39ae60e9552c07c1924446948a9",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-029",
+      "hours": 168,
+      "input_id": "895a47a70b60ea6af5116424ec8e6bd3e3925772ce2f5e16a2cc2b80f991851c",
+      "before": "c4f1d1ce84b8621820837705600fc52019a2aecf58041138fc570f13115f4483",
+      "after": "c4f1d1ce84b8621820837705600fc52019a2aecf58041138fc570f13115f4483",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-030",
+      "hours": 168,
+      "input_id": "f842bb61bb1f03366530b57fd3e182f2b55980b758b79d514363cf4ce41e96c2",
+      "before": "d11c891fce2ea9af67595e19e8792092810afd3fa30bb0cd21c998c5a2a8edda",
+      "after": "d11c891fce2ea9af67595e19e8792092810afd3fa30bb0cd21c998c5a2a8edda",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-031",
+      "hours": 168,
+      "input_id": "104f87142798a72266ada33bc4de7b6124eab3dd3c934026867bbcb039cd7695",
+      "before": "318ac8a4787d2823bbb0130368ab41288d933b8dca6bc942349f480c81107949",
+      "after": "318ac8a4787d2823bbb0130368ab41288d933b8dca6bc942349f480c81107949",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-032",
+      "hours": 168,
+      "input_id": "3e83adc91b60b1c4e3a65780db526acab1997646e0774efc0a404b09a426ab6d",
+      "before": "e271bdcf86f342e5aae71f32f7ac6b7cfd93ba0d9442073717a1b11d55ff82a1",
+      "after": "e271bdcf86f342e5aae71f32f7ac6b7cfd93ba0d9442073717a1b11d55ff82a1",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-033",
+      "hours": 168,
+      "input_id": "189230af17a38a156c2f26f1749a902c10cb021b7c2b2e941ce1275722ad405e",
+      "before": "ace38c1914ae9b1ef14d204b8b7ebccc50cd7424ad4b85b01231c7791bdefdae",
+      "after": "ace38c1914ae9b1ef14d204b8b7ebccc50cd7424ad4b85b01231c7791bdefdae",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-034",
+      "hours": 168,
+      "input_id": "a70634b5c1be09de35596c1d0d3eddfc30a555cb1a2755afdb0d4d2ee802ec93",
+      "before": "57e8d0288242cedd1afa0e3fb8fde51b7bd497fbde8cf726e6f2cd93d06e1f73",
+      "after": "57e8d0288242cedd1afa0e3fb8fde51b7bd497fbde8cf726e6f2cd93d06e1f73",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-035",
+      "hours": 168,
+      "input_id": "e757e5553d6a3b91988bcbcbdbedd84a13073138533ef4b796c03ff2225f16b8",
+      "before": "ace38c1914ae9b1ef14d204b8b7ebccc50cd7424ad4b85b01231c7791bdefdae",
+      "after": "ace38c1914ae9b1ef14d204b8b7ebccc50cd7424ad4b85b01231c7791bdefdae",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-036",
+      "hours": 168,
+      "input_id": "70c98b9f34e277d324d365f99ab32e0797d7032bd9a83f27bd3c0a4460f50a2e",
+      "before": "57e8d0288242cedd1afa0e3fb8fde51b7bd497fbde8cf726e6f2cd93d06e1f73",
+      "after": "57e8d0288242cedd1afa0e3fb8fde51b7bd497fbde8cf726e6f2cd93d06e1f73",
+      "differences": [],
+      "matched": true
+    },
+    {
+      "group": "seasonal",
+      "case_id": "case-037",
+      "hours": 168,
+      "input_id": "3b8482850123068429ce83c04269f7631c1b5cc66074dc6552c5e5dcd6532613",
+      "before": "ba52094a262aebed0e39afb3a733219cb5c51d89947b3bbd3b56867ecbcb55cb",
+      "after": "ba52094a262aebed0e39afb3a733219cb5c51d89947b3bbd3b56867ecbcb55cb",
+      "differences": [],
+      "matched": true
+    }
+  ],
+  "complete": false,
+  "passed": true,
+  "scope": "All 72 original Greedy seasonal cases and the 1337-hour saved annual prefix, each rerun from its initial state. Complete physical, observation, service and lifecycle records are compared. This does not qualify unexecuted future intervals or assert deterministic time-limited MPC decisions."
+}

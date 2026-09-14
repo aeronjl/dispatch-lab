@@ -1,0 +1,112 @@
+[
+  {
+    "previous": "build/engineering/current/formal-sandbox-attempt.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/formal-sandbox-attempt.json",
+    "sha256": "102b31c938c8fc76064091c47b8668bd894d4c5cb98d16b1d95c8a3aeabecd7f"
+  },
+  {
+    "previous": "build/engineering/current/solver-study.md",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/solver-study.md",
+    "sha256": "61f59b07735eb280a0ac0fcb04cc44eeb71c76bcf383c6049bee9ef2c42f4c31"
+  },
+  {
+    "previous": "build/engineering/current/browser-tests.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/browser-tests.json",
+    "sha256": "de01d6ca83099545b0d0e71611e1a998adcc9fcf288884b798505c7050060e4c"
+  },
+  {
+    "previous": "build/engineering/current/evidence-catalogue.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/evidence-catalogue.json",
+    "sha256": "7dd2f09ab2642bf54e055ca2761a1431faf7452945b896da16fa049ca3bc1266"
+  },
+  {
+    "previous": "build/engineering/current/recomputation.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/recomputation.json",
+    "sha256": "10913b1879cee727b1848b778ee5f2baa1e9b15d84f7429b60c16d912b57fb49"
+  },
+  {
+    "previous": "build/engineering/current/browser-recorded.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/browser-recorded.json",
+    "sha256": "fb5d0c43580fc1473588776e9d433084d9d3ff740f3d4031ed5d9ae6eb8549ee"
+  },
+  {
+    "previous": "build/engineering/current/independent-reference.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/independent-reference.json",
+    "sha256": "663d0d5e06943db16fc703e4970ea15c003a437aff652b5613ec2548c3de22c7"
+  },
+  {
+    "previous": "build/engineering/current/example.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/example.json",
+    "sha256": "38fdec2241dc66e121f5ed4fe99be0260a143489ede63878f45b45a5804f7ff9"
+  },
+  {
+    "previous": "build/engineering/current/reproduction-944b88550033f4ddf656ae86949f3b0c56aff49068de48cd260a2c552a7d47df.zip",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/reproduction-944b88550033f4ddf656ae86949f3b0c56aff49068de48cd260a2c552a7d47df.zip",
+    "sha256": "944b88550033f4ddf656ae86949f3b0c56aff49068de48cd260a2c552a7d47df"
+  },
+  {
+    "previous": "build/engineering/current/source-under-test.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/source-under-test.json",
+    "sha256": "3786fdda1ae146fa077e714409d3278a7994af972a6e02daa6ebdeda840fb858"
+  },
+  {
+    "previous": "build/engineering/current/mutations.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/mutations.json",
+    "sha256": "6063755bf009ddfb6012b491b712d6475a260b01a4dd77e16f6f31c46b8595c2"
+  },
+  {
+    "previous": "build/engineering/current/solver-study.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/solver-study.json",
+    "sha256": "95305df3bf4d0c5072b3838e8f75fe1827b31650e1a9d212dee2da533c1cd0fa"
+  },
+  {
+    "previous": "build/engineering/current/pytest-output.txt",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/pytest-output.txt",
+    "sha256": "83a3ebbeb6647bb739703d1d5565790c4f4bdd8250994775ebba704091d9cc22"
+  },
+  {
+    "previous": "build/engineering/current/catalogue-output.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/catalogue-output.json",
+    "sha256": "d7ab0891cd43054b41785c5594e8932cf3ddf08f4ebe459f4b3519338ee42b7d"
+  },
+  {
+    "previous": "build/engineering/current/offline-check.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/offline-check.json",
+    "sha256": "76b46d3f115abe236c82143476adcb5965bce674e74aecd2fd19c4285acc63ba"
+  },
+  {
+    "previous": "build/engineering/current/reproduction.zip",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/reproduction.zip",
+    "sha256": "25eabd7cff3424ed0e4ea96c556d9c83d7a8361bc9c2848e8925bf9f298ecf95"
+  },
+  {
+    "previous": "build/engineering/current/formal.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/formal.json",
+    "sha256": "2b2bdd8c00e9a45e8335089416c6fffcd5dce16a62db4b496719628e34bd17f2"
+  },
+  {
+    "previous": "build/engineering/current/pytest.xml",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/pytest.xml",
+    "sha256": "5533a45f54a3c7ee04f46573ce7ea9b477870bdbc3cb83bfdc3a5da2f308fd33"
+  },
+  {
+    "previous": "build/engineering/current/browser-active.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/browser-active.json",
+    "sha256": "20fd3164267d1e5ef80c5af8c5f710e43ed3b2590984bf2590a5f8993ff079dc"
+  },
+  {
+    "previous": "build/engineering/current/performance-gates.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/performance-gates.json",
+    "sha256": "2e2edf5169836b1658d27d03c8a8dc731e35fe0652bd0aa5b6aa6a37636583b8"
+  },
+  {
+    "previous": "build/model/evidence.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/other/build/model/evidence.json",
+    "sha256": "134c0255ed1adc046bf1c741ca4518f54fdc2afc816a788d5d13a38d9e927b27"
+  },
+  {
+    "previous": "build/release-2/lifecycle-performance.json",
+    "preserved": "build/engineering/editions/5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488/other/build/release-2/lifecycle-performance.json",
+    "sha256": "c5955812a3b70967079fb2614e6f3001e9b62c62619c562ba13604f7fc717c79"
+  }
+]

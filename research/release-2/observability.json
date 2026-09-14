@@ -1,9 +1,9 @@
 {
   "version": "release-2-observability/1",
   "source": {
-    "revision": "b1c4b34eb136033cff2d2b5d168da621346b721f",
+    "revision": "b56c0d068670a6ed60b405e36e26ed25055f2e27",
     "dirty": true,
-    "content_hash": "5dfbf57dbda29a26b5054304599e6d5439cb568ba510152d773b6425a91dc488",
+    "content_hash": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
     "files": {
       "app.py": "4eb8257237faf07a33112ef049e0eb0508438def0ba3a62dabf7e7b9bb3ad9c7",
       "assets/app.css": "032f475e6816f6d7bee7cd6567c9f55cac3de91847d89cd0a8c34038b5bc598f",
@@ -203,7 +203,7 @@
       "methane/siting/__init__.py": "5833e17c42994743bb5216d9953064d60b2787063a415118ebae25325fab4833",
       "methane/siting/cashflow.py": "3a0817d98d35f34ccfb121d938b5838aa1a86bef1d35414954ad53cb805370b8",
       "methane/siting/catalogue.py": "ab7386fbd10920f4dadb14be6c510c76432a07fd7fbfdf6cf7fa6d726f887e79",
-      "methane/siting/checkpoint.py": "e8c23eac6a483046549eb8dba6b0ac7fcd05d42eeee4a21dce0faaf874178cfc",
+      "methane/siting/checkpoint.py": "3d944ce6f9cea573dc0881e6d4b74ac9af341adb32e31f63fbda0d52d96e028d",
       "methane/siting/comparison.py": "9c127c34dc136dd13f42beb3f1dfbc10a84a296047e4bc101e8ff63844c0a120",
       "methane/siting/contracts.py": "ba3befc5b594b739ef9090493549f484793aec1828cd7b8a6aed72179ca754cc",
       "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
@@ -314,7 +314,7 @@
       "tests/test_service_visits.py": "7e5fcb47c1a4fb9686aec9d45e50474186bf843d9e8946863ac718ba57e2ac20",
       "tests/test_siting_cashflow.py": "953f4f0a382c93ca7cd70c2235d4a2a8eec87b4efdb5558dd7fa573614e3c336",
       "tests/test_siting_comparison.py": "da55c5a56f3c29b34459b1e6b90fbbf71367b61a8ede3c7fbfc9c8fb584f1021",
-      "tests/test_siting_continuation.py": "fe6feaf0a66e27b9be051e38bf330945c6874daba8e1099c115220074da050ec",
+      "tests/test_siting_continuation.py": "ec22834f5494b5e176ff05ffc4956e6fa59514027b527a9ebe0be4fc7350fe78",
       "tests/test_siting_environment.py": "df41542f97d9363e5eaeb411fde462a5ace262024aee35d46f40ff7c6b69806a",
       "tests/test_siting_foundations.py": "57c7ae93aa7ec0a9dc2b5890a150a98943d716044a4bf04ce0562a1f0472a188",
       "tests/test_siting_production.py": "762d8e5e3fda0ee2e1de81ca05eff6292f71f278f7deacdd55cf2ed708d2dea6",

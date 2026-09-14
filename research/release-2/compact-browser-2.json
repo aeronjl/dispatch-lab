@@ -1,0 +1,9 @@
+{
+  "version": "release-2-compact-reader-ui/1",
+  "contexts": 2,
+  "topics": 50,
+  "errors": [],
+  "network_requests": [],
+  "mobile_fits": true,
+  "scope": "First and final saved interval, every stored topic, original explanation page, offline and narrow-screen rendering."
+}

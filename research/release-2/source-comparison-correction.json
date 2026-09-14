@@ -1,0 +1,6 @@
+{
+  "status": "superseded by full-record comparison",
+  "reason": "The first cross-edition helper used PeriodRows, which intentionally projects summary operands. Its state, applied-action, diagnosis, lifecycle and service comparisons were valid, but requested actions and observation dictionaries were absent. The new helper reads the complete period records, asserts the required fields and reruns all available cases. The separate 24-hour checkpoint compatibility experiment already used complete run records.",
+  "prior": "source-comparison-summary-only.json",
+  "replacement": "source-comparison.json"
+}

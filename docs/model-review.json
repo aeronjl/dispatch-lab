@@ -2479,7 +2479,7 @@
       "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
       "methane/services/weather_recovery.py": "2423d0a25ea9bb4657703c72a9f8078cc933fc401495903a30bd21d0f17d9db3",
       "methane/siting/cashflow.py": "3a0817d98d35f34ccfb121d938b5838aa1a86bef1d35414954ad53cb805370b8",
-      "methane/siting/checkpoint.py": "e8c23eac6a483046549eb8dba6b0ac7fcd05d42eeee4a21dce0faaf874178cfc",
+      "methane/siting/checkpoint.py": "3d944ce6f9cea573dc0881e6d4b74ac9af341adb32e31f63fbda0d52d96e028d",
       "methane/siting/comparison.py": "9c127c34dc136dd13f42beb3f1dfbc10a84a296047e4bc101e8ff63844c0a120",
       "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
       "methane/siting/geometry.py": "4d617c67bcbbb2ceb0524487e0941dc5a0f81f4aaab044be1c4650e8c3e6294e",

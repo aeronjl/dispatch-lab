@@ -89,3 +89,10 @@ Freeze train/validation/test boundaries before training. Compare simple fixed an
 adaptive estimators first; only proceed to learned scheduling or homeostatic reserves
 when the preceding evaluation supports it. Data acquisition and participant research
 remain necessary alongside that software work.
+
+The [Release-3 delivery contract](release-3.md) makes the next sequence explicit:
+freeze observation datasets and held-out boundaries; qualify estimators; register
+bounded deployments; compare scheduling/reserve objectives; complete the user-facing
+research workflow and participant work; then qualify fresh installation and recovery.
+It has not been started as part of Release 2. Chronological throughput, storage and
+export budgets belong in that final qualification as well as interactive latency.

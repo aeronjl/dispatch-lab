@@ -56,3 +56,25 @@ run a model in the browser. The reader adapter is included in each bundle alongs
 the separately identified production calculation source and original execution
 source. `compact-preflight.json` compares calculation objects;
 `compact-browser.json` records offline/narrow-screen interaction checks.
+
+## Execution editions
+
+The initial programme `4f06ad527fdd4457a540614fa35ab1ac` completed its 72 seasonal
+cases and stopped at annual hour 1,337 after checkpoint profiling. Its study,
+publication, qualification receipts and first-edition report remain preserved.
+The active programme starts all 116 cases again under the corrected source;
+`compare_editions.py` checks the seasonal traces and the available annual prefix.
+`checkpoint_comparison.py` separately executes 24 hours from the same saved old
+checkpoint under each source and reports complete physical/observation/service/
+lifecycle record differences and timing. Neither comparison promotes old checks
+as qualification of a new implementation. The current report's gates require
+matching source identities, including its numerical, offline and observability
+receipts. Build evidence directories are rolling aliases; the first-edition
+artifact-location receipt names the preserved original copies.
+
+The cross-edition helper's first draft used the Sites summary-row interface. That
+interface deliberately omits requested actions and observation dictionaries. The
+retained correction receipt limits the earlier comparison to the fields it actually
+read; the version-2 helper reads full period records, requires every compared field
+and reruns the available cases. The separate 24-hour compatibility experiment already
+used complete run records. Summary projections are never evidence for omitted operands.

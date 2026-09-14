@@ -3,12 +3,13 @@ async function open(page){await page.goto('/');await page.locator('.m-plant').wa
 async function topic(page,key){await page.locator('[data-d=index]').click();await page.locator(`[data-topic=${key}]`).click();await expect(page.locator('.d-layout')).not.toHaveAttribute('inert','');}
 async function change(page,key,value){await page.locator(`[data-input=${key}]`).evaluate((n,v)=>{n.value=String(v);n.dispatchEvent(new Event('input',{bubbles:true}));},value);}
 test('all lifecycle essays calculate their controls and restore navigation',async({page})=>{
- test.setTimeout(180000);const errors=[];page.on('pageerror',e=>errors.push(e.message));await open(page);
+ test.setTimeout(360000);const errors=[];page.on('pageerror',e=>errors.push(e.message));await open(page);
  for(const key of ['deployment','condition','hardware','maintenance']){
-  await topic(page,key);if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:20000});
+  const calculationTimeout=key==='maintenance'?60000:20000;
+  await topic(page,key);if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:calculationTimeout});
   const controls=await page.locator('[data-input]').evaluateAll(nodes=>nodes.map(n=>({key:n.dataset.input,value:n.value,next:n.tagName==='SELECT'?[...n.options].find(o=>o.value!==n.value).value:Number(n.value)<Number(n.max)?Number(n.value)+Number(n.step):Number(n.value)-Number(n.step)})));
-  for(const c of controls){await change(page,c.key,c.next);if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-workspace')).toHaveAttribute('data-pending','false',{timeout:20000});await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:20000});await expect(page.locator('.lc-diagram')).toBeVisible();}
-  await page.locator('[data-d=reset]').click();if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:20000});
+  for(const c of controls){await change(page,c.key,c.next);if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-workspace')).toHaveAttribute('data-pending','false',{timeout:calculationTimeout});await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:calculationTimeout});await expect(page.locator('.lc-diagram')).toBeVisible();}
+  await page.locator('[data-d=reset]').click();if(key==='maintenance')await page.locator('[data-d=calculate]').click();await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:calculationTimeout});
   for(const c of controls)await expect(page.locator(`[data-input=${c.key}]`)).toHaveValue(c.value);
  }
  await page.keyboard.press('Escape');await expect(page.locator('.d-workspace')).toBeHidden();expect(errors).toEqual([]);

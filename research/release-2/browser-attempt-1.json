@@ -1,0 +1,11 @@
+{
+  "version": "release-2-browser-attempt/1",
+  "source": "123769827d50f0c22f9ecae06a621f6fb06b115e0a2c69b98a33dcd343739078",
+  "expected": 101,
+  "unexpected": 1,
+  "skipped": 21,
+  "failure": "Maintenance controls test required the 72-hour four-rule worker result within 20 seconds. Its saved HTTP responses were still reporting the last rule, with responsive polling, when the assertion expired.",
+  "resolution": "Explicit maintenance calculations may take 60 seconds in this control-coverage test. Simple examples retain their 200 ms input and 10 ms render gates. Full browser qualification reruns after this test-harness correction.",
+  "artifacts": "build/release-2/browser-attempt-1",
+  "scope": "A failed first test attempt is retained; it is not counted as a passing test or hidden behind retries."
+}

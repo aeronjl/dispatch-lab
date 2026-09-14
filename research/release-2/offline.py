@@ -10,7 +10,7 @@ from methane.reference import audit
 from methane.simulation import run
 from methane.provenance import LOADED_SOURCE
 
-root=Path('build/release-2/offline');root.mkdir(parents=True,exist_ok=True)
+root=Path('build/release-2')/('offline-'+LOADED_SOURCE['content_hash'][:12]);root.mkdir(parents=True,exist_ok=True)
 config=illustrative(Config(scenario=Scenario(hours=72,horizon_hours=24,solver_seconds=.1,capacity_fraction=1,flow_bias_fraction=0)),commission=True,aged=True)
 record=root/'recording.json'
 if record.exists():

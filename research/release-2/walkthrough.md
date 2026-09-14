@@ -72,3 +72,11 @@ and return to the original simulation. Record their words and misinterpretations
 separately from task completion and automated tests. Prioritise any confusion
 between predictions, observations, estimates and retrospective truth before
 introducing learned-policy explanations.
+
+The corrected-source browser run also exposed an overly short test deadline for
+an explicit maintenance comparison under heavy background work. The captured
+requests showed responsive progress through the fourth rule while the 20-second
+assertion expired. The comparison-control test now allows 60 seconds for that
+explicit worker; the simple-example performance limits were not changed. Its first
+failed attempt and the complete rerun are separate receipts. This is a test timing
+finding, not a participant observation or a claim that long calculations are instant.
