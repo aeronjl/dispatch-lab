@@ -1,0 +1,18 @@
+{
+  "version": "dispatch-demo-film/1",
+  "fixture": "tests/fixtures/field-motion.json.gz",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 41,
+  "controller": "MPC · methane",
+  "scenes": [
+    {"id":"plant","start":0,"end":4,"hours":[9,11],"chapter":"01 / THE PLANT","title":"A plant that runs on the weather.","subtitle":"Solar → storage → hydrogen → methane"},
+    {"id":"power","start":4,"end":9,"hours":[14,18],"chapter":"02 / PLAN AHEAD","title":"Every kilowatt is a decision.","subtitle":"Use electricity now. Store it for later. Keep production supplied."},
+    {"id":"cleaning","start":9,"end":16,"hours":[0,3.8],"chapter":"03 / FIELD ROBOTICS","title":"Send robots to do the routine work.","subtitle":"A recorded solar-cleaning mission, from dock to array."},
+    {"id":"inspection","start":16,"end":24,"hours":[13,16.4],"chapter":"04 / OBSERVE & ADAPT","title":"Detect a fault. Send an inspector.","subtitle":"The capacity estimate changes when the evidence supports it."},
+    {"id":"repair","start":24,"end":31,"hours":[16,20.8],"segments":[{"seconds":[0,2.4],"hours":[16,18]},{"seconds":[2.4,7],"hours":[19,20.8]}],"chapter":"05 / RECOVERY HAS CONDITIONS","title":"Escalate repairs. Verify recovery.","subtitle":"Human service is required here. Repair completion still needs verification."},
+    {"id":"comparison","start":31,"end":37,"hours":[18,18],"chapter":"06 / TEST THE POLICY","title":"Same plant. Different decisions.","subtitle":"One illustrative scenario at H18 · compare output and remaining reserves."},
+    {"id":"outro","start":37,"end":41,"hours":[9,10.9],"chapter":"DISPATCH LAB","title":"Design. Run. Understand.","subtitle":"An explorable simulation of autonomous plant operation."}
+  ]
+}
