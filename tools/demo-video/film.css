@@ -1,42 +1,15 @@
-/* Presentation-only capture layer. Production SVG geometry and labels are untouched. */
+/* Editorial caption only. The production artwork keeps its own font and colour. */
 html, body { margin:0; width:1920px; height:1080px; overflow:hidden; background:#202020; }
 .methane-console { width:1920px; height:1080px; }
-.m-plant-wrap { inset:148px 56px 220px; overflow:hidden; mask-image:linear-gradient(to bottom,transparent,#000 20px,#000 calc(100% - 22px),transparent); }
+.m-plant-wrap { inset:24px 40px 104px; overflow:hidden; mask-image:linear-gradient(to bottom,transparent,#000 20px,#000 calc(100% - 22px),transparent); }
 .m-plant.plant-drawing { width:100%; height:100%; min-width:0; }
 .m-menu-toggle, .m-dock, .m-inspector, .m-utility { display:none!important; }
 .m-component, .f-interactive { pointer-events:none; }
-.film { position:fixed; inset:0; pointer-events:none; color:#ffa32d; font-family:'Departure Mono',monospace; }
-.film-top { position:absolute; left:64px; right:64px; top:36px; display:flex; align-items:center; justify-content:space-between; }
-.film-brand { display:flex; align-items:center; gap:16px; font-size:24px; letter-spacing:2px; }
-.film-mark { width:26px; height:26px; display:inline-block; background:linear-gradient(90deg,#ffa32d 25%,transparent 25% 37.5%,#ffa32d 37.5% 62.5%,transparent 62.5% 75%,#ffa32d 75%); }
-.film-label { color:#b9a78b; font-size:18px; letter-spacing:.5px; }
-.film-divider { position:absolute; top:88px; left:64px; right:64px; height:1px; background:#58452e; }
-.film-context { position:absolute; top:108px; left:64px; right:64px; display:flex; justify-content:space-between; font-size:18px; color:#c9b69a; }
-.film-context strong { color:#ffa32d; font-weight:400; }
-.film-caption { position:absolute; left:64px; right:64px; bottom:68px; }
-.film-chapter { font-size:17px; letter-spacing:1.6px; color:#c6a16e; margin-bottom:16px; }
-.film-title { margin:0; font-size:48px; line-height:1.14; font-weight:400; letter-spacing:-1.1px; }
-.film-subtitle { margin:15px 0 0; font-size:22px; line-height:1.45; color:#d1c1a9; }
-.film-progress { position:absolute; left:64px; right:64px; bottom:28px; height:3px; background:#493b28; }
-.film-progress i { display:block; height:100%; background:#ffa32d; transform-origin:left; }
-.film-counter { position:absolute; right:64px; bottom:57px; font-size:16px; color:#8e7e65; }
-.film-detail { position:absolute; right:84px; top:215px; width:465px; padding:28px; border-left:2px solid #ffa32d; background:#202020f5; }
-.film-detail:empty { display:none; }
-.film-detail-label { color:#b9a78b; font-size:17px; line-height:1.5; }
-.film-number { font-size:52px; line-height:1.2; margin:10px 0; }
-.film-number small { font-size:24px; }
-.film-detail-note { font-size:19px; color:#d1c1a9; line-height:1.55; margin-top:18px; }
-.film-detail svg { width:100%; height:92px; margin-top:22px; overflow:visible; }
-.film-detail .legend { display:flex; justify-content:space-between; margin-top:7px; font-size:14px; color:#b9a78b; }
-.film-comparison { position:absolute; top:230px; left:100px; right:100px; display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-.film-policy { background:#202020f5; border:1px solid #635036; padding:26px 28px; color:#ac9b80; }
-.film-policy[data-selected=true] { border-color:#ffa32d; color:#ffa32d; background:#25231fee; }
-.film-policy h2 { font-size:27px; font-weight:400; margin:0 0 8px; }
-.film-policy .objective { font-size:17px; height:40px; color:#b9a78b; margin:0 0 25px; }
-.film-policy .output { font-size:48px; margin:14px 0 28px; }
-.film-policy .output small { font-size:19px; }
-.film-policy .row { display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid #51432f; font-size:20px; }
-.film-policy .row span { color:#c9b69a; }
-.film-policy .row b { font-weight:400; }
-.film-comparison[hidden] { display:none; }
-.film-wipe { position:absolute; inset:91px 0 213px; background:#202020; opacity:0; }
+.film { position:fixed; inset:0; pointer-events:none; }
+.film-heading {
+    position:absolute; left:48px; bottom:34px; margin:0;
+    padding:14px 22px; border-radius:9px;
+    background:#f2f1ec; color:#242424;
+    font:500 30px/1.15 'Helvetica Neue',Arial,sans-serif;
+    letter-spacing:-.4px; box-shadow:0 3px 16px #0003;
+}
