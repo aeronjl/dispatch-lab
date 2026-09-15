@@ -1,0 +1,104 @@
+{
+  "version": "dispatch-demo-film/2",
+  "fixture": "tests/fixtures/field-motion.json.gz",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 41,
+  "controller": "MPC · methane",
+  "scenes": [
+    {
+      "id": "plant",
+      "start": 0,
+      "end": 4,
+      "hours": [
+        9,
+        11
+      ],
+      "heading": "Plant simulation"
+    },
+    {
+      "id": "power",
+      "start": 4,
+      "end": 9,
+      "hours": [
+        14,
+        18
+      ],
+      "heading": "Energy planning"
+    },
+    {
+      "id": "cleaning",
+      "start": 9,
+      "end": 16,
+      "hours": [
+        0,
+        3.8
+      ],
+      "heading": "Solar cleaning"
+    },
+    {
+      "id": "inspection",
+      "start": 16,
+      "end": 24,
+      "hours": [
+        13,
+        16.4
+      ],
+      "heading": "Fault inspection"
+    },
+    {
+      "id": "repair",
+      "start": 24,
+      "end": 31,
+      "hours": [
+        16,
+        20.8
+      ],
+      "segments": [
+        {
+          "seconds": [
+            0,
+            2.4
+          ],
+          "hours": [
+            16,
+            18
+          ]
+        },
+        {
+          "seconds": [
+            2.4,
+            7
+          ],
+          "hours": [
+            19,
+            20.8
+          ]
+        }
+      ],
+      "heading": "Human repair"
+    },
+    {
+      "id": "comparison",
+      "start": 31,
+      "end": 37,
+      "hours": [
+        18,
+        18
+      ],
+      "heading": "Control policies"
+    },
+    {
+      "id": "outro",
+      "start": 37,
+      "end": 41,
+      "hours": [
+        9,
+        10.9
+      ],
+      "heading": "Plant simulation"
+    }
+  ],
+  "output": "dispatch-lab-demo-minimal"
+}

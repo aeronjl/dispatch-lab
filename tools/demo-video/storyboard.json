@@ -1,16 +1,36 @@
 {
-  "version": "dispatch-demo-film/2",
+  "version": "dispatch-demo-film/3",
   "fixture": "tests/fixtures/field-motion.json.gz",
+  "control_fixture": "tools/demo-video/fixtures/control-view.json.gz",
   "width": 1920,
   "height": 1080,
   "fps": 30,
-  "duration": 41,
-  "controller": "MPC · methane",
+  "duration": 46,
+  "controller": "MPC \u00b7 methane",
+  "output": "dispatch-lab-demo-control",
+  "preview_seconds": [
+    1,
+    3.8,
+    7.8,
+    11.8,
+    14,
+    18,
+    21.5,
+    24,
+    26.7,
+    29,
+    32,
+    33.8,
+    34.8,
+    38,
+    41,
+    44.5
+  ],
   "scenes": [
     {
       "id": "plant",
       "start": 0,
-      "end": 4,
+      "end": 3,
       "hours": [
         9,
         11
@@ -18,18 +38,34 @@
       "heading": "Plant simulation"
     },
     {
-      "id": "power",
-      "start": 4,
-      "end": 9,
+      "id": "plan",
+      "start": 3,
+      "end": 10,
       "hours": [
-        14,
-        18
+        15,
+        15
       ],
-      "heading": "Energy planning"
+      "heading": "Planning ahead",
+      "control": "Plan",
+      "component": "battery",
+      "forecast_offsets": [
+        {
+          "at": 0,
+          "offset": 0
+        },
+        {
+          "at": 3,
+          "offset": 3
+        },
+        {
+          "at": 5.5,
+          "offset": 4
+        }
+      ]
     },
     {
       "id": "cleaning",
-      "start": 9,
+      "start": 10,
       "end": 16,
       "hours": [
         0,
@@ -40,7 +76,7 @@
     {
       "id": "inspection",
       "start": 16,
-      "end": 24,
+      "end": 23,
       "hours": [
         13,
         16.4
@@ -48,9 +84,53 @@
       "heading": "Fault inspection"
     },
     {
+      "id": "adapt",
+      "start": 23,
+      "end": 28,
+      "hours": [
+        14,
+        15
+      ],
+      "segments": [
+        {
+          "seconds": [
+            0,
+            2.2
+          ],
+          "hours": [
+            14,
+            14
+          ]
+        },
+        {
+          "seconds": [
+            2.2,
+            5
+          ],
+          "hours": [
+            15,
+            15
+          ]
+        }
+      ],
+      "heading": "Adapting to a fault",
+      "control": "Delivery",
+      "component": "electrolyser",
+      "tabs": [
+        {
+          "at": 0,
+          "tab": "Delivery"
+        },
+        {
+          "at": 2.2,
+          "tab": "Evidence"
+        }
+      ]
+    },
+    {
       "id": "repair",
-      "start": 24,
-      "end": 31,
+      "start": 28,
+      "end": 34,
       "hours": [
         16,
         20.8
@@ -59,7 +139,7 @@
         {
           "seconds": [
             0,
-            2.4
+            2.1
           ],
           "hours": [
             16,
@@ -68,8 +148,8 @@
         },
         {
           "seconds": [
-            2.4,
-            7
+            2.1,
+            6
           ],
           "hours": [
             19,
@@ -81,24 +161,26 @@
     },
     {
       "id": "comparison",
-      "start": 31,
-      "end": 37,
+      "start": 34,
+      "end": 43,
       "hours": [
-        18,
-        18
+        17,
+        17
       ],
-      "heading": "Control policies"
+      "heading": "Comparing control policies",
+      "control": "Compare",
+      "component": "battery",
+      "comparison": true
     },
     {
       "id": "outro",
-      "start": 37,
-      "end": 41,
+      "start": 43,
+      "end": 46,
       "hours": [
         9,
         10.9
       ],
       "heading": "Plant simulation"
     }
-  ],
-  "output": "dispatch-lab-demo-minimal"
+  ]
 }
