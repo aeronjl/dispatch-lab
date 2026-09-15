@@ -12,7 +12,7 @@ function methaneFrame(result, elapsed, controller) {
 function mountMethane(element, props, watch, trigger) {
     let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
-    let solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
+    let controlView, controlOrigin, solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
     const root = element.querySelector('.methane-console');
     const $ = selector => root.querySelector(selector);
@@ -49,6 +49,7 @@ function mountMethane(element, props, watch, trigger) {
         if(focus)(origin?.isConnected?origin:($(`[data-component="${previous}"]`)||$('[data-do="menu"]'))).focus({preventScroll:true});
     }
     function openUtility(panel='run', origin=null) {
+        controlView?.close(false);
         closePanels(false);serviceOrigin=origin;utility=panel;root.dataset.chrome='visible';
         $('.m-utility').hidden=false;
         $('[data-do="menu"]').setAttribute('aria-expanded','true');
@@ -57,9 +58,11 @@ function mountMethane(element, props, watch, trigger) {
         render();$(`[data-panel="${panel}"]`).focus({preventScroll:true});
     }
     function hideControls() {
+        controlView?.close(false);
         closePanels(false);root.dataset.chrome='hidden';root.focus({preventScroll:true});
     }
     function selectComponent(key) {
+        if(controlView?.isOpen()&&labels[key]){controlView.select(key);return;}
         if(key==='services'){openUtility('services');return;}
         if(!labels[key])return;
         closePanels(false);root.dataset.chrome='visible';
@@ -197,6 +200,7 @@ function mountMethane(element, props, watch, trigger) {
     function render() {
         if(!result || !clock) return;
         fieldScene?.render(clock.visualSnapshot());
+        controlView?.sync();
         const f=current(), p=result.config.plant, row=f.row, d=f.decision;
         if(selected || solar?.needsDetail())loadDetail(f);
         root.dataset.playing=String(clock.snapshot().playing);
@@ -290,6 +294,7 @@ function mountMethane(element, props, watch, trigger) {
         $('.m-events').innerHTML=(result.events[controller]||[]).map(e=>`<button data-hour="${Number(e.hour)||0}" data-event-component="${escape(e.component)}">H${String(e.hour).padStart(3,'0')} · ${escape(e.label)}</button>`).join('') || '<span class="m-muted">No operating events in this run.</span>';
     }
     function reset() {
+        controlView?.close(false);
         studies?.close();
         sites?.close();
         model?.close();
@@ -316,6 +321,14 @@ function mountMethane(element, props, watch, trigger) {
     $('.m-mobile-select').innerHTML=Object.entries(labels).map(([key,label])=>`<button data-mobile-component="${key}">${label}</button>`).join('');
     model=typeof createModelWorkspace==='function'?createModelWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,getPrices:()=>costs?.costs,getServicePrices:()=>costs?.service_economics,pause:()=>clock.pause()}):null;
     taxonomy=typeof createTaxonomyWorkspace==='function'?createTaxonomyWorkspace({root,getResult:()=>result,getFrame:current,getController:()=>controller,pause:()=>clock.pause()}):null;
+    controlView=typeof createControlView==='function'?createControlView({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),
+        setController:value=>{controller=value;$('[data-m="controller"]').value=value;invalidate();refreshEvents();render();},
+        seekDecision:hour=>{clock.pause();clock.seek(hour+1);},
+        onOpen:()=>{controlOrigin={selected,section,utility};closePanels(false);},
+        onReturn:origin=>{const previous=controlOrigin;controlOrigin=null;if(previous?.selected){selectComponent(previous.selected);section=previous.section;inspect(current());if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else if(previous?.utility){openUtility(previous.utility);if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else $('[data-do="menu"]').focus({preventScroll:true});}
+    }):null;
+    $('[data-do="control"]').hidden=!controlView;
+    $('[data-do="watch-control"]').hidden=!controlView;
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:(topic='siting',context='Current model')=>model?.open(topic,context),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
@@ -323,6 +336,7 @@ function mountMethane(element, props, watch, trigger) {
     root.addEventListener('revise-plant-design',()=>{solar?.close();project?.open({study:result.study_origin?.edition_id,component:'solar'});});
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
+        if(event.target.closest('.cv-workspace'))return;
         if(event.target.closest('[data-service-alternatives]'))return;
         if(event.target.closest('.pj-workspace'))return;
         if(event.target.closest('.st-workspace'))return;
@@ -339,6 +353,7 @@ function mountMethane(element, props, watch, trigger) {
         const panel=event.target.closest('[data-panel]');if(panel){openUtility(panel.dataset.panel);return;}
         const tab=event.target.closest('[data-section]');if(tab){section=tab.dataset.section;inspect(current());return;}
         const action=event.target.closest('[data-do]')?.dataset.do;
+        if(action==='control'||action==='watch-control')controlView?.open(selected||'battery',event.target);
         if(action==='play')clock.snapshot().playing?clock.pause():clock.play();
         if(action==='back'||action==='next'){invalidate();clock.step(action==='next'?1:-1);}
         if(action==='reset'){invalidate();clock.reset();}
@@ -357,7 +372,7 @@ function mountMethane(element, props, watch, trigger) {
             if(opening)$('[data-m="scrubber"]').focus();
         }
         if(action==='costs'){const on=root.dataset.costs==='false';root.dataset.costs=String(on);$('[data-do="costs"]').textContent=on?'COSTS ON':'COSTS OFF';$('[data-do="costs"]').setAttribute('aria-pressed',String(on));}
-        if(action==='setup'||action==='analysis'){clock.pause();closePanels(false);trigger(action==='setup'?'edit':'expand');}
+        if(action==='setup'||action==='analysis'){controlView?.close(false);clock.pause();closePanels(false);trigger(action==='setup'?'edit':'expand');}
         if(action==='whatif'){
             clock.pause();const f=current();pendingKey=currentKey();answer=null;
             trigger('submit',{controller,hour:Math.max(0,f.hour-1),alternative:selected,run_id:result.run_id,key:pendingKey});inspect(f);
@@ -380,6 +395,7 @@ function mountMethane(element, props, watch, trigger) {
         if(sites?.isOpen())return;
         if(model?.isOpen())return;
         if(taxonomy?.isOpen())return;
+        if(e.key==='Escape'&&controlView?.isOpen()){e.preventDefault();controlView.close();return;}
         if(e.key==='Escape'&&solar.isOpen()){e.preventDefault();solar.close();return;}
         if(e.key==='Escape'){e.preventDefault();closePanels();return;}
         if(e.target.closest('input,select,textarea'))return;
@@ -393,7 +409,7 @@ function mountMethane(element, props, watch, trigger) {
     });
     const visibility=()=>{if(document.hidden)clock.pause();}; document.addEventListener('visibilitychange',visibility);
     const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)clock.pause();});observer.observe(root);
-    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();project?.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
+    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();controlView?.destroy();project?.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
     watch('value',reset);watch('economics',()=>{costs=decodeMethanePayload(props.economics);costRevision++;render();});
     watch('decision_answer',()=>{
         const value=props.decision_answer;

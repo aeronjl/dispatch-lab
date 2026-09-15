@@ -1009,6 +1009,7 @@ def build_app(default=None, *, start_project=False):
                     css_template=(ASSETS / "plant-scene.css").read_text()
                     + (ASSETS / "methane.css").read_text()
                     + (ASSETS / "field-scene.css").read_text()
+                    + (ASSETS / "control-view.css").read_text()
                     + (ASSETS / "solar.css").read_text()
                     + (ASSETS / "model.css").read_text()
                     + (ASSETS / "lifecycle.css").read_text()
@@ -1020,6 +1021,7 @@ def build_app(default=None, *, start_project=False):
                     js_on_load=(ASSETS / "playback.js").read_text().split("function frameAt")[0]
                     + (ASSETS / "field-operations.js").read_text()
                     + (ASSETS / "service-alternatives.js").read_text()
+                    + (ASSETS / "control-view.js").read_text()
                     + (ASSETS / "field-scene.js").read_text()
                     + (ASSETS / "methane.js").read_text()
                     + (ASSETS / "solar.js").read_text()

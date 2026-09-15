@@ -93,6 +93,10 @@ async def lifespan(app):
     from methane.service_alternatives_service import handle as service_alternative
 
     app.add_api_route("/dispatch/service-alternative", service_alternative, methods=["POST"])
+    from methane.control_service import cleanup as control_cleanup
+    from methane.control_service import handle as control_view
+
+    app.add_api_route("/dispatch/control-view", control_view, methods=["POST"])
     from methane.study_service import download, handle
 
     app.add_api_route("/dispatch/studies", handle, methods=["POST"])
@@ -109,3 +113,4 @@ async def lifespan(app):
         yield
     finally:
         cleanup()
+        control_cleanup()
