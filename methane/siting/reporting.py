@@ -112,11 +112,16 @@ def report_record(store, kind, key, previous_publication_id=None):
     if kind == "study":
         value = inspect(store, key)
         title = value["manifest"]["name"]
-    elif kind in ("recommendation", "operating-assessment", "equipment-comparison"):
+    elif kind in (
+        "recommendation",
+        "operating-assessment",
+        "equipment-comparison",
+        "equipment-qualification",
+    ):
         value = store.get(kind, key)
         title = value["title"]
         if (
-            kind == "equipment-comparison"
+            kind in ("equipment-comparison", "equipment-qualification")
             and value["observation_metadata"]["redistribution"] != "permitted"
         ):
             raise ValueError(
@@ -281,8 +286,15 @@ def _bundle(store, publication_id, max_input_bytes):
     if publication["kind"] == "difference":
         add("difference", publication["source_id"])
 
-    if publication["kind"] == "equipment-comparison":
-        comparison = add("equipment-comparison", publication["source_id"])
+    if publication["kind"] in ("equipment-comparison", "equipment-qualification"):
+        key = publication["source_id"]
+        if publication["kind"] == "equipment-qualification":
+            assessment = add("equipment-qualification", key)
+            protocol = add("equipment-qualification-protocol", assessment["protocol_id"])
+            raw(protocol["capsule_raw_sha256"])
+            raw(assessment["capsule_raw_sha256"])
+            key = assessment["comparison_id"]
+        comparison = add("equipment-comparison", key)
         if comparison["observation_metadata"]["redistribution"] != "permitted":
             raise ValueError("Observation redistribution is not permitted")
         raw(comparison["capsule_raw_sha256"])
@@ -554,6 +566,35 @@ def equipment_content(value):
                 + esc(b["rationale"])
                 + "</p>"
             )
+    if value.get("version") == "equipment-qualification/1":
+        out += (
+            "<h2>Scoped equipment assessment</h2><p>"
+            + esc(value["status"])
+            + "</p><p>"
+            + esc(value["qualification"])
+            + "</p><p>"
+            + esc(value["boundary"])
+            + "</p>"
+        )
+        for split, s in value["statistics"].items():
+            out += (
+                "<h3>"
+                + esc(split)
+                + "</h3><p>"
+                + esc(s["matched"])
+                + "/"
+                + esc(s["expected"])
+                + " hours paired; bias "
+                + esc(s["bias"])
+                + "; RMSE "
+                + esc(s["rmse"])
+                + " "
+                + esc(value["unit"])
+                + ".</p>"
+            )
+        out += "<p>" + esc(value["uncertainty_note"]) + "</p>"
+        if value["uncertainty_exceeds_tolerance"]:
+            out += "<p>Declared measurement uncertainty exceeds an acceptance tolerance.</p>"
     if value.get("version") == "equipment-comparison/1":
         out += (
             "<h2>Observed versus simulated</h2><p>"

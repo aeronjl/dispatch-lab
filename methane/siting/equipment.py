@@ -26,12 +26,61 @@ CHANNELS = {
     "electrolyser_kw": (
         "electrolyser",
         "kW",
-        "Hourly mean applied electrical load",
+        "Hourly mean productive load EXCLUDING startup and external auxiliaries",
         "applied.electrolyser_kw",
     ),
     "h2_produced_kg": ("electrolyser", "kg", "Hydrogen produced during the hour", "h2_produced_kg"),
     "methane_kg": ("reactor", "kg", "Methane produced during the hour", "applied.methane_kg"),
     "battery_kwh": ("battery", "kWh", "Stored energy at the END of the hour", "state.battery_kwh"),
+    "reactor_temperature_c": (
+        "reactor",
+        "°C",
+        "Reactor temperature at the END of the hour",
+        "state.temperature_c",
+    ),
+    "ambient_c": ("solar", "°C", "Hourly mean ambient temperature", "ambient_c"),
+    "process_ac_kw": (
+        "electrolyser",
+        "kW",
+        "Hourly mean combined process AC load, including external auxiliaries",
+        "integration.ac_kw",
+    ),
+    "process_dc_kw": (
+        "electrolyser",
+        "kW",
+        "Hourly mean DC input to the process AC island",
+        "integration.dc_kw",
+    ),
+    "electrolyser_ac_kw": (
+        "electrolyser",
+        "kW",
+        "Hourly mean electrolyser base AC load INCLUDING startup, excluding external auxiliaries",
+        "integration.electrolyser_ac_kw",
+    ),
+    "external_cooling_kw": (
+        "electrolyser",
+        "kW",
+        "Hourly mean external electrolyser heat rejection, thermal kW",
+        "integration.cooling_heat_kw",
+    ),
+    "cooler_kw": (
+        "electrolyser",
+        "kW",
+        "Hourly mean external cooler electric load",
+        "integration.cooler_kw",
+    ),
+    "water_consumed_l": (
+        "electrolyser",
+        "L",
+        "Purified water consumed during the hour",
+        "integration.water_consumed_l",
+    ),
+    "water_l": (
+        "electrolyser",
+        "L",
+        "Purified-water inventory at the END of the hour",
+        "integration.ending_water_l",
+    ),
 }
 BOUNDARY = "Recorded simulation versus supplied observations, not causal policy validation or automatic calibration. Inputs, weather, actions and initial states may differ. No hardware commands are issued."
 
@@ -215,6 +264,19 @@ def context(store, project_id=None, study_id=None, case_id=None):
             if r["design_id"] == did and (not study_id or r["study_id"] == study_id)
         ],
         channels={k: dict(component=v[0], unit=v[1], timing=v[2]) for k, v in CHANNELS.items()},
+        evidence_plan=json.loads(LOADED_FILES["docs/equipment-evidence-plan.json"]),
+        protocols=[
+            r
+            for r in store.list("equipment-qualification-protocol")
+            if r["design_id"] == did
+            and (not study_id or r["study_id"] == study_id and r["case_id"] == case_id)
+        ],
+        qualifications=[
+            {k: r[k] for k in ("id", "title", "status", "created_at")}
+            for r in store.list("equipment-qualification")
+            if r["design_id"] == did
+            and (not study_id or r["study_id"] == study_id and r["case_id"] == case_id)
+        ],
         limitation="Reviews are user-authored acceptance records, not certifications. A different design requires a new review; historical records remain unchanged.",
     )
 
@@ -297,8 +359,14 @@ def observations(store, data):
         value = float(raw["value"]) if raw["value"].strip() else None
         if quality != "missing" and value is None or quality == "missing" and value is not None:
             raise ValueError("Missing rows require blank values; valid/suspect rows require values")
-        if value is not None and (not math.isfinite(value) or value < 0):
-            raise ValueError("Observation values must be finite and nonnegative")
+        if value is not None and (
+            not math.isfinite(value)
+            or value < 0
+            and m.channel not in {"ambient_c", "reactor_temperature_c"}
+        ):
+            raise ValueError(
+                "Observation values must be finite; negative values require a temperature channel"
+            )
         rows.append(dict(timestamp=stamp(t), value=value, quality=quality))
     if not 1 <= len(rows) <= 744:
         raise ValueError("Import 1–744 hourly observations per dataset")
@@ -455,6 +523,15 @@ def integration_trace(store, study_id, case_id, hour):
 
 
 def perform(store, operation, key, data):
+    if operation.startswith("equipment-qualification"):
+        from methane.siting import equipment_qualification as qualification
+
+        if operation == "equipment-qualification-freeze":
+            return qualification.freeze(store, data)
+        if operation == "equipment-qualification-evaluate":
+            return qualification.evaluate(store, key)
+        if operation == "equipment-qualification-result":
+            return qualification.current(store, key)
     if operation == "equipment-integration-save":
         return save_integration(store, key, data["values"])
     if operation == "equipment-integration-trace":

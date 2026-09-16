@@ -15,6 +15,8 @@ KINDS = {
     "commissioning-review",
     "equipment-observations",
     "equipment-comparison",
+    "equipment-qualification-protocol",
+    "equipment-qualification",
     "requirements",
     "operating-assessment",
     "project",

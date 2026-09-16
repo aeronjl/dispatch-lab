@@ -132,3 +132,12 @@ Equipment & evidence. Enabling it creates a design revision with explicit AC
 conversion, external loads, regulated-pressure compatibility and finite purified
 water. The evidence reference alone still does not enable these assumptions or
 establish OEM interlocks. Original saved cases retain their original boundaries.
+
+## Scoped qualification
+
+[Qualification](equipment-qualification.md) adds immutable acceptance criteria,
+separate development/evaluation windows and original discrepancy links. Additional
+measurement channels cover temperature and the optional interface balances. The
+old productive-power channel keeps its original meaning; no historical value is
+reinterpreted. Actual equipment/site qualification remains open pending matching
+records. This workflow does not fit or automatically adopt a new model.

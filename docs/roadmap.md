@@ -189,10 +189,14 @@ These are follow-on increments and evidence gates, not automatically started wor
    Equipment & evidence. The reduced model does not establish actual cooling duty,
    gas/water quality, pressure dynamics or installation feasibility; OEM evidence is
    the next gate.
-2. **Qualify against actual equipment/site evidence.** Import commissioning and
-   operation records, identify influential discrepancies, then review any fitted
-   component adapters against held-out data. No real evidence is supplied by the
-   software acceptance fixtures. Supplier/OEM or operator input is required here.
+2. **Equipment/site qualification — workflow implemented; empirical gate open.**
+   The [qualification workflow](equipment-qualification.md) now freezes review
+   criteria and development/evaluation windows, assesses exact recorded designs,
+   exposes measurement boundaries and discrepancy traces, and preserves reports
+   offline. A public-evidence review and targeted acquisition plan are available
+   inside Equipment & evidence. Matching supplier/OEM or operator records are still
+   required; none were supplied for this increment. Any fitted adapter needs a
+   separately reviewed mechanism and independent evaluation before adoption.
 3. **Rehearse the expert workflow with real participants.** Observe site selection,
    design changes, requirement assessment, evidence inspection, an alternative and
    a written account; simplify navigation where users misunderstand context.
