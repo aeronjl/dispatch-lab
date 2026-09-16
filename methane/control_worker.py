@@ -17,11 +17,13 @@ def main():
         (root / "progress.txt").write_text(message)
 
     progress("Loading recorded decision information")
-    from methane.control_view import compare
+    from methane.control_view import compare, compare_alternative
 
     try:
         inputs = json.loads((root / "input.json").read_text())
-        result = compare(inputs, progress=progress)
+        result = (compare_alternative if inputs.get("alternative") else compare)(
+            inputs, progress=progress
+        )
     except (ValueError, KeyError, TypeError) as exc:
         result = dict(status="incomplete", error=str(exc))
     # Pollers only read a complete file, including while the worker exits.

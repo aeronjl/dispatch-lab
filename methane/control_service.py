@@ -15,7 +15,7 @@ from typing import Literal
 from fastapi import HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
-from methane.control_view import describe, prepare
+from methane.control_view import describe, prepare_alternative
 from methane.model_service import recorded_context
 
 _jobs = OrderedDict()
@@ -34,10 +34,18 @@ class Request(BaseModel):
     hour: int = Field(ge=0, strict=True)
     operation: Literal["describe", "start", "poll", "cancel"]
     job_id: str | None = Field(default=None, max_length=100)
+    alternative: Literal["policies", "battery", "electrolyser", "reactor", "co2"] = "policies"
 
 
 def _context(request):
-    return (request.token, request.run_id, request.controller, request.hour, request.key)
+    return (
+        request.token,
+        request.run_id,
+        request.controller,
+        request.hour,
+        request.alternative,
+        request.key,
+    )
 
 
 def _stop(entry, status="cancelled"):
@@ -102,7 +110,19 @@ def _reply(entry, job_id):
         }
     result = root / "result.json"
     if result.exists():
-        return {**json.loads(result.read_text()), **base}
+        output = json.loads(result.read_text())
+        if output.get("predictions") and not entry.get("artifact_id"):
+            from methane.investigations import save_comparison
+
+            token, run_id, controller, hour = entry["context"][:4]
+            entry["artifact_id"] = save_comparison(
+                recorded_context(token, run_id),
+                controller,
+                hour,
+                json.loads((root / "input.json").read_text()),
+                output,
+            )
+        return {**output, **base, "artifact_id": entry.get("artifact_id")}
     return {
         **base,
         "status": "failed",
@@ -150,7 +170,9 @@ def handle(request: Request):
                     **describe(result, request.controller, request.hour),
                     "key": request.key,
                 }
-            packet = prepare(result, request.controller, request.hour)
+            packet = prepare_alternative(
+                result, request.controller, request.hour, request.alternative
+            )
         except (ValueError, KeyError, IndexError, TypeError) as exc:
             return dict(key=request.key, status="unavailable", error=str(exc))
         for entry in _jobs.values():

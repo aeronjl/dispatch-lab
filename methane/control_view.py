@@ -22,6 +22,101 @@ SCOPE = (
     "isolation and deliveries stay fixed. Robot scheduling is not re-optimised. "
     "These are current-model predictions, not alternative realised histories."
 )
+ALTERNATIVES = {
+    "battery": "Prevent battery discharge",
+    "electrolyser": "Keep electrolysis off",
+    "reactor": "Delay reactor start",
+    "co2": "Delay next CO₂ delivery by 24 h",
+}
+
+
+def prepare_alternative(result, controller, hour, alternative="policies"):
+    packet = prepare(result, controller, hour)
+    if alternative == "policies":
+        return packet
+    if alternative not in ALTERNATIVES:
+        raise ValueError("Unknown decision alternative")
+    d = selected(result, controller, hour)["decision"]
+    packet.update(
+        alternative=alternative,
+        objective=d.get("planning_objective", d.get("policy", "methane")),
+    )
+    packet.pop("information_id")
+    packet["information_id"] = digest(packet)
+    return packet
+
+
+def compare_alternative(packet, progress=lambda _: None):
+    """Re-solve both sides on the current model; change only the declared restriction."""
+    c = Config.from_dict({"plant": packet["plant"], "models": packet["models"]})
+    components = assemble(c.plant, c.models)
+    predictions = {}
+    note = "Only the selected interval is restricted."
+    for label, alternative in (
+        ("Reference dispatch", None),
+        (ALTERNATIVES[packet["alternative"]], packet["alternative"]),
+    ):
+        progress(f"Calculating {label}")
+        forecast = copy.deepcopy(packet["forecast"])
+        if alternative == "co2":
+            deliveries = forecast.get("deliveries_kg", [])
+            index = next((i for i, value in enumerate(deliveries) if value > 0), None)
+            if index is None:
+                note = "No CO₂ delivery occurs in this horizon; the alternative has no effect."
+            else:
+                quantity, deliveries[index] = deliveries[index], 0
+                if index + 24 < len(deliveries):
+                    deliveries[index + 24] += quantity
+                    note = "The next delivery moves by 24 hours; later deliveries are unchanged."
+                else:
+                    note = "The next delivery moves 24 hours later, beyond this forecast horizon."
+        if alternative == "reactor" and packet["state"]["reactor_on"]:
+            note = "The reactor is already running; preventing a new start has no effect."
+        prediction = plan(
+            c.plant,
+            State(**packet["state"]),
+            forecast,
+            packet["capacity_kw"],
+            Costs(**packet["costs"]),
+            packet["objective"],
+            packet["seconds"],
+            alternative=alternative,
+            allow_fallback=False,
+            minimum_ely=0 if alternative == "electrolyser" else packet["minimum_ely"],
+            dependable_capacity=packet["dependable_capacity"],
+            components=components,
+            terminal_battery_value=packet["terminal_battery_value"],
+        )
+        predictions[label] = dict(
+            information_id=packet["information_id"],
+            predicted=prediction.get("predicted"),
+            solver=prediction["solver"],
+            points=series({"forecast": forecast, "plan": prediction}, packet["hour"]),
+            basis="Current-model reference" if alternative is None else "Declared restriction",
+        )
+    from methane.provenance import LOADED_SOURCE
+
+    if packet["alternative"] == "electrolyser" and packet["minimum_ely"]:
+        note += " This deliberately suspends the selected interval's load probe."
+    return dict(
+        status="complete"
+        if all(p["predicted"] is not None for p in predictions.values())
+        else "incomplete",
+        scope="Both sides are current-model predictions from the original estimate, forecast and frozen prices. Service commitments stay fixed. "
+        + note,
+        information_id=packet["information_id"],
+        cost_version=packet["cost_version"],
+        initial=packet["state"],
+        forecast_source=packet["forecast"].get("source"),
+        original_source=packet["original_source"],
+        original_model_version=packet["original_model_version"],
+        replanner_source_content_hash=LOADED_SOURCE["content_hash"],
+        implementation=components.identities(),
+        comparison_version="dispatch-lab/decision-alternative/1",
+        terminal_battery_value=packet["terminal_battery_value"],
+        predictions=predictions,
+        order=list(predictions),
+    )
 
 
 def digest(value):
@@ -212,4 +307,5 @@ def compare(packet, progress=lambda _: None):
         initial=packet["state"],
         terminal_battery_value=packet["terminal_battery_value"],
         predictions=predictions,
+        order=list(predictions),
     )

@@ -17,7 +17,11 @@ def result():
 
 
 @pytest.fixture(autouse=True)
-def cleanup():
+def cleanup(tmp_path, monkeypatch):
+    from methane import investigations
+    from methane.siting.store import Store
+
+    monkeypatch.setattr(investigations, "Store", lambda: Store(tmp_path))
     service.cleanup()
     yield
     service.cleanup()
@@ -56,6 +60,8 @@ def test_real_worker_only_receives_original_information(result):
     ).read_text()
     assert '"retrospective_truth"' not in packet and '"observations_after"' not in packet
     assert result == before
+    assert reply["artifact_id"]
+    assert call(c, "poll", job_id=start["job_id"])["artifact_id"] == reply["artifact_id"]
 
 
 def test_cancel_before_start_and_cross_selection_ownership(result):

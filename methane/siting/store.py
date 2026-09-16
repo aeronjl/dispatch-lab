@@ -32,6 +32,9 @@ KINDS = {
     "evaluation",
     "walkthrough",
     "difference",
+    "investigation",
+    "investigation-index",
+    "decision-comparison",
 }
 
 

@@ -97,6 +97,9 @@ async def lifespan(app):
     from methane.control_service import handle as control_view
 
     app.add_api_route("/dispatch/control-view", control_view, methods=["POST"])
+    from methane.investigations import handle as investigation
+
+    app.add_api_route("/dispatch/investigation", investigation, methods=["POST"])
     from methane.study_service import download, handle
 
     app.add_api_route("/dispatch/studies", handle, methods=["POST"])

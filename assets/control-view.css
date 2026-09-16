@@ -1,4 +1,5 @@
 /* Everything in this layer is opt-in. Reviewed plant paths and labels stay intact. */
+.cv-alternative{display:grid;gap:6px;font-size:10px;color:#b9a78b}.cv-alternative select{width:100%;min-width:0;font-size:11px;padding:7px}
 .cv-workspace{position:absolute;inset:0;pointer-events:none;z-index:10;color:#e7d1b0;font-size:11px}
 .cv-workspace button,.cv-workspace select,.cv-workspace input{pointer-events:auto}
 .cv-toolbar{position:absolute;top:19px;left:24px;right:82px;display:flex;align-items:center;gap:16px;height:40px;pointer-events:auto}

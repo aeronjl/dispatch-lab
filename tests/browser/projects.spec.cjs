@@ -27,7 +27,13 @@ test('project calculates explicit weather, plays saved operation and compares a 
  await page.locator('[data-pj-hours]').selectOption('24');await page.locator('[data-pj-controller]').selectOption('Greedy');await page.locator('[data-pj=run]').click();
  await expect(page.locator('[data-pj-play]').first()).toBeVisible({timeout:60000});await expect(page.locator('.pj-run-progress')).toContainText('Playback does not run the solver');
  await page.locator('[data-pj-play]').first().click();await expect(page.locator('.pj-workspace')).toBeHidden();
- await expect(page.locator('[data-do=project-revise]')).toBeVisible({timeout:20000});await page.locator('[data-do=project-revise]').click();
+ await expect(page.locator('[data-do=project-revise]')).toBeVisible({timeout:20000});
+ const playbackBoundary=await page.locator('[data-m=scrubber]').inputValue();
+ await page.locator('.m-inspector [data-do=investigate]').click();await expect(page.locator('.iv-totals')).toContainText('Methane');
+ await expect(page.locator('[data-iv-context]')).toContainText('Greedy');await page.locator('[data-iv=pin]').click();
+ await page.locator('[data-iv=save]').click();await expect(page.locator('.iv-status')).toContainText('Saved. Original run unchanged.');
+ await page.keyboard.press('Escape');await expect(page.locator('[data-m=scrubber]')).toHaveValue(playbackBoundary);await expect(page.locator('.m-inspector [data-do=investigate]')).toBeFocused();
+ await page.locator('[data-do=project-revise]').click();
  await page.locator('[data-pj-field="plant.battery_kwh"]').fill('1600');await page.locator('[data-pj=save]').click();await page.locator('.pj-header [data-pj=operate]').click();
  await expect(page.locator('.pj-run h1')).toHaveText('Compare a revised design');await expect(page.locator('[data-pj-weather]')).toBeDisabled();await expect(page.locator('[data-pj-controller]')).toHaveValue('Greedy');
  await page.locator('[data-pj=run]').click();await expect(page.locator('[data-pj-play]')).toHaveCount(2,{timeout:60000});await expect(page.locator('.pj-table tbody tr')).toHaveCount(2);await expect(page.locator('.pj-run-progress')).toContainText('Calculation complete');

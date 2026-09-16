@@ -126,3 +126,41 @@ the mechanisms: better observed condition/reference channels, identifiable durat
 models, additional reviewed estimator/policy adapters and—when justified—RL or
 neuroscience-inspired training. The delivered reserve policy is a transparent
 homeostatic planning hypothesis, not an RL-trained agent or field-qualified autonomy.
+
+## Expert workflow roadmap — one increment at a time
+
+The next product work makes the platform useful as an expert's working instrument
+while retaining its approachable default view. Each increment returns to the user
+with delivered scope, verification, limitations and the remaining sequence. Further
+increments are not automatically started.
+
+1. **Expert investigation workflow — implemented.** Select a recorded operating
+   period, inspect its constraints and observations, pin evidence, calculate a
+   targeted alternative, compare predictions and save an authored account with its
+   source context. The [investigation contract](expert-investigation.md) records
+   scope and limitations. Actual expert-participant walkthroughs remain outstanding;
+   the completed software rehearsal is not a substitute for them.
+2. **Shared control interface and MCP — next.** Give the UI, reference policies and
+   external agents the same versioned observation/action contract. Start with
+   bounded simulated-plant sessions: observe, inspect constraints, propose a plan,
+   preview it, advance execution and trace the result. Make agent authority,
+   allowed actions, budgets, cancellation and fallback visible. Preserve hard
+   execution constraints and keep simulator truth outside agent observations.
+   Expose recorded reasoning and actions in the existing plant/control views.
+   This does not authorise connecting an agent to real plant hardware.
+3. **Operating requirements and robust design comparisons.** Let an expert express
+   production commitments, reserve/service requirements and acceptable shortfall,
+   then compare site/design choices against them. Reveal bottlenecks, uncertainty,
+   infeasibility and trade-offs beside the relevant equipment. Preserve starting
+   assumptions and comparison boundaries; avoid a single unexplained ranking.
+4. **Equipment-specific planning for one deployment use case.** Choose a concrete
+   equipment/site/support configuration, attach identified operating envelopes,
+   service capabilities and observed data, and expose applicability and gaps in
+   planning results. Add commissioning and operation/shadow comparisons as evidence
+   permits. Detailed illustrations and literature priors do not establish calibration.
+
+Across these increments, protect original evidence, responsive interaction,
+keyboard/narrow-screen access, and reversible context-preserving navigation. Real
+participant feedback and an off-machine storage/restore arrangement remain explicit
+external gates. Broad research matrices remain user-run templates, not the product's
+completion criterion.

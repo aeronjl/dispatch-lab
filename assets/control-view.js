@@ -11,7 +11,7 @@ function controlSegments(values, width=720, height=118, maximum=null, minimum=0)
     values.forEach((v,i)=>{if(Number.isFinite(v))part.push(`${(i+.5)*width/values.length},${height-6-(v-minimum)/Math.max(1e-9,max-minimum)*(height-18)}`);else if(part.length){segments.push(part.join(' '));part=[];}});
     if(part.length)segments.push(part.join(' '));return segments;
 }
-function createControlView({root,getResult,getFrame,pause,setController,seekDecision,onOpen,onReturn,fetcher=fetch}) {
+function createControlView({root,getResult,getFrame,pause,setController,seekDecision,onOpen,onReturn,onComparison,fetcher=fetch}) {
     const labels={solar:'Solar array',battery:'Battery',electrolyser:'Electrolyser',hydrogen:'Hydrogen buffer',co2:'CO₂ supply',reactor:'Methanator'};
     const metrics={solar:['Available solar','kW'],battery:['Ending energy','kWh'],electrolyser:['Productive load','kW'],hydrogen:['Ending inventory','kg H₂'],co2:['Ending inventory','kg CO₂'],reactor:['Ending temperature','°C']};
     const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -23,9 +23,10 @@ function createControlView({root,getResult,getFrame,pause,setController,seekDeci
       <p class="cv-status" data-cv="status" role="status" aria-live="polite"></p><div class="cv-content" data-cv="content"></div><div class="cv-horizon" data-cv="horizon"><span data-cv="horizon-start"></span><label><span class="cv-sr">Predicted interval</span><input data-cv="offset" type="range" min="0" step="1"></label><span data-cv="horizon-end"></span></div></div>`;
     root.append(host);
     const q=s=>host.querySelector(s), instance=crypto.randomUUID();
-    let opened=false,component='battery',tab='Plan',offset=0,generation=0,context=null,signature='',eventSignature='',boundary=-1,data=null,comparison=null,running=null,timer=null,origin=null;
-    const selection=()=>{const r=getResult(),f=getFrame();return {token:r.model_token,run_id:r.run_id,controller:f.controller,hour:Math.max(0,f.hour-1)};};
-    const sign=c=>controlSelectionKey(c.run_id,c.controller,c.hour,c.token);
+    let opened=false,component='battery',tab='Plan',choice='policies',offset=0,generation=0,context=null,signature='',eventSignature='',boundary=-1,data=null,comparison=null,running=null,timer=null,origin=null;
+    const choices={policies:'Compare control policies',battery:'Prevent battery discharge',electrolyser:'Keep electrolysis off',reactor:'Delay reactor start',co2:'Delay next CO₂ delivery by 24 h'};
+    const selection=()=>{const r=getResult(),f=getFrame();return {token:r.model_token,run_id:r.run_id,controller:f.controller,hour:Math.max(0,f.hour-1),alternative:choice};};
+    const sign=c=>controlSelectionKey(c.run_id,c.controller,c.hour,`${c.token}|${c.alternative}`);
     const next=()=>{const s=selection();return {...s,key:controlSelectionKey(s.run_id,s.controller,s.hour,`${instance}-${++generation}`)};};
     const fresh=c=>opened&&context?.key===c.key&&sign(selection())===sign(c);
     function status(message){q('[data-cv=status]').textContent=message;q('[data-cv=status]').hidden=!message;}
@@ -39,7 +40,7 @@ function createControlView({root,getResult,getFrame,pause,setController,seekDeci
         n.dataset.controlBound=String(opened&&!!data?.evidence?.bindings?.[n.dataset.component]?.length);
     });}
     function close(focus=true){if(!opened)return;cancel();opened=false;context=null;data=null;comparison=null;host.hidden=true;delete root.dataset.controlView;highlight();if(focus)onReturn?.(origin);}
-    function open(key='battery',from=document.activeElement){origin=from;pause();onOpen?.();component=labels[key]?key:'battery';opened=true;tab='Plan';root.dataset.chrome='visible';root.dataset.controlView='true';host.hidden=false;
+    function open(key='battery',from=document.activeElement,options={}){origin=from;pause();onOpen?.();component=labels[key]?key:'battery';opened=true;tab=options.tab||'Plan';choice='policies';root.dataset.chrome='visible';root.dataset.controlView='true';host.hidden=false;
         const r=getResult();q('[data-cv=controller]').innerHTML=Object.keys(r.records).map(k=>`<option>${esc(k)}</option>`).join('');q('[data-cv=controller]').value=getFrame().controller;q('[data-cv=component]').value=component;load();q('[data-cv=close]').focus({preventScroll:true});}
     async function load(){
         cancel();data=null;comparison=null;offset=0;context=next();const c=context;signature=sign(c);boundary=getFrame().hour;
@@ -97,11 +98,11 @@ function createControlView({root,getResult,getFrame,pause,setController,seekDeci
         const allowed=data.comparison.available;
         let output='';
         if(comparison){
-            const names=Object.keys(comparison.predictions), ps=names.map(n=>comparison.predictions[n]);
+            const names=comparison.order||Object.keys(comparison.predictions), ps=names.map(n=>comparison.predictions[n]);
             const rows=[['Methane / kg',p=>p?.methane_kg],['Decision cost / €',p=>p?.variable_and_wear_eur],['Assumed contribution / €',p=>p?.assumed_contribution_eur],['Reactor starts',p=>p?.reactor_starts],['Ending battery / kWh',p=>p?.ending?.battery_kwh],['Ending hydrogen / kg',p=>p?.ending?.h2_kg],['Ending CO₂ / kg',p=>p?.ending?.co2_kg],['Ending temperature / °C',p=>p?.ending?.temperature_c]];
             output=`${chart(ps, names.map((n,i)=>[i,n]))}${table(['Predicted',...names],rows.map(([n,fn])=>[n,...ps.map(p=>num(fn(p.predicted)))]))}${table(['Calculation',...names],[['Basis',...ps.map(p=>p.basis)],['Termination',...ps.map(p=>p.solver.status)],['Fallback',...ps.map(p=>p.solver.fallback_used?'Used':'No')],['Gap',...ps.map(p=>Number.isFinite(p.solver.gap)?num(p.solver.gap*100)+'%':'—')]])}<p class="cv-muted">${esc(comparison.comparison_version)} · input ${esc(comparison.information_id.slice(0,12))} · frozen dispatch prices. No ending-inventory sale credit.${comparison.terminal_battery_value?' Methane terminal battery allowance: '+num(comparison.terminal_battery_value)+' kg/kWh.':''}</p><p class="cv-muted">Current source <span title="${esc(comparison.replanner_source_content_hash)}">${esc(comparison.replanner_source_content_hash?.slice(0,12))}</span> · recorded source <span title="${esc(comparison.original_source||'Not saved')}">${esc(comparison.original_source?.slice(0,12)||'Not saved')}</span></p>`;
-        }else output='<p class="cv-comparison-empty">One starting point.<br>Three ways to use the next hours.</p>';
-        return `<div class="cv-reading"><span class="cv-eyebrow">Same information · new predictions</span><h3>Compare policies</h3><p>Fork this decision into three predicted futures.</p><button data-cv="calculate" ${!allowed||running?'disabled':''}>Calculate comparison</button><button data-cv="cancel" ${running?'':'hidden'}>Cancel</button><p>${esc(data.comparison.scope)}</p>${!allowed?`<p class="cv-bound">${esc(data.comparison.reason)}</p>`:''}<p class="cv-muted">Greedy follows a local rule. MPC methane favours output; MPC economics trades output against variable cost and wear. Fixed ownership costs do not drive dispatch.</p></div><div class="cv-visual">${output}</div>`;
+        }else output=`<p class="cv-comparison-empty">One starting point.<br>${choice==='policies'?'Three ways to use the next hours.':'One action to reconsider.'}</p>`;
+        return `<div class="cv-reading"><span class="cv-eyebrow">Same information · new predictions</span><h3>Try an alternative</h3><label class="cv-alternative">Question<select data-cv="alternative">${Object.entries(choices).map(([k,v])=>`<option value="${k}" ${choice===k?'selected':''}>${esc(v)}</option>`).join('')}</select></label><button data-cv="calculate" ${!allowed||running?'disabled':''}>Calculate comparison</button><button data-cv="cancel" ${running?'':'hidden'}>Cancel</button><p>${esc(comparison?.scope||(choice==='policies'?data.comparison.scope:'Re-solve reference dispatch and the declared alternative from the same recorded estimate, forecast and frozen prices. These are predictions, not alternative realised histories. Service commitments stay fixed.'))}</p>${!allowed?`<p class="cv-bound">${esc(data.comparison.reason)}</p>`:''}<p class="cv-muted">${choice==='policies'?'Greedy follows a local rule. MPC methane favours output; MPC economics trades output against variable cost and wear. Fixed ownership costs do not drive dispatch.':'Only the declared restriction changes. The reference is also recalculated; solver differences from the archived plan remain possible. No automatic fallback replaces an infeasible or unresolved alternative.'}</p></div><div class="cv-visual">${output}</div>`;
     }
     function paint(){
         if(!opened)return;
@@ -118,7 +119,7 @@ function createControlView({root,getResult,getFrame,pause,setController,seekDeci
         async function receive(operation,extra={}){
             try{const a=await send(c,operation,extra);if(!fresh(c)||a.key!==c.key||!running)return;
                 if(a.status==='running'){running.job_id=a.job_id;status(a.progress||'Starting isolated comparison…');timer=setTimeout(()=>receive('poll',{job_id:a.job_id}),200);return;}
-                running=null;const restore=document.activeElement===q('[data-cv=cancel]');if(a.predictions)comparison=a;
+                running=null;const restore=document.activeElement===q('[data-cv=cancel]');if(a.predictions){comparison=a;onComparison?.(a);}
                 status(a.predictions?`Comparison ${a.status}. All curves are conditional predictions; inspect solver termination below.`:a.error||a.status);paint();if(restore)q('[data-cv=calculate]')?.focus({preventScroll:true});
             }catch(e){if(fresh(c)){running=null;status(e.message);paint();}}
         }
@@ -131,7 +132,7 @@ function createControlView({root,getResult,getFrame,pause,setController,seekDeci
         const action=e.target.closest('[data-cv]')?.dataset.cv;
         if(action==='close')close();if(action==='calculate')calculate();if(action==='cancel'){cancel();context=next();status('Comparison cancelled.');paint();q('[data-cv=calculate]')?.focus({preventScroll:true});}
     });
-    host.addEventListener('change',e=>{if(e.target.matches('[data-cv=events]')&&e.target.value!==''){const event=getResult().events[getFrame().controller][Number(e.target.value)];pause();seekDecision(event.hour);select(event.component);}if(e.target.matches('[data-cv=controller]')){pause();setController(e.target.value);}if(e.target.matches('[data-cv=component]'))select(e.target.value);});
+    host.addEventListener('change',e=>{if(e.target.matches('[data-cv=alternative]')){cancel();choice=e.target.value;comparison=null;context=next();signature=sign(context);status('');paint();q('[data-cv=alternative]').focus();}if(e.target.matches('[data-cv=events]')&&e.target.value!==''){const event=getResult().events[getFrame().controller][Number(e.target.value)];pause();seekDecision(event.hour);select(event.component);}if(e.target.matches('[data-cv=controller]')){pause();setController(e.target.value);}if(e.target.matches('[data-cv=component]'))select(e.target.value);});
     host.addEventListener('input',e=>{if(e.target.matches('[data-cv=offset]')){offset=Number(e.target.value);paint();}});
     host.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}});
     return {open,close,sync,select,isOpen:()=>opened,destroy:()=>{cancel();host.remove();}};

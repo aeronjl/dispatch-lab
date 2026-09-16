@@ -29,6 +29,11 @@ retain the full model; they do not define a separate simplified physics model.
    **Revise plant project**). Edit and save, then return to Operate. The comparison
    recalculates both designs using the original information. **Report, traces &
    export** opens the existing calendar, editable write-up and reproduction tools.
+5. From recorded playback, **Investigate operation** opens the
+   [investigation workspace](expert-investigation.md). Select a period, pin decision
+   evidence, calculate a targeted alternative and save an interpretation. Closing
+   restores the original operating context. These conditional predictions do not
+   replace the full matched design experiment in Operate.
 
 Site services includes the installed packages and their support resources. Add
 cleaning, inspection, bounded reset or human support from **Equipment & support**.

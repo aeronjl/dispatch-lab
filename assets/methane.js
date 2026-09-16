@@ -12,7 +12,7 @@ function methaneFrame(result, elapsed, controller) {
 function mountMethane(element, props, watch, trigger) {
     let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
-    let controlView, controlOrigin, solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
+    let investigation, investigationOrigin, controlView, controlOrigin, solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
     const root = element.querySelector('.methane-console');
     const $ = selector => root.querySelector(selector);
@@ -49,6 +49,7 @@ function mountMethane(element, props, watch, trigger) {
         if(focus)(origin?.isConnected?origin:($(`[data-component="${previous}"]`)||$('[data-do="menu"]'))).focus({preventScroll:true});
     }
     function openUtility(panel='run', origin=null) {
+        if(investigation?.isSuspended()){controlView?.close(false);investigation.resume();return;}
         controlView?.close(false);
         closePanels(false);serviceOrigin=origin;utility=panel;root.dataset.chrome='visible';
         $('.m-utility').hidden=false;
@@ -58,6 +59,7 @@ function mountMethane(element, props, watch, trigger) {
         render();$(`[data-panel="${panel}"]`).focus({preventScroll:true});
     }
     function hideControls() {
+        if(investigation?.isSuspended()){controlView?.close(false);investigation.resume();return;}
         controlView?.close(false);
         closePanels(false);root.dataset.chrome='hidden';root.focus({preventScroll:true});
     }
@@ -294,6 +296,7 @@ function mountMethane(element, props, watch, trigger) {
         $('.m-events').innerHTML=(result.events[controller]||[]).map(e=>`<button data-hour="${Number(e.hour)||0}" data-event-component="${escape(e.component)}">H${String(e.hour).padStart(3,'0')} · ${escape(e.label)}</button>`).join('') || '<span class="m-muted">No operating events in this run.</span>';
     }
     function reset() {
+        investigation?.close(false);
         controlView?.close(false);
         studies?.close();
         sites?.close();
@@ -325,10 +328,18 @@ function mountMethane(element, props, watch, trigger) {
         setController:value=>{controller=value;$('[data-m="controller"]').value=value;invalidate();refreshEvents();render();},
         seekDecision:hour=>{clock.pause();clock.seek(hour+1);},
         onOpen:()=>{controlOrigin={selected,section,utility};closePanels(false);},
-        onReturn:origin=>{const previous=controlOrigin;controlOrigin=null;if(previous?.selected){selectComponent(previous.selected);section=previous.section;inspect(current());if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else if(previous?.utility){openUtility(previous.utility);if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else $('[data-do="menu"]').focus({preventScroll:true});}
+        onComparison:value=>investigation?.acceptComparison(value),
+        onReturn:origin=>{if(investigation?.resume())return;const previous=controlOrigin;controlOrigin=null;if(previous?.selected){selectComponent(previous.selected);section=previous.section;inspect(current());if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else if(previous?.utility){openUtility(previous.utility);if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});}else $('[data-do="menu"]').focus({preventScroll:true});}
     }):null;
     $('[data-do="control"]').hidden=!controlView;
     $('[data-do="watch-control"]').hidden=!controlView;
+    investigation=typeof createInvestigation==='function'?createInvestigation({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),
+        onOpen:()=>{investigationOrigin={selected,section,utility};controlView?.close(false);closePanels(false);},
+        restoreFrame:frame=>{if(!frame)return;controller=frame.controller;$('[data-m="controller"]').value=controller;invalidate();refreshEvents();clock.seek(frame.hour);render();},
+        inspectDecision:value=>{controller=value.controller;$('[data-m="controller"]').value=controller;invalidate();refreshEvents();clock.seek(value.hour+1);controlView.open(value.component,null,{tab:value.tab});},
+        onClose:origin=>{controlView?.close(false);const previous=investigationOrigin;investigationOrigin=null;if(previous?.selected){selectComponent(previous.selected);section=previous.section;inspect(current());}else if(previous?.utility)openUtility(previous.utility);if(origin?.isConnected&&!origin.closest('[hidden]'))origin.focus({preventScroll:true});else $('[data-do="menu"]').focus({preventScroll:true});}
+    }):null;
+    $$('[data-do="investigate"]').forEach(n=>n.hidden=!investigation);
     serviceAlternatives=typeof createServiceAlternatives==='function'?createServiceAlternatives({root,getResult:()=>result,getFrame:current,pause:()=>clock.pause(),seekDecision:hour=>{clock.pause();clock.seek(hour+1);}}):null;
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:(topic='siting',context='Current model')=>model?.open(topic,context),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
@@ -336,6 +347,7 @@ function mountMethane(element, props, watch, trigger) {
     root.addEventListener('revise-plant-design',()=>{solar?.close();project?.open({study:result.study_origin?.edition_id,component:'solar'});});
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
+        if(event.target.closest('.iv-workspace'))return;
         if(event.target.closest('.cv-workspace'))return;
         if(event.target.closest('[data-service-alternatives]'))return;
         if(event.target.closest('.pj-workspace'))return;
@@ -354,6 +366,7 @@ function mountMethane(element, props, watch, trigger) {
         const tab=event.target.closest('[data-section]');if(tab){section=tab.dataset.section;inspect(current());return;}
         const action=event.target.closest('[data-do]')?.dataset.do;
         if(action==='control'||action==='watch-control')controlView?.open(selected||'battery',event.target);
+        if(action==='investigate')investigation?.open(selected||'battery',event.target);
         if(action==='play')clock.snapshot().playing?clock.pause():clock.play();
         if(action==='back'||action==='next'){invalidate();clock.step(action==='next'?1:-1);}
         if(action==='reset'){invalidate();clock.reset();}
@@ -390,6 +403,7 @@ function mountMethane(element, props, watch, trigger) {
     $('[data-m="speed"]').addEventListener('change',e=>clock.setSpeed(Number(e.target.value)));
     $('[data-m="scrubber"]').addEventListener('input',e=>{invalidate();clock.seek(Number(e.target.value));});
     root.addEventListener('keydown',e=>{
+        if(investigation?.isOpen()&&!investigation.isSuspended())return;
         if(project?.isOpen())return;
         if(studies?.isOpen())return;
         if(sites?.isOpen())return;
@@ -409,7 +423,7 @@ function mountMethane(element, props, watch, trigger) {
     });
     const visibility=()=>{if(document.hidden)clock.pause();}; document.addEventListener('visibilitychange',visibility);
     const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)clock.pause();});observer.observe(root);
-    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();controlView?.destroy();project?.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
+    const cleanup=new MutationObserver(()=>{if(!element.isConnected){clock.destroy();investigation?.destroy();controlView?.destroy();project?.destroy();fieldScene?.destroy();observer.disconnect();cleanup.disconnect();document.removeEventListener('visibilitychange',visibility);}});cleanup.observe(document.body,{childList:true,subtree:true});
     watch('value',reset);watch('economics',()=>{costs=decodeMethanePayload(props.economics);costRevision++;render();});
     watch('decision_answer',()=>{
         const value=props.decision_answer;

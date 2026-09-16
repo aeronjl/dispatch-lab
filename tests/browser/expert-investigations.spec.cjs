@@ -1,0 +1,71 @@
+const {test,expect}=require('@playwright/test');
+const fs=require('node:fs');
+async function open(page){
+ await page.goto('/');await page.locator('.m-plant').waitFor();
+ await page.getByRole('button',{name:'Playback details',exact:true}).click();
+ await page.locator('[data-m=scrubber]').evaluate(n=>{n.value=12;n.dispatchEvent(new Event('input',{bubbles:true}));});
+ await page.getByRole('button',{name:'Playback details',exact:true}).click();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();
+ await page.getByRole('button',{name:'Investigate operation ↗',exact:true}).click();
+ await expect(page.locator('.iv-totals')).toContainText('Methane');
+}
+test('period → evidence → real alternative → saved write-up, with original context restored',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));await open(page);
+ await page.locator('[data-iv=start]').fill('10');await page.locator('[data-iv=end]').fill('16');await page.locator('[data-iv=range]').click();
+ await expect(page.locator('.iv-table tbody tr')).toHaveCount(6);
+ await page.locator('.iv-chart [data-iv-hour="12"]').click();await page.locator('[data-iv=pin]').click();
+ await page.locator('[data-iv=inspect]').click();await expect(page.locator('.cv-evidence')).toContainText('Observe → test → check');
+ await expect(page.locator('.iv-workspace')).toBeHidden();await expect(page.locator('[data-m=scrubber]')).toHaveValue('13');
+ await page.keyboard.press('Escape');await expect(page.locator('[data-iv=inspect]')).toBeFocused();
+ await page.locator('[data-iv=inspect]').click();await page.keyboard.press('h');await expect(page.locator('[data-iv=inspect]')).toBeFocused();
+ await page.locator('[data-iv=alternative]').click();await page.locator('[data-cv=alternative]').selectOption('battery');
+ await page.locator('[data-cv=calculate]').click();await expect(page.locator('[data-cv=status]')).toContainText('Comparison complete',{timeout:20000});
+ await expect(page.locator('.cv-table').first()).toContainText('Reference dispatch');
+ await page.keyboard.press('Escape');await expect(page.locator('.iv-comparison')).toContainText('Prevent battery discharge');
+ await expect(page.locator('.iv-comparison')).toContainText('saved predictions');
+ fs.mkdirSync('build/expert-investigation',{recursive:true});await page.screenshot({path:'build/expert-investigation/alternatives-desktop.png'});
+ await page.locator('[data-iv-tab=Notes]').click();await page.locator('[data-iv-field=title]').fill('Battery reserve investigation');
+ await page.locator('[data-iv-field=question]').fill('Could preserving this interval’s battery energy help later?');
+ await page.locator('[data-iv-field=finding]').fill('Compare predicted output and ending stocks; this does not establish field performance.');
+ await page.locator('[data-iv=save]').click();await expect(page.locator('.iv-status')).toContainText('Saved. Original run unchanged.');
+ const downloaded=page.waitForEvent('download');await page.locator('[data-iv=html]').click();const file=await downloaded;await file.saveAs('build/expert-investigation/walkthrough.html');
+ expect(fs.readFileSync('build/expert-investigation/walkthrough.html','utf8')).toContain('Prevent battery discharge');
+ await page.keyboard.press('Escape');await expect(page.locator('[data-m=scrubber]')).toHaveValue('12');
+ await expect(page.getByRole('button',{name:'Investigate operation ↗',exact:true})).toBeFocused();
+ await page.getByRole('button',{name:'Investigate operation ↗',exact:true}).click();
+ await expect(page.locator('[data-iv-field=question]')).toHaveValue('Could preserving this interval’s battery energy help later?');
+ await page.locator('[data-iv=saved]').selectOption({label:(await page.locator('[data-iv=saved] option').allTextContents()).find(v=>v.startsWith('Battery reserve investigation'))});
+ await expect(page.locator('.iv-status')).toContainText('Saved edition opened');await expect(page.locator('[data-iv-dirty]')).toContainText('Saved edition');
+ await page.screenshot({path:'build/expert-investigation/notes-desktop.png'});
+ const renders=await page.evaluate(()=>performance.getEntriesByName('dispatch-investigation-render').map(e=>e.duration).sort((a,b)=>a-b));
+ const p95=renders[Math.floor(renders.length*.95)];fs.writeFileSync('build/expert-investigation/render-performance.json',JSON.stringify({samples:renders.length,p95_ms:p95,scope:'1440px reference recording; synchronous render work, not solver or network latency'},null,2));expect(p95).toBeLessThan(10);
+ expect(errors).toEqual([]);
+});
+test('late save and edition-load responses preserve newer authored notes',async({page})=>{
+ await open(page);await page.locator('[data-iv-tab=Notes]').click();await page.locator('[data-iv-field=finding]').fill('First submitted interpretation.');
+ await page.route('**/dispatch/investigation',async route=>{const body=route.request().postDataJSON();if(['save','load'].includes(body.operation)){const response=await route.fetch();await new Promise(r=>setTimeout(r,450));await route.fulfill({response});}else await route.continue();});
+ await page.locator('[data-iv=save]').click();await page.locator('[data-iv-field=finding]').fill('Newer unsaved interpretation.');
+ await expect(page.locator('.iv-status')).toContainText('Newer edits are still unsaved');await expect(page.locator('[data-iv-field=finding]')).toHaveValue('Newer unsaved interpretation.');
+ const id=await page.locator('[data-iv=saved] option').nth(1).getAttribute('value');await page.locator('[data-iv=saved]').selectOption(id);await page.locator('[data-iv-field=finding]').fill('Still editing while loading.');
+ await expect(page.locator('.iv-status')).toContainText('Notes changed while this edition was loading');await expect(page.locator('[data-iv-field=finding]')).toHaveValue('Still editing while loading.');
+});
+test('invalid ranges and late replies cannot relabel the selected period',async({page})=>{
+ await open(page);await page.locator('[data-iv=start]').fill('15');await page.locator('[data-iv=end]').fill('10');await page.locator('[data-iv=range]').click();
+ await expect(page.locator('.iv-status')).toContainText('Previous valid results remain displayed');await expect(page.locator('[data-iv=save]')).toBeDisabled();
+ await page.route('**/dispatch/investigation',async route=>{const body=route.request().postDataJSON();if(body.operation==='period'&&body.start===10){const response=await route.fetch();await new Promise(r=>setTimeout(r,500));await route.fulfill({response});}else await route.continue();});
+ await page.locator('[data-iv=start]').fill('10');await page.locator('[data-iv=end]').fill('16');await page.locator('[data-iv=range]').click();
+ await page.locator('[data-iv=start]').fill('12');await page.locator('[data-iv=range]').click();await expect(page.locator('.iv-table tbody tr')).toHaveCount(4);
+ await page.waitForTimeout(650);await expect(page.locator('.iv-table tbody tr')).toHaveCount(4);await expect(page.locator('[data-iv=start]')).toHaveValue('12');
+});
+test('draft recovery, keyboard access and narrow layout keep evidence available',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await open(page);
+ await page.screenshot({path:'build/expert-investigation/period-mobile.png'});
+ await page.locator('[data-iv-tab=Notes]').click();await page.locator('[data-iv-field=finding]').fill('An unsaved mobile hypothesis.');
+ await page.keyboard.press('Escape');await page.reload();await page.locator('.m-plant').waitFor();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.getByRole('button',{name:'Investigate operation ↗',exact:true}).click();
+ await expect(page.locator('[data-iv-field=finding]')).toHaveValue('An unsaved mobile hypothesis.');
+ await page.locator('[data-iv=close]').focus();await page.keyboard.press('Shift+Tab');await expect(page.locator('[data-iv=save]')).toBeFocused();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+ expect(await page.locator('.iv-workspace').evaluate(n=>getComputedStyle(n).animationName)).toBe('none');
+ await page.screenshot({path:'build/expert-investigation/notes-mobile.png'});
+});
