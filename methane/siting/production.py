@@ -110,6 +110,15 @@ def create(
                 label=item.get("label", design["name"]),
             )
         )
+        if design.get("equipment_basis_id"):
+            from methane.siting.equipment import applicability
+
+            frozen[-1]["equipment_applicability"] = applicability(
+                store, design["equipment_basis_id"], c.to_dict(), design["site_revision"]
+            )
+            frozen[-1]["equipment_applicability"]["commissioning_reviews_at_creation"] = [
+                r for r in store.list("commissioning-review") if r["design_id"] == item["design_id"]
+            ]
         if policy is not None:
             frozen[-1]["policy"] = policy
     value = dict(

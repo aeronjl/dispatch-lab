@@ -49,9 +49,10 @@ def document(value, title):
         for k in REPORT_SECTIONS
         if value.get("writeup", {}).get(k)
     )
+    equipment_html = equipment_content(value)
     operating = operating_content(value) if value.get("version") == "operating-assessment/1" else ""
     encoded = json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False)
-    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p>{narrative}{operating}<div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
+    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p>{narrative}{operating}{equipment_html}<div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
 
 
 def operating_content(value):
@@ -111,9 +112,16 @@ def report_record(store, kind, key, previous_publication_id=None):
     if kind == "study":
         value = inspect(store, key)
         title = value["manifest"]["name"]
-    elif kind in ("recommendation", "operating-assessment"):
+    elif kind in ("recommendation", "operating-assessment", "equipment-comparison"):
         value = store.get(kind, key)
         title = value["title"]
+        if (
+            kind == "equipment-comparison"
+            and value["observation_metadata"]["redistribution"] != "permitted"
+        ):
+            raise ValueError(
+                "This observation dataset is reference-only; a shareable report requires a separately imported dataset with redistribution permission"
+            )
     elif kind == "cashflow":
         value = store.get(kind, key)
         title = value["scenario"]["name"]
@@ -273,6 +281,14 @@ def _bundle(store, publication_id, max_input_bytes):
     if publication["kind"] == "difference":
         add("difference", publication["source_id"])
 
+    if publication["kind"] == "equipment-comparison":
+        comparison = add("equipment-comparison", publication["source_id"])
+        if comparison["observation_metadata"]["redistribution"] != "permitted":
+            raise ValueError("Observation redistribution is not permitted")
+        raw(comparison["capsule_raw_sha256"])
+        observation = add("equipment-observations", comparison["dataset_id"])
+        raw(observation["raw_sha256"])
+
     if publication["kind"] == "operating-assessment":
         assessment = add("operating-assessment", publication["source_id"])
         add("requirements", assessment["requirements_id"])
@@ -289,6 +305,22 @@ def _bundle(store, publication_id, max_input_bytes):
                 learning("deployment", store.put("deployment", deployment))
             design = add("design", case["design_id"])
             add("site", design["site_revision"])
+            if design.get("equipment_basis_id"):
+                basis = add("equipment-basis", design["equipment_basis_id"])
+                for review in (case.get("equipment_applicability") or {}).get(
+                    "commissioning_reviews_at_creation", []
+                ):
+                    record = add("commissioning-review", review["id"])
+                    raw(record["artifact_sha256"])
+                for source in basis["reference"]["sources"]:
+                    omissions.append(
+                        dict(
+                            kind="manufacturer PDF",
+                            id=source["id"],
+                            sha256=source["sha256"],
+                            reason="Reference-only; identified source link and scoped specification notes are preserved in the equipment basis",
+                        )
+                    )
             assessment = add("assessment", design.get("assessment_id"))
             if assessment:
                 for layer in assessment.get("intersections", []):
@@ -488,6 +520,72 @@ def restore(path, store):
             omissions=manifest["omissions"],
             root=str(store.root),
         )
+
+
+def equipment_content(value):
+    """Human-readable equipment applicability accompanies the complete saved record."""
+
+    def esc(v):
+        return html.escape(str(v))
+
+    out = ""
+    for case in value.get("cases", value.get("candidates", [])):
+        basis = case.get("equipment_applicability")
+        if not basis:
+            continue
+        out += (
+            "<h2>Equipment basis / "
+            + esc(case.get("label", ""))
+            + "</h2><p>"
+            + esc(basis["status"])
+            + "</p><p>"
+            + esc(basis["qualification"])
+            + "</p>"
+        )
+        for b in basis["checks"]:
+            out += (
+                "<p>"
+                + esc(b["path"])
+                + ": "
+                + esc(b["actual"])
+                + " · "
+                + esc(b["status"])
+                + " · "
+                + esc(b["rationale"])
+                + "</p>"
+            )
+    if value.get("version") == "equipment-comparison/1":
+        out += (
+            "<h2>Observed versus simulated</h2><p>"
+            + esc(value["qualification"])
+            + "</p><p>"
+            + esc(value["boundary"])
+            + "</p>"
+        )
+        out += (
+            "<p>"
+            + esc(value["matched"])
+            + "/"
+            + esc(value["expected"])
+            + " hours compared; bias "
+            + esc(value["bias"])
+            + "; RMSE "
+            + esc(value["rmse"])
+            + " "
+            + esc(value["unit"])
+            + ". Residual = simulated − observed.</p><div class='scroll'><table><tr><th>Interval start</th><th>Observed</th><th>Simulated</th><th>Residual</th><th>Status</th></tr>"
+        )
+        for r in value["rows"]:
+            out += (
+                "<tr>"
+                + "".join(
+                    "<td>" + esc(r[k]) + "</td>"
+                    for k in ("timestamp", "value", "simulated", "residual", "status")
+                )
+                + "</tr>"
+            )
+        out += "</table></div>"
+    return out
 
 
 if __name__ == "__main__":

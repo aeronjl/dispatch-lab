@@ -302,6 +302,7 @@ def evaluate(store, *, requirements_id, study_ids, title, studies, progress=lamb
                     site=site["name"],
                     design_id=case["design_id"],
                     design_name=design["name"],
+                    equipment_applicability=case.get("equipment_applicability"),
                     site_revision=design["site_revision"],
                     environment_id=case["environment_id"],
                     controller=case["controller"],

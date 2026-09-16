@@ -1,0 +1,225 @@
+{
+  "version": "equipment-reference/1",
+  "name": "European PV–AEM methane reference",
+  "reference_id": "pv-aem-europe/1",
+  "scope": "Candidate design for European regional anchors. No installation, procurement quote or site calibration is asserted.",
+  "sources": [
+    {
+      "id": "trina",
+      "title": "Trina Solar TSM-NEG19RC.20",
+      "edition": "TSM_EN_2024_A, 590–620 W",
+      "url": "https://static.trinasolar.com/sites/default/files/Datasheet_210R_NEG19RC.20_EN_2024A_web.pdf",
+      "sha256": "a0f69019f44f50b2aead44da115dcc110496fc8b7b90408664dcac222c04d928",
+      "retrieved_at": "2026-09-16T15:55:43.249180+00:00",
+      "locator": "Page 2, specifications",
+      "redistribution": "reference-only",
+      "local_file": "raw/trina-neg19rc-2024a.pdf"
+    },
+    {
+      "id": "enapter",
+      "title": "Enapter AEM Flex 120",
+      "edition": "AEMFlex120-DTS-COM02_rev08",
+      "url": "https://handbook.enapter.com/electrolyser/aem-flex120/downloads/Enapter_Datasheet_AEM-Flex-120_EN.pdf",
+      "sha256": "e2a68cc23a24a24dc07cf40fa9113c1d97f8bf1b10a880eced550824e15d2463",
+      "retrieved_at": "2026-09-16T15:55:43.249444+00:00",
+      "locator": "Page 2, specifications",
+      "redistribution": "reference-only",
+      "local_file": "raw/enapter-flex120-rev08.pdf"
+    }
+  ],
+  "assets": [
+    {
+      "id": "PV-01",
+      "component": "solar",
+      "name": "1,667 × Trina TSM-NEG19RC.20, 600 W bin",
+      "basis": "Published specification + assumed array assembly",
+      "envelope": "STC module rating; NOCT 43 ± 2°C; power temperature coefficient −0.29%/°C. Module temperature rating −40 to 85°C is not an ambient range.",
+      "gaps": "No string/inverter design, rear-side gain, structural assessment or site shading survey. NOCT approximation does not model wind explicitly.",
+      "source": "trina"
+    },
+    {
+      "id": "ELY-01",
+      "component": "electrolyser",
+      "name": "4 × Enapter AEM Flex 120, rev08 base configuration",
+      "basis": "Published nominal figures + aggregate hourly approximation",
+      "envelope": "Per skid: 112 kW, 2.16 kg H₂/h; published specific consumption 51.3 kWh/kg; 12–100% nominal flow. Full-load beginning-of-life figures at 55°C electrolyte and 15°C ambient. 400 V AC supply, liquid cooling and purified water required.",
+      "gaps": "Use 112/2.16 kWh/kg to reconcile rounded nominal power and flow; not a fitted load curve. Minimum flow approximated as aggregate minimum power. Start energy, cold start, ambient range and multi-skid staging remain uncalibrated. DC/AC conversion, dryer and external cooling power are unresolved.",
+      "source": "enapter"
+    },
+    {
+      "id": "BAT-01",
+      "component": "battery",
+      "name": "Generic battery and power conversion",
+      "basis": "Illustrative model",
+      "envelope": "Existing configured energy, power and efficiency bounds.",
+      "gaps": "Vendor, temperature derating, ageing and installation requirements unidentified.",
+      "source": null
+    },
+    {
+      "id": "H2-01",
+      "component": "hydrogen",
+      "name": "Generic hydrogen buffer",
+      "basis": "Illustrative inventory",
+      "envelope": "Mass capacity only.",
+      "gaps": "Pressure, compression, piping, certified vessel and delivered gas quality unresolved.",
+      "source": null
+    },
+    {
+      "id": "CO2-01",
+      "component": "co2",
+      "name": "Generic supplied-CO₂ buffer",
+      "basis": "Illustrative supply",
+      "envelope": "Existing delivery-before-withdrawal accounting.",
+      "gaps": "Supplier, purity, logistics, pressure and supply contract unverified.",
+      "source": null
+    },
+    {
+      "id": "RX-01",
+      "component": "reactor",
+      "name": "Generic methanator",
+      "basis": "Illustrative thermal model",
+      "envelope": "Configured heat balance and temperature band.",
+      "gaps": "No vendor kinetics, catalyst life, heat-transfer identification or gas-quality acceptance.",
+      "source": null
+    },
+    {
+      "id": "SUPPORT-01",
+      "component": "services",
+      "name": "Human service escalation; no autonomous interventions enabled",
+      "basis": "Planning assumption",
+      "envelope": "Qualified personnel, safe access, isolation, spares, water treatment, ventilation, cooling, communications and acceptance tests must be arranged.",
+      "gaps": "No support contract or response-time evidence. Existing simulated human replacement/calibration is not approved OEM service. Cleaner, rover and reset capabilities need task-specific evidence before deployment claims.",
+      "source": null
+    }
+  ],
+  "bindings": [
+    {
+      "component": "solar",
+      "path": "plant.solar_kw",
+      "value": 1000.2,
+      "unit": "kWp",
+      "basis": "derived",
+      "rationale": "1,667 modules × 600 W / 1,000. Array count is a design choice."
+    },
+    {
+      "component": "solar",
+      "path": "weather.noct_c",
+      "value": 43,
+      "unit": "°C",
+      "basis": "specification",
+      "rationale": "Trina NOCT central value; ±2°C is the specified range, not a probability distribution."
+    },
+    {
+      "component": "solar",
+      "path": "weather.temperature_coefficient",
+      "value": -0.0029,
+      "unit": "1/°C",
+      "basis": "specification",
+      "rationale": "−0.29%/°C divided by 100."
+    },
+    {
+      "component": "solar",
+      "path": "solar",
+      "value": null,
+      "unit": "",
+      "basis": "assumption",
+      "rationale": "Use the existing single-array conversion; a section design would override this mapping."
+    },
+    {
+      "component": "electrolyser",
+      "path": "plant.electrolyser_kw",
+      "value": 448,
+      "unit": "kW",
+      "basis": "derived",
+      "rationale": "4 × 112 kW nominal consumption; AC load represented at the abstract plant bus."
+    },
+    {
+      "component": "electrolyser",
+      "path": "plant.specific_energy_kwh_per_kg",
+      "value": 51.85185185185185,
+      "unit": "kWh/kg",
+      "basis": "approximation",
+      "rationale": "112 / 2.16 = 51.85185, differs from separately reported 51.3. Preserve this discrepancy; do not combine incompatible nominal figures."
+    },
+    {
+      "component": "electrolyser",
+      "path": "plant.min_load_fraction",
+      "value": 0.12,
+      "unit": "fraction",
+      "basis": "approximation",
+      "rationale": "Published flow turndown mapped to power under constant specific consumption."
+    },
+    {
+      "component": "services",
+      "path": "field_operations.enabled",
+      "value": true,
+      "unit": "",
+      "basis": "assumption",
+      "rationale": "Simulated human escalation only; duration and success remain assumptions."
+    },
+    {
+      "component": "services",
+      "path": "field_operations.cleaner_enabled",
+      "value": false,
+      "unit": "",
+      "basis": "unsupported capability disabled",
+      "rationale": "No reviewed task-specific evidence for this deployment."
+    },
+    {
+      "component": "services",
+      "path": "field_operations.rover_enabled",
+      "value": false,
+      "unit": "",
+      "basis": "unsupported capability disabled",
+      "rationale": "No reviewed task-specific evidence for this deployment."
+    },
+    {
+      "component": "services",
+      "path": "field_operations.reset_enabled",
+      "value": false,
+      "unit": "",
+      "basis": "unsupported capability disabled",
+      "rationale": "No reviewed task-specific evidence for this deployment."
+    },
+    {
+      "component": "services",
+      "path": "field_operations.human_fallback",
+      "value": true,
+      "unit": "",
+      "basis": "assumption",
+      "rationale": "Human support requested; contract and OEM method still required."
+    }
+  ],
+  "gates": [
+    {
+      "id": "site",
+      "title": "Site and permissions",
+      "requires": "Parcel, rights, access, hazard and regional permitting review."
+    },
+    {
+      "id": "interfaces",
+      "title": "Utilities and interfaces",
+      "requires": "Electrical conversion, qualified water, CO₂ supply, pressure interfaces, ventilation and external cooling."
+    },
+    {
+      "id": "equipment",
+      "title": "Equipment acceptance",
+      "requires": "Asset serials, installed options, OEM envelopes and commissioning results for the selected edition."
+    },
+    {
+      "id": "thermal",
+      "title": "Thermal and process behaviour",
+      "requires": "Measured warm-up, heat loss, cooling and gas-quality acceptance for the actual reactor."
+    },
+    {
+      "id": "service",
+      "title": "Service capability and support",
+      "requires": "Task-specific method, isolation authority, staffing, spares, response time and verification procedure."
+    },
+    {
+      "id": "measurement",
+      "title": "Measurement and shadow comparison",
+      "requires": "Time alignment, sensor calibration, uncertainty, quality flags and a review of model-versus-observation differences."
+    }
+  ]
+}

@@ -68,3 +68,5 @@ relevant checks for new research tooling and retain their scope and outcome.
 - [Release 2: deployment and the service lifecycle](release-2/report.html)
 
 - [Release 3: learning and experimental policies](release-3/report.html)
+
+- [Equipment-specific deployment reference](equipment-planning/README.md)

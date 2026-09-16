@@ -161,14 +161,41 @@ increments are not automatically started.
    windows, reserve/service limits, incomplete outcomes, scenario coverage, original
    calculation links and portable assessment editions. Requirements assess outcomes;
    they do not silently change dispatch objectives or establish field feasibility.
-4. **Equipment-specific planning for one deployment use case — next.** Choose a concrete
-   equipment/site/support configuration, attach identified operating envelopes,
-   service capabilities and observed data, and expose applicability and gaps in
-   planning results. Add commissioning and operation/shadow comparisons as evidence
-   permits. Detailed illustrations and literature priors do not establish calibration.
+4. **Equipment-specific planning for one deployment use case — implemented.** The
+   [equipment planning contract](equipment-planning.md) provides a reviewed European
+   PV–AEM reference, explicit model bindings and support gaps, immutable design/run
+   applicability, commissioning review records and observed-versus-simulated hourly
+   comparisons with original interval links and portable reports. The reference
+   identifies Trina and Enapter specification editions; other equipment and support
+   remain illustrative. No site observations are bundled and no calibration or
+   field readiness is inferred. OEM interlocks, AC conversion, external cooling and
+   gas conditioning are not added to the execution model by this evidence layer.
 
 Across these increments, protect original evidence, responsive interaction,
 keyboard/narrow-screen access, and reversible context-preserving navigation. Real
 participant feedback and an off-machine storage/restore arrangement remain explicit
 external gates. Broad research matrices remain user-run templates, not the product's
 completion criterion.
+
+### Remaining work after the four increments
+
+These are follow-on increments and evidence gates, not automatically started work:
+
+1. **Close the deployment integration gaps.** Resolve electrical conversion, external
+   cooling/drying, pressure interfaces and finite support supplies for the chosen
+   equipment configuration. Add only mechanisms justified by those boundaries;
+   carry uncertainty and missing OEM envelopes explicitly. This is the recommended
+   next technical increment before using this candidate for deployment decisions.
+2. **Qualify against actual equipment/site evidence.** Import commissioning and
+   operation records, identify influential discrepancies, then review any fitted
+   component adapters against held-out data. No real evidence is supplied by the
+   software acceptance fixtures. Supplier/OEM or operator input is required here.
+3. **Rehearse the expert workflow with real participants.** Observe site selection,
+   design changes, requirement assessment, evidence inspection, an alternative and
+   a written account; simplify navigation where users misunderstand context.
+4. **Extend agent sessions when needed.** Current MCP remains a bounded simulated
+   hour-zero interface. Continued state, site utilities and numerical external-agent
+   reruns require explicit contracts and tests before being advertised.
+5. **Arrange durable storage and restore.** Local content-addressed records and
+   bundles are delivered; off-machine retention, access and recovery require a chosen
+   destination and a real restore drill. Local commits are not that backup.

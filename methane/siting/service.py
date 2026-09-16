@@ -53,6 +53,10 @@ def view(store, key):
 
 def perform(request, store, current_config):
     d = request.data
+    if request.operation.startswith("equipment-"):
+        from methane.siting.equipment import perform as equipment_operation
+
+        return equipment_operation(store, request.operation, request.id, d)
     if request.operation.startswith("requirements-"):
         from methane.learning_lab import jobs as assessment_jobs
         from methane.siting import requirements

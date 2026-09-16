@@ -53,3 +53,6 @@ test-results/
 /research/release-2/*/analysis/*-case-*.json
 /research/release-2/*/*-result.json
 /research/release-2/*/*-progress.json
+
+# Manufacturer originals stay local; hashes, links and scoped bindings are tracked.
+/research/equipment-planning/raw/

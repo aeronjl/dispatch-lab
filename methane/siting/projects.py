@@ -136,6 +136,7 @@ class Project(Record):
     parent_id: str | None = None
     design_id: str | None = None
     requirements_id: str | None = None
+    equipment_basis_id: str | None = None
     created_at: str
     updated_at: str
 
@@ -185,6 +186,7 @@ def create(store, site_id, name=None, design_id=None):
         config=c.to_dict(),
         baseline=c.to_dict(),
         design_id=design_id,
+        equipment_basis_id=design.get("equipment_basis_id") if design_id else None,
         created_at=now,
         updated_at=now,
     )
@@ -193,12 +195,16 @@ def create(store, site_id, name=None, design_id=None):
 
 
 def revise(store, key, config, name=None, **changes):
-    if set(changes) - {"requirements_id"}:
+    if set(changes) - {"requirements_id", "equipment_basis_id"}:
         raise ValueError("Unknown project revision field")
     if changes.get("requirements_id"):
         from methane.siting.requirements import Brief
 
         Brief(**store.get("requirements", changes["requirements_id"]))
+    if changes.get("equipment_basis_id"):
+        basis = store.get("equipment-basis", changes["equipment_basis_id"])
+        if basis["site_revision"] != store.get("project", key)["site_revision"]:
+            raise ValueError("Equipment basis belongs to another site")
     store.root.mkdir(parents=True, exist_ok=True)
     with (store.root / "project-write.lock").open("a+") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
@@ -426,6 +432,7 @@ def design(store, key):
             "site_revision": project["site_revision"],
             "config": c.to_dict(),
             "parent_id": project.get("design_id"),
+            "equipment_basis_id": project.get("equipment_basis_id"),
         }
     )
     return store.put("design", record)

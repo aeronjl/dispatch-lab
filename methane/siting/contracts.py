@@ -108,6 +108,7 @@ class ScreeningPolicy(Record):
 
 
 class DeploymentDesign(Record):
+    equipment_basis_id: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     schema_version: Literal["deployment-design/1"] = "deployment-design/1"
     site_revision: str = Field(pattern=r"^[a-f0-9]{64}$")
     name: str = Field(min_length=1, max_length=160)

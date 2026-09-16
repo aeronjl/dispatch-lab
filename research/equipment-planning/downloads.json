@@ -1,0 +1,24 @@
+[
+  {
+    "id": "trina",
+    "title": "Trina Solar TSM-NEG19RC.20",
+    "edition": "TSM_EN_2024_A, 590–620 W",
+    "url": "https://static.trinasolar.com/sites/default/files/Datasheet_210R_NEG19RC.20_EN_2024A_web.pdf",
+    "sha256": "a0f69019f44f50b2aead44da115dcc110496fc8b7b90408664dcac222c04d928",
+    "retrieved_at": "2026-09-16T15:55:43.249180+00:00",
+    "locator": "Page 2, specifications",
+    "redistribution": "reference-only",
+    "local_file": "raw/trina-neg19rc-2024a.pdf"
+  },
+  {
+    "id": "enapter",
+    "title": "Enapter AEM Flex 120",
+    "edition": "AEMFlex120-DTS-COM02_rev08",
+    "url": "https://handbook.enapter.com/electrolyser/aem-flex120/downloads/Enapter_Datasheet_AEM-Flex-120_EN.pdf",
+    "sha256": "e2a68cc23a24a24dc07cf40fa9113c1d97f8bf1b10a880eced550824e15d2463",
+    "retrieved_at": "2026-09-16T15:55:43.249444+00:00",
+    "locator": "Page 2, specifications",
+    "redistribution": "reference-only",
+    "local_file": "raw/enapter-flex120-rev08.pdf"
+  }
+]
