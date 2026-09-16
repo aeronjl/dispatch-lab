@@ -187,16 +187,31 @@ These are follow-on increments and evidence gates, not automatically started wor
    finite purified-water stocks to planning and execution. Design revisions, recorded
    calculations, cost incompleteness and disclosed uncertainty are accessible through
    Equipment & evidence. The reduced model does not establish actual cooling duty,
-   gas/water quality, pressure dynamics or installation feasibility; OEM evidence is
-   the next gate.
-2. **Equipment/site qualification — workflow implemented; empirical gate open.**
+   gas/water quality, pressure dynamics or installation feasibility. Public
+   specifications, experimental datasets and engineering derivations are the next
+   modelling inputs; private OEM or site records are not a prerequisite.
+2. **Research-grounded component models — next modelling increment.** Public
+   evidence is the primary modelling basis. Audit the existing literature-derived
+   reference profiles, then promote justified mechanisms into named, executable
+   component options with explicit source conditions and applicability. Prioritise
+   power/conversion boundaries, cooling and process dynamics. Reproduce measured
+   behaviour of the published reference equipment before assessing transfer to the
+   chosen plant; different technologies must not silently share fitted coefficients.
+   Separate measurement, parameter, transfer and model-form uncertainty. Use
+   engineering derivations and disclosed scenario ranges where observations are
+   unavailable, retaining correlations and structural alternatives. Small held-out
+   checks and sensitivity cases should justify each change; broad studies remain
+   user-run templates. Completion means a useful, traceable research model with
+   honest uncertainty, not qualification of an unobserved physical installation.
+
    The [qualification workflow](equipment-qualification.md) now freezes review
    criteria and development/evaluation windows, assesses exact recorded designs,
    exposes measurement boundaries and discrepancy traces, and preserves reports
-   offline. A public-evidence review and targeted acquisition plan are available
-   inside Equipment & evidence. Matching supplier/OEM or operator records are still
-   required; none were supplied for this increment. Any fitted adapter needs a
-   separately reviewed mechanism and independent evaluation before adoption.
+   offline. Its exact-design observation importer is an optional site-comparison
+   facility; it is not yet an adapter for arbitrary literature datasets. Add explicit
+   reference-equipment/data mappings as part of the research-model increment.
+   Actual plant measurements can strengthen validation later, but are not expected
+   or a completion gate for this software project.
 3. **Rehearse the expert workflow with real participants.** Observe site selection,
    design changes, requirement assessment, evidence inspection, an alternative and
    a written account; simplify navigation where users misunderstand context.

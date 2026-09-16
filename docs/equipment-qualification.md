@@ -3,8 +3,14 @@
 Open **Equipment & evidence → Qualification**. The new workflow freezes a scoped
 question, measurement boundary, reviewer rationale, chronological split and
 acceptance criteria, then assesses original recorded operation. It does not fit
-parameters or change a design. Authenticated records from the proposed installation
-are still required to close the empirical qualification gate.
+parameters or change a design. Publicly researched data is the primary basis of
+this software project. Measurements from an eventual installation would permit
+additional validation, but are not expected or a prerequisite for modelling work.
+
+The current observation importer compares an exact recorded design. It must not be
+used to relabel a different published research device as this installation. The
+next modelling increment adds justified reference-equipment mappings and executable
+literature-derived models, retaining their source conditions and transfer uncertainty.
 
 ## Workflow and claims
 
@@ -84,10 +90,14 @@ Public sources were checked again:
   electrolysis technology and installation. It cannot calibrate the AEM reference.
 
 No old study was rerun or relabelled, no manufacturer claim was treated as observed
-performance, and no fabricated site data was imported. The next empirical step is
-matching OEM/commissioning records. Any fitted adapter subsequently proposed needs
-an identifiable mechanism, declared training data, independent evaluation and a
-reviewed applicability envelope before adoption. That remains an explicit open gate.
+performance, and no fabricated site data was imported. The next modelling step uses
+public experimental datasets, manufacturer curves and engineering derivations.
+An identifiable fit should be checked against held-out public measurements when
+available. Reference-equipment agreement and transfer to the proposed plant remain
+separate claims. Transfer can be represented by scoped model options, justified
+scaling and uncertainty ranges; unavailable site data must not halt this work.
+When data cannot identify a parameter, retain a disclosed assumption or structural
+alternative rather than claiming calibration. Site validation remains optional.
 
 ## Verification receipt · 16 September 2026
 

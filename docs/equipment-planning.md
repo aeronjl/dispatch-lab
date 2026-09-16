@@ -139,5 +139,7 @@ establish OEM interlocks. Original saved cases retain their original boundaries.
 separate development/evaluation windows and original discrepancy links. Additional
 measurement channels cover temperature and the optional interface balances. The
 old productive-power channel keeps its original meaning; no historical value is
-reinterpreted. Actual equipment/site qualification remains open pending matching
-records. This workflow does not fit or automatically adopt a new model.
+reinterpreted. Actual equipment/site qualification would require matching records
+if these become available; it is optional for this research-based software project.
+Current modelling proceeds from public data with explicit transfer uncertainty.
+This workflow does not fit or automatically adopt a new model.

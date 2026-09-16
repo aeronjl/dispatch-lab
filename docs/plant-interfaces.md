@@ -115,8 +115,9 @@ original information; repricing and independent cost reconciliation. Saved-study
 checks exercise checkpoint/resume, traces, legacy records and offline preservation.
 Browser checks exercise enabling, invalid input, recorded tracing, narrow screens
 and navigation. Passing these checks establishes software consistency, not field
-feasibility. OEM commissioning, measured thermal response and real site/support
-quotations remain the next evidence increment.
+feasibility. Public performance maps, experimental thermal data and researched cost
+ranges are the next modelling inputs. Site commissioning or quotations could
+strengthen validation later but are not prerequisites for this software project.
 
 ## Verification receipt · 16 September 2026
 

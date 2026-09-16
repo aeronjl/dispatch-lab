@@ -1,19 +1,78 @@
 {
-  "version": "equipment-evidence-plan/1",
+  "version": "equipment-evidence-plan/2",
   "reviewed_at": "2026-09-16",
-  "scope": "Current evidence-acquisition plan, not an original run record or site qualification. No authenticated measurements from the proposed installation have been supplied.",
+  "scope": "Public evidence is the primary modelling basis. Research datasets, manufacturer specifications and engineering derivations support scoped reference models; proprietary plant measurements are not expected. Transfer to the proposed plant carries explicit uncertainty.",
   "sources": [
-    {"id": "flex08", "title": "Enapter Flex120 rev08 · manufacturer specification", "url": "https://handbook.enapter.com/electrolyser/aem-flex120/downloads/Enapter_Datasheet_AEM-Flex-120_EN.pdf", "applies": "Nominal performance and stated reference conditions for this edition.", "boundary": "No measured part-load map, external cooler duty or site commissioning record. Search results and older editions report different figures; retain the exact edition."},
-    {"id": "jrc", "title": "JRC122565 · electrolyser test protocols", "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC122565", "applies": "Method guidance on system boundaries, operating conditions and stressor tests across electrolyser technologies.", "boundary": "A test protocol supplies no calibration measurements for this equipment."},
-    {"id": "pvps", "title": "IEA PVPS / Sandia · module validation data", "url": "https://pvpmc.sandia.gov/datasets/iea-pvps-task-13-module-validation-dataset/", "applies": "Measured module characterization and outdoor irradiance, temperature, wind and electrical data; useful for separate method qualification.", "boundary": "Different modules/site; not this Trina array. Existing analysis keeps the supplied time labels without claiming UTC; no implicit import into an hourly site run."},
-    {"id": "pem", "title": "Veatch et al. · measured PEM electrolysis dataset", "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8931zcs64", "applies": "Separate power/flow channels illustrate why metering boundaries and sensor disagreements matter.", "boundary": "PEM research equipment is not an AEM Flex120 skid. Existing fitted parameters and validation results are not transferred to this candidate."}
+    {
+      "id": "flex08",
+      "title": "Enapter Flex120 rev08 · manufacturer specification",
+      "url": "https://handbook.enapter.com/electrolyser/aem-flex120/downloads/Enapter_Datasheet_AEM-Flex-120_EN.pdf",
+      "applies": "Nominal performance and stated reference conditions for this edition.",
+      "boundary": "No measured part-load map, external cooler duty or site commissioning record. Search results and older editions report different figures; retain the exact edition."
+    },
+    {
+      "id": "jrc",
+      "title": "JRC122565 · electrolyser test protocols",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC122565",
+      "applies": "Method guidance on system boundaries, operating conditions and stressor tests across electrolyser technologies.",
+      "boundary": "A test protocol supplies no calibration measurements for this equipment."
+    },
+    {
+      "id": "pvps",
+      "title": "IEA PVPS / Sandia · module validation data",
+      "url": "https://pvpmc.sandia.gov/datasets/iea-pvps-task-13-module-validation-dataset/",
+      "applies": "Measured module characterization and outdoor irradiance, temperature, wind and electrical data; useful for separate method qualification.",
+      "boundary": "Different modules/site; not this Trina array. Existing analysis keeps the supplied time labels without claiming UTC; no implicit import into an hourly site run."
+    },
+    {
+      "id": "pem",
+      "title": "Veatch et al. · measured PEM electrolysis dataset",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8931zcs64",
+      "applies": "Separate power/flow channels illustrate why metering boundaries and sensor disagreements matter.",
+      "boundary": "PEM research equipment is not an AEM Flex120 skid. Existing fitted parameters and validation results are not transferred to this candidate."
+    }
   ],
   "requests": [
-    {"id": "meter-boundaries", "priority": "First: prevent a misleading comparison", "title": "Identify equipment and measurement boundaries", "records": "Serials, configuration and firmware; meter locations, calibration/uncertainty, time synchronization, units, interval conventions and gas-flow reference conditions. Record actual weather, commands and initial inventories.", "use": "Separate productive power from startup, internal utilities, external AC loads and DC conversion. Review whether a recorded simulation and measurement describe the same operation.", "gap": "No plant-specific metering or commissioning record supplied."},
-    {"id": "cooling-conversion", "priority": "First: influences feasible production", "title": "Converter and external cooler envelopes", "records": "OEM converter efficiency/capacity versus load and ambient; electrolyser coolant flow and inlet/outlet temperature, coolant properties, external cooler electric demand and permitted ambient envelope. Include low load and hot conditions.", "use": "Compare AC/DC energy and independently established thermal duty. A single electric meter cannot identify both heat rejection and cooler efficiency.", "gap": "Constant efficiency, thermal duty and cooler limits remain uncalibrated."},
-    {"id": "process", "priority": "First: limits plant transfer", "title": "Electrolysis and methanation operating envelope", "records": "Identified reactor/catalyst; feed composition/pressure, hydrogen and methane flow, reactor temperature, heating/cooling input, startup state and run restrictions. Separate stable operating windows from starts and trips.", "use": "Check productive energy and thermal response before fitting an adapter. Retain independent evaluation periods and an explicit applicability envelope.", "gap": "Reference sheet is a nominal point; the reactor remains illustrative."},
-    {"id": "supplies", "priority": "Next: influences autonomous uptime", "title": "Water, gas and service logistics", "records": "Tank calibration, delivered/accepted/rejected quantities, water quality, delivery timestamps, lead times, access/isolation requirements and intervention outcomes tied to the serviced equipment.", "use": "Check finite supply balances and whether assumed recovery tasks are actually supported. Compare regimes with exhausted stock and disrupted deliveries.", "gap": "No support contract, observed delivery history or repair-capability approval supplied."},
-    {"id": "costs", "priority": "Next: influences economic conclusions", "title": "Dated installed and operating costs", "records": "Itemised converter, cooling, conditioning, storage and commissioning quotations; maintenance scope, callout terms, consumables, disposal and delivery charges.", "use": "Separate additional installed cost from existing asset allowances and variable decisions. Keep rejected-delivery commercial terms explicit.", "gap": "Blank prices remain missing, not zero."}
+    {
+      "id": "meter-boundaries",
+      "priority": "First: prevent a misleading comparison",
+      "title": "Identify published equipment and measurement boundaries",
+      "records": "Published device/model configuration, test conditions, sensor methods and uncertainty, original data files, units, timing and gas-flow reference conditions. Preserve dataset identity even when serials or site records are unavailable.",
+      "use": "Separate stack/productive power, startup, internal utilities, external AC loads and DC conversion. Match the reference experiment before evaluating transfer.",
+      "gap": "Unspecified boundaries limit interpretation; they do not justify substituting assumed measurements."
+    },
+    {
+      "id": "cooling-conversion",
+      "priority": "First: influences feasible production",
+      "title": "Research converter and external cooler envelopes",
+      "records": "Public manufacturer performance maps, experimental conversion/cooling data and documented energy-balance derivations. Prefer matching technology and load/ambient conditions; retain the conditions of any analogue.",
+      "use": "Reproduce reference AC/DC energy and thermal behaviour, then expose justified scaling and transfer ranges. Electricity alone does not identify all thermal losses.",
+      "gap": "Constant conversion, thermal duty and cooler limits need stronger public evidence or explicit bounded alternatives."
+    },
+    {
+      "id": "process",
+      "priority": "First: limits plant transfer",
+      "title": "Research electrolysis and methanation dynamics",
+      "records": "Published experiments with identified technology/reactor/catalyst, feed conditions, product flow, temperature and heating/cooling inputs. Retain raw data or documented digitisation uncertainty, including startup and transient conditions.",
+      "use": "Build named reference-equipment models; check against held-out conditions where available. Assess structural compatibility before transferring parameters or scaling.",
+      "gap": "A nominal specification is not a full performance map. Different technologies require distinct model options or explicit transfer assumptions."
+    },
+    {
+      "id": "supplies",
+      "priority": "Next: influences autonomous uptime",
+      "title": "Research water, gas and service logistics",
+      "records": "Public utility specifications, field reliability/maintenance studies, service manuals, access/isolation requirements and documented delivery/intervention histories from comparable systems.",
+      "use": "Define credible capability boundaries and disclosed logistics scenarios. Use sensitivity where frequencies or duration distributions are not identified.",
+      "gap": "Missing site histories are expected. Do not invent event probabilities or infer repair capability merely from a similar robot."
+    },
+    {
+      "id": "costs",
+      "priority": "Next: influences economic conclusions",
+      "title": "Research installed and operating cost ranges",
+      "records": "Dated technology catalogues, public tenders, published project costs and manufacturer prices, retaining currency, geography, scale, included equipment and installation boundaries.",
+      "use": "Derive reference costs and ranges with explicit scaling, then separate ownership, support and action-dependent costs without double counting.",
+      "gap": "A researched estimate can support the model without a site quotation; unresolved costs must remain identified rather than treated as zero."
+    }
   ],
-  "review_rule": "Freeze the measurement boundary, applicability rationale, time split and numerical criteria before evaluation. Criteria are user-authored; passing them is not an independent certification. Observed-only fitting and held-out adapter deployment require a separately reviewed mechanism. Existing research stays attached to its original sources and versions."
+  "review_rule": "Reproduce the published reference conditions, freeze data preparation and fitting/evaluation splits where feasible, and report residuals and independent physical checks. Separate measurement, parameter, transfer and model-form uncertainty; preserve correlations. Literature-derived options can be useful without site calibration. Existing research stays attached to its original sources and versions; private site data is an optional future validation opportunity."
 }
