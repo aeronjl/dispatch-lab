@@ -32,6 +32,7 @@ def search(
     role="design",
     budget=48,
     name="Bounded design search",
+    requirements_id=None,
 ):
     if set(sizes) - SIZES or not 1 <= budget <= 96 or not 1 <= repetitions <= 5:
         raise ValueError("Unsupported design axis, budget or repetitions")
@@ -120,6 +121,7 @@ def search(
         name=name,
         cases=cases,
         search=protocol,
+        requirements_id=requirements_id,
         purpose="Finite site/plant/service co-design; validate shortlisted designs on held-out chronological years",
     )
 

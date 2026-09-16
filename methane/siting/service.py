@@ -53,6 +53,24 @@ def view(store, key):
 
 def perform(request, store, current_config):
     d = request.data
+    if request.operation.startswith("requirements-"):
+        from methane.learning_lab import jobs as assessment_jobs
+        from methane.siting import requirements
+
+        if request.operation == "requirements-save":
+            return requirements.save(store, d)
+        if request.operation == "requirements-index":
+            return dict(
+                briefs=store.list("requirements"),
+                assessments=[
+                    {k: r[k] for k in ("id", "title", "requirements_id", "study_ids")}
+                    for r in store.list("operating-assessment")
+                ],
+            )
+        if request.operation == "requirements-assess":
+            return assessment_jobs.launch(store, "requirements", requirements.freeze(store, **d))
+        if request.operation == "requirements-result":
+            return dict(id=request.id, **store.get("operating-assessment", request.id))
     if request.operation.startswith("project-"):
         from methane.siting.projects import perform as project_operation
 

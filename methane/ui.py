@@ -1021,6 +1021,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "taxonomy.css").read_text()
                     + (ASSETS / "studies.css").read_text()
                     + (ASSETS / "sites.css").read_text()
+                    + (ASSETS / "requirements.css").read_text()
                     + (ASSETS / "project.css").read_text()
                     + (ASSETS / "vendor/maplibre/maplibre-gl.css").read_text(),
                     js_on_load=(ASSETS / "playback.js").read_text().split("function frameAt")[0]
@@ -1039,6 +1040,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "learning-lab.js").read_text()
                     + (ASSETS / "sites-studies.js").read_text()
                     + (ASSETS / "sites.js").read_text()
+                    + (ASSETS / "requirements.js").read_text()
                     + (ASSETS / "project.js").read_text()
                     + "\nmountMethane(element, props, watch, trigger);",
                     apply_default_css=False,

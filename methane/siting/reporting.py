@@ -49,8 +49,53 @@ def document(value, title):
         for k in REPORT_SECTIONS
         if value.get("writeup", {}).get(k)
     )
+    operating = operating_content(value) if value.get("version") == "operating-assessment/1" else ""
     encoded = json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False)
-    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p>{narrative}<div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
+    return f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{esc(title)}</title><style>@font-face{{font-family:Departure;src:url(data:font/woff2;base64,{font})}}*{{box-sizing:border-box}}body{{margin:0;background:#202020;color:#dbb780;font:14px/1.8 Departure,monospace}}main{{max-width:1200px;margin:auto;padding:8vw 5vw}}h1,h2{{font-weight:normal;color:#ffb752}}h1{{font-size:34px;line-height:1.3}}a{{color:#ffb752}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;border-bottom:1px solid #695136;padding:12px;font-weight:normal}}.scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.8 Departure}}details{{margin:35px 0}}summary{{cursor:pointer}}.note{{border-left:2px solid #ffb752;padding-left:20px}}</style><main><p>Dispatch Lab / Recorded siting study</p><h1>{esc(title)}</h1><p class="note">A versioned model comparison. Resource data, site feasibility, controller behaviour and assumed cash flow have separate evidence boundaries. Missing cases and costs remain visible.</p><p>{esc(value.get("authored_conclusion", ""))}</p>{narrative}{operating}<div class="scroll"><table><thead><tr><th>Case</th><th>Status</th><th>Hours</th><th>Methane / kg</th><th>Allocated / EUR</th><th>Role</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><h2>How to read this result</h2><p>Methane is modelled production. Hydrogen consumed by methanation is not a second product sale. Supplied CO₂ is not capture. Ending inventories are separate from output. A cash scenario reprices the physical trace without changing the original controller prices.</p><p>Ranges across declared scenarios are not probability intervals. The same numerical solver can return different feasible time-limited decisions; repetitions remain identifiable. Public land or infrastructure maps do not establish development rights or connection capacity.</p><h2>Recorded calculation and evidence</h2><p>The complete readable record below includes identities, assumptions, numerical operands, missing evidence and unsuccessful attempts. Live recalculation requires the saved application and permitted data.</p><pre>{esc(encoded)}</pre><p>Document content identity {digest(value)}.</p></main></html>"""
+
+
+def operating_content(value):
+    """Readable checks supplement, not replace, the preserved numerical record."""
+
+    def esc(v):
+        return html.escape(str(v))
+
+    content = "<h2>Operating brief: " + esc(value["brief"]["name"]) + "</h2>"
+    content += "<p>" + esc(value["brief"]["rationale"]) + "</p>"
+    content += "".join("<p>" + esc(b) + "</p>" for b in value["boundaries"])
+    for group in value["groups"]:
+        content += (
+            "<h3>"
+            + esc(group["site"] + " / " + group["name"])
+            + "</h3><p>"
+            + esc(group["controller"])
+            + " · "
+            + esc(group["counts"])
+            + " · Missing exposure cells: "
+            + str(len(group["missing_exposures"]))
+            + "</p>"
+        )
+    for case in value["candidates"]:
+        content += "<h3>" + esc(case["label"]) + " — " + esc(case["status"]) + "</h3>"
+        content += "<p>" + esc(case["assessment_context"]) + "</p><div class='scroll'><table>"
+        content += "<tr><th>Component / requirement</th><th>Recorded</th><th>Required</th><th>Margin</th><th>Outcome</th></tr>"
+        for c in case["checks"]:
+            content += (
+                "<tr>"
+                + "".join(
+                    "<td>" + esc(v) + "</td>"
+                    for v in (
+                        c["component"] + " / " + c["label"],
+                        c["actual"],
+                        c["relation"] + " " + str(c["limit"]) + " " + c["unit"],
+                        c["margin"],
+                        c["status"],
+                    )
+                )
+                + "</tr>"
+            )
+        content += "</table></div>"
+    return content
 
 
 def report_record(store, kind, key, previous_publication_id=None):
@@ -66,7 +111,7 @@ def report_record(store, kind, key, previous_publication_id=None):
     if kind == "study":
         value = inspect(store, key)
         title = value["manifest"]["name"]
-    elif kind == "recommendation":
+    elif kind in ("recommendation", "operating-assessment"):
         value = store.get(kind, key)
         title = value["title"]
     elif kind == "cashflow":
@@ -228,8 +273,14 @@ def _bundle(store, publication_id, max_input_bytes):
     if publication["kind"] == "difference":
         add("difference", publication["source_id"])
 
+    if publication["kind"] == "operating-assessment":
+        assessment = add("operating-assessment", publication["source_id"])
+        add("requirements", assessment["requirements_id"])
+        raw(assessment["capsule_raw_sha256"])
+
     for sid in filter(None, study_ids):
         study = add("study", sid)
+        add("requirements", study.get("requirements_id"))
         d = directory(store, sid)
         files[f"studies/{sid}/source-capsule.json"] = d / "source-capsule.json"
         for case in study["cases"]:

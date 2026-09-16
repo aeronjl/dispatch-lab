@@ -101,3 +101,10 @@ calculation/playback, matched alternatives, keyboard return, mobile access,
 missing weather and stale responses. The original plant/solar screenshot baselines
 are retained. Screenshots of the new views are reviewed as new artifacts rather
 than substituted for the original illustrations.
+
+## Operating briefs
+
+Operate and Project tools expose [Operating requirements](operating-requirements.md).
+Save production, reserve and service limits for future project runs, then compare
+saved designs against the same brief without changing their physical traces.
+Requirement revisions are preserved separately from physical configuration.

@@ -14,6 +14,7 @@ def recipe(manifest):
         mode=manifest["mode"],
         purpose=manifest["purpose"],
         partition_hours=manifest["partition_hours"],
+        requirements_id=manifest.get("requirements_id"),
         cases=[
             dict(
                 **{

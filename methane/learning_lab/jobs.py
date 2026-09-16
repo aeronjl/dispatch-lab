@@ -28,7 +28,7 @@ def launch(store, operation, arguments, *, wall_seconds=120):
     from methane.siting.production import worker_lease
     from methane.source_capsule import decode
 
-    if operation not in ("dataset", "train", "export", "fixture"):
+    if operation not in ("dataset", "train", "export", "fixture", "requirements"):
         raise ValueError("Unknown bounded worker operation")
     if type(wall_seconds) is not int or not 1 <= wall_seconds <= 600:
         raise ValueError("Worker wall budget is 1–600 seconds")
@@ -157,7 +157,11 @@ def work(store, key):
     try:
         progress("Reading frozen inputs")
         args = record["arguments"]
-        if record["operation"] == "train":
+        if record["operation"] == "requirements":
+            from methane.siting.requirements import evaluate
+
+            result, kind = evaluate(store, **args, progress=progress), "operating-assessment"
+        elif record["operation"] == "train":
             from methane.learning_lab.estimators import fit
 
             result = fit(

@@ -36,6 +36,8 @@ def perform(store, operation, key, data):
                 )
         return dict(episodes=episodes)
     if operation == "lab-start":
+        if data.get("operation") == "requirements":
+            raise ValueError("Use requirements-assess to freeze original study inputs")
         return jobs.launch(store, **data)
     if operation == "lab-job":
         return jobs.poll(store, key, data.get("cancel", False))

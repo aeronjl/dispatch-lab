@@ -135,6 +135,7 @@ class Project(Record):
     baseline: dict
     parent_id: str | None = None
     design_id: str | None = None
+    requirements_id: str | None = None
     created_at: str
     updated_at: str
 
@@ -191,7 +192,13 @@ def create(store, site_id, name=None, design_id=None):
     return read(store, key)
 
 
-def revise(store, key, config, name=None):
+def revise(store, key, config, name=None, **changes):
+    if set(changes) - {"requirements_id"}:
+        raise ValueError("Unknown project revision field")
+    if changes.get("requirements_id"):
+        from methane.siting.requirements import Brief
+
+        Brief(**store.get("requirements", changes["requirements_id"]))
     store.root.mkdir(parents=True, exist_ok=True)
     with (store.root / "project-write.lock").open("a+") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
@@ -203,11 +210,16 @@ def revise(store, key, config, name=None):
             )
         c = validate_config(store, previous["site_revision"], config)
         value = c.to_dict()
-        if value == previous["config"] and (name is None or name == previous["name"]):
+        if (
+            value == previous["config"]
+            and (name is None or name == previous["name"])
+            and all(previous.get(k) == v for k, v in changes.items())
+        ):
             return read(store, key)
         record = Project(
             **{
                 **previous,
+                **changes,
                 "config": value,
                 "name": name or previous["name"],
                 "parent_id": key,
@@ -449,6 +461,9 @@ def read(store, key):
             )
     return dict(
         project={"id": key, **p},
+        requirements=store.get("requirements", p["requirements_id"])
+        if p.get("requirements_id")
+        else None,
         site=store.get("site", p["site_revision"]),
         preview=preview(p["config"], p["baseline"]),
         environments=environments,
@@ -582,6 +597,7 @@ def run_project(
         name=p["name"] + (" / design comparison" if baseline_study_id else " / operation"),
         cases=cases,
         partition_hours=24,
+        requirements_id=p.get("requirements_id"),
         purpose="Plant project operation under the explicitly selected weather and management assumptions",
         search=dict(
             kind=VERSION,

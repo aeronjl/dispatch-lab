@@ -152,12 +152,16 @@ increments are not automatically started.
    permission/expiry behavior, shared physical execution and recording workflow.
    Continued/site-utility sessions and numerical external-agent reruns are explicitly
    unsupported; they are never silently replaced with unconstrained/reference runs.
-3. **Operating requirements and robust design comparisons — next.** Let an expert express
+3. **Operating requirements and robust design comparisons — implemented.** Let an expert express
    production commitments, reserve/service requirements and acceptable shortfall,
    then compare site/design choices against them. Reveal bottlenecks, uncertainty,
    infeasibility and trade-offs beside the relevant equipment. Preserve starting
    assumptions and comparison boundaries; avoid a single unexplained ranking.
-4. **Equipment-specific planning for one deployment use case.** Choose a concrete
+   The [operating brief contract](operating-requirements.md) defines production
+   windows, reserve/service limits, incomplete outcomes, scenario coverage, original
+   calculation links and portable assessment editions. Requirements assess outcomes;
+   they do not silently change dispatch objectives or establish field feasibility.
+4. **Equipment-specific planning for one deployment use case — next.** Choose a concrete
    equipment/site/support configuration, attach identified operating envelopes,
    service capabilities and observed data, and expose applicability and gaps in
    planning results. Add commissioning and operation/shadow comparisons as evidence

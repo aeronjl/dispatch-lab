@@ -43,11 +43,16 @@ def create(
     purpose="Declared comparison",
     search=None,
     template_id=None,
+    requirements_id=None,
 ):
     if mode not in ("resource", "design", "autonomous") or not 1 <= partition_hours <= 168:
         raise ValueError("Invalid study mode or partition size")
     if not 1 <= len(cases) <= 96:
         raise ValueError("A bounded study contains 1–96 declared cases")
+    if requirements_id:
+        from methane.siting.requirements import Brief
+
+        Brief(**store.get("requirements", requirements_id))
     frozen = []
     for index, item in enumerate(cases):
         design = store.get("design", item["design_id"])
@@ -128,6 +133,8 @@ def create(
     )
     if template_id is not None:
         value["template"] = dict(id=template_id, record=store.get("template", template_id))
+    if requirements_id:
+        value["requirements_id"] = requirements_id
     key = store.put("study", value)
     d = directory(store, key)
     atomic(d / "source-capsule.json", encode(LOADED_CAPSULE))
