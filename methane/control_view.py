@@ -175,7 +175,7 @@ def prepare(result, controller, hour):
         raise ValueError("This older probe has no recorded dependable-capacity contract")
     packet = dict(
         schema_version=VERSION,
-        plant=asdict(p),
+        plant=p.to_dict(),
         models=asdict(c.models),
         state=copy.deepcopy(d["estimate"]),
         forecast=copy.deepcopy(d["forecast"]),

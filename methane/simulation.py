@@ -50,6 +50,7 @@ def estimated_state(observation, p):
         observation["electrolyser_on"],
         observation["reactor_on"],
         observation["commitment_hours"],
+        observation.get("water_l", 0),
     )
 
 
@@ -95,7 +96,7 @@ def deployed_forecast(
         ),
         time=time,
         prices=asdict(costs),
-        plant=asdict(plant),
+        plant=plant.to_dict(),
         prior_service=rows[-1].get("field_operations") if rows else None,
     )
     changed, trace = apply(policy.deployment, public, forecast)
@@ -156,6 +157,27 @@ def evidence(p, state, forecast, planned, diagnosis, objective):
             bindings[key].append(f"{label} reaches its lower bound ({lower:g})")
         if abs(value - upper) < 1e-4:
             bindings[key].append(f"{label} reaches its upper bound ({upper:g})")
+    if first.get("integration"):
+        i = first["integration"]
+        for asset, value, limit, label in (
+            ("electrolyser", i["ending_water_l"], 0, "Purified-water stock is exhausted"),
+            (
+                "electrolyser",
+                i["ac_kw"],
+                i["parameters"]["ac_capacity_kw"],
+                "AC converter reaches its output limit",
+            ),
+            (
+                "electrolyser",
+                i["cooling_heat_kw"],
+                i["parameters"]["cooler_capacity_kw"],
+                "External cooler reaches its thermal limit",
+            ),
+        ):
+            if abs(value - limit) < 1e-4:
+                bindings[asset].append(label)
+        if not i["feed_pressure_compatible"]:
+            bindings["reactor"].append("Declared feed pressures do not meet the reactor interface")
     if first["curtailed_kwh"] > 0.01:
         bindings["solar"].append(
             f"{first['curtailed_kwh']:.1f} kWh of solar is unused in the first planned interval"
@@ -666,6 +688,9 @@ def _run(
                     forecast = supply_forecast(forecast, p, c.costs, site_utilities, t)
                 if lifecycle is not None:
                     forecast = lifecycle_ports.forecast(lifecycle, forecast)
+                from methane.integration import forecast as integration_forecast
+
+                forecast = integration_forecast(p, forecast, t)
                 base_pv = forecast["pv_kw"][0]
                 if services:
                     n = len(forecast["pv_kw"])
@@ -823,6 +848,9 @@ def _run(
                             raw_forecast = supply_forecast(
                                 raw_forecast, p, c.costs, site_utilities, t
                             )
+                    forecast = integration_forecast(p, forecast, t)
+                    if raw_forecast is not None:
+                        raw_forecast = integration_forecast(p, raw_forecast, t)
                     if policy.deployment is not None:
                         forecast, deployment_record = deployed_forecast(
                             policy,
@@ -937,6 +965,7 @@ def _run(
                         rows,
                         observer,
                     )
+                forecast = integration_forecast(p, forecast, t)
                 estimate = estimated_state(observation, p)
                 policy = resolved_policies[name]
                 objective = policy.objective
@@ -1083,7 +1112,7 @@ def _run(
                     decision["service_planning_inputs"] = service_planning_inputs
                 if lifecycle is not None:
                     decision["lifecycle"] = lifecycle.public()
-                    decision["operating_plant"] = asdict(p)
+                    decision["operating_plant"] = p.to_dict()
                 if control is not None:
                     from methane.control_port import observation as control_observation
 
@@ -1123,6 +1152,7 @@ def _run(
                         battery=physical_components.battery,
                         components=physical_components,
                         service_kw=service_kw,
+                        water_delivery_l=forecast.get("water_deliveries_l", [0])[0],
                         component_availability=lifecycle.available()
                         if lifecycle is not None
                         else None,

@@ -60,6 +60,7 @@ def observe(p, sensors, before, row, seed, hour, flow_bias=0, rng_policy="legacy
         "electrolyser_on": row["state"]["electrolyser_on"],
         "reactor_on": row["state"]["reactor_on"],
         "commitment_hours": row["state"]["commitment_hours"],
+        **({"water_l": row["state"]["water_l"]} if "integration" in row else {}),
     }
 
 

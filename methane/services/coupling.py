@@ -179,7 +179,7 @@ def evaluate(
         at_hour=now,
         input_key=identity(
             dict(
-                plant=asdict(plant),
+                plant=plant.to_dict(),
                 state=asdict(state),
                 forecast=forecast,
                 capacity_kw=capacity_kw,

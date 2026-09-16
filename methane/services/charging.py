@@ -327,7 +327,7 @@ def solve(
         solver=info,
         plan=None,
         inputs=dict(
-            plant=asdict(plant),
+            plant=plant.to_dict(),
             state=asdict(state),
             capacity_estimate_kw=capacity_kw,
             process_costs=asdict(costs),

@@ -1993,6 +1993,10 @@ def build_app(default=None, *, start_project=False):
             - {key for g, key in widget_keys if g == group}
             - {"dt_hours"}
         )
+        if group == "plant":
+            # Structured interfaces are edited in Equipment & evidence and retained
+            # by config_from_values when ordinary setup fields change.
+            missing -= {"integration"}
         if group == "service_system":
             # These execution factors are edited with their required public bounds
             # in Studies → uncertainty, never as unqualified ordinary setup values.

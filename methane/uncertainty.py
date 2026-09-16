@@ -69,7 +69,7 @@ SCOPE = {
     "maintenance": "Lifetime, degradation and consumables depend on usage and calendar exposure. Key event randomness to the work, not controller call order.",
     "economics": "Prices and life/usage allowances are assumptions. Dispatch prices remain frozen separately from retrospective accounting prices.",
     "control": "Policy choices are selected, not physical uncertainty. Compare policies on paired worlds; solver repetitions are a separate numerical layer.",
-    "coupling": "Shared resource balances remain constraints for every world. Invalid combinations are recorded, never clipped into validity.",
+    "coupling": "Shared resource balances remain constraints for every world. Optional plant interfaces use disclosed constant conversion/cooling, pressure compatibility and finite water assumptions. User-selected scenario ranges are not calibrated probability distributions. Hidden interface variations are not supported. Invalid combinations are recorded, never clipped into validity.",
     "experiment": "Boundary, horizon, seed and model choice define an experiment. Scenario frequencies are not empirical event probabilities.",
 }
 

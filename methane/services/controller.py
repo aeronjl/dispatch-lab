@@ -525,7 +525,7 @@ class ServiceController:
         context = dict(
             policy=asdict(self.policy),
             decision_key=key,
-            plant=asdict(plant),
+            plant=plant.to_dict(),
             state=asdict(state),
             forecast=forecast,
             capacity_kw=capacity_kw,

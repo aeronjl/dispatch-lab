@@ -36,6 +36,11 @@ def capture(row):
             delivery_kg=f["deliveries_kg"][0],
             service_kw=f.get("service_kw", [0])[0],
             isolated=f.get("electrolyser_isolated", [False])[0],
+            **(
+                {"water_delivery_l": f["water_deliveries_l"][0]}
+                if "water_deliveries_l" in f
+                else {}
+            ),
         ),
         prior_inventory_kg=d["observations"]["h2_inventory_kg"],
         observations={
@@ -109,6 +114,7 @@ def assess(plant, sensors, packet, *, components=None):
                 p["current"]["delivery_kg"],
                 capacity=plant.electrolyser_kw,
                 service_kw=p["current"]["service_kw"],
+                water_delivery_l=p["current"].get("water_delivery_l", 0),
                 components=components,
             )
             checked["status"] = "feasible at recorded estimate"
@@ -142,7 +148,7 @@ def assess(plant, sensors, packet, *, components=None):
         implementation_id=VERSION,
         inputs=dict(
             packet=p,
-            plant=asdict(plant),
+            plant=plant.to_dict(),
             sensors=asdict(sensors),
             component_models=components.identities(),
             component_parameters={

@@ -181,11 +181,14 @@ completion criterion.
 
 These are follow-on increments and evidence gates, not automatically started work:
 
-1. **Close the deployment integration gaps.** Resolve electrical conversion, external
-   cooling/drying, pressure interfaces and finite support supplies for the chosen
-   equipment configuration. Add only mechanisms justified by those boundaries;
-   carry uncertainty and missing OEM envelopes explicitly. This is the recommended
-   next technical increment before using this candidate for deployment decisions.
+1. **Deployment integration model — implemented, evidence still bounded.** Optional
+   [plant interfaces](plant-interfaces.md) connect AC conversion, external cooler/dryer
+   and specified H₂ compression loads, declared feed-pressure compatibility and
+   finite purified-water stocks to planning and execution. Design revisions, recorded
+   calculations, cost incompleteness and disclosed uncertainty are accessible through
+   Equipment & evidence. The reduced model does not establish actual cooling duty,
+   gas/water quality, pressure dynamics or installation feasibility; OEM evidence is
+   the next gate.
 2. **Qualify against actual equipment/site evidence.** Import commissioning and
    operation records, identify influential discrepancies, then review any fitted
    component adapters against held-out data. No real evidence is supplied by the

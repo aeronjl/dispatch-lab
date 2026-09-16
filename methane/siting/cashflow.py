@@ -7,7 +7,7 @@ from typing import Literal
 from pydantic import Field, model_validator
 
 from methane.config import Config
-from methane.costing import capital
+from methane.costing import capital, water_rate
 from methane.siting.contracts import Record
 from methane.siting.production import PeriodRows, entries, inspect
 from methane.siting.store import digest
@@ -66,6 +66,15 @@ class CashScenario(Record):
 def defaults(config):
     c = Config.from_dict(config)
     cap = capital(c.plant, c.costs)
+    from methane.integration import settings
+
+    integration = settings(c.plant)
+    if integration and (
+        integration.installed_eur is None or integration.fixed_eur_per_year is None
+    ):
+        raise ValueError(
+            "Price additional plant interfaces in Equipment & evidence before creating a cash scenario"
+        )
     construction_basis = 0
     if c.lifecycle:
         fractions = {
@@ -117,6 +126,23 @@ def defaults(config):
             assumption="Existing fixed operating cost",
         ),
     ]
+    if integration:
+        items.extend(
+            [
+                CashItem(
+                    name="Additional installed plant interfaces",
+                    category="initial",
+                    eur=integration.installed_eur,
+                    assumption="User-entered additional installed cost; excludes existing assets and installation allowance",
+                ),
+                CashItem(
+                    name="Additional interface maintenance",
+                    category="annual",
+                    eur=integration.fixed_eur_per_year,
+                    assumption="User-entered standing maintenance; no duplicate wear allowance",
+                ),
+            ]
+        )
     for name, kind in (
         ("Land rights or lease", "annual"),
         ("Surveys and permitting", "initial"),
@@ -292,7 +318,7 @@ def report(store, study_id, case_id, assumptions):
             if scenario.co2_payment_basis == "delivered"
             else r["co2_consumed_kg"]
         )
-        a["water_m3"] += r["h2_produced_kg"] * config.costs.water_litres_per_kg / 1000
+        a["water_m3"] += r["h2_produced_kg"] * water_rate(config.plant, config.costs) / 1000
         a["consumables_eur"] += r["h2_produced_kg"] * config.costs.consumables_eur_per_kg
         if r.get(
             "intervention_accounting", "legacy-alarm-allowance/1"

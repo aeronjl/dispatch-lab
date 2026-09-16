@@ -287,4 +287,10 @@ def forecast_at(weather, config, t, provider=None):
         t,
     )
     forecast = (provider or SavedForecastProvider.from_weather(weather)).horizon(request)
-    return {**forecast, "deliveries_kg": deliveries(config.plant, s, t, s.horizon_hours)}
+    from methane.integration import forecast as integration_forecast
+
+    return integration_forecast(
+        config.plant,
+        {**forecast, "deliveries_kg": deliveries(config.plant, s, t, s.horizon_hours)},
+        t,
+    )

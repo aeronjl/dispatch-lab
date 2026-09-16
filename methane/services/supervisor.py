@@ -165,7 +165,7 @@ def choose(
         terminal_minimum=terminal_minimum,
         objective=objective,
         risk_weight=risk_weight,
-        plant=asdict(plant),
+        plant=plant.to_dict(),
         state=asdict(state),
         forecast=forecast,
         capacity_kw=capacity_kw,

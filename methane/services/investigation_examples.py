@@ -107,7 +107,7 @@ def fixture(case, *, seconds=2):
         fixture_id=case,
         source=LOADED_SOURCE["content_hash"],
         **snapshot,
-        plant=asdict(c.plant),
+        plant=c.plant.to_dict(),
         models=asdict(c.models),
         state=asdict(State.initial(c.plant)),
         forecast=forecast,

@@ -204,6 +204,70 @@ def physical(p, before, row, interval=None, capacity=None):
                 interval=interval,
             )
         )
+    if p.integration is not None:
+        from methane.integration import execute as integrate
+
+        stored = row.get("integration", {})
+        computed = integrate(
+            p,
+            before,
+            a,
+            a["electrolyser_kw"] + row["startup_kwh"],
+            a["heater_kw"]
+            + a["cooling_kw"] * p.cooling_electric_fraction
+            + a["methane_kg"] * p.methane_electric_kwh_per_kg
+            + p.auxiliary_kw * s["reactor_on"],
+            row["h2_produced_kg"],
+            stored.get("water_delivery_l", 0),
+        )
+        audits.extend({**item, "interval": interval} for item in computed["audits"])
+        audits.append(
+            check(
+                "integration_record_identity",
+                "integration",
+                int(
+                    stored.get("version") != computed["version"]
+                    or stored.get("parameters") != computed["parameters"]
+                ),
+                "boolean",
+                interval=interval,
+            )
+        )
+        for k, v in computed.items():
+            if isinstance(v, (int, float)):
+                audits.append(
+                    check(
+                        "recorded_integration_" + k,
+                        "integration",
+                        stored.get(k, float("nan")) - v,
+                        "boolean"
+                        if isinstance(v, bool)
+                        else "L"
+                        if k.endswith("_l")
+                        else "kWh"
+                        if k.endswith("_kwh")
+                        else "kW",
+                        interval=interval,
+                    )
+                )
+        audits.extend(
+            [
+                check(
+                    "integrated_bus_demand",
+                    "site",
+                    row["demand_kw"] - row.get("service_kw", 0) - computed["dc_kw"],
+                    "kW",
+                    interval=interval,
+                ),
+                check(
+                    "water_state",
+                    "integration",
+                    s.get("water_l", float("nan")) - computed["ending_water_l"],
+                    "L",
+                    interval=interval,
+                ),
+            ]
+        )
     return audits
 
 

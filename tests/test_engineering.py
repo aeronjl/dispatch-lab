@@ -30,7 +30,7 @@ def test_pre_refactor_physical_fixture():
         state, actual = transition(
             c.plant, state, row["applied"], row["pv_kw"], row["ambient_c"], row["co2_delivered_kg"]
         )
-        assert vars(state) == pytest.approx(row["state"], abs=1e-8)
+        assert vars(state) == pytest.approx({**row["state"], "water_l": 0}, abs=1e-8)
         for key in ("heat_loss_kwh", "reaction_heat_kwh", "water_produced_kg"):
             assert actual[key] == pytest.approx(row[key], abs=1e-8)
     weather = synthetic(c)

@@ -27,7 +27,7 @@ class Actions(BaseModel):
 
 
 def observation(decision, plant, costs, models, time):
-    public = packet(decision, time=time, prices=asdict(costs), plant=asdict(plant))
+    public = packet(decision, time=time, prices=asdict(costs), plant=plant.to_dict())
     # Model definitions are declared assumptions, never the hidden execution configuration.
     public.update(
         contract=VERSION,
@@ -96,6 +96,7 @@ def preview(public, actions=None):
         Costs(**public["prices"]),
         components=assemble(p, c.models),
         service_kw=f.get("service_kw", [0])[0],
+        water_delivery_l=f.get("water_deliveries_l", [0])[0],
         component_availability={k: v[0] for k, v in f.get("component_availability", {}).items()},
     )
     return dict(

@@ -4,7 +4,13 @@ from dataclasses import asdict
 
 from methane.config import Costs, Plant
 from methane.field_operations import costing as field_costing
+from methane.integration import settings
 from methane.physics import CO2_PER_CH4
+
+
+def water_rate(p, c):
+    s = settings(p)
+    return s.water_l_per_kg if s else c.water_litres_per_kg
 
 
 def capital(p, c):
@@ -22,9 +28,7 @@ def capital(p, c):
 def marginal(p, c):
     cap = capital(p, c)
     return {
-        "electrolyser_kw": (
-            c.water_litres_per_kg / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg
-        )
+        "electrolyser_kw": (water_rate(p, c) / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg)
         / p.specific_energy_kwh_per_kg,
         "discharge_kw": c.battery_eur_per_kwh / (p.eta * c.battery_cycles),
         "electrolyser_on": cap["electrolyser"] * c.stack_share / c.stack_operating_hours,
@@ -50,7 +54,7 @@ def decision_cost(p, c, rows, *, service_economics=None, service_report=None):
         if r.get("lifecycle"):
             total -= a["electrolyser_kw"] * rates["electrolyser_kw"]
             total += r["h2_produced_kg"] * (
-                c.water_litres_per_kg / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg
+                water_rate(p, c) / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg
             )
         total += rates["electrolyser_on"] * r["state"]["electrolyser_on"]
         total += rates["reactor_on"] * r["state"]["reactor_on"]
@@ -119,7 +123,7 @@ def allocation(p, c, rows, *, with_lineage=False, service_economics=None, servic
         == "legacy-alarm-allowance/1"
     )
     field = service_costs(c, rows, service_economics, detailed=with_lineage, prefix=service_prefix)
-    water = total("h2_produced_kg") * c.water_litres_per_kg / 1000
+    water = total("h2_produced_kg") * water_rate(p, c) / 1000
     components = {
         "solar": cap["solar"] / c.solar_years * y,
         "battery": max(battery_calendar, battery_usage)
@@ -139,6 +143,17 @@ def allocation(p, c, rows, *, with_lineage=False, service_economics=None, servic
         * y
         + c.fixed_opex_eur_per_year * y,
     }
+    integration = settings(p)
+    if integration:
+        components["integration"] = (
+            None
+            if integration.installed_eur is None or integration.fixed_eur_per_year is None
+            else (
+                integration.installed_eur / integration.ownership_years
+                + integration.fixed_eur_per_year
+            )
+            * y
+        )
     components.update(field["components"])
     lifecycle = None
     if any(r.get("lifecycle") for r in rows):
@@ -162,6 +177,14 @@ def allocation(p, c, rows, *, with_lineage=False, service_economics=None, servic
         "total_eur": value,
         "eur_per_kg_ch4": value / methane if value is not None and methane > 1e-8 else None,
         "water_input_m3": water,
+        **(
+            {
+                "integration_cost_scope": "Additional installed capital and standing maintenance; no duplicate installation allowance. Off-grid support power changes dispatch rather than being purchased again. Missing prices leave total undefined.",
+                "known_subtotal_eur": sum(v for v in components.values() if v is not None),
+            }
+            if integration
+            else {}
+        ),
         "incidents": incidents,
         "charged_incidents": charged_incidents,
         "field_operations": field,
@@ -249,7 +272,7 @@ def allocation_lineage(p, c, rows, cap, result):
             )
         )
 
-    for group, values in (("plant", asdict(p)), ("prices", asdict(c))):
+    for group, values in (("plant", p.to_dict()), ("prices", asdict(c))):
         for key, value in values.items():
             add(group + "." + key, value, "parameter", f"/{group}/{key}")
     add("hours", len(rows), "h", "/rows", "", "Number of recorded one-hour intervals")
@@ -435,6 +458,25 @@ def allocation_lineage(p, c, rows, cap, result):
             ),
         ),
     }
+    if p.integration is not None:
+        add("water_rate", water_rate(p, c), "L/kg", "/plant/integration/water_l_per_kg")
+        formula, parents = component_formulas["electrolyser"]
+        component_formulas["electrolyser"] = (
+            formula.replace("prices.water_litres_per_kg", "water_rate"),
+            tuple("water_rate" if k == "prices.water_litres_per_kg" else k for k in parents),
+        )
+        s = settings(p)
+        for key in ("installed_eur", "ownership_years", "fixed_eur_per_year"):
+            add("integration." + key, getattr(s, key), "parameter", "/plant/integration/" + key)
+        component_formulas["integration"] = (
+            "(installed_eur / ownership_years + fixed_eur_per_year) * years; undefined if unpriced",
+            (
+                "integration.installed_eur",
+                "integration.ownership_years",
+                "integration.fixed_eur_per_year",
+                "years",
+            ),
+        )
     service_lines = result["field_operations"].get("calculation", {}).get("lines", [])
     for line in service_lines:
         lid = "service." + line["id"]
@@ -599,7 +641,7 @@ def allocation_lineage(p, c, rows, cap, result):
 
         correction = sum(
             r["h2_produced_kg"]
-            * (c.water_litres_per_kg / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg)
+            * (water_rate(p, c) / 1000 * c.water_eur_per_m3 + c.consumables_eur_per_kg)
             - r["applied"]["electrolyser_kw"] * rates["electrolyser_kw"]
             for r in rows
             if r.get("lifecycle")
@@ -640,7 +682,7 @@ def allocation_lineage(p, c, rows, cap, result):
     return dict(
         schema_version="dispatch-lab/cost-ledger/1",
         nodes=nodes,
-        plant=asdict(p),
+        plant=p.to_dict(),
         prices=asdict(c),
         row_count=len(rows),
     )

@@ -192,7 +192,7 @@ def capture(runtime):
     if runtime.optical:
         optical = runtime.optical
         snapshot["optical"] = dict(
-            plant=asdict(optical.plant),
+            plant=optical.plant.to_dict(),
             weather=asdict(optical.weather),
             baseline=copy.deepcopy(optical.baseline),
             surface=getattr(optical, "planning_surface", optical.surface).snapshot(),

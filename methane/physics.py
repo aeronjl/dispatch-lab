@@ -40,10 +40,20 @@ class State:
     electrolyser_on: bool = False
     reactor_on: bool = False
     commitment_hours: int = 0
+    water_l: float = 0
 
     @classmethod
     def initial(cls, p: Plant, ambient=20):
-        return cls(p.battery_kwh * p.initial_soc, p.initial_h2_kg, p.initial_co2_kg, ambient)
+        from methane.integration import settings
+
+        s = settings(p)
+        return cls(
+            p.battery_kwh * p.initial_soc,
+            p.initial_h2_kg,
+            p.initial_co2_kg,
+            ambient,
+            water_l=s.initial_water_l if s else 0,
+        )
 
 
 def thermal_coefficients(p):
@@ -67,6 +77,7 @@ def transition(
     capacity=None,
     requested=None,
     service_kw=0,
+    water_delivery_l=0,
 ):
     """Account for an already feasible action; no hidden corrective dispatch."""
     inputs = {
@@ -76,6 +87,7 @@ def transition(
         "ambient_c": ambient,
         "delivery_kg": delivery,
         "service_kw": service_kw,
+        "water_delivery_l": water_delivery_l,
     }
     invalid = [
         check("finite_input_" + key, "site", float("nan"), "input")
@@ -120,7 +132,18 @@ def transition(
     ely_start, reactor_start = eflows["start"], rflows["start"]
     temperature = reactor_result.state.temperature_c
     process_demand = eflows["electricity_kw"] + rflows["electricity_kw"]
-    demand = process_demand + service_kw
+    from methane.integration import execute as integrate
+
+    integration = integrate(
+        p,
+        state,
+        action,
+        eflows["electricity_kw"],
+        rflows["electricity_kw"],
+        h2_made,
+        water_delivery_l,
+    )
+    demand = (integration["dc_kw"] if integration else process_demand) + service_kw
     curtailed = pv + discharge - charge - demand
     commitment = reactor_result.state.commitment_hours
     next_state = State(
@@ -131,6 +154,7 @@ def transition(
         on,
         running,
         commitment,
+        integration["ending_water_l"] if integration else state.water_l,
     )
     battery_loss = dict(battery_result.flows)["loss_kwh"]
     heat_loss = rflows["heat_loss_kwh"]
@@ -174,6 +198,8 @@ def transition(
         "co2_residual_kg": next_state.co2_kg - state.co2_kg - accepted + co2_used,
         "reaction_mass_residual_kg": h2_used + co2_used - methane - methane * WATER_PER_CH4,
     }
+    if integration:
+        row["integration"] = integration
     row["audits"] = physical(p, state, row)
     require(row["audits"], {"before": asdict(state), "row": row})
     return next_state, row

@@ -18,7 +18,8 @@ class Plant:
     dt_hours: float = 1.0
 
     def __post_init__(self):
-        for value in vars(self).values():
+        for key in Plant.__dataclass_fields__:
+            value = getattr(self, key)
             if not isfinite(value):
                 raise ValueError("Plant parameters must be finite.")
         if min(self.solar_kw, self.battery_kwh, self.start_energy_kwh) < 0:

@@ -35,6 +35,7 @@ def field_unit(key):
         ("_kwh", "kWh"),
         ("_kw", "kW"),
         ("_kg", "kg"),
+        ("_l", "L"),
         ("_c", "°C"),
         ("_hours", "h"),
     ):
@@ -97,6 +98,7 @@ def audit_archive(result):
                     capacity=capacity,
                     requested=row.get("requested"),
                     service_kw=row.get("service_kw", 0),
+                    water_delivery_l=row.get("integration", {}).get("water_delivery_l", 0),
                 )
             except PhysicalAuditError as exc:
                 reports.extend({**audit, "interval": i} for audit in exc.audits)
@@ -149,7 +151,8 @@ def audit_archive(result):
                     check(
                         "stored_state_" + key,
                         controller,
-                        float(row["state"][key]) - float(value),
+                        float(row["state"].get(key, 0) if key == "water_l" else row["state"][key])
+                        - float(value),
                         field_unit(key),
                         abs(float(value)),
                         interval=i,
@@ -169,6 +172,22 @@ def audit_archive(result):
                             interval=i,
                         )
                     )
+            if c.plant.integration is not None:
+                from methane.integration import forecast as integration_forecast
+
+                scheduled_water = integration_forecast(c.plant, {"pv_kw": [0]}, row["hour"])[
+                    "water_deliveries_l"
+                ][0]
+                audits.append(
+                    check(
+                        "recorded_water_delivery",
+                        "integration",
+                        row["integration"]["water_delivery_l"] - scheduled_water,
+                        "L",
+                        interval=i,
+                    )
+                )
+                audits.extend(physical(c.plant, before, row, interval=i, capacity=capacity))
             reports.extend(audits)
             recorded = row.get("battery_record")
             if result.get("provenance", {}).get("implementations", {}).get("battery"):

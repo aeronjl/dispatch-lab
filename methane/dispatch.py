@@ -45,6 +45,10 @@ VARIABLES = (
     "co2_consumed_kg",
     "electrolyser_bus_kw",
     "reactor_bus_kw",
+    "water_l",
+    "water_accepted_l",
+    "water_rejected_l",
+    "water_full",
 )
 BINARY = (
     "electrolyser_on",
@@ -54,6 +58,7 @@ BINARY = (
     "direction",
     "heat_direction",
     "tank_full",
+    "water_full",
 )
 
 UNITS = {
@@ -63,6 +68,8 @@ UNITS = {
     if k == "battery_kwh"
     else "°C"
     if k == "temperature_c"
+    else "L"
+    if k.endswith("_l")
     else "kg"
     if k.endswith("_kg") or k in ("accepted", "rejected")
     else "kW"
@@ -71,10 +78,13 @@ UNITS = {
 
 
 class Model:
-    def __init__(self, n):
+    def __init__(self, n, integration=False):
         self.n = n
-        self.ids = {k: np.arange(i * n, (i + 1) * n) for i, k in enumerate(VARIABLES)}
-        self.lower = np.zeros(n * len(VARIABLES))
+        variables = (
+            VARIABLES if integration else tuple(k for k in VARIABLES if not k.startswith("water_"))
+        )
+        self.ids = {k: np.arange(i * n, (i + 1) * n) for i, k in enumerate(variables)}
+        self.lower = np.zeros(n * len(variables))
         self.upper = np.full_like(self.lower, np.inf)
         self.integer = np.zeros_like(self.lower)
         self.rows, self.cols, self.values, self.lo, self.hi = [], [], [], [], []
@@ -82,6 +92,8 @@ class Model:
         self.objective = np.zeros_like(self.lower)
         self._component_bounds = set()
         for k in BINARY:
+            if k not in self.ids:
+                continue
             self.upper[self.ids[k]] = self.integer[self.ids[k]] = 1
 
     def add(self, terms, lo=-np.inf, hi=np.inf):
@@ -212,9 +224,11 @@ def capacity_horizon(p, forecast, capacity):
 
 def build(p, state, forecast, capacity, enforce_commitment=True, *, battery=None, components=None):
     """Compose component ports; only shared DC-bus allocation belongs here."""
+    from methane.integration import add_planning, bus_terms
+
     n = len(forecast["pv_kw"])
     capacities = capacity_horizon(p, forecast, capacity)
-    m = Model(n)
+    m = Model(n, integration=p.integration is not None)
     components = components or assemble(p, battery_override=battery)
     durations = (p.dt_hours,) * n
     m.add_component(
@@ -293,13 +307,13 @@ def build(p, state, forecast, capacity, enforce_commitment=True, *, battery=None
         m.bus_rows.append(len(m.lo))
         m.add(
             [
-                ("electrolyser_bus_kw", t, 1),
-                ("reactor_bus_kw", t, 1),
+                *bus_terms(p, t),
                 ("charge_kw", t, 1),
                 ("discharge_kw", t, -1),
             ],
             hi=pv - forecast.get("service_kw", [0] * n)[t],
         )
+    add_planning(m, p, state, forecast)
     return m
 
 
@@ -328,6 +342,7 @@ def trajectory(p, state, actions, forecast, *, battery=None, components=None, ca
             components=components,
             capacity=capacities[t],
             service_kw=forecast.get("service_kw", [0] * len(forecast["pv_kw"]))[t],
+            water_delivery_l=forecast.get("water_deliveries_l", [0] * len(forecast["pv_kw"]))[t],
         )
         audits = row.pop("audits", [])
         row["audit_summary"] = {"passed": sum(a["passed"] for a in audits), "total": len(audits)}
@@ -472,6 +487,7 @@ def greedy_action(
     battery=None,
     components=None,
     service_kw=0,
+    water_delivery_l=0,
     electrolyser_isolated=False,
     component_availability=None,
 ):
@@ -484,6 +500,7 @@ def greedy_action(
         "ambient_c": [ambient],
         "deliveries_kg": [delivery],
         "service_kw": [service_kw],
+        "water_deliveries_l": [water_delivery_l],
         "electrolyser_isolated": [electrolyser_isolated],
         "component_availability": {k: [v] for k, v in (component_availability or {}).items()},
     }
@@ -546,6 +563,7 @@ def greedy_action(
             components=components,
             capacity=capacity,
             service_kw=service_kw,
+            water_delivery_l=water_delivery_l,
         )
     except PhysicalAuditError as exc:
         return {k: 0.0 for k in ACTION_KEYS}, {
@@ -589,6 +607,7 @@ def rollout_greedy(
                 "electrolyser_isolated", [False] * len(forecast["pv_kw"])
             )[t],
             service_kw=forecast.get("service_kw", [0] * len(forecast["pv_kw"]))[t],
+            water_delivery_l=forecast.get("water_deliveries_l", [0] * len(forecast["pv_kw"]))[t],
             component_availability={
                 k: v[t] for k, v in forecast.get("component_availability", {}).items()
             },
@@ -606,6 +625,7 @@ def rollout_greedy(
             components=components,
             capacity=capacities[t],
             service_kw=forecast.get("service_kw", [0] * len(forecast["pv_kw"]))[t],
+            water_delivery_l=forecast.get("water_deliveries_l", [0] * len(forecast["pv_kw"]))[t],
         )
         actions.append(action)
         audits = row.pop("audits", [])
@@ -719,6 +739,7 @@ def execute(
     battery=None,
     components=None,
     service_kw=0,
+    water_delivery_l=0,
     component_availability=None,
 ):
     forecast = {
@@ -726,6 +747,7 @@ def execute(
         "ambient_c": [ambient],
         "deliveries_kg": [delivery],
         "service_kw": [service_kw],
+        "water_deliveries_l": [water_delivery_l],
         "component_availability": {k: [v] for k, v in (component_availability or {}).items()},
     }
     actions, info = solve(
@@ -759,6 +781,7 @@ def execute(
         capacity=capacity,
         requested=requested,
         service_kw=service_kw,
+        water_delivery_l=water_delivery_l,
     )
     trip = (
         state.commitment_hours > 0 or requested["methane_kg"] >= p.methane_min_kgph

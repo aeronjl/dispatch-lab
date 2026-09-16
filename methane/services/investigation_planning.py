@@ -80,7 +80,7 @@ def compare(
     belief = update(assumptions, runtime._context, runtime.options)
     original = dict(
         decision_key=key,
-        plant=asdict(plant),
+        plant=plant.to_dict(),
         component_models=components.identities(),
         component_parameters={
             k: asdict(getattr(components, k).parameters) for k in components.identities()

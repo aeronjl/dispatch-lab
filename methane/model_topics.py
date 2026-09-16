@@ -205,7 +205,7 @@ TOPICS = {
                 ],
             ),
         ],
-        "No pressure, leakage, compression electricity or gas quality. Hydrogen alone does not establish downstream production feasibility.",
+        "This isolated inventory example has no pressure, leakage, compression or gas quality. Optional deployment interfaces add declared regulated pressures and specified compression electricity; they do not simulate vessel pressure or certify gas quality. Hydrogen inventory alone does not establish downstream feasibility.",
     ),
     "co2": topic(
         "Deliveries arrive before withdrawal",
@@ -277,7 +277,7 @@ TOPICS = {
         "Physical plant",
         ["battery", "electrolyser", "reactor"],
         ["physics.py", "dispatch.py"],
-        "Every electrical request competes for the same available power. A feasible plant action must balance the bus and material flows together.",
+        "Every electrical request competes for the same available power. A feasible plant action must balance the bus and material flows together. Equipment & evidence can enable a separate AC island, external cooling/drying and finite purified-water supplies for deployment studies. This teaching example retains the original abstract DC bus; an enabled deployment records the extra balances beside its original decisions.",
         [
             P(
                 "Ask for more than the sun supplies",

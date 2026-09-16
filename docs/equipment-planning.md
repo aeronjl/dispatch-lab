@@ -124,3 +124,11 @@ exact design matching, immutable runs and offline export/restore. Browser checks
 cover review-before-apply, evidence recording, observations, reports, trace navigation,
 stale responses, keyboard return and narrow screens. These checks establish software
 behaviour, not field realism or an expert-participant usability outcome.
+
+## Optional physical integration
+
+The separate [plant-interface contract](plant-interfaces.md) is now available in
+Equipment & evidence. Enabling it creates a design revision with explicit AC
+conversion, external loads, regulated-pressure compatibility and finite purified
+water. The evidence reference alone still does not enable these assumptions or
+establish OEM interlocks. Original saved cases retain their original boundaries.

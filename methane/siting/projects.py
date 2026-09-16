@@ -357,6 +357,10 @@ def preview(config, baseline=None):
         notes.append(
             "Service access, communications, measurement channels and success rates remain declared assumptions. Inspect Site services."
         )
+    if p.integration is not None:
+        notes.append(
+            "Plant interfaces enabled: conversion, external cooling/drying, pressure compatibility and finite purified water. Inspect Equipment & evidence → Plant interfaces; unpriced extras leave total cost incomplete."
+        )
     if c.lifecycle:
         notes.append(
             "Commissioning and maintenance are enabled; nominal installed capacity may not be available at the start."
@@ -367,7 +371,7 @@ def preview(config, baseline=None):
         primary=PRIMARY,
         names=NAMES,
         capital=cap,
-        capital_scope="Nominal process equipment capital at current assumptions; excludes site, installation and service equipment. Not a quotation or profitability estimate.",
+        capital_scope="Nominal process equipment capital at current assumptions; excludes site, installation, service equipment and separately priced plant interfaces. Not a quotation or profitability estimate.",
         installed=installed,
         equipment=EQUIPMENT,
         notes=notes,

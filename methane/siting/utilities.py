@@ -40,15 +40,20 @@ class Utilities(Record):
 def supply_limit(plant, costs, utilities):
     if utilities.water_lph is None:
         return plant.electrolyser_kw
-    if costs.water_litres_per_kg <= 0:
+    from methane.costing import water_rate
+
+    rate = water_rate(plant, costs)
+    if rate <= 0:
         raise ValueError("Finite water supply requires a positive total water-use assumption")
     return min(
         plant.electrolyser_kw,
-        utilities.water_lph / costs.water_litres_per_kg * plant.specific_energy_kwh_per_kg,
+        utilities.water_lph / rate * plant.specific_energy_kwh_per_kg,
     )
 
 
 def forecast(f, plant, costs, utilities, hour):
+    from methane.costing import water_rate
+
     n = len(f["pv_kw"])
     result = {**f, "electrolyser_supply_limit_kw": [supply_limit(plant, costs, utilities)] * n}
     if utilities.co2_deliveries is not None:
@@ -57,7 +62,7 @@ def forecast(f, plant, costs, utilities, hour):
     result["site_supply"] = dict(
         schema_version=utilities.schema_version,
         water_lph=utilities.water_lph,
-        water_litres_per_kg=costs.water_litres_per_kg,
+        water_litres_per_kg=water_rate(plant, costs),
         estimated_electrolyser_supply_limit_kw=supply_limit(plant, costs, utilities),
         delivery_basis="Disclosed site delivery schedule"
         if utilities.co2_deliveries is not None
@@ -69,7 +74,9 @@ def forecast(f, plant, costs, utilities, hour):
 
 
 def applied(row, plant, costs, utilities):
-    used = row["h2_produced_kg"] * costs.water_litres_per_kg
+    from methane.costing import water_rate
+
+    used = row["h2_produced_kg"] * water_rate(plant, costs)
     if utilities.water_lph is not None and used > utilities.water_lph + 1e-6:
         raise ValueError("Applied electrolysis exceeded the declared water supply")
     return dict(
@@ -77,5 +84,7 @@ def applied(row, plant, costs, utilities):
         water_available_l=utilities.water_lph,
         water_unused_l=utilities.water_lph - used if utilities.water_lph is not None else None,
         water_stoichiometric_kg=row["electrolysis_stoichiometric_water_kg"],
-        scope="Total water-use allowance bounds electrolysis; stoichiometric consumption separately recorded. No water inventory or recycling credit.",
+        scope="Supply throughput additionally bounds consumption from the separately recorded purified-water tank; no recycling credit."
+        if plant.integration is not None
+        else "Total water-use allowance bounds electrolysis; stoichiometric consumption separately recorded. No water inventory or recycling credit.",
     )

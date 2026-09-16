@@ -9,7 +9,6 @@ import subprocess
 import sys
 import time
 import warnings
-from dataclasses import asdict
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -422,15 +421,17 @@ def study(result, controller, hour, budgets=(0.5, 5.0)):
             methane = 0
             for t, action in enumerate(actions):
                 reference = interval(
-                    asdict(c.plant),
+                    c.plant.to_dict(),
                     state,
                     action,
                     forecast["pv_kw"][t],
                     forecast["ambient_c"][t],
                     forecast["deliveries_kg"][t],
+                    service_kw=forecast.get("service_kw", [0] * len(actions))[t],
+                    water_delivery_l=forecast.get("water_deliveries_l", [0] * len(actions))[t],
                 )
                 checks.extend(
-                    check_actions(asdict(c.plant), state, reference, d["capacity_used_kw"])
+                    check_actions(c.plant.to_dict(), state, reference, d["capacity_used_kw"])
                 )
                 methane += action["methane_kg"]
                 state = reference["state"]

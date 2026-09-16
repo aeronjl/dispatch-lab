@@ -32,9 +32,23 @@ class Plant(HydrogenPlant):
     methane_electric_kwh_per_kg: float = 1
     cooling_electric_fraction: float = 0.1
     minimum_run_hours: int = 4
+    integration: dict | None = None
+
+    def to_dict(self):
+        """Preserve the original shape when optional interfaces are absent."""
+        value = asdict(self)
+        if self.integration is None:
+            value.pop("integration")
+        return value
 
     def __post_init__(self):
         super().__post_init__()
+        if any(not isfinite(v) for k, v in vars(self).items() if k != "integration"):
+            raise ValueError("Plant parameters must be finite")
+        if self.integration is not None:
+            from methane.integration import Integration
+
+            object.__setattr__(self, "integration", Integration(**self.integration).model_dump())
         for parameter in (*REACTOR.parameters, *BATTERY.parameters):
             parameter.validate(getattr(self, parameter.key))
         if self.dt_hours != 1:
@@ -420,6 +434,8 @@ class Config:
 
     def to_dict(self):
         value = asdict(self)
+        if self.plant.integration is None:
+            value["plant"].pop("integration", None)
         if self.lifecycle is None:
             value.pop("lifecycle")
         timing = tuple(

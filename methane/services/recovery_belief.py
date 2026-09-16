@@ -164,9 +164,9 @@ class RecoveryBelief:
             p = test["inputs"]["packet"]
             if p["available_at"] > now:
                 raise ValueError("A future operating test is not evidence")
-            if test["inputs"]["plant"] != asdict(self.plant) or test["inputs"]["sensors"] != asdict(
-                self.sensors
-            ):
+            if test["inputs"]["plant"] != self.plant.to_dict() or test["inputs"][
+                "sensors"
+            ] != asdict(self.sensors):
                 raise ValueError("Operating evidence uses different plant or sensor assumptions")
             if p["hour"] >= epoch:
                 self._keep(
@@ -331,7 +331,7 @@ class RecoveryBelief:
             at_hour=now,
             inputs=dict(
                 assumptions=asdict(self.assumptions),
-                plant=asdict(self.plant),
+                plant=self.plant.to_dict(),
                 sensors=asdict(self.sensors),
                 reader_options=asdict(self.options),
                 impaired_capacity_kw=self.capacity,

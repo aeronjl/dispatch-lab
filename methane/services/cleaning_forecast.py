@@ -206,7 +206,7 @@ def project(
                 raise ValueError("Two cleaning passes cannot occupy the same section")
     passes.sort(key=lambda p: (p["start"], p["order_id"]))
     inputs = dict(
-        plant=asdict(plant),
+        plant=plant.to_dict(),
         weather=asdict(weather),
         design=design,
         config=asdict(config),

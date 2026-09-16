@@ -34,16 +34,17 @@ def initial(p, ambient):
         electrolyser_on=False,
         reactor_on=False,
         commitment_hours=0,
+        water_l=(p.get("integration") or {}).get("initial_water_l", 0),
     )
 
 
-def interval(p, before, action, pv, ambient, delivery, service_kw=0):
+def interval(p, before, action, pv, ambient, delivery, service_kw=0, water_delivery_l=0):
     """Reference output for one hourly interval. No clipping/corrective allocation."""
     if p["dt_hours"] != 1:
         raise ValueError("Reference plant checker requires hourly intervals")
     with localcontext() as context:
         context.prec = 42
-        q = {k: D(v) for k, v in p.items()}
+        q = {k: D(v) for k, v in p.items() if k != "integration"}
         b = {k: D(v) for k, v in before.items()}
         a = {k: D(v) for k, v in action.items()}
         on = a["electrolyser_kw"] > D("0.00001")
@@ -80,6 +81,17 @@ def interval(p, before, action, pv, ambient, delivery, service_kw=0):
             + a["methane_kg"] * q["methane_electric_kwh_per_kg"]
             + D(service_kw)
         )
+        integration = p.get("integration")
+        ending_water = b.get("water_l", D(0))
+        if integration:
+            z = integration
+            external_heat = a["electrolyser_kw"] * D(z["heat_fraction"])
+            external = D(on) * D(z["dryer_kw"]) + external_heat * D(z["cooler_electric_fraction"])
+            if z["h2_buffer_barg"] > z["h2_supply_barg"]:
+                external += h2 * D(z["compressor_kwh_per_kg"])
+            demand = (demand - D(service_kw) + external) / D(z["ac_efficiency"]) + D(service_kw)
+            accepted_water = min(D(water_delivery_l), D(z["water_capacity_l"]) - ending_water)
+            ending_water += accepted_water - h2 * D(z["water_l_per_kg"])
         commitment = (
             max(0, (p["minimum_run_hours"] if start_r else before["commitment_hours"]) - 1)
             if running
@@ -93,6 +105,7 @@ def interval(p, before, action, pv, ambient, delivery, service_kw=0):
             electrolyser_on=on,
             reactor_on=running,
             commitment_hours=commitment,
+            water_l=float(ending_water),
         )
         flows = dict(
             h2_produced_kg=h2,
@@ -268,7 +281,11 @@ def economics(p, c, rows, service_economics=None):
     """Separate economic ledger; no use of production capital/marginal/allocation."""
     with localcontext() as context:
         context.prec = 42
-        p, c = {k: D(v) for k, v in p.items()}, {k: D(v) for k, v in c.items()}
+        integration = p.get("integration")
+        p, c = (
+            {k: D(v) for k, v in p.items() if k != "integration"},
+            {k: D(v) for k, v in c.items()},
+        )
         hours, fraction = D(len(rows)), D(len(rows)) / 8760
 
         def total(key):
@@ -303,7 +320,11 @@ def economics(p, c, rows, service_economics=None):
             / c["reactor_operating_hours"]
         )
         consumables = total("h2_produced_kg") * c["consumables_eur_per_kg"]
-        water_m3 = total("h2_produced_kg") * c["water_litres_per_kg"] / 1000
+        water_m3 = (
+            total("h2_produced_kg")
+            * (D(integration["water_l_per_kg"]) if integration else c["water_litres_per_kg"])
+            / 1000
+        )
         water_cost = water_m3 * c["water_eur_per_m3"]
         feed = total("co2_consumed_kg") * c["co2_eur_per_kg"]
         incidents = sum(bool(r.get("incident")) for r in rows)
@@ -335,6 +356,16 @@ def economics(p, c, rows, service_economics=None):
             / c["other_equipment_years"]
             + c["fixed_opex_eur_per_year"] * fraction,
         }
+        if integration:
+            parts["integration"] = (
+                None
+                if integration["installed_eur"] is None or integration["fixed_eur_per_year"] is None
+                else (
+                    D(integration["installed_eur"]) / D(integration["ownership_years"])
+                    + D(integration["fixed_eur_per_year"])
+                )
+                * fraction
+            )
         variable = battery_wear + stack_wear + reactor_wear + consumables + water_cost + feed
         process_parts, process_variable = dict(parts), variable
         service_rows = [r["field_operations"] for r in rows if "field_operations" in r]
@@ -3512,6 +3543,24 @@ def audit(result):
                         controller=name,
                         hour=i,
                     )
+                water_arrival = 0
+                if p.get("integration"):
+                    z = p["integration"]
+                    elapsed = row["hour"] - z["water_delay_hours"]
+                    water_arrival = (
+                        z["water_delivery_l"]
+                        if elapsed > 0 and elapsed % z["water_every_hours"] == 0
+                        else 0
+                    )
+                    compare(
+                        checks,
+                        "integration.water_delivery",
+                        row["integration"]["water_delivery_l"],
+                        water_arrival,
+                        "L",
+                        controller=name,
+                        hour=i,
+                    )
                 expected = interval(
                     p,
                     before,
@@ -3520,6 +3569,7 @@ def audit(result):
                     sample["ambient_c"],
                     delivery,
                     service_kw=row.get("service_kw", 0),
+                    water_delivery_l=water_arrival,
                 )
                 policy = result["config"].get("faults", {"lifecycle": "legacy-timed"})
                 fault = i >= scenario["fault_start_hour"] and (
@@ -3598,7 +3648,16 @@ def audit(result):
                 )
                 checks.extend({**c, "controller": name, "hour": i} for c in action_checks)
                 for k, v in expected["state"].items():
-                    compare(checks, "state." + k, row["state"].get(k), v, controller=name, hour=i)
+                    compare(
+                        checks,
+                        "state." + k,
+                        row["state"].get(k, 0)
+                        if k == "water_l" and not p.get("integration")
+                        else row["state"].get(k),
+                        v,
+                        controller=name,
+                        hour=i,
+                    )
                 for k, v in expected.items():
                     if k not in ("state", "applied"):
                         compare(checks, k, row.get(k), v, controller=name, hour=i)

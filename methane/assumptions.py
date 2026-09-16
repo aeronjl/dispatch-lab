@@ -13,6 +13,7 @@ REGISTRY = "docs/assumption-review.json"
 def reference_configuration():
     """Schema coverage includes optional examples; it does not enable them."""
     from methane.config import Config
+    from methane.integration import Integration
     from methane.recovery import RecoveryPolicy
     from methane.service_economics import ACTIVITY_VERSION, illustrative
     from methane.services.configuration import ServiceSystem
@@ -22,6 +23,7 @@ def reference_configuration():
 
     c = Config()
     value = c.to_dict()
+    value["plant"]["integration"] = Integration().model_dump()
     value.update(
         service_system=asdict(ServiceSystem()),
         recovery_policy=asdict(RecoveryPolicy()),

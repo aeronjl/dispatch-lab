@@ -1,7 +1,8 @@
 """Equipment evidence attached to immutable designs, never inferred calibration.
 
-These assessments do not impose OEM interlocks on the hourly executor. They make
-model applicability reviewable; real hardware control remains outside the app.
+Evidence assessments do not impose OEM interlocks. Optional plant interfaces are
+explicit design edits with their own reduced execution contract; real hardware
+control remains outside the app.
 """
 
 import csv
@@ -15,6 +16,7 @@ from typing import Literal
 from pydantic import Field
 
 from methane.config import Config
+from methane.integration import describe as describe_integration
 from methane.provenance import LOADED_CAPSULE, LOADED_FILES, LOADED_SOURCE
 from methane.siting.contracts import Record
 from methane.siting.store import digest, encode
@@ -141,7 +143,7 @@ def applicability(store, key, config, site_revision):
         models_match=models_match,
         checks=checks,
         gaps=gaps,
-        qualification="Specification-informed candidate; not commissioned or calibrated. Matching selected parameters does not establish site feasibility. External electrical conversion and support loads remain unresolved.",
+        qualification="Specification-informed candidate; not commissioned or calibrated. Matching selected parameters does not establish site feasibility. Plant interfaces, if enabled, use a separate disclosed model. OEM envelopes and installed support evidence still require review.",
     )
 
 
@@ -199,6 +201,7 @@ def context(store, project_id=None, study_id=None, case_id=None):
         else "Current design · equipment basis",
         assessment=assessment,
         gates=gates,
+        integration=describe_integration(d["config"]["plant"].get("integration")),
         datasets=[
             {
                 k: r[k]
@@ -404,7 +407,58 @@ def compare(store, dataset_id, study_id, case_id):
     return dict(id=store.put("equipment-comparison", value), **value)
 
 
+def save_integration(store, project_id, values):
+    from methane.integration import Integration
+    from methane.siting import projects
+
+    p = store.get("project", project_id)
+    c = deepcopy(p["config"])
+    if values is None:
+        c["plant"].pop("integration", None)
+    else:
+        c["plant"]["integration"] = Integration(**values).model_dump()
+    return projects.revise(store, project_id, Config.from_dict(c).to_dict())
+
+
+def integration_trace(store, study_id, case_id, hour):
+    from methane.siting import production
+
+    s = production.inspect(store, study_id)
+    c = next((c for c in s["cases"] if c["case_id"] == case_id), None)
+    if c is None or type(hour) is not int or not 0 <= hour < c["hours"]:
+        raise ValueError("Select an interval within this recorded case")
+    entry = next((e for e in c["periods"] if e["start_hour"] <= hour < e["next_hour"]), None)
+    if entry is None:
+        return dict(status="This interval has not been recorded", hour=hour)
+    period = production.load_period(store, entry["period_sha256"])
+    index = hour - entry["start_hour"]
+    row = period["records"][c["controller"]][index]
+    return dict(
+        status="Recorded execution"
+        if row.get("integration")
+        else "This run has no recorded plant-interface model; current assumptions have not been substituted",
+        hour=hour,
+        timestamp=row.get("time"),
+        record=row.get("integration"),
+        source=period.get("provenance", {}).get("source"),
+        decision=row["decision"].get("evidence", {}),
+        trace=dict(
+            kind="site-study",
+            edition_id=study_id,
+            case_id=case_id,
+            period_sha256=entry["period_sha256"],
+            controller=c["controller"],
+            hour=index,
+            component="electrolyser",
+        ),
+    )
+
+
 def perform(store, operation, key, data):
+    if operation == "equipment-integration-save":
+        return save_integration(store, key, data["values"])
+    if operation == "equipment-integration-trace":
+        return integration_trace(store, **data)
     if operation == "equipment-result":
         return dict(id=key, **store.get("equipment-comparison", key))
     if operation == "equipment-proposal":
