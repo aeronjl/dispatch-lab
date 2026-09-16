@@ -12,6 +12,10 @@ from methane.simulation import run
 
 
 def recompute(source, out):
+    if source.get("provenance", {}).get("external_control"):
+        raise ValueError(
+            "External-control recording: use recorded playback and independent balance checks. Re-running an external agent is not supported; silently substituting the reference policy would change the experiment."
+        )
     result = run(
         Config.from_dict(source["config"]),
         weather=source["weather"],

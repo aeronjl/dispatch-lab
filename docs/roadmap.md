@@ -140,7 +140,7 @@ increments are not automatically started.
    source context. The [investigation contract](expert-investigation.md) records
    scope and limitations. Actual expert-participant walkthroughs remain outstanding;
    the completed software rehearsal is not a substitute for them.
-2. **Shared control interface and MCP — next.** Give the UI, reference policies and
+2. **Shared control interface and MCP — implemented.** Give the UI, reference policies and
    external agents the same versioned observation/action contract. Start with
    bounded simulated-plant sessions: observe, inspect constraints, propose a plan,
    preview it, advance execution and trace the result. Make agent authority,
@@ -148,7 +148,11 @@ increments are not automatically started.
    execution constraints and keep simulator truth outside agent observations.
    Expose recorded reasoning and actions in the existing plant/control views.
    This does not authorise connecting an agent to real plant hardware.
-3. **Operating requirements and robust design comparisons.** Let an expert express
+   The [control contract](agent-control.md) records the bounded hour-zero scope,
+   permission/expiry behavior, shared physical execution and recording workflow.
+   Continued/site-utility sessions and numerical external-agent reruns are explicitly
+   unsupported; they are never silently replaced with unconstrained/reference runs.
+3. **Operating requirements and robust design comparisons — next.** Let an expert express
    production commitments, reserve/service requirements and acceptable shortfall,
    then compare site/design choices against them. Reveal bottlenecks, uncertainty,
    infeasibility and trade-offs beside the relevant equipment. Preserve starting

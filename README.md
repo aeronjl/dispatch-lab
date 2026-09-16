@@ -12,6 +12,11 @@ The saved reference 72-hour experiment compares **Greedy**, **MPC · methane** a
 
 The [plant project guide](docs/plant-projects.md) covers common controls, complete expert settings, saved design revisions, weather retrieval and matched comparisons. From recorded playback, open **Menu → Site · Build · Operate** to return to your project.
 
+**Menu → Agent control** starts a bounded simulated-plant session. Operators and
+MCP agents can observe, preview, advance one interval and trace delivery using the
+same physical executor. Grants are session-specific and revocable. See the
+[control guide](docs/agent-control.md) for setup, permissions and current boundaries.
+
 **Sites → Production studies → Learning & policies** adds frozen observation datasets,
 held-out estimator comparisons, registered planning aids and homeostatic reserve
 experiments. Training, operation, cancellation/resumption, write-ups and portable

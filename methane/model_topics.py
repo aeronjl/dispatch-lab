@@ -655,6 +655,14 @@ TOPICS.update(service_topics(C, P, topic))
 TOPICS.update(lifecycle_topics(C, P, topic))
 TOPICS.update(learning_topics(C, P, topic))
 
+TOPICS["controllers"]["files"] += ["control_port.py", "control_sessions.py", "simulation.py"]
+TOPICS["controllers"]["passages"].append(
+    P(
+        "A bounded external controller",
+        "Agent control starts a separate hour-zero simulation from frozen inputs. The operator and an explicitly granted MCP agent receive the same observation, estimated state and forecast boundary. A preview predicts a reference-policy action or six explicit process requests without advancing time. One accepted proposal advances one hour through the existing physical executor; requested and applied actions, solver fallback, observations, author and reason are retained. Recovery commitments protect their intervals and the configured service executive keeps responsibility for repairs. Grants can be restricted, paused, revoked or expired. Missing agent commands leave simulated time paused; they never cause an implicit dispatch. Recorded playback and independent balance checks remain available, but rerunning an external agent is not supported. This is software scheduling, not real hardware control or proof of controller safety.",
+    )
+)
+
 for key, item in TOPICS.items():
     item["id"] = key
     item["fixture_id"] = "dispatch-lab/learning/" + key + "/1"

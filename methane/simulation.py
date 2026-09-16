@@ -286,6 +286,7 @@ def _run(
     policies=None,
     uncertainty=None,
     continuation=None,
+    control=None,
 ):
     execution_config = config or Config()
     site_utilities = None
@@ -348,6 +349,8 @@ def _run(
         raw_provider = SavedForecastProvider.from_weather(raw_prediction_weather)
         raw_config = source_config({"weather": weather, "config": execution_config.to_dict()})
     names = list(strategies or STRATEGIES)
+    if control is not None and len(names) != 1:
+        raise ValueError("Interactive control executes one named policy at a time")
     from methane.policy import Policy, resolve
 
     resolved_policies = resolve(names, policies, STRATEGIES)
@@ -575,6 +578,8 @@ def _run(
             continuation.initial = asdict(state)
             if previous_row is not None:
                 rows.append(previous_row)
+        if control is not None:
+            control.start(execution_config, c, weather, provenance, name, services)
         for t in range(start_hour, stop_hour):
             if cancelled and cancelled():
                 break
@@ -1079,6 +1084,22 @@ def _run(
                 if lifecycle is not None:
                     decision["lifecycle"] = lifecycle.public()
                     decision["operating_plant"] = asdict(p)
+                if control is not None:
+                    from methane.control_port import observation as control_observation
+
+                    public = control_observation(
+                        decision, p, c.costs, c.models, weather["times"][t]
+                    )
+                    chosen = control.decide(public)
+                    decision["external_control"] = chosen["trace"]
+                    decision["external_control"]["information"] = public
+                    if chosen["mode"] == "manual":
+                        decision["reference_plan"] = planned
+                        planned = chosen["plan"]
+                        decision["plan"] = planned
+                        decision["evidence"] = evidence(
+                            p, estimate, forecast, planned, diagnosis, "External action request"
+                        )
                 before = state
                 interval_truth = physical_faults.truth(t)
                 service_kw = forecast.get("service_kw", [0])[0]
@@ -1314,6 +1335,8 @@ def _run(
 
                         service_cost_rows.append(projected_row(row))
                     continuation.capture(t + 1, locals())
+                if control is not None:
+                    control.completed(row, controller_truth, event_list)
             except CancelledOperation:
                 break
             except PhysicalAuditError as exc:
@@ -1630,11 +1653,20 @@ def run(
     policies=None,
     uncertainty=None,
     continuation=None,
+    control=None,
 ):
     token = predicate.set(cancelled)
     try:
         return _run(
-            config, weather, strategies, progress, cancelled, policies, uncertainty, continuation
+            config,
+            weather,
+            strategies,
+            progress,
+            cancelled,
+            policies,
+            uncertainty,
+            continuation,
+            control,
         )
     finally:
         predicate.reset(token)

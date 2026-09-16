@@ -64,7 +64,7 @@ test('draft recovery, keyboard access and narrow layout keep evidence available'
  await page.keyboard.press('Escape');await page.reload();await page.locator('.m-plant').waitFor();
  await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.getByRole('button',{name:'Investigate operation ↗',exact:true}).click();
  await expect(page.locator('[data-iv-field=finding]')).toHaveValue('An unsaved mobile hypothesis.');
- await page.locator('[data-iv=close]').focus();await page.keyboard.press('Shift+Tab');await expect(page.locator('[data-iv=save]')).toBeFocused();
+ await expect(page.locator('[data-iv=save]')).toBeEnabled();await page.locator('[data-iv=close]').focus();await page.keyboard.press('Shift+Tab');await expect(page.locator('[data-iv=save]')).toBeFocused();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
  expect(await page.locator('.iv-workspace').evaluate(n=>getComputedStyle(n).animationName)).toBe('none');
  await page.screenshot({path:'build/expert-investigation/notes-mobile.png'});

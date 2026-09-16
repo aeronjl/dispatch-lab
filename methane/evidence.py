@@ -491,6 +491,10 @@ def main():
                 )
             )
         verify(source)
+        if source.get("provenance", {}).get("external_control"):
+            raise ValueError(
+                "External-control recording: recorded playback is supported. Numerical agent rerun is unavailable; the reference policy cannot substitute for recorded external actions."
+            )
         result = run(
             Config.from_dict(source["config"]),
             weather=source["weather"],

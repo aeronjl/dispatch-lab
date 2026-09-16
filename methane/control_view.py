@@ -236,6 +236,7 @@ def describe(result, controller, hour):
             probe=d.get("probe"),
             recovery=d.get("recovery_planning"),
             recovery_loop=d.get("recovery_loop"),
+            external_control=d.get("external_control"),
             objective=d.get("planning_objective", d.get("evidence", {}).get("objective")),
             evidence=d.get("evidence", {}),
             forecast_source=d.get("forecast", {}).get("source"),

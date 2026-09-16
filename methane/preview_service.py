@@ -100,6 +100,12 @@ async def lifespan(app):
     from methane.investigations import handle as investigation
 
     app.add_api_route("/dispatch/investigation", investigation, methods=["POST"])
+    from methane.control_sessions import agent
+    from methane.control_sessions import cleanup as session_cleanup
+    from methane.control_sessions import handle as session
+
+    app.add_api_route("/dispatch/control-session", session, methods=["POST"])
+    app.add_api_route("/dispatch/agent-control", agent, methods=["POST"])
     from methane.study_service import download, handle
 
     app.add_api_route("/dispatch/studies", handle, methods=["POST"])
@@ -117,3 +123,4 @@ async def lifespan(app):
     finally:
         cleanup()
         control_cleanup()
+        session_cleanup()

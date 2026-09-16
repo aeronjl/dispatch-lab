@@ -11,16 +11,16 @@
 .m-gas-key{color:#ddd1bc;margin-left:16px}
 .m-plant-wrap{overflow:auto;overscroll-behavior-x:contain;scrollbar-color:#806039 #202020;scrollbar-width:thin}
 .m-plant.plant-drawing{width:100%;min-width:0;height:100%;flex:none}
-:is(.m-plant,.pj-plant) text{font-size:11px}
-:is(.m-plant,.pj-plant) .plant-component ellipse{fill:none;stroke:currentColor;stroke-width:1.2;vector-effect:non-scaling-stroke}
+:is(.m-plant,.pj-plant,.ac-plant) text{font-size:11px}
+:is(.m-plant,.pj-plant,.ac-plant) .plant-component ellipse{fill:none;stroke:currentColor;stroke-width:1.2;vector-effect:non-scaling-stroke}
 .m-component{cursor:pointer;outline:none}
 .m-component:hover>.selection-box{stroke:#806039;fill:#ffa32d;fill-opacity:.025}
 .m-component[data-selected=true]>.selection-box{stroke:#ffa32d;stroke-dasharray:4 3}
 .m-component:focus-visible>.selection-box{stroke:#ffcf88;stroke-width:2}
-:is(.m-plant,.pj-plant) .vessel-fill{fill:#ffa32d;fill-opacity:.12;stroke:none}
-:is(.m-plant,.pj-plant) .vessel-gauge{stroke:#806039}
-:is(.m-plant,.pj-plant) .vessel-level{stroke:#ffd292;stroke-width:2}
-:is(.m-plant,.pj-plant) .m-heat{fill:#ffa32d;fill-opacity:0;stroke:none}
+:is(.m-plant,.pj-plant,.ac-plant) .vessel-fill{fill:#ffa32d;fill-opacity:.12;stroke:none}
+:is(.m-plant,.pj-plant,.ac-plant) .vessel-gauge{stroke:#806039}
+:is(.m-plant,.pj-plant,.ac-plant) .vessel-level{stroke:#ffd292;stroke-width:2}
+:is(.m-plant,.pj-plant,.ac-plant) .m-heat{fill:#ffa32d;fill-opacity:0;stroke:none}
 .reactor-bed{opacity:.35}
 .reactor-component[data-active=true] .reactor-bed{opacity:1;animation:cell-current 2s ease-in-out infinite alternate}
 .reactor-component[data-heating=true] .heater-coil{stroke:#ffd292;stroke-dasharray:3 4;animation:light-travel 2s linear infinite}

@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT))
 (ROOT / "build").mkdir(exist_ok=True)
 os.environ["DISPATCH_STUDY_STORE"] = tempfile.mkdtemp(prefix="browser-studies-", dir=ROOT / "build")
 os.environ["DISPATCH_SITES_ROOT"] = tempfile.mkdtemp(prefix="browser-sites-", dir=ROOT / "build")
+os.environ["DISPATCH_CONTROL_DIR"] = tempfile.mkdtemp(prefix="browser-control-", dir=ROOT / "build")
 from app import CSS, make_theme  # noqa: E402
 from methane import studies  # noqa: E402
 from methane.evidence import load  # noqa: E402

@@ -260,6 +260,9 @@ def playback_value(result, register_contexts=True):
         "records": view_records,
         "preview_token": register_preview(display_result) if register_contexts else None,
         "model_token": register_model(result) if register_contexts else None,
+        "control_repository": str(Path(__file__).resolve().parents[1])
+        if register_contexts
+        else None,
         "study_token": register_study(result) if register_contexts else None,
         "component_specs": {k: v.to_dict() for k, v in SPECS.items()},
         "provenance_summary": {
@@ -1011,6 +1014,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "field-scene.css").read_text()
                     + (ASSETS / "control-view.css").read_text()
                     + (ASSETS / "investigation.css").read_text()
+                    + (ASSETS / "agent-control.css").read_text()
                     + (ASSETS / "solar.css").read_text()
                     + (ASSETS / "model.css").read_text()
                     + (ASSETS / "lifecycle.css").read_text()
@@ -1024,6 +1028,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "service-alternatives.js").read_text()
                     + (ASSETS / "control-view.js").read_text()
                     + (ASSETS / "investigation.js").read_text()
+                    + (ASSETS / "agent-control.js").read_text()
                     + (ASSETS / "field-scene.js").read_text()
                     + (ASSETS / "methane.js").read_text()
                     + (ASSETS / "solar.js").read_text()
@@ -1912,7 +1917,11 @@ def build_app(default=None, *, start_project=False):
             request = evt._data
             if request.get("run_id") != current["run_id"]:
                 return tuple(gr.skip() for _ in range(7 + len(widgets)))
-            if request.get("kind") == "site-study":
+            if request.get("kind") == "control-session":
+                from methane.control_sessions import recording
+
+                r = recording(request["session_id"], request["owner_key"])
+            elif request.get("kind") == "site-study":
                 from methane.siting.production import entries, load_period
                 from methane.siting.store import Store
 
@@ -1943,13 +1952,15 @@ def build_app(default=None, *, start_project=False):
                     "kind",
                 )
             }
+            if request.get("kind") == "control-session":
+                view.pop("study_origin", None)
             return (
                 r,
                 gr.HTML(value=wire_payload(view), economics=wire_payload(reprice(r))),
                 report(r),
                 export(r),
                 r["config"],
-                "Recorded study run opened; no decisions recomputed.",
+                "Recorded run opened; no decisions recomputed.",
                 r["config"],
                 *[setup_value(editable, group, key) for group, key in widget_keys],
             )

@@ -90,6 +90,10 @@ The reference checker is independently implemented and versioned by its file has
 Hashes detect modification, not authenticity. Numerical checks do not calibrate a plant.
 """
     # Source contains the rerun entry point captured with the executable code.
+    if result.get("provenance", {}).get("external_control"):
+        files["README.txt"] += (
+            b"\nExternal-control session: recorded playback and independent checks are supported. Numerical external-agent rerun is unavailable and the rerun commands above will reject this archive, rather than substitute the reference policy. Original agent observations, requests and reasons are retained in each decision's external_control record. Agent tokens are never archived.\n"
+        )
     manifest = dict(
         schema_version="dispatch-lab/reproduction-bundle/1",
         run_id=result["run_id"],
