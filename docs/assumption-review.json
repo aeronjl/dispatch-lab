@@ -1,6 +1,6 @@
 {
   "schema_version": "dispatch-lab/assumption-review/1",
-  "edition": "2026-09-16 / 13",
+  "edition": "2026-09-17 / 14",
   "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
   "categories": {
     "design": "Chosen capacity, geometry or initial condition; requires a matched design, not statistical calibration.",
@@ -137,6 +137,42 @@
       "finding": "Nominal AC load includes internal utilities. Optional dryer load and rounded water consumption inform the separate aggregate interface fixture.",
       "applicability": "Nominal full-load beginning-of-life conditions only; no cooler duty, multi-skid staging curve, installed cost or site acceptance evidence.",
       "access": "Primary PDF rechecked 2026-09-16; original hash and edition in docs/equipment-reference.json"
+    },
+    "research-pvwatts-v5": {
+      "title": "NREL PVWatts V5 · §12, equation 10 (2014)",
+      "url": "https://docs.nlr.gov/docs/fy14osti/62641.pdf",
+      "finding": "PV inverter reference curve; transfer to a process AC island is an explicit analogue, not grid-forming equipment qualification.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
+    },
+    "research-nist-methane": {
+      "title": "NIST WebBook · methane",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74828&Mask=1",
+      "finding": "Reference thermochemistry; ideal gases, no kinetics or catalyst calibration.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
+    },
+    "research-nist-carbon-dioxide": {
+      "title": "NIST WebBook · carbon-dioxide",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Mask=1",
+      "finding": "Reference thermochemistry; ideal gases, no kinetics or catalyst calibration.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
+    },
+    "research-nist-hydrogen": {
+      "title": "NIST WebBook · hydrogen",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C1333740&Mask=1",
+      "finding": "Reference thermochemistry; ideal gases, no kinetics or catalyst calibration.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
+    },
+    "research-nist-water-vapour": {
+      "title": "NIST WebBook · water-vapour",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=1",
+      "finding": "Reference thermochemistry; ideal gases, no kinetics or catalyst calibration.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
+    },
+    "research-nist-liquid-water": {
+      "title": "NIST WebBook · liquid-water",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=2",
+      "finding": "Reference thermochemistry; ideal gases, no kinetics or catalyst calibration.",
+      "applicability": "Source equation/reference data, not empirical validation of the proposed plant."
     }
   },
   "groups": {
@@ -163,10 +199,10 @@
       "priority": 1,
       "evidence_status": "Design choice",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "thermal": {
@@ -175,8 +211,8 @@
       "topics": [
         "reactor"
       ],
-      "mechanism": "One perfectly mixed temperature; constant inputs per hour; analytic heating, reaction heat, ambient heat loss and cooling. Production requires beginning and ending temperatures in band.",
-      "boundary": "C=0.3 kWh/K and UA=0.08 kW/K are unmeasured. No spatial hot spots, catalyst kinetics, feed sensible heat, pressure, conversion efficiency, condensation or purge. The 4-hour commitment is a scheduling assumption.",
+      "mechanism": "One perfectly mixed temperature; constant inputs per hour; analytic heating, reaction heat, ambient heat loss and cooling. Production requires beginning and ending temperatures in band. The optional NIST model separates gross reaction heat and feed heating, frozen at a selected reference temperature; analytic state evolution uses net heat.",
+      "boundary": "C=0.3 kWh/K and UA=0.08 kW/K are unmeasured. No spatial hot spots, catalyst kinetics, pressure, conversion efficiency, condensation or purge. The 4-hour commitment is a scheduling assumption. Feed sensible heat is included only by the opt-in NIST reference model; its frozen coefficients approximate the production temperature band.",
       "next_data": "Obtain reactor geometry/material masses, insulation and catalyst specifications; log heater power, ambient and multiple temperatures through controlled warm-up, soak and cool-down, then separate load-step validation.",
       "sources": [
         "nist-ch4",
@@ -192,12 +228,14 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
-        "methane/physics.py": "cafd1ba9ea3761a559dfe9dd4fa16e6fc28742f87e2da51ac29c9ee0f8cf7171",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/reactor.py": "dbf7626c04b1d38903fe58048eb21ef9ae523fae7990340897fed414aa79d2e4",
+        "methane/physics.py": "813c7c4e453cfde0c54da89f19d6c2c6400ea9ae66443cd1ab00b21a54f0b983",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
+        "methane/researched_models.py": "c4fa70ea9f7e4bc4db218c5b73c7f3e397302ed50309839ed99b43602cd8717b",
+        "docs/researched-models.md": "46bdbcb4ee13962b6c57cefff18efecefd704a79166c2a5ac336358ebe1326b7"
       }
     },
     "chemistry": {
@@ -209,7 +247,7 @@
         "hydrogen",
         "co2"
       ],
-      "mechanism": "Ideal CO₂ + 4H₂ → CH₄ + 2H₂O. Rounded molecular weights 44, 2, 16 and 18; reaction heat 165 MJ/kmol. Electrolysis consumes 9 kg reaction water/kg hydrogen.",
+      "mechanism": "Ideal CO₂ + 4H₂ → CH₄ + 2H₂O. Rounded molecular weights 44, 2, 16 and 18; reaction heat 165 MJ/kmol. Electrolysis consumes 9 kg reaction water/kg hydrogen. Optional NIST gas enthalpies replace the thermal coefficient, preserving rounded material ratios; no gas-quality or kinetic model is inferred.",
       "boundary": "Conservation of the reduced chemistry can be verified. Complete conversion, pure feed and no gas-quality acceptance remain assumptions. Product water vapour heat basis is not liquid-water heat recovery.",
       "next_data": "Specify feed composition, conversion and recycle/purge boundaries; measure gas composition and water before extending product or heating claims.",
       "sources": [
@@ -225,10 +263,12 @@
       "priority": 0,
       "evidence_status": "Physical relationship with approximations",
       "bindings": {
-        "methane/physics.py": "cafd1ba9ea3761a559dfe9dd4fa16e6fc28742f87e2da51ac29c9ee0f8cf7171",
-        "methane/reactor.py": "3ff961fe671820bb2280286d7cfc4fb772add6cff6c0da242aa2541efb3a3e55",
+        "methane/physics.py": "813c7c4e453cfde0c54da89f19d6c2c6400ea9ae66443cd1ab00b21a54f0b983",
+        "methane/reactor.py": "dbf7626c04b1d38903fe58048eb21ef9ae523fae7990340897fed414aa79d2e4",
         "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
+        "methane/researched_models.py": "c4fa70ea9f7e4bc4db218c5b73c7f3e397302ed50309839ed99b43602cd8717b",
+        "docs/researched-models.md": "46bdbcb4ee13962b6c57cefff18efecefd704a79166c2a5ac336358ebe1326b7"
       }
     },
     "electrolyser": {
@@ -252,11 +292,11 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "battery": {
@@ -278,11 +318,11 @@
       "priority": 1,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/battery.py": "0be4ce7a2256ca7719811d0fbe4f4eb49768df200fb4bd321ff4aabca451092c",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "gas-storage": {
@@ -307,11 +347,11 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "solar": {
@@ -337,12 +377,12 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/pv.py": "8f4005f27ebf13004d0a950a0e5375e30972f77079f4035b77a126fe3541e806",
         "methane/solar_model.py": "3c545fb83f61b16d9b753a912830f47479d25b47dc7c8ac7f045840b3dbec67e",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
       }
@@ -370,13 +410,13 @@
       "priority": 0,
       "evidence_status": "External reference with explicit assumptions",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/weather.py": "8b11d0e36fd57545143d42fd2163fc7d29609fc3d5fe41fcccada4f1e4fbe224",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
         "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57"
       }
@@ -404,11 +444,11 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/sensing.py": "54334e28337e40b5941c7d220a908110f90f65fddc298b7a271023d0ea5e660b",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "faults": {
@@ -435,12 +475,12 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
         "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "cleaning": {
@@ -471,7 +511,7 @@
         "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
         "methane/services/surface.py": "dbd8f885a7a0de92011114782bf895d37d385e88b3dee4485611da680c2a2fde",
         "methane/solar_model.py": "3c545fb83f61b16d9b753a912830f47479d25b47dc7c8ac7f045840b3dbec67e",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
         "methane/services/plant.py": "57ee6a599c5b4b9900ff1adcce9826a922658ab0d05defdcae6b389060be7dac",
@@ -504,7 +544,7 @@
         "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
         "methane/services/inspection.py": "ae777006f3d17e3bc0156baeb50ba26944bc4ad74997ac9fde278935c77729a7",
         "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "recovery": {
@@ -537,7 +577,7 @@
         "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
         "methane/services/procedures.py": "eeb8c9144494ecadcb154b5ab92e88dd02d2552d0a3d24a0859032a2b36cb6b2",
         "methane/recovery.py": "a5f8505826fc1f7a9f851527bf2f0b733226945688f4914275655ce163f07390",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
         "methane/services/recovery_loop.py": "fa1709214d69ce24e3ee169f8210afb37169fc013ab3d8e2bc31679c7eb7726f",
@@ -575,7 +615,7 @@
         "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
         "methane/services/core.py": "12f313623ae738139476bd055be0896b0d038f556522e49fde1c23a18bf5b7eb",
         "methane/services/support.py": "2ab49973ad124f84110932a089613dc43816d96113f69f89bc3155552a4c56d8",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/autonomy.py": "393473d44c2b94bbacb8ccd937701fdeaba355a98f724e29f1e3dfe7a698a682",
         "methane/services/uncertain_timing.py": "4dac3a1b32658652d12484088f2738dce1c5d897890f9aa5e13e06d25e2fb891",
         "methane/services/uncertain_planning.py": "a15359148161239af2aae921c8ed44069ebc3dc9ce769dea5a86af1819e0a753",
@@ -619,7 +659,7 @@
         "methane/services/configuration.py": "940b352ee055c43592c0513364dddd58a5232c18f3da53ae21311361303b515e",
         "methane/services/maintenance.py": "5e43715f03cdacb5cc82bd144bbffcd0ce5729d00ba7a8367c84a42c05438e00",
         "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "economics": {
@@ -647,13 +687,13 @@
       "priority": 0,
       "evidence_status": "Evidence gap",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "economics.py": "0e41f9ae013a3ef6d87f71820c8185cb34d499246816341dfaacd97796a9deb7",
         "methane/costing.py": "1b9f67858a5263adbc869ae6b88e656a56a659f39ce74340e4cacabe612d768d",
         "methane/service_economics.py": "300928110de206dba6778775ec45f1b12a58a7fb7fd4bf9c5c838f9b8fc51c1b",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5"
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366"
       }
     },
     "control": {
@@ -684,15 +724,15 @@
       "priority": 1,
       "evidence_status": "Policy choice and bounded approximation",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/policy.py": "6bc4f41e50048ef45f399de472f6b97a177aa546012d5d45e8fa9e72c11ce12c",
-        "methane/dispatch.py": "b3eb962dabaa464e374301665b93581e60eb11a5b0432270285c7556651c220e",
+        "methane/dispatch.py": "4941700c38595f224c01925f3fe1ef4dac072528ca8c98dd31cd9cfb9a228a6f",
         "methane/recovery.py": "a5f8505826fc1f7a9f851527bf2f0b733226945688f4914275655ce163f07390",
         "methane/services/controller.py": "7b7f915919a8d93b968f93920e06dd4922750212f5e7c93705002c9fb7ab587a",
         "methane/services/investigator.py": "b5acf5a50c28a08b81c863007252988c3448fd2e744eb347e2b3809759d4385d",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
         "methane/services/recovery_loop.py": "fa1709214d69ce24e3ee169f8210afb37169fc013ab3d8e2bc31679c7eb7726f",
@@ -717,31 +757,40 @@
         "experiments",
         "controllers"
       ],
-      "mechanism": "Hourly average DC electricity is allocated jointly to electrolysis, storage, reactor heat/cooling and services. Requested and applied actions and unused electricity are separate. Optional plant-integration/1 adds a capacity-limited AC island, explicit external cooler/dryer/compressor loads, regulated-pressure compatibility and delivery-before-withdrawal purified water.",
-      "boundary": "No voltage, frequency, ramp, protection or sub-hour ride-through model. One-hour energy sufficiency does not demonstrate real-time physical feasibility. All added converter/cooler/pressure/logistics defaults are uncalibrated; constant duty excludes coolant, startup and ambient dynamics. Gas quality remains outside the model.",
-      "next_data": "OEM cooler duties and operating envelopes, converter and compressor curves, actual feed pressures, water quality/logistics, installed quotations and sub-hour commissioning traces.",
+      "mechanism": "Hourly average DC electricity is allocated jointly to electrolysis, storage, reactor heat/cooling and services. Requested and applied actions and unused electricity are separate. Optional plant-integration/1 adds a capacity-limited AC island, explicit external cooler/dryer/compressor loads, regulated-pressure compatibility and delivery-before-withdrawal purified water. Optional researched-interfaces/1 adds a segment-exact converter analogue, reference-state electrolysis heat balance, steady ambient dry-cooling envelope and cold-feed reactor heat.",
+      "boundary": "Hourly feasibility does not establish voltage/frequency, protection or ride-through behaviour. The PVWatts curve is a technology analogue, not selected island hardware. Cooler UA/hot temperature, heat partition, pressure and logistics remain transfer assumptions. No coolant state, startup heat allocation, OEM safety interlock or gas quality claim.",
+      "next_data": "Public converter and cooler maps with reference conditions, process and support data. Exact-device or site measurements would be optional later validation; they are not a modelling prerequisite.",
       "sources": [
-        "enapter-flex120-rev08"
+        "enapter-flex120-rev08",
+        "research-pvwatts-v5",
+        "research-nist-methane",
+        "research-nist-carbon-dioxide",
+        "research-nist-hydrogen",
+        "research-nist-water-vapour",
+        "research-nist-liquid-water"
       ],
       "checks": [
         "tests/test_reference.py",
         "tests/test_boundaries.py",
         "tests/test_uncertainty.py",
         "tests/test_adaptation.py",
-        "tests/test_plant_integration.py"
+        "tests/test_plant_integration.py",
+        "tests/test_researched_models.py"
       ],
       "priority": 0,
       "evidence_status": "Conservation within reduced boundary",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/physics.py": "cafd1ba9ea3761a559dfe9dd4fa16e6fc28742f87e2da51ac29c9ee0f8cf7171",
-        "methane/dispatch.py": "b3eb962dabaa464e374301665b93581e60eb11a5b0432270285c7556651c220e",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/physics.py": "813c7c4e453cfde0c54da89f19d6c2c6400ea9ae66443cd1ab00b21a54f0b983",
+        "methane/dispatch.py": "4941700c38595f224c01925f3fe1ef4dac072528ca8c98dd31cd9cfb9a228a6f",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
-        "methane/integration.py": "db56d65d845605003b91e09dc868960dec0d259e6bbe78bc94f4b1b58dcde80f"
+        "methane/integration.py": "44376dea78e6185932e8df0b52bbcfd453f2f4805d1b8524863da494ff2c61ad",
+        "methane/researched_models.py": "c4fa70ea9f7e4bc4db218c5b73c7f3e397302ed50309839ed99b43602cd8717b",
+        "docs/researched-models.md": "46bdbcb4ee13962b6c57cefff18efecefd704a79166c2a5ac336358ebe1326b7"
       }
     },
     "experiment": {
@@ -766,13 +815,13 @@
       "priority": 1,
       "evidence_status": "Experiment design",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/simulation.py": "d696d46c67a4b6a7b96bc43d338c9493dddabdf426f8ec0572d27785fef72460",
+        "methane/simulation.py": "c715b06add4b34087351ea9ac280971312d126137868bde603ba2f6a7d516c72",
         "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
-        "methane/uncertainty.py": "88f151abcd977c38e98632efda0a7032628c326fde95a8c7d3fbe98b78742dd5",
+        "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
         "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
         "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
@@ -805,7 +854,7 @@
       "priority": 1,
       "evidence_status": "Reduced hypothesis and explicit evidence gaps",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "methane/lifecycle/configuration.py": "c6bd7e910f2173bc23810638dfcfd3288a91df99f237038da9f4978b8cae98d5",
         "methane/lifecycle/runtime.py": "bb24fa7019a3329fec1fbf653d4e332d0a71d918c5f47240b72362201008b08a",
         "methane/lifecycle/ports.py": "55816f2b4b360d397b65bb42e31d5d292837c8204ccd8937ab777093e51f8dab",
@@ -837,7 +886,7 @@
       "priority": 1,
       "evidence_status": "Reduced hypothesis and explicit evidence gaps",
       "bindings": {
-        "methane/config.py": "3a9a3c8942319d32f9e7bcd51065eaea385c7714ebed066bcb45973a6b41759c",
+        "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "methane/lifecycle/configuration.py": "c6bd7e910f2173bc23810638dfcfd3288a91df99f237038da9f4978b8cae98d5",
         "methane/lifecycle/runtime.py": "bb24fa7019a3329fec1fbf653d4e332d0a71d918c5f47240b72362201008b08a",
         "methane/lifecycle/ports.py": "55816f2b4b360d397b65bb42e31d5d292837c8204ccd8937ab777093e51f8dab",
@@ -5849,7 +5898,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -5861,7 +5910,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -5873,7 +5922,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -5885,7 +5934,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -5897,7 +5946,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -5909,7 +5958,7 @@
       "group": "support",
       "category": "equipment",
       "unit": "factor",
-      "reference_default": 1,
+      "reference_default": 1.0,
       "evidence_status": "Unmeasured assumption",
       "applicable_range": null,
       "range_note": "One persistent world-level multiplier for this phase family; opt-in autonomy bounds reserve resources. No measured population or job-independent variability is claimed."
@@ -7168,6 +7217,196 @@
       "evidence_status": "Uncalibrated assumption",
       "applicable_range": null,
       "range_note": "Validation bounds constrain accepted inputs, not credible equipment performance."
+    },
+    {
+      "id": "parameter:plant.integration.research.version",
+      "path": "plant.integration.research.version",
+      "label": "Research model version",
+      "group": "coupling",
+      "category": "implementation",
+      "unit": "",
+      "reference_default": "researched-interfaces/1",
+      "evidence_status": "Source-scoped equation with disclosed transfer assumptions",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": null,
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.converter",
+      "path": "plant.integration.research.converter",
+      "label": "Converter model · source curve or constant efficiency",
+      "group": "coupling",
+      "category": "implementation",
+      "unit": "",
+      "reference_default": "pvwatts-analogue/1",
+      "evidence_status": "Source-scoped equation with disclosed transfer assumptions",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        "constant",
+        "pvwatts-analogue/1"
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.converter_loss_scale",
+      "path": "plant.integration.research.converter_loss_scale",
+      "label": "Converter loss multiplier · 1 reproduces source knots; transfer assumption",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "multiplier",
+      "reference_default": 1,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        0.75,
+        1,
+        1.5
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.electrolysis_heat",
+      "path": "plant.integration.research.electrolysis_heat",
+      "label": "Electrolysis heat · fixed fraction or reference-state energy balance",
+      "group": "coupling",
+      "category": "implementation",
+      "unit": "",
+      "reference_default": "hhv-balance/1",
+      "evidence_status": "Source-scoped equation with disclosed transfer assumptions",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        "fraction",
+        "hhv-balance/1"
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.external_heat_share",
+      "path": "plant.integration.research.external_heat_share",
+      "label": "Share of productive electrolysis excess heat assigned to liquid cooler · assumed",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "fraction",
+      "reference_default": 1,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        0.5,
+        0.75,
+        1
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.cooler",
+      "path": "plant.integration.research.cooler",
+      "label": "Cooler envelope · constant or ambient-limited dry cooling",
+      "group": "coupling",
+      "category": "implementation",
+      "unit": "",
+      "reference_default": "ambient-ua/1",
+      "evidence_status": "Source-scoped equation with disclosed transfer assumptions",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        "constant",
+        "ambient-ua/1"
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.coolant_c",
+      "path": "plant.integration.research.coolant_c",
+      "label": "Effective cooler-side hot temperature · °C · assumed, not electrolyte temperature",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "°C",
+      "reference_default": 45,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        35,
+        45,
+        55
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.cooler_ua_kw_per_k",
+      "path": "plant.integration.research.cooler_ua_kw_per_k",
+      "label": "Effective cooler conductance · kW/K · assumed, 160 kW at 45−20 K",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "kW/K",
+      "reference_default": 6.4,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        3.2,
+        6.4,
+        9.6
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.reactor_heat",
+      "path": "plant.integration.research.reactor_heat",
+      "label": "Reactor heat · original reference heat or NIST with cold-feed heating",
+      "group": "coupling",
+      "category": "implementation",
+      "unit": "",
+      "reference_default": "nist-cold-feed/1",
+      "evidence_status": "Source-scoped equation with disclosed transfer assumptions",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        "rounded-298",
+        "nist-cold-feed/1"
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.reactor_reference_c",
+      "path": "plant.integration.research.reactor_reference_c",
+      "label": "Frozen reaction/product temperature · °C · reduced hourly model within 500–1000 K",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "°C",
+      "reference_default": 300,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        250,
+        300,
+        400
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
+    },
+    {
+      "id": "parameter:plant.integration.research.feed_recovery_fraction",
+      "path": "plant.integration.research.feed_recovery_fraction",
+      "label": "Sensible recuperator effectiveness · assumed; limited by feed demand and available exhaust heat",
+      "group": "coupling",
+      "category": "equipment",
+      "unit": "fraction",
+      "reference_default": 0,
+      "evidence_status": "Unquantified plant-transfer assumption",
+      "applicable_range": null,
+      "range_note": "Schema bounds are computational domains, not empirical uncertainty bounds.",
+      "sensitivity_values": [
+        0,
+        0.5,
+        0.8
+      ],
+      "sensitivity_scope": "Illustrative disclosed model/parameter scenarios; no probability, coverage or independence asserted. Reactor reference must stay inside the configured production band."
     }
   ],
   "prior_field_findings": {

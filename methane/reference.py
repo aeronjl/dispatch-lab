@@ -38,6 +38,56 @@ def initial(p, ambient):
     )
 
 
+def research_heat(research):
+    """Independent Decimal evaluation; coefficients transcribed from NIST, not kernels."""
+    coefficients = [
+        ["-0.703029", "108.4773", "-42.52157", "5.862788", "0.678565", "-76.84376"],
+        ["30.09200", "6.832514", "6.793435", "-2.534480", "0.082139", "-250.8810"],
+        ["24.99735", "55.18696", "-33.69137", "7.948387", "-0.136638", "-403.6075"],
+        ["33.066178", "-11.363417", "11.432816", "-2.772874", "-0.158558", "-9.980797"],
+    ]
+    t = (D(research["reactor_reference_c"]) + D("273.15")) / 1000
+    enthalpies = []
+    for row in coefficients:
+        a, b, c, d, e, f = map(D, row)
+        enthalpies.append(a * t + b * t**2 / 2 + c * t**3 / 3 + d * t**4 / 4 - e / t + f)
+    ch4, water, co2, h2 = enthalpies
+    gross = -(ch4 + 2 * water - co2 - 4 * h2) / D("57.6")
+    feed = (co2 + D("393.5224") + 4 * h2) / D("57.6")
+    product_sensible = (ch4 + D("74.87310") + 2 * (water + D("241.8264"))) / D("57.6")
+    recovered = min(feed, product_sensible) * D(research["feed_recovery_fraction"])
+    return gross, feed - recovered
+
+
+def research_conversion(ac, z):
+    r = z.get("research")
+    if not r or r["converter"] == "constant":
+        return ac / D(z["ac_efficiency"])
+    if abs(ac) < D("0.0000001"):
+        return D(0)
+    # Independent bisection of the published forward equation at every knot.
+    points = []
+    rating, eta = D(z["ac_capacity_kw"]), D(z["ac_efficiency"])
+    for f in [".02", ".05", ".1", ".2", ".3", ".5", ".75", "1"]:
+        target = D(f)
+        lo, hi = D(0), D("1.01")
+        for _ in range(120):
+            x = (lo + hi) / 2
+            output = (-D(".0162") * x * x + D(".9858") * x - D(".0059")) / D(".9637")
+            if output < target:
+                lo = x
+            else:
+                hi = x
+        q = rating * target
+        points.append((q, q + (rating * x / eta - q) * D(r["converter_loss_scale"])))
+    if ac < points[0][0] - D(".00001") or ac > points[-1][0] + D(".00001"):
+        raise ValueError("Research converter outside recorded operating envelope")
+    for (a, b), (c, d) in zip(points[:-1], points[1:], strict=True):
+        if ac <= c + D(".00001"):
+            return b + (ac - a) * (d - b) / (c - a)
+    raise ValueError("No reference converter interval")
+
+
 def interval(p, before, action, pv, ambient, delivery, service_kw=0, water_delivery_l=0):
     """Reference output for one hourly interval. No clipping/corrective allocation."""
     if p["dt_hours"] != 1:
@@ -63,7 +113,12 @@ def interval(p, before, action, pv, ambient, delivery, service_kw=0, water_deliv
         hydrogen_used, co2_used, water = extent * 4 * 2, extent * 44, extent * 2 * 18
         accepted = min(D(delivery), q["co2_capacity_kg"] - b["co2_kg"])
         reaction = extent * D(165000) / 3600
-        net_heat = a["heater_kw"] + reaction - a["cooling_kw"]
+        researched = (p.get("integration") or {}).get("research")
+        feed_heating = D(0)
+        if researched and researched["reactor_heat"] != "rounded-298":
+            gross, feed = research_heat(researched)
+            reaction, feed_heating = a["methane_kg"] * gross, a["methane_kg"] * feed
+        net_heat = a["heater_kw"] + reaction - feed_heating - a["cooling_kw"]
         c, ua, amb = q["thermal_capacity_kwh_per_k"], q["heat_loss_kw_per_k"], D(ambient)
         if ua:
             equilibrium = amb + net_heat / ua
@@ -86,10 +141,14 @@ def interval(p, before, action, pv, ambient, delivery, service_kw=0, water_deliv
         if integration:
             z = integration
             external_heat = a["electrolyser_kw"] * D(z["heat_fraction"])
+            if researched and researched["electrolysis_heat"] == "hhv-balance/1":
+                external_heat = (
+                    a["electrolyser_kw"] - h2 * D("285.830") / (D("3.6") * D("2.01588"))
+                ) * D(researched["external_heat_share"])
             external = D(on) * D(z["dryer_kw"]) + external_heat * D(z["cooler_electric_fraction"])
             if z["h2_buffer_barg"] > z["h2_supply_barg"]:
                 external += h2 * D(z["compressor_kwh_per_kg"])
-            demand = (demand - D(service_kw) + external) / D(z["ac_efficiency"]) + D(service_kw)
+            demand = research_conversion(demand - D(service_kw) + external, z) + D(service_kw)
             accepted_water = min(D(water_delivery_l), D(z["water_capacity_l"]) - ending_water)
             ending_water += accepted_water - h2 * D(z["water_l_per_kg"])
         commitment = (
@@ -124,6 +183,8 @@ def interval(p, before, action, pv, ambient, delivery, service_kw=0, water_deliv
             electrolyser_start=D(start_e),
             reactor_start=D(start_r),
         )
+        if researched and researched["reactor_heat"] != "rounded-298":
+            flows["feed_heating_kwh"] = feed_heating
         return {"state": state, "applied": dict(action), **{k: float(v) for k, v in flows.items()}}
 
 

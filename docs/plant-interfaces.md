@@ -140,3 +140,12 @@ These are software acceptance results. No new site measurements, calibrated cool
 curve, participant walkthrough, live-hardware qualification or broad research
 comparison is claimed. Saved research artifacts and prior result editions remain
 unchanged.
+
+## Source-scoped model alternatives
+
+The optional `research` block selects [researched conversion and thermal models](researched-models.md).
+It is absent from original integration/1 configurations. Research-enabled execution
+records use integration/2 and retain original parameters, ambient cooling capacity,
+conversion curve, gross reaction heat and feed heating. The main illustration is
+unchanged. Project → Equipment & evidence → Plant interfaces reveals a stateless
+preview, source links and editable transfer assumptions before saving a revision.

@@ -190,8 +190,16 @@ These are follow-on increments and evidence gates, not automatically started wor
    gas/water quality, pressure dynamics or installation feasibility. Public
    specifications, experimental datasets and engineering derivations are the next
    modelling inputs; private OEM or site records are not a prerequisite.
-2. **Research-grounded component models — next modelling increment.** Public
-   evidence is the primary modelling basis. Audit the existing literature-derived
+2. **Research-grounded component models — first usable increment delivered.**
+   [Researched conversion and thermal options](researched-models.md) now run in
+   both planning and execution: a source-scoped part-load converter analogue,
+   reference-state electrolysis heat, ambient-limited dry cooling, and NIST
+   reaction heat with explicit cold-feed heating. Preview, design revisions,
+   recorded operands, independent calculations and disclosed uncertainty choices
+   are integrated. These equations do not establish field calibration.
+
+   **Next:** reference-equipment electrolysis and reactor dynamics adapters. Public
+   evidence remains the primary modelling basis. Review the literature-derived
    reference profiles, then promote justified mechanisms into named, executable
    component options with explicit source conditions and applicability. Prioritise
    power/conversion boundaries, cooling and process dynamics. Reproduce measured
@@ -209,7 +217,9 @@ These are follow-on increments and evidence gates, not automatically started wor
    exposes measurement boundaries and discrepancy traces, and preserves reports
    offline. Its exact-design observation importer is an optional site-comparison
    facility; it is not yet an adapter for arbitrary literature datasets. Add explicit
-   reference-equipment/data mappings as part of the research-model increment.
+   reference-equipment/data mappings in the next research-model increment. The
+   CSU PEM and KIT controlled-coolant fits remain scoped to those experiments;
+   their coefficients have not been assigned to the AEM or generic reactor.
    Actual plant measurements can strengthen validation later, but are not expected
    or a completion gate for this software project.
 3. **Rehearse the expert workflow with real participants.** Observe site selection,

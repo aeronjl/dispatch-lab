@@ -250,8 +250,10 @@ def test_disclosed_uncertainty_inventory_and_hidden_rejection():
     view = catalogue(c)
     assert not view["unregistered"]
     entries = [r for r in view["parameters"] if r["path"].startswith("plant.integration.")]
-    assert len(entries) == len(Integration.model_fields)
-    assert all(r["active"] and not r["hidden_supported"] for r in entries)
+    assert {r["path"] for r in entries if r["active"]} == {
+        "plant.integration." + k for k in c["plant"]["integration"]
+    }
+    assert all(not r["hidden_supported"] for r in entries)
     changed = deepcopy(c)
     changed["plant"]["integration"]["heat_fraction"] = 0.4
     with pytest.raises(ValueError, match="Hidden execution adapter"):

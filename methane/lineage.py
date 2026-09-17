@@ -97,7 +97,13 @@ def trace(result, controller, hour, component):
                     value,
                     path + "/" + group + "/" + key,
                     parents,
-                    FORMULAS.get(component, "Recorded solar conversion stages"),
+                    (
+                        FORMULAS["reactor"].replace(
+                            "reaction heat − UA", "reaction heat − feed heating − UA"
+                        )
+                        if component == "reactor" and "feed_heating_kwh" in record.get("flows", {})
+                        else FORMULAS.get(component, "Recorded solar conversion stages")
+                    ),
                     units=unit(key),
                 )
             )

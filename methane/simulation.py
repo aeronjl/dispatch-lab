@@ -170,7 +170,7 @@ def evidence(p, state, forecast, planned, diagnosis, objective):
             (
                 "electrolyser",
                 i["cooling_heat_kw"],
-                i["parameters"]["cooler_capacity_kw"],
+                i.get("effective_cooler_capacity_kw", i["parameters"]["cooler_capacity_kw"]),
                 "External cooler reaches its thermal limit",
             ),
         ):

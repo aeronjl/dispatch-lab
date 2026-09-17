@@ -17,7 +17,6 @@ from methane.electrolyser import State as ElyState
 from methane.physics import (
     ACTION_KEYS,
     H2_PER_CH4,
-    REACTION_KWH_PER_KG,
     temperature_after,
     thermal_coefficients,
     transition,
@@ -95,6 +94,16 @@ class Model:
             if k not in self.ids:
                 continue
             self.upper[self.ids[k]] = self.integer[self.ids[k]] = 1
+
+    def add_variable(self, key, upper=np.inf, integer=False):
+        if key in self.ids:
+            raise ValueError("Duplicate planning variable")
+        start = len(self.lower)
+        self.ids[key] = np.arange(start, start + self.n)
+        self.lower = np.append(self.lower, np.zeros(self.n))
+        self.upper = np.append(self.upper, np.full(self.n, upper))
+        self.integer = np.append(self.integer, np.full(self.n, int(integer)))
+        self.objective = np.append(self.objective, np.zeros(self.n))
 
     def add(self, terms, lo=-np.inf, hi=np.inf):
         row = len(self.lo)
@@ -229,6 +238,9 @@ def build(p, state, forecast, capacity, enforce_commitment=True, *, battery=None
     n = len(forecast["pv_kw"])
     capacities = capacity_horizon(p, forecast, capacity)
     m = Model(n, integration=p.integration is not None)
+    from methane.researched_models import prepare
+
+    prepare(m, p)
     components = components or assemble(p, battery_override=battery)
     durations = (p.dt_hours,) * n
     m.add_component(
@@ -529,11 +541,15 @@ def greedy_action(
         m.upper[m.ids["heater_kw"][0]], p.heater_max_kw, max(0, (target - passive) / b)
     )
     heat_need = max(0, (target - passive) / b)
-    big_heat = p.heater_max_kw + p.methane_max_kgph * REACTION_KWH_PER_KG
+    from methane.researched_models import thermal
+
+    gross, feed = thermal(p)
+    reaction_heat = gross - feed
+    big_heat = p.heater_max_kw + p.methane_max_kgph * reaction_heat
     m.add(
         [
             ("heater_kw", 0, 1),
-            ("methane_kg", 0, REACTION_KWH_PER_KG),
+            ("methane_kg", 0, reaction_heat),
             ("heat_direction", 0, big_heat),
         ],
         hi=heat_need + big_heat,

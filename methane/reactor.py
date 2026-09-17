@@ -48,8 +48,12 @@ def step(p, inputs: ThermalInput):
         raise ValueError("Heating, cooling and interval methane must be nonnegative.")
     duration = inputs.duration_hours
     a, b = coefficients(p.thermal_capacity_kwh_per_k, p.heat_loss_kw_per_k, duration)
-    reaction = inputs.methane_kg * REACTION_KWH_PER_KG
-    net = inputs.heater_kw + reaction / duration - inputs.cooling_kw
+    from methane.researched_models import thermal
+
+    gross, feed = thermal(p)
+    reaction = inputs.methane_kg * gross
+    feed_heating = inputs.methane_kg * feed
+    net = inputs.heater_kw + (reaction - feed_heating) / duration - inputs.cooling_kw
     end = a * inputs.temperature_c + (1 - a) * inputs.ambient_c + b * net
     # Analytic integral of UA(T(t)−Tamb); independently accounted, not a residual.
     x = p.heat_loss_kw_per_k * duration / p.thermal_capacity_kwh_per_k
@@ -60,7 +64,11 @@ def step(p, inputs: ThermalInput):
     )
     return ComponentResult(
         ReactorState(end),
-        (("reaction_heat_kwh", reaction), ("heat_loss_kwh", loss)),
+        (
+            ("reaction_heat_kwh", reaction),
+            ("heat_loss_kwh", loss),
+            *((("feed_heating_kwh", feed_heating),) if feed else ()),
+        ),
         (("model", REACTOR.model_id), ("duration_hours", duration)),
     )
 
@@ -103,6 +111,9 @@ class Parameters:
     methane_electric_kwh_per_kg: float = 1
     cooling_electric_fraction: float = 0.1
 
+    reaction_kwh_per_kg: float = REACTION_KWH_PER_KG
+    feed_kwh_per_kg: float = 0
+
     def __post_init__(self):
         for parameter in REACTOR.parameters:
             parameter.validate(getattr(self, parameter.key))
@@ -110,6 +121,7 @@ class Parameters:
             not all(isfinite(v) for v in asdict(self).values())
             or not self.temperature_min_c < self.temperature_max_c
             or not 0 < self.methane_min_kgph <= self.methane_max_kgph
+            or not 0 <= self.feed_kwh_per_kg <= self.reaction_kwh_per_kg
             or min(
                 self.auxiliary_kw, self.methane_electric_kwh_per_kg, self.cooling_electric_fraction
             )
@@ -126,7 +138,7 @@ class Reactor:
     implementation_id: str = "analytic/1"
 
     def __post_init__(self):
-        if self.implementation_id != "analytic/1":
+        if self.implementation_id not in ("analytic/1", "analytic-nist-cold-feed/1"):
             raise ValueError("Unknown reactor implementation")
 
     def identity(self):
@@ -237,7 +249,7 @@ class Reactor:
             terms = [
                 ("temperature", t, 1),
                 ("heater", t, -b),
-                ("methane", t, -b * REACTION_KWH_PER_KG),
+                ("methane", t, -b * (p.reaction_kwh_per_kg - p.feed_kwh_per_kg)),
                 ("cooling", t, b),
             ]
             rhs = (1 - a) * amb
@@ -343,6 +355,15 @@ class Reactor:
 
 
 def from_plant(p, implementation="analytic/1"):
+    from methane.researched_models import selected, thermal
+
+    r = selected(p)
+    gross, feed = thermal(p)
     return Reactor(
-        Parameters(**{f.name: getattr(p, f.name) for f in fields(Parameters)}), implementation
+        Parameters(
+            **{f.name: getattr(p, f.name) for f in fields(Parameters) if hasattr(p, f.name)},
+            reaction_kwh_per_kg=gross,
+            feed_kwh_per_kg=feed,
+        ),
+        "analytic-nist-cold-feed/1" if r and r.reactor_heat != "rounded-298" else implementation,
     )

@@ -69,7 +69,7 @@ SCOPE = {
     "maintenance": "Lifetime, degradation and consumables depend on usage and calendar exposure. Key event randomness to the work, not controller call order.",
     "economics": "Prices and life/usage allowances are assumptions. Dispatch prices remain frozen separately from retrospective accounting prices.",
     "control": "Policy choices are selected, not physical uncertainty. Compare policies on paired worlds; solver repetitions are a separate numerical layer.",
-    "coupling": "Shared resource balances remain constraints for every world. Optional plant interfaces use disclosed constant conversion/cooling, pressure compatibility and finite water assumptions. User-selected scenario ranges are not calibrated probability distributions. Hidden interface variations are not supported. Invalid combinations are recorded, never clipped into validity.",
+    "coupling": "Shared resource balances remain constraints for every world. Optional plant interfaces offer disclosed constant or source-scoped conversion/cooling and heat-balance models, pressure compatibility and finite water assumptions. User-selected scenario ranges are not calibrated probability distributions. Hidden interface variations are not supported. Invalid combinations are recorded, never clipped into validity.",
     "experiment": "Boundary, horizon, seed and model choice define an experiment. Scenario frequencies are not empirical event probabilities.",
 }
 
@@ -193,7 +193,17 @@ def catalogue(config):
             representation = (
                 "model-choice"
                 if p["path"].startswith("models.")
-                or p["path"].endswith(("_model", ".version", ".model"))
+                or p["path"].endswith(
+                    (
+                        "_model",
+                        ".version",
+                        ".model",
+                        "research.converter",
+                        "research.electrolysis_heat",
+                        "research.cooler",
+                        "research.reactor_heat",
+                    )
+                )
                 else "fixed-convention"
             )
         elif p.get("sensitivity_values"):

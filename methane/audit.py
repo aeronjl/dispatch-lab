@@ -219,6 +219,7 @@ def physical(p, before, row, interval=None, capacity=None):
             + p.auxiliary_kw * s["reactor_on"],
             row["h2_produced_kg"],
             stored.get("water_delivery_l", 0),
+            row["ambient_c"],
         )
         audits.extend({**item, "interval": interval} for item in computed["audits"])
         audits.append(
@@ -228,6 +229,9 @@ def physical(p, before, row, interval=None, capacity=None):
                 int(
                     stored.get("version") != computed["version"]
                     or stored.get("parameters") != computed["parameters"]
+                    or stored.get("model_identity") != computed.get("model_identity")
+                    or stored.get("source_ids") != computed.get("source_ids")
+                    or stored.get("converter_points_kw") != computed.get("converter_points_kw")
                 ),
                 "boolean",
                 interval=interval,

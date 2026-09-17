@@ -484,7 +484,7 @@ def save_integration(store, project_id, values):
     if values is None:
         c["plant"].pop("integration", None)
     else:
-        c["plant"]["integration"] = Integration(**values).model_dump()
+        c["plant"]["integration"] = Integration(**values).to_dict()
     return projects.revise(store, project_id, Config.from_dict(c).to_dict())
 
 
@@ -532,6 +532,12 @@ def perform(store, operation, key, data):
             return qualification.evaluate(store, key)
         if operation == "equipment-qualification-result":
             return qualification.current(store, key)
+    if operation == "equipment-integration-preview":
+        from methane.researched_models import preview
+
+        c = deepcopy(store.get("project", key)["config"])
+        c["plant"]["integration"] = data["values"]
+        return preview(Config.from_dict(c).plant)
     if operation == "equipment-integration-save":
         return save_integration(store, key, data["values"])
     if operation == "equipment-integration-trace":

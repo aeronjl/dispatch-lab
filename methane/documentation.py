@@ -30,6 +30,8 @@ def bindings():
             "methane/contracts.py",
             "methane/physics.py",
             "methane/integration.py",
+            "methane/researched_models.py",
+            "docs/researched-models.md",
             "methane/reactor.py",
             "methane/battery.py",
             "methane/electrolyser.py",

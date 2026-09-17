@@ -48,7 +48,11 @@ class Plant(HydrogenPlant):
         if self.integration is not None:
             from methane.integration import Integration
 
-            object.__setattr__(self, "integration", Integration(**self.integration).model_dump())
+            integration = Integration(**self.integration)
+            from methane.researched_models import validate_plant
+
+            validate_plant(self, integration)
+            object.__setattr__(self, "integration", integration.to_dict())
         for parameter in (*REACTOR.parameters, *BATTERY.parameters):
             parameter.validate(getattr(self, parameter.key))
         if self.dt_hours != 1:

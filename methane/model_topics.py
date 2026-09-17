@@ -264,6 +264,10 @@ TOPICS = {
                 "The ideal reaction consumes 0.5 kg H₂ and 2.75 kg CO₂ per kg methane, producing 2.25 kg water. Inspect heating, reaction heat, heat loss and rejected heat separately.",
             ),
             P(
+                "Account for cold feed explicitly",
+                "This learning sequence retains the original heat coefficient. In Project → Equipment & evidence → Plant interfaces, the optional NIST model separates gross reaction heat from feed heating. Its editable reference temperature and recuperation are frozen for each design. Preview shows their net heat; saved intervals retain the operands. Heat capacity and ambient heat loss remain assumptions, and the controlled-coolant slurry fit is not transferred to this reactor.",
+            ),
+            P(
                 "A commitment meets a physical limit",
                 "Cut the supplied feedstock at a chosen interval. The operating-state model records a forced trip if a four-hour commitment cannot continue. Physical feasibility takes precedence.",
                 [C("cutoff", "Feedstock supplied until interval", 12, 1, 12, 1, "h")],
@@ -295,6 +299,10 @@ TOPICS = {
                     ),
                     ("unused solar", "Explicit energy not harvested."),
                 ],
+            ),
+            P(
+                "Inspect conversion and cooling boundaries",
+                "Optional plant interfaces add a capacity-limited AC island and finite purified water. Research options in Equipment & evidence expose a published inverter analogue, reference-state electrolysis heat and a dry-cooler envelope that loses capacity in hot weather. Their preview is a learning calculation; saving creates a new design for future runs. These source-scoped equations do not establish an OEM envelope or field calibration. The six-hour teaching sequence here retains the original abstract bus.",
             ),
             P(
                 "Today’s reserve becomes tomorrow’s option",

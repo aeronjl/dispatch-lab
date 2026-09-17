@@ -14,7 +14,8 @@ from methane.components import assemble, record
 from methane.config import Plant
 from methane.electrolyser import Inputs as ElyInputs
 from methane.electrolyser import State as ElyState
-from methane.reactor import REACTION_KWH_PER_KG, ReactorState, ThermalInput, coefficients, step
+from methane.reactor import REACTION_KWH_PER_KG as REACTION_KWH_PER_KG
+from methane.reactor import ReactorState, ThermalInput, coefficients, step
 from methane.storage import Inputs as GasInputs
 from methane.storage import State as GasState
 
@@ -142,6 +143,7 @@ def transition(
         rflows["electricity_kw"],
         h2_made,
         water_delivery_l,
+        ambient,
     )
     demand = (integration["dc_kw"] if integration else process_demand) + service_kw
     curtailed = pv + discharge - charge - demand
@@ -185,10 +187,16 @@ def transition(
             "co2": record(components.co2, co2_before, co2_inputs, co2_result),
             "reactor": record(components.reactor, reactor_before, reactor_inputs, reactor_result),
         },
-        "reaction_heat_kwh": methane * REACTION_KWH_PER_KG,
+        "reaction_heat_kwh": rflows["reaction_heat_kwh"],
         "heat_loss_kwh": heat_loss,
         "thermal_residual_kwh": p.thermal_capacity_kwh_per_k * (temperature - state.temperature_c)
-        - (heater + methane * REACTION_KWH_PER_KG - cooling - heat_loss),
+        - (
+            heater
+            + rflows["reaction_heat_kwh"]
+            - rflows.get("feed_heating_kwh", 0)
+            - cooling
+            - heat_loss
+        ),
         "electrical_residual_kwh": pv
         - demand
         - curtailed
@@ -198,6 +206,8 @@ def transition(
         "co2_residual_kg": next_state.co2_kg - state.co2_kg - accepted + co2_used,
         "reaction_mass_residual_kg": h2_used + co2_used - methane - methane * WATER_PER_CH4,
     }
+    if "feed_heating_kwh" in rflows:
+        row["feed_heating_kwh"] = rflows["feed_heating_kwh"]
     if integration:
         row["integration"] = integration
     row["audits"] = physical(p, state, row)

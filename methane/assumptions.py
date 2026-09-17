@@ -23,7 +23,9 @@ def reference_configuration():
 
     c = Config()
     value = c.to_dict()
-    value["plant"]["integration"] = Integration().model_dump()
+    from methane.researched_models import Research
+
+    value["plant"]["integration"] = Integration(research=Research()).to_dict()
     value.update(
         service_system=asdict(ServiceSystem()),
         recovery_policy=asdict(RecoveryPolicy()),
