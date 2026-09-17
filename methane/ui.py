@@ -1041,6 +1041,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "learning-lab.js").read_text()
                     + (ASSETS / "sites-studies.js").read_text()
                     + (ASSETS / "sites.js").read_text()
+                    + (ASSETS / "literature.js").read_text()
                     + (ASSETS / "equipment.js").read_text()
                     + (ASSETS / "requirements.js").read_text()
                     + (ASSETS / "project.js").read_text()

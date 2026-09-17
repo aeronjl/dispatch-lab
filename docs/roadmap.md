@@ -198,7 +198,13 @@ These are follow-on increments and evidence gates, not automatically started wor
    recorded operands, independent calculations and disclosed uncertainty choices
    are integrated. These equations do not establish field calibration.
 
-   **Next:** reference-equipment electrolysis and reactor dynamics adapters. Public
+   **Reference-device adapters are now delivered:** [Reference experiments](literature-models.md)
+   executes the CSU PEM power/flow and KIT controlled-coolant response models from
+   versioned, hash-identified data mappings. It exposes model forms, paired-parameter
+   sensitivity, scoped evaluation, saved results and offline reports. These remain
+   source-device experiments: startup, scale-up and plant transfer are not inferred.
+
+   **Next:** explicit plant-compatible component options and transfer scenarios. Public
    evidence remains the primary modelling basis. Review the literature-derived
    reference profiles, then promote justified mechanisms into named, executable
    component options with explicit source conditions and applicability. Prioritise
@@ -216,9 +222,9 @@ These are follow-on increments and evidence gates, not automatically started wor
    criteria and development/evaluation windows, assesses exact recorded designs,
    exposes measurement boundaries and discrepancy traces, and preserves reports
    offline. Its exact-design observation importer is an optional site-comparison
-   facility; it is not yet an adapter for arbitrary literature datasets. Add explicit
-   reference-equipment/data mappings in the next research-model increment. The
-   CSU PEM and KIT controlled-coolant fits remain scoped to those experiments;
+   facility; it is not an adapter for arbitrary literature datasets. The separate reference
+   workspace now supplies two named data mappings; additional devices need their
+   own mappings and boundary reviews. The CSU PEM and KIT controlled-coolant fits remain scoped to those experiments;
    their coefficients have not been assigned to the AEM or generic reactor.
    Actual plant measurements can strengthen validation later, but are not expected
    or a completion gate for this software project.

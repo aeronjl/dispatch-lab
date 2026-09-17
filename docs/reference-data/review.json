@@ -1,0 +1,19 @@
+{
+  "version": "reference-narrative-review/1",
+  "reviewed_at": "2026-09-17",
+  "scope": "Source-device mapping, mechanics, uncertainty and transfer boundaries reviewed against the preserved data and linked primary sources; no field validation.",
+  "bindings": {
+    "csu-pem": {
+      "methane/literature/adapters.py": "64d2c61550adb8ca3af0965d9d898aa8e539b5fd843d8e642be22fd33f31dce3",
+      "methane/literature/models.py": "0d014e3bbd4c8c0aab374b174d3f15988637df1787693602104519017218a980",
+      "docs/literature-models.md": "b17e09fc51e51e1ff10c5770e00f05c58b809a3786cb515ceba5eb3a773e011b",
+      "docs/reference-data/csu-pem.json": "003b0a020fc849423fb68c020320fa7b17547a8bb097a566c5005ee793e40da0"
+    },
+    "kit-slurry": {
+      "methane/literature/adapters.py": "64d2c61550adb8ca3af0965d9d898aa8e539b5fd843d8e642be22fd33f31dce3",
+      "methane/literature/models.py": "0d014e3bbd4c8c0aab374b174d3f15988637df1787693602104519017218a980",
+      "docs/literature-models.md": "b17e09fc51e51e1ff10c5770e00f05c58b809a3786cb515ceba5eb3a773e011b",
+      "docs/reference-data/kit-slurry.json": "5d19e04aad815403bc96451e82961de5fd91ae6e434f5995ee1782f147a947a8"
+    }
+  }
+}

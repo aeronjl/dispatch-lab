@@ -1,0 +1,513 @@
+{
+  "version": "reference-dataset/1",
+  "reviewed_at": "2026-09-17",
+  "transfer": "Reference experiment only. No automatic transfer or scaling to the project plant.",
+  "measurement_uncertainty": "No calibrated channel uncertainty supplied by this adapter; residuals do not identify sensor error.",
+  "protocol_status": "Reuses a previously inspected dataset and declared historical selection; not blind or preregistered external validation.",
+  "id": "csu-pem",
+  "adapter": "csu-pem/1",
+  "title": "CSU \u00b7 PEM system power and hydrogen",
+  "technology": "NEL C-Series, 60 kW-class PEM electrolysis system",
+  "conditions": "One device/day; stable descending load plateaus. AC system boundary includes supply, subsystem and chiller. This is not the AEM reference.",
+  "timing": "One-second samples on 5 November 2025; timezone unspecified in the source. Timestamps remain naive; no UTC assignment.",
+  "sources": [
+    {
+      "title": "Veatch, Windom & Zdanowicz \u00b7 experimental data (2026)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8931zcs64"
+    },
+    {
+      "title": "Author repository \u00b7 frozen source revision",
+      "url": "https://github.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/tree/a534d8a89cf5e662f183d91a9b40b7936387c4a2"
+    }
+  ],
+  "raw_sources": [
+    {
+      "channel": "power_command",
+      "filename": "pem-data__experiment__power_command.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/power_command.txt",
+      "sha256": "51a712d9a7404356bd83647042dbadb24a56e1ba83b71644468ce023d7f2e665",
+      "retrieved_at": "2026-09-12T21:59:56.407009+00:00"
+    },
+    {
+      "channel": "stack_power",
+      "filename": "pem-data__experiment__stack_power.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/stack_power.txt",
+      "sha256": "85da23b187d85dd17bcf963170c93dfe6bedf75b49abc94c57b979ddbbcd7557",
+      "retrieved_at": "2026-09-12T21:59:56.930868+00:00"
+    },
+    {
+      "channel": "smps_power",
+      "filename": "pem-data__experiment__smps_power.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/smps_power.txt",
+      "sha256": "87aec5e5f7fe5d4db89e9e84e8b4605dcd20fd9a5bbf96e8ae248d1140f8c512",
+      "retrieved_at": "2026-09-12T21:59:56.635737+00:00"
+    },
+    {
+      "channel": "subsystem_power",
+      "filename": "pem-data__experiment__subsystem_power.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/subsystem_power.txt",
+      "sha256": "b74bdb68744d7515bec3f703bf134a66ee01e2d8f5c109d8399e53b513e35f6d",
+      "retrieved_at": "2026-09-12T21:59:57.360925+00:00"
+    },
+    {
+      "channel": "chiller_power",
+      "filename": "pem-data__experiment__chiller_power.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/chiller_power.txt",
+      "sha256": "2e1f8d6366442942961cb71e3afc7277e8aa3a3eb8f1f69a0b71f8e177972300",
+      "retrieved_at": "2026-09-12T21:59:55.477162+00:00"
+    },
+    {
+      "channel": "hydrogen_flow",
+      "filename": "pem-data__experiment__hydrogen_flow.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow.txt",
+      "sha256": "6fd504cc8d6279d513a3a28f5518ab4f1c1c042567ebb981288b0c01a3048242",
+      "retrieved_at": "2026-09-12T21:59:55.729525+00:00"
+    },
+    {
+      "channel": "hydrogen_flow_cs",
+      "filename": "pem-data__experiment__hydrogen_flow_cs.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/hydrogen_flow_cs.txt",
+      "sha256": "385aff2e906e70791913f5d7a037ecf74c0d09daae68410ee15d34415f763aff",
+      "retrieved_at": "2026-09-12T21:59:55.994396+00:00"
+    },
+    {
+      "channel": "timestamp",
+      "filename": "pem-data__experiment__timestamp.txt",
+      "url": "https://raw.githubusercontent.com/HydrogenDude/ERCOT_Electrolyzer_Sim_Engine/a534d8a89cf5e662f183d91a9b40b7936387c4a2/data/experiment/timestamp.txt",
+      "sha256": "ee2a2dd9e5695afd273ce48fb2495e9960df493acc7d714534f1d9fd8091daba",
+      "retrieved_at": "2026-09-12T21:59:57.752261+00:00"
+    }
+  ],
+  "data": {
+    "rows": [
+      {
+        "segment": 4,
+        "split": "development",
+        "n": 840,
+        "first_index": 707,
+        "stop_index": 1547,
+        "start": "2025-11-05T13:46:12",
+        "end": "2025-11-05T14:00:11",
+        "power_command": 51.22000000000002,
+        "stack_power": 51.90665476190477,
+        "smps_power": 55.94427323549999,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.145948038571426,
+        "hydrogen_flow": 0.7725399435140775,
+        "hydrogen_flow_cs": 0.8900000000000001,
+        "system_power": 75.39022127407142
+      },
+      {
+        "segment": 4,
+        "split": "evaluation",
+        "n": 840,
+        "first_index": 1547,
+        "stop_index": 2387,
+        "start": "2025-11-05T14:00:12",
+        "end": "2025-11-05T14:14:11",
+        "power_command": 51.22000000000002,
+        "stack_power": 51.27832142857144,
+        "smps_power": 55.29239064891666,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.431256101607143,
+        "hydrogen_flow": 0.7731923462394047,
+        "hydrogen_flow_cs": 0.8887500000000003,
+        "system_power": 75.02364675052381
+      },
+      {
+        "segment": 5,
+        "split": "development",
+        "n": 841,
+        "first_index": 2507,
+        "stop_index": 3348,
+        "start": "2025-11-05T14:16:12",
+        "end": "2025-11-05T14:30:12",
+        "power_command": 46.08,
+        "stack_power": 46.24112960760998,
+        "smps_power": 50.04891689267539,
+        "subsystem_power": 2.3000000000000003,
+        "chiller_power": 17.52026978372176,
+        "hydrogen_flow": 0.722101658028042,
+        "hydrogen_flow_cs": 0.8200000000000002,
+        "system_power": 69.86918667639713
+      },
+      {
+        "segment": 5,
+        "split": "evaluation",
+        "n": 841,
+        "first_index": 3348,
+        "stop_index": 4189,
+        "start": "2025-11-05T14:30:13",
+        "end": "2025-11-05T14:44:13",
+        "power_command": 46.08,
+        "stack_power": 46.266777645659914,
+        "smps_power": 50.07598480560048,
+        "subsystem_power": 2.3000000000000003,
+        "chiller_power": 17.573193961070157,
+        "hydrogen_flow": 0.6949182325944313,
+        "hydrogen_flow_cs": 0.8171581450653984,
+        "system_power": 69.94917876667064
+      },
+      {
+        "segment": 6,
+        "split": "development",
+        "n": 823,
+        "first_index": 4309,
+        "stop_index": 5132,
+        "start": "2025-11-05T14:46:14",
+        "end": "2025-11-05T14:59:56",
+        "power_command": 40.94999999999999,
+        "stack_power": 40.95245443499392,
+        "smps_power": 44.34742913111786,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.483586125431348,
+        "hydrogen_flow": 0.6179526158118064,
+        "hydrogen_flow_cs": 0.74,
+        "system_power": 64.1310152565492
+      },
+      {
+        "segment": 6,
+        "split": "evaluation",
+        "n": 823,
+        "first_index": 5132,
+        "stop_index": 5955,
+        "start": "2025-11-05T14:59:57",
+        "end": "2025-11-05T15:13:39",
+        "power_command": 40.94999999999999,
+        "stack_power": 40.95647630619684,
+        "smps_power": 44.35189303164034,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.453596277314702,
+        "hydrogen_flow": 0.6183746234772175,
+        "hydrogen_flow_cs": 0.74,
+        "system_power": 64.10548930895504
+      },
+      {
+        "segment": 7,
+        "split": "development",
+        "n": 840,
+        "first_index": 6075,
+        "stop_index": 6915,
+        "start": "2025-11-05T15:15:40",
+        "end": "2025-11-05T15:29:39",
+        "power_command": 35.959999999999994,
+        "stack_power": 35.78033333333334,
+        "smps_power": 39.01286385135714,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.41519344375,
+        "hydrogen_flow": 0.5288404590244742,
+        "hydrogen_flow_cs": 0.6600000000000001,
+        "system_power": 58.72805729510713
+      },
+      {
+        "segment": 7,
+        "split": "evaluation",
+        "n": 841,
+        "first_index": 6915,
+        "stop_index": 7756,
+        "start": "2025-11-05T15:29:40",
+        "end": "2025-11-05T15:43:40",
+        "power_command": 35.959999999999994,
+        "stack_power": 35.78219976218787,
+        "smps_power": 39.01486452504161,
+        "subsystem_power": 2.3000000000000003,
+        "chiller_power": 17.387519120761002,
+        "hydrogen_flow": 0.5648483704492133,
+        "hydrogen_flow_cs": 0.6599999999999999,
+        "system_power": 58.702383645802605
+      },
+      {
+        "segment": 8,
+        "split": "development",
+        "n": 855,
+        "first_index": 7876,
+        "stop_index": 8731,
+        "start": "2025-11-05T15:45:41",
+        "end": "2025-11-05T15:59:55",
+        "power_command": 30.733999999999998,
+        "stack_power": 30.625578947368425,
+        "smps_power": 33.494830111157896,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.31354403736842,
+        "hydrogen_flow": 0.45079721456220473,
+        "hydrogen_flow_cs": 0.58,
+        "system_power": 53.108374148526316
+      },
+      {
+        "segment": 8,
+        "split": "evaluation",
+        "n": 856,
+        "first_index": 8731,
+        "stop_index": 9587,
+        "start": "2025-11-05T15:59:56",
+        "end": "2025-11-05T16:14:11",
+        "power_command": 30.734,
+        "stack_power": 30.6303738317757,
+        "smps_power": 33.499937702733654,
+        "subsystem_power": 2.3000000000000003,
+        "chiller_power": 17.317806028808413,
+        "hydrogen_flow": 0.4522460888799591,
+        "hydrogen_flow_cs": 0.5796845794392523,
+        "system_power": 53.117743731542056
+      },
+      {
+        "segment": 9,
+        "split": "development",
+        "n": 840,
+        "first_index": 9707,
+        "stop_index": 10547,
+        "start": "2025-11-05T16:16:12",
+        "end": "2025-11-05T16:30:11",
+        "power_command": 25.606,
+        "stack_power": 25.524857142857144,
+        "smps_power": 28.01779487646429,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.24379313125,
+        "hydrogen_flow": 0.3694697549736924,
+        "hydrogen_flow_cs": 0.49000000000000016,
+        "system_power": 47.56158800771428
+      },
+      {
+        "segment": 9,
+        "split": "evaluation",
+        "n": 840,
+        "first_index": 10547,
+        "stop_index": 11387,
+        "start": "2025-11-05T16:30:12",
+        "end": "2025-11-05T16:44:11",
+        "power_command": 25.606,
+        "stack_power": 25.52478571428571,
+        "smps_power": 28.017732420142863,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.20040436642857,
+        "hydrogen_flow": 0.3657523505598459,
+        "hydrogen_flow_cs": 0.4877500000000002,
+        "system_power": 47.518136786571425
+      },
+      {
+        "segment": 10,
+        "split": "development",
+        "n": 840,
+        "first_index": 11507,
+        "stop_index": 12347,
+        "start": "2025-11-05T16:46:12",
+        "end": "2025-11-05T17:00:11",
+        "power_command": 20.470000000000002,
+        "stack_power": 20.46040476190476,
+        "smps_power": 22.595513618619044,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.11578158357143,
+        "hydrogen_flow": 0.29287416552656903,
+        "hydrogen_flow_cs": 0.4,
+        "system_power": 42.01129520219048
+      },
+      {
+        "segment": 10,
+        "split": "evaluation",
+        "n": 840,
+        "first_index": 12347,
+        "stop_index": 13187,
+        "start": "2025-11-05T17:00:12",
+        "end": "2025-11-05T17:14:11",
+        "power_command": 20.470000000000002,
+        "stack_power": 20.449523809523807,
+        "smps_power": 22.583922123595233,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 17.085027470357144,
+        "hydrogen_flow": 0.28660476966330556,
+        "hydrogen_flow_cs": 0.4,
+        "system_power": 41.96894959395239
+      },
+      {
+        "segment": 11,
+        "split": "development",
+        "n": 874,
+        "first_index": 13307,
+        "stop_index": 14181,
+        "start": "2025-11-05T17:16:12",
+        "end": "2025-11-05T17:30:45",
+        "power_command": 15.232,
+        "stack_power": 15.391647597254005,
+        "smps_power": 17.23657044883295,
+        "subsystem_power": 2.3000000000000003,
+        "chiller_power": 16.999284506052636,
+        "hydrogen_flow": 0.19307563423702076,
+        "hydrogen_flow_cs": 0.31000000000000005,
+        "system_power": 36.535854954885586
+      },
+      {
+        "segment": 11,
+        "split": "evaluation",
+        "n": 875,
+        "first_index": 14181,
+        "stop_index": 15056,
+        "start": "2025-11-05T17:30:46",
+        "end": "2025-11-05T17:45:20",
+        "power_command": 15.232,
+        "stack_power": 15.311759999999996,
+        "smps_power": 17.154509071371425,
+        "subsystem_power": 2.3000000000000007,
+        "chiller_power": 16.968835688228573,
+        "hydrogen_flow": 0.18953006287078802,
+        "hydrogen_flow_cs": 0.3089371428571429,
+        "system_power": 36.423344759600006
+      }
+    ],
+    "segments": [
+      {
+        "segment": 0,
+        "first_index": 0,
+        "stop_index": 107,
+        "samples": 107,
+        "retained": false,
+        "reason": "short or off segment; not a startup fit"
+      },
+      {
+        "segment": 1,
+        "first_index": 107,
+        "stop_index": 227,
+        "samples": 120,
+        "retained": false,
+        "reason": "short or off segment; not a startup fit"
+      },
+      {
+        "segment": 2,
+        "first_index": 227,
+        "stop_index": 527,
+        "samples": 300,
+        "retained": false,
+        "reason": "short or off segment; not a startup fit"
+      },
+      {
+        "segment": 3,
+        "first_index": 527,
+        "stop_index": 587,
+        "samples": 60,
+        "retained": false,
+        "reason": "short or off segment; not a startup fit"
+      },
+      {
+        "segment": 4,
+        "first_index": 587,
+        "stop_index": 2387,
+        "samples": 1800,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 5,
+        "first_index": 2387,
+        "stop_index": 4189,
+        "samples": 1802,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 6,
+        "first_index": 4189,
+        "stop_index": 5955,
+        "samples": 1766,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 7,
+        "first_index": 5955,
+        "stop_index": 7756,
+        "samples": 1801,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 8,
+        "first_index": 7756,
+        "stop_index": 9587,
+        "samples": 1831,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 9,
+        "first_index": 9587,
+        "stop_index": 11387,
+        "samples": 1800,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 10,
+        "first_index": 11387,
+        "stop_index": 13187,
+        "samples": 1800,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 11,
+        "first_index": 13187,
+        "stop_index": 15056,
+        "samples": 1869,
+        "retained": true,
+        "reason": "stable halves after 120 s"
+      },
+      {
+        "segment": 12,
+        "first_index": 15056,
+        "stop_index": 15068,
+        "samples": 12,
+        "retained": false,
+        "reason": "short or off segment; not a startup fit"
+      }
+    ],
+    "samples": 15068,
+    "retained_samples": 13509
+  },
+  "mapping": [
+    {
+      "channel": "power_command",
+      "unit": "kW",
+      "meaning": "Original author signal."
+    },
+    {
+      "channel": "stack_power",
+      "unit": "kW",
+      "meaning": "DC stack power; excludes external electrical losses and support."
+    },
+    {
+      "channel": "smps_power",
+      "unit": "kW",
+      "meaning": "Original author signal."
+    },
+    {
+      "channel": "subsystem_power",
+      "unit": "kW",
+      "meaning": "Original author signal."
+    },
+    {
+      "channel": "chiller_power",
+      "unit": "kW",
+      "meaning": "Original author signal."
+    },
+    {
+      "channel": "hydrogen_flow",
+      "unit": "kg/h",
+      "meaning": "Original flow signal; do not infer an independent calibrated net meter."
+    },
+    {
+      "channel": "hydrogen_flow_cs",
+      "unit": "kg/h",
+      "meaning": "Original control-system signal; not an independent validation sensor."
+    },
+    {
+      "channel": "system_power",
+      "unit": "kW",
+      "meaning": "smps_power + subsystem_power + chiller_power; whole-system AC."
+    }
+  ],
+  "unavailable": [
+    "Startup energy and temperature dependence are not fitted: short/startup segments are excluded.",
+    "No sensor calibration or independent device/day validation.",
+    "No AEM transfer, proportional scale-up, fault or lifetime parameters."
+  ],
+  "redistribution": "Compact numerical summaries with attribution; full source files remain separately acquired and hash checked."
+}

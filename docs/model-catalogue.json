@@ -1,7 +1,7 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "dea10fb34640decebe514d7baddcf644db06bc4d243b02cf3f9afe1a1635462f",
+  "source": "7b73ff37bf69c059b83713470ffe493a65eb9094698c757081f1ac285a2794a3",
   "topics": {
     "battery": {
       "assumption_review": {
@@ -14727,7 +14727,7 @@
       },
       "evidence": [
         {
-          "applies_to": "dea10fb34640decebe514d7baddcf644db06bc4d243b02cf3f9afe1a1635462f",
+          "applies_to": "7b73ff37bf69c059b83713470ffe493a65eb9094698c757081f1ac285a2794a3",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "estimators/numerical/1",
@@ -18229,7 +18229,7 @@
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/costing.py": "1b9f67858a5263adbc869ae6b88e656a56a659f39ce74340e4cacabe612d768d",
           "methane/dispatch.py": "4941700c38595f224c01925f3fe1ef4dac072528ca8c98dd31cd9cfb9a228a6f",
-          "methane/documentation.py": "c521f2cae0da26bc7defc5e7c30b16dfdbd0e0ee7c2d21063f2667dacb74856c",
+          "methane/documentation.py": "0602a085e6fd7ef29453d211c1af4ccd56ec617306b66e265b8b20ac9a2d6ff9",
           "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
           "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
           "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
@@ -21425,7 +21425,7 @@
       },
       "evidence": [
         {
-          "applies_to": "dea10fb34640decebe514d7baddcf644db06bc4d243b02cf3f9afe1a1635462f",
+          "applies_to": "7b73ff37bf69c059b83713470ffe493a65eb9094698c757081f1ac285a2794a3",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "learning_data/numerical/1",
@@ -24891,7 +24891,7 @@
       },
       "evidence": [
         {
-          "applies_to": "dea10fb34640decebe514d7baddcf644db06bc4d243b02cf3f9afe1a1635462f",
+          "applies_to": "7b73ff37bf69c059b83713470ffe493a65eb9094698c757081f1ac285a2794a3",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "policies/numerical/1",

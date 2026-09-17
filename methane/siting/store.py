@@ -11,6 +11,7 @@ ROOT = Path(
     os.environ.get("DISPATCH_SITES_ROOT", Path(__file__).resolve().parents[2] / "runs" / "sites")
 )
 KINDS = {
+    "literature-experiment",
     "equipment-basis",
     "commissioning-review",
     "equipment-observations",

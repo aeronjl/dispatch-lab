@@ -8,9 +8,11 @@ this software project. Measurements from an eventual installation would permit
 additional validation, but are not expected or a prerequisite for modelling work.
 
 The current observation importer compares an exact recorded design. It must not be
-used to relabel a different published research device as this installation. The
-next modelling increment adds justified reference-equipment mappings and executable
-literature-derived models, retaining their source conditions and transfer uncertainty.
+used to relabel a different published research device as this installation. The separate
+[Reference experiments workspace](literature-models.md) now provides named CSU PEM
+and KIT reactor mappings and executable source-device models. Their conditions,
+uncertainty and missing transfer evidence remain distinct from this exact-design
+qualification workflow.
 
 ## Workflow and claims
 

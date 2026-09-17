@@ -523,6 +523,11 @@ def integration_trace(store, study_id, case_id, hour):
 
 
 def perform(store, operation, key, data):
+    if operation.startswith("equipment-literature-"):
+        from methane.literature.service import perform as literature
+
+        return literature(store, operation, key, data)
+
     if operation.startswith("equipment-qualification"):
         from methane.siting import equipment_qualification as qualification
 

@@ -70,6 +70,9 @@ def bindings():
 
 
 def check_freshness():
+    from methane.literature.service import check_review
+
+    check_review()
     expected = bindings()
     recorded = json.loads(LOADED_FILES.get(REVIEW, b"{}"))
     stale = [k for k in expected if expected[k] != recorded.get(k)]

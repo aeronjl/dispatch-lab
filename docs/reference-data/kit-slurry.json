@@ -1,0 +1,165 @@
+{
+  "version": "reference-dataset/1",
+  "reviewed_at": "2026-09-17",
+  "transfer": "Reference experiment only. No automatic transfer or scaling to the project plant.",
+  "measurement_uncertainty": "No calibrated channel uncertainty supplied by this adapter; residuals do not identify sensor error.",
+  "protocol_status": "Reuses a previously inspected dataset and declared historical selection; not blind or preregistered external validation.",
+  "id": "kit-slurry",
+  "adapter": "kit-slurry/1",
+  "title": "KIT \u00b7 controlled-coolant reactor response",
+  "technology": "Slurry bubble column pilot; figure 8 temperature response",
+  "conditions": "20 bar; H2 feed 20 \u2192 40 m\u00b3(STP)/h, CO2 follows at S=1.05; 30 s ramp approximated by a step at 5 min. Coolant inlet held at 310\u00b0C.",
+  "timing": "Figure-relative minutes, not a wall clock. Original concentration delay is irrelevant to this temperature-only extraction.",
+  "sources": [
+    {
+      "title": "Sauerschell, Bajohr & Kolb (2022), figure 8, p. 7173",
+      "url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930"
+    }
+  ],
+  "raw_sources": [
+    {
+      "channel": "paper",
+      "filename": "reactor-slurry.pdf",
+      "url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+      "sha256": "7cb22a9a2c77225695ea10f261f0a8e13853ab64487939a4f9897f17a06b5733",
+      "retrieved_at": "2026-09-12T22:00:39.930479+00:00",
+      "role": "source paper"
+    },
+    {
+      "channel": "figure",
+      "filename": "reactor-slurry-page8.png",
+      "url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+      "sha256": "b1547940ea6241c31f46d89ab9186d9a438ea6cee3a3be8285157391230e3ddc",
+      "retrieved_at": "2026-09-12",
+      "role": "local rendered figure, not publisher raw data"
+    },
+    {
+      "channel": "digitization",
+      "filename": "reactor-digitization.json",
+      "url": "https://publikationen.bibliothek.kit.edu/1000148877/149046930",
+      "sha256": "ae597ad25e2c76aa7e60d107b51cccb4605db0501a48b2b4b589c4237800ca63",
+      "retrieved_at": "2026-09-12",
+      "role": "Dispatch Lab manual extraction of figure 8"
+    }
+  ],
+  "data": {
+    "rows": [
+      {
+        "index": 0,
+        "x_pixel": 180,
+        "y_pixel": 190,
+        "time_minutes": 0.6575342465753424,
+        "temperature_c": 320.0,
+        "split": "descriptive"
+      },
+      {
+        "index": 1,
+        "x_pixel": 210,
+        "y_pixel": 190,
+        "time_minutes": 3.9452054794520546,
+        "temperature_c": 320.0,
+        "split": "descriptive"
+      },
+      {
+        "index": 2,
+        "x_pixel": 220,
+        "y_pixel": 190,
+        "time_minutes": 5.041095890410959,
+        "temperature_c": 320.0,
+        "split": "descriptive"
+      },
+      {
+        "index": 3,
+        "x_pixel": 242,
+        "y_pixel": 185,
+        "time_minutes": 7.4520547945205475,
+        "temperature_c": 321.7857142857143,
+        "split": "descriptive"
+      },
+      {
+        "index": 4,
+        "x_pixel": 265,
+        "y_pixel": 175,
+        "time_minutes": 9.972602739726028,
+        "temperature_c": 325.3571428571429,
+        "split": "descriptive"
+      },
+      {
+        "index": 5,
+        "x_pixel": 288,
+        "y_pixel": 167,
+        "time_minutes": 12.493150684931507,
+        "temperature_c": 328.2142857142857,
+        "split": "descriptive"
+      },
+      {
+        "index": 6,
+        "x_pixel": 311,
+        "y_pixel": 162,
+        "time_minutes": 15.013698630136986,
+        "temperature_c": 330.0,
+        "split": "descriptive"
+      },
+      {
+        "index": 7,
+        "x_pixel": 357,
+        "y_pixel": 157,
+        "time_minutes": 20.054794520547944,
+        "temperature_c": 331.7857142857143,
+        "split": "descriptive"
+      },
+      {
+        "index": 8,
+        "x_pixel": 403,
+        "y_pixel": 154,
+        "time_minutes": 25.095890410958905,
+        "temperature_c": 332.8571428571429,
+        "split": "descriptive"
+      },
+      {
+        "index": 9,
+        "x_pixel": 449,
+        "y_pixel": 152,
+        "time_minutes": 30.136986301369863,
+        "temperature_c": 333.57142857142856,
+        "split": "descriptive"
+      },
+      {
+        "index": 10,
+        "x_pixel": 494,
+        "y_pixel": 152,
+        "time_minutes": 35.06849315068493,
+        "temperature_c": 333.57142857142856,
+        "split": "descriptive"
+      },
+      {
+        "index": 11,
+        "x_pixel": 537,
+        "y_pixel": 151,
+        "time_minutes": 39.78082191780822,
+        "temperature_c": 333.92857142857144,
+        "split": "descriptive"
+      }
+    ],
+    "mapping": "Manual pixel picks of black reactor-temperature line after inspecting rendered original. Coordinates use 1290x1700 image. Left axis: (174,358)=0min/260C; right/top (539,134)=40min/340C. Gray line is conversion, not temperature. Step set to5min.",
+    "samples": 12
+  },
+  "mapping": [
+    {
+      "channel": "time_minutes",
+      "unit": "min",
+      "meaning": "(x_pixel \u2212 174) \u00d7 40 / 365"
+    },
+    {
+      "channel": "temperature_c",
+      "unit": "\u00b0C",
+      "meaning": "260 + (358 \u2212 y_pixel) \u00d7 80 / 224; black temperature line, not grey conversion line."
+    }
+  ],
+  "unavailable": [
+    "All twelve digitized points enter the descriptive fit; no held-out experimental validation.",
+    "The effective time constant does not identify thermal capacity and heat transfer separately.",
+    "Controlled-coolant response does not identify ambient heat loss, kinetics or methane production."
+  ],
+  "redistribution": "Twelve numerical figure readings and original extraction metadata with attribution; the paper and rendered image are not bundled."
+}

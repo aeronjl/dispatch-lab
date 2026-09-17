@@ -113,6 +113,7 @@ def report_record(store, kind, key, previous_publication_id=None):
         value = inspect(store, key)
         title = value["manifest"]["name"]
     elif kind in (
+        "literature-experiment",
         "recommendation",
         "operating-assessment",
         "equipment-comparison",
@@ -280,6 +281,19 @@ def _bundle(store, publication_id, max_input_bytes):
                         reason="Source redistribution unresolved; restore the original dataset separately",
                     )
                 )
+
+    if publication["kind"] == "literature-experiment":
+        experiment = add("literature-experiment", publication["source_id"])
+        raw(experiment["capsule_raw_sha256"])
+        for source in experiment["dataset"]["raw_sources"]:
+            omissions.append(
+                dict(
+                    kind="original reference source",
+                    id=source["sha256"],
+                    reason="Compact observations included; reconstruct preprocessing only after restoring the identified original bytes",
+                    url=source["url"],
+                )
+            )
 
     if publication["kind"] == "evaluation":
         learning("evaluation", publication["source_id"])
@@ -566,6 +580,10 @@ def equipment_content(value):
                 + esc(b["rationale"])
                 + "</p>"
             )
+    if value.get("version") == "literature-experiment/1":
+        from methane.literature.service import report_html
+
+        out += report_html(value)
     if value.get("version") == "equipment-qualification/1":
         out += (
             "<h2>Scoped equipment assessment</h2><p>"
