@@ -22,13 +22,21 @@ are optional backlog unless explicitly reprioritised.
 |---|---|---|---|
 | **P1** | Practical agent operation | Operate saved project inputs including utilities; continue committed state; recover interrupted sessions; numerically replay saved requests with differences reported. Retain the six bounded process actions and the reference service executive. | Complete — see the P1 acceptance record below |
 | **P2** | Expert UX consolidation | A coherent Site → Build → Operate → Investigate → Compare → Write up workflow, progressive disclosure, reliable context/return navigation, and real participant walkthroughs with misunderstandings recorded and addressed. | Implementation delivered; real participant walkthrough and resulting fixes remain open |
-| **P3** | Installation and durability | Fresh installation and guided workflow rehearsal, plus an actual off-machine export/backup/restore drill at an agreed destination. | After P2; storage destination needed for the off-machine drill |
+| **P3** | Desktop distribution and durability | Installable Mac and Windows editions; durable projects; experiment lifecycle; integrated MCP connection; updates, offline work and recovery; clean-machine and off-machine restore qualification. | Planned in six fixed increments; implementation not started; see the desktop release plan |
 
 Return after each increment with these same IDs, their status and outstanding gate.
 A discovered defect can require correction inside an increment; a useful modelling
 idea does not automatically become a new step before P2. Real plant observations
 are not a prerequisite for completion of this research-based software platform.
 P1's contract is [practical agent operation](agent-control.md).
+
+The user subsequently chose **Mac and Windows together** for end-user distribution.
+The [P3 desktop release plan](desktop-release.md) defines **P3.1–P3.6** and their
+completion gates. This is an explicit expansion of P3's installation work, not a
+new modelling tranche. P2's real participant review remains open and can feed the
+desktop walkthrough; it must not be replaced by an automated rehearsal. Return
+after each desktop increment with these fixed IDs and honest platform-specific
+verification. Containers and additional operating systems remain optional backlog.
 
 ### P1 acceptance · 18 September 2026
 
@@ -108,8 +116,9 @@ Verification is scoped to this UX increment, not a new research programme:
 **P2 is not labelled fully complete:** no real participant has yet completed the
 [prepared walkthrough](ux-walkthrough.md). Its misunderstandings and any resulting
 changes must be recorded before closing that gate. P3 has not started. The next
-step is this participant review, followed by P3's fresh-install and off-machine
-durability rehearsal at an agreed destination.
+step is this participant review and the separately agreed P3 desktop plan. P3 adds
+installable Mac and Windows editions and retains the fresh-install and off-machine
+durability gates; it has not been implemented by the P2 work.
 
 ## Delivery history
 
