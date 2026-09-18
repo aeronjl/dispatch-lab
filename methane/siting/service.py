@@ -385,6 +385,7 @@ def perform(request, store, current_config):
             request.id,
             writeup=d.get("writeup"),
             previous_publication_id=d.get("previous_publication_id"),
+            expected_record_sha256=d.get("expected_record_sha256"),
         )
     if request.operation == "export":
         return reporting.bundle(store, request.id)

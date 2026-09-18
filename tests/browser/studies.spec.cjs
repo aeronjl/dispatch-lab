@@ -1,8 +1,9 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
-async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('tomorrow');}
+async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('tomorrow');}
 
 test('study write-up traces a metric and returns to its originating hour and focus',async({page})=>{
- const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Step forward',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('tomorrow');
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Step forward',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('tomorrow');
  await page.locator('.st-article button[data-case]').first().click();await page.locator('[data-trace=methane_kg]').first().click();await expect(page.locator('.st-panel-body')).toContainText('Terminal battery credit is excluded');await expect(page.locator('.st-panel-body')).toContainText('original_decision_cost_version');
  await page.keyboard.press('Escape');await page.keyboard.press('Escape');await expect(page.locator('.st-workspace')).toBeHidden();await expect(page.locator('[data-m=scrubber]')).toHaveValue('1');await expect(page.locator('[data-do=studies]')).toBeFocused();expect(errors).toEqual([]);
 });
@@ -18,7 +19,7 @@ test('recorded study case opens the requested controller and returns to the same
 });
 
 test('Model links to Studies and returns to the essay without changing its controls',async({page})=>{
- await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('.m-utility [data-model-topic=battery]').click();await expect(page.locator('.d-workspace')).toHaveAttribute('data-pending','false');await page.locator('[data-d=studies]').click();await expect(page.locator('.st-workspace')).toBeVisible();await expect(page.locator('.st-article h1')).toContainText('tomorrow');await page.locator('[data-st=back]').click();await expect(page.locator('.d-workspace')).toBeVisible();await expect(page.locator('[data-d=studies]')).toBeFocused();
+ await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'.m-utility [data-model-topic=battery]');await page.locator('.m-utility [data-model-topic=battery]').click();await expect(page.locator('.d-workspace')).toHaveAttribute('data-pending','false');await page.locator('[data-d=studies]').click();await expect(page.locator('.st-workspace')).toBeVisible();await expect(page.locator('.st-article h1')).toContainText('tomorrow');await page.locator('[data-st=back]').click();await expect(page.locator('.d-workspace')).toBeVisible();await expect(page.locator('[data-d=studies]')).toBeFocused();
 });
 
 test('study index, configuration and keyboard charts remain usable on a narrow screen',async({page})=>{

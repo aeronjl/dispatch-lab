@@ -165,11 +165,24 @@ def draft(store, kind, key, publication_id=None):
         ),
         next_questions="",
     )
-    return dict(kind=kind, source_id=key, previous_publication_id=publication_id, writeup=writeup)
+    return dict(
+        kind=kind,
+        source_id=key,
+        previous_publication_id=publication_id,
+        record_sha256=digest(value),
+        writeup=writeup,
+    )
 
 
-def publish(store, kind, key, *, writeup=None, previous_publication_id=None):
+def publish(
+    store, kind, key, *, writeup=None, previous_publication_id=None, expected_record_sha256=None
+):
     value, title = report_record(store, kind, key, previous_publication_id)
+    if expected_record_sha256 is not None and expected_record_sha256 != digest(value):
+        raise ValueError(
+            "The recorded results changed while this write-up was open. "
+            "Reopen the write-up and review the current results; your browser draft is retained."
+        )
     if writeup is not None:
         if set(writeup) != {"title", *REPORT_SECTIONS} or not all(
             isinstance(v, str) and len(v) <= 50000 for v in writeup.values()

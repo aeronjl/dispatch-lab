@@ -1,6 +1,6 @@
 # Practical agent operation · P1
 
-Open **Simulation menu → Agent control**. A local operator and an explicitly
+Open **Simulation menu → Operate → Agent control**. A local operator and an explicitly
 granted MCP agent share the same observation → preview → advance → receipt loop.
 This operates a simulation, with six bounded hourly process requests. Repairs,
 service scheduling and protected recovery tests remain with the reference executive.

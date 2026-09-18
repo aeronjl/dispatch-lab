@@ -1,7 +1,8 @@
+const {revealOperation}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 const execFile=require('node:util').promisify(require('node:child_process').execFile);
-async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=agent-control]').click();await expect(page.locator('.ac-workspace')).toBeVisible();}
+async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();if(!await page.locator('[data-do=agent-control]').isVisible())await revealOperation(page);await page.locator('[data-do=agent-control]').click();await expect(page.locator('.ac-workspace')).toBeVisible();}
 async function start(page,hours=2){await open(page);await page.locator('[data-ac=controller]').selectOption('Greedy');await page.locator('[data-ac=hours]').fill(String(hours));await page.locator('[data-ac=create]').click();await expect(page.locator('[data-ac-state]')).toContainText('waiting',{timeout:30000});}
 test('operator preview, agent delivery, revoke, immutable recording and return',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await start(page);
@@ -18,9 +19,9 @@ test('operator preview, agent delivery, revoke, immutable recording and return',
  await page.locator('[data-ac-tab=Trace]').click();await expect(page.locator('.ac-trace')).toContainText('H1 · agent');await expect(page.locator('.ac-trace')).toContainText('balance checks passed');expect(await page.locator('.ac-trace script').count()).toBe(0);
  fs.mkdirSync('build/agent-control',{recursive:true});await page.screenshot({path:'build/agent-control/desktop.png'});
  await page.locator('[data-ac=close]').click();await expect(page.locator('[data-do=agent-control]')).toBeFocused();await expect(page.locator('.m-plant')).toBeVisible();
- await page.locator('[data-do=agent-control]').click();await expect(page.locator('[data-ac-state]')).toContainText('complete');await page.locator('[data-ac=recording]').click();
+ if(!await page.locator('[data-do=agent-control]').isVisible())await revealOperation(page);await page.locator('[data-do=agent-control]').click();await expect(page.locator('[data-ac-state]')).toContainText('complete');await page.locator('[data-ac=recording]').click();
  await expect(page.locator('.ac-workspace')).toBeHidden();await expect(page.locator('[data-m=scrubber]')).toHaveAttribute('max','2',{timeout:30000});
- await page.getByRole('button',{name:'Step forward',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=control]').click();await page.locator('[data-cv-tab=Evidence]').click();await expect(page.locator('.cv-evidence')).toContainText('External control · operator');
+ await page.getByRole('button',{name:'Step forward',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();if(!await page.locator('[data-do=control]').isVisible())await revealOperation(page);await page.locator('[data-do=control]').click();await page.locator('[data-cv-tab=Evidence]').click();await expect(page.locator('.cv-evidence')).toContainText('External control · operator');
  expect(errors).toEqual([]);
 });
 test('explicit requests invalidate previews; pause, stop and narrow keyboard access',async({page})=>{
@@ -43,7 +44,7 @@ test('checkpoint recovery, continuation and recorded-request replay preserve the
  await page.locator('[data-ac=open-replay]').click();await expect(page.locator('.ac-workspace')).toBeHidden();await expect(page.locator('[data-m=scrubber]')).toHaveAttribute('max','3',{timeout:30000});
 });
 test('a saved project is selectable with explicitly synthetic weather',async({page})=>{
- await page.goto('/');await page.locator('.m-plant').waitFor();await page.locator('[data-do=menu]').click();await page.locator('[data-do=project]').click();await expect(page.locator('.pj-sites button').first()).toBeVisible();await page.locator('.pj-sites button').first().click();await page.locator('[data-pj=create]').click();await expect(page.locator('.pj-build')).toBeVisible();await page.locator('[data-pj=close]').click();await page.locator('[data-do=agent-control]').click();
+ await page.goto('/');await page.locator('.m-plant').waitFor();await page.locator('[data-do=menu]').click();await page.locator('[data-do=project]').click();await expect(page.locator('.pj-sites button').first()).toBeVisible();await page.locator('.pj-sites button').first().click();await page.locator('[data-pj=create]').click();await expect(page.locator('.pj-build')).toBeVisible();await page.locator('[data-pj=close]').click();if(!await page.locator('[data-do=agent-control]').isVisible())await revealOperation(page);await page.locator('[data-do=agent-control]').click();
  await page.locator('[data-ac=source]').selectOption('project');await expect(page.locator('[data-ac=project] option')).not.toHaveCount(0);await page.locator('[data-ac=controller]').selectOption('Greedy');await page.locator('[data-ac=hours]').fill('1');await expect(page.locator('[data-ac=environment]')).toHaveValue('synthetic');await page.locator('[data-ac=create]').click();await expect(page.locator('[data-ac-state]')).toContainText('waiting',{timeout:30000});
  await page.locator('[data-ac=stop]').click();await expect(page.locator('[data-ac=recover]')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('[data-do=agent-control]')).toBeFocused();
 });

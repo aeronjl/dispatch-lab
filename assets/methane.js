@@ -12,7 +12,7 @@ function methaneFrame(result, elapsed, controller) {
 function mountMethane(element, props, watch, trigger) {
     let result = decodeMethanePayload(props.value), costs = decodeMethanePayload(props.economics), selected = null, section = 'Now';
     let controller = 'MPC · methane', clock, pendingKey = null, answer = null, guideIndex = 0, generation = 0;
-    let agentControl, agentOrigin, investigation, investigationOrigin, controlView, controlOrigin, solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
+    let workflow, agentControl, agentOrigin, investigation, investigationOrigin, controlView, controlOrigin, solar, model, taxonomy, studies, sites, project, fieldScene, serviceAlternatives, serviceOrigin=null, renderedKey = "", costRevision = 0, detailRequest = null, utility = null;
     const instanceId = crypto.randomUUID();
     const root = element.querySelector('.methane-console');
     const $ = selector => root.querySelector(selector);
@@ -48,15 +48,15 @@ function mountMethane(element, props, watch, trigger) {
         render();
         if(focus)(origin?.isConnected?origin:($(`[data-component="${previous}"]`)||$('[data-do="menu"]'))).focus({preventScroll:true});
     }
-    function openUtility(panel='run', origin=null) {
+    function openUtility(panel='work', origin=null) {
         if(investigation?.isSuspended()){controlView?.close(false);investigation.resume();return;}
         controlView?.close(false);
-        closePanels(false);serviceOrigin=origin;utility=panel;root.dataset.chrome='visible';
+        clock.pause();closePanels(false);serviceOrigin=origin;utility=panel;root.dataset.chrome='visible';
         $('.m-utility').hidden=false;
         $('[data-do="menu"]').setAttribute('aria-expanded','true');
         $$('[data-utility-section]').forEach(node=>node.hidden=node.dataset.utilitySection!==panel);
         $$('[data-panel]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.panel===panel)));
-        render();$(`[data-panel="${panel}"]`).focus({preventScroll:true});
+        workflow?.sync();render();const target=$(`[data-panel="${panel}"]`);(target?.getClientRects().length?target:$('[data-panel=work]')).focus({preventScroll:true});
     }
     function hideControls() {
         if(investigation?.isSuspended()){controlView?.close(false);investigation.resume();return;}
@@ -316,6 +316,8 @@ function mountMethane(element, props, watch, trigger) {
         $('[data-do="project"]').hidden=!!result.offline_mode;
         $('[data-do="study-origin"]').hidden=!result.study_origin||!!result.offline_mode;
         if(result.study_origin){clock.seek(result.study_origin.hour+1);selectComponent(result.study_origin.component);section='Why';inspect(current());}
+        workflow?.sync();
+        if(result.entry_workspace)investigation?.open(selected||'battery',null,{tab:result.entry_workspace==='write-up'?'Notes':'Period'});
     }
     fieldScene=typeof createFieldScene==='function'?createFieldScene({root,getResult:()=>result,getController:()=>controller,
         inspect:origin=>{clock.pause();openUtility('services',origin);}}):null;
@@ -351,6 +353,7 @@ function mountMethane(element, props, watch, trigger) {
     studies=typeof createStudiesWorkspace==='function'?createStudiesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     sites=typeof createSitesWorkspace==='function'?createSitesWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),openModel:(topic='siting',context='Current model')=>model?.open(topic,context),replay:request=>trigger('retry',{...request,run_id:result.run_id})}):null;
     project=typeof createProjectWorkspace==='function'?createProjectWorkspace({root,getResult:()=>result,pause:()=>clock.pause(),replay:request=>trigger('retry',{...request,run_id:result.run_id}),openModel:topic=>model?.open(topic,'Current model'),openSites:(id,page)=>sites?.openSite(id,page),openStudy:id=>sites?.openStudy(id),openTaxonomy:()=>taxonomy?.open('services'),openSetup:()=>trigger('edit')}):null;
+    workflow=typeof createWorkflow==='function'?createWorkflow({root,getResult:()=>result,getFrame:current}):null;
     root.addEventListener('revise-plant-design',()=>{solar?.close();project?.open({study:result.study_origin?.edition_id,component:'solar'});});
     root.addEventListener('open-studies',()=>studies?.open());
     root.addEventListener('click',event=>{
@@ -366,6 +369,17 @@ function mountMethane(element, props, watch, trigger) {
         if(event.target.closest('.x-workspace'))return;
         if(event.target.closest('.d-workspace'))return;
         if(event.target.closest('.s-workspace'))return;
+        const work=event.target.closest('[data-work]')?.dataset.work;
+        if(work){
+            if(work==='watch')closePanels();
+            if(work==='build'||work==='operate')project?.open({mode:work});
+            if(work==='notes')investigation?.open(selected||'battery',event.target.closest('button'),{tab:'Notes'});
+            if(work==='alternative')investigation?.open(selected||'battery',event.target.closest('button'),{tab:'Evidence'});
+            if(work==='designs')sites?.openPage('compare');
+            if(work==='reports')sites?.openPage('reports');
+            if(work==='protocols')studies?.open();
+            return;
+        }
         const component=event.target.closest('[data-component]'); if(component){selectComponent(component.dataset.component);return;}
         const mobile=event.target.closest('[data-mobile-component]');if(mobile){selectComponent(mobile.dataset.mobileComponent);if(selected)$(`[data-component="${selected}"]`).scrollIntoView({block:'nearest',inline:'center'});return;}
         const eventButton=event.target.closest('[data-hour]');if(eventButton){invalidate();clock.seek(Number(eventButton.dataset.hour)+1);selectComponent(eventButton.dataset.eventComponent);return;}
@@ -373,9 +387,9 @@ function mountMethane(element, props, watch, trigger) {
         const panel=event.target.closest('[data-panel]');if(panel){openUtility(panel.dataset.panel);return;}
         const tab=event.target.closest('[data-section]');if(tab){section=tab.dataset.section;inspect(current());return;}
         const action=event.target.closest('[data-do]')?.dataset.do;
-        if(action==='control'||action==='watch-control')controlView?.open(selected||'battery',event.target);
-        if(action==='agent-control')agentControl?.open(event.target);
-        if(action==='investigate')investigation?.open(selected||'battery',event.target);
+        if(action==='control'||action==='watch-control')controlView?.open(selected||'battery',event.target.closest('button'));
+        if(action==='agent-control')agentControl?.open(event.target.closest('button'));
+        if(action==='investigate')investigation?.open(selected||'battery',event.target.closest('button'));
         if(action==='play')clock.snapshot().playing?clock.pause():clock.play();
         if(action==='back'||action==='next'){invalidate();clock.step(action==='next'?1:-1);}
         if(action==='reset'){invalidate();clock.reset();}
@@ -384,7 +398,7 @@ function mountMethane(element, props, watch, trigger) {
         if(action==='hide-ui')hideControls();
         if(action==='studies')studies?.open();
         if(action==='sites')sites?.open();
-        if(action==='project')project?.open();
+        if(action==='project')project?.open({mode:event.target.closest('[data-work-mode]')?.dataset.workMode});
         if(action==='project-revise')project?.open({study:result.study_origin?.edition_id,component:selected});
         if(action==='study-origin'){if(result.study_origin?.kind==='site-study')sites?.openStudy(result.study_origin.edition_id);else studies?.open(result.study_origin?.edition_id,result.study_origin?.report_id);}
         if(action==='timeline'){

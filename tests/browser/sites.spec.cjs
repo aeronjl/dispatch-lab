@@ -1,9 +1,10 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 test('Sites preserves the simulation while saving a sourced regional design',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await page.locator('.m-plant').waitFor();
  const original=await page.locator('.m-plant').innerHTML();
- await page.locator('[data-do=menu]').click();await page.locator('[data-do=sites]').click();
+ await page.locator('[data-do=menu]').click();await revealTool(page,'[data-do=sites]');await page.locator('[data-do=sites]').click();
  await expect(page.locator('.si-workspace')).toBeVisible();
  await expect(page.locator('.si-site-list')).toContainText('London regional anchor');
  await expect(page.locator('.si-marker')).toHaveCount(3);
@@ -20,7 +21,7 @@ test('Sites preserves the simulation while saving a sourced regional design',asy
  await expect(page.locator('.si-workspace')).toBeHidden();
  expect(await page.locator('.m-plant').innerHTML()).toBe(original);
  await expect(page.locator('[data-do=sites]')).toBeFocused();
- await page.locator('[data-do=sites]').click();
+ await revealTool(page,'[data-do=sites]');await page.locator('[data-do=sites]').click();
  await page.locator('.si-site-list button').filter({hasText:'London regional anchor'}).click();
  await page.setViewportSize({width:390,height:844});
  await expect(page.locator('.si-detail h1')).toBeVisible();

@@ -1,6 +1,7 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 test.beforeEach(async()=>{test.skip(!process.env.DISPATCH_FIELD_STUDIES,'Requires an executed multi-arm study fixture.');});
-async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('restore production');}
+async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toContainText('restore production');}
 test('field write-up retains separate packages, service accounting and original calculation identities',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await open(page);
  await expect(page.locator('.st-article')).toContainText('4/4 complete cases');await expect(page.locator('.st-article')).toContainText('Rover-assisted service');await expect(page.locator('.st-article')).toContainText('Δ crew');

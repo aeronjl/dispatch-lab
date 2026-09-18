@@ -31,20 +31,41 @@ def test_template_new_edition_and_report_revisions_preserve_inputs_and_results(t
     assert production.state(store, new["id"])["status"] == "ready"
     assert new["template"]["record"]["original_source"] == original["source"]
     before = production.inspect(store, new["id"])
-    writeup = reporting.draft(store, "study", new["id"])["writeup"]
+    initial_draft = reporting.draft(store, "study", new["id"])
+    writeup = initial_draft["writeup"]
     assert writeup["method"] == "Match boundaries"
     writeup["findings"] = "<script>untrusted narrative</script>"
-    first = reporting.publish(store, "study", new["id"], writeup=writeup)
+    first = reporting.publish(
+        store,
+        "study",
+        new["id"],
+        writeup=writeup,
+        expected_record_sha256=initial_draft["record_sha256"],
+    )
     frozen = store.get("publication", first["publication_id"])
     production.execute(store, new["id"])
     after = production.inspect(store, new["id"])
+    with pytest.raises(ValueError, match="results changed"):
+        reporting.publish(
+            store,
+            "study",
+            new["id"],
+            writeup=writeup,
+            expected_record_sha256=initial_draft["record_sha256"],
+        )
     assert after["cases"][0]["completed_hours"] == 2
     assert workflow.runtime_estimate(after)["status"] == "complete"
     assert all(p["elapsed_seconds"] > 0 for p in after["cases"][0]["periods"])
-    revised = reporting.draft(store, "study", new["id"], first["publication_id"])["writeup"]
+    frozen_draft = reporting.draft(store, "study", new["id"], first["publication_id"])
+    revised = frozen_draft["writeup"]
     revised["findings"] = "An incomplete snapshot remains incomplete"
     second = reporting.publish(
-        store, "study", new["id"], writeup=revised, previous_publication_id=first["publication_id"]
+        store,
+        "study",
+        new["id"],
+        writeup=revised,
+        previous_publication_id=first["publication_id"],
+        expected_record_sha256=frozen_draft["record_sha256"],
     )
     assert second["publication_id"] != first["publication_id"]
     saved = store.get("publication", second["publication_id"])

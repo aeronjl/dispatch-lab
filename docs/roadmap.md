@@ -21,7 +21,7 @@ are optional backlog unless explicitly reprioritised.
 | ID | Increment | Completion gate | Status |
 |---|---|---|---|
 | **P1** | Practical agent operation | Operate saved project inputs including utilities; continue committed state; recover interrupted sessions; numerically replay saved requests with differences reported. Retain the six bounded process actions and the reference service executive. | Complete — see the P1 acceptance record below |
-| **P2** | Expert UX consolidation | A coherent Site → Build → Operate → Investigate → Compare → Write up workflow, progressive disclosure, reliable context/return navigation, and real participant walkthroughs with misunderstandings recorded and addressed. | Next; not started |
+| **P2** | Expert UX consolidation | A coherent Site → Build → Operate → Investigate → Compare → Write up workflow, progressive disclosure, reliable context/return navigation, and real participant walkthroughs with misunderstandings recorded and addressed. | Implementation delivered; real participant walkthrough and resulting fixes remain open |
 | **P3** | Installation and durability | Fresh installation and guided workflow rehearsal, plus an actual off-machine export/backup/restore drill at an agreed destination. | After P2; storage destination needed for the off-machine drill |
 
 Return after each increment with these same IDs, their status and outstanding gate.
@@ -59,7 +59,57 @@ The existing controller, continuation and protocol checks also passed.
   plant validation. Numerical replay preserves requests, not external agent inference.
 
 Local test artifacts are under `build/agent-control/`; old evidence is unchanged.
-P2 and P3 remain the next increments. No modelling extension is inserted ahead of them.
+P2 implementation and its remaining participant gate are recorded below. P3 remains
+installation and durability. No modelling extension is inserted ahead of them.
+
+### P2 implementation · 18 September 2026
+
+The [workflow contract](ux-workflow.md) describes the delivered experience. Open the
+simulation menu for Site, Build, Operate, Investigate, Compare and Write up.
+Specialist tools remain available under searchable **All tools**. The default
+simulation, plant art, solar art and their labels are preserved.
+
+Delivered: clear comparison choices; retained project run forms; named nested
+returns; direct recorded-block investigation/write-up entry; one investigation
+draft across period, alternatives and writing; retained study writing; explicit
+saved-export state; and rejection of publication against results that changed
+while the editor was open. A late draft-restore response cannot replace a newer
+saved edition. No model or controller objective was changed.
+
+Verification is scoped to this UX increment, not a new research programme:
+
+- **67 focused Python checks** and **101 JavaScript checks** passed, covering
+  project inputs, publication identity, source bundles, model documentation,
+  saved fixtures and offline preservation. The entire Python physics suite was
+  not repeated for this presentation/transport change.
+- **68 distinct browser cases passed across the scoped runs.** Verification covers
+  the six-stage journey, nested context and focus,
+  search, drafts, publication, stale responses, keyboard/narrow layouts,
+  reduced motion, bounded agent operation, study/learning routes and offline
+  reading. Initial failures and corrected reruns are retained under `build/ux/`.
+  The first sweep found a card-child focus bug, an updated-test loop error and
+  the intentional study-header screenshot change. A later optional learning
+  check needed its navigation locator scoped to the header. Each was corrected
+  and rerun. Five environment-specific cases were not exercised: active-batch
+  model latency, new-run model/component lineage, first-entry project startup and
+  a saved-service taxonomy snapshot. Offline playback and model reading were
+  explicitly exercised with the network disabled.
+- Original plant, solar and Model screenshots passed unchanged. The study header
+  reference was visually reviewed and updated only for the return wording/layout;
+  new desktop/mobile workflow references were reviewed.
+- Reference-browser measurements: common project edits **108.8 ms p95** over
+  20 edits; investigation rendering **1.9 ms p95** over 17 renders. These measurements
+  exclude an active batch and do not describe optimizer latency.
+- A new two-hour portable smoke bundle passed integrity and **116 independent
+  balance checks**. This was an offline software rehearsal, not an off-machine
+  backup/restore drill. Locked installs, lint/format, generated documentation,
+  catalogue and taxonomy checks passed.
+
+**P2 is not labelled fully complete:** no real participant has yet completed the
+[prepared walkthrough](ux-walkthrough.md). Its misunderstandings and any resulting
+changes must be recorded before closing that gate. P3 has not started. The next
+step is this participant review, followed by P3's fresh-install and off-machine
+durability rehearsal at an agreed destination.
 
 ## Delivery history
 

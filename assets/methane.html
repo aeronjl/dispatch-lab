@@ -135,10 +135,31 @@
  <text x="30" y="535" class="cost-annotation m-cost" data-svg-cost="site"></text><text x="1250" y="535" text-anchor="end" class="component-caption">HOURLY STATE / SELECT TO INSPECT</text>
  </svg></div>
  <aside class="m-utility" hidden role="dialog" aria-label="Simulation menu">
-  <div class="m-panel-head"><h2>Simulation</h2><button data-do="dismiss" aria-label="Close simulation menu" title="Close">×</button></div>
-  <nav class="m-utility-tabs" aria-label="Simulation information"><button data-panel="run" aria-pressed="true">Run</button><button data-panel="events" aria-pressed="false">Events</button><button data-panel="compare" aria-pressed="false">Compare</button><button data-panel="services" aria-pressed="false">Site services</button><button data-panel="truth" aria-pressed="false">Truth</button></nav>
+  <div class="m-panel-head"><h2>Workspace</h2><button data-do="dismiss" aria-label="Close simulation menu" title="Close">×</button></div>
+  <nav class="m-utility-tabs" aria-label="Simulation information"><button data-panel="work" aria-pressed="true">Work</button><button data-panel="run" aria-pressed="false">Playback</button><button data-panel="events" aria-pressed="false">Events</button><button data-panel="services" aria-pressed="false">Site services</button><button data-panel="truth" aria-pressed="false">Truth</button></nav>
   <div class="m-utility-body">
-   <section data-utility-section="run">
+   <section data-utility-section="work">
+    <p class="wf-context" data-work-context></p>
+    <nav class="wf-journey" aria-label="Plant workflow">
+     <button data-do="project" data-work-mode="site" aria-label="Open plant project"><span>01</span><strong>Site</strong><small>Choose a location</small></button>
+     <button data-work="build"><span>02</span><strong>Build</strong><small>Configure your saved design</small></button>
+     <button data-panel="operate"><span>03</span><strong>Operate</strong><small>Run a design or watch this recording</small></button>
+     <button data-do="investigate" aria-label="Investigate operation ↗" hidden><span>04</span><strong>Investigate</strong><small>Follow a period and its decisions</small></button>
+     <button data-panel="compare"><span>05</span><strong>Compare</strong><small>Choose the question to test</small></button>
+     <button data-panel="write"><span>06</span><strong>Write up</strong><small>Explain findings with their evidence</small></button>
+    </nav>
+    <p class="wf-offline" hidden>Offline recording. Restore the application to edit designs or run new calculations.</p>
+   </section>
+   <section data-utility-section="operate" hidden>
+    <h3>How do you want to operate?</h3>
+    <div class="wf-options"><button data-work="watch">Watch this recording<small>Play saved decisions. No calculation runs.</small></button><button data-work="operate">Run a saved project<small>Choose weather and a management objective.</small></button><button data-do="control" hidden>Control view ↗<small>Inspect the plan recorded at this hour.</small></button><button data-do="agent-control" hidden>Agent control ↗<small>Preview and apply new bounded requests.</small></button></div>
+   </section>
+   <section data-utility-section="write" hidden>
+    <h3>What are you writing about?</h3>
+    <div class="wf-options"><button data-work="notes">This operating period<small>Continue investigation notes and pinned decisions.</small></button><button data-work="reports">A site or design study<small>Open its results, then edit a report edition.</small></button></div>
+    <p>Interpretations stay separate from numerical results. Exports use the last saved edition.</p>
+   </section>
+   <section data-utility-section="run" hidden>
     <div class="m-mobile-select" aria-label="Select equipment"></div>
     <div class="m-run-context"><time data-m="time"></time><p data-m="source" class="m-muted"></p></div>
     <label class="m-policy">Controller<select data-m="controller" aria-label="Controller"></select></label>
@@ -148,11 +169,22 @@
     <p class="m-menu-help">Space to play · ← → to step<br>R to reset · H to hide controls · Esc to close</p>
    </section>
    <section data-utility-section="events" hidden><div class="m-event-head"><span data-m="diagnosis"></span></div><div class="m-events" aria-label="Simulation events"></div><button data-do="guide">GUIDED WALKTHROUGH →</button></section>
-   <section data-utility-section="compare" class="m-comparison" hidden><p>Through the selected hour</p><div data-m="comparison"></div></section>
+   <section data-utility-section="compare" class="m-comparison" hidden>
+    <h3>What do you want to compare?</h3><div class="wf-options"><button data-work="alternative">An operating decision<small>Predictions from the same original information.</small></button><button data-work="designs">Sites or plant designs<small>Select saved study results and compare their boundaries.</small></button><button data-work="protocols">Policies or uncertainty<small>Use a repeatable experiment template.</small></button></div>
+    <details class="wf-disclosure"><summary>Recorded controllers · through this hour</summary><p>Actual simulated outcomes through the same playback boundary. These are separate from a predicted alternative.</p><div data-m="comparison"></div></details>
+   </section>
    <section data-utility-section="services" class="m-services" hidden><div data-service-alternatives><button data-sa="open" hidden aria-expanded="false">Compare a service alternative</button><section data-sa="workspace" hidden aria-label="Service decision comparison"></section></div><div data-m="services"></div></section>
    <section data-utility-section="truth" class="m-truth" hidden><p>Retrospective analysis. These injected conditions were withheld from the controller.</p><pre data-m="truth"></pre></section>
+   <section data-utility-section="tools" hidden>
+    <label class="wf-search">Find a tool<input type="search" data-work-search placeholder="Weather, learning, sources…"></label>
+    <nav class="m-utility-links" aria-label="All tools">
+     <section data-work-group><h3>Design &amp; experiments</h3><button data-do="sites" data-keywords="weather land evidence logistics source environment learning policies dataset training reports" hidden>Sites ↗<small>Land, supplies, weather, studies and learning</small></button><button data-do="studies" data-keywords="uncertainty policy experiments repeat templates" hidden>Studies ↗<small>Repeatable policy and uncertainty experiments</small></button><button data-do="setup" data-keywords="scratch experiment configuration fault">Experiment setup ↗<small>Standalone scratch experiment; separate from your project</small></button></section>
+     <section data-work-group><h3>Understand &amp; preserve</h3><button data-model-topic="battery" data-keywords="documentation assumptions mechanics equations sources">Model ↗<small>Mechanics, assumptions and learning examples</small></button><button data-explore="site" data-keywords="taxonomy components hardware robots catalogue">Explore plant ↗<small>Component families and capability boundaries</small></button><button data-do="analysis" data-keywords="archives export import restore costs reports batch">Analysis &amp; archives ↗<small>Detailed results, repricing and saved recordings</small></button></section>
+    </nav><p data-work-empty hidden>No matching tool. Try “weather”, “costs” or “sources”.</p>
+   </section>
   </div>
-  <nav class="m-utility-links" aria-label="Workspaces"><button data-do="investigate" hidden>Investigate operation ↗</button><button data-do="control" hidden>Control view ↗</button><button data-do="agent-control" hidden>Agent control ↗</button><button data-do="project" aria-label="Open plant project">Site · Build · Operate ↗</button><button data-do="setup">Experiment setup ↗</button><button data-do="analysis">Analysis & archives ↗</button><button data-model-topic="battery">Model ↗</button><button data-explore="site">Explore plant ↗</button><button data-do="studies">Studies ↗</button><button data-do="sites">Sites ↗</button><button data-do="study-origin" class="st-run-origin" hidden>Return to study ↗</button><button data-do="hide-ui">Hide controls</button></nav>
+  <div class="wf-footer"><button data-panel="tools">All tools</button><button data-do="study-origin" class="st-run-origin" hidden>Return to study ↗</button><button data-do="hide-ui">Hide controls</button></div>
+
  </aside>
  <aside class="m-inspector" hidden role="dialog" aria-label="Component inspector"><div class="m-inspector-head"><div><span class="m-eyebrow" data-m="asset"></span><h3 data-m="selected"></h3></div><button data-do="close" aria-label="Close component inspector" title="Close">×</button></div><nav class="m-inspector-tabs" aria-label="Inspector sections"></nav><div class="m-inspector-content" aria-live="polite"></div><button class="cv-inspector-link" data-do="investigate" hidden>Investigate this period ↗</button><button class="cv-inspector-link" data-do="watch-control" hidden>Watch this decision ↗</button></aside>
  <div class="m-dock">

@@ -1,0 +1,21 @@
+/* Task navigation is visible only inside the revealed menu. */
+.m-utility .m-utility-body{padding-top:12px}
+.wf-context{color:#b9a78b;overflow-wrap:anywhere;font-size:10px!important;line-height:1.6!important;margin:0 0 16px!important}
+.wf-journey{display:grid;gap:0}
+.wf-journey button{display:grid;grid-template-columns:32px 1fr;text-align:left;padding:13px 6px;background:none;border:0;border-top:1px solid #54432d;line-height:1.5}
+.wf-journey button>span{grid-row:1/3;font-size:10px;color:#aa8d66;padding-top:4px}
+.wf-journey strong{font-size:16px;font-weight:400}
+.wf-journey small{font-size:10px;color:#c6b294}
+.wf-journey button:hover :is(span,small){color:#45311a}
+.wf-options{display:grid;gap:10px;margin:18px 0}
+.wf-options button{text-align:left;line-height:1.6;padding:14px}
+.wf-options small,.m-utility-links small{display:block;color:#b9a78b;font-size:10px;margin-top:5px;line-height:1.6}
+.wf-options button:hover small,.m-utility-links button:hover small{color:#45311a}
+.wf-footer{border-top:1px solid #58452e;display:flex;gap:4px;padding:10px;flex:none;flex-wrap:wrap}
+.wf-footer button{border:0;font-size:10px}.wf-footer button:last-child{margin-left:auto}
+.m-utility-links{border:0;padding:0}.m-utility-links h3{font-size:10px;color:#b9a78b;font-weight:400;margin-top:24px}
+.m-utility-links button{display:block;width:100%;padding:12px 8px}
+.wf-search{display:grid;gap:8px;font-size:11px}.wf-search input{font:inherit;color:#ead8bb;background:#252320;border:1px solid #806038;width:100%;padding:12px}
+.wf-disclosure{margin-top:25px;border-top:1px solid #58452e;padding-top:16px;font-size:11px}.wf-disclosure summary{cursor:pointer;color:#ffa32d;line-height:1.7}
+.m-utility h3{font-size:15px;font-weight:400;color:#ffd08a}
+.m-utility button:disabled{opacity:.45;cursor:default}

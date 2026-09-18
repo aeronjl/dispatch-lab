@@ -1,9 +1,10 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 test('performance adaptation is explicit, source-defined and invalidates an earlier preview',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await page.locator('.m-plant').waitFor();
  await page.getByRole('button',{name:'Simulation menu',exact:true}).click();
- await page.locator('[data-do=studies]').click();await page.locator('[data-u=open]').click();
+ await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await page.locator('[data-u=open]').click();
  await page.locator('[data-u=parameter]').waitFor();
  await page.locator('[data-u=search]').fill('weather.loss_fraction');
  await expect(page.locator('[data-u=visibility]')).toHaveValue('hidden');

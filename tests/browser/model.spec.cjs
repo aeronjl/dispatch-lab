@@ -1,8 +1,9 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 async function open(page,topic='battery'){
  await page.goto('/');await page.locator('.m-plant').waitFor();await page.evaluate(()=>document.fonts.ready);
- await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('.m-utility [data-model-topic=battery]').click();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'.m-utility [data-model-topic=battery]');await page.locator('.m-utility [data-model-topic=battery]').click();
  await expect(page.locator('.d-essay h1')).toBeVisible();
  if(topic!=='battery'){await page.locator('[data-d=index]').click();await page.locator(`[data-topic=${topic}]`).click();}
  await expect(page.locator('.d-result-status')).not.toHaveText('');
@@ -87,15 +88,15 @@ test('model essay artwork remains stable',async({page})=>{
 
 test('model learning stays responsive while a comparative batch runs',async({page})=>{
  test.skip(!process.env.DISPATCH_MODEL_BATCH,'Dedicated reference-machine workload.');
- await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=analysis]').click();await page.getByRole('tab',{name:'Experiments',exact:true}).click();await page.getByRole('button',{name:'Run / resume suite',exact:true}).click();await page.waitForTimeout(700);
- await page.getByRole('button',{name:'← Simulation',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('.m-utility [data-model-topic=battery]').click();await complete(page);
+ await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=analysis]');await page.locator('[data-do=analysis]').click();await page.getByRole('tab',{name:'Experiments',exact:true}).click();await page.getByRole('button',{name:'Run / resume suite',exact:true}).click();await page.waitForTimeout(700);
+ await page.getByRole('button',{name:'← Simulation',exact:true}).click();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'.m-utility [data-model-topic=battery]');await page.locator('.m-utility [data-model-topic=battery]').click();await complete(page);
  const samples=[];
  for(let i=0;i<30;i++){
   const elapsed=await page.evaluate(i=>new Promise(resolve=>{const status=document.querySelector('.d-result-status');const started=performance.now();const observer=new MutationObserver(()=>{if(status.textContent.startsWith('Learning example')){observer.disconnect();resolve(performance.now()-started);}});observer.observe(status,{subtree:true,childList:true,characterData:true});const input=document.querySelector('[data-input=charge]');input.value=String(100+i*5);input.dispatchEvent(new Event('input',{bubbles:true}));}),i);samples.push(elapsed);
  }
  const render=await page.evaluate(()=>performance.getEntriesByName('model-render').map(x=>x.duration));const p95=x=>[...x].sort((a,b)=>a-b)[Math.floor(x.length*.95)];
  fs.writeFileSync('build/model/active-batch-performance.json',JSON.stringify({fixture_hours:Number(await page.locator('[data-m=scrubber]').getAttribute('max')),batch_requested:true,preview_p95_ms:p95(samples),render_p95_ms:p95(render),samples},null,2));
- await page.locator('[data-d=back]').click();await page.locator('[data-do=analysis]').click();await page.getByRole('tab',{name:'Experiments',exact:true}).click();await page.getByRole('button',{name:'Cancel suite',exact:true}).click();await expect(page.getByText('Cancellation requested.',{exact:false})).toBeVisible();
+ await page.locator('[data-d=back]').click();await revealTool(page,'[data-do=analysis]');await page.locator('[data-do=analysis]').click();await page.getByRole('tab',{name:'Experiments',exact:true}).click();await page.getByRole('button',{name:'Cancel suite',exact:true}).click();await expect(page.getByText('Cancellation requested.',{exact:false})).toBeVisible();
  expect(p95(samples)).toBeLessThanOrEqual(200);expect(p95(render)).toBeLessThanOrEqual(10);
 });
 
@@ -125,5 +126,5 @@ test('new archive exposes original model assumptions and calculation identities'
 
 test('saved model report opens from portable playback with the network disabled',async({page})=>{
  test.skip(!process.env.DISPATCH_OFFLINE_PLAYER,'Requires a new extracted reproduction bundle.');
- const requests=[];page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});await page.context().setOffline(true);await page.goto('file://'+process.env.DISPATCH_OFFLINE_PLAYER);await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('.m-utility [data-model-topic=battery]').click();await expect(page).toHaveURL(/model-report.html#battery/);await expect(page.locator('body')).toContainText('saved learning output');await expect(page.locator('body')).toContainText('Original dispatch');expect(requests).toEqual([]);
+ const requests=[];page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});await page.context().setOffline(true);await page.goto('file://'+process.env.DISPATCH_OFFLINE_PLAYER);await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'.m-utility [data-model-topic=battery]');await page.locator('.m-utility [data-model-topic=battery]').click();await expect(page).toHaveURL(/model-report.html#battery/);await expect(page.locator('body')).toContainText('saved learning output');await expect(page.locator('body')).toContainText('Original dispatch');expect(requests).toEqual([]);
 });

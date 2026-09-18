@@ -1,10 +1,11 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 
 test('investigation controls reveal prerequisites, retain edits and return to the quiet plant',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await page.locator('.m-plant').waitFor();
   await page.locator('[data-do="menu"]').click();
-  await page.locator('[data-do="setup"]').first().click();
+  await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
   await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
   const service=page.getByRole('checkbox',{name:'Coordinate service work with MPC (experimental)',exact:true});
   const enabled=page.getByRole('checkbox',{name:'Plan investigations from returned evidence',exact:true});

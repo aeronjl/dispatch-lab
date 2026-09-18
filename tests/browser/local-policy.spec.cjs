@@ -1,3 +1,4 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),z=require('node:zlib');
 const fixtures=JSON.parse(z.gunzipSync(fs.readFileSync('tests/fixtures/local-policy.json.gz')));
@@ -42,7 +43,7 @@ test('prepared and enclosed fittings preserve keyboard inspection and narrow acc
  expect(errors).toEqual([]);
 });
 test('setup exposes explicit rules and fractional recurrence',async({page})=>{
- await page.goto('/');await page.locator('.m-plant').waitFor();await page.locator('[data-do="menu"]').click();await page.locator('[data-do="setup"]').first().click();
+ await page.goto('/');await page.locator('.m-plant').waitFor();await page.locator('[data-do="menu"]').click();await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
  await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
  const response=await page.request.get('/config');const components=(await response.json()).components;
  for(const label of ['Local cleaning rule','Contact inspection access'])expect(components.some(c=>c.props?.label===label)).toBeTruthy();

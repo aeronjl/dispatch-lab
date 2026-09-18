@@ -16,7 +16,7 @@ test('project progressively reveals settings, preserves artwork and restores a d
  await page.locator('[data-pj=equipment]').click();await expect(page.locator('.pj-inspector')).toContainText('Dock, DC charging');await page.locator('[data-pj-equipment=cleaner]').click();await expect(page.locator('[data-pj-equipment=cleaner]')).toHaveText('Remove');
  await page.keyboard.press('Escape');await page.locator('[data-pj=settings]').click();await page.locator('[data-pj-field-search]').fill('solver');await expect(page.locator('[data-pj-field="scenario.solver_seconds"]')).toBeVisible();
  await page.keyboard.press('Escape');await page.locator('[data-pj=close]').click();await expect(page.locator('.pj-workspace')).toBeHidden();await expect(page.locator('[data-do=project]')).toBeFocused();
- await page.reload();await openProject(page);await expect(page.locator('.pj-build')).toBeVisible();await expect(page.locator('.pj-drawing [data-pj-svg=battery]')).toHaveText('1200 kWh');
+ await page.reload();await openProject(page);await page.locator('.pj-header [data-pj=build]').click();await expect(page.locator('.pj-build')).toBeVisible();await expect(page.locator('.pj-drawing [data-pj-svg=battery]')).toHaveText('1200 kWh');
  await page.mouse.move(0,0);await page.screenshot({path:'build/project-build-desktop.png'});
  await page.setViewportSize({width:390,height:844});await page.locator('[data-pj=settings]').click();await expect(page.locator('.pj-inspector')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'build/project-settings-mobile.png'});expect(errors).toEqual([]);
 });
@@ -36,7 +36,7 @@ test('project calculates explicit weather, plays saved operation and compares a 
  await page.locator('[data-do=project-revise]').click();
  await page.locator('[data-pj-field="plant.battery_kwh"]').fill('1600');await page.locator('[data-pj=save]').click();await page.locator('.pj-header [data-pj=operate]').click();
  await expect(page.locator('.pj-run h1')).toHaveText('Compare a revised design');await expect(page.locator('[data-pj-weather]')).toBeDisabled();await expect(page.locator('[data-pj-controller]')).toHaveValue('Greedy');
- await page.locator('[data-pj=run]').click();await expect(page.locator('[data-pj-play]')).toHaveCount(2,{timeout:60000});await expect(page.locator('.pj-table tbody tr')).toHaveCount(2);await expect(page.locator('.pj-run-progress')).toContainText('Calculation complete');
+ await page.locator('[data-pj=run]').click();await expect(page.locator('[data-pj-play]:not([data-pj-destination])')).toHaveCount(2,{timeout:60000});await expect(page.locator('.pj-table tbody tr')).toHaveCount(2);await expect(page.locator('.pj-run-progress')).toContainText('Calculation complete');
  await page.screenshot({path:'build/project-comparison.png'});expect(errors).toEqual([]);
 });
 test('project reveals model and site tools and returns with context intact',async({page})=>{

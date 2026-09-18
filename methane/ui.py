@@ -1018,6 +1018,7 @@ def build_app(default=None, *, start_project=False):
                     .replace("<!-- PROJECT WORKSPACE -->", (ASSETS / "project.html").read_text()),
                     css_template=(ASSETS / "plant-scene.css").read_text()
                     + (ASSETS / "methane.css").read_text()
+                    + (ASSETS / "workflow.css").read_text()
                     + (ASSETS / "field-scene.css").read_text()
                     + (ASSETS / "control-view.css").read_text()
                     + (ASSETS / "investigation.css").read_text()
@@ -1039,6 +1040,7 @@ def build_app(default=None, *, start_project=False):
                     + (ASSETS / "investigation.js").read_text()
                     + (ASSETS / "agent-control.js").read_text()
                     + (ASSETS / "field-scene.js").read_text()
+                    + (ASSETS / "workflow.js").read_text()
                     + (ASSETS / "methane.js").read_text()
                     + (ASSETS / "solar.js").read_text()
                     + (ASSETS / "lifecycle.js").read_text()
@@ -1966,6 +1968,9 @@ def build_app(default=None, *, start_project=False):
             }
             if request.get("kind") == "control-session":
                 view.pop("study_origin", None)
+            # Navigation intent is view-only, never part of the numerical archive.
+            if request.get("workspace") in ("investigate", "write-up"):
+                view["entry_workspace"] = request["workspace"]
             return (
                 r,
                 gr.HTML(value=wire_payload(view), economics=wire_payload(reprice(r))),

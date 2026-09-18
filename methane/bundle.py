@@ -180,6 +180,9 @@ def playback(result, assets):
         css += "\n" + get("taxonomy.css")
     font = base64.b64encode(assets["assets/fonts/DepartureMono-Regular.woff2"]).decode()
     script = get("playback.js").split("function frameAt")[0] + get("methane.js") + get("solar.js")
+    if "assets/workflow.js" in assets:
+        script = get("workflow.js") + script
+        css += "\n" + get("workflow.css")
     if "assets/field-operations.js" in assets:
         script = get("field-operations.js") + script
     if "assets/service-alternatives.js" in assets:

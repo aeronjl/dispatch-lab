@@ -1,5 +1,6 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
-async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toBeVisible();}
+async function open(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await expect(page.locator('.st-article h1')).toBeVisible();}
 
 test('computation preview exposes separate budgets and distinguishes repetitions from seeds',async({page})=>{
  await open(page);await page.locator('[data-st=new]').click();await page.locator('[data-st=protocol-choice]').selectOption('field-computation');await expect(page.locator('[data-st=start]')).toBeEnabled();await expect(page.locator('.st-preview')).toContainText('repetitions per unchanged seed');await expect(page.locator('.st-preview')).toContainText('not new environmental samples');await expect(page.locator('.st-preview')).toContainText('Process / s');await expect(page.locator('.st-preview')).toContainText('Investigation / s');await page.keyboard.press('Escape');await page.keyboard.press('Escape');await expect(page.locator('[data-do=studies]')).toBeFocused();

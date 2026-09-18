@@ -1,3 +1,4 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),z=require('node:zlib');
 const fixtures=JSON.parse(z.gunzipSync(fs.readFileSync('tests/fixtures/visit-services.json.gz')));
@@ -52,7 +53,7 @@ test('visit transfers and interrupted work retain recorded poses and reduced-mot
 });
 test('combined-visit setup exposes the limit and declared on-site transfer time',async({page})=>{
  await page.goto('/');await page.locator('.m-plant').waitFor();
- await page.locator('[data-do="menu"]').click();await page.locator('[data-do="setup"]').first().click();
+ await page.locator('[data-do="menu"]').click();await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
  await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
  await expect(page.getByRole('checkbox',{name:'visit bundling enabled',exact:true})).toBeVisible();
  await expect(page.getByRole('spinbutton',{name:'visit max jobs',exact:true})).toHaveValue('4');

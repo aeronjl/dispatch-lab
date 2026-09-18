@@ -1,3 +1,4 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),z=require('node:zlib');
 const fixtures=JSON.parse(z.gunzipSync(fs.readFileSync('tests/fixtures/inspection-services.json.gz')));
@@ -47,7 +48,7 @@ test('late acquisition remains unavailable and shared-contact agreement keeps it
 });
 test('inspection scenario exposes numeric reader faults separately from contact-state choices',async({page})=>{
  await page.goto('/');await page.locator('.m-plant').waitFor();
- await page.locator('[data-do="menu"]').click();await page.locator('[data-do="setup"]').first().click();
+ await page.locator('[data-do="menu"]').click();await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
  await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
  const drift=page.getByRole('spinbutton',{name:'fixed reader drift vph',exact:true});
  await expect(drift).toBeVisible();await drift.fill('-0.25');await expect(drift).toHaveValue('-0.25');

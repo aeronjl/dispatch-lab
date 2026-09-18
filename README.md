@@ -76,6 +76,8 @@ Artifacts are under `runs/methane-v2/`; raw weather caches are under `runs/weath
 
 ---
 
+The [expert workflow](docs/ux-workflow.md) connects Site, Build, Operate, Investigate, Compare and Write up. Open the simulation menu to choose a task; specialist tools are searchable under **All tools**. The plant view stays quiet.
+
 ## Preserved v0.1 hydrogen model documentation
 
 # Dispatch lab

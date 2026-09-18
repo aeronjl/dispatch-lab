@@ -1,8 +1,9 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 test.beforeEach(async()=>{test.skip(!process.env.DISPATCH_SERVICE_COSTS,'Requires a recorded complete-service-accounting fixture.');});
 async function ready(page){await page.goto('/');await page.locator('.m-plant').waitFor();await page.locator('[data-m="scrubber"]').evaluate(n=>{n.value=36;n.dispatchEvent(new Event('input',{bubbles:true}))});}
 async function services(page){await page.locator('[data-do="menu"]').click();await page.locator('[data-panel="services"]').click();}
-async function setup(page){await page.locator('[data-do="menu"]').click();await page.locator('[data-do="setup"]').first().click();if(!await page.getByRole('checkbox',{name:'Use complete service accounting',exact:true}).isVisible())await page.getByText('Economic assumptions / component costs and decision value',{exact:true}).click();}
+async function setup(page){await page.locator('[data-do="menu"]').click();await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();if(!await page.getByRole('checkbox',{name:'Use complete service accounting',exact:true}).isVisible())await page.getByText('Economic assumptions / component costs and decision value',{exact:true}).click();}
 test('service cost views reveal original prices and return to the same service context',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await ready(page);await services(page);
  const costs=page.locator('[data-m="services"] .m-cost');await expect(costs).toContainText('Modelled expenditure');await expect(costs).toContainText('Crew hours');await expect(costs).toContainText('Remote hours');

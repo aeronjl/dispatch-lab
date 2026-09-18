@@ -1,6 +1,6 @@
 # Investigating recorded operation
 
-Open **Simulation menu → Investigate operation**, or **Investigate this period**
+Open **Simulation menu → Investigate**, or **Investigate this period**
 from a component inspector. The workspace is revealed on request; the normal plant
 canvas and reviewed illustrations remain unchanged. Entering pauses playback.
 

@@ -1,3 +1,4 @@
+const {revealPlayback}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const read=name=>fs.readFileSync(path.resolve('assets',name),'utf8');
@@ -15,7 +16,7 @@ test.beforeAll(()=>{
 });
 async function ready(page){
   await page.goto('file://'+preview);await page.evaluate(()=>document.fonts.ready);
-  await page.locator('[data-do="menu"]').click();await page.locator('[data-m="controller"]').selectOption('Greedy');
+  await page.locator('[data-do="menu"]').click();await revealPlayback(page);await page.locator('[data-m="controller"]').selectOption('Greedy');
   await page.keyboard.press('Escape');
 }
 async function seek(page,h){await page.locator('[data-m="scrubber"]').evaluate((n,h)=>{n.value=h;n.dispatchEvent(new Event('input',{bubbles:true}));},h);}
@@ -39,7 +40,7 @@ test('motion follows playback speed, pause, seek and controller without network 
   await seek(page,0);expect(await pose(page,'cleaner')).toBe(docked);
   await page.locator('[data-do="menu"]').click();
   for(const controller of ['MPC · methane','MPC · economics','Greedy']){
-    await page.locator('[data-m="controller"]').selectOption(controller);await seek(page,15);
+    await revealPlayback(page);await page.locator('[data-m="controller"]').selectOption(controller);await seek(page,15);
     const expected=fixture.props.value.records[controller][14].field_operations.state.orders;
     const rover=expected.findLast(o=>o.kind==='inspection');
     await expect(page.locator('.f-rover')).toHaveAttribute('data-order',rover?.id||'');

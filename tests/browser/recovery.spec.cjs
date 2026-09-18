@@ -1,9 +1,10 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 
 async function setup(page){
   await page.goto('/');await page.locator('.m-plant').waitFor();
   await page.locator('[data-do="menu"]').click();
-  await page.locator('[data-do="setup"]').first().click();
+  await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
   await page.getByText('Autonomy stress / injected faults and diagnostic assumptions',{exact:true}).click();
 }
 

@@ -1,3 +1,4 @@
+const {revealTool,revealPlayback}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 async function ready(page){
@@ -11,7 +12,7 @@ async function menu(page,panel){
   if(panel)await page.locator(`[data-panel="${panel}"]`).click();
 }
 async function analysis(page){
-  await menu(page);await page.locator('[data-do="analysis"]').click();
+  await menu(page);await revealTool(page,'[data-do="analysis"]');await page.locator('[data-do="analysis"]').click();
 }
 test('plant and solar artwork match the pre-refactor reference',async({page})=>{
   test.skip(process.platform!=='darwin','PNG reference captured on the Apple Silicon reference environment; functional checks run on all platforms.');
@@ -46,7 +47,7 @@ test('keyboard inspection, lazy plans and evidence remain usable',async({page})=
 });
 test('narrow-screen solar access and changed geometry',async({page})=>{
   await page.setViewportSize({width:390,height:844});await ready(page);
-  await menu(page);await page.locator('[data-mobile-component="solar"]').click();
+  await menu(page,'run');await page.locator('[data-mobile-component="solar"]').click();
   await expect(page.locator('.s-workspace')).toBeVisible();
   const before=await page.locator('.s-panel-face').first().getAttribute('points');
   await page.locator('[data-setting="tilt"]').evaluate(s=>{s.value=60;s.dispatchEvent(new Event('input',{bubbles:true}));});
@@ -92,7 +93,7 @@ test('playback, controller views, costs and event navigation',async({page})=>{
   await page.getByRole('button',{name:'Step back',exact:true}).click();await expect(scrubber).toHaveValue('12');
   await page.locator('[data-do="timeline"]').click();await page.locator('[data-m="speed"]').selectOption('8');await page.locator('[data-do="play"]').click();
   await expect(scrubber).not.toHaveValue('12');await page.locator('[data-do="play"]').click();
-  await menu(page);await page.locator('[data-do="costs"]').click();await expect(page.locator('[data-do="costs"]')).toHaveAttribute('aria-pressed','false');
+  await menu(page,'run');await page.locator('[data-do="costs"]').click();await expect(page.locator('[data-do="costs"]')).toHaveAttribute('aria-pressed','false');
   for(const value of await page.locator('[data-m="controller"] option').evaluateAll(xs=>xs.map(x=>x.value)))await page.locator('[data-m="controller"]').selectOption(value);
   await page.locator('[data-panel="events"]').click();const event=page.locator('.m-events button').first();if(await event.count()){await event.click();await expect(page.locator('.m-inspector')).toBeVisible();}
 });
@@ -134,7 +135,7 @@ test('separate analysis and setup return to the same playhead',async({page})=>{
   await analysis(page);await expect(page.locator('#analysis-screen')).toBeVisible();await expect(page.locator('.m-plant')).toBeHidden();
   for(const name of ['Experiments','Saved runs','Guide','Run report']){await page.getByRole('tab',{name,exact:true}).click();}
   await page.getByRole('button',{name:'← Simulation',exact:true}).click();await expect(page.locator('.m-plant')).toBeVisible();await expect(page.locator('[data-m="scrubber"]')).toHaveValue('12');
-  await menu(page);await page.locator('[data-do="setup"]').first().click();await expect(page.locator('#setup-screen')).toBeVisible();await expect(page.locator('.m-plant')).toBeHidden();
+  await menu(page);await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();await expect(page.locator('#setup-screen')).toBeVisible();await expect(page.locator('.m-plant')).toBeHidden();
   await page.getByRole('button',{name:'← Simulation',exact:true}).click();await expect(page.locator('[data-m="scrubber"]')).toHaveValue('12');expect(errors).toEqual([]);
 });
 
@@ -162,7 +163,7 @@ test('battery trace is revealed on demand and follows the selected interval',asy
   }
   await page.keyboard.press('Escape');
   expect(await page.locator('.methane-console button:visible').count()).toBe(5);
-  await menu(page);await page.locator('[data-do="setup"]').click();
+  await menu(page);await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').click();
   await page.getByText('Operating dynamics / storage, reactor and solar conversion',{exact:true}).click();
   await expect(page.getByText('Battery implementation',{exact:true})).toBeVisible();
 });

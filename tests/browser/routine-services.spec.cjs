@@ -1,3 +1,4 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),z=require('node:zlib');
 const fixtures=JSON.parse(z.gunzipSync(fs.readFileSync('tests/fixtures/routine-services.json.gz')));
@@ -41,7 +42,7 @@ test('routine technician phases and reduced motion keep the same recorded comple
 });
 test('setup retains fractional routine durations and dock rates',async({page})=>{
  await page.goto('/');await page.locator('.m-plant').waitFor();
- await page.locator('[data-do="menu"]').click();await page.locator('[data-do="setup"]').first().click();
+ await page.locator('[data-do="menu"]').click();await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
  await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
  const duration=page.getByRole('spinbutton',{name:'maintenance work hours',exact:true});
  const standby=page.getByRole('spinbutton',{name:'dock standby kw',exact:true});

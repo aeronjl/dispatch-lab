@@ -1,3 +1,4 @@
+const {revealOperation}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 async function open(page){
@@ -6,7 +7,7 @@ async function open(page){
  await page.locator('[data-m=scrubber]').evaluate(n=>{n.value=12;n.dispatchEvent(new Event('input',{bubbles:true}));});
  await page.getByRole('button',{name:'Playback details',exact:true}).click();
  await page.getByRole('button',{name:'Simulation menu',exact:true}).click();
- await page.locator('[data-do=control]').click();
+ if(!await page.locator('[data-do=control]').isVisible())await revealOperation(page);await page.locator('[data-do=control]').click();
  await expect(page.locator('.cv-reading h3')).toContainText('Predicted H11');
 }
 test('control lens reveals plans, delivery and evidence without changing artwork',async({page})=>{
@@ -43,7 +44,7 @@ test('late recorded details cannot cross a policy or playhead selection',async({
  let delayed=false;
  await page.route('**/dispatch/control-view',async route=>{const body=route.request().postDataJSON();if(body.operation==='describe'&&body.controller==='MPC · methane'&&!delayed){delayed=true;const response=await route.fetch();await new Promise(r=>setTimeout(r,700));await route.fulfill({response});}else await route.continue();});
  await page.goto('/');await page.locator('.m-plant').waitFor();
- await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=control]').click();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();if(!await page.locator('[data-do=control]').isVisible())await revealOperation(page);await page.locator('[data-do=control]').click();
  await page.locator('[data-cv=controller]').selectOption('Greedy');
  await expect(page.locator('.cv-reading')).toContainText('Use a local dispatch rule');await page.waitForTimeout(800);
  await expect(page.locator('.cv-reading')).toContainText('Use a local dispatch rule');

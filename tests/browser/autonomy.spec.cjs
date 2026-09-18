@@ -1,7 +1,8 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 test('autonomous service assumptions are explicit, resettable and invalidate a reviewed preview',async({page})=>{
  await page.goto('/');await page.locator('.m-plant').waitFor();
- await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('[data-do=studies]').click();await page.locator('[data-u=open]').click();await page.locator('[data-u=clear]').click();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'[data-do=studies]');await page.locator('[data-do=studies]').click();await page.locator('[data-u=open]').click();await page.locator('[data-u=clear]').click();
  const packets=[];page.on('request',r=>{if(r.url().endsWith('/dispatch/studies'))packets.push(r.postDataJSON());});
  await page.locator('[data-u=autonomy]').selectOption('risk-aware');await page.locator('[data-u=preview]').click();
  await expect.poll(()=>packets.some(p=>p.operation==='uncertainty-preview')).toBeTruthy();

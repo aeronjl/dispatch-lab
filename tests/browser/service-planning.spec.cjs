@@ -1,10 +1,11 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 
 test('shared visit planning is opt-in, keyboard selectable and retreats from the simulation',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await page.locator('.m-plant').waitFor();
   await page.locator('[data-do="menu"]').click();
-  await page.locator('[data-do="setup"]').first().click();
+  await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
   await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
   const enabled=page.getByRole('checkbox',{name:'Coordinate service work with MPC (experimental)',exact:true});
   const choices=page.getByRole('combobox',{name:'Service scheduling alternatives',exact:true});

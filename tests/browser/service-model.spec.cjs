@@ -1,8 +1,9 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 async function enter(page,topic){
  await page.goto('/');await page.locator('.m-plant').waitFor();await page.evaluate(()=>document.fonts.ready);
- await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await page.locator('.m-utility [data-model-topic=battery]').click();
+ await page.getByRole('button',{name:'Simulation menu',exact:true}).click();await revealTool(page,'.m-utility [data-model-topic=battery]');await page.locator('.m-utility [data-model-topic=battery]').click();
  await expect(page.locator('.d-essay h1')).toBeVisible();await page.locator('[data-d=index]').click();await page.locator(`[data-topic=${topic}]`).click();
 }
 async function complete(page){await expect(page.locator('.d-result-status')).toContainText('Learning example',{timeout:45000});}

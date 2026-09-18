@@ -1,3 +1,4 @@
+const {revealTool}=require('./navigation.cjs');
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 const path=require('node:path');
@@ -18,7 +19,7 @@ test('site services are revealed, keyboard accessible and preserve the playhead'
   expect(errors).toEqual([]);
 });
 test('matched field presets keep environment enabled and select intervention capability',async({page})=>{
-  await ready(page);await page.locator('[data-do="setup"]').first().click();
+  await ready(page);await revealTool(page,'[data-do="setup"]');await page.locator('[data-do="setup"]').first().click();
   await page.getByLabel('Start from a scenario').click();
   await page.getByRole('option',{name:'Field services / human only',exact:true}).click();
   await page.getByText('Field operations / robots, recovery and human service',{exact:true}).click();
