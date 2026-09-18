@@ -13,6 +13,13 @@ from methane.simulation import run
 
 def recompute(source, out):
     if source.get("provenance", {}).get("external_control"):
+        if source.get("control_reproduction"):
+            from methane.control_replay import replay
+
+            result, report = replay(source)
+            report["archive"] = str(save(result, Path(out).parent / "recomputed-runs"))
+            Path(out).write_text(json.dumps(report, indent=2, allow_nan=False))
+            return report
         raise ValueError(
             "External-control recording: use recorded playback and independent balance checks. Re-running an external agent is not supported; silently substituting the reference policy would change the experiment."
         )

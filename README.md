@@ -14,7 +14,9 @@ The [plant project guide](docs/plant-projects.md) covers common controls, comple
 
 **Menu → Agent control** starts a bounded simulated-plant session. Operators and
 MCP agents can observe, preview, advance one interval and trace delivery using the
-same physical executor. Grants are session-specific and revocable. See the
+same physical executor. Start from saved project inputs and site utilities, continue
+a committed checkpoint, recover an interruption, or replay recorded requests in a
+separate numerical edition. Grants are session-specific and revocable. See the
 [control guide](docs/agent-control.md) for setup, permissions and current boundaries.
 
 **Sites → Production studies → Learning & policies** adds frozen observation datasets,

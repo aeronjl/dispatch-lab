@@ -492,16 +492,17 @@ def main():
             )
         verify(source)
         if source.get("provenance", {}).get("external_control"):
-            raise ValueError(
-                "External-control recording: recorded playback is supported. Numerical agent rerun is unavailable; the reference policy cannot substitute for recorded external actions."
+            from methane.control_replay import replay
+
+            result, _ = replay(source)
+        else:
+            result = run(
+                Config.from_dict(source["config"]),
+                weather=source["weather"],
+                strategies=source["records"],
+                policies=source.get("provenance", {}).get("controller_policies"),
+                uncertainty=source.get("uncertainty", {}).get("world"),
             )
-        result = run(
-            Config.from_dict(source["config"]),
-            weather=source["weather"],
-            strategies=source["records"],
-            policies=source.get("provenance", {}).get("controller_policies"),
-            uncertainty=source.get("uncertainty", {}).get("world"),
-        )
         print(export(result))
     else:
         config = Config()

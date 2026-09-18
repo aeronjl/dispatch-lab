@@ -1,7 +1,6 @@
-"""One private simulator process, paused at each observation/action boundary."""
+"""One private simulator process, committed at each observation/action boundary."""
 
 import copy
-import json
 import signal
 import sys
 import time
@@ -10,23 +9,60 @@ from pathlib import Path
 from methane.cancellation import CancelledOperation
 from methane.config import Config
 from methane.control_port import VERSION
+from methane.control_storage import commit, committed, read, write
 from methane.provenance import LOADED_SOURCE, experiment_identity, seal
-from methane.siting.store import atomic, encode
+from methane.siting.checkpoint import Continuation, unpack
+from methane.siting.store import digest
 
 
-def read(path):
-    return json.loads(path.read_bytes())
-
-
-def write(path, value):
-    atomic(path, encode(value))
+def archive(inputs, meta, result, checkpoint, *, initial_state=None):
+    """Portable owner archive. Private runtime never enters the public observation."""
+    result["provenance"]["external_control"] = dict(
+        contract=VERSION,
+        session_id=meta["id"],
+        origin=meta["origin"],
+        input_sha256=meta["input_sha256"],
+        scope="Recorded requests; no external agent re-inference",
+    )
+    result["experiment_id"] = experiment_identity(result["provenance"])
+    result["run_id"] = meta["id"]
+    result["control_reproduction"] = dict(
+        version="dispatch-control-reproduction/1",
+        inputs=inputs,
+        ending_checkpoint=checkpoint,
+        source_content_hash=meta["source_content_hash"],
+        scope="Private retrospective reproduction inputs; never sent to the MCP client",
+    )
+    result["continuous_period"] = dict(
+        schema_version="dispatch-lab/continuous-period/1",
+        start_hour=inputs["start_hour"],
+        stop_hour=meta["stop_hour"],
+        total_hours=inputs["total_hours"],
+        binding=inputs["binding"],
+        initial_state=initial_state,
+        scope="Global hourly boundaries; state and service commitments carried from saved checkpoint",
+    )
+    return seal(result)
 
 
 class Gate:
-    def __init__(self, root):
-        self.root, self.rows = root, []
+    def __init__(self, root, inputs, continuation):
+        self.root, self.inputs, self.continuation = root, inputs, continuation
         self.meta = read(root / "meta.json")
+        self.previous = committed(root)
+        saved = self.previous["recording"] if self.previous else {}
+        name = inputs["controller"]
+        self.rows = copy.deepcopy(saved.get("records", {}).get(name, []))
+        self.prior_truth = saved.get("retrospective_truth", [])
+        self.prior_events = saved.get("events", {}).get(name, [])
+        self.receipts = self.previous["receipts"] if self.previous else []
         self.last = None
+        self.service_prefix = (
+            unpack(inputs["checkpoint"]["graph"])["service_cost_rows"]
+            if inputs.get("checkpoint")
+            else []
+        )
+        self.initial_state = saved.get("continuous_period", {}).get("initial_state")
 
     def cancelled(self):
         return (self.root / "stop").exists() or time.time() >= self.meta["expires_at"]
@@ -38,19 +74,14 @@ class Gate:
 
         if self.meta["source_content_hash"] != LOADED_SOURCE["content_hash"]:
             raise ValueError(
-                "Application source changed. Restart the app before creating a control session."
+                "Application source changed. Restore the matching source before continuing this session."
             )
-
-        self.config, self.name = config, name
-        provenance = copy.deepcopy(provenance)
-        provenance["external_control"] = dict(
-            contract=VERSION, session_id=self.meta["id"], origin=self.meta["origin"]
-        )
+        self.config, self.name, self.services = config, name, services
+        self.initial_state = self.initial_state or self.continuation.initial
         self.template = dict(
             schema_version="dispatch-lab/methane/3",
             model_version=__import__("methane").VERSION,
-            provenance=provenance,
-            experiment_id=experiment_identity(provenance),
+            provenance=copy.deepcopy(provenance),
             config=config.to_dict(),
             controller_config=known.to_dict(),
             documentation=snapshot(),
@@ -106,70 +137,121 @@ class Gate:
             | dict(contract=VERSION, mode=selected["preview"]["mode"], session_id=self.meta["id"]),
         )
 
-    def completed(self, row, truth, events):
+    def result(self, truth, events, template=None, status="in-progress"):
         from methane.simulation import summarise
 
-        self.rows.append(copy.deepcopy(row))
-        result = dict(
-            **self.template,
-            run_id=self.meta["id"],
-            status="in-progress",
+        truth = self.prior_truth + truth
+        events = self.prior_events + events + (self.services.messages if self.services else [])
+        events = sorted(
+            {digest(e): e for e in events if e["hour"] >= self.inputs["start_hour"]}.values(),
+            key=lambda e: e["hour"],
+        )
+        result = copy.deepcopy(template or self.template)
+        metrics = summarise(self.rows, self.config, truth, service_prefix=self.service_prefix)
+        # Full-history performance metrics; preserve current executive's ending obligations.
+        last_metrics = result.get("metrics", {}).get(self.name, {})
+        if "performance" in last_metrics:
+            from methane.adaptation import metrics as performance_metrics
+
+            metrics["performance"] = performance_metrics(self.rows)
+        if "service_control" in last_metrics:
+            detail = copy.deepcopy(last_metrics["service_control"])
+            decisions = [
+                r["decision"]["service_control"]
+                for r in self.rows
+                if "service_control" in r["decision"]
+            ]
+            detail["fallback_intervals"] = sum(d["fallback_used"] for d in decisions)
+            detail["candidate_solves"] = sum(
+                sum("evaluation" in c for c in d["candidates"]) for d in decisions
+            )
+            metrics["service_control"] = detail
+        result.update(
+            status=status,
             records={self.name: self.rows},
-            metrics={self.name: summarise(self.rows, self.config, truth)},
+            metrics={self.name: metrics},
             events={self.name: events},
             retrospective_truth=truth,
             retrospective_truth_by_controller={self.name: truth},
-            failures={},
+            service_accounting_prefix=self.service_prefix,
+            failures=result.get("failures", {}),
         )
-        write(self.root / "recording.json", seal(result))
-        # Agents see command delivery and observed channels, never execution state/truth.
-        receipt = dict(
-            hour=row["hour"],
-            time=row["time"],
-            request_id=self.last["request_id"],
-            proposal_id=self.last["proposal_id"],
-            actor=self.last["actor"],
-            reason=self.last["reason"],
-            requested=row["requested"],
-            applied=row["applied"],
-            observations=row["observations_after"],
-            diagnosis=row["diagnosis_after"],
-            execution_solver=row["execution_solver"],
-            forced_trip=row["forced_trip"],
-            audits_passed=all(a["passed"] for a in row["audits"]),
-            scope="Applied commands and observed channels after the completed interval; not true internal state.",
+        if self.services and hasattr(self.services, "planning_catalogues"):
+            result["service_planning_catalogues"] = self.services.planning_catalogues
+        return archive(
+            self.inputs,
+            self.meta,
+            result,
+            self.continuation.output or self.continuation.checkpoint,
+            initial_state=self.initial_state,
         )
-        write(self.root / f"receipt-{row['hour']}.json", receipt)
+
+    def completed(self, row, truth, events):
+        self.rows.append(copy.deepcopy(row))
+        self.receipts.append(
+            dict(
+                hour=row["hour"],
+                time=row["time"],
+                **{k: self.last[k] for k in ("request_id", "proposal_id", "actor", "reason")},
+                requested=row["requested"],
+                applied=row["applied"],
+                observations=row["observations_after"],
+                diagnosis=row["diagnosis_after"],
+                execution_solver=row["execution_solver"],
+                forced_trip=row["forced_trip"],
+                audits_passed=all(a["passed"] for a in row["audits"]),
+                scope="Applied commands and observed channels after the completed interval; not true internal state.",
+            )
+        )
+        commit(self.root, self.continuation.output, self.result(truth, events), self.receipts)
 
 
 def main(root):
     from methane.simulation import run
-    from methane.siting.checkpoint import Continuation
 
-    gate = Gate(root)
-    inputs = read(root / "input.json")
-    config = Config.from_dict(inputs["config"])
-    # An independent wall deadline survives a lost UI connection. Last completed artifacts remain.
-    signal.alarm(max(1, int(gate.meta["expires_at"] - time.time()) + 2))
+    meta, inputs = read(root / "meta.json"), read(root / "input.json")
+    saved = committed(root)
+    revision = saved["next_hour"] if saved else inputs["start_hour"]
+    signal.alarm(max(1, int(meta["expires_at"] - time.time()) + 2))
     try:
+        if digest(inputs) != meta["input_sha256"]:
+            raise ValueError("Frozen session inputs changed")
+        continuation = Continuation(
+            inputs["total_hours"],
+            meta["stop_hour"],
+            inputs["binding"],
+            checkpoint=saved["checkpoint"] if saved else inputs.get("checkpoint"),
+            utilities=inputs.get("utilities"),
+        )
+        gate = Gate(root, inputs, continuation)
         result = run(
-            config,
+            Config.from_dict(inputs["config"]),
             weather=inputs["weather"],
             strategies=[inputs["controller"]],
             policies=inputs.get("policies"),
             uncertainty=inputs.get("uncertainty"),
             cancelled=gate.cancelled,
             control=gate,
-            continuation=Continuation(config.scenario.hours, gate.meta["hours"], gate.meta["id"]),
+            continuation=continuation,
         )
-        # Preserve the same session lineage in the final ordinary reproduction archive.
-        result["provenance"]["external_control"] = gate.template["provenance"]["external_control"]
-        result["experiment_id"] = experiment_identity(result["provenance"])
-        result["run_id"] = gate.meta["id"]
-        write(root / "recording.json", seal(result))
-        write(root / "state.json", dict(status=result["status"], revision=len(gate.rows)))
+        revision = inputs["start_hour"] + len(gate.rows)
+        if gate.rows:
+            final = gate.result(
+                result["retrospective_truth"],
+                result["events"][gate.name],
+                result,
+                status=result["status"],
+            )
+            commit(root, continuation.output or continuation.checkpoint, final, gate.receipts)
+        write(root / "state.json", dict(status=result["status"], revision=revision))
     except Exception as exc:
-        write(root / "state.json", dict(status="failed", revision=len(gate.rows), error=str(exc)))
+        saved = committed(root)
+        write(
+            root / "state.json",
+            dict(
+                status="failed", revision=saved["next_hour"] if saved else revision, error=str(exc)
+            ),
+        )
 
 
 if __name__ == "__main__":

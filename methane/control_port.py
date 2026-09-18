@@ -13,7 +13,7 @@ from methane.physics import ACTION_KEYS, State
 from methane.provenance import LOADED_SOURCE
 from methane.siting.store import digest
 
-VERSION = "dispatch-control/1"
+VERSION = "dispatch-control/2"
 
 
 class Actions(BaseModel):
@@ -28,6 +28,12 @@ class Actions(BaseModel):
 
 def observation(decision, plant, costs, models, time):
     public = packet(decision, time=time, prices=asdict(costs), plant=plant.to_dict())
+    # Only declared supply and estimated inventory channels cross this boundary.
+    for key in ("electrolyser_supply_limit_kw", "site_supply", "water_deliveries_l"):
+        if key in decision["forecast"]:
+            public["forecast"][key] = copy.deepcopy(decision["forecast"][key])
+    if "water_l" in decision["estimate"]:
+        public["estimate"]["water_l"] = decision["estimate"]["water_l"]
     # Model definitions are declared assumptions, never the hidden execution configuration.
     public.update(
         contract=VERSION,
@@ -92,7 +98,10 @@ def preview(public, actions=None):
         f["pv_kw"][0],
         f["ambient_c"][0],
         f["deliveries_kg"][0],
-        public["diagnosis"]["capacity_kw"],
+        min(
+            public["diagnosis"]["capacity_kw"],
+            f.get("electrolyser_supply_limit_kw", [p.electrolyser_kw])[0],
+        ),
         Costs(**public["prices"]),
         components=assemble(p, c.models),
         service_kw=f.get("service_kw", [0])[0],

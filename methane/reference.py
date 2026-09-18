@@ -2932,8 +2932,141 @@ def recovery_tests(result, checks):
                 )
 
 
+def audit_control_period(result):
+    """Independent process balances across an explicitly saved control boundary.
+
+    Service loads and physical derating are recorded boundary conditions, not a
+    reconstruction of private service missions from an arbitrary mid-run state.
+    """
+    checks, failures = [], []
+    period = result["continuous_period"]
+    inputs = result["control_reproduction"]["inputs"]
+    utilities = inputs.get("utilities") or {}
+    for name, rows in result["records"].items():
+        before = period["initial_state"]
+        if result["status"] == "complete":
+            compare(
+                checks,
+                "interval_count",
+                len(rows),
+                period["stop_hour"] - period["start_hour"],
+                controller=name,
+            )
+        truth = {
+            r["hour"]: r for r in result.get("retrospective_truth_by_controller", {}).get(name, [])
+        }
+        for offset, row in enumerate(rows):
+            hour = period["start_hour"] + offset
+            try:
+                compare(checks, "global_hour", row["hour"], hour, controller=name, hour=hour)
+                p = row.get("lifecycle", {}).get("physical_plant", result["config"]["plant"])
+                arrival = hour - result["config"]["scenario"]["delivery_delay_hours"]
+                delivery = (
+                    p["co2_delivery_kg"]
+                    if arrival > 0 and arrival % p["co2_delivery_every_hours"] == 0
+                    else 0
+                )
+                if utilities.get("co2_deliveries") is not None:
+                    delivery = sum(
+                        d["kg"] for d in utilities["co2_deliveries"] if d["hour"] == hour
+                    )
+                z = p.get("integration")
+                water_arrival = 0
+                if z:
+                    elapsed = hour - z["water_delay_hours"]
+                    water_arrival = (
+                        z["water_delivery_l"]
+                        if elapsed > 0 and elapsed % z["water_every_hours"] == 0
+                        else 0
+                    )
+                expected = interval(
+                    p,
+                    before,
+                    row["applied"],
+                    row["pv_kw"],
+                    row["ambient_c"],
+                    delivery,
+                    service_kw=row.get("service_kw", 0),
+                    water_delivery_l=water_arrival,
+                )
+                for key, value in expected.items():
+                    if key == "applied":
+                        continue
+                    if key == "state":
+                        for operand, v in value.items():
+                            compare(
+                                checks,
+                                "state." + operand,
+                                row["state"][operand],
+                                v,
+                                controller=name,
+                                hour=hour,
+                            )
+                    else:
+                        compare(checks, key, row[key], value, controller=name, hour=hour)
+                capacity = truth.get(hour, {}).get("capacity_kw", p["electrolyser_kw"])
+                checks.extend(
+                    {**c, "controller": name, "hour": hour}
+                    for c in check_actions(p, before, row, capacity, row["requested"])
+                )
+                if utilities.get("water_lph") is not None:
+                    # The independent budget check uses recorded total-use allowance,
+                    # and checks it against config rather than trusting an applied limit.
+                    rate = (
+                        z["water_l_per_kg"]
+                        if z
+                        else result["config"]["costs"]["water_litres_per_kg"]
+                    )
+                    used = expected["h2_produced_kg"] * rate
+                    compare(
+                        checks,
+                        "water_supply_limit",
+                        max(0, used - utilities["water_lph"]),
+                        0,
+                        "L",
+                        controller=name,
+                        hour=hour,
+                    )
+                source = row["decision"]["forecast"]["source"]
+                available = source.get("available_at")
+                if available:
+                    lag = (
+                        datetime.fromisoformat(available.replace("Z", "+00:00"))
+                        - datetime.fromisoformat(row["time"].replace("Z", "+00:00"))
+                    ).total_seconds()
+                    compare(
+                        checks,
+                        "forecast_available",
+                        max(0, lag),
+                        0,
+                        "s",
+                        controller=name,
+                        hour=hour,
+                    )
+                before = expected["state"]
+            except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
+                failures.append(
+                    dict(controller=name, hour=hour, error=f"{type(exc).__name__}: {exc}")
+                )
+                break
+    return dict(
+        checker=VERSION + "/control-period",
+        run_id=result.get("run_id"),
+        status=result["status"],
+        passed=result["status"] == "complete"
+        and bool(checks)
+        and not failures
+        and all(c["passed"] for c in checks),
+        checks=checks,
+        failures=failures,
+        scope="Independent process energy/material/thermal transitions, action limits, chronological coverage, disclosed CO2/water supply and forecast availability. Initial runtime, service power, lifecycle state changes and actual equipment capacity are recorded boundary conditions. Does not independently reconstruct missions, diagnosis, lifecycle transitions or period service economics; these retain their separate kernel/regression checks. Not empirical validation.",
+    )
+
+
 def audit(result):
     """Read the archive directly. No Config, model, costing, weather or audit helper imports."""
+    if result.get("control_reproduction"):
+        return audit_control_period(result)
     p, scenario = result["config"]["plant"], result["config"]["scenario"]
     checks, failures = [], []
     try:

@@ -663,11 +663,19 @@ TOPICS.update(service_topics(C, P, topic))
 TOPICS.update(lifecycle_topics(C, P, topic))
 TOPICS.update(learning_topics(C, P, topic))
 
-TOPICS["controllers"]["files"] += ["control_port.py", "control_sessions.py", "simulation.py"]
+TOPICS["controllers"]["files"] += [
+    "control_port.py",
+    "control_sessions.py",
+    "control_session_worker.py",
+    "control_sources.py",
+    "control_storage.py",
+    "control_replay.py",
+    "simulation.py",
+]
 TOPICS["controllers"]["passages"].append(
     P(
         "A bounded external controller",
-        "Agent control starts a separate hour-zero simulation from frozen inputs. The operator and an explicitly granted MCP agent receive the same observation, estimated state and forecast boundary. A preview predicts a reference-policy action or six explicit process requests without advancing time. One accepted proposal advances one hour through the existing physical executor; requested and applied actions, solver fallback, observations, author and reason are retained. Recovery commitments protect their intervals and the configured service executive keeps responsibility for repairs. Grants can be restricted, paused, revoked or expired. Missing agent commands leave simulated time paused; they never cause an implicit dispatch. Recorded playback and independent balance checks remain available, but rerunning an external agent is not supported. This is software scheduling, not real hardware control or proof of controller safety.",
+        "Agent control starts a separate simulation from frozen recording or saved project inputs, including disclosed site utilities. Committed checkpoints can carry physical state, diagnostic history and service obligations into a continued session; displayed estimates cannot serve as physical starting state. The operator and an explicitly granted MCP agent receive the same observation, estimated state and forecast boundary. A preview predicts a reference-policy action or six explicit process requests without advancing time. One accepted proposal advances one hour through the existing physical executor; requested and applied actions, solver fallback, observations, author and reason are retained. Recovery commitments protect their intervals and the configured service executive keeps responsibility for repairs. Grants can be restricted, paused, revoked or expired. Missing agent commands leave simulated time paused; they never cause an implicit dispatch. Each successful hour atomically saves the runtime, recording and public receipts. Interrupted sessions recover at that boundary with fresh authority and previews; accepted but uncommitted requests are not counted as completed. Numerical replay executes the saved process requests in a new edition and reports changed information and outcomes. It does not ask an external agent to infer again, and its original saved proposal predictions remain labelled. Private checkpoints and retrospective comparisons never cross the MCP observation boundary. Independent process checks treat service loads and initial runtime as recorded boundary conditions; they do not reconstruct a mid-history service mission. This is software scheduling, not real hardware control or proof of controller safety.",
     )
 )
 

@@ -15,9 +15,9 @@ from fastapi import HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
 from methane import control_port
-from methane.control_session_worker import read, write
-from methane.model_service import recorded_context
+from methane.control_storage import committed, lease, read, running, transaction, write
 from methane.provenance import LOADED_SOURCE
+from methane.siting.store import digest
 
 _lock = threading.RLock()
 _workers = {}
@@ -28,6 +28,11 @@ class Request(BaseModel):
     model_config = ConfigDict(extra="forbid")
     operation: Literal[
         "create",
+        "sources",
+        "recover",
+        "extend",
+        "replay",
+        "cancel_replay",
         "observe",
         "preview",
         "advance",
@@ -42,6 +47,13 @@ class Request(BaseModel):
     token: str = Field(default="", max_length=100)
     run_id: str = Field(default="", max_length=100)
     controller: str = Field(default="", max_length=100)
+    project_id: str = Field(default="", max_length=64)
+    environment_id: str = Field(default="", max_length=64)
+    study_id: str = Field(default="", max_length=64)
+    case_id: str = Field(default="", max_length=32)
+    start_hour: int = Field(default=0, ge=0, strict=True)
+    synthetic: bool = False
+    start: str = Field(default="2025-07-10T00:00:00Z", max_length=40)
     session_id: str = Field(default="", max_length=32)
     credential: str = Field(default="", max_length=100)
     hours: int = Field(default=24, ge=1, le=72, strict=True)
@@ -97,12 +109,11 @@ def state(root):
     path = root / "state.json"
     value = read(path) if path.exists() else dict(status="starting", revision=0)
     if value["status"] in ("starting", "waiting", "executing"):
-        worker = _workers.get(root.name)
-        if worker is None or worker.poll() is not None:
+        if not running(root):
             return dict(
                 status="interrupted",
                 revision=value["revision"],
-                error="Worker stopped. Completed intervals remain available; create a new session to continue exploration.",
+                error="Worker stopped. Recover from the last committed interval; any uncommitted request will need a fresh preview.",
             )
         if (root / "stop").exists():
             value = {**value, "status": "stopping"}
@@ -110,6 +121,9 @@ def state(root):
 
 
 def receipts(root):
+    saved = committed(root)
+    if saved:
+        return saved["receipts"]
     return [
         read(p)
         for p in sorted(root.glob("receipt-*.json"), key=lambda p: int(p.stem.split("-")[-1]))
@@ -119,6 +133,8 @@ def receipts(root):
 def view(root, meta):
     s = state(root)
     public = read(root / "observation.json") if (root / "observation.json").exists() else None
+    saved = committed(root)
+    next_hour = saved["next_hour"] if saved else meta.get("start_hour", 0)
     return dict(
         contract=control_port.VERSION,
         session_id=root.name,
@@ -132,41 +148,74 @@ def view(root, meta):
             hours=meta["hours"],
             expires_at=meta["expires_at"],
         ),
+        continuation=dict(
+            start_hour=meta.get("start_hour", 0),
+            next_hour=next_hour,
+            stop_hour=meta.get("stop_hour", meta["hours"]),
+            total_hours=meta.get("total_hours", meta["hours"]),
+            recoverable=bool(meta.get("input_sha256"))
+            and not running(root)
+            and next_hour < meta.get("stop_hour", meta["hours"]),
+            extendable=bool(meta.get("input_sha256"))
+            and not running(root)
+            and next_hour == meta.get("stop_hour", meta["hours"])
+            and next_hour < meta.get("total_hours", meta["hours"]),
+        ),
+        replay=replay_state(root),
         controller=meta["controller"],
         origin=meta["origin"],
         observation=public,
         receipts=receipts(root),
-        scope="Fresh simulation from hour zero using frozen inputs and the current implementation. The source recording is unchanged. Services remain under the configured executive.",
+        scope="Frozen inputs and committed simulation state. Source records stay unchanged. Services remain under the configured executive.",
     )
 
 
-def create(request):
-    source = recorded_context(request.token, request.run_id)
-    if request.controller not in source["records"]:
-        raise ValueError("Choose a recorded reference controller")
-    # Site utility/checkpoint histories require a separately qualified session adapter.
-    # Never silently drop limits or adopt a mid-history state as a new initial state.
-    period = source.get("continuous_period", {})
-    if period.get("start_hour", 0) or any(
-        r.get("site_utilities") for rows in source["records"].values() for r in rows
-    ):
-        raise ValueError(
-            "This recording carries site utilities or a continued initial state. Use a standard hour-zero plant run for interactive control."
-        )
-    if request.hours > source["config"]["scenario"]["hours"]:
-        raise ValueError("Session hours exceed this recording's frozen weather window")
-    hours = request.hours
-    with _lock:
-        if sum(p.poll() is None for p in _workers.values()) >= 2:
+def launch(root):
+    # Inherited OS leases survive app restarts and fence duplicate workers.
+    session_lease = lease(root / "worker.lock")
+    slot = None
+    try:
+        for i in range(2):
+            try:
+                slot = lease(home() / f"slot-{i}.lock")
+                break
+            except ValueError:
+                continue
+        if slot is None:
             raise ValueError("Two sessions are active; stop one before creating another")
+        with (root / "worker.log").open("ab") as log:
+            _workers[root.name] = subprocess.Popen(
+                [sys.executable, "-m", "methane.control_session_worker", str(root)],
+                cwd=Path(__file__).resolve().parents[1],
+                stdout=log,
+                stderr=log,
+                start_new_session=True,
+                pass_fds=(session_lease.fileno(), slot.fileno()),
+            )
+    finally:
+        session_lease.close()
+        if slot:
+            slot.close()
+
+
+def create(request):
+    from methane.control_sources import freeze
+
+    inputs = freeze(request)
+    with _lock:
         identifier, owner_key = secrets.token_hex(16), secrets.token_urlsafe(32)
         root = home() / identifier
         root.mkdir(parents=True, mode=0o700)
+        start = inputs["start_hour"]
         meta = dict(
             id=identifier,
-            origin=source["run_id"],
-            controller=request.controller,
-            hours=hours,
+            origin=inputs["origin"].get("run_id", inputs["origin"]),
+            controller=inputs["controller"],
+            hours=request.hours,
+            start_hour=start,
+            stop_hour=start + request.hours,
+            total_hours=inputs["total_hours"],
+            input_sha256=digest(inputs),
             expires_at=time.time() + request.wall_seconds,
             created_at=time.time(),
             owner_hash=hashed(owner_key),
@@ -177,35 +226,61 @@ def create(request):
             source_content_hash=LOADED_SOURCE["content_hash"],
         )
         write(root / "meta.json", meta)
-        provenance = source.get("provenance", {})
-        write(
-            root / "input.json",
-            dict(
-                config=source["config"],
-                weather=source["weather"],
-                controller=request.controller,
-                policies={request.controller: provenance["controller_policies"][request.controller]}
-                if provenance.get("controller_policies")
-                else None,
-                uncertainty=provenance.get("uncertainty_world"),
-            ),
-        )
-        with (root / "worker.log").open("wb") as log:
-            _workers[identifier] = subprocess.Popen(
-                [sys.executable, "-m", "methane.control_session_worker", str(root)],
-                cwd=Path(__file__).resolve().parents[1],
-                stdout=log,
-                stderr=log,
-                start_new_session=True,
-            )
+        write(root / "input.json", inputs)
+        write(root / "state.json", dict(status="starting", revision=start))
+        launch(root)
         return {**view(root, meta), "owner_key": owner_key}
+
+
+def restart(root, meta, request):
+    if not meta.get("input_sha256"):
+        raise ValueError("Legacy session has no committed runtime; its recording remains readable")
+    if running(root):
+        raise ValueError("Worker is still active; stop and wait before recovering")
+    if meta["source_content_hash"] != LOADED_SOURCE["content_hash"]:
+        raise ValueError(
+            "Checkpoint implementation differs. Restore its original source to continue."
+        )
+    inputs = read(root / "input.json")
+    if digest(inputs) != meta["input_sha256"]:
+        raise ValueError("Frozen session inputs changed")
+    saved = committed(root)
+    boundary = saved["next_hour"] if saved else inputs["start_hour"]
+    if request.operation == "extend":
+        if boundary != meta["stop_hour"] or boundary + request.hours > meta["total_hours"]:
+            raise ValueError(
+                "Continue a completed session within its remaining frozen weather window"
+            )
+        meta["stop_hour"] += request.hours
+        meta["hours"] += request.hours
+    elif boundary >= meta["stop_hour"]:
+        raise ValueError("All authorised intervals are committed; use Continue to authorise more")
+    command = root / f"command-{boundary}.json"
+    if command.exists():
+        command.rename(root / f"uncommitted-{boundary}-{secrets.token_hex(8)}.json")
+    meta.update(
+        expires_at=time.time() + request.wall_seconds,
+        epoch=meta["epoch"] + 1,
+        agent_hash=None,
+        permission="observe",
+        paused=False,
+    )
+    write(root / "meta.json", meta)
+    (root / "stop").unlink(missing_ok=True)
+    write(root / "state.json", dict(status="starting", revision=boundary))
+    launch(root)
+    return view(root, meta)
 
 
 def waiting(root, meta, revision):
     s = state(root)
     if meta["paused"] or time.time() >= meta["expires_at"] or (root / "stop").exists():
         raise ValueError("Session paused, stopped or expired; no action accepted")
-    if s["status"] != "waiting" or s["revision"] != revision or revision >= meta["hours"]:
+    if (
+        s["status"] != "waiting"
+        or s["revision"] != revision
+        or revision >= meta.get("stop_hour", meta["hours"])
+    ):
         raise ValueError("Decision is no longer awaiting an action; refresh the observation")
     if (root / f"command-{revision}.json").exists():
         raise ValueError("An action has already been accepted for this interval")
@@ -213,13 +288,29 @@ def waiting(root, meta, revision):
 
 
 def dispatch(request, owner=False):
+    if request.operation == "sources":
+        if not owner:
+            raise HTTPException(403, "Only the app owner can select projects")
+        from methane.control_sources import catalogue
+
+        return catalogue()
     if request.operation == "create":
         if not owner:
             raise HTTPException(403, "Only the app owner can create sessions")
         return create(request)
-    with _lock:
+    root, _ = authorize(request, owner)
+    with _lock, transaction(root):
         root, meta = authorize(request, owner)
         op = request.operation
+        if op in ("recover", "extend"):
+            return restart(root, meta, request)
+        if op == "replay":
+            return start_replay(root)
+        if op == "cancel_replay":
+            latest = replay_state(root)
+            if latest:
+                (root / "replays" / latest["id"] / "cancel").touch()
+            return dict(status="cancellation requested")
         if op in ("observe", "trace"):
             return (
                 view(root, meta)
@@ -300,7 +391,7 @@ def dispatch(request, owner=False):
         )
     finally:
         _previews.release()
-    with _lock:
+    with _lock, transaction(root):
         root, meta = authorize(request, owner)
         latest = waiting(root, meta, request.revision)
         if epoch != meta["epoch"] or latest["information_id"] != public["information_id"]:
@@ -327,20 +418,32 @@ def handle(request: Request):
 
 
 def agent(request: Request):
-    return _handle(request, False)
+    value = _handle(request, False)
+    # Replay comparisons contain retrospective physical deltas and are owner-only.
+    value.pop("replay", None)
+    return value
 
 
 def _handle(request, owner):
     try:
         return {**dispatch(request, owner), "key": request.key}
-    except (ValueError, KeyError, TypeError) as exc:
+    except (ValueError, KeyError, TypeError, FileNotFoundError) as exc:
         raise HTTPException(409, str(exc)) from exc
 
 
-def recording(identifier, owner_key):
+def recording(identifier, owner_key, replay_id=None):
     root, _ = authorize(
         Request(operation="observe", session_id=identifier, credential=owner_key), True
     )
+    if replay_id:
+        if not re.fullmatch(r"[a-f0-9]{32}", replay_id):
+            raise ValueError("Invalid replay edition")
+        from methane.provenance import verify
+
+        return verify(read(root / "replays" / replay_id / "recording.json"))
+    saved = committed(root)
+    if saved:
+        return saved["recording"]
     if not (root / "recording.json").exists():
         raise ValueError("No completed interval is available yet")
     from methane.provenance import verify
@@ -354,6 +457,10 @@ def recording(identifier, owner_key):
 def cleanup():
     for identifier, worker in list(_workers.items()):
         if worker.poll() is None:
+            if identifier.startswith("replay-"):
+                worker.terminate()
+                worker.wait(timeout=5)
+                continue
             (home() / identifier / "stop").touch()
             try:
                 worker.wait(timeout=1)
@@ -361,3 +468,55 @@ def cleanup():
                 worker.terminate()
                 worker.wait(timeout=5)
     _workers.clear()
+
+
+def replay_state(root):
+    pointer = root / "replay.json"
+    if not pointer.exists():
+        return None
+    key = read(pointer)["id"]
+    directory = root / "replays" / key
+    s = read(directory / "state.json")
+    if s["status"] == "running":
+        try:
+            with lease(root / "replay.lock"):
+                s = dict(
+                    status="interrupted",
+                    error="Replay worker stopped; the original session is unchanged",
+                )
+        except ValueError:
+            pass
+    return {"id": key, **s}
+
+
+def start_replay(root):
+    saved = committed(root)
+    if not saved:
+        raise ValueError("Complete an interval before replaying recorded requests")
+    key = secrets.token_hex(16)
+    replay_root = root / "replays" / key
+    with lease(root / "replay.lock") as handle:
+        # Share the bounded worker budget with interactive sessions.
+        slot = None
+        for i in range(2):
+            try:
+                slot = lease(home() / f"slot-{i}.lock")
+                break
+            except ValueError:
+                continue
+        if slot is None:
+            raise ValueError("Two workers are active; stop one before replaying")
+        with slot:
+            write(replay_root / "source.json", saved["recording"])
+            write(replay_root / "state.json", dict(status="running", fraction=0))
+            with (replay_root / "worker.log").open("ab") as log:
+                _workers["replay-" + key] = subprocess.Popen(
+                    [sys.executable, "-m", "methane.control_replay", str(replay_root)],
+                    cwd=Path(__file__).resolve().parents[1],
+                    stdout=log,
+                    stderr=log,
+                    start_new_session=True,
+                    pass_fds=(handle.fileno(), slot.fileno()),
+                )
+            write(root / "replay.json", dict(id=key))
+    return replay_state(root)

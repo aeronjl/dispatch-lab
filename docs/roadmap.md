@@ -11,6 +11,58 @@ season matrices are reusable study templates for users, not a mandatory research
 queue. One representative annual case checks long-duration operation. See the
 [product acceptance revision](../research/release-2/product-acceptance.md).
 
+## Current finite product roadmap
+
+The modelling tranche is closed for this roadmap. The original releases and
+subsequent equipment work below are delivery history, not a repeatedly expanding
+sequence. Additional components, literature mappings, data and learned policies
+are optional backlog unless explicitly reprioritised.
+
+| ID | Increment | Completion gate | Status |
+|---|---|---|---|
+| **P1** | Practical agent operation | Operate saved project inputs including utilities; continue committed state; recover interrupted sessions; numerically replay saved requests with differences reported. Retain the six bounded process actions and the reference service executive. | Complete — see the P1 acceptance record below |
+| **P2** | Expert UX consolidation | A coherent Site → Build → Operate → Investigate → Compare → Write up workflow, progressive disclosure, reliable context/return navigation, and real participant walkthroughs with misunderstandings recorded and addressed. | Next; not started |
+| **P3** | Installation and durability | Fresh installation and guided workflow rehearsal, plus an actual off-machine export/backup/restore drill at an agreed destination. | After P2; storage destination needed for the off-machine drill |
+
+Return after each increment with these same IDs, their status and outstanding gate.
+A discovered defect can require correction inside an increment; a useful modelling
+idea does not automatically become a new step before P2. Real plant observations
+are not a prerequisite for completion of this research-based software platform.
+P1's contract is [practical agent operation](agent-control.md).
+
+### P1 acceptance · 18 September 2026
+
+Delivered through **Simulation menu → Agent control**. The [control guide](agent-control.md)
+describes project/site-utility inputs, committed state, interruption recovery,
+permission renewal, recorded-request replay and portable archives.
+
+Verification covers ten new acceptance cases, including a killed worker after
+command acceptance, app-registry loss, site water restrictions, disclosed CO₂
+arrivals, carried service state/accounting, corrupt inputs, authority boundaries,
+independent-balance corruption detection, cancellation and offline bundles.
+The existing controller, continuation and protocol checks also passed.
+
+- Full Python sweep: **1,313 passed; one source-identity mismatch**. README was edited
+  after that process captured its source capsule but before an isolated worker
+  started. The check correctly refused identical experiment identity across those
+  different capsules. Both isolated-worker tests passed in a stationary rerun;
+  the original failed sweep is retained, not relabelled as a clean full pass.
+- **99 JavaScript tests passed.** **17 distinct browser cases passed**, including
+  the actual stdio MCP round trip, recovery, continuation, project selection,
+  replay, keyboard/narrow-screen navigation and unchanged plant/solar screenshots.
+  Two environment-gated browser cases (new component lineage and extracted offline
+  playback) were skipped; the standalone offline bundle checker was exercised in Python.
+- Locked dependency installation, lint, formatting, documentation freshness,
+  catalogue, taxonomy and generated engineering documentation checks passed.
+- Desktop/mobile captures were reviewed. The live app's entry and return were
+  rehearsed; this is software verification, not participant feedback or empirical
+  plant validation. Numerical replay preserves requests, not external agent inference.
+
+Local test artifacts are under `build/agent-control/`; old evidence is unchanged.
+P2 and P3 remain the next increments. No modelling extension is inserted ahead of them.
+
+## Delivery history
+
 ## Release 1 — qualified reference autonomy
 
 Acceptance and current work: [release-1.md](release-1.md).
@@ -148,10 +200,9 @@ increments are not automatically started.
    execution constraints and keep simulator truth outside agent observations.
    Expose recorded reasoning and actions in the existing plant/control views.
    This does not authorise connecting an agent to real plant hardware.
-   The [control contract](agent-control.md) records the bounded hour-zero scope,
-   permission/expiry behavior, shared physical execution and recording workflow.
-   Continued/site-utility sessions and numerical external-agent reruns are explicitly
-   unsupported; they are never silently replaced with unconstrained/reference runs.
+   The initial interface was bounded to hour-zero sessions. The current
+   [control contract](agent-control.md) includes P1’s project, checkpoint and
+   recorded-request replay extensions; external-agent re-inference remains distinct.
 3. **Operating requirements and robust design comparisons — implemented.** Let an expert express
    production commitments, reserve/service requirements and acceptable shortfall,
    then compare site/design choices against them. Reveal bottlenecks, uncertainty,
@@ -177,9 +228,10 @@ participant feedback and an off-machine storage/restore arrangement remain expli
 external gates. Broad research matrices remain user-run templates, not the product's
 completion criterion.
 
-### Remaining work after the four increments
+### Historical modelling follow-ons (now closed or optional backlog)
 
-These are follow-on increments and evidence gates, not automatically started work:
+The following records earlier work and proposals. The finite P1–P3 table above
+is now authoritative; these proposals do not insert new release gates.
 
 1. **Deployment integration model — implemented, evidence still bounded.** Optional
    [plant interfaces](plant-interfaces.md) connect AC conversion, external cooler/dryer
@@ -204,7 +256,7 @@ These are follow-on increments and evidence gates, not automatically started wor
    sensitivity, scoped evaluation, saved results and offline reports. These remain
    source-device experiments: startup, scale-up and plant transfer are not inferred.
 
-   **Next:** explicit plant-compatible component options and transfer scenarios. Public
+   **Optional backlog:** explicit plant-compatible component options and transfer scenarios. Public
    evidence remains the primary modelling basis. Review the literature-derived
    reference profiles, then promote justified mechanisms into named, executable
    component options with explicit source conditions and applicability. Prioritise
@@ -231,9 +283,9 @@ These are follow-on increments and evidence gates, not automatically started wor
 3. **Rehearse the expert workflow with real participants.** Observe site selection,
    design changes, requirement assessment, evidence inspection, an alternative and
    a written account; simplify navigation where users misunderstand context.
-4. **Extend agent sessions when needed.** Current MCP remains a bounded simulated
-   hour-zero interface. Continued state, site utilities and numerical external-agent
-   reruns require explicit contracts and tests before being advertised.
+4. **Practical agent operation.** This is now the fixed P1 increment above,
+   documented in [agent-control.md](agent-control.md). Recorded-request replay is
+   distinct from asking an external agent to infer again.
 5. **Arrange durable storage and restore.** Local content-addressed records and
    bundles are delivered; off-machine retention, access and recovery require a chosen
    destination and a real restore drill. Local commits are not that backup.

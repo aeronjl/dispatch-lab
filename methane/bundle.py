@@ -92,7 +92,7 @@ Hashes detect modification, not authenticity. Numerical checks do not calibrate 
     # Source contains the rerun entry point captured with the executable code.
     if result.get("provenance", {}).get("external_control"):
         files["README.txt"] += (
-            b"\nExternal-control session: recorded playback and independent checks are supported. Numerical external-agent rerun is unavailable and the rerun commands above will reject this archive, rather than substitute the reference policy. Original agent observations, requests and reasons are retained in each decision's external_control record. Agent tokens are never archived.\n"
+            b"\nExternal-control session: recompute.py numerically replays the saved process requests when control_reproduction inputs are present. It writes a new edition and reports changed information and execution outcomes. It never asks an external agent to infer again. Legacy archives without those inputs support recorded playback only. Private checkpoint state is included in owner exports, never in MCP observations. Tokens are never archived.\n"
         )
     manifest = dict(
         schema_version="dispatch-lab/reproduction-bundle/1",

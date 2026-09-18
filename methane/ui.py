@@ -263,6 +263,13 @@ def playback_value(result, register_contexts=True):
         "control_repository": str(Path(__file__).resolve().parents[1])
         if register_contexts
         else None,
+        "control_context": {
+            "next_hour": result["control_reproduction"]["ending_checkpoint"]["next_hour"],
+            "total_hours": result["control_reproduction"]["inputs"]["total_hours"],
+            "controller": result["control_reproduction"]["inputs"]["controller"],
+        }
+        if result.get("control_reproduction", {}).get("ending_checkpoint")
+        else None,
         "study_token": register_study(result) if register_contexts else None,
         "component_specs": {k: v.to_dict() for k, v in SPECS.items()},
         "provenance_summary": {
@@ -1925,7 +1932,7 @@ def build_app(default=None, *, start_project=False):
             if request.get("kind") == "control-session":
                 from methane.control_sessions import recording
 
-                r = recording(request["session_id"], request["owner_key"])
+                r = recording(request["session_id"], request["owner_key"], request.get("replay_id"))
             elif request.get("kind") == "site-study":
                 from methane.siting.production import entries, load_period
                 from methane.siting.store import Store

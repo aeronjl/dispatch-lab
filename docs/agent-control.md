@@ -1,146 +1,125 @@
-# Shared control and MCP
+# Practical agent operation · P1
 
-Open **Simulation menu → Agent control**. Choose a reference policy and a bounded
-session (1–72 simulated hours, 1–120 minutes of wall time; two active sessions per
-app). The loaded recording supplies frozen plant, weather, sensor, policy and
-uncertainty inputs. A **new simulation starts at hour zero** with the current
-implementation. Nothing mutates the source recording. Continued histories and
-site-utility-constrained recordings are explicitly unsupported in this increment.
+Open **Simulation menu → Agent control**. A local operator and an explicitly
+granted MCP agent share the same observation → preview → advance → receipt loop.
+This operates a simulation, with six bounded hourly process requests. Repairs,
+service scheduling and protected recovery tests remain with the reference executive.
+No real plant connection or hardware authority is provided.
 
-## Operator workflow
+## Choose the starting information
 
-1. Start the session and read the observation. The plant drawing shows the last
-   decision's estimated inventories and temperature, together with last delivered
-   process flows. It is not a view of private physical state. Services continue in
-   the existing executive; their full animations are in recorded playback.
-2. Preview the reference policy or enter the six explicit hourly process requests.
-   Reference previews retain the configured horizon. Explicit requests have a
-   one-hour feasibility prediction; the interface reports requested and predicted
-   applied values separately. Changing inputs invalidates the preview.
-3. Add a reason and advance one hour. Read the receipt before the next action.
-   No agent command means no advance. There is no implicit timeout policy action.
-4. The **Connection** view creates a session-specific capability with observe,
-   preview or advance permission. It shows a ready-to-copy stdio MCP configuration.
-   The **Trace** view records operator/agent attribution, reasons, requested and
-   applied commands, solver status, forced trips and balance checks.
-5. Pause blocks new actions; resume requires a fresh proposal. Revocation blocks
-   that agent immediately at the API boundary. An already accepted interval may
-   finish. Stop or expiry ends the bounded session and preserves completed work.
-   Closing the workspace preserves session access in this browser and restores
-   the original playhead, selected component and focus; it does not revoke access.
-6. Open the completed or partial recording in ordinary playback, Control view,
-   inspectors and archive/export workflows. This explicitly replaces the displayed
-   recording. Its provenance identifies an external-control session and source run.
+- **This recording’s starting inputs** freezes the saved configuration, weather,
+  policy and uncertainty. It starts at the original input boundary, not the current
+  playback hour. New control recordings also offer their saved ending checkpoint.
+- **Saved plant project** freezes a saved design revision, its site utilities and
+  a compatible saved weather environment. An explicitly labelled synthetic example
+  is also available. Unsaved design edits are not adopted.
+- **Saved operating case / checkpoint** uses an immutable Sites case, including
+  its original controller, utilities, weather and uncertainty. The owner chooses
+  hour zero or a committed partition boundary. Displayed estimates are never
+  promoted to physical starting state. Resource-only cases cannot operate a plant.
 
-This is a local, single-user app capability system, not a multi-tenant deployment
-or safety-certified access-control system. Do not expose the app publicly. A local
-MCP bridge is not an OS sandbox for the client that launches it. Only grant a client
-you intend to receive the declared plant, prices, observations and forecasts.
+A new session authorises 1–72 simulated hours and 1–120 minutes of wall time, within
+its frozen weather window. Two worker slots bound interactive sessions and numerical
+replays together. A completed session can continue for another authorised window;
+there is no automatic extension. Archived checkpoints require matching executable
+source. Older recordings without portable runtime remain readable; select their
+saved study when available, rather than inventing the missing state.
 
-## Contract and implementation
+## Operate, interrupt and recover
 
-`dispatch-control/1` in `methane/control_port.py` adapts the existing causal learning
-data port. It includes a decision revision, UTC time, observations, estimate,
-diagnostic state, declared plant and component models, frozen prices, forecast,
-reference plan, constraint evidence, source identity and information hash. Forecast
-PV[0] retains the existing contemporaneous hourly-mean abstraction; future forecast
-values are predictions. Hidden execution parameters, fault schedules, scheduled
-repair outcomes, future realised weather and retrospective truth are not exposed.
+1. Observe estimated inventories, the current forecast, declared equipment and
+   supply limits, reference plan and constraint evidence. The illustration shows
+   estimates and the last delivered process flows. Recorded playback retains full
+   service animation and explicitly retrospective truth.
+2. Preview the reference policy or request electrolyser power, battery charge,
+   battery discharge, heating, heat rejection and methane production. All inputs
+   are finite and nonnegative. Equipment-limit violations, incompatible battery
+   requests and isolated loads are rejected. Shared resource shortages are visibly
+   projected to feasible applied actions. Site water limits and finite water stocks
+   constrain both prediction and execution. Recovery commitments require the
+   reference proposal.
+3. Supply a reason and advance one hour. Proposals bind the original information,
+   decision revision and authority generation. Acceptance is idempotent for the same
+   request/proposal; competing requests are rejected. After an uncertain response,
+   observe the receipt before retrying with the same IDs.
+4. The **Connection** view grants observe, preview or advance authority. Grants,
+   revocation, pause and expiry remain visible. Closing the view does not stop a
+   granted agent. Pause blocks new acceptance; already accepted work may finish.
+5. Every successful hour atomically commits its private execution checkpoint,
+   sealed recording and public receipts together. The checkpoint includes storage,
+   thermal state, faults, diagnostic history, service commitments, lifecycle state
+   and accounting history. A loose command file is not evidence of a completed hour.
+6. **Recover checkpoint** restarts an interrupted, expired or stopped session from
+   that committed boundary. Accepted but uncommitted commands are retained separately
+   and require a fresh preview. **Continue session** extends a completed session
+   within the saved weather window. Both renew the wall budget, invalidate old
+   proposals and revoke agent access. The owner must generate a new connection.
 
-Actions are six finite nonnegative requests: electrolyser power, battery charge,
-battery discharge, heating, heat rejection and methane mass for the hourly interval.
-Unknown fields, incompatible simultaneous battery requests and declared equipment
-limit violations are rejected. Shared resource constraints can project a request to
-a smaller feasible action; that projection and unmet request remain explicit.
-Probes and scheduled recovery tests accept the reference plan only. Service and
-recovery commitments, physical diagnosis, shared power and physical balance checks
-continue in `simulation.py` and the existing kernels.
+Inherited operating-system leases prevent duplicate workers, including after loss
+of the app’s process registry. A surviving worker remains observable; a dead worker
+can be recovered. Frozen input hashes and source bindings are checked before restart.
+The owner capability is retained by this browser. Losing both browser storage and
+that capability does not grant access to another session. Private session files live
+in `runs/control-sessions/`; they are not an off-machine backup.
 
-The simulation worker waits immediately after constructing each decision. Both
-operator and agent previews/commands use the same server and physical executor.
-Each proposal binds the original information, authority generation and revision.
-Advance atomically accepts at most one command per revision. Retrying the same
-request/proposal returns its acceptance; conflicting or stale requests are rejected.
-Do not change request IDs after an uncertain response: observe the receipt first.
-Preview jobs have two execution slots and a 1,000-proposal session limit. The physical
-executor retains its 0.5-second solver limit, incumbent validation and safe-off
-fallback. These are bounded numerical mechanisms, not guarantees of field safety.
+## Recorded-request replay and preservation
 
-The private worker process has an independent wall deadline, so a lost browser or
-MCP connection cannot leave a simulation running indefinitely. The app detects dead
-workers and labels them interrupted. Sessions cannot resume across an application
-restart; completed intervals remain readable with the owner capability. Changed
-source under a running app is rejected when a worker starts. Restart to use it.
+**Replay recorded requests** takes a snapshot of the completed prefix and starts an
+isolated worker. It re-executes the original six process requests from the original
+starting checkpoint and frozen inputs. It never calls an external agent to reason
+again, and never substitutes fresh reference-policy process requests. Services still
+run their configured executive; time-limited planning can produce differences.
 
-## MCP tools
+Progress and cancellation are visible. A replay is a new immutable edition and can
+be opened in ordinary playback. Its comparison records source/environment identities,
+changed observation/estimate/forecast fields, requested versus applied outcomes,
+physical-state differences, methane difference and incomplete execution. Original
+proposal predictions are explicitly labelled as saved predictions, not recomputed
+forecasts. The source session and completed recording remain unchanged.
 
-The stdio bridge is `uv run python -m methane.mcp_server`, using the locked official
-Python SDK. The interface follows the [official server documentation](https://modelcontextprotocol.io/docs/develop/build-server)
-and [Python SDK](https://github.com/modelcontextprotocol/python-sdk).
+Owner exports include the frozen replay inputs and private starting/ending runtime.
+These are never MCP observations. `recompute.py` uses the same recorded-request replay
+adapter for new control archives; older archives without the required inputs remain
+explicitly unsupported for numerical replay. Recorded playback works offline for
+both. Source bundles retain the matching implementation and dependency lock.
+
+The independent control-period checker recalculates process energy, gas, thermal and
+water balances, action limits, chronological coverage, disclosed supplies and forecast
+availability. It treats starting runtime, actual capacity and service power as recorded
+boundary conditions. It does not independently reconstruct a mid-history service
+mission, observer or lifecycle state, or establish empirical plant validity. Those
+mechanisms retain their separate tests; a replay comparison exposes differences
+without turning them into an overall trust score.
+
+## MCP contract
+
+`dispatch-control/2` retains the existing tool/action scope:
 
 | Tool | Effect |
 |---|---|
-| `observe` | Current permitted observation, authority, reference plan and receipts |
-| `preview_reference(revision)` | Saved reference-policy proposal; no time advances |
-| `preview_actions(revision, actions)` | One-interval predicted feasibility projection |
-| `advance(revision, proposal_id, request_id, reason)` | One accepted simulated interval |
+| `observe` | Permitted observations, estimates, supply constraints, plan and receipts |
+| `preview_reference(revision)` | Preview the configured reference policy |
+| `preview_actions(revision, actions)` | Predict one interval with six explicit requests |
+| `advance(revision, proposal_id, request_id, reason)` | Accept one simulated interval |
 | `trace` | Completed command receipts and observed outcomes |
 
-Environment: `DISPATCH_CONTROL_URL` (local HTTP app origin),
-`DISPATCH_CONTROL_SESSION`, `DISPATCH_AGENT_TOKEN`. The bridge only connects to
-loopback HTTP, disables environment proxies and refuses redirects. It cannot create
-sessions, browse archives, change plant configuration, read arbitrary files or
-change its own permission. The owner grant is distinct from the agent grant;
-server metadata stores their hashes. Tokens never enter simulation archives.
-Reasons are untrusted text, escaped in the UI. Attribution means the capability
-used, not cryptographic proof of a particular model, human or reasoning process.
+Run `uv run python -m methane.mcp_server` with `DISPATCH_CONTROL_URL`,
+`DISPATCH_CONTROL_SESSION` and `DISPATCH_AGENT_TOKEN`. The UI supplies the configuration.
+The bridge uses the locked official Python MCP SDK, loopback HTTP only, no environment
+proxies and no redirects. It cannot select projects, browse archives, read private
+checkpoints, recover/extend sessions, replay retrospectively or grant itself authority.
+Replay comparisons are owner-only because they contain retrospective physical deltas.
 
-## Preservation and reproducibility
+Tokens are stored as hashes and never enter archives. Reasons are escaped untrusted
+text; attribution identifies a capability, not cryptographic proof of a person/model
+or access to private reasoning. This is a local single-user capability system, not a
+multi-tenant service or safety-certified control system. Never expose it publicly.
 
-Private session data is saved in `runs/control-sessions/`. Each completed interval
-creates an atomic current recording and a separate public receipt. Original public
-decision information and action attribution are captured inside the normal run
-archive. The recording is sealed with the worker's current source/environment and
-the frozen source-run identity. Exported source capsules and model documentation
-remain available. Existing archives and column meanings are unchanged.
+## Completion boundary
 
-Recorded playback and independent numerical balance checks work offline. Numerical
-external-agent reruns are **not implemented**: standard rerun commands reject these
-archives instead of silently substituting the reference policy. A future replay
-adapter must specify whether it replays recorded requests or re-evaluates an agent,
-preserve the external agent's model/configuration and report changed information.
-The current trace records submitted reasons, not an external agent's private chain
-of thought or unrecorded tool use.
-
-## Verification and remaining scope
-
-Automated coverage exercises the actual isolated worker, reference passthrough,
-independent balance checks, valid and invalid explicit requests, information
-separation, repeated/stale commands, permissions, revocation, pause, expiry and stop.
-Protocol checks start the real stdio MCP server. Browser checks perform a real MCP
-observe → preview → advance round trip and verify the result in the UI and recording;
-they also cover keyboard return, narrow screens, input invalidation and escaped text.
-Original plant and solar screenshot baselines are retained.
-
-This increment was checked with 81 focused Python cases, all 95 JavaScript unit
-tests and 23 distinct browser cases across the new control workspace, existing
-Control view, investigations and platform. Lint, formatting, locked dependency
-installation and documentation freshness passed. Two environment-gated browser
-cases (new component lineage and extracted offline playback) were not enabled;
-the Python bundle/offline-report checks were included. Reviewed captures are local
-artifacts in `build/agent-control/`. No new throughput or field-performance claim
-is made from these checks.
-
-The workflow rehearsal caught and corrected an oversized cloned illustration
-intercepting controls, a globally hidden footer, and an MCP response that lacked
-structured output. The investigation keyboard check now waits for its asynchronous
-draft validation to enable Save before testing the focus cycle. Review of the new
-controller passage and the unchanged maintenance/learning narratives preceded the
-documentation binding refresh; teaching examples were regenerated under this source.
-
-This is an implementation rehearsal, not an expert-participant evaluation or evidence
-that a language-model controller is beneficial. Autonomous service scheduling through
-MCP, arbitrary checkpoint forks, utility-constrained site sessions, reconnectable
-worker continuation, multi-step proposal execution and agent numerical replay remain
-explicit extension boundaries. A real user walkthrough and a durable off-machine
-storage/restore arrangement remain outstanding across the product roadmap.
+P1 makes configured projects and persisted simulation state available through the
+existing bounded MCP interface. It does not add service-control tools, arbitrary
+uncommitted-hour forks, live hardware control, new learned policies or new plant
+models. P2 consolidates expert navigation and uses real participant feedback; P3
+qualifies fresh installation and off-machine restoration. See [the finite roadmap](roadmap.md).
