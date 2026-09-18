@@ -23,11 +23,12 @@ from methane.forecast import (
 from methane.forecast import (
     choose_vintage as choose_vintage,
 )
+from methane.paths import data_path
 from methane.pv import dc_power
 from methane.storage import DeliverySchedule
 from methane.timebase import stamp, utc
 
-CACHE = Path(__file__).resolve().parent.parent / "runs" / "weather"
+CACHE = data_path("weather", "DISPATCH_WEATHER_DIR")
 FIELDS = "temperature_2m,relative_humidity_2m,global_tilted_irradiance"
 ATTRIBUTION = "Weather data by Open-Meteo.com (CC BY 4.0), ECMWF IFS / Copernicus ERA5"
 

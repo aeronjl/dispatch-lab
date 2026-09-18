@@ -33,7 +33,9 @@ def capture():
         if (ROOT / filename).is_file():
             paths.append(ROOT / filename)
     return {
-        str(p.relative_to(ROOT)): p.read_bytes() for p in sorted(set(paths)) if not p.is_symlink()
+        p.relative_to(ROOT).as_posix(): p.read_bytes()
+        for p in sorted(set(paths))
+        if not p.is_symlink()
     }
 
 

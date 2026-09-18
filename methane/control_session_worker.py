@@ -1,7 +1,6 @@
 """One private simulator process, committed at each observation/action boundary."""
 
 import copy
-import signal
 import sys
 import time
 from pathlib import Path
@@ -13,6 +12,7 @@ from methane.control_storage import commit, committed, read, write
 from methane.provenance import LOADED_SOURCE, experiment_identity, seal
 from methane.siting.checkpoint import Continuation, unpack
 from methane.siting.store import digest
+from methane.worker_budget import budget
 
 
 def archive(inputs, meta, result, checkpoint, *, initial_state=None):
@@ -212,7 +212,9 @@ def main(root):
     meta, inputs = read(root / "meta.json"), read(root / "input.json")
     saved = committed(root)
     revision = saved["next_hour"] if saved else inputs["start_hour"]
-    signal.alarm(max(1, int(meta["expires_at"] - time.time()) + 2))
+    guard = budget(
+        max(1, int(meta["expires_at"] - time.time()) + 2), root / "state.json", None, cpu=False
+    )
     try:
         if digest(inputs) != meta["input_sha256"]:
             raise ValueError("Frozen session inputs changed")
@@ -252,6 +254,9 @@ def main(root):
                 status="failed", revision=saved["next_hour"] if saved else revision, error=str(exc)
             ),
         )
+
+    finally:
+        guard.set()
 
 
 if __name__ == "__main__":

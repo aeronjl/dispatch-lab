@@ -1,12 +1,16 @@
 {
   "devDependencies": {
-    "@playwright/test": "1.63.0"
+    "@playwright/test": "1.63.0",
+    "@tauri-apps/cli": "2.11.4"
   },
   "name": "dispatch-lab-browser-checks",
   "private": true,
   "scripts": {
     "test": "node --test tests/*.test.cjs",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "desktop:prepare": "uv run python desktop/build.py",
+    "desktop:build": "cd desktop && tauri build",
+    "desktop:dev": "cd desktop && tauri dev"
   },
   "dependencies": {
     "maplibre-gl": "6.9.0"

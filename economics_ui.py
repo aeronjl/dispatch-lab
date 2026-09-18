@@ -298,7 +298,9 @@ def sensitivity_plot(items):
 
 
 def archive(physical, costed, sensitivity, study=None):
-    folder = ROOT / "runs"
+    from methane.paths import data_root
+
+    folder = data_root()
     folder.mkdir(exist_ok=True)
     path = folder / f"costs-{uuid.uuid4().hex[:10]}.zip"
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:

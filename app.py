@@ -327,7 +327,9 @@ may differ across machines; this is one scenario, not a statistical performance 
 
 
 def export_run(result):
-    target = ROOT / "runs"
+    from methane.paths import data_root
+
+    target = data_root()
     target.mkdir(exist_ok=True)
     path = target / f"dispatch-{uuid.uuid4().hex[:10]}.zip"
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -786,14 +788,14 @@ def build_app():
     return build_methane_app(start_project=True)
 
 
-if __name__ == "__main__":
+def main(argv=None, *, desktop=False):
     parser = argparse.ArgumentParser(description="Run Dispatch lab on localhost.")
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument("--legacy", action="store_true", help="Run the preserved v0.1 hydrogen UI")
     parser.add_argument(
         "--archive", type=Path, help="Open a saved methane run without recomputing it"
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.legacy and args.archive:
         parser.error("--archive opens methane runs; it cannot be combined with --legacy")
     theme = make_theme()
@@ -801,22 +803,45 @@ if __name__ == "__main__":
         application = build_legacy_app()
         application_css = CSS
     else:
+        from methane.ui import build_app as build_methane_app
         from ui_theme import ASSETS
 
         if args.archive:
             from methane.evidence import load
-            from methane.ui import build_app as build_methane_app
 
-            application = build_methane_app(load(args.archive))
+            if desktop:
+                from methane.desktop_host import open_recording
+
+                application = build_methane_app(open_recording(args.archive))
+            else:
+                application = build_methane_app(load(args.archive))
+        elif desktop:
+            from methane.evidence import load
+            from methane.paths import resource_root
+
+            # First install opens a recorded teaching fixture immediately. Never
+            # run a long default experiment merely to construct an empty workspace.
+            application = build_methane_app(
+                load(resource_root() / "tests/fixtures/browser-demo-v2.json.gz"),
+                start_project=True,
+            )
         else:
             application = build_app()
         application_css = CSS + (ASSETS / "methane-motion.css").read_text()
     from methane.preview_service import lifespan
     from methane.startup import launch_local
 
+    extra = {}
+    desktop_session = None
+    if desktop:
+        from methane.desktop_host import options
+
+        desktop_session = options(args.port)
+        extra = desktop_session.middleware()
     launch_local(
         application.queue(max_size=8),
-        app_kwargs={"lifespan": lifespan},
+        desktop_session=desktop_session,
+        app_kwargs={"lifespan": lifespan, **extra},
         server_name="127.0.0.1",
         server_port=args.port,
         share=False,
@@ -828,3 +853,7 @@ if __name__ == "__main__":
         footer_links=[],
         allowed_paths=[str(Path(__file__).resolve().parent / "docs/components.md")],
     )
+
+
+if __name__ == "__main__":
+    main()

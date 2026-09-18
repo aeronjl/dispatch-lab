@@ -1,11 +1,11 @@
 {
   "schema_version": "dispatch-lab/model-documentation/1",
   "scope": "Hourly scheduling and bounded diagnosis sandbox. All fixtures and equipment assumptions are illustrative.",
-  "source": "9256cbb61e968b0e528544be0c2e973bafea2f51298d9bfa44a4da9835951964",
+  "source": "52f73e21e8b7a0e3ff84e4de929b96a7198d5abd97839b3cbd15a6728538cbe5",
   "topics": {
     "battery": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "battery": {
             "bindings": {
@@ -623,7 +623,7 @@
     },
     "bus": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "coupling": {
             "bindings": {
@@ -1991,7 +1991,7 @@
     },
     "charging": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "support": {
             "bindings": {
@@ -3274,7 +3274,7 @@
     },
     "cleaning": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "cleaning": {
             "bindings": {
@@ -4265,7 +4265,7 @@
     },
     "co2": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -4831,7 +4831,7 @@
     },
     "condition": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "lifecycle-condition": {
             "bindings": {
@@ -6009,7 +6009,7 @@
     },
     "controllers": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "control": {
             "bindings": {
@@ -6121,7 +6121,7 @@
               "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
-              "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
+              "methane/provenance.py": "00b4bf4e72ef63229ed61d021c99f79db2fdefd94e292f9dcfdacd556e48ce43",
               "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
               "methane/simulation.py": "c715b06add4b34087351ea9ac280971312d126137868bde603ba2f6a7d516c72",
               "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
@@ -7254,11 +7254,11 @@
           "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
           "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
           "methane/control_port.py": "f287f74dd552efb30a3a08ffc6bcc8ea21351a9d16e95497642b18fcf9d0d47c",
-          "methane/control_replay.py": "00da7f462ba3a958b6a6b4e1fde0d5490e3dc92c1e401e96115460281cbaa48c",
-          "methane/control_session_worker.py": "91856825af1ce1d49e4e5fd278451a5c4ed0eeb3d6ec6a28bf915e615cb04455",
-          "methane/control_sessions.py": "31fd62ce3b370409da157c2f017604307da2fe808cb1b9d4b8552bdc7f3dcfd9",
+          "methane/control_replay.py": "c846233a1ef934143ffdd522118509944338e215acf2f386126f6b9831b677d9",
+          "methane/control_session_worker.py": "85addfbe8e8ff4c861d3ef60b26681627a6e5683709c90082ce683f50ef057cd",
+          "methane/control_sessions.py": "ed57115667996978ac834345d0a3176c59e5bc7b9ab67768c4410f1f24c82b99",
           "methane/control_sources.py": "b17ce346ed0c49bcdbe6450b32465a186bcd56a64bdbc565ec075bd436c3553a",
-          "methane/control_storage.py": "a4dbe88761ed1c9cbf9e64a77f398a1bfcbcaa0353a42cacaf086fd5bcd9b18e",
+          "methane/control_storage.py": "eac704cf8366f44f6c9b898e3f5da34d299dfdcc3d9d971e1d06ef3167ff4861",
           "methane/costing.py": "1b9f67858a5263adbc869ae6b88e656a56a659f39ce74340e4cacabe612d768d",
           "methane/dispatch.py": "4941700c38595f224c01925f3fe1ef4dac072528ca8c98dd31cd9cfb9a228a6f",
           "methane/duration_calibration.py": "c32595e95385cc833f5f5ab92034dde3413a001a2f9ac87a34413fb938d4f8e3",
@@ -7578,7 +7578,7 @@
     },
     "deployment": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "commissioning": {
             "bindings": {
@@ -8903,7 +8903,7 @@
     },
     "diagnosis": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "control": {
             "bindings": {
@@ -10471,7 +10471,7 @@
     },
     "economics": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "economics": {
             "bindings": {
@@ -13409,7 +13409,7 @@
     },
     "electrolyser": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -14576,7 +14576,7 @@
     },
     "estimators": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {},
         "parameters": [],
         "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
@@ -14735,7 +14735,7 @@
       },
       "evidence": [
         {
-          "applies_to": "9256cbb61e968b0e528544be0c2e973bafea2f51298d9bfa44a4da9835951964",
+          "applies_to": "52f73e21e8b7a0e3ff84e4de929b96a7198d5abd97839b3cbd15a6728538cbe5",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "estimators/numerical/1",
@@ -14858,7 +14858,7 @@
     },
     "experiments": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "coupling": {
             "bindings": {
@@ -14951,7 +14951,7 @@
               "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
-              "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
+              "methane/provenance.py": "00b4bf4e72ef63229ed61d021c99f79db2fdefd94e292f9dcfdacd556e48ce43",
               "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
               "methane/simulation.py": "c715b06add4b34087351ea9ac280971312d126137868bde603ba2f6a7d516c72",
               "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
@@ -15051,7 +15051,7 @@
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
               "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
-              "methane/weather.py": "8b11d0e36fd57545143d42fd2163fc7d29609fc3d5fe41fcccada4f1e4fbe224",
+              "methane/weather.py": "6e2a801956d773342ca2d0c7f8b044a85a4636feba8f9b62a2509677ecec34d9",
               "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a"
             },
             "boundary": "ERA5 is reanalysis, not measured site weather. Six-hour publication lag, forecast bias and synthetic variability are assumptions. Existing weather archive lacks the site output needed to calibrate PV conversion.",
@@ -18242,7 +18242,7 @@
           "methane/duration_population.py": "ede66f7e254de17abcc2735ea1c5b310f34820085e178b14576e884bfebd3a99",
           "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
           "methane/electrolyser.py": "051cc2ab66d47a9dcdda78ad964760596f5de461b036a221ebf02b338bf872dd",
-          "methane/evidence.py": "7646b557faed79317a1e9c945c3cecfd753797f6c71a10c69eff863323573529",
+          "methane/evidence.py": "54e8c19361eadd265b2ade339487c48218f3c85044a6e46ec50fa4bcba36a1aa",
           "methane/faults.py": "f3fbccc7b34a5b172dd9485b554c188d173f5649e6972b79810b4e671feed2aa",
           "methane/field_operations.py": "c72036d59ca966d73fead6717ee77442df2c414c3d4f46650d1ac1a1365f4e97",
           "methane/field_studies.py": "750bc2e56840cdb1dd98513408b207ccb39fac3b207f52b6e60502b6fe1e51d6",
@@ -18336,7 +18336,7 @@
           "methane/services/visits_demo.py": "5fa1bd5ad4d08d787320e40a24cab7a463add8d7e481d627e4dae708814bec43",
           "methane/services/weather_recovery.py": "2423d0a25ea9bb4657703c72a9f8078cc933fc401495903a30bd21d0f17d9db3",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
-          "methane/studies.py": "22d2fb90fef41d921357b5ca58a3a1b87e16b97eea07cc037ebc477f2edeee9c",
+          "methane/studies.py": "774279a1be9ac5f590ee64cc387e3fb316125ab1028cd6d103fa9082246a5597",
           "methane/study_bundle_check.py": "35a2cafbf3e65041576df86c268319b598a40986ea52357c680ed746beb41242",
           "methane/study_presentation.py": "cd21d284483b28c78d895df0396e19d535b18e8deb86a119e77085bf189a82bf",
           "methane/study_service.py": "f8f71960e060f6f70dec8df2fa43c4070b7915ce9dbfc90bee69403baf5c9adf",
@@ -18527,7 +18527,7 @@
     },
     "hardware": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "commissioning": {
             "bindings": {
@@ -19615,7 +19615,7 @@
     },
     "hydrogen": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -20308,7 +20308,7 @@
     },
     "inspection": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "faults": {
             "bindings": {
@@ -21275,7 +21275,7 @@
     },
     "learning_data": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {},
         "parameters": [],
         "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
@@ -21433,7 +21433,7 @@
       },
       "evidence": [
         {
-          "applies_to": "9256cbb61e968b0e528544be0c2e973bafea2f51298d9bfa44a4da9835951964",
+          "applies_to": "52f73e21e8b7a0e3ff84e4de929b96a7198d5abd97839b3cbd15a6728538cbe5",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "learning_data/numerical/1",
@@ -21540,7 +21540,7 @@
     },
     "logistics": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "maintenance": {
             "bindings": {
@@ -23002,7 +23002,7 @@
     },
     "maintenance": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "commissioning": {
             "bindings": {
@@ -24740,7 +24740,7 @@
     },
     "policies": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {},
         "parameters": [],
         "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
@@ -24899,7 +24899,7 @@
       },
       "evidence": [
         {
-          "applies_to": "9256cbb61e968b0e528544be0c2e973bafea2f51298d9bfa44a4da9835951964",
+          "applies_to": "52f73e21e8b7a0e3ff84e4de929b96a7198d5abd97839b3cbd15a6728538cbe5",
           "artifact": "build/engineering/current/evidence-catalogue.json",
           "claim": "Numerical and boundary checks for this implementation",
           "id": "policies/numerical/1",
@@ -25020,7 +25020,7 @@
     },
     "reactor": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "chemistry": {
             "bindings": {
@@ -25897,7 +25897,7 @@
     },
     "recovery": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "control": {
             "bindings": {
@@ -27349,7 +27349,7 @@
     },
     "service_costs": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "economics": {
             "bindings": {
@@ -30672,7 +30672,7 @@
     },
     "service_uncertainty": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "control": {
             "bindings": {
@@ -31604,7 +31604,7 @@
     },
     "siting": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "commissioning": {
             "bindings": {
@@ -32366,7 +32366,7 @@
           "methane/siting/environment.py": "214062db5e6563e4914c2841ab7bd0a4258e3865f30f67e38c475760d47d2891",
           "methane/siting/geometry.py": "4d617c67bcbbb2ceb0524487e0941dc5a0f81f4aaab044be1c4650e8c3e6294e",
           "methane/siting/layout.py": "50a9aca9a8c0538b6607195f140048777685d84fd30c22d56fb5dbd0fa642e66",
-          "methane/siting/production.py": "ba4117014cbeb5bd46b687cb10bf022986aaf6151da2e8cadb2b2c4b89ebdd0d",
+          "methane/siting/production.py": "e301c8578e0490a6478fe2025d08aacedcacc240a58d524f65dfdcdb5b73500c",
           "methane/siting/summary.py": "ae7425a687fe341a190b9f261e77c9ae9d8f5f15003e0445811458fecb605288",
           "methane/siting/utilities.py": "ce36056a13fb1cd1a6b0bf549613fb3d2895bb155eb77944abb5c47ebc96ccf2",
           "methane/storage.py": "d9cae23656312557652b9c163c32b3c1da5e26d86018252e9dddb4e073ea080d",
@@ -32576,7 +32576,7 @@
     },
     "solar": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "cleaning": {
             "bindings": {
@@ -34416,7 +34416,7 @@
     },
     "weather": {
       "assumption_review": {
-        "edition": "2026-09-17 / 14",
+        "edition": "2026-09-18 / 15",
         "groups": {
           "experiment": {
             "bindings": {
@@ -34429,7 +34429,7 @@
               "methane/duration_reference.py": "a1972eb82149d66d5b3cf423b66517153a94690a3ef02e46cfde5612aa432423",
               "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
-              "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
+              "methane/provenance.py": "00b4bf4e72ef63229ed61d021c99f79db2fdefd94e292f9dcfdacd556e48ce43",
               "methane/services/job_clock.py": "32aaaf940406927c954245b08ec2ee463afa49062f222eccf8464829d5ca9e5a",
               "methane/simulation.py": "c715b06add4b34087351ea9ac280971312d126137868bde603ba2f6a7d516c72",
               "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
@@ -34500,7 +34500,7 @@
               "methane/performance_reference.py": "fb9247f326bbeb4afc10a54a6e4c580feb9077b4cda28d7aacde733967f50b57",
               "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
               "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
-              "methane/weather.py": "8b11d0e36fd57545143d42fd2163fc7d29609fc3d5fe41fcccada4f1e4fbe224",
+              "methane/weather.py": "6e2a801956d773342ca2d0c7f8b044a85a4636feba8f9b62a2509677ecec34d9",
               "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a"
             },
             "boundary": "ERA5 is reanalysis, not measured site weather. Six-hour publication lag, forecast bias and synthetic variability are assumptions. Existing weather archive lacks the site output needed to calibrate PV conversion.",

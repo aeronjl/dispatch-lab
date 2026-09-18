@@ -33,16 +33,30 @@ def source_identity():
         for name, data in LOADED_FILES.items()
         if name.endswith(".py") or name.startswith("assets/")
     }
-    try:
-        revision = subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, stderr=subprocess.DEVNULL, text=True
-        ).strip()
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        revision = "unavailable"
-    try:
-        dirty = bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True))
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        dirty = None
+    release = ROOT / "dispatch-release.json"
+    if release.exists():
+        manifest = json.loads(release.read_text())
+        expected = {
+            k: v
+            for k, v in manifest["files"].items()
+            if k.endswith(".py") or k.startswith("assets/")
+        }
+        if files != expected:
+            raise ValueError("Installed executable source differs from its release manifest")
+        revision, dirty = manifest["revision"], manifest["dirty"]
+    else:
+        try:
+            revision = subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], cwd=ROOT, stderr=subprocess.DEVNULL, text=True
+            ).strip()
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            revision = "unavailable"
+        try:
+            dirty = bool(
+                subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True)
+            )
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            dirty = None
     return {"revision": revision, "dirty": dirty, "content_hash": digest(files), "files": files}
 
 

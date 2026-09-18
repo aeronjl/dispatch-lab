@@ -131,6 +131,9 @@ def test_bounded_worker_lease_cancellation_and_saved_outcomes(tmp_path):
     with production.worker_lease(store), pytest.raises(ValueError, match="worker holds"):
         jobs.launch(store, "fixture", {})
     job = jobs.launch(store, "fixture", {})
+    assert json.loads((store.root / "active-worker.json").read_bytes()) == dict(
+        kind="learning", job_id=job["id"]
+    )
     deadline = time.monotonic() + 20
     while time.monotonic() < deadline:
         state = jobs.poll(store, job["id"])

@@ -22,7 +22,7 @@ are optional backlog unless explicitly reprioritised.
 |---|---|---|---|
 | **P1** | Practical agent operation | Operate saved project inputs including utilities; continue committed state; recover interrupted sessions; numerically replay saved requests with differences reported. Retain the six bounded process actions and the reference service executive. | Complete — see the P1 acceptance record below |
 | **P2** | Expert UX consolidation | A coherent Site → Build → Operate → Investigate → Compare → Write up workflow, progressive disclosure, reliable context/return navigation, and real participant walkthroughs with misunderstandings recorded and addressed. | Implementation delivered; real participant walkthrough and resulting fixes remain open |
-| **P3** | Desktop distribution and durability | Installable Mac and Windows editions; durable projects; experiment lifecycle; integrated MCP connection; updates, offline work and recovery; clean-machine and off-machine restore qualification. | Planned in six fixed increments; implementation not started; see the desktop release plan |
+| **P3** | Desktop distribution and durability | Installable Mac and Windows editions; durable projects; experiment lifecycle; integrated MCP connection; updates, offline work and recovery; clean-machine and off-machine restore qualification. | P3.1 runtime/shell candidate delivered on Mac; joint Windows qualification open. P3.2–P3.6 not started; see the desktop release plan |
 
 Return after each increment with these same IDs, their status and outstanding gate.
 A discovered defect can require correction inside an increment; a useful modelling
@@ -37,6 +37,20 @@ new modelling tranche. P2's real participant review remains open and can feed th
 desktop walkthrough; it must not be replaced by an automated rehearsal. Return
 after each desktop increment with these fixed IDs and honest platform-specific
 verification. Containers and additional operating systems remain optional backlog.
+
+### P3.1 candidate · 18 September 2026
+
+The [runtime delivery record](desktop-runtime.md) covers the private Python payload,
+portable worker ownership, authenticated Tauri shell, native recording import/export
+and packaged MCP executable. A local Mac development app is available. The Windows
+build/install/worker/MCP workflow is supplied but has not been executed; Mac success
+does not close the joint gate. The next gate is native Windows qualification and
+resolution of its findings. Minimum OS and public distribution checks remain open.
+
+Remaining sequence is fixed: **P3.2** durable projects/drafts; **P3.3** lifecycle and
+recovery; **P3.4** Connect an agent; **P3.5** updates/offline/preservation; **P3.6**
+signed distribution, real participants and off-machine restore. None is absorbed
+into a claim that the development shell is the finished desktop product.
 
 ### P1 acceptance · 18 September 2026
 

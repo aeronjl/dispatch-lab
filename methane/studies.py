@@ -7,15 +7,12 @@ report revision, retaining failed attempts and the original report editions.
 
 import argparse
 import copy
-import fcntl
 import gzip
 import hashlib
 import html
 import json
 import os
 import re
-import subprocess
-import sys
 import time
 import uuid
 import zipfile
@@ -23,11 +20,14 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from methane.config import Config
+from methane.paths import data_path
+from methane.processes import lease, spawn
 from methane.provenance import LOADED_CAPSULE, LOADED_FILES, LOADED_SOURCE, digest
 from methane.source_capsule import decode
 
 ROOT = Path(__file__).resolve().parent.parent
-STORE = Path(os.environ.get("DISPATCH_STUDY_STORE", ROOT / "runs" / "studies"))
+
+STORE = data_path("studies", "DISPATCH_STUDY_STORE")
 PROTOCOL_PATH = "docs/studies/battery-reserves-v9.json"
 PROTOCOLS = {
     "battery-reserves": PROTOCOL_PATH,
@@ -673,7 +673,7 @@ def run_edition(identifier, root=STORE, fresh=False):
                         with calculation_path.open("xb") as f:
                             f.write(calculation_bytes)
                         record["service_calculation"] = {
-                            "artifact": str(calculation_path.relative_to(directory)),
+                            "artifact": calculation_path.relative_to(directory).as_posix(),
                             "artifact_sha256": hashlib.sha256(calculation_bytes).hexdigest(),
                             "source_hash": calculation["source_hash"],
                             "original_service_cost_version": calculation[
@@ -700,14 +700,14 @@ def run_edition(identifier, root=STORE, fresh=False):
                         status=result["status"]
                         if check["passed"] or result["status"] != "complete"
                         else "invalid",
-                        archive=str(path.relative_to(directory)),
+                        archive=path.relative_to(directory).as_posix(),
                         archive_integrity=result["integrity_sha256"],
                         run_id=result["run_id"],
                         metrics=result["metrics"],
                         independent_audit={
                             "passed": check["passed"],
                             "source_hash": LOADED_SOURCE["content_hash"],
-                            "artifact": str(check_path.relative_to(directory)),
+                            "artifact": check_path.relative_to(directory).as_posix(),
                             "artifact_sha256": hashlib.sha256(check_bytes).hexdigest(),
                         },
                         events=event_evidence(result),
@@ -1128,13 +1128,12 @@ def active_worker(root=STORE):
     root = Path(root)
     if not (root / ".execution.lock").exists():
         return None
-    with (root / ".execution.lock").open("a") as lock:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            lease = root / "worker.json"
-            return json.loads(lease.read_text()) if lease.exists() else {"edition_id": None}
-    return None
+    try:
+        with lease(root / ".execution.lock"):
+            return None
+    except BlockingIOError:
+        record = root / "worker.json"
+        return json.loads(record.read_text()) if record.exists() else {"edition_id": None}
 
 
 def launch(identifier, root=STORE, fresh=False):
@@ -1142,18 +1141,17 @@ def launch(identifier, root=STORE, fresh=False):
         raise ValueError("A withdrawn edition cannot be resumed; use the replacement protocol")
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
-    with (root / ".execution.lock").open("a") as lock:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError as exc:
-            raise ValueError("A study is already running in this store") from exc
-        worker = _launch(identifier, root, fresh, lock.fileno())
+    try:
+        handle = lease(root / ".execution.lock")
+    except BlockingIOError as exc:
+        raise ValueError("A study is already running in this store") from exc
+    with handle:
+        worker = _launch(identifier, root, fresh, handle)
         atomic(root / "worker.json", {"edition_id": identifier, "pid": worker.pid})
-        # No explicit unlock: the child retains the inherited open file descriptor.
         return worker
 
 
-def _launch(identifier, root, fresh, lock_fd):
+def _launch(identifier, root, fresh, handle):
     m = read_manifest(identifier, root)
     directory = location(identifier, root).resolve()
     capsule = json.loads((directory / "source-capsule.json").read_text())
@@ -1174,12 +1172,16 @@ def _launch(identifier, root, fresh, lock_fd):
         "VECLIB_MAXIMUM_THREADS": "1",
         "DISPATCH_BATCH_WORKER": "1",
     }
-    args = [sys.executable, "-m", "methane.study_worker", str(directory)] + (
-        ["--fresh"] if fresh else []
-    )
+    args = [str(directory)] + (["--fresh"] if fresh else [])
     with (directory / ("worker-" + uuid.uuid4().hex + ".log")).open("w") as log:
-        return subprocess.Popen(
-            args, cwd=source, env=env, stdout=log, stderr=log, pass_fds=(lock_fd,)
+        return spawn(
+            "methane.study_worker",
+            args,
+            cwd=source,
+            env=env,
+            stdout=log,
+            stderr=log,
+            leases=(handle,),
         )
 
 
@@ -1210,7 +1212,7 @@ def export(identifier, destination, root=STORE, report_id=None):
                 and path.suffix != ".log"
                 and path.name != "cancel"
             ):
-                z.write(path, identifier + "/" + str(path.relative_to(directory)))
+                z.write(path, identifier + "/" + path.relative_to(directory).as_posix())
         z.writestr("study.html", offline_html(value, playback_links=True))
         z.writestr("study.md", markdown(value))
         z.writestr("model-report-source.json", json.dumps(LOADED_CAPSULE, allow_nan=False))

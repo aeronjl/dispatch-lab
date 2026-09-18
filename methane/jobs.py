@@ -3,10 +3,11 @@
 import json
 import os
 import subprocess
-import sys
 import tempfile
 import time
 from pathlib import Path
+
+from methane.processes import spawn
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -29,8 +30,9 @@ def isolated_run(config, weather, cancelled=None, progress=None, strategies=None
             "DISPATCH_BATCH_WORKER": "1",
         }
         with (root / "worker.log").open("w") as log:
-            worker = subprocess.Popen(
-                [sys.executable, "-m", "methane.batch_worker", str(root)],
+            worker = spawn(
+                "methane.batch_worker",
+                [root],
                 cwd=ROOT,
                 env=env,
                 stdout=log,

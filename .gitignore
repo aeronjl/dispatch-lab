@@ -56,3 +56,12 @@ test-results/
 
 # Manufacturer originals stay local; hashes, links and scoped bindings are tracked.
 /research/equipment-planning/raw/
+
+# Native desktop build output; lockfiles and authored shell remain tracked.
+/desktop/src-tauri/target/
+/desktop/src-tauri/gen/
+
+/desktop/src-tauri/icons/*
+!/desktop/src-tauri/icons/icon.png
+!/desktop/src-tauri/icons/icon.icns
+!/desktop/src-tauri/icons/icon.ico

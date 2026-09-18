@@ -10,6 +10,7 @@ remains a failed launch; no public share or frontend-check bypass is introduced.
 from threading import RLock
 from urllib.parse import urlsplit
 
+import gradio.blocks
 import gradio.networking
 import httpx
 
@@ -32,7 +33,7 @@ def local_ready(url, original):
         return False
 
 
-def launch_local(application, **options):
+def launch_local(application, *, desktop_session=None, **options):
     """Preserve launch validation and restore the hook even on startup failure."""
     if (
         options.get("server_name") not in ("127.0.0.1", "localhost", "::1")
@@ -43,13 +44,19 @@ def launch_local(application, **options):
         raise ValueError("launch_local owns the server lifetime")
     with _lock:
         original = gradio.networking.url_ok
+        original_http = gradio.blocks.httpx
         gradio.networking.url_ok = lambda url: local_ready(url, original)
+        if desktop_session:
+            gradio.blocks.httpx = desktop_session.startup_client(original_http)
         try:
             result = application.launch(**options, prevent_thread_lock=True)
+            if desktop_session:
+                desktop_session.ready.set()
         except Exception:
             application.close()
             raise
         finally:
             gradio.networking.url_ok = original
+            gradio.blocks.httpx = original_http
     application.block_thread()
     return result

@@ -1,9 +1,9 @@
 """Private control checkpoints and process leases; never an agent observation API."""
 
-import fcntl
 import json
 from contextlib import contextmanager
 
+from methane.processes import lease as os_lease
 from methane.provenance import seal, verify
 from methane.siting.store import atomic, digest, encode
 
@@ -43,14 +43,10 @@ def commit(root, checkpoint, recording, receipts):
 
 
 def lease(path):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    handle = path.open("a+b")
     try:
-        fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        return os_lease(path)
     except BlockingIOError:
-        handle.close()
         raise ValueError("A worker still owns this session; wait for it to stop") from None
-    return handle
 
 
 def running(root):
@@ -64,6 +60,5 @@ def running(root):
 @contextmanager
 def transaction(root):
     """Serialise owner/agent commands even across two local app processes."""
-    with (root / "commands.lock").open("a+b") as handle:
-        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+    with os_lease(root / "commands.lock", blocking=True):
         yield

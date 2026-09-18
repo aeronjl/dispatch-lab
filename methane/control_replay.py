@@ -1,7 +1,6 @@
 """Numerically replay recorded requests, never ask an external agent to infer again."""
 
 import copy
-import signal
 import sys
 import uuid
 from pathlib import Path
@@ -11,6 +10,7 @@ from methane.control_storage import read, write
 from methane.provenance import LOADED_SOURCE, experiment_identity, seal, verify
 from methane.siting.checkpoint import Continuation
 from methane.siting.store import digest
+from methane.worker_budget import budget
 
 
 class RecordedActions:
@@ -159,7 +159,7 @@ def replay(source, *, cancelled=None, progress=None):
 
 
 def main(root):
-    signal.alarm(7200)
+    guard = budget(7200, root / "state.json", None, cpu=False)
     try:
         source = read(root / "source.json")
         result, report = replay(
@@ -173,6 +173,9 @@ def main(root):
         write(root / "state.json", {**report, "fraction": 1})
     except Exception as exc:
         write(root / "state.json", dict(status="failed", error=str(exc)))
+
+    finally:
+        guard.set()
 
 
 if __name__ == "__main__":

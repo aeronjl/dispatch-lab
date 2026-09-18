@@ -6,11 +6,9 @@ committed boundary and the original source capsule, not the current application.
 """
 
 import copy
-import fcntl
 import gzip
 import json
 import os
-import subprocess
 import sys
 import threading
 import time
@@ -19,6 +17,8 @@ from collections import OrderedDict
 from datetime import UTC, datetime
 
 from methane.config import Config
+from methane.processes import lease as os_lease
+from methane.processes import spawn
 from methane.provenance import LOADED_CAPSULE, LOADED_SOURCE, verify
 from methane.siting.checkpoint import Continuation
 from methane.siting.environment import weather
@@ -194,14 +194,19 @@ def state(store, study_id):
     result = json.loads(path.read_bytes()) if path.exists() else dict(status="ready", fraction=0)
     if result["status"] == "running":
         try:
-            os.kill(result["pid"], 0)
+            with worker_lease(store):
+                result.update(
+                    status="interrupted", description="Resume from the last committed checkpoint"
+                )
         except PermissionError:
-            # An OS visibility restriction does not establish that the worker died.
             result["process_visibility"] = "unavailable; retain recorded running state"
-        except (ProcessLookupError, KeyError):
-            result.update(
-                status="interrupted", description="Resume from the last committed checkpoint"
-            )
+        except ValueError:
+            active = store.root / "active-worker.json"
+            if not active.exists() or json.loads(active.read_bytes()).get("study_id") != study_id:
+                result.update(
+                    status="interrupted",
+                    description="Another job owns the worker; resume this study later",
+                )
     return result
 
 
@@ -505,13 +510,10 @@ def calendar(rows):
 def worker_lease(store):
     """An inherited OS lock survives server restarts and releases on worker death."""
     store.root.mkdir(parents=True, exist_ok=True)
-    lease = (store.root / "worker.lock").open("a+b")
     try:
-        fcntl.flock(lease.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        return os_lease(store.root / "worker.lock")
     except BlockingIOError:
-        lease.close()
         raise ValueError("A Sites worker holds this store; wait or cancel its study") from None
-    return lease
 
 
 def launch(store, study_id):
@@ -544,15 +546,16 @@ def launch(store, study_id):
             "VECLIB_MAXIMUM_THREADS": "1",
         }
         lease = worker_lease(store)
-        env["DISPATCH_SITES_LEASE_FD"] = str(lease.fileno())
+        atomic(store.root / "active-worker.json", encode(dict(study_id=study_id)))
         with lease, (d / ("worker-" + uuid.uuid4().hex + ".log")).open("w") as log:
-            proc = subprocess.Popen(
-                [sys.executable, "-m", "methane.siting.production", study_id],
+            proc = spawn(
+                "methane.siting.production",
+                [study_id],
                 cwd=source,
                 env=env,
                 stdout=log,
                 stderr=log,
-                pass_fds=(lease.fileno(),),
+                leases=(lease,),
             )
         WORKERS[study_id] = proc
         atomic(

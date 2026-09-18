@@ -7,9 +7,9 @@ import re
 import tempfile
 from pathlib import Path
 
-ROOT = Path(
-    os.environ.get("DISPATCH_SITES_ROOT", Path(__file__).resolve().parents[2] / "runs" / "sites")
-)
+from methane.paths import data_path
+
+ROOT = data_path("sites", "DISPATCH_SITES_ROOT")
 KINDS = {
     "literature-experiment",
     "equipment-basis",

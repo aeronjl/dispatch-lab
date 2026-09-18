@@ -1,6 +1,8 @@
 # P3 · Installable Dispatch Lab for Mac and Windows
 
-Status: planned, not implemented or qualified. Agreed on 18 September 2026.
+Status: P3.1 implementation candidate; local Mac verification, joint platform gate
+still open. P3.2–P3.6 are not started. See [runtime delivery](desktop-runtime.md).
+Agreed on 18 September 2026.
 The user chose Mac and Windows together. This replaces P3's source-install-only
 interpretation with an end-user desktop release; P1 remains complete and P2's real
 participant walkthrough remains open. Deliver one increment at a time and report

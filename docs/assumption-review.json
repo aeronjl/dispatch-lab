@@ -1,6 +1,6 @@
 {
   "schema_version": "dispatch-lab/assumption-review/1",
-  "edition": "2026-09-17 / 14",
+  "edition": "2026-09-18 / 15",
   "scope": "Evidence and assumption classification for the illustrative fixture. No plant-specific fitted parameters, no new capability grants, no silently changed defaults. Conditional experiments are not empirical calibration.",
   "categories": {
     "design": "Chosen capacity, geometry or initial condition; requires a matched design, not statistical calibration.",
@@ -413,7 +413,7 @@
         "methane/config.py": "08497775c3ab8718780fd9708a3f1678542fbf39032278101f42c9e8df508371",
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
-        "methane/weather.py": "8b11d0e36fd57545143d42fd2163fc7d29609fc3d5fe41fcccada4f1e4fbe224",
+        "methane/weather.py": "6e2a801956d773342ca2d0c7f8b044a85a4636feba8f9b62a2509677ecec34d9",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
         "methane/timebase.py": "6557f6a21197394608dc170bcc2d071ccd15b656c1460b0d9af4ab487100289c",
         "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
@@ -819,7 +819,7 @@
         "plant.py": "e567f55f765c625ffeab748c7b079c0d51b9fdd08d804be45b9ee2fc6b72a87a",
         "methane/contracts.py": "eefcb7b6d440de266eabe096969457425d74c9c3a39cf7363f5accfc6be63b5a",
         "methane/simulation.py": "c715b06add4b34087351ea9ac280971312d126137868bde603ba2f6a7d516c72",
-        "methane/provenance.py": "90d75c928eef6a3f6bb1d5476b1ad4c1f755b3a71b7c874215f287aca9f14840",
+        "methane/provenance.py": "00b4bf4e72ef63229ed61d021c99f79db2fdefd94e292f9dcfdacd556e48ce43",
         "methane/forecast.py": "aa36307cb893dba3e2d6525dfc2b60c1790eb320883a7a670628db007f7efcc9",
         "methane/uncertainty.py": "0561a8cd629e1ec2cdfc02d8e1a702934e8d90184812e70c5b7aad62031a1366",
         "methane/adaptation.py": "8b370ba5645ab5b2c4d2da2dab35c7c5dbbdf46f87a1b5eee624eba291a77d5d",
@@ -8640,6 +8640,6 @@
   },
   "reference_configuration_note": "Optional blocks and example arrays are inventoried but not enabled. [] represents repeated objects. Values absent from a run remain unavailable. Within enabled blocks, variant-specific parameters may still be inactive.",
   "calibration_gate": "Open: no matched plant or service measurement series is supplied. Existing numerical, reference and historical-weather evidence has narrower scope.",
-  "revision_note": "Optional hourly plant interfaces: reviewed AC conversion/external loads, static pressure compatibility, finite purified water, cost boundaries and disclosed uncertainty. No empirical calibration claim.",
+  "revision_note": "Desktop runtime review: weather cache location and installed source manifests changed; weather conventions, uncertainty, equations, reference defaults and evidence applicability are unchanged. Original run snapshots retain their original review.",
   "release_review": "Release 2: explicit commissioning, condition observations, replacement stock and chronological accounting. Rates are scoped literature hypotheses; work, sensor and procedure values remain assumptions. No new field calibration."
 }

@@ -142,8 +142,6 @@ def test_thin_summary_matches_full_decision_operands(tmp_path):
 
 
 def test_restricted_process_visibility_is_not_worker_death(tmp_path, monkeypatch):
-    import os
-
     from methane.siting.production import state
     from methane.siting.store import atomic
 
@@ -158,5 +156,29 @@ def test_restricted_process_visibility_is_not_worker_death(tmp_path, monkeypatch
     def restricted(*args):
         raise PermissionError("OS process visibility restricted")
 
-    monkeypatch.setattr(os, "kill", restricted)
+    monkeypatch.setattr("methane.siting.production.worker_lease", restricted)
     assert state(store, study["id"])["status"] == "running"
+
+
+def test_a_different_lease_holder_cannot_keep_a_stopped_study_alive(tmp_path):
+    from methane.siting.production import state, worker_lease
+    from methane.siting.store import atomic
+
+    store = Store(tmp_path)
+    design, environment = fixture(store, 2)
+    study = create(
+        store, name="Ownership check", cases=[dict(design_id=design, environment_id=environment)]
+    )
+    atomic(
+        directory(store, study["id"]) / "progress.json",
+        encode(dict(status="running", pid=123, fraction=0.5)),
+    )
+    with worker_lease(store):
+        atomic(store.root / "active-worker.json", encode(dict(study_id=study["id"])))
+        assert state(store, study["id"])["status"] == "running"
+        atomic(
+            store.root / "active-worker.json", encode(dict(kind="learning", job_id="different-job"))
+        )
+        assert state(store, study["id"])["status"] == "interrupted"
+    # PID metadata cannot make a released lease look live.
+    assert state(store, study["id"])["status"] == "interrupted"

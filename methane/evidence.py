@@ -18,11 +18,12 @@ from pathlib import Path
 from methane.config import Config
 from methane.costing import reprice
 from methane.jobs import isolated_run
+from methane.paths import data_path
 from methane.provenance import digest, experiment_identity, manifest, verify
 from methane.simulation import run
 from methane.weather import IncompleteWeather, prepare
 
-RUNS = Path(__file__).resolve().parent.parent / "runs" / "methane-v2"
+RUNS = data_path("methane-v2", "DISPATCH_RUNS_DIR")
 
 
 @contextmanager

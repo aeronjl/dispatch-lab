@@ -9,6 +9,7 @@ import threading
 import time
 import uuid
 
+from methane.processes import peak_memory_bytes, spawn
 from methane.siting.store import Store, atomic, encode, identifier
 
 WORKERS = {}
@@ -18,6 +19,8 @@ BUDGET = dict(
     maximum_observations=100000,
     minimum_free_bytes=512 * 1024**2,
     numerical_workers=1,
+    maximum_memory_bytes=2 * 1024**3,
+    memory_limit_scope="Windows process-commit cap; POSIX sampled peak RSS; 0.1 s wall/memory watchdog",
     blas_threads=1,
     scope="One heavy training, dataset, export or numerical study worker per Sites store. Interactive calculations keep their separate existing limits.",
 )
@@ -52,6 +55,10 @@ def launch(store, operation, arguments, *, wall_seconds=120):
             budget={**BUDGET, "wall_seconds": wall_seconds},
         )
         key = store.put("training", record)
+        # A learning worker shares the store lease with studies. Replace the
+        # previous holder's descriptor while owning the lease; a stale study PID
+        # or descriptor must not be interpreted as this training job's liveness.
+        atomic(store.root / "active-worker.json", encode(dict(kind="learning", job_id=key)))
         root = store.root / "learning-jobs" / key
         root.mkdir(parents=True, exist_ok=True)
         atomic(
@@ -70,13 +77,14 @@ def launch(store, operation, arguments, *, wall_seconds=120):
             "VECLIB_MAXIMUM_THREADS": "1",
         }
         with (root / "worker.log").open("w") as log:
-            proc = subprocess.Popen(
-                [sys.executable, "-m", "methane.learning_lab.jobs", str(store.root.resolve()), key],
+            proc = spawn(
+                "methane.learning_lab.jobs",
+                [store.root.resolve(), key],
                 cwd=source,
                 env=env,
                 stdout=log,
                 stderr=log,
-                pass_fds=(lease.fileno(),),
+                leases=(lease,),
             )
         WORKERS[key] = proc
 
@@ -129,24 +137,12 @@ def poll(store, key, cancel=False):
 
 
 def work(store, key):
-    import resource
-    import signal
+    from methane.worker_budget import budget
 
     record = store.get("training", key)
-    # CPU bound survives an application restart. The process owns no child jobs.
     seconds = record["budget"]["wall_seconds"]
-    resource.setrlimit(resource.RLIMIT_CPU, (seconds, seconds + 1))
-
-    def wall_limit(signum, frame):
-        raise TimeoutError("Worker wall budget exhausted")
-
-    signal.signal(signal.SIGALRM, wall_limit)
-    signal.alarm(seconds)
-    try:
-        os.nice(5)
-    except OSError:
-        pass
     root = store.root / "learning-jobs" / key
+    guard = budget(seconds, root / "state.json", record["budget"].get("maximum_memory_bytes"))
     started = time.monotonic()
 
     def progress(message):
@@ -196,8 +192,7 @@ def work(store, key):
                     },
                     result_kind=kind,
                     elapsed_seconds=time.monotonic() - started,
-                    maximum_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-                    * (1 if sys.platform == "darwin" else 1024),
+                    maximum_rss_bytes=peak_memory_bytes(),
                 )
             ),
         )
@@ -216,6 +211,9 @@ def work(store, key):
                 )
             ),
         )
+
+    finally:
+        guard.set()
 
 
 if __name__ == "__main__":

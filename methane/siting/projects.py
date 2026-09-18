@@ -4,7 +4,6 @@ This is workflow composition over existing kernels and Sites contracts. It does
 not introduce plant physics, grant service capabilities or revise recorded runs.
 """
 
-import fcntl
 import uuid
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
@@ -14,6 +13,7 @@ from pydantic import Field
 
 from methane.config import Config
 from methane.costing import capital
+from methane.processes import lease
 from methane.siting.contracts import DeploymentDesign, Record
 from methane.siting.geometry import centre
 from methane.siting.store import encode
@@ -206,8 +206,7 @@ def revise(store, key, config, name=None, **changes):
         if basis["site_revision"] != store.get("project", key)["site_revision"]:
             raise ValueError("Equipment basis belongs to another site")
     store.root.mkdir(parents=True, exist_ok=True)
-    with (store.root / "project-write.lock").open("a+") as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)
+    with lease(store.root / "project-write.lock", blocking=True):
         previous = store.get("project", key)
         current = next(r for r in heads(store) if r["project_id"] == previous["project_id"])
         if current["id"] != key:

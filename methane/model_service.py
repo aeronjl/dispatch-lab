@@ -4,7 +4,6 @@ import json
 import os
 import secrets
 import subprocess
-import sys
 import tempfile
 import threading
 from collections import OrderedDict
@@ -16,6 +15,7 @@ from pydantic import BaseModel, Field
 from methane.documentation import catalogue, read
 from methane.learning import evaluate
 from methane.model_topics import TOPICS
+from methane.processes import spawn
 
 _contexts = OrderedDict()
 _jobs = OrderedDict()
@@ -157,8 +157,9 @@ def job(request: Request):
                 "DISPATCH_BATCH_WORKER": "1",
             }
             log = (root / "worker.log").open("w")
-            worker = subprocess.Popen(
-                [sys.executable, "-m", "methane.learning_worker", str(root)],
+            worker = spawn(
+                "methane.learning_worker",
+                [root],
                 cwd=Path(__file__).resolve().parent.parent,
                 env=env,
                 stdout=log,

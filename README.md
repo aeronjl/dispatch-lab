@@ -8,6 +8,12 @@ uv run python app.py
 # http://127.0.0.1:7860
 ```
 
+An unsigned Mac desktop development candidate now bundles its own Python runtime.
+The Windows build workflow is supplied but has not yet been qualified. See the
+[desktop runtime guide](docs/desktop-runtime.md) and the fixed
+[P3.1–P3.6 release plan](docs/desktop-release.md). Durable desktop drafts,
+background recovery and integrated agent connection are subsequent increments.
+
 The saved reference 72-hour experiment compares **Greedy**, **MPC · methane** and **MPC · economics**. Setup includes an **Autonomy story / four days** preset, a flow-sensor fault and delayed feedstock. Results include methane, ending hydrogen/CO₂/battery inventories, curtailment, starts, forced trips, diagnosis performance, solver limitations and illustrative costs.
 
 The [plant project guide](docs/plant-projects.md) covers common controls, complete expert settings, saved design revisions, weather retrieval and matched comparisons. From recorded playback, open **Menu → Site · Build · Operate** to return to your project.

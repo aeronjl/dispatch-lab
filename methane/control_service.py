@@ -4,7 +4,6 @@ import json
 import os
 import secrets
 import subprocess
-import sys
 import tempfile
 import threading
 from collections import OrderedDict
@@ -17,6 +16,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from methane.control_view import describe, prepare_alternative
 from methane.model_service import recorded_context
+from methane.processes import spawn
 
 _jobs = OrderedDict()
 _cancelled = OrderedDict()
@@ -197,8 +197,9 @@ def handle(request: Request):
                 "DISPATCH_BATCH_WORKER": "1",
             }
             with (root / "worker.log").open("w") as log:
-                worker = subprocess.Popen(
-                    [sys.executable, "-m", "methane.control_worker", str(root)],
+                worker = spawn(
+                    "methane.control_worker",
+                    [root],
                     cwd=Path(__file__).resolve().parent.parent,
                     env=env,
                     stdout=log,

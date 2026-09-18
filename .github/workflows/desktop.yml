@@ -1,0 +1,78 @@
+name: Desktop runtime candidates
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'desktop/**'
+      - 'desktop_entry.py'
+      - 'methane/**'
+      - 'app.py'
+      - 'uv.lock'
+      - 'package-lock.json'
+      - '.github/workflows/desktop.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            bundle: app
+          - os: windows-2025
+            bundle: nsis
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9
+        with:
+          enable-cache: true
+      - name: Locked build dependencies
+        run: |
+          uv sync --locked
+          npm ci
+          rustup toolchain install 1.94.0 --profile minimal --component rustfmt
+      - name: Native ownership, budgets, source and control boundaries
+        run: uv run pytest -q tests/test_desktop_runtime.py tests/test_desktop_host.py tests/test_control_sessions.py tests/test_siting_production.py tests/test_plant_projects.py tests/test_learning_lab_workflow.py tests/test_mcp_server.py --junitxml=build/desktop/native-tests.xml
+      - name: Build the private runtime
+        run: uv run python desktop/build.py
+      - name: Packaged interpreter acceptance
+        run: uv run python desktop/verify.py
+      - name: Compile and package native shell
+        run: npm run desktop:build -- --bundles ${{ matrix.bundle }}
+      - name: Packaged Mac MCP discovery
+        if: runner.os == 'macOS'
+        run: uv run python desktop/verify.py --mcp-executable "desktop/src-tauri/target/release/bundle/macos/Dispatch Lab.app/Contents/MacOS/dispatch-lab-desktop"
+      - name: Install Windows candidate and check its MCP executable
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem desktop/src-tauri/target/release/bundle/nsis/*-setup.exe | Select-Object -First 1
+          $install = Join-Path $env:RUNNER_TEMP 'Dispatch candidate'
+          $process = Start-Process -FilePath $installer.FullName -ArgumentList "/S /D=$install" -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw "Installer failed: $($process.ExitCode)" }
+          $executable = Get-ChildItem $install/*.exe | Where-Object Name -NotMatch 'uninstall' | Select-Object -First 1
+          if (-not $executable) { throw 'Installed application executable missing' }
+          uv run python desktop/verify.py --mcp-executable $executable.FullName
+          if ($LASTEXITCODE -ne 0) { throw 'Installed MCP check failed' }
+      - name: Retain candidate and scoped checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop-candidate-${{ matrix.os }}
+          path: |
+            build/desktop/*report.json
+            build/desktop/native-tests.xml
+            desktop/src-tauri/target/release/bundle
+          if-no-files-found: warn
+
+# This produces unsigned development candidates, not a published release.
+# A Windows Server build is not the Windows 11 participant/native-webview gate.

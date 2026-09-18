@@ -1,11 +1,9 @@
 """Local owner/agent capabilities for bounded simulator workers. No hardware access."""
 
 import hashlib
-import os
 import re
 import secrets
 import subprocess
-import sys
 import threading
 import time
 from pathlib import Path
@@ -16,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from methane import control_port
 from methane.control_storage import committed, lease, read, running, transaction, write
+from methane.processes import spawn
 from methane.provenance import LOADED_SOURCE
 from methane.siting.store import digest
 
@@ -67,7 +66,9 @@ class Request(BaseModel):
 
 
 def home():
-    return Path(os.environ.get("DISPATCH_CONTROL_DIR", "runs/control-sessions")).resolve()
+    from methane.paths import data_path
+
+    return data_path("control-sessions", "DISPATCH_CONTROL_DIR")
 
 
 def folder(identifier):
@@ -184,13 +185,14 @@ def launch(root):
         if slot is None:
             raise ValueError("Two sessions are active; stop one before creating another")
         with (root / "worker.log").open("ab") as log:
-            _workers[root.name] = subprocess.Popen(
-                [sys.executable, "-m", "methane.control_session_worker", str(root)],
+            _workers[root.name] = spawn(
+                "methane.control_session_worker",
+                [root],
                 cwd=Path(__file__).resolve().parents[1],
                 stdout=log,
                 stderr=log,
                 start_new_session=True,
-                pass_fds=(session_lease.fileno(), slot.fileno()),
+                leases=(session_lease, slot),
             )
     finally:
         session_lease.close()
@@ -510,13 +512,14 @@ def start_replay(root):
             write(replay_root / "source.json", saved["recording"])
             write(replay_root / "state.json", dict(status="running", fraction=0))
             with (replay_root / "worker.log").open("ab") as log:
-                _workers["replay-" + key] = subprocess.Popen(
-                    [sys.executable, "-m", "methane.control_replay", str(replay_root)],
+                _workers["replay-" + key] = spawn(
+                    "methane.control_replay",
+                    [replay_root],
                     cwd=Path(__file__).resolve().parents[1],
                     stdout=log,
                     stderr=log,
                     start_new_session=True,
-                    pass_fds=(handle.fileno(), slot.fileno()),
+                    leases=(handle, slot),
                 )
             write(root / "replay.json", dict(id=key))
     return replay_state(root)
