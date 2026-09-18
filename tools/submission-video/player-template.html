@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Dispatch Lab · film master</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#202020}iframe,.screen{position:absolute;inset:0;width:1920px;height:1080px;border:0}.screen{object-fit:cover}.card{position:absolute;inset:0;background:#eeede7;color:#242525;padding:100px 130px;display:flex;flex-direction:column;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif}.card .number{position:absolute;top:78px;left:130px;font-size:22px;letter-spacing:4px;color:#62635e}.card h1{font-size:88px;font-weight:500;line-height:1.13;letter-spacing:-3px;white-space:pre-line;margin:0;max-width:1500px}.card p{font-size:29px;font-weight:400;color:#61635d;line-height:1.5;margin:35px 0 0}.card footer{position:absolute;bottom:86px;font-size:26px;color:#62635e}.card .rule{height:5px;width:90px;background:#d79237;margin-bottom:42px}.veil{position:absolute;inset:0;background:#202020;pointer-events:none}[hidden]{display:none!important}
+</style>
+<iframe id="operation" src="operation.html"></iframe><iframe id="recovery" src="recovery.html"></iframe><img class="screen" id="screen"><section class="card" id="card"><div class="number"></div><div class="rule"></div><h1></h1><p></p><footer></footer></section><div class="veil"></div>
+<script>
+const story=STORY_JSON;
+const q=s=>document.querySelector(s),clamp=n=>Math.max(0,Math.min(1,n)),ease=n=>{n=clamp(n);return n*n*(3-2*n)};
+window.ready=false;
+Promise.all([...document.querySelectorAll('iframe')].map(f=>new Promise(resolve=>f.addEventListener('load',async()=>{await f.contentDocument.fonts.ready;resolve();})))).then(()=>window.ready=true);
+let priorScreen=null;
+window.renderSubmission=async t=>{
+ const scene=story.scenes.find(s=>t>=s.start&&t<s.end)||story.scenes.at(-1),local=t-scene.start;
+ for(const n of ['operation','recovery','screen','card'])q('#'+n).hidden=true;
+ let output={id:scene.id,kind:scene.kind};
+ if(scene.kind==='card'){
+  q('#card').hidden=false;const cards=story.scenes.filter(s=>s.kind==='card');const index=cards.indexOf(scene);q('.number').textContent=index===0?'DISPATCH LAB':index===cards.length-1?'EXPLORE · COMPARE · UNDERSTAND':String(index).padStart(2,'0');
+  q('h1').textContent=scene.title;q('.card p').textContent=scene.subtitle||'';q('footer').textContent=scene.footer||'';q('h1').style.transform=`translateY(${(1-ease(local/.7))*12}px)`;
+ }else if(scene.kind==='screens'){
+  const i=Math.min(scene.screens.length-1,Math.floor(local/scene.duration*scene.screens.length)),name=scene.screens[i];
+  if(name!==priorScreen){q('#screen').src='screens/'+name+'.png';await q('#screen').decode();priorScreen=name;}
+  q('#screen').hidden=false;output.screen=name;
+ }else{
+  const f=q('#'+scene.kind);f.hidden=false;output.recorded=await f.contentWindow.renderFilm(t);
+ }
+ const entrance=ease(local/.35),exit=ease((scene.end-t)/.35);q('.veil').style.opacity=String(1-Math.min(entrance,exit));
+ return output;
+};
+</script></html>

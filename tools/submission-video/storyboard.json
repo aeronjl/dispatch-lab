@@ -1,0 +1,33 @@
+{
+  "schema": "dispatch-submission-film/1",
+  "output": "dispatch-lab-submission",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "controller": "MPC · methane",
+  "sources": {
+    "operation": {"motion": "tests/fixtures/field-motion.json.gz", "control": "tools/demo-video/fixtures/control-view.json.gz"},
+    "recovery": {"motion": "tools/submission-video/fixtures/recovery-motion.json.gz", "control": "tools/submission-video/fixtures/recovery-control.json.gz"}
+  },
+  "scenes": [
+    {"id":"opening","kind":"card","duration":5,"title":"Dispatch Lab","subtitle":"Autonomous plant experiments"},
+    {"id":"site","kind":"screens","duration":15,"screens":["site","seville","build","battery"]},
+    {"id":"power-card","kind":"card","duration":4,"title":"Store now.\nProduce later."},
+    {"id":"plant","kind":"operation","duration":6,"hours":[7,13]},
+    {"id":"plan","kind":"operation","duration":16,"hours":[15,15],"control":"Plan","component":"battery","forecast_offsets":[{"at":0,"offset":0},{"at":5,"offset":3},{"at":10,"offset":4}]},
+    {"id":"clean-card","kind":"card","duration":4,"title":"Keep the plant working."},
+    {"id":"cleaning","kind":"operation","duration":10,"hours":[0,3.8]},
+    {"id":"fault-card","kind":"card","duration":4,"title":"Recognise. Inspect. Adapt."},
+    {"id":"inspection","kind":"operation","duration":12,"hours":[13,16.4]},
+    {"id":"adapt","kind":"operation","duration":10,"hours":[14,15],"control":"Delivery","component":"electrolyser","segments":[{"seconds":[0,5],"hours":[14,14]},{"seconds":[5,10],"hours":[15,15]}],"tabs":[{"at":0,"tab":"Delivery"},{"at":5,"tab":"Evidence"}]},
+    {"id":"repair-card","kind":"card","duration":4,"title":"Coordinate service\nwith production."},
+    {"id":"repair","kind":"operation","duration":10,"hours":[16,20.8],"segments":[{"seconds":[0,3.5],"hours":[16,18]},{"seconds":[3.5,10],"hours":[19,20.8]}]},
+    {"id":"verify-card","kind":"card","duration":5,"title":"Repair is not recovery.","subtitle":"A separate, controlled recovery example"},
+    {"id":"recovery","kind":"recovery","duration":18,"hours":[15,25],"control":"Evidence","component":"electrolyser","segments":[{"seconds":[0,3],"hours":[15,15]},{"seconds":[3,15],"hours":[16,25]},{"seconds":[15,18],"hours":[25,25]}]},
+    {"id":"compare-card","kind":"card","duration":4,"title":"Compare decisions fairly.","subtitle":"Same starting information · predicted outcomes"},
+    {"id":"comparison","kind":"operation","duration":18,"hours":[17,17],"control":"Compare","component":"battery","comparison":true,"forecast_offsets":[{"at":0,"offset":0},{"at":6,"offset":3},{"at":12,"offset":5}]},
+    {"id":"trace-card","kind":"card","duration":4,"title":"Inspect the model.\nTrace the result."},
+    {"id":"model","kind":"screens","duration":14,"screens":["model","model-change","trace","identity"]},
+    {"id":"closing","kind":"card","duration":5,"title":"Build your own experiment.","subtitle":"Research simulation · explicit assumptions","footer":"github.com/aeronjl/dispatch-lab"}
+  ]
+}

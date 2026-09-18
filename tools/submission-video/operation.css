@@ -1,0 +1,12 @@
+/* Film-only framing: never changes production artwork or numeric values. */
+.film-heading { display:none !important; }
+.m-plant-wrap { inset:30px 40px 35px; }
+body[data-film-control=true] .cv-panel { bottom:40px; }
+body[data-film-control=true] .m-plant-wrap { bottom:60px; }
+body[data-film-scene=recovery] .cv-evidence section:first-child p:nth-of-type(n+4){display:block}
+body[data-film-scene=recovery] .cv-evidence{font-size:20px;line-height:1.65}
+/* Give the observed recovery changes enough visual weight to read in a film. */
+body[data-film-scene=recovery] .cv-workspace[data-tab=Evidence] .cv-evidence h4{font-size:32px;margin:42px 0 32px}
+body[data-film-scene=recovery] .cv-workspace[data-tab=Evidence] .cv-evidence section:first-child p{font-size:26px;line-height:1.6;margin:24px 0}
+body[data-film-scene=recovery] .cv-workspace[data-tab=Evidence] .cv-evidence section:first-child p:nth-of-type(3){font-size:32px;color:#ffc676}
+body[data-film-scene=recovery] .cv-workspace[data-tab=Evidence] .cv-evidence section:first-child p:nth-of-type(4){display:block;font-size:22px;color:#b9a78b}

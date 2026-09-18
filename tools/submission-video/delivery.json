@@ -1,0 +1,100 @@
+{
+  "schema": "dispatch-submission-delivery/1",
+  "movie": {
+    "path": "build/submission-video/dispatch-lab-submission.mp4",
+    "sha256": "d6091e02ec7059eff7940a6339a8f29dc0ba90d35cef6bc4ac98d830a5b07bad",
+    "bytes": 23656183,
+    "duration_seconds": 168,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "audio": false
+  },
+  "manifest_sha256": "75a8a6ac95f74761261e7f83d8efdb66db03e0cde631d5f1a7e2f24627e9126f",
+  "verification": {
+    "passed": true,
+    "scope": "Presentation integrity and recorded numerical operands; not new policy qualification or field validation",
+    "checks": [
+      "Offline render, saved UI captures, implementation and fixture hashes match",
+      "Design exploration, operating archive and controlled recovery are separate contexts",
+      "Three predicted policies share original information; displayed battery and production totals reconcile",
+      "Repair remains unverified at H15; five observed confirmations restore capacity through H25",
+      "Recorded playheads, prediction separation, sprite positions and repair isolation reconcile",
+      "168 seconds, 5040 frames, 1080p30 H.264, no audio, fast-start and complete decode"
+    ],
+    "limitations": [
+      "Edited selection of recorded examples, not a continuous live run.",
+      "Site/design exploration does not produce the subsequent operating recordings.",
+      "Recovery is a separate controlled release-1 example with original model and assumptions.",
+      "Inspection rover inspects; the shown replacement is performed by a human.",
+      "Comparison is predicted process dispatch from shared information; service schedule fixed; no policy superiority claim.",
+      "No plant calibration, field robot qualification or whole-system safety guarantee."
+    ]
+  },
+  "browser_playback": {
+    "passed": true,
+    "browser": "153.0.8010.12",
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "duration": 168
+    },
+    "advanced": true,
+    "frames": [
+      {
+        "second": 1,
+        "file": "encoded-1.png"
+      },
+      {
+        "second": 18,
+        "file": "encoded-18.png"
+      },
+      {
+        "second": 38,
+        "file": "encoded-38.png"
+      },
+      {
+        "second": 55,
+        "file": "encoded-55.png"
+      },
+      {
+        "second": 71,
+        "file": "encoded-71.png"
+      },
+      {
+        "second": 96,
+        "file": "encoded-96.png"
+      },
+      {
+        "second": 115,
+        "file": "encoded-115.png"
+      },
+      {
+        "second": 121,
+        "file": "encoded-121.png"
+      },
+      {
+        "second": 136,
+        "file": "encoded-136.png"
+      },
+      {
+        "second": 154,
+        "file": "encoded-154.png"
+      },
+      {
+        "second": 165,
+        "file": "encoded-165.png"
+      }
+    ],
+    "errors": []
+  },
+  "targeted_javascript_checks": {
+    "passed": 25,
+    "scope": [
+      "control-view",
+      "field-operations",
+      "playback"
+    ]
+  },
+  "preservation": "Movie, detailed manifests, app captures and review frames remain in ignored build/submission-video. Compact recording fixtures and rendering tools are committed. No prior video or source recording is overwritten."
+}

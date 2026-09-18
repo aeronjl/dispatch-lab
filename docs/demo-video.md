@@ -1,5 +1,9 @@
 # Shareable plant demo
 
+For the longer, title-card-led competition walkthrough, see the
+[2:48 submission film](submission-video.md). The short social editions below
+remain preserved separately.
+
 The current **46-second silent film** shows the plant, controller planning,
 robot cleaning and inspection, a human repair visit, and a policy comparison.
 It uses the original Departure Mono / amber equipment and robot artwork.
