@@ -55,8 +55,11 @@ function mountMethane(element, props, watch, trigger) {
         $('.m-utility').hidden=false;
         $('[data-do="menu"]').setAttribute('aria-expanded','true');
         $$('[data-utility-section]').forEach(node=>node.hidden=node.dataset.utilitySection!==panel);
-        $$('[data-panel]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.panel===panel)));
-        workflow?.sync();render();const target=$(`[data-panel="${panel}"]`);(target?.getClientRects().length?target:$('[data-panel=work]')).focus({preventScroll:true});
+        $$('.m-utility-tabs [data-panel]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.panel===panel)));
+        workflow?.sync();render();
+        const tab=$(`.m-utility-tabs [data-panel="${panel}"]`),heading=$(`[data-utility-section="${panel}"] h3`);
+        if(heading)heading.setAttribute('tabindex','-1');
+        (panel==='tools'?$('[data-work-search]'):tab||heading).focus({preventScroll:true});
     }
     function hideControls() {
         if(investigation?.isSuspended()){controlView?.close(false);investigation.resume();return;}

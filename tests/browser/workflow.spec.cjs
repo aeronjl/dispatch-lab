@@ -7,6 +7,8 @@ test('six tasks reveal expert tools without adding anything to the quiet plant',
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await ready(page);
  await expect(page.locator('.m-utility')).toBeHidden();await menu(page);
  await expect(page.locator('.wf-journey button')).toHaveCount(6);
+ await expect(page.locator('.wf-journey [aria-pressed]')).toHaveCount(0);
+ await expect(page.getByRole('button',{name:'Site · open plant project',exact:true})).toBeVisible();
  await expect(page.locator('[data-do=setup]')).toBeHidden();await expect(page.locator('[data-do=studies]')).toBeHidden();
  await page.locator('[data-panel=tools]').click();await page.locator('[data-work-search]').fill('weather');
  await expect(page.locator('[data-do=sites]')).toBeVisible();await expect(page.locator('[data-do=setup]')).toBeHidden();
